@@ -1,0 +1,109 @@
+# interaction_screen
+GS '_layout'
+npc = 0
+
+*p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+*p '<div id = "text"><<$text[txt]>></div>'
+
+IF $interaction_type = 'talk':
+ *p '<div id = "bg"><img src="content\pic\<<$slave["fullimage"]>>.gif"></div>'
+END
+
+IF $interaction_type = 'talk_assitant':
+ npc = 1
+ $npc_id = 'ваша_ассистентка'
+ if assistant['image_mode'] = 0: *p '<div id = "bg"><img src="content\pic\<<$fullimage[assistant_type]>>.gif"></div>'
+ if assistant['image_mode'] = 1: *p '<div id = "bg"><img src="content\pic\<<$fullmistress[assistant_type]>>.gif"></div>'
+ if assistant['image_mode'] = 2: *p '<div id = "bg"><img src="content\pic\<<$fullmade[assistant_type]>>.gif"></div>'
+ if assistant['image_mode'] = 3: *p '<div id = "bg"><img src="content\pic\<<$fullsecretary[assistant_type]>>.gif"></div>'  
+END
+
+
+IF $interaction_type = 'special':
+ *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+END
+IF $interaction_type = 'special_talk':
+ npc = 1
+END
+IF interaction = 5416:
+ *p '<div id = "bg"><img src="content\pic\<<$lesbian[slave_type]>>.gif"></div>'
+END
+
+IF $interaction_type = 'chestbuster':
+ if txt = 1 and sound_on = 1: play 'content\snd\girl_suffering.mp3'
+ if txt = 2: *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+ if txt > 2: *p '<div id = "bg"><img src="content\pic\scene\event_chestbuster.jpg"></div>' 
+END
+
+IF $interaction_type = 'special_png':
+ *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.png"></div>'
+END
+
+IF $interaction_type = 'special_jpg':
+ *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.jpg"></div>'
+END
+
+IF $interaction_type = 'make_slave_do':
+ *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+END
+
+IF $interaction_type = 'master_teaches_slave':
+ *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+END
+
+IF $interaction_type = 'couch_teaches_slave':
+ *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+END
+
+IF $interaction_type = 'prise_sweets':
+ *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+END
+
+IF $interaction_type = 'torture':
+ *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+END
+ 
+IF $interaction_type = 'self_sex_lesson': 
+ IF txt = 1:
+  *p '<div id = "bg"><img src="content\pic\<<$fullimage[slave_type]>>.gif"></div>'
+  else
+  *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+ END
+END
+
+if npc = 0:
+ $info_bar = ''
+ *p '<div id = "side_panel_main"><center><font size = 50%><<$place_name[$place]>></font>
+<<$place_location[$place]>>
+
+ Информация к размышлению:
+ </center></div>'
+ *p '<div id = "side_panel_text">  <<$place_info[$place]>>
+</div>'  
+ else
+ $info_bar = '' 
+ *p '<div id = "bg"><img src="content\pic\characters\<<$npc_image[$npc_id]>>.gif"></div>'
+ *p '<div id = "side_panel_main"><center><font size = 50%><<$npc_name[$npc_id]>></font>
+<<$npc_status[$npc_id]>>
+
+Информация к размышлению:
+</center></div>'
+ *p '<div id = "side_panel_text">  <<$npc_attitude[npc_attitude[$npc_id]]>>
+
+ <<$npc_info[$npc_id]>>
+</div>'
+END
+
+*p '<div id = "interaction_stat_bar"><<$info_bar>></div>'
+
+if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3'
+
+if txt > 1: 
+ addobj '<img src = "content\back_button.png">'
+ else
+ addobj '<img src = "content\noback_button.png">' 
+END 
+addobj '<img src = "content\forward_button.png">'
+
+--- interaction_screen ---------------------------------
+

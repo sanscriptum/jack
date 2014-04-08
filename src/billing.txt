@@ -1,0 +1,86 @@
+# billing
+!Выставление счетов по итогам декады
+
+rental_cost = estate_cost_main[$estate]
+if dungeon > 0: rental_cost += estate_cost_dungeon[$estate]
+if bouduar > 0: rental_cost += estate_cost_bouduar[$estate]
+if lab > 0: rental_cost += estate_cost_lab[$estate]
+if pen > 0: rental_cost += 10
+
+food_bill = total_food_cost
+total_food_cost = 0
+
+master_wealth = master_wealth_target
+
+if master_wealth = 0: other_bills = 0
+if master_wealth = 1: other_bills = RAND (20,30)
+if master_wealth = 2: other_bills = RAND (40,60)
+if master_wealth = 3: other_bills = RAND (80,120)
+if master_wealth = 4: other_bills = RAND (200,300)
+if master_wealth = 5: other_bills = RAND (400,600)
+if master_wealth = 6: other_bills = RAND (800,1200)
+
+if stasis_tank > 0: other_bills += 20
+if iced_1_state > 0: other_bills += 10
+if iced_2_state > 0: other_bills += 10
+if iced_3_state > 0: other_bills += 10
+
+other_bills += autobuy_cost
+autobuy_cost = 0
+
+revised_payment = food_bill + other_bills
+
+IF assistant_account_rule = 1:
+ assistant_rate["intellect"] += 3
+ assistant_rate["secretary"] += 15
+ account_skill = assistant["secretary"] + assistant["intellect"]
+ IF assistant["secretary_affinity"] > 0:
+  account_skill += 2
+ END
+ IF assistant["secretary_affinity"] < 0:
+  account_skill -= 2
+ END  
+END
+
+IF slave_account_rule = 1:
+ slave_rate["intellect"] += 3
+ slave_rate["secretary"] += 15
+ account_skill = slave["secretary"] + slave["intellect"]
+ if slave["obedience"] < 0: account_skill += slave["obedience"]
+ IF slave["secretary_affinity"] > 0:
+  account_skill += 2
+  if slave["pos_job"] < 3: slave["pos_job"] = 3
+ END
+ IF slave["secretary_affinity"] < 0:
+  account_skill -= 2
+  if slave["neg_job"] < 3: slave["neg_job"] = 3
+ END 
+END
+
+fine = 0
+discount = 0
+
+IF slave_account_rule = 1 or assistant_account_rule = 1:
+ percent = revised_payment/20
+ fine_chance = RAND (2,10)
+ a = fine_chance - account_skill
+ if a > 0: fine = a*percent
+ discount_chance = RAND (2,10)
+ a = account_skill - discount_chance
+ if a > 0: discount = a*percent 
+ else
+ master_mood[neg_accounts] = 1 + brand_reputation
+END
+
+final_payment = rental_cost + revised_payment + fine - discount
+
+$bill_message = '<center>СЧЕТА К ОПЛАТЕ</center>
+Аренда помещений: <<rental_cost>> иск.
+Счета за еду: <<food_bill>> иск.
+Другие расходы: <<other_bills>> иск.
+Скидки: <<discount>> иск.
+Пени: <<fine>> иск. 
+--------------------------
+       Итого: <<final_payment>> иск.'
+--- billing ---------------------------------
+

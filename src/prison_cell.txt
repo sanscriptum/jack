@@ -1,0 +1,60 @@
+# prison_cell
+$place = "dungeon"
+gs '_layout'
+
+if prisoner_state = 0: 
+ $text = '<<$cage_empty>>'
+ else
+ $text = '<<$prisoner_info_text>>'
+END
+
+*p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+if prisoner_state > 0: *p '<div id = "bg"><img src="content\pic\<<$prisoner["fullimage"]>>.gif"></div>'
+*p '<div id = "text"><<$text>></div>'
+
+IF prisoner_state ! 0 and slave_state = 0:
+ *p '<div id = "cell"><a href = "EXEC: gt ''slave_to_cage''"><img src="content\pic\release.png"></a></div>'
+END
+
+IF prisoner_state = 0 and slave_state ! 0:
+ *p '<div id = "cell"><a href = "EXEC: gt ''slave_to_cage''"><img src="content\pic\imprison.png"></a></div>'
+END
+
+IF prisoner_state ! 0 and slave_state ! 0:
+ *p '<div id = "cell"><a href = "EXEC: gt ''slave_to_cage''"><img src="content\pic\cell_exchange.png"></a></div>'
+END
+
+IF prisoner_state > 0:
+ $info_bar = 'ОЦЕНКА:
+<<$beauty[prisoner["beauty"]]>> 
+<<$stamina[prisoner["stamina"]]>>  
+<<$exotic[prisoner["exotic"]]>> 
+<<$fat[prisoner["fat"]]>> 
+<<$sensitivity[prisoner["sensitivity"]]>>  
+<<$style[prisoner["style"]]>> 
+<<$intellect[prisoner["intellect"]]>> 
+<<$temper[prisoner["temper"]]>> 
+<<$ego[prisoner["ego"]]>> 
+<<$pride[prisoner["pride"]]>> 
+'
+
+ *p '<div id="solo_rules">
+Сухой корм
+Собачьи консервы
+</div>'
+ IF prisoner_ration = 1:
+  *p '<div id="chekbox_1s"><a href = "EXEC: prisoner_ration = -1 & $prisoner_info_text = $prisoner_ration[1] & gt curloc"><img src="content\sel_button.png"></a></div>'  
+  else
+  *p '<div id="chekbox_1s"><a href = "EXEC: prisoner_ration = 1 & $prisoner_info_text = $prisoner_ration[2] & gt curloc"><img src="content\unsel_button.png"></a></div>'  
+ END    
+ IF prisoner_ration = 0:
+  *p '<div id="chekbox_2s"><a href = "EXEC: prisoner_ration = -1 & $prisoner_info_text = $prisoner_ration[1] & gt curloc"><img src="content\sel_button.png"></a></div>'  
+  else
+  *p '<div id="chekbox_2s"><a href = "EXEC: prisoner_ration = 0 & $prisoner_info_text = $prisoner_ration[3] & gt curloc"><img src="content\unsel_button.png"></a></div>'  
+ END  
+END
+
+*p '<div id = "interaction_stat_bar"><<$info_bar>></div>'
+*p '<div id = "close_far"><a href = "EXEC: gt ''menu_form''"><img src = "content\close_button.png"></a></div>'
+--- prison_cell ---------------------------------
+

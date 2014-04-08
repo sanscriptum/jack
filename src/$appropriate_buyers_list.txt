@@ -1,0 +1,23 @@
+# $appropriate_buyers_list
+!Составляем список оптимальных покупателей для текущей рабыни
+gs '$slave_price'
+$appropriate_buyers_list = ''
+
+n = arrsize('$basic_buyer') - 1
+i = 0
+:loop
+i += 1
+
+IF rating = demand_rating[$basic_buyer[i]] and slave_specialisation[$interesting_specialisation[$basic_buyer[i]]] > 0 and npc_progress[$basic_buyer[i]] < 2:
+ $appropriate_buyers_list += '<br>  <<$diary_mark[$basic_buyer[i]]>>'
+END
+
+if i < n: jump 'loop'
+
+if $appropriate_buyers_list = '': $appropriate_buyers_list = '<br>  Вряд ли я найду сейчас подходящего покупателя для моей воспитуемой. Её ещё многому предстоит научиться.'
+
+$quest_description[2] = '<<$appropriate_buyers_list>>
+
+<a href = "EXEC: quest_description_mode = 0 & gt curloc">Назад</a>'
+--- $appropriate_buyers_list ---------------------------------
+

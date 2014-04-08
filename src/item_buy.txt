@@ -1,0 +1,39 @@
+# item_buy
+!Экран покупки предмета
+GS '_layout'
+
+*p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+*p '<div id = "bg"><img src="content\pic\<<$special_bg>>.jpg"></div>'
+*p '<div id = "text"><<$text[1]>></div>'
+
+if npc = 0:
+ $info_bar = ''
+ *p '<div id = "side_panel_main"><center><font size = 50%><<$place_name[$place]>></font>
+<<$place_location[$place]>>
+
+ Информация к размышлению:
+ </center></div>'
+ *p '<div id = "side_panel_text">  <<$place_info[$place]>>
+</div>'  
+ else
+ $info_bar = '' 
+ *p '<div id = "bg"><img src="content\pic\characters\<<$npc_image[$npc_id]>>.gif"></div>'
+ *p '<div id = "side_panel_main"><center><font size = 50%><<$npc_name[$npc_id]>></font>
+<<$npc_status[$npc_id]>>
+
+Информация к размышлению:
+</center></div>'
+ *p '<div id = "side_panel_text">  <<$npc_attitude[npc_attitude[$npc_id]]>>
+
+ <<$npc_info[$npc_id]>>
+</div>'
+END
+
+*p '<div id = "interaction_stat_bar"><<$info_bar>></div>'
+
+if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3'
+
+*p {<div id = "approve"><a href = 'EXEC: dynamic $do_buy & gt $return_lock'><img src="content\approve.png"></a></div>}
+*p {<div id = "deny"><a href = 'EXEC: gt $return_lock'><img src="content\deny.png"></a></div>}
+--- item_buy ---------------------------------
+

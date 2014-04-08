@@ -1,0 +1,80 @@
+# sex_screen
+!ЭКРАН ИНТЕРФЕЙСА ДЛЯ СЕКСА
+GS '_layout'
+gs 'sex_addup'
+
+$sex_menu = ''
+dynamic $sex_options[sex_num]
+gs "#sex_texts"
+gs 'sex_addup'
+
+$sex_master_stat = ''
+$sex_master_stat = 'Возбуждение:  <<$sex_pc_excitement[sex["pc_excitement_state"]]>><br>'
+$sex_master_stat += 'Энергия:       <<$sex_pc_energy[sex["pc_energy_state"]]>><br>'
+$sex_master_stat += 'Интерес:       <<$sex_pc_interest[sex["pc_interest_state"]]>><br>'
+$sex_master_stat += 'Запас семени:<<$sex_pc_boner[sex["pc_boner"]]>><br>'
+$sex_master_stat += 'Порог: <<sex["cum_treshold"]>><br>'
+
+$sex_info = '<BR>  Выносливость: <<$sex_girl_stamina[sex["girl_energy_state"]]>><br>'
+$sex_info += '<<$sex_girl_arousal[sex["girl_excitement"]]>> <<sex["girl_excitement"]>><br>'
+$sex_info += '<<$sex_girl_concentration[sex["girl_attention"]]>> <<sex["girl_attention"]>><br>'
+$sex_info += '<<$sex_girl_openmind[sex["girl_openmind"]]>> <<sex["girl_openmind"]>><br>'
+$sex_info += 'Оргазмометр: <<sex["climax_buildup"]>> / <<sex["climax_treshold"]>><br>'
+!$sex_info += '<<$sex_girl_pain[sex["girl_pain"]]>><br>'
+
+*p '<div id = "side_ava_up"><img src = "<<$master_ava>>"></div>'
+*p '<div id = "side_ava_down"><img src = "<<$sex["girl_ava"]>>.jpg"></div>'
+
+*p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+!*p '<div id = "text"></div>'
+*p '<div id = "intensity_knobs"><<$intensity_knobs>></div>'
+*p '<div id = "bg"><<$sex_menu>></div>'
+
+$info_bar = ''
+*p '<div id = "side_panel_main"><center><font size = 50%><<$master_name>></font></center></div>'
+*p '<div id = "side_panel_down"><center><font size = 50%><<$sex["girl_name"]>></font></center></div>'
+*p '<div id = "side_stats_up"><<$sex_master_stat>></div>'  
+*p '<div id = "side_stats_down"><<$sex_info>></div>'  
+
+
+!Кнопки интенсивности
+IF sex_num => 0:
+ IF intensity = 1:
+   *p {<div id = "intensity_01"><img src = "content\01.gif"></div>}
+  else
+   *p {<div id = "intensity_01"><a href = 'EXEC: intensity = 1 & gt $curloc'><img src = "content\01g.gif"></a></div>}
+ END
+ IF intensity = 2:
+   *p {<div id = "intensity_02"><img src = "content\02.gif"></div>}
+  else
+   *p {<div id = "intensity_02"><a href = 'EXEC: intensity = 2 & gt $curloc'><img src = "content\02g.gif"></a></div>}
+ END
+ IF intensity = 3:
+   *p {<div id = "intensity_03"><img src = "content\03.gif"></div>}
+  else
+   *p {<div id = "intensity_03"><a href = 'EXEC: intensity = 3 & gt $curloc'><img src = "content\03g.gif"></a></div>}
+ END
+ IF intensity = 4:
+   *p {<div id = "intensity_04"><img src = "content\04.gif"></div>}
+  else
+   *p {<div id = "intensity_04"><a href = 'EXEC: intensity = 4 & gt $curloc'><img src = "content\04g.gif"></a></div>}
+ END
+ IF intensity = 5:
+   *p {<div id = "intensity_05"><img src = "content\05.gif"></div>}
+  else
+   *p {<div id = "intensity_05"><a href = 'EXEC: intensity = 5 & gt $curloc'><img src = "content\05g.gif"></a></div>}
+ END
+END
+
+if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3'
+
+
+ if wizard_mode = 1: $msg_txt = "<center>Итог</center>
+Новизна: <<sex['girl_newness']>>
+Старание: <<diligence>>
+Навык: <<skill>>
+Качество: <<quality>>
+Сложность: <<diff>>
+Балланс: <<balance>>" 
+--- sex_screen ---------------------------------
+

@@ -1,0 +1,73 @@
+# auspex_list
+IF wizard_mode = 1: auspex = 1
+
+$auspex_list = ''
+
+IF auspex = 0:
+ $auspex_list = '' 
+ $info_text = 'Без заклинаний усиливающих ауспекс, аура воспитуемой видится вам бледной и нечеткой тенью. Вы не можете определить цвета, силу и направления потоков её духовного поля.'
+ else
+ $auspex_list = '    ' 
+ IF slave["obedience"] => 0:
+  IF slave["obedience"] < 10:
+   $auspex_list += $aura_obedience[slave["obedience"]]  
+   else
+   $auspex_list += $aura_obedience[10]  
+  END
+  else
+  if slave["obedience"] = -1:$auspex_list += $aura_obedience[11]  
+  if slave["obedience"] = -2:$auspex_list += $aura_obedience[12]  
+  if slave["obedience"] = -3:$auspex_list += $aura_obedience[13]  
+  if slave["obedience"] = -4:$auspex_list += $aura_obedience[15]  
+  if slave["obedience"] = -5:$auspex_list += $aura_obedience[14]  
+  if slave["obedience"] = -6:$auspex_list += $aura_obedience[16]  
+  if slave["obedience"] = -7:$auspex_list += $aura_obedience[17]  
+  if slave["obedience"] = -8:$auspex_list += $aura_obedience[18]  
+  if slave["obedience"] = -9:$auspex_list += $aura_obedience[19]  
+  if slave["obedience"] < -9:$auspex_list += $aura_obedience[20]    
+ END
+
+ if master_supermacy = 0: $auspex_list += '. <<$aura_supermacy[3]>><BR><BR>'
+ if master_supermacy > 0 and master_supermacy < 4: $auspex_list += '. <<$aura_supermacy[4]>><BR><BR>'
+ if master_supermacy > 3: $auspex_list += '. <<$aura_supermacy[5]>><BR><BR>'
+ if master_supermacy > -4 and master_supermacy < 0: $auspex_list += '. <<$aura_supermacy[2]>><BR><BR>'
+ if master_supermacy < -3: $auspex_list += '. <<$aura_supermacy[1]>><BR><BR>'  
+
+ $auspex_list += '    <<$aura_lust[slave["arousal"]]>><br><BR>' 
+ $auspex_list += '    <<$aura_fear[slave["fear"]]>><br><BR>'
+ $auspex_list += '    <<$aura_angst[slave["angst"]]>><br><BR>'
+ $auspex_list += '    <<$aura_rational[slave["rational"]]>><br><BR>'   
+ $auspex_list += '    <<$aura_instinct[slave["instinct"]]>><br><BR>'
+ $auspex_list += '    <<$aura_custom[slave["custom"]]>><br><BR>'
+ $auspex_list += '    <<$aura_spoil[slave["spoil"]]>><br><BR>'
+ $auspex_list += '    <<$aura_moral[slave["moral"]]>>'
+ 
+ $info_text = 'Заклинание ауспекса позволяет вам различить цвета, направления и силу потоков духовного поля воспитуемой. Проанализировав их вы получаете детальную информацию.'
+ $auspex_list += ''
+END
+
+!"IF wizard_mode = 1:
+ $auspex_list += ''
+ $auspex_list += '
+Страх:          <<slave["fear"]>>/<<slave_rate["fear"]>>      Калории: <<slave["calories"]>>
+Ангст:          <<slave["angst"]>>/<<slave_rate["angst"]>>    
+Инстинкт:       <<slave["instinct"]>>/<<slave_rate["instinct"]>>  
+Рацио:          <<slave["rational"]>>/<<slave_rate["rational"]>>  
+Привычка:       <<slave["custom"]>>/<<slave_rate["custom"]>>      
+Мораль:         <<slave["moral"]>>/<<slave_rate["moral"]>>       
+Избалованность: <<slave["spoil"]>>/<<slave_rate["spoil"]>>      
+
+<<$beauty[slave["beauty"]]>> (<<slave_rate["beauty"]>>)
+<<$stamina[slave["stamina"]]>> (<<slave_rate["stamina"]>>)
+<<$exotic[slave["exotic"]]>> (<<slave_rate["exotic"]>>)
+<<$fat[slave["fat"]]>> (<<slave_rate["fat"]>>)
+<<$sensitivity[slave["sensitivity"]]>> (<<slave_rate["sensitivity"]>>)
+<<$style[slave["style"]]>> (<<slave["style"]>>)
+<<$intellect[slave["intellect"]]>> (<<slave_rate["intellect"]>>)
+<<$temper[slave["temper"]]>> (<<slave_rate["temper"]>>)
+<<$ego[slave["ego"]]>> (<<slave_rate["ego"]>>)
+<<$pride[slave["pride"]]>> (<<slave_rate["pride"]>>)
+'
+END"
+--- auspex_list ---------------------------------
+

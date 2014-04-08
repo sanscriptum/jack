@@ -1,0 +1,65 @@
+# sex_interaction_result
+!Второй этап обработки действий в секси-тайм
+$msg_txt = ''
+gs 'sex_addup'
+
+IF $interaction_type = 'deny':
+ txt_count = 1
+ $text[1] = '  Сучка сопротивляется! Она отказывается выполнять ваши указания.'
+END
+
+IF $interaction_type = 'foreplay':
+ if sex_done_thisperson['sex_interaction'] = 0: sex['girl_newness'] -= 1
+ txt_count = 1
+END
+
+IF $interaction_type = 'penetration':
+ if sex_done_thisperson['sex_interaction'] = 0: sex['girl_newness'] -= 1
+ txt_count = 1
+END
+
+IF $interaction_type = 'ejaculate':
+ sex['pc_boner'] -= 1
+ lube = 0
+ $insertion = '' 
+ sex["pc_excitement"] = 0
+ master_mood_rate += sex["cum_pleasure"] 
+ sex["cum_pleasure"] = 0
+END
+
+IF $interaction_type = 'extras':
+ txt_count = 1
+END
+
+IF sex["climax_force"] > 0:
+ txt_count += 1
+ IF sex["climax_force"] = 1:
+  $text[txt_count] = '   <<$sex_orgasm_clitoral>>'   
+  sex['girl_excitement'] = 1
+  sex["climax_buildup"] = 0
+ END
+ IF sex["climax_force"] = 2:
+  $text[txt_count] = '   <<$sex_orgasm_deep>>'  
+  sex["climax_buildup"] = sex["climax_treshold"]/2 
+ END
+ IF sex["climax_force"] = 3:
+  $text[txt_count] = '   <<$sex_orgasm_squirt>>'  
+  sex["climax_buildup"] = sex["climax_treshold"] - 10
+ END
+ if sex["climax_force"] > 1: sex["climax_count"] += 1
+ if sex["climax_top"] < sex["climax_force"]: sex["climax_top"] = sex["climax_force"] 
+ sex["climax_force"] = 0
+END
+
+sex_done_today[sex_interaction] += 1
+sex_done_thisperson[sex_interaction] += 1
+
+IF sex["pc_interest"] <= 0:
+ txt_count += 1
+ $text[txt_count] = '  В какой то момент вы понимаете, что всё это безумно вам надоело. Зачем церемониться с ней и пытаться доставить какое то удовольствие? Надо было просто кончить по быстрому, но теперь у вас и на это уже нет настроения.'  
+ $return_lock = 'sex_end' 
+END
+
+GT 'sex_interaction_screen'
+--- sex_interaction_result ---------------------------------
+

@@ -1,0 +1,84 @@
+# slave_auction_sell
+!Продаём рабыню Фариду
+IF farid_potential_debt > 0:
+ if slave_state = 0: interaction_city = 1191
+ if slave_state ! 0: interaction_city = 1192
+ gt 'interaction_city'
+END
+if farid_debt > 0: interaction_city = 1193 & gt 'interaction_city'
+
+$place = 'slave_stage'
+GS '_layout'
+GS '$slave_price'
+
+sell_price = price/2
+if sell_price < 1: sell_price = 1
+
+$npc_id = 'фарид_аукционщик'
+npc = 1
+txt_count = 6
+
+$text[1] = '[ФАРИД]
+  <font color="#660000">- А! Это же мой добрый друг <<$master_name>>!!! Всегда рад тебя видеть, дАрагой! Ну-ка, кого ты привел с собой? Это одна из твоих воспитанниц? Вах, какова!
+</font>'
+$text[2] = '  <font color="#191970">- Без тебя никуда, Фарид. Будь другом, глянь чего она стоит? Я бы сдал её тебе на реализацию, если по цене сойдемся.
+</font>'
+
+IF slave['brand'] = 0:
+ $text[3] = '[ФАРИД]
+  <font color="#660000">- Неклейменая? Ну это мой профиль да, но много тут не выйдет, сам понимаешь. Оценю только внешние данные... Ну ка, пакрутисъ сладкая...
+</font>'
+ else
+ $text[3] = '[ФАРИД]
+  <font color="#660000">- О! Девочка то с клеймом! Не совсем мой профиль, канэшна но для тебя найдем и ей сбыт, радной. Расскажи-ка, чему ты её научил, что умеет, как с поведением у нее?
+</font>'
+ if brand_reputation <= 6: $text[3] = '[ФАРИД]
+  <font color="#660000">- Беда-беда... Девочка то с клеймом! Не мой профиль. Не магу её взять, дарагой. Рад бы да не магу. С меня же гильдия щкуру спустит за такие щтуки.
+</font>' & text_count = 3
+END
+
+$text[4] = '[ФАРИД]
+  <font color="#660000">- Ага... ага... Ну ясно, читож. Чтобы самому без паследний штаны не астаца, магу дать тебе за нее <<sell_price>> искра. Больше искра? Нет, радной, извиняй. Больше искра никак не магу.
+</font>'
+
+$text[5] = '  <a href = ''EXEC: gt "slave_auction_sell_end"''><font color="#228B22">- Грабишь средь бела дня, Фарид. Ну да ладно... по рукам! 
+</font></a>
+  <a href = ''EXEC: gt "city_menu_form"''><font color="#B22222">- Ну это никуда не годится! Я и с завязанными глазами покупателя получше найду.
+</font></a>'
+
+*p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+*p '<div id = "text"><<$text[txt]>></div>'
+
+IF npc = 1:
+ *p '<div id = "bg"><img src="content\pic\characters\<<$npc_image[$npc_id]>>.gif"></div>'
+ *p '<div id = "side_panel_main"><center><font size = 50%><<$npc_name[$npc_id]>></font>
+<<$npc_status[$npc_id]>>
+
+Информация к размышлению:
+</center></div>'
+ *p '<div id = "side_panel_text">  <<$npc_attitude[npc_attitude[$npc_id]]>>
+
+ <<$npc_info[$npc_id]>>
+</div>'
+ else
+ *p '<div id = "side_panel_main"><center><font size = 50%><<$place_name[$place]>></font>
+ <<$place_location[$place]>>
+
+Информация к размышлению:
+</center></div>'
+ *p '<div id = "side_panel_text">  <<$place_info[$place]>>
+</div>' 
+END
+
+IF brand_reputation <= 0 and slave['brand'] > 0 and txt > 2: txt = 7
+
+if txt > 1: 
+ addobj '<img src = "content\back_button.png">'
+ else
+ addobj '<img src = "content\noback_button.png">' 
+END 
+addobj '<img src = "content\forward_button.png">'
+
+
+--- slave_auction_sell ---------------------------------
+

@@ -1,0 +1,318 @@
+# #moodlet_base
+!БАЗА МУДЛЕТОВ
+!Списком
+$master_good_mood[1] = 'pos_housing'
+$master_good_mood[2] = 'pos_house_clean'
+$master_good_mood[3] = 'pos_statisfied'
+$master_good_mood[4] = 'pos_rebell'
+$master_good_mood[5] = 'pos_new_slave'
+$master_good_mood[6] = 'pos_self_clean'
+$master_good_mood[7] = 'pos_date'
+$master_good_mood[8] = 'pos_energy'
+$master_good_mood[9] = 'pos_optimism'
+$master_good_mood[10] = 'pos_massage'
+$master_good_mood[11] = 'pos_good_morning'
+$master_good_mood[12] = 'pos_show'
+$master_good_mood[13] = 'pos_deal'
+$master_good_mood[14] = 'pos_self_food'
+$master_good_mood[15] = 'pos_wealth'
+$master_good_mood[16] = 'pos_good_pet'
+$master_good_mood[17] = 'pos_toilet'
+$master_good_mood[18] = 'pos_master_precious'
+$master_good_mood[19] = 'pos_drunk'
+$master_good_mood[20] = 'pos_opium'
+$master_good_mood[21] = 'pos_bahus'
+$master_good_mood[22] = 'pos_master_winner'
+$master_good_mood[23] = 'pos_master_cloth'
+
+$master_bad_mood[1] = 'neg_housing'
+$master_bad_mood[2] = 'neg_house_mess'
+$master_bad_mood[3] = 'neg_boner'
+$master_bad_mood[4] = 'neg_softcore'
+$master_bad_mood[5] = 'neg_nice_slave'
+$master_bad_mood[6] = 'neg_cook'
+$master_bad_mood[7] = 'neg_cleaning'
+$master_bad_mood[8] = 'neg_dirty'
+$master_bad_mood[9] = 'neg_tired'
+$master_bad_mood[10] = 'neg_alone'
+$master_bad_mood[11] = 'neg_grumpy'
+$master_bad_mood[12] = 'neg_boring'
+$master_bad_mood[13] = 'neg_food'
+$master_bad_mood[14] = 'neg_wealth'
+$master_bad_mood[15] = 'neg_accounts'
+$master_bad_mood[16] = 'neg_master_precious'
+$master_bad_mood[17] = 'neg_drunk'
+$master_bad_mood[18] = 'neg_wounded'
+$master_bad_mood[19] = 'neg_no_koffe'
+$master_bad_mood[20] = 'neg_no_meth'
+$master_bad_mood[21] = 'neg_no_opium'
+$master_bad_mood[22] = 'neg_master_ill'
+$master_bad_mood[23] = 'neg_master_loser'
+$master_bad_mood[24] = 'neg_master_cloth'
+
+$slave_good_mod[1] = 'pos_sleep'
+$slave_good_mod[2] = 'pos_prise'
+$slave_good_mod[3] = 'pos_slave_date'
+$slave_good_mod[4] = 'pos_reward'
+$slave_good_mod[5] = 'pos_orgasm'
+$slave_good_mod[6] = 'pos_cookie'
+$slave_good_mod[7] = 'pos_gentle'
+$slave_good_mod[8] = 'pos_games'
+$slave_good_mod[9] = 'pos_job'
+$slave_good_mod[10] = 'pos_clothes'
+$slave_good_mod[11] = 'pos_moral'
+$slave_good_mod[12] = 'pos_no_punish'
+$slave_good_mod[13] = 'pos_desert'
+$slave_good_mod[14] = 'pos_well_rested'
+$slave_good_mod[15] = 'pos_slave_clean'
+$slave_good_mod[16] = 'pos_pony'
+$slave_good_mod[17] = 'pos_spellguarded'
+$slave_good_mod[18] = 'pos_artifact'
+$slave_good_mod[19] = 'pos_slave_kannabis'
+$slave_good_mod[20] = 'pos_slave_alco'
+$slave_good_mod[21] = 'pos_slave_opium'
+$slave_good_mod[22] = 'pos_slave_drunk'
+$slave_good_mod[23] = 'pos_slave_love'
+$slave_good_mod[24] = 'pos_slave_winner'
+
+$slave_bad_mod[1] = 'neg_artifact'
+$slave_bad_mod[2] = 'neg_pain'
+$slave_bad_mod[3] = 'neg_abuse'
+$slave_bad_mod[4] = 'neg_disgust'
+$slave_bad_mod[5] = 'neg_sick'
+$slave_bad_mod[6] = 'neg_menstruation'
+$slave_bad_mod[5] = 'neg_slave'
+$slave_bad_mod[8] = 'neg_slave_dirty'
+$slave_bad_mod[9] = 'neg_slave_mess'
+$slave_bad_mod[10] = 'neg_horny'
+$slave_bad_mod[11] = 'neg_hungry'
+$slave_bad_mod[12] = 'neg_exhausted'
+$slave_bad_mod[13] = 'neg_fear'
+$slave_bad_mod[14] = 'neg_no_prise'
+$slave_bad_mod[15] = 'neg_angst'
+$slave_bad_mod[16] = 'neg_spoil'
+$slave_bad_mod[17] = 'neg_rules'
+$slave_bad_mod[18] = 'neg_bad_sleep'
+$slave_bad_mod[19] = 'neg_prisoner'
+$slave_bad_mod[20] = 'neg_naked'
+$slave_bad_mod[21] = 'neg_job'
+$slave_bad_mod[22] = 'neg_defloration'
+$slave_bad_mod[23] = 'neg_forced'
+$slave_bad_mod[24] = 'neg_raped'
+$slave_bad_mod[25] = 'neg_shame'
+$slave_bad_mod[26] = 'neg_spellbound'
+$slave_bad_mod[27] = 'neg_slave_food'
+$slave_bad_mod[28] = 'neg_slave_koffe'
+$slave_bad_mod[29] = 'neg_slave_meth'
+$slave_bad_mod[30] = 'neg_slave_opium'
+$slave_bad_mod[31] = 'neg_slave_drunk'
+$slave_bad_mod[32] = 'neg_slave_ill'
+$slave_bad_mod[33] = 'neg_slave_looser'
+
+
+!Позитивные моды героя
+$mood_description['pos_housing'] = 'Надо признать, что у меня весьма достойное жилище.'
+$mood_description['pos_house_clean'] = 'В доме идеальная чистота и порядок.'
+$mood_description['pos_statisfied'] = 'После такого задорного секса, мозг неизбежно переключается на позитивную волну!'
+$mood_description['pos_rebell'] = 'Воспитание девочки идёт на пять, я отлично справляюсь.'
+$mood_description['pos_new_slave'] = 'Новый день - новая рабыня. Покупки всегда поднимают настроение.'
+$mood_description['pos_self_clean'] = 'Нет ничего приятнее чем хорошенько вымыться. Чистота - залог здоровья!'
+$mood_description['pos_date'] = 'Надо сказать, что свидание прошло отлично.'
+$mood_description['pos_energy'] = 'Я свеж и полон сил. Где там движуха?'
+$mood_description['pos_optimism'] = 'Моя воспитуемая такая милашка, что хочется общаться с ней не переставая.'
+$mood_description['pos_massage'] = 'Мммм... расслабон. Все-таки приятно когда о тебе заботится красивая и нежная женщина....'
+$mood_description['pos_good_morning'] = 'Утренний минет - прекрасное начало дня.'
+$mood_description['pos_show'] = 'Я отлично развлёкся. То что надо чтобы развеять скуку!'
+$mood_description['pos_deal'] = 'Хорошая сделка. Теперь у меня больше искр, которые можно потратить на что-нибудь приятное!'
+$mood_description['pos_self_food'] = 'Я отлично поел. Просто праздник вкуса!'
+$mood_description['pos_wealth'] = 'Хорошо когда не надо ограничивать себя в деньгах.'
+$mood_description['pos_good_pet'] = 'Не зря люди заводят кошек - отлично снимает стресс. Даже если это не совсем кошка...'
+$mood_description['pos_toilet'] = 'Из моей восприуемой вышел отличный туалет. Куда приятней обычного унитаза.'
+$mood_description['pos_master_precious'] = 'Это волшебное украшение отлично поднимает настроение. Прикасаясь к нему я сразу успокаиваюсь и мир кажется лучше. Оно просто прелесть!'
+$mood_description['pos_drunk'] = 'Сейчас я пьян и мне кажется что этот прогнивший мир, полный сраных каннибалов, садистов и ублюдков, не так уж и плох! И что я тоже не такой уж подонок...' 
+$mood_description['pos_opium'] = 'Эссенция забвения дарит покой и избавление от всех забот. Сейчас меня мало что волнует, разве что то что это не может длиться вечно.'
+$mood_description['pos_bahus'] = 'Почему мне хочется кусать щит? И почему это ощущение такое позитивное? Nyaaaaarrrrgh!!!!'
+$mood_description['pos_master_winner'] = 'Приятно чувствовать себя победителем!'
+$mood_description['pos_master_cloth'] = 'У меня очень удобная одежда. Для комфорта это немаловажно.'
+$mood_description['pos_'] = ''
+
+!Негативные моды героя 
+$mood_description['neg_housing'] = 'Я живу в какой-то халабуде. Никаких условий для работы и отдыха.'
+$mood_description['neg_house_mess'] = 'В доме грязь и бардак. Просто противно тут находиться.'
+$mood_description['neg_boner'] = 'Штаны так и распирает от стояка. Надо срочно снять напряжение.'
+$mood_description['neg_softcore'] = 'Похоже с сексом я немного перебрал. Хорошенького понеможку, мне нужен отдых.'
+$mood_description['neg_nice_slave'] = 'Воспитуемая меня совсем не слушается. Работы предстоит прорва...'
+$mood_description['neg_cook'] = 'Чтобы нормально поесть, я вынужден сам возиться на кухне со сковородками и тарелками. Какого чёрта?'
+$mood_description['neg_cleaning'] = 'Ненавижу возиться в грязи. Я же долбаный тренер рабынь. Что у меня уже в доме и убраться некому?!'
+$mood_description['neg_dirty'] = 'От меня уже воняет. Надо помыться, а то я сам себе противен.'
+$mood_description['neg_tired'] = 'Ууууухххх... как же я устал. Надо хорошенько отдохнуть, а то так и здоровья лишиться недолго.'
+$mood_description['neg_alone'] = 'У меня сейчас нет ни одной рабыни. Как то даже одиноко от этого...'
+$mood_description['neg_grumpy'] = 'Чёрт, какая же моя воспитуемая унылая! Прям работать не хочется - тоска зелёная.'
+$mood_description['neg_boring'] = 'Мне скууууууууучно... Нельзя же вечно только работать и трахаться. Надо и еще как то развлекаться!'
+$mood_description['neg_food'] = 'Это какое-то дерьмо, а не еда. Почему я питаюсь хуже чем некоторые рабы?!'
+$mood_description['neg_wealth'] = 'Я живу как последний нищеброд. Каждую копейку приходится считать. Надоело!'
+$mood_description['neg_accounts'] = 'Мне приходится самому заниматься всей бумажной работой. Нужна секретарша!'
+$mood_description['neg_master_precious'] = 'Как жаль что мне пришлось снять моё волшебное украшение. Оно моя прелесть! Надо надеть его обратно и больше никогда не снимать.'
+$mood_description['neg_drunk'] = 'Голова болит и во рту сушняк. Надо выпить. Надо срочно выпить... где то в шкафу у меня вроде была бутылка...'
+$mood_description['neg_wounded'] = 'Мои раны ноют под бинтами. Каждое неверное движение причиняет боль.'
+$mood_description['neg_no_koffe'] = 'Глза слипаются. Где моя утрення чашка камры?'
+$mood_description['neg_no_meth'] = 'Ох как же мне хреново. Нужно поправиться пыльцой фей, сразу стану бодрее и в мир вернутся краски.'
+$mood_description['neg_no_opium'] = 'Абстяга долбит. Скоро полезу на стенку. Такое ощущение что сдохну к черту если срочно не поставлюсь забвением.'
+$mood_description['neg_master_ill'] = 'Гадство. У меня с конца капает и жжёт когда иду в туалет. Какая-то из этих шлюх заразила меня сгнифилисом!'
+$mood_description['neg_master_loser'] = 'Ненавижу проигрывать. Хотя это не моя вина, рабыня должна была стараться лучше!'
+$mood_description['neg_master_cloth'] = 'Моя одежда никуда не годится! Сколько можно стирать и штопать? Надо обновить гардероб.'
+
+!Позитивные мудлеты воспитуемой
+$mood_description['pos_prise'] = '   [<<$slave_name>>]
+- Доброе слово и кошке приятно :3'
+$mood_description['pos_slave_date'] = '   [<<$slave_name>>]
+- Мне так понравилось наша прогулка. Я бы хотела еще как нибудь провести время вместе!'
+$mood_description['pos_reward'] = '   [<<$slave_name>>]
+- Награда за хорошее поведение это приятно. Повышает настроение.'
+$mood_description['pos_orgasm'] = '   [<<$slave_name>>]
+- Нуу... мне было так приятно получить разрядку. Я бы не отказалась ещё разок так кончить...'
+$mood_description['pos_cookie'] = '   [<<$slave_name>>]
+- Я очень вкусно покушала и это конечно приятно. У вас на столе еда лучше чем в моей миске.'
+$mood_description['pos_sleep'] = '   [<<$slave_name>>]
+- Я отлично выспалась в своей комнате. Так приятно бывает иногда отдохнуть в комфорте.'
+$mood_description['pos_slave_clean'] = '   [<<$slave_name>>]
+- Я недавно помылась. Приятно чувствовать себя чистой и свежей.'
+$mood_description['pos_well_rested'] = '   [<<$slave_name>>]
+- Я отлично отдохнула вчера, приятно бывает иногда побездельничать.'
+$mood_description['pos_desert'] = '   [<<$slave_name>>]
+- До сих пор помню аромат того сладкого угощения. Ммммм... вкусняшка!'
+$mood_description['pos_no_punish'] = '   [<<$slave_name>>]
+- Вы решили не наказывать меня, хотя я знаю что провинилась. Приятно знать что вы меня жалеете ^_^'
+$mood_description['pos_moral'] = '   [<<$slave_name>>]
+- Я всегда счастлива служить своему Господину. Я ведь хорошая девочка, правда, Хозяин?'
+$mood_description['pos_clothes'] = '   [<<$slave_name>>]
+- У меня очень удобная одежда. Ничего не жмёт и не мешается.'
+$mood_description['pos_job'] = '   [<<$slave_name>>]
+- Когда я занимаюсь любимым делом, у меня становится легко на душе'
+$mood_description['pos_games'] = '   [<<$slave_name>>]
+- Свободное время для развлечений это просто отлично! Так приятно отвлечься от забот.'
+$mood_description['pos_gentle'] = '   [<<$slave_name>>]
+- Так приятно иногда почувствовать чью-то заботу и ласку...'
+$mood_description['pos_pony'] = '   [<<$slave_name>>]
+- У меня же есть моя маленькая пони - с ней всегда веселее!'
+$mood_description['pos_spellguarded'] = '   [<<$slave_name>>]
+- Моя воля оказалась сильнее чем ваши чары! Я чувствую себя гораздо увереннее.'
+$mood_description['pos_artifact'] = '   [<<$slave_name>>]
+- Это волшебное украшение просто прелесть. Пока я ношу его, мир кажется куда лучше чем он есть. Я ни за что его не сниму!'
+$mood_description['pos_slave_kannabis'] = '   [<<$slave_name>>]
+- Ууууу... чувааааак... эта трава просто неееечто. Такой прям расслабон, ещё бы музычку какую ненапряжную.'
+$mood_description['pos_slave_alco'] = '   [<<$slave_name>>]
+- Я... ик... такаааая пьяная. Зачем вы меня напоили, а? Хотите воспользоваться моим беспомощным... ик... положением?'
+$mood_description['pos_slave_opium'] = '   [<<$slave_name>>]
+- Мне хорошо. Я чувуствую как забвение течёт по моим венам, унося за собой боль и печали.'
+$mood_description['pos_slave_drunk'] = '   [<<$slave_name>>]
+- Я... ик... такаааая пьяная. Зачем вы меня напоили, а? Хотите воспользоваться моим беспомощным... ик... положением?'
+$mood_description['pos_slave_love'] = '   [<<$slave_name>>]
+- Какая-то неодолимая сила манит меня к вам. Я всё время о вас думаю. Хочу быть рядом... всегда.'
+
+$mood_description['pos_slave_winner'] = '   [<<$slave_name>>]
+- Ура, мы победили! Это было потрясающе. Я чувствую себя намного увереннее.'
+$mood_description['pos_'] = '   [<<$slave_name>>]
+- '
+
+!Негативные мудлеты воспитуемой
+$mood_description['neg_slave'] = '   [<<$slave_name>>]
+- Я попала в незнакомый странный мир и меня тут же сделали рабыней. Какое у меня по вашему должно быть настроение?'
+$mood_description['neg_pain'] = '   [<<$slave_name>>]
+- Вы сделали мне очень больно. Я до сих пор это чувствую, никак не проходит. '
+$mood_description['neg_abuse'] = '   [<<$slave_name>>]
+- Вы так сильно на меня ругались, что мне до сих пор дурно.'
+$mood_description['neg_disgust'] = '   [<<$slave_name>>]
+- Не могу выбросить из головы весь этот ужас. Помоему боль даже легче пережить чем те омерзительные, жуткие вещи что вы со мной творите.'
+$mood_description['neg_sick'] = '   [<<$slave_name>>]
+- Я очень плохо себя чувствую. Даже голова кружится.'
+$mood_description['neg_menstruation'] = '   [<<$slave_name>>]
+- У меня эти дни... живот болит. Так что настроение не очень.'
+$mood_description['neg_slave_food'] = '   [<<$slave_name>>]
+- Та еда которую вы мне даете, она не слишком то вкусная. Сказать по правде, она настолько мерзкая что проще остаться голодной чем запихнуть это в себя...'
+$mood_description['neg_slave_dirty'] = '   [<<$slave_name>>]
+- Я вся чешусь от грязи и плохо пахну. Было бы неплохо помыться...'
+$mood_description['neg_slave_mess'] = '   [<<$slave_name>>]
+- В доме сейчас страшный бардак, посуда немытая, всё вверх дном. Не лучшие условия для жизни.'
+$mood_description['neg_horny'] = '   [<<$slave_name>>]
+- Каждой женщине время от времени нужно немного ласки. Без этого становится грустно...'
+$mood_description['neg_hungry'] = '   [<<$slave_name>>]
+- Я постоянно чувствую себя голодной. Хочу поесть нормально.'
+$mood_description['neg_exhausted'] = '   [<<$slave_name>>]
+- Я так сильно устала. Кажется с ног свалюсь если буду ещё чем то заниматься.'
+$mood_description['neg_fear'] = '   [<<$slave_name>>]
+- Я знаю что вы можете наказать меня за любой проступок и живу в постоянном страхе. Мысли о разных ужасах не идут у меня из головы.'
+$mood_description['neg_no_prise'] = '   [<<$slave_name>>]
+- Я так старалась делать всё хорошо, а вы даже не сказали мне ни одного доброго слова.'
+$mood_description['neg_angst'] = '   [<<$slave_name>>]
+- Не знаю что со мной будет завтра или даже в следующую минуту. Зачем я вообще живу? Мне выть хочется от безнадёжности...'
+$mood_description['neg_spoil'] = '   [<<$slave_name>>]
+- Ты совсем меня не ценишь?! Ну посмотри, что это за условия?! Развесели меня как нибудь! Мне скучно!'
+$mood_description['neg_rules'] = '   [<<$slave_name>>]
+- Все эти жуткие правила, которые вы заставляете меня выполнять... они не добавляют радости в жизни, вообще-то.'
+$mood_description['neg_bad_sleep'] = '      [<<$slave_name>>]
+- Условия для сна просто ужасные. У меня всё тело затекло и болит от такого "отдыха"'
+$mood_description['neg_prisoner'] = '      [<<$slave_name>>]
+- Я столько времени провела в заключении. Не самый приятный опыт...'
+$mood_description['neg_naked'] = '   [<<$slave_name>>]
+- Мне приходится везде ходить голышом. Это холодно и унизительно.'
+$mood_description['neg_job'] = '   [<<$slave_name>>]
+- Вы заставляете меня заниматься всякой скучной и неприятной работой. От этого у меня портится настроение.'
+$mood_description['neg_defloration'] = '   [<<$slave_name>>]
+- Секс в первый раз это страшно и больно. У меня до сих пор там всё болит внизу...'
+$mood_description['neg_forced'] = '   [<<$slave_name>>]
+- Вы же меня силой принуждаете к гадким вещам. Чувствую себя такой беспомощной. И синяки болят.'
+$mood_description['neg_raped'] = '   [<<$slave_name>>]
+- Вы изнасиловали меня! Я чувствую себя грязной, поруганной и растоптанной.'
+$mood_description['neg_shame'] = '   [<<$slave_name>>]
+- Боже, мне до сих пор стыдно. Почему вы заставляете меня делать такие неприличные вещи?'
+$mood_description['neg_spellbound'] = '   [<<$slave_name>>]
+- Ваши злые чары подавляют меня. В голове шепчутся какие-то голоса. Они сведут меня с ума!'
+$mood_description['neg_artifact'] = '   [<<$slave_name>>]
+- Моё волшебное украшение!  Моя... Моя прелесссть... Злой хозяин отнял его у нассс... голм... бедные мы несчастные... одиноооокие...'
+$mood_description['neg_slave_koffe'] = '   [<<$slave_name>>]
+- Пока я не выпью камры, проснуться не смогу. У меня даже глаза не разлепляются.'
+$mood_description['neg_slave_meth'] = '   [<<$slave_name>>]
+- Мне плохо. Мне очень-очень плохо. Во рту сухо, слабость, мышцы болят... МНЕ НУЖНА ПЫЛЬ!!!'
+$mood_description['neg_slave_opium'] = '   [<<$slave_name>>]
+- Я этого не вынесу. МНЕ НУЖНА ДОЗА, СРОЧНО!!! Ну пожалуйста... я умоляю...'
+$mood_description['neg_slave_drunk'] = '   [<<$slave_name>>]
+- Голова болит после вчерашнего. Нельзя столько пить.'
+$mood_description['neg_slave_ill'] = '   [<<$slave_name>>]
+- Мне в туалет больно ходить и выделения какие-то странные. Наверное я заразилась...'
+$mood_description['neg_slave_looser'] = '   [<<$slave_name>>]
+- Я не виновата в этом проигрыше! Враги были слишком сильные... '
+$mood_description['neg_'] = '   [<<$slave_name>>]
+- '
+$mood_description['neg_'] = '   [<<$slave_name>>]
+- '
+$mood_description['neg_'] = '   [<<$slave_name>>]
+- '
+$mood_description['neg_'] = '   [<<$slave_name>>]
+- '
+$mood_description['neg_'] = '   [<<$slave_name>>]
+- '
+$mood_description['neg_'] = '   [<<$slave_name>>]
+- '
+$mood_description['neg_'] = '   [<<$slave_name>>]
+- '
+$mood_description['neg_'] = '   [<<$slave_name>>]
+- '
+$mood_description['neg_'] = '   [<<$slave_name>>]
+- '
+$mood_description['neg_'] = '   [<<$slave_name>>]
+- '
+$mood_description['neg_'] = '   [<<$slave_name>>]
+- '
+$mood_description['neg_'] = '   [<<$slave_name>>]
+- '
+$mood_description['neg_'] = '   [<<$slave_name>>]
+- '
+$mood_description['neg_'] = '   [<<$slave_name>>]
+- '
+$mood_description['neg_'] = '   [<<$slave_name>>]
+- '
+$mood_description['neg_'] = '   [<<$slave_name>>]
+- '
+--- #moodlet_base ---------------------------------
+

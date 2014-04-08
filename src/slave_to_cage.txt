@@ -1,0 +1,107 @@
+# slave_to_cage
+!Сажаем воспитуемую в клетку, делаем заключенную воспитуемой
+temp = slave_state
+slave_state = prisoner_state
+prisoner_state = temp
+
+temp = slave_type
+slave_type = prisoner_type
+prisoner_type = temp
+
+$temp = $slave_type
+$slave_type = $prisoner_type
+$prisoner_type = $temp
+
+killvar 'temp'
+copyarr 'temp','slave'
+copyarr '$temp','$slave'
+killvar 'slave' 
+killvar '$slave' 
+copyarr 'slave','prisoner'
+copyarr '$slave','$prisoner'
+
+killvar 'temp_rate'
+copyarr 'temp_rate','slave_rate'
+killvar 'slave_rate' 
+copyarr 'slave_rate','prisoner_rate'
+
+killvar 'prisoner'
+killvar '$prisoner'
+copyarr 'prisoner','temp'
+copyarr '$prisoner','$temp'
+killvar 'prisoner_rate'
+copyarr 'prisoner_rate','temp_rate'
+
+killvar 'temp'
+copyarr 'temp','already_done_prisoner'
+killvar 'already_done_prisoner'
+copyarr 'already_done_prisoner','already_done_curslave'
+killvar 'already_done_curslave'
+copyarr 'already_done_curslave','temp'
+
+killvar 'temp'
+copyarr 'temp','already_sex_prisoner'
+killvar 'already_sex_prisoner'
+copyarr 'already_sex_prisoner','already_sex_curslave'
+killvar 'already_sex_curslave'
+copyarr 'already_sex_curslave','temp'
+
+killvar 'temp'
+copyarr 'temp','slave_inventory'
+killvar 'slave_inventory' 
+copyarr 'slave_inventory','prisoner_inventory'
+copyarr 'prisoner_inventory','temp'
+
+$temp_name = $slave_name
+$temp_psy_basic = $slave_psy_basic
+$temp_world_description = $slave_world_description
+$temp_family_description = $slave_family_description
+$temp_occupation_description = $slave_occupation_description
+$temp_psy_basic = $slave_psy_basic 
+temp_virginity = virginity
+
+$slave_name = $prisoner_name
+$slave_psy_basic = $prisoner_psy_basic
+$slave_world_description = $prisoner_world_description
+$slave_family_description = $prisoner_family_description
+$slave_occupation_description = $prisoner_occupation_description
+$slave_psy_basic = $prisoner_psy_basic 
+virginity = prisoner_virginity
+
+$prisoner_name = $temp_name
+$prisoner_psy_basic = $temp_psy_basic
+$prisoner_world_description = $temp_world_description
+$prisoner_family_description = $temp_family_description
+$prisoner_occupation_description = $temp_occupation_description
+$prisoner_psy_basic = $temp_psy_basic 
+prisoner_virginity = temp_virginity
+
+tmp = prise_promised
+prise_promised = prise_promised_prisoner
+prise_promised_prisoner = tmp
+
+tmp = gift_promised
+gift_promised = gift_promised_prisoner
+gift_promised_prisoner = tmp
+
+tmp = prise_promised
+prise_promised = prise_promised_prisoner
+prise_promised_prisoner = tmp
+
+tmp = abandon_treat
+abandon_treat = abandon_treat_prisoner
+abandon_treat_prisoner = tmp
+
+tmp = death_treat
+death_treat = death_treat_prisoner
+death_treat_prisoner = tmp
+
+rules_broken = 0
+
+gs '#txt'
+gs '#txt_2'
+gs '$newloc'
+$prisoner_info_text = '<<$ppsy_status[$prisoner_psy_status]>>'
+GT 'prison_cell'
+--- slave_to_cage ---------------------------------
+

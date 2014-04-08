@@ -1,0 +1,55 @@
+# stasis_cell
+$place = "stasis_cell"
+gs '_layout'
+
+if iced_state = 0: 
+ $text = '<<$cell_empty>>'
+ else
+ $text = '   <<$iced_name>> покоится в состоянии стазиса. Она может пробыть так без изменений неограниченно долгое время. Точнее, пока вы тратите искры на поддержание работы аппарата.'
+END
+
+*p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+if iced_state > 0: *p '<div id = "bg"><img src="content\pic\<<$iced["fullimage"]>>.gif"></div>'
+*p '<div id = "text"><<$text>></div>'
+
+IF iced_state > 0 and slave_state = 0:
+ *p '<div id = "cell"><a href = "EXEC: gt ''slave_to_iced''"><img src="content\pic\release.png"></a></div>'
+END
+
+IF iced_state = 0 and slave_state > 0:
+ *p '<div id = "cell"><a href = "EXEC: gt ''slave_to_iced''"><img src="content\pic\imprison.png"></a></div>'
+END
+
+IF iced_state > 0 and slave_state > 0:
+ *p '<div id = "cell"><a href = "EXEC: gt ''slave_to_iced''"><img src="content\pic\cell_exchange.png"></a></div>'
+END
+
+IF iced_state > 0:
+ $info_bar = 'ОЦЕНКА:
+<<$beauty[iced["beauty"]]>> 
+<<$stamina[iced["stamina"]]>>  
+<<$exotic[iced["exotic"]]>> 
+<<$fat[iced["fat"]]>> 
+<<$sensitivity[iced["sensitivity"]]>>  
+<<$style[iced["style"]]>> 
+<<$intellect[iced["intellect"]]>> 
+<<$temper[iced["temper"]]>> 
+<<$ego[iced["ego"]]>> 
+<<$pride[iced["pride"]]>> 
+'
+
+ else
+ $info_bar = ''
+ *p '<div id = "side_panel_main"><center><font size = 50%><<$place_name[$place]>></font>
+<<$place_location[$place]>>
+
+ Информация к размышлению:
+ </center></div>'
+ *p '<div id = "side_panel_text">  <<$place_info[$place]>>
+</div>'  
+END
+
+*p '<div id = "interaction_stat_bar"><<$info_bar>></div>'
+*p '<div id = "close_far"><a href = "EXEC: gt ''menu_form''"><img src = "content\close_button.png"></a></div>'
+--- stasis_cell ---------------------------------
+

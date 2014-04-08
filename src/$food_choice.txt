@@ -1,0 +1,73 @@
+# $food_choice
+!TODO: сделать из 5 циклов 1
+!Выбираем блюдо на обед
+frige["none"] = 5
+$cooked_meal = 'консервы'
+end_rate = 0
+
+!TODO: исправить хардкод - еды 1 уровня 12 штук, и далее по всем уровням
+IF cooked_food > 0:
+ i = 0
+ :loop1
+    i += 1
+    ! 1 - 12, т.к. еда первого уровня от 1 до 12
+    $try = $meal_id[RAND (1, 12)]
+    if frige[$meal_first_ingridient[$try]] > 0 and frige[$meal_second_ingridient[$try]] > 0 and frige[$meal_third_ingridient[$try]] > 0 and frige[$meal_forth_ingridient[$try]] > 0: $cooked_meal = $try & end_rate = 1
+ if $cooked_meal = 'консервы' and i < 30: jump 'loop1'
+END
+
+IF cooked_food > 1:
+ $pre = $cooked_meal
+ i = 0
+ :loop2
+    i += 1
+    ! 13 - 27, т.к. еда второго уровня от 13 до 27
+    $try = $meal_id[RAND (13, 27)]
+    
+    if frige[$meal_first_ingridient[$try]] > 0 and frige[$meal_second_ingridient[$try]] > 0 and frige[$meal_third_ingridient[$try]] > 0 and frige[$meal_forth_ingridient[$try]] > 0: $cooked_meal = $try & end_rate = 2
+ if $cooked_meal = $pre and i < 30: jump 'loop2'
+END
+
+IF cooked_food > 2:
+ $pre = $cooked_meal
+ i = 0
+ :loop3
+    i += 1
+    ! 18 - 33, т.к. еда третьего уровня от 18 до 33
+    $try = $meal_id[RAND (18, 33)]
+    
+    if frige[$meal_first_ingridient[$try]] > 0 and frige[$meal_second_ingridient[$try]] > 0 and frige[$meal_third_ingridient[$try]] > 0 and frige[$meal_forth_ingridient[$try]] > 0: $cooked_meal = $try & end_rate = 3
+ if $cooked_meal = $pre and i < 30: jump 'loop3'
+END
+
+IF cooked_food > 3:
+ $pre = $cooked_meal
+ i = 0
+ :loop4
+    i += 1
+    ! 34 - 49, т.к. еда четвертого уровня от 34 до 49
+    $try = $meal_id[RAND (34, 49)]
+    
+    if frige[$meal_first_ingridient[$try]] > 0 and frige[$meal_second_ingridient[$try]] > 0 and frige[$meal_third_ingridient[$try]] > 0 and frige[$meal_forth_ingridient[$try]] > 0: $cooked_meal = $try & end_rate = 4
+ if $cooked_meal = $pre and i < 30: jump 'loop4'
+END
+
+IF cooked_food > 4:
+ $pre = $cooked_meal
+ i = 0
+ :loop5
+    i += 1
+    ! 50 - 64, т.к. еда пятого уровня от 50 до 64
+    $try = $meal_id[RAND (50, 64)]
+    
+    if frige[$meal_first_ingridient[$try]] > 0 and frige[$meal_second_ingridient[$try]] > 0 and frige[$meal_third_ingridient[$try]] > 0 and frige[$meal_forth_ingridient[$try]] > 0: $cooked_meal = $try & end_rate = 5
+ if $cooked_meal = $pre and i < 30: jump 'loop5'
+END
+
+frige[$meal_first_ingridient[$cooked_meal]] -= 1
+frige[$meal_second_ingridient[$cooked_meal]] -= 1
+frige[$meal_third_ingridient[$cooked_meal]] -= 1
+frige[$meal_forth_ingridient[$cooked_meal]] -= 1
+cooked_food = end_rate
+--- $food_choice ---------------------------------
+

@@ -1,0 +1,52 @@
+# sex_interaction_screen
+GS '_layout'
+npc = 0
+
+*p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+*p '<div id = "text"><<$text[txt]>></div>'
+*p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+ 
+!'
+$sex_master_stat = ''
+$sex_master_stat = 'Возбуждение:  <<$sex_pc_excitement[sex["pc_excitement_state"]]>><br>'
+$sex_master_stat += 'Энергия:       <<$sex_pc_energy[sex["pc_energy_state"]]>><br>'
+$sex_master_stat += 'Интерес:       <<$sex_pc_interest[sex["pc_interest_state"]]>><br>'
+$sex_master_stat += 'Запас семени:<<$sex_pc_boner[sex["pc_boner"]]>><br>'
+
+$sex_info = '<BR>  Выносливость: <<$sex_girl_stamina[sex["girl_energy_state"]]>><br>'
+$sex_info += '<<$sex_girl_arousal[sex["girl_excitement"]]>><br>'
+$sex_info += '<<$sex_girl_concentration[sex["girl_attention"]]>><br>'
+$sex_info += '<<$sex_girl_openmind[sex["girl_openmind"]]>><br>'
+!$sex_info += '<<$sex_girl_pain[sex["girl_pain"]]>><br>'
+
+*p '<div id = "side_ava_up"><img src = "<<$master_ava>>"></div>'
+*p '<div id = "side_ava_down"><img src = "<<$slave["ava"]>>.jpg"></div>'
+
+$info_bar = ''
+*p '<div id = "side_panel_main"><center><font size = 50%><<$master_name>></font></center></div>'
+*p '<div id = "side_panel_down"><center><font size = 50%><<$slave_name>></font></center></div>'
+*p '<div id = "side_stats_up"><<$sex_master_stat>></div>'  
+*p '<div id = "side_stats_down"><<$sex_info>></div>'  
+'
+
+$info_bar = ''
+*p '<div id = "side_panel_main"><center>Итог</center>
+Новизна: <<sex["girl_newness"]>>
+Старание: <<diligence>>
+Навык: <<skill>>
+Качество: <<quality>>
+Сложность: <<diff>>
+Балланс: <<balance>></div>'  
+
+if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3'
+
+if txt > 1: 
+ addobj '<img src = "content\back_button.png">'
+ else
+ addobj '<img src = "content\noback_button.png">' 
+END 
+addobj '<img src = "content\forward_button.png">'
+
+if $msg_txt ! '': msg '<<$msg_txt>>'
+--- sex_interaction_screen ---------------------------------
+

@@ -1,0 +1,657 @@
+# #masters_base
+!База данных по прегенерированным тренерам
+
+
+$sepia_ava_path[1] = 'content\pic\master\master_noble_sepia.jpg'
+$clear_ava_path[1] = 'content\pic\master\master_noble.jpg'
+$master_base_name[1] = 'Милорд'
+$hero_difficulty[1] = '<font color="#008080">несложная игра</font>'
+$hero_description[1] = '   Аристократ с блестящим воспитанием, имеющий опыт придворной и военной службы. Обладая всеми основными навыками необходимыми тренеру, он с лёгкостью влился в ряды работорговцев и все согласны что впереди его ждёт замечательная карьера...
+
+Фракция: Великий Дом Таурус'
+$master_version_stats[1] = {
+master_str = 4
+master_cha = 4
+master_style = 0
+master_libido = 2 
+
+master_tutor = 2
+master_fighter = 4
+master_butler = 2
+master_artdirector = 3
+master_medic = 2
+master_mage = 0
+master_torture = 3
+master_domination = 4
+master_bondage = 0
+master_flagelation = 4
+
+master_petting = 3
+master_oral = 2
+master_penetration = 4
+master_fetish = 3
+
+$master_armor = 'эльчуга'
+$master_cloth = 'regal_suit'
+$master_right_wpn = 'шпага'
+sparks = 2000
+
+faction_fame['taurus'] = 1
+} 
+
+
+$sepia_ava_path[2] = 'content\pic\master\master_torturer_sepia.jpg'
+$clear_ava_path[2] = 'content\pic\master\master_torturer.jpg'
+$master_base_name[2] = 'Робеспьер'
+$hero_description[2] = '   Когда-то он был солдатом и воевал за короля в его колониальных войнах. Затем короля свергли и революции понадобились палачи. Больше всего на свете он гордится тем что собственноручно обезглавил красивую, но надменную королеву. В Вечном Риме навыки палача тоже пригодятся.
+
+Фракция: Великий Дом Таурус'
+$hero_difficulty[2] = '<font color="#0000CD">нормальная сложность</font>'
+$master_version_stats[2] = {
+master_str = 5
+master_cha = 1
+master_style = 0
+master_libido = 3
+
+master_tutor = 0
+master_fighter = 3
+master_butler = 1
+master_artdirector = 0
+master_medic = 3
+master_mage = 0
+master_torture = 5
+master_domination = 3
+master_bondage = 5
+master_flagelation = 5
+
+master_petting = 2
+master_oral = 2
+master_penetration = 4
+master_fetish = 4
+
+$master_armor = 'без_брони'
+$master_right_wpn = 'кнут'
+
+faction_fame['taurus'] = 1
+} 
+
+$sepia_ava_path[3] = 'content\pic\master\master_fighter_sepia.jpg'
+$clear_ava_path[3] = 'content\pic\master\master_fighter.jpg'
+$master_base_name[3] = 'Блейд'
+$hero_description[3] = '   В суровом мире где он родился, врожденная физическая сила ценилась очень дорого. Блейд стал одним из лучших воинов и уверенно шел к успеху, но попал почему-то в Туман. Хотя хороший боец не пропадёт в Вечном Риме, всем нам иногда хочется изменить свою жизнь и добиться чего-то большего чем рядовая служба сильным мира сего.
+
+Фракция: Великий Дом Таурус'
+$hero_difficulty[3] = '<font color="#0000CD">нормальная сложность</font>'
+$master_version_stats[3] = {
+master_str = 5
+master_cha = 2
+master_style = 0
+master_libido = 3
+
+master_tutor = 1
+master_fighter = 5
+master_butler = 1
+master_artdirector = 0
+master_medic = 2
+master_mage = 0
+master_torture = 2
+master_domination = 3
+master_bondage = 2
+master_flagelation = 2
+
+master_petting = 2
+master_oral = 2
+master_penetration = 4
+master_fetish = 2
+
+$master_armor = 'ячуга'
+$master_cloth = 'aketon'
+$master_right_wpn = 'бастард'
+
+faction_fame['taurus'] = 1
+} 
+
+$sepia_ava_path[4] = 'content\pic\master\master_pimp_sepia.jpg'
+$clear_ava_path[4] = 'content\pic\master\master_pimp.jpg'
+$master_base_name[4] = 'Шёлковый Папочка'
+$hero_description[4] = '   У всех свои представления об успехе. Для ребят типа Шёлкового Папочки, быть состоявшимся сутенёром это мечта. Мечта воплотившаяся в жизнь. Теперь он в новом мире, но работа-то похожая. Чёрные, белые, желтые, хвостатые или ушастые — сучки всегда останутся сучками. И им нужен большой чёрный папочка. А папочке нужны большие деньги.
+
+Фракция: Великий Дом Серпис'
+$hero_difficulty[4] = '<font color="#0000CD">нормальная сложность</font>'
+$master_version_stats[4] = {
+master_str = 3
+master_cha = 4
+master_style = 0
+master_libido = 3
+
+master_tutor = 3
+master_fighter = 1
+master_butler = 2
+master_artdirector = 2
+master_medic = 1
+master_mage = 0
+master_torture = 2
+master_domination = 4
+master_bondage = 2
+master_flagelation = 0
+
+master_petting = 4
+master_oral = 4
+master_penetration = 5
+master_fetish = 5
+
+$master_cloth = 'fancy_suit'
+$master_right_wpn = 'кастет'
+
+faction_fame['serpis'] = 1
+} 
+
+$sepia_ava_path[5] = 'content\pic\master\master_butler_sepia.jpg'
+$clear_ava_path[5] = 'content\pic\master\master_butler.jpg'
+$master_base_name[5] = 'Батлер'
+$hero_description[5] = '   Попав в Вечный Рим, он обнаружил себя в щекотливом положении. Конечно опытный слуга пригодится везде, но быть рабом как то не хочется. Батлер приложил много усилий чтобы получить статус работорговца. В конце концов уж что-что а тренировать горничных это работа с которой лучше дворецкого никому не справиться.
+
+Фракция: Великий Дом Таурус'
+$hero_difficulty[5] = '<font color="#4B0082">высокая сложность</font>'
+$master_version_stats[5] = {
+master_str = 3
+master_cha = 3
+master_style = 0
+master_libido = 2
+
+master_tutor = 3
+master_fighter = 0
+master_butler = 5
+master_artdirector = 1
+master_medic = 1
+master_mage = 0
+master_torture = 0
+master_domination = 3
+master_bondage = 0
+master_flagelation = 2
+
+master_petting = 3
+master_oral = 1
+master_penetration = 3
+master_fetish = 0
+
+$master_cloth = 'livery'
+
+faction_fame['taurus'] = 1
+} 
+
+$sepia_ava_path[6] = 'content\pic\master\master_teacher_sepia.jpg'
+$clear_ava_path[6] = 'content\pic\master\master_teacher.jpg'
+$master_base_name[6] = 'Сэнсей'
+$hero_description[6] = '   Он был самым обычным учителем в школе, ничего особенного. Такому человеку сложно адаптироваться в Вечном Риме, но если сложить волю с толикой удачи то пробиться можно везде. Обучение рабынь имеет большую выгоду по сравнению с обучением школьниц: вместо двойки нерадивую ученицу будет ждать примерная порка!
+
+Фракция: Великий Дом Серпис'
+$hero_difficulty[6] = '<font color="#4B0082">высокая сложность</font>'
+$master_version_stats[6] = {
+master_str = 3
+master_cha = 3
+master_style = 0
+master_libido = 2
+master_energy = 5
+
+master_tutor = 5
+master_fighter = 0
+master_butler = 2
+master_artdirector = 2
+master_medic = 1
+master_mage = 0
+master_torture = 0
+master_domination = 3
+master_bondage = 0
+master_flagelation = 3
+
+master_petting = 2
+master_oral = 1
+master_penetration = 3
+master_fetish = 0
+
+$master_cloth = 'formal_suit'
+
+faction_fame['serpis'] = 1
+} 
+
+$sepia_ava_path[7] = 'content\pic\master\master_doctor_sepia.jpg'
+$clear_ava_path[7] = 'content\pic\master\master_doctor.jpg'
+$master_base_name[7] = 'Док'
+$hero_description[7] = '   Он всегда был очень хорошим врачом, и карьера шла в гору, но... Туманы многим спутали карты. Оказалось, что для Медцентра Техносферы даже знания Дока недостаточны, но это же не повод отчаиваться верно? Ему всегда хотелось попробовать обучать медсестёр в более раскрепощённой манере. Может быть это призвание?
+
+Фракция: Великий Дом Серпис'
+$hero_difficulty[7] = '<font color="#4B0082">высокая сложность</font>'
+$master_version_stats[7] = {
+master_str = 3
+master_cha = 3
+master_style = 0
+master_libido = 2
+
+master_tutor = 2
+master_fighter = 0
+master_butler = 1
+master_artdirector = 0
+master_medic = 5
+master_mage = 2
+master_torture = 3
+master_domination = 2
+master_bondage = 0
+master_flagelation = 0
+
+master_petting = 2
+master_oral = 1
+master_penetration = 3
+master_fetish = 0
+
+$master_cloth = 'medic_robes'
+
+faction_fame['serpis'] = 1
+} 
+
+$sepia_ava_path[8] = 'content\pic\master\master_impressario_sepia.jpg'
+$clear_ava_path[8] = 'content\pic\master\master_impressario.jpg'
+$master_base_name[8] = 'Мистер Джестико'
+$hero_description[8] = '   Если бы он был помоложе, то имел бы в гильдии работорговцев просто блестящие перспективы. В конце концов для опытного импрессарио, найти и раскрутить новый талант это прямая обязанность. А с рабыней работать прощё чем с избалованной старлеткой. К сожалению Мистер Джестико уже староват и учиться новым фокусам будет тяжело. Но он полон решимости!
+
+Фракция: Великий Дом Таурус'
+$hero_difficulty[8] = '<font color="#4B0082">высокая сложность</font>'
+$master_version_stats[8] = {
+master_str = 2
+master_cha = 4
+master_style = 0
+master_libido = 1
+
+master_tutor = 3
+master_fighter = 0
+master_butler = 1
+master_artdirector = 5
+master_medic = 0
+master_mage = 2
+master_torture = 0
+master_domination = 3
+master_bondage = 0
+master_flagelation = 0
+
+master_petting = 4
+master_oral = 2
+master_penetration = 3
+master_fetish = 1
+
+$master_cloth = 'formal_suit'
+
+faction_fame['taurus'] = 1
+} 
+
+$sepia_ava_path[9] = 'content\pic\master\master_granpa_sepia.jpg'
+$clear_ava_path[9] = 'content\pic\master\master_granpa.jpg'
+$master_base_name[9] = 'Валентин Макарыч'
+$hero_description[9] = '   Рядовому пенсионеру, всю жизнь отпахавшему на заводе и надеющемуся прожить спокойную жизнь меньше всего хочется ухнуть в Туманы. Но Вечный Рим сам выбирает себе гостей. По удивительному стечению обстоятельств, единственной надеждой на достойную жизнь для дедули стала работа в гильдии работорговцев. Это будет непросто, но надо стараться — про пенсии в Вечном Риме никто не слыхал!
+
+Фракция: Великий Дом Серпис'
+$hero_difficulty[9] = '<font color="#C71585">очень высокая сложность</font>'
+$master_version_stats[9] = {
+master_str = 2
+master_cha = 3
+master_style = 0
+master_libido = 0
+
+master_tutor = 2
+master_fighter = 0
+master_butler = 2
+master_artdirector = 1
+master_medic = 1
+master_mage = 1
+master_torture = 0
+master_domination = 1
+master_bondage = 0
+master_flagelation = 2
+
+master_petting = 2
+master_oral = 1
+master_penetration = 2
+master_fetish = 0
+
+$master_cloth = 'comfy_robes'
+
+faction_fame['serpis'] = 1
+} 
+
+$sepia_ava_path[10] = 'content\pic\master\master_nerd_sepia.jpg'
+$clear_ava_path[10] = 'content\pic\master\master_nerd.jpg'
+$hero_description[10] = '   Этот прыщавый ботан и маменькин сынок, да как он вообще попал в Гильдию? Говорят, что Госпожа Ангелика сжалилась когда он стоял на рыночной площади с воткнутым в задницу флажком с загадочной надписью «sup/b». Но кто поверит в милосердие Ангелики? Так или иначе, возможность воспитывать сексуальных рабынь для озабоченного школьника-девственника это просто Клондайк. Только из всех навыков у него для этого есть лишь бездонная пропасть извращённых фантазий и подогреваемая гормонами гиперсексуальность.
+Фракция: Великий Дом Серпис'
+$hero_difficulty[10] = '<font color="#cd0000">максимальная сложность</font>'
+$master_base_name[10] = 'Алёшка'
+$master_version_stats[10] = {
+master_str = 1
+master_cha = 1
+master_style = 0
+master_libido = 5
+
+master_tutor = 0
+master_fighter = 0
+master_butler = 0
+master_artdirector = 0
+master_medic = 0
+master_mage = 0
+master_torture = 0
+master_domination = 0
+master_bondage = 0
+master_flagelation = 0
+
+master_petting = 0
+master_oral = 0
+master_penetration = 0
+master_fetish = 5
+
+sparks = 200
+
+faction_fame['serpis'] = 1
+} 
+
+$sepia_ava_path[11] = 'content\pic\master\master_blank.jpg'
+$clear_ava_path[11] = 'content\pic\master\master_blank.jpg'
+$master_base_name[11] = '???'
+$master_version_stats[11] = {
+master_str = 4
+master_cha = 3
+master_style = 3
+master_libido = 3
+master_energy = 5
+
+master_tutor = 3
+master_fighter = 3
+master_butler = 3
+master_artdirector = 3
+master_medic = 3
+master_mage = 3
+master_torture = 3
+master_domination = 3
+master_bondage = 3
+master_flagelation = 3
+
+master_petting = 3
+master_oral = 3
+master_penetration = 3
+master_fetish = 3
+
+faction_fame['korvus'] = 1
+} 
+
+$sepia_ava_path[12] = 'content\pic\master\master_blank.jpg'
+$clear_ava_path[12] = 'content\pic\master\master_blank.jpg'
+$master_base_name[12] = '???'
+$master_version_stats[12] = {
+master_str = 4
+master_cha = 3
+master_style = 3
+master_libido = 3
+master_energy = 5
+
+master_tutor = 3
+master_fighter = 3
+master_butler = 3
+master_artdirector = 3
+master_medic = 3
+master_mage = 3
+master_torture = 3
+master_domination = 3
+master_bondage = 3
+master_flagelation = 3
+
+master_petting = 3
+master_oral = 3
+master_penetration = 3
+master_fetish = 3
+
+faction_fame['kamira'] = 1
+} 
+
+!Другие тренеры
+$trainer_id[1] = 'mistress_angelika'
+$trainer_id[2] = 'goji'
+$trainer_id[3] = 'avgia'
+$trainer_id[4] = 'marivana'
+$trainer_id[5] = 'jeevs'
+$trainer_id[6] = 'master_s'
+$trainer_id[7] = 'morrigan'
+$trainer_id[8] = 'ippolita'
+$trainer_id[9] = 'von_valtz'
+$trainer_id[10] = 'geralt'
+$trainer_id[11] = 'yodson'
+$trainer_id[12] = 'applejack'
+$trainer_id[13] = 'giess'
+$trainer_id[14] = 'ling'
+$trainer_id[15] = 'minosia'
+$trainer_id[16] = 'rabban'
+$trainer_id[17] = 'sheepherd'
+
+$base_slave_type[1] = 'refferent'
+$base_slave_type[2] = 'pet'
+$base_slave_type[3] = 'nurse'
+$base_slave_type[4] = 'maid'
+$base_slave_type[5] = 'gladiatrix'
+$base_slave_type[6] = 'enchanter'
+$base_slave_type[7] = 'artist'
+$base_slave_type[8] = 'concubine'
+
+trainer_rating[''] = 1
+trainer_refferent_rating[''] = 0
+trainer_pet_rating[''] = 0
+trainer_nurse_rating[''] = 0
+trainer_maid_rating[''] = 0
+trainer_gladiatrix_rating[''] = 0
+trainer_enchanter_rating[''] = 0
+trainer_artist_rating[''] = 0
+trainer_concubine_rating[''] = 0
+
+$npc_name['госпожа_ангелика'] = 'Госпожа Ангелика'
+$npc_status['госпожа_ангелика'] = 'Мастер гильдии работорговцев
+Нейтралы'
+$npc_info['госпожа_ангелика'] = 'Похоже от этой дамочки зависит окончательное решение по поводу моего вступления в гильдию. Скорее всего это простая формальность, но не стоит терять бдительности. Она выглядит как человек который не прощает слабости и наслаждается страданием ближних...
+  Да какого черта?! Она выглядит как законченная стерва, хотя и сексуальная.'
+
+$npc_image['mistress_angelika'] = 'mistress_angelika'
+$npc_name['mistress_angelika'] = 'Госпожа Ангелика'
+$npc_status['mistress_angelika'] = 'Мастер гильдии
+Работорговцы (Нейтралы)'
+$npc_alignment['mistress_angelika'] = 'нейтралы'
+$npc_info['mistress_angelika'] = '   Ваша старая знакомая по обучению. Помоему она резковата в общении, ну да с другой стороны чего еще ожидать от профессиональной доминирующей госпожи... Такая работа некоторым портит характер. В вообще она ничего.'
+npc_attitude['mistress_angelika'] = 11
+npc_reveal['mistress_angelika'] = 0
+
+$npc_preferences['mistress_angelika'] = {
+stat_importance['service'] = 2
+stat_importance['cook'] = 3
+}
+$buyer_demand['mistress_angelika'] = {
+demand['min_stamina'] = 4
+}
+trainer_rating['mistress_angelika'] = 5
+trainer_refferent_rating['mistress_angelika'] = 4
+trainer_pet_rating['mistress_angelika'] = 4
+trainer_nurse_rating['mistress_angelika'] = 4
+trainer_maid_rating['mistress_angelika'] = 4
+trainer_gladiatrix_rating['mistress_angelika'] = 4
+trainer_enchanter_rating['mistress_angelika'] = 4
+trainer_artist_rating['mistress_angelika'] = 4
+trainer_concubine_rating['mistress_angelika'] = 4
+
+$npc_name['goji'] = 'Мастер Годзи'
+trainer_rating['goji'] = 5
+trainer_refferent_rating['goji'] = 4
+trainer_pet_rating['goji'] = 0
+trainer_nurse_rating['goji'] = 3
+trainer_maid_rating['goji'] = 4
+trainer_gladiatrix_rating['goji'] = 0
+trainer_enchanter_rating['goji'] = 0
+trainer_artist_rating['goji'] = 3
+trainer_concubine_rating['goji'] = 4
+
+$npc_name['avgia'] = 'Госпожа Авгия'
+trainer_rating['avgia'] = 4
+trainer_refferent_rating['avgia'] = 0
+trainer_pet_rating['avgia'] = 4
+trainer_nurse_rating['avgia'] = 3
+trainer_maid_rating['avgia'] = 2
+trainer_gladiatrix_rating['avgia'] = 0
+trainer_enchanter_rating['avgia'] = 0
+trainer_artist_rating['avgia'] = 2
+trainer_concubine_rating['avgia'] = 3
+
+$npc_name['marivana'] = 'Госпожа Мариванна'
+trainer_rating['marivana'] = 4
+trainer_refferent_rating['marivana'] = 4
+trainer_pet_rating['marivana'] = 3
+trainer_nurse_rating['marivana'] = 4
+trainer_maid_rating['marivana'] = 3
+trainer_gladiatrix_rating['marivana'] = 3
+trainer_enchanter_rating['marivana'] = 3
+trainer_artist_rating['marivana'] = 3
+trainer_concubine_rating['marivana'] = 0
+
+$npc_name['jeevs'] = 'Мастер Дживс'
+trainer_rating['jeevs'] = 4
+trainer_refferent_rating['jeevs'] = 4
+trainer_pet_rating['jeevs'] = 3
+trainer_nurse_rating['jeevs'] = 3
+trainer_maid_rating['jeevs'] = 4
+trainer_gladiatrix_rating['jeevs'] = 0
+trainer_enchanter_rating['jeevs'] = 0
+trainer_artist_rating['jeevs'] = 3
+trainer_concubine_rating['jeevs'] = 3
+
+$npc_name['master_s'] = 'Профессор Эс'
+trainer_rating['master_s'] = 4
+trainer_refferent_rating['master_s'] = 3
+trainer_pet_rating['master_s'] = 0
+trainer_nurse_rating['master_s'] = 3
+trainer_maid_rating['master_s'] = 3
+trainer_gladiatrix_rating['master_s'] = 0
+trainer_enchanter_rating['master_s'] = 4
+trainer_artist_rating['master_s'] = 0
+trainer_concubine_rating['master_s'] = 3
+
+$npc_name['morrigan'] = 'Госпожа Морриган'
+trainer_rating['morrigan'] = 3
+trainer_refferent_rating['morrigan'] = 3
+trainer_pet_rating['morrigan'] = 3
+trainer_nurse_rating['morrigan'] = 3
+trainer_maid_rating['morrigan'] = 3
+trainer_gladiatrix_rating['morrigan'] = 3
+trainer_enchanter_rating['morrigan'] = 3
+trainer_artist_rating['morrigan'] = 3
+trainer_concubine_rating['morrigan'] = 0
+
+$npc_name['ippolita'] = 'Госпожа Ипполита'
+trainer_rating['ippolita'] = 3
+trainer_refferent_rating['ippolita'] = 0
+trainer_pet_rating['ippolita'] = 4
+trainer_nurse_rating['ippolita'] = 3
+trainer_maid_rating['ippolita'] = 0
+trainer_gladiatrix_rating['ippolita'] = 3
+trainer_enchanter_rating['ippolita'] = 0
+trainer_artist_rating['ippolita'] = 0
+trainer_concubine_rating['ippolita'] = 3
+
+$npc_name['von_valtz'] = 'Мастер фон Вальц'
+trainer_rating['von_valtz'] = 3
+trainer_refferent_rating['von_valtz'] = 3
+trainer_pet_rating['von_valtz'] = 0
+trainer_nurse_rating['von_valtz'] = 0
+trainer_maid_rating['von_valtz'] = 3
+trainer_gladiatrix_rating['von_valtz'] = 0
+trainer_enchanter_rating['von_valtz'] = 0
+trainer_artist_rating['von_valtz'] = 4
+trainer_concubine_rating['von_valtz'] = 0
+
+$npc_name['geralt'] = 'Мастер Джеральд'
+trainer_rating['geralt'] = 3
+trainer_refferent_rating['geralt'] = 0
+trainer_pet_rating['geralt'] = 0
+trainer_nurse_rating['geralt'] = 2
+trainer_maid_rating['geralt'] = 0
+trainer_gladiatrix_rating['geralt'] = 4
+trainer_enchanter_rating['geralt'] = 2
+trainer_artist_rating['geralt'] = 0
+trainer_concubine_rating['geralt'] = 2
+
+$npc_name['yodson'] = 'Мастер Йодсон'
+trainer_rating['yodson'] = 3
+trainer_refferent_rating['yodson'] = 2
+trainer_pet_rating['yodson'] = 2
+trainer_nurse_rating['yodson'] = 2
+trainer_maid_rating['yodson'] = 2
+trainer_gladiatrix_rating['yodson'] = 2
+trainer_enchanter_rating['yodson'] = 2
+trainer_artist_rating['yodson'] = 2
+trainer_concubine_rating['yodson'] = 3
+
+$npc_name['applejack'] = 'Госпожа Эпплджек'
+trainer_rating['applejack'] = 2
+trainer_refferent_rating['applejack'] = 0
+trainer_pet_rating['applejack'] = 3
+trainer_nurse_rating['applejack'] = 2
+trainer_maid_rating['applejack'] = 0
+trainer_gladiatrix_rating['applejack'] = 3
+trainer_enchanter_rating['applejack'] = 0
+trainer_artist_rating['applejack'] = 0
+trainer_concubine_rating['applejack'] = 2
+
+$npc_name['giess'] = 'Мастер Гиесс'
+trainer_rating['giess'] = 2
+trainer_refferent_rating['giess'] = 0
+trainer_pet_rating['giess'] = 3
+trainer_nurse_rating['giess'] = 3
+trainer_maid_rating['giess'] = 3
+trainer_gladiatrix_rating['giess'] = 2
+trainer_enchanter_rating['giess'] = 2
+trainer_artist_rating['giess'] = 2
+trainer_concubine_rating['giess'] = 3
+
+$npc_name['ling'] = 'Мастер Линг Вао'
+trainer_rating['ling'] = 2
+trainer_refferent_rating['ling'] = 0
+trainer_pet_rating['ling'] = 2
+trainer_nurse_rating['ling'] = 0
+trainer_maid_rating['ling'] = 0
+trainer_gladiatrix_rating['ling'] = 3
+trainer_enchanter_rating['ling'] = 2
+trainer_artist_rating['ling'] = 2
+trainer_concubine_rating['ling'] = 2
+
+$npc_name['minosia'] = 'Госпожа Миносия'
+trainer_rating['minosia'] = 2
+trainer_refferent_rating['minosia'] = 0
+trainer_pet_rating['minosia'] = 2
+trainer_nurse_rating['minosia'] = 0
+trainer_maid_rating['minosia'] = 0
+trainer_gladiatrix_rating['minosia'] = 3
+trainer_enchanter_rating['minosia'] = 0
+trainer_artist_rating['minosia'] = 0
+trainer_concubine_rating['minosia'] = 2
+
+$npc_name['rabban'] = 'Зверь Раббан'
+trainer_rating['rabban'] = 1
+trainer_refferent_rating['rabban'] = 0
+trainer_pet_rating['rabban'] = 0
+trainer_nurse_rating['rabban'] = 0
+trainer_maid_rating['rabban'] = 2
+trainer_gladiatrix_rating['rabban'] = 3
+trainer_enchanter_rating['rabban'] = 0
+trainer_artist_rating['rabban'] = 0
+trainer_concubine_rating['rabban'] = 2
+
+$npc_name['sheepherd'] = 'Мастер Шеппард'
+trainer_rating['sheepherd'] = 1
+trainer_refferent_rating['sheepherd'] = 0
+trainer_pet_rating['sheepherd'] = 2
+trainer_nurse_rating['sheepherd'] = 0
+trainer_maid_rating['sheepherd'] = 2
+trainer_gladiatrix_rating['sheepherd'] = 2
+trainer_enchanter_rating['sheepherd'] = 0
+trainer_artist_rating['sheepherd'] = 0
+trainer_concubine_rating['sheepherd'] = 2
+--- #masters_base ---------------------------------
+

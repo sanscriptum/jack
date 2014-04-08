@@ -1,0 +1,134 @@
+# боевой_интерфейс
+!ВЫВОД ИНФОРМАЦИИ О БОЕ И ВАРИАНТОВ ДЕЙСТВИЙ ИГРОКА
+!Большую часть времени боя вы находитесь на этой локации
+
+if текущий < 1: текущий = количество_врагов
+if текущий > количество_врагов: текущий = 1
+
+!Переключаемся, если текущий враг убит
+IF враг[текущий] ! 1:
+ i = 0
+ :loop
+ i += 1
+ if враг[i]!1: jump 'loop'
+ текущий = i
+END
+
+!Эффекты на противнике
+$плохие_эффекты_проивника = ''
+$хорошие_эффекты_противника = ''
+
+gs '#dynamic'
+dynamic $слабость_противника
+dynamic $скованность_противника
+dynamic $боль_противника
+dynamic $шаткость_противника
+dynamic $ошеломление_противника
+dynamic $рассеянность_противника
+
+dynamic $бешенство_противника
+dynamic $разгон_противника
+dynamic $меткость_противника
+dynamic $адреналин_противника
+dynamic $верткость_противника
+dynamic $внимание_противника
+
+$эффекты_противника = $хорошие_эффекты_противника + $плохие_эффекты_проивника
+
+!Эффекты на игроке
+$плохие_эффекты_игрока = ''
+$хорошие_эффекты_игрока = ''
+gs '#dynamic'
+dynamic $слабость_игрока
+dynamic $скованность_игрока
+dynamic $боль_игрока
+dynamic $шаткость_игрока
+dynamic $ошеломление_игрока
+dynamic $рассеянность_игрока
+
+dynamic $бешенство_игрока
+dynamic $разгон_игрока
+dynamic $меткость_игрока
+dynamic $адреналин_игрока
+dynamic $верткость_игрока
+dynamic $внимание_игрока
+
+$эффекты_игрока = $хорошие_эффекты_игрока + $плохие_эффекты_игрока
+
+!Информация о последних действиях игрока и противников
+$информация_о_бое = ''
+if $боевая_обстановка!'': $информация_о_бое += '<<$боевая_обстановка>><br><br>'
+$информация_о_бое += '<<$действия_игрока>><br><br>'
+$информация_о_бое += '<<$действия_врага[1]>>'
+$информация_о_бое += '<<$действия_врага[2]>>'
+$информация_о_бое += '<<$действия_врага[3]>>'
+$информация_о_бое += '<<$действия_врага[4]>>'
+$информация_о_бое += '<<$действия_врага[5]>>'
+
+
+!*p '<div id = "fight_bg"><img src = "content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+*p '<div id = "fight_bg"><img src = "content\pic\bg\fight.jpg"></div>'
+*p '<div id = "fight_txt"><<$информация_о_бое>></div>'
+
+IF arena_mode = 0:
+ *p '<div id = "fight_options"><a href = "EXEC: dynamic $в_боевое_меню">Обычные атаки</a>
+<a href="EXEC: gt ''суперудары''">Особые приемы</a>
+<a href = "EXEC: gt ''инвентарь''">Использовать зелье</a>
+<a href = "EXEC: gt ''сменить_оружие''">Сменить оружие</a>
+<a href="EXEC: gt ''передышка''">Глухая оборона</a>
+Отступление
+</div>'
+ else
+ if суперудар_сделан[1] = 0: *p "<div id = 'fight_options'><a href = 'EXEC: dynamic $суперудар_1'><img src = '<<$extra_special_active>>'></a></div>"
+ if суперудар_сделан[1] = 1: *p "<div id = 'fight_options'><img src = '<<$extra_special_used>>'></div>" 
+END
+
+*p '<div id = "fight_subtions"><<$боевое_меню>></div>'
+
+*p '<div id = "ally_pic"><img src = "<<$combatant_ava>>"></div>'
+*p '<div id = "enemy_pic"><img src = "<<$аватара_моба[$враг[текущий]]>>"></div>'
+
+*p '<div id = "ally_name"><<$combatant_name>></div>'
+*p '<div id = "enemy_name"><<$имя_врага[текущий]>></div>'
+if количество_врагов > 1: *p '<div id = "next_enemy"><a href="EXEC: dynamic $next_enemy_click"><img src = "content/next.png"></a></div>'
+if количество_врагов > 1: *p '<div id = "prev_enemy"><a href="EXEC: dynamic $prev_enemy_click"><img src = "content/prev.png"></a></div>'
+
+*p '<div id = "ally_def"><<$защита_описание[$защита[0]]>></div>'
+*p '<div id = "next_def"><a href="EXEC: dynamic $сменить_защиту"><img src = "content/loop.png"></a></div>'
+*p '<div id = "enemy_def"><<$защита_врага_описание[$защита[текущий]]>></div>'
+
+*p '<div id = "ally_health"><a href="EXEC: msg $живучесть_справка"><img src = "content/clear_small.gif"></a></div>'
+*p '<div id = "ally_stamina"><a href="EXEC: msg $выносливость_справка"><img src = "content/clear_small.gif"></a></div>'
+*p '<div id = "ally_will"><a href="EXEC: msg $боевой_дух_справка"><img src = "content/clear_small.gif"></a></div>'
+*p '<div id = "enemy_health"><a href="EXEC: msg $живучесть_справка"><img src = "content/clear_small.gif"></a></div>'
+*p '<div id = "enemy_stamina"><a href="EXEC: msg $выносливость_справка"><img src = "content/clear_small.gif"></a></div>'
+*p '<div id = "enemy_will"><a href="EXEC: msg $боевой_дух_справка"><img src = "content/clear_small.gif"></a></div>'
+
+*p '<div id = "ally_health"><<здоровье_игрока>></div>'
+*p '<div id = "ally_stamina"><<выносливость_игрока>></div>'
+*p '<div id = "ally_will"><<дух_игрока>></div>'
+*p '<div id = "enemy_health"><center><<здоровье_врага[текущий]>></center></div>'
+*p '<div id = "enemy_stamina"><center><<выносливость_врага[текущий]>></center></div>'
+*p '<div id = "enemy_will"><center><<дух_врага[текущий]>></center></div>'
+
+
+*p '<div id = "ally_conditions"><a href="EXEC: msg $хиты_справка">СОСТОЯНИЕ</a><br>
+<<$эффекты_игрока>>
+</div>'
+*p '<div id = "enemy_conditions"><a href="EXEC: msg $хиты_справка">СОСТОЯНИЕ</a><br>
+<<$эффекты_противника>>
+</div>'
+
+IF $music_now ! $music[$toplay]:
+  close $music_now
+  $music_now = $music[$toplay]
+END
+if sound_on = 1: play $music_now
+
+IF sound_on = 1:
+ *p '<div id="sound_icon"><a href = "EXEC: sound_on = 0 & close all & gt curloc"><img src="content\sound_on.png"></a></div>'  
+ else
+ *p '<div id="sound_icon"><a href = "EXEC: sound_on = 1 & gt curloc"><img src="content\sound_off.png"></a></div>'  
+END
+--- боевой_интерфейс ---------------------------------
+

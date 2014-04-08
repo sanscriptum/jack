@@ -1,0 +1,67 @@
+# guild
+!ЗДАНИЕ ГИЛЬДИИ РАБОТОРГОВЦЕВ
+GS '_layout'
+gs '$slave_price'
+$place = 'guild_hall'
+$text_display = '<br>'
+
+
+IF sp_txt = 1:
+ IF contract['active'] = 1: $text_display += {<br><div id="under">Закрыть контракт<br><div id = "clear"><a href = 'EXEC: interaction_city = 142 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ if contract['active'] = 2: $text_display += {<br><div id="under_gray">Работа по контракту<br></div>}     
+ if contract['active'] = 0 and slave_state ! 0: $text_display += {<br><div id="under">Работа по контракту<br><div id = "clear"><a href = 'EXEC: interaction_city = 1411 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ if contract['active'] = 0 and slave_state = 0: $text_display += {<br><div id="under">Работа по контракту<br><div id = "clear"><a href = 'EXEC: interaction_city = 141 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ IF slave_state = 1 and slave['brand'] > 0:
+  $text_display += {<br><div id="under">Поговорить с перекупщиком<br><div id = "clear"><a href = 'EXEC: interaction_city = 94 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+  else
+  $text_display += {<br><div id="under_gray">Поговорить с перекупщиком<br></div>}     
+ END
+ $text_display += {<br><div id="under">Поговорить с экспертом<br><div id = "clear"><a href = 'EXEC: interaction_city = 95 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ IF auction_count = 0: 
+  IF slave_state = 1 and slave['brand'] > 0 and rating > 0:
+   $text_display += {<br><div id="under">Аукцион клеймлёных рабынь<br><div id = "clear"><a href = 'EXEC: interaction_city = 93 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+   else
+   $text_display += {<br><div id="under_gray">Аукцион клеймлёных рабынь<br></div>}      
+  END 
+  else
+  $text_display += '<br><div id="under_gray">Дней до аукциона: <<auction_count>><br></div>'   
+ END
+ $text_display += {<br><div id="under">Выйти  на улицу<br><div id = "clear"><a href = 'EXEC: city_form = 1 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+END
+
+$text[txt] = $guild[sp_txt]
+
+*p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+*p '<div id = "text"><<$text[txt]>></div>'
+*p '<div id = "bg"><<$text_display>></div>'
+
+IF $interaction_type = 'special':
+ *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+END
+
+
+if npc = 0:
+ $info_bar = ''
+ *p '<div id = "side_panel_main"><center><font size = 50%><<$place_name[$place]>></font>
+<<$place_location[$place]>>
+
+ Информация к размышлению:
+ </center></div>'
+ *p '<div id = "side_panel_text">  <<$place_info[$place]>>
+</div>'  
+ else
+ $info_bar = '' 
+ *p '<div id = "side_panel_main"><center><font size = 50%><<$npc_name[$npc_id]>></font>
+<<$npc_status[$npc_id]>>
+
+Информация к размышлению:
+</center></div>'
+ *p '<div id = "side_panel_text">  <<$npc_attitude[npc_attitude[$npc_id]]>>
+
+ <<$npc_info[$npc_id]>>
+</div>'
+END
+
+if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3'
+--- guild ---------------------------------
+

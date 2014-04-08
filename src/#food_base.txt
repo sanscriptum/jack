@@ -1,0 +1,122 @@
+# #food_base
+!БАЗА ДАННЫХ ПО БЛЮДАМ
+
+!Замена для копипасты еды, by Lyazar
+! $meal_id[] выпилил старый код и использую для хранения названий блюд, для работы food_choice
+$fb_cycle = {
+    $_fb_meal_name = $args[0]
+    ! Добавляю в конец $meal_id[] название блюда
+    $meal_id[] = $_fb_meal_name
+    $meal_name[$_fb_meal_name] = $args[1]
+    $meal_first_ingridient[$_fb_meal_name] = $args[2]
+    $meal_second_ingridient[$_fb_meal_name] = $args[3]
+    $meal_third_ingridient[$_fb_meal_name] = $args[4]
+    $meal_forth_ingridient[$_fb_meal_name] = $args[5]
+    
+    killvar '$_fb_meal_name'
+}
+
+! Например:
+!$meal_name['консервы'] = 'Разложенные по тарелкам консервы [<<$rating[0]>>]'
+!$meal_first_ingridient['консервы'] = 'none'
+!$meal_second_ingridient['консервы'] = 'none'
+!$meal_third_ingridient['консервы'] = 'none'
+!$meal_forth_ingridient['консервы'] = 'none'
+
+! Заменяется на:
+!dynamic $fb_cycle, 'консервы', 'Разложенные по тарелкам консервы [<<$rating[0]>>]', 'none', 'none', 'none', 'none'
+
+!-----Замена для копипасты еды, by Lyazar-----
+
+!Еда нулевого уровня
+dynamic $fb_cycle, 'консервы', 'Разложенные по тарелкам консервы [<<$rating[0]>>]', 'none', 'none', 'none', 'none'
+
+!Еда первого уровня
+dynamic $fb_cycle, 'картоха', 'Отварная картошка в мундире, с постным маслом и солью [<<$rating[1]>>]', 'vegetables', 'none', 'none', 'none'
+dynamic $fb_cycle, 'тушеная_капуста', 'Большая порция тушеной капусты [<<$rating[1]>>]', 'vegetables', 'none', 'none', 'none'
+dynamic $fb_cycle, 'репа_пареная', 'Пареная репа, нарезанная кружочками и посыпанная солью [<<$rating[1]>>]', 'vegetables', 'none', 'none', 'none'
+dynamic $fb_cycle, 'овощной_салат', 'Салат из овощей заправленных постным маслом [<<$rating[1]>>]', 'vegetables', 'none', 'none', 'none'
+dynamic $fb_cycle, 'рис_отварной', 'Отварной жасминовый рис [<<$rating[1]>>]', 'flower', 'none', 'none', 'none'
+dynamic $fb_cycle, 'каша_манная', 'Манная каша с комочками, как в детском саду [<<$rating[1]>>]', 'flower', 'none', 'none', 'none'
+dynamic $fb_cycle, 'каша_перловая', 'Ядрёная перловая каша [<<$rating[1]>>]', 'flower', 'none', 'none', 'none'
+dynamic $fb_cycle, 'каша_гречневая', 'Пустая гречка [<<$rating[1]>>]', 'flower', 'none', 'none', 'none'
+dynamic $fb_cycle, 'каша_овсяная', 'Жидкая овсянка "Беримор" [<<$rating[1]>>]', 'flower', 'none', 'none', 'none'
+dynamic $fb_cycle, 'вареная_вермишель', 'Вареная вермишель с солью [<<$rating[1]>>]', 'flower', 'none', 'none', 'none'
+dynamic $fb_cycle, 'яичница_болтунья', 'Слегка подгоревшая яичница-болтунья [<<$rating[1]>>]', 'eggs', 'none', 'none', 'none'
+dynamic $fb_cycle, 'шкварки', 'Хрустящие соленые шкварки [<<$rating[1]>>]', 'mince', 'none', 'none', 'none'
+
+!Еда второго уровня
+dynamic $fb_cycle, 'мясная_похлебка', 'Густая мясная похлёбка с томатами и фасолью [<<$rating[2]>>]', 'vegetables', 'mince', 'none', 'none'
+dynamic $fb_cycle, 'котлеты_с_макарошками', 'Домашние котлеты с отварными макаронами [<<$rating[2]>>]', 'mince', 'flower', 'none', 'none'
+dynamic $fb_cycle, 'тефтельки', 'Паровые тефтельки из сырного фарша [<<$rating[2]>>]', 'mince', 'cheese', 'none', 'none'
+dynamic $fb_cycle, 'острый_рулет', 'Острый мясной рулет с перчиком халапеньо [<<$rating[2]>>]', 'mince', 'spice', 'none', 'none'
+dynamic $fb_cycle, 'глазунья_со_шкварками', 'Яичница-глазунья с хрустящими солёными шкварками [<<$rating[2]>>]', 'mince', 'eggs', 'none', 'none'
+dynamic $fb_cycle, 'стейк', 'Толстый стейк с кровью [<<$rating[2]>>]', 'meat', 'none', 'none', 'none'
+dynamic $fb_cycle, 'спагетти', 'Спагетти в томатом соусе [<<$rating[2]>>]', 'vegetables', 'flower', 'none', 'none'
+dynamic $fb_cycle, 'луковый_суп', 'Густая похлёбка из пряного лука с овощами [<<$rating[2]>>]', 'vegetables', 'spice', 'none', 'none'
+dynamic $fb_cycle, 'пюрешечка', 'Нежное молочное пюре из картофеля и гороха [<<$rating[2]>>]', 'milk', 'flower', 'none', 'none'
+dynamic $fb_cycle, 'картошка_с_яйцом', 'Хрустящая жареная картошка с яйцом [<<$rating[2]>>]', 'vegetables', 'eggs', 'none', 'none'
+dynamic $fb_cycle, 'свекольник', 'Салат из вареной свеклы, протёртой с пашехонским сыром [<<$rating[2]>>]', 'vegetables', 'cheese', 'none', 'none'
+dynamic $fb_cycle, 'суп_вермешелевый', 'Вермешелевый суп на бульоне из куриного кубика [<<$rating[2]>>]', 'spice', 'flower', 'none', 'none'
+dynamic $fb_cycle, 'пирог_с_яйцом', 'Сдобный пирог с рисом и яйцом [<<$rating[2]>>]', 'eggs', 'flower', 'none', 'none'
+dynamic $fb_cycle, 'макароны_с_сыром', 'Макароны с тёртым сыром [<<$rating[2]>>]', 'cheese', 'flower', 'none', 'none'
+dynamic $fb_cycle, 'молочная_каша', 'Сладкая рисовая каша на молоке [<<$rating[2]>>]', 'milk', 'flower', 'none', 'none'
+
+!Еда третьего уровня
+dynamic $fb_cycle, 'борщ', 'Борщ из мяса с капустой, картошкой и свеклой [<<$rating[3]>>]', 'vegetables', 'flower', 'spice', 'none'
+dynamic $fb_cycle, 'фаршированные_яйца', 'Яйца фаршированные мясным салатом [<<$rating[3]>>]', 'vegetables', 'mince', 'eggs', 'none'
+dynamic $fb_cycle, 'колбаски_с_пюре', 'Жаренные колбаски с картофельным пюре на молоке [<<$rating[3]>>]', 'vegetables', 'mince', 'milk', 'none'
+dynamic $fb_cycle, 'болоньезе', 'Спагетти с мясным соусом болоньезе [<<$rating[3]>>]', 'vegetables', 'flower', 'mince', 'none'
+dynamic $fb_cycle, 'пирог_с_мясом', 'Сдобный пирог с острой мясной начинкой [<<$rating[3]>>]', 'mince', 'flower', 'spice', 'none'
+!TODO: кривой порядок в следующей строчке и других
+dynamic $fb_cycle, 'острая_отбивная', 'Хорошо прожаренная отбивная под острым соусом [<<$rating[3]>>]', 'meat', 'none', 'spice', 'none'
+dynamic $fb_cycle, 'тушеное_мясо', 'Мясо тушеное в горшочке с овощами [<<$rating[3]>>]', 'vegetables', 'meat', 'none', 'none'
+dynamic $fb_cycle, 'отбивная_с_рисом', 'Сочная отбивная с жареным рисом [<<$rating[3]>>]', 'meat', 'none', 'flower', 'none'
+dynamic $fb_cycle, 'глазунья_с_ветчиной', 'Шкворчащая яичница-глазунья с ветчиной [<<$rating[3]>>]', 'meat', 'eggs', 'none', 'none'
+dynamic $fb_cycle, 'мясо_по_французски', 'Мясо по-французски [<<$rating[3]>>]', 'meat', 'cheese', 'none', 'none'
+dynamic $fb_cycle, 'пирог_с_грибами', 'Пирог с грибами и красным луком [<<$rating[3]>>]', 'vegetables', 'flower', 'spice', 'none'
+dynamic $fb_cycle, 'пирог_с_картошкой', 'Пирог с картошкой и сыром [<<$rating[3]>>]', 'vegetables', 'flower', 'cheese', 'none'
+dynamic $fb_cycle, 'пирог_с_яйцами', 'Пирог с яйцом, рисом и зеленым луком [<<$rating[3]>>]', 'vegetables', 'flower', 'eggs', 'none'
+dynamic $fb_cycle, 'молочный_суп', 'Молочный крем-суп из шампиньонов [<<$rating[3]>>]', 'milk', 'vegetables', 'spice', 'none'
+dynamic $fb_cycle, 'овсяный_пуддинг', 'Овсяный пуддинг с мёдом и корицей [<<$rating[3]>>]', 'milk', 'flower', 'spice', 'none'
+dynamic $fb_cycle, 'сырное_пюре', 'Овощное пюре с сыром [<<$rating[3]>>]', 'vegetables', 'cheese', 'milk', 'none'
+
+!Еда четвертого уровня
+dynamic $fb_cycle, 'шашлык', 'Шашлык с луком, помидорами и зеленью [<<$rating[4]>>]', 'vegetables', 'spice', 'meat', 'none'
+dynamic $fb_cycle, 'азу_с_рисом', 'Азу с пряным рисом [<<$rating[4]>>]', 'spice', 'flower', 'meat', 'none'
+dynamic $fb_cycle, 'рагу_с_сыром', 'Мясное рагу под сырным соусом [<<$rating[4]>>]', 'vegetables', 'cheese', 'meat', 'none'
+dynamic $fb_cycle, 'стейк_с_макаронами', 'Стейк с макаронами под белым соусом [<<$rating[4]>>]', 'milk', 'flower', 'meat', 'none'
+dynamic $fb_cycle, 'окрошка', 'Кефирная окрошка с ветчиной [<<$rating[4]>>]', 'vegetables', 'milk', 'meat', 'none'
+dynamic $fb_cycle, 'рулет_с_яйцом', 'Пряный мясной рулет с яйцом [<<$rating[4]>>]', 'spice', 'eggs', 'meat', 'none'
+dynamic $fb_cycle, 'ветчина_с_сыром', 'Жареная ветчина с сыром и базиликом [<<$rating[4]>>]', 'vegetables', 'flower', 'meat', 'none'
+dynamic $fb_cycle, 'суп_бальзамико', 'Мясной крем-суп бальзамико [<<$rating[4]>>]', 'alcohol', 'mince', 'milk', 'none'
+dynamic $fb_cycle, 'чебуреки', 'Сочные чебуреки под коньячок [<<$rating[4]>>]', 'alcohol', 'flower', 'mince', 'none'
+dynamic $fb_cycle, 'котлеты_с_картошкой', 'Котлеты с вареной картошкой под коньячок [<<$rating[4]>>]', 'vegetables', 'alcohol', 'mince', 'none'
+dynamic $fb_cycle, 'купаты', 'Купаты на углях с красным вином [<<$rating[4]>>]', 'alcohol', 'mince', 'spice', 'none'
+dynamic $fb_cycle, 'ромовые_блинчики', 'Хрустящие ромовые блинчики [<<$rating[4]>>]', 'alcohol', 'flower', 'spice', 'none'
+dynamic $fb_cycle, 'вегетарианское_рагу', 'Вегетарианское овощное рагу с сыром и специями [<<$rating[4]>>]', 'vegetables', 'flower', 'cheese', 'spice'
+dynamic $fb_cycle, 'зразы_с_яйцом', 'Картофельные зразы с луком и яйцом [<<$rating[4]>>]', 'vegetables', 'eggs', 'spice', 'milk'
+dynamic $fb_cycle, 'овощи_с_фасолью', 'Овощи с фасолью тушеные в кальвадосе [<<$rating[4]>>]', 'vegetables', 'flower', 'alcohol', 'none'
+dynamic $fb_cycle, 'тушеная_чечевица', 'Чечевица тушеная с сыром и зеленью [<<$rating[4]>>]', 'vegetables', 'flower', 'cheese', 'spice'
+
+!Еда пятого уровня
+dynamic $fb_cycle, 'мясо_под_сливочным', 'Мясо в горшочке тушеное с овощами под сливочным соусом [<<$rating[5]>>]', 'vegetables', 'cream', 'meat', 'none'
+dynamic $fb_cycle, 'рагу_с_рисом', 'Рагу с жасминовым рисом в сливочном соусе [<<$rating[5]>>]', 'cream', 'flower', 'meat', 'none'
+dynamic $fb_cycle, 'пряная_ветчина', 'Пряная сливочная ветчина [<<$rating[5]>>]', 'cream', 'spice', 'meat', 'none'
+dynamic $fb_cycle, 'шашлык_с_вином', 'Шашлык с зеленью и красным вином [<<$rating[5]>>]', 'alcohol', 'spice', 'meat', 'none'
+dynamic $fb_cycle, 'ребрышки_гриль', 'Рёбрышки-гриль с острым соусом и бурбоном [<<$rating[5]>>]', 'alcohol', 'flower', 'meat', 'none'
+dynamic $fb_cycle, 'девчатина_с_макаронами', 'Отбивная из нежнейшей девчатины с крутоном [<<$rating[5]>>]', 'cheese', 'flower', 'virgin_meat', 'none'
+dynamic $fb_cycle, 'девчатина_с_картошкой', 'Стейк из сочной девчатины с хрустящим картофелем [<<$rating[5]>>]', 'vegetables', 'spice', 'virgin_meat', 'none'
+dynamic $fb_cycle, 'девчатина_с_бобами', 'Тушёная девчатина с бобами под красным соусом [<<$rating[5]>>]', 'vegetables', 'flower', 'virgin_meat', 'none'
+dynamic $fb_cycle, 'девчатина_с_сыром', 'Рагу из девчатины с овощами и сыром [<<$rating[5]>>]', 'vegetables', 'cheese', 'virgin_meat', 'none'
+dynamic $fb_cycle, 'пирог_из_девчатины', 'Слоёный пирог с девчатиной и яйцом [<<$rating[5]>>]', 'eggs', 'flower', 'virgin_meat', 'none'
+dynamic $fb_cycle, 'суп_из_девчатины', 'Суп из девчатины с галушками [<<$rating[5]>>]', 'milk', 'flower', 'virgin_meat', 'none'
+dynamic $fb_cycle, 'круассаны', 'Воздушные круасаны со сливочным сыром [<<$rating[5]>>]', 'cream', 'flower', 'cheese', 'none'
+dynamic $fb_cycle, 'кексы', 'Ванильные кексы с домашним мороженным [<<$rating[5]>>]', 'spice', 'flower', 'cream', 'none'
+dynamic $fb_cycle, 'печенье', 'Шоколадное печенье с ликёром амаретто [<<$rating[5]>>]', 'alcohol', 'flower', 'spice', 'none'
+dynamic $fb_cycle, 'лазанья_бешамель', 'Овощная лазанья с соусом бешамель [<<$rating[5]>>]', 'vegetables', 'flower', 'cream', 'none'
+
+!ОБРАЗЕЦ
+dynamic $fb_cycle, 'образец', ' [<<$rating[5]>>]', 'vegetables', 'flower', 'virgin_meat', 'spice'
+--- #food_base ---------------------------------
+

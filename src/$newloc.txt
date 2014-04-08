@@ -1,0 +1,890 @@
+# $newloc
+!Локация-обработчик переходов.
+if $rating[0] = '': gs '#var_base'
+IF $master_name ! 'Старый Охотник': wizard_mode = 0
+
+if slave_rate["pride"] < 0 and slave["pride"] <= 0: slave_rate["pride"] = 0
+if slave_rate["instinct"] < 0 and slave["instinct"] <= 0: slave_rate["instinct"] = 0
+if slave_rate["rational"] < 0 and slave["rational"] <= 0: slave_rate["rational"] = 0
+
+IF slave["selfesteem"] > 0 and slave["virtue"] > 0: 
+ slave["virtue"] = 5
+ if slave["selfesteem_revealed"] = 0: slave["selfesteem_revealed"] = 1
+END
+IF slave["selfesteem"] < 0 and slave["sin"] > 0: 
+ slave["sin"] = 5
+ if slave["selfesteem_revealed"] = 0: slave["selfesteem_revealed"] = 1
+END
+if slave["voice"] < 0 and slave_rate["vocal"] > 0: slave_rate["vocal"] = 0 
+if slave["style"] < 0: slave["style"] = 0
+if stock["style"] < 0: stock["style"] = 0
+
+IF pen = 0: 
+ pet_tentacle = 0
+ tentacle_hp = 0
+END
+
+IF pet_tentacle = 0:
+ tentacle_state = 0
+ else
+ if spawn_milked = 0: tentacle_state = 1
+ if spawn_milked = 1: tentacle_state = 2
+END
+
+if master_wealth < 4: club_member = 0
+
+if chimera_gem_on = 1: master_excitement = 5
+
+!Обнуления при увольнении ассистентки или воспитуемой
+IF slave_state = 0:
+ slave = 0
+ slave["nul"] = 0 
+ slave_sleep_condition = 0 
+ slave_ration = 0
+ vitamin = 0
+ silence_rule = 0
+ master_rule = 0
+ orgasm_prohibited = 0
+ shit_prohibited = 0
+ pet_rule = 0
+ blowjob_rule = 0
+ pissuar_rule = 0
+ toilet_rule = 0
+ slave_cleans_rule = 0
+ slave_cooks_rule = 0
+ slave_washes_rule = 0 
+ prise_promised = 0
+ gift_promised = 0
+ slave["pain_treat"] = 0
+ abandon_treat = 0
+ death_treat = 0
+ killvar 'slave' 
+ killvar 'slave_rate' 
+ killvar 'already_done_curslave'
+END
+
+IF assistant_state = 0:
+ assistant_cleans_rule = 0
+ assistant_cooks_rule = 0
+ assistant_washes_rule = 0
+ assistant_account_rule = 0
+ assistant_supervise_rule = 0
+ assistant_buy_vegetables = 0
+ assistant_buy_flower = 0
+ assistant_buy_spice = 0
+ assistant_buy_cheese = 0
+ assistant_buy_alcohol = 0
+ assistant_buy_eggs = 0
+ assistant_buy_milk = 0
+ assistant_buy_cream = 0
+ assistant_buy_mince = 0
+ assistant_buy_meat = 0
+END
+
+!Обнуления
+slave['slave_collar'] = 0
+slave['wig'] = 0
+
+if master_half_action > 1: master_half_action = 0
+if slave['half_action'] > 1: slave['half_action'] = 0
+
+!Считаем престиж жилища
+$house_prestige = estate_prestige[$estate] + interior_prestige[$study] + interior_prestige[$bed] + interior_prestige[$bath] + interior_prestige[$kitchen]
+
+!Клеймо
+brand_reputation = 0
+if brand_rate => 3: brand_reputation = 1
+if brand_rate => 10: brand_reputation = 2
+if brand_rate => 20: brand_reputation = 3
+if brand_rate => 40: brand_reputation = 4
+if brand_rate => 80: brand_reputation = 5
+
+!Считаем бонусы экипировки рабыни
+slave_rate["style"] = 0
+slave_rate["exotic_bonus"] = 0 
+killvar 'learn_bonus'
+killvar 'daily_bonus'
+dynamic $item_property[$slave["armor"]]
+dynamic $item_property[$slave["cloth"]]
+dynamic $item_property[$slave["earrings"]]
+dynamic $item_property[$slave["collar"]]
+dynamic $item_property[$slave["headband"]]
+dynamic $item_property[$slave["gloves"]]
+dynamic $item_property[$slave["nipplerings"]]
+dynamic $item_property[$slave["clitring"]]
+dynamic $item_property[$slave["boots"]]
+dynamic $item_property[$slave["ring_left"]]
+dynamic $item_property[$slave["ring_right"]]
+IF daily_bonus["mood"] <= 0:
+ slave['pos_clothes'] = 0
+END
+
+master_style = style_modifer[$master_cloth]
+if master_visage > 0: master_style += 1
+if master_haircut > 0: master_style += 1
+if master_str > 3: master_style += 1
+if master_mood > 0: master_style += 1
+if master_mood < 0: master_style -= 1
+if master_energy > 0: master_style += 1
+if master_energy < 0: master_style -= 1
+master_style -= master_hygiene - 1
+if master_style < 0: master_style = 0
+if master_style > 5: master_style = 5
+
+!Обсчет характеристик персонажей
+gs '$calculate_atributes'
+
+killvar 'boost_up'
+dynamic $item_property[$master_cloth]
+IF boost_up['master_artdirector'] = 1 and master_artdirector_rised = 0: 
+ master_artdirector += 1
+ master_artdirector_rised = 1
+END
+IF master_artdirector_rised = 1 and boost_up['master_artdirector'] = 0: 
+  master_artdirector_rised = 0
+  master_artdirector -= 1
+END
+
+IF boost_up['master_fighter'] = 1 and master_fighter_rised = 0: 
+ master_fighter += 1
+ master_fighter_rised = 1
+END
+IF master_fighter_rised = 1 and boost_up['master_fighter'] = 0: 
+  master_fighter_rised = 0
+  master_fighter -= 1
+END
+
+IF boost_up['master_butler'] = 1 and master_butler_rised = 0: 
+ master_butler += 1
+ master_butler_rised = 1
+END
+IF master_butler_rised = 1 and boost_up['master_butler'] = 0: 
+  master_butler_rised = 0
+  master_butler -= 1
+END
+
+IF boost_up['master_medic'] = 1 and master_medic_rised = 0: 
+ master_medic += 1
+ master_medic_rised = 1
+END
+IF master_medic_rised = 1 and boost_up['master_medic'] = 0: 
+  master_medic_rised = 0
+  master_medic -= 1
+END
+
+IF boost_up['master_mage'] = 1 and master_mage_rised = 0: 
+ master_mage += 1
+ master_mage_rised = 1
+END
+IF master_mage_rised = 1 and boost_up['master_mage'] = 0: 
+  master_mage_rised = 0
+  master_mage -= 1
+END
+
+
+if slave['fear'] > 5: slave['fear'] = 5
+if slave['fear'] < 0: slave['fear'] = 0
+
+!Экзотика и стиль
+if slave["makeup"] > 0: slave["makeup_demo"] = 1
+IF slave["age"] = CONST_INT['loli_age']:
+ slave["epilation"] = 100
+ if slave["makeup"] = 0: slave["makeup"] = 2
+END
+IF slave["hairstyle"] > 0: slave["hairstyle_demo"] = 1
+
+slave["exotic"] = 0
+if slave_rate["exotic"] + slave_rate["exotic_bonus"] => 10: slave["exotic"] = 1
+if slave_rate["exotic"] + slave_rate["exotic_bonus"] => 20: slave["exotic"] = 2
+if slave_rate["exotic"] + slave_rate["exotic_bonus"] => 40: slave["exotic"] = 3
+if slave_rate["exotic"] + slave_rate["exotic_bonus"] => 80: slave["exotic"] = 4
+if slave_rate["exotic"] + slave_rate["exotic_bonus"] => 160: slave["exotic"] = 5
+
+if slave["virtue"] > 0: eval = slave["virtue"]
+if slave["sin"] > 0: eval = 5 + slave["sin"]
+if slave["sin"] = 0 and slave["virtue"] = 0: eval = 0
+
+
+!Врубаем постоянные мудлеты хозяина
+master_mood['a'] = 0
+estate_quality = estate_prestige[$estate] + interior_prestige[$study] + interior_prestige[$bath] + interior_prestige[$bed]
+estate_quality_modifier = estate_quality - brand_reputation 
+if estate_quality_modifier > 0: master_mood['pos_housing'] = 100
+if estate_quality_modifier => 0: master_mood['neg_housing'] = 0
+if estate_quality_modifier < 0: master_mood['neg_housing'] = 100
+if estate_quality_modifier <= 0: master_mood['pos_housing'] = 0
+wealth_quality_modifier = master_wealth - brand_reputation - 1
+if wealth_quality_modifier > 0: master_mood['pos_wealth'] = 100 & master_mood['neg_wealth'] = 0
+if wealth_quality_modifier = 0: master_mood['pos_wealth'] = 0 & master_mood['neg_wealth'] = 0
+if wealth_quality_modifier < 0: master_mood['neg_wealth'] = 100 & master_mood['pos_wealth'] = 0
+
+master_mood['pos_house_clean'] = 0
+master_mood['neg_house_mess'] = 0
+if house_mess = 0: master_mood['pos_house_clean'] = 100 
+if house_mess > 0: master_mood['pos_house_clean'] = 0 
+if house_mess > 3: master_mood['neg_house_mess'] = 100  
+if house_mess <= 3: master_mood['neg_house_mess'] = 0  
+if master_hygiene > 0: master_mood['pos_self_clean'] = 0
+if master_hygiene > 3: master_mood['neg_dirty'] = 1
+if master_hygiene <= 3: master_mood['neg_dirty'] = 0
+
+if master_mood['pos_statisfied'] < 0: master_mood['pos_statisfied'] = 0
+if master_excitement > master_mood['pos_statisfied']: master_mood['neg_boner'] = master_excitement
+if master_excitement <= master_mood['pos_statisfied']: master_mood['neg_boner'] = 0
+
+if master_energy => master_str:
+	master_mood['pos_energy'] = 1
+else
+	if master_mood['neg_tired'] > 0 or master_mood['neg_drunk'] > 0 or master_mood['neg_wounded'] > 0 or master_mood['neg_no_koffe'] > 0 or master_mood['neg_no_meth'] > 0 or master_mood['neg_no_opium'] > 0 or master_mood['neg_master_ill'] > 0: master_mood['pos_energy'] = 0
+end 
+
+!Врубаем мудлеты рабыни
+slave['neg_slave_mess'] = 0
+if house_mess > 3: slave['neg_slave_mess'] = 100  
+if slave["hygiene"] > 0: slave["pos_slave_clean"] = 0
+if slave["hygiene"] > 3: slave["neg_slave_dirty"] = 1
+if slave["hygiene"] <= 3: slave["neg_slave_dirty"] = 0
+if slave["arousal"] > slave["ego"]: slave["neg_horny"] = 1
+if slave["arousal"] > 3: slave["neg_horny"] = 1
+IF slave["energy"] < 0: 
+ slave["neg_exhausted"] = 1
+ else
+ slave["neg_exhausted"] = 0 
+END
+
+IF $slave["cloth"] = 'голая':
+ if slave['sub_exhibit'] < slave['ego']: slave['neg_naked'] = 1
+ else
+ slave['neg_naked'] = 0
+END
+
+!Определяем секс-навыки воспитуемой
+if slave["sub_hj"] < slave["petting"]: slave["sub_hj"] = slave["petting"]
+slave["petting"] = (slave["sub_hj"] + slave["sub_fj"] + slave["sub_hug"] + slave["sub_pazuri"])/4
+
+if slave["sub_dt"] < slave["sub_bj"]: slave["sub_dt"] = slave["sub_bj"]
+if slave["sub_bj"] < slave["sub_bukake"]: 
+ if slave["sub_bj"] < 3: slave["sub_bj"] = slave["sub_bukake"]
+END
+if slave["sub_bj"] < slave["orgy"]: slave["sub_bj"] = slave["orgy"]
+if slave["sub_thongue"] < slave["oral"]: slave["sub_thongue"] = slave["oral"]
+slave["oral"] = (slave["sub_kiss"] + slave["sub_thongue"] + slave["sub_bj"] + slave["sub_dt"] + slave["sub_asslik"])/5
+
+if slave["sub_anal"] < slave["anal_stretch"]: slave["sub_anal"] = slave["anal_stretch"]
+if slave["sub_anal"] > 1 and slave["anal_stretch"] = 0: slave["anal_stretch"] = 1
+if slave["sub_vaginal"] < slave["orgy"]: slave["sub_vaginal"] = slave["orgy"]
+if slave["sub_anal"] < slave["orgy"]: slave["sub_anal"] = slave["orgy"]
+slave["penetration"] = (slave["sub_vaginal"] + slave["sub_anal"] + slave["sub_fisting"] + slave["anal_stretch"])/4
+
+if slave["sub_exhibit"] < slave["roleplay"]: slave["sub_exhibit"] = slave["roleplay"]
+if slave["sub_masturbation"] < slave["sub_dildo"]: slave["sub_masturbation"] = slave["sub_dildo"]
+slave["roleplay"] = (slave["sub_seduce"] + slave["sub_masturbation"] + slave["sub_dildo"] + slave["sub_exhibit"] + slave["sub_humiliation"])/5
+
+if slave["sub_mazo"] < slave["sub_selfpain"]: slave["sub_mazo"] = slave["sub_selfpain"]
+if slave["sub_piss"] < slave["sub_kopro"]: slave["sub_piss"] = slave["sub_kopro"]
+slave["fetishism"] = (slave["sub_enema"] + slave["sub_mazo"] + slave["sub_selfpain"] + slave["sub_piss"] + slave["sub_kopro"])/5
+
+if slave["sub_tp"] < slave["sub_gangbang"]: slave["sub_tp"] = slave["sub_gangbang"]
+if slave["sub_dp"] < slave["sub_tp"]: slave["sub_dp"] = slave["sub_tp"]
+sperm_shwallow = slave["sub_bj"] - 2
+if slave["sub_bukake"] < sperm_shwallow: slave["sub_bukake"] = sperm_shwallow
+slave["orgy"] = (slave["sub_threesome"] + slave["sub_dp"] + slave["sub_tp"] + slave["sub_gangbang"] + slave["sub_bukake"])/5
+
+slave["xenophily"] = (slave["sub_zoosex"] + slave["sub_bestiality"] + slave["sub_tentacles"])/3
+
+if slave["mood"] > 0: slave_mood_bonus = slave["mood"]
+
+master_supermacy = master_cha + master_domination + master_style + master_str + slave['beaten_ever'] - slave["temper"] - slave["ego"] - slave["pride"] - slave["stamina"] - (slave["intellect"] - 3) + magna_magnifika + item_supermacy_bonus
+if $master_cloth = 'regal_suit': master_supermacy += 1
+if $master_cloth = 'comfy_robes': master_supermacy -= 1
+assistant_supermacy = assistant["temper"] + assistant["ego"] + assistant["style"] + assistant["stamina"] + (assistant["intellect"] - 3) - slave["temper"] - slave["ego"] - slave["pride"] - slave["stamina"] - (slave["intellect"] - 3)
+
+slave_obedience_bonus = 0 + slave["meekness"]
+if slave["courage"] = 2: slave["fear"] = 0
+if slave["courage"] = 0: slave_obedience_bonus += slave["fear"]
+if slave["courage"] = -1: slave_obedience_bonus += slave["fear"]*2
+slave["obedience"] = slave_obedience_bonus + slave["moral"] + slave["fear"] + slave["custom"] + slave["rational"] + slave["instinct"] + slave_mood_bonus - slave["spoil"] - rebell[$slave_psy_basic]
+if $slave_psy_status = 'broken': slave["obedience"] = 100
+
+!Считаем показатель стиля
+!slave["style"] = (slave["expression"] + slave["callisthenics"] + slave["makeup"] + slave["dressup"] + slave["jewelry"])/4 - slave["hygiene"] + slave["grace"]
+if slave["makeup"] > 0: slave_rate["style"] += 1
+if slave["parfume"] > 0: slave_rate["style"] += 1
+if slave["epilation"] > 0: slave_rate["style"] += 1
+if slave["manicure"] > 0: slave_rate["style"] += 1
+IF slave["hairstyle"] < 1 and slave['wig'] > 0:
+ slave["hairstyle"] = 1
+END
+if slave["hairstyle"] > 0: slave_rate["style"] += 1
+
+slave["style"] = slave["grace"] - slave["hygiene"]
+if slave_rate["style"] > 0: slave["style"] += 1
+if slave_rate["style"] > 2: slave["style"] += 1
+if slave_rate["style"] > 5: slave["style"] += 1
+if slave_rate["style"] > 9: slave["style"] += 1
+if slave_rate["style"] > 13: slave["style"] += 1
+if slave["style"] > 5: slave["style"] = 5
+if slave["style"] < 0: slave["style"] = 0
+
+!ПСИХОЛОГИЧЕСКИЙ СТАТУС РАБЫНИ
+$prev_status = $slave_psy_status
+$slave_psy_status = $slave_psy_basic
+
+slave_psy_hardness = max (slave["ego"], slave["temper"], slave["spoil"], slave["pride"])
+slave_psy_hardness += slave["courage"]
+courage = slave_psy_hardness
+if slave["mood"] > 0: courage += slave["mood"]
+if slave["courage"] = 2: courage = 100
+
+if slave["obedience"] => slave_psy_hardness: $slave_psy_status = 'docile'
+
+max_motivation = max (slave["moral"],slave["fear"],slave["custom"],slave["rational"],slave["instinct"],slave["mood"],slave["spoil"])
+if slave["fear"] = max_motivation and slave["fear"] > courage: $slave_psy_status = 'frightened'
+
+IF slave["obedience"] > 6:
+ if slave["moral"] = max_motivation: $slave_psy_status = 'servile'
+ if slave["rational"] = max_motivation: $slave_psy_status = 'obedient'
+ if slave["instinct"] = max_motivation: $slave_psy_status = 'obedient'
+ if slave["custom"] = max_motivation: $slave_psy_status = 'obedient'  
+ if $slave_psy_status ! 'frightened' and slave["fear"] = max_motivation: $slave_psy_status = 'obedient'
+END
+
+IF slave["obedience"] > 2 and slave["arousal"] > 3 and slave["arousal"] => slave["moral"] and $slave_psy_status ! 'frightened':
+ $slave_psy_status = 'horny'
+END
+
+optimism = slave["temper"] + slave["mood"]
+IF slave["angst"] > 0 and optimism < 0:
+ $slave_psy_status = 'depresive'
+END
+
+IF slave["mood"] < 0 and slave["spoil"] > slave["fear"] and slave["spoil"] > slave["moral"]:
+ $slave_psy_status = 'hysteric'
+END
+
+sanity = slave["ego"] + slave["temper"] + slave["pride"]
+IF sanity < 3:
+ $slave_psy_status = 'broken' 
+ slave["custom"] = 5
+ slave["fear"] = 0
+ slave["moral"] = 0
+ slave["rational"] = 0
+ slave["instinct"] = 0 
+END
+
+if $slave_psy_status ! $prev_status: display_psy_status = 1
+
+!Проверка на привычку
+if slave["exhibitionism_xp"] > 10 and slave["exhibitionism"] = 0: slave["exhibitionism"] = 1
+if slave["masohism_xp"] > 10 and slave["masohism"] = 0: slave["masohism"] = 1
+if slave["preversion_xp"] > 10 and slave["preversion"] = 0: slave["preversion"] = 1
+if slave["lesbian_xp"] > 10 and slave["homosexualism"] = 0: slave["homosexualism"] = 1
+if slave["abuse_xp"] > 10 and slave["abuse_attitude"] = 0: slave["abuse_attitude"] = 1
+if slave["darkness_xp"] > 10 and slave["darkness_attitude"] = 0: slave["darkness_attitude"] = 1
+if slave["blood_xp"] > 10 and slave["blood_attitude"] = 0: slave["blood_attitude"] = 1 
+if slave["fire_xp"] > 10 and slave["fire_attitude"] = 0: slave["fire_attitude"] = 1
+if slave["water_xp"] > 10 and slave["water_attitude"] = 0: slave["water_attitude"] = 1
+if slave["vermin_xp"] > 10 and slave["vermin_attitude"] = 0: slave["vermin_attitude"] = 1
+if slave["deprivation_xp"] > 10 and slave["deprivation_attitude"] = 0: slave["deprivation_attitude"] = 1 
+if slave["compassion_xp"] > 10 and slave["compassion"] = 0: slave["compassion"] = 1 
+if slave["fear"] > 0 and slave["courage_revealed"] = 0: slave["courage_revealed"] = 1
+
+!ОСОБЕННОСТИ
+$features_list = ''
+if slave["metabolism"] < 1: slave["metabolism"] = 1
+IF slave["wounds"] > 0: $features_list += '<<$slave_wounds[slave["wounds"]]>><BR>'
+IF slave["scares"] > 0: $features_list += '<<$slave_scares[slave["scares"]]>><BR>'
+IF slave["bruises"] > 0: $features_list += '<<$slave_bruises[slave["bruises"]]>><BR>'
+IF slave['reabilitation'] > 0: $features_list += 'После операции [<<slave["reabilitation"]>>]<BR>'
+IF virginity < 2: $features_list += 'Девственница<BR>' 
+IF slave["grace"] = 1: $features_list += 'Грациозная<BR>'
+IF slave["grace"] = -1: $features_list += 'Угловатая<BR>'
+IF slave["voice"] > 0: $features_list += 'Чарующий голос<BR>'
+IF slave["voice"] < 0: $features_list += 'Хриплый голос<BR>'
+IF slave['arena_level'] > 4: $features_list += 'Чемпионка арены<BR>'
+if slave['fertility'] = -2: $features_list += 'Незрелая<BR>' 
+IF slave["fertility"] = -1: 
+ if slave["fertility_revealed"] = 0: $features_list += 'Бесплодная<BR>' 
+END
+IF slave["fertility"] = 1: 
+ if slave["fertility_revealed"] > 0: $features_list += 'Яйцекладущая<BR>' 
+END
+IF slave["pregnant"] > 0: 
+ if slave["pregnant_revealed"] > 0: $features_list += 'Беременная<BR>' 
+END
+IF slave["nymphomania"] > 0: 
+ if slave["nymphomania_revealed"] > 0: $features_list += '<a href="EXEC: msg $Нимфоманка">Нимфоманка</a><BR>' 
+END
+IF slave["nymphomania"] < 0: 
+ if slave["nymphomania_revealed"] > 0: $features_list += '<a href="EXEC: msg $Фригидная">Фригидная</a><BR>' 
+ slave['neg_horny'] = 0
+END
+IF slave["masohism"] = 2: 
+ if slave["masohism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Мазохистка">Мазохистка</a><BR>'
+ slave['neg_pain'] = 0  
+END
+IF slave["masohism"] = 1: 
+ if slave["masohism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Привычна_к_боли">Привычна к боли</a><BR>'
+END
+IF slave["masohism"] = -1: 
+ if slave["masohism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Боится_боли">Боится боли</a><BR>' 
+END
+IF slave["exhibitionism"] = 2: 
+ if slave["exhibitionism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Эксгибиционистка">Эксгибиционистка</a><BR>' 
+ slave['neg_naked'] = 0   
+ slave['neg_shame'] = 0   
+END
+IF slave["exhibitionism"] = -1: 
+ if slave["exhibitionism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Стеснительная">Стеснительная</a><BR>' 
+END
+IF slave["preversion"] = 2: 
+ if slave["preversion_revealed"] > 0: $features_list += '<a href="EXEC: msg $Извращенка">Извращенка</a><BR>' 
+END
+IF slave["preversion"] = -1: 
+ if slave["preversion_revealed"] > 0: $features_list += '<a href="EXEC: msg $Пуристка">Пуристка</a><BR>' 
+END
+IF slave["homosexualism"] = 2: 
+ if slave["homosexualism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Лесбиянка">Лесбиянка</a><BR>'
+END
+IF slave["homosexualism"] = 1: 
+ if slave["homosexualism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Бисексуальная">Бисексуальная</a><BR>' 
+END
+IF slave["homosexualism"] = -1: 
+ if slave["homosexualism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Гомофобка">Гомофобка</a><BR>' 
+END
+IF slave["abuse_attitude"] = 2: 
+ if slave["abuse_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Пси_мазохистка">Пси-мазохистка</a><BR>'
+ slave['neg_abuse'] = 0 
+END
+IF slave["abuse_attitude"] = -1: 
+ if slave["abuse_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Истеричка">Истеричка</a><BR>' 
+END
+IF slave["darkness_attitude"] = 2: 
+ if slave["darkness_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Дитя_тьмы">Дитя тьмы</a><BR>' 
+END
+IF slave["darkness_attitude"] = -1: 
+ if slave["darkness_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Боится_темноты">Боится темноты</a><BR>' 
+END
+IF slave["blood_attitude"] = 2: 
+ if slave["blood_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Кровожадная">Кровожадная</a><BR>' 
+END
+IF slave["blood_attitude"] = -1:
+ if slave["blood_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Боится_крови">Боится крови</a><BR>' 
+END
+IF slave["fire_attitude"] = 2:
+ if slave["fire_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Пиромания">Пиромания</a><BR>' 
+END
+IF slave["fire_attitude"] = -1: 
+ if slave["fire_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Пирофобия">Пирофобия</a><BR>' 
+END
+IF slave["water_attitude"] = 2: 
+ if slave["water_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Дитя_воды">Дитя воды</a><BR>' 
+END
+IF slave["water_attitude"] = -1:
+ if slave["water_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Гидрофобия">Гидрофобия</a><BR>' 
+END
+IF slave["vermin_attitude"] = 2:
+ if slave["vermin_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Арахнофилия">Арахнофилия</a><BR>' 
+END
+IF slave["vermin_attitude"] = -1:
+ if slave["vermin_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Арахнофобия">Арахнофобия</a><BR>'
+END
+IF slave["deprivation_attitude"] = 2:
+ if slave["deprivation_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Любит_беспомощность">Любит беспомощность</a><BR>' 
+END
+IF slave["deprivation_attitude"] = -1:
+ if slave["deprivation_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Клаустрофобия">Клаустрофобия</a><BR>' 
+END
+IF slave["passion_comfort"] = 1:
+ if slave["passion_comfort_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ленивая">Ленивая</a><BR>' 
+END
+IF slave["passion_comfort"] = -1:
+ if slave["passion_comfort_revealed"] > 0: $features_list += '<a href="EXEC: msg $Гиперактивная">Гиперактивная</a><BR>' 
+ slave['pos_well_rested'] = 0  
+END
+IF slave["passion_luxury"] = 1:
+ if slave["passion_luxury_revealed"] > 0: $features_list += '<a href="EXEC: msg $Любит_роскошь">Любит роскошь</a><BR>' 
+END
+IF slave["passion_luxury"] = -1:
+ if slave["passion_luxury_revealed"] > 0: $features_list += '<a href="EXEC: msg $Аскетичная">Аскетичная</a><BR>' 
+END
+IF slave["passion_sweets"] = 1:
+ if slave["passion_sweets_revealed"] > 0: $features_list += '<a href="EXEC: msg $Сладкоежка">Сладкоежка</a><BR>' 
+END
+IF slave["passion_sweets"] = -1:
+ if slave["passion_sweets_revealed"] > 0: $features_list += '<a href="EXEC: msg $Не_любит_сладкое">Не любит сладкое</a><BR>' 
+ slave['pos_desert'] = 0   
+END
+IF slave["passion_fame"] = 1:
+ if slave["passion_fame_revealed"] > 0: $features_list += '<a href="EXEC: msg $Тщеславная">Тщеславная</a><BR>' 
+END
+IF slave["passion_fame"] = -1:
+ if slave["passion_fame_revealed"] > 0: $features_list += '<a href="EXEC: msg $Хикикомори">Хикикомори</a><BR>' 
+ slave['pos_prise'] = 0    
+END
+IF slave["courage"] = 2:
+ if slave["courage_revealed"] > 0: $features_list += '<a href="EXEC: msg $Отмороженая">Отмороженая</a><BR>'
+ slave['neg_fear'] = 0     
+END
+IF slave["courage"] = 1:
+ if slave["courage_revealed"] > 0: $features_list += '<a href="EXEC: msg $Храбрая">Храбрая</a><BR>'
+END
+IF slave["courage"] = -1:
+ if slave["courage_revealed"] > 0: $features_list += '<a href="EXEC: msg $Трусиха">Трусиха</a><BR>' 
+END
+IF slave["metabolism"] = 5:
+ if slave["metabolism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Мощный_метаболизм">Мощный метаболизм</a><BR>' 
+END
+IF slave["metabolism"] = 4:
+ if slave["metabolism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Хороший_метаболизм">Хороший метаболизм</a><BR>' 
+END
+IF slave["metabolism"] = 2:
+ if slave["metabolism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ослабленный_метаболизм">Ослабленный метаболизм</a><BR>' 
+END
+IF slave["metabolism"] = 1:
+ if slave["metabolism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Слабый_метаболизм">Слабый метаболизм</a><BR>' 
+END
+IF slave["sport_affinity"] = 1:
+ if slave["sport_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $Спортивная">Спортивная</a><BR>' 
+END
+IF slave["sport_affinity"] = -1:
+ if slave["sport_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $Апатичная">Апатичная</a><BR>' 
+END
+IF slave["expression_affinity"] > 0:
+ if slave["expression_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $оратор">Талант: оратор</a><BR>'
+END
+IF slave["pet_affinity"] > 0: 
+ if slave["pet_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $питомец">Талант: питомец</a><BR>' 
+END
+IF slave["dressage_affinity"] > 0:
+ if slave["dressage_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $Brony">Brony</a><BR>' 
+END
+IF slave["nurse_affinity"] > 0: 
+ if slave["nurse_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $медсестра">Талант: медсестра</a><BR>'
+END
+IF slave["service_affinity"] > 0: 
+ if slave["service_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $горничная">Талант: горничная</a><BR>'
+END
+IF slave["cook_affinity"] > 0: 
+ if slave["cook_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $кухарка">Талант: кухарка</a><BR>' 
+END
+IF slave["gladiatrix_affinity"] > 0:
+ if slave["gladiatrix_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $воительница">Талант: воительница</a><BR>' 
+END
+IF slave["enchanter_affinity"] > 0:
+ if slave["enchanter_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $чародейка">Талант: чародейка</a><BR>'
+END
+IF slave["vocal_affinity"] > 0:
+ if slave["vocal_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $певица">Талант: певица</a><BR>' 
+END
+IF slave["music_affinity"] > 0:
+ if slave["music_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $музыкантка">Талант: музыкантка</a><BR>' 
+END
+IF slave["callisthenics_affinity"] > 0: 
+ if slave["callisthenics_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $танцовщица">Талант: танцовщица</a><BR>' 
+END
+IF slave["secretary_affinity"] > 0: 
+ if slave["secretary_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $секретарша">Талант: секретарша</a><BR>'    
+END
+IF slave["memory"] = 1:
+ if slave["memory_revealed"] > 0: $features_list += '<a href="EXEC: msg $Эйдетическая_память">Эйдетическая память</a><BR>' 
+END
+IF slave["memory"] = -1:
+ if slave["memory_revealed"] > 0: $features_list += '<a href="EXEC: msg $Забывчивая">Забывчивая</a><BR>' 
+END
+IF slave["meekness"] > 0:
+ if slave["meekness_revealed"] > 0: $features_list += '<a href="EXEC: msg $Дисциплинированная">Дисциплинированная</a><BR>' 
+END
+IF slave["meekness"] < 0:
+ if slave["meekness_revealed"] > 0: $features_list += '<a href="EXEC: msg $Своенравная">Своенравная</a><BR>' 
+END
+IF slave["selfesteem"] > 0:
+ if slave["selfesteem_revealed"] > 0: $features_list += '<a href="EXEC: msg $Мания_величия">Мания величия</a><BR>'
+END
+IF slave["selfesteem"] < 0:
+ if slave["selfesteem_revealed"] > 0: $features_list += '<a href="EXEC: msg $Комплекс_вины">Комплекс вины</a><BR>' 
+END
+IF slave["compassion"] = 2:
+ if slave["compassion_revealed"] > 0: $features_list += '<a href="EXEC: msg $Милосердная">Милосердная</a><BR>'
+END
+IF slave["compassion"] = -1:
+ if slave["compassion_revealed"] > 0: $features_list += '<a href="EXEC: msg $Садистка">Садистка</a><BR>' 
+END
+
+!ЗАКЛЮЧЕННАЯ
+!Психологический статус заключенной
+prisoner_obedience_bonus = 0
+if prisoner["courage"] = 2: prisoner_obedience_bonus -= prisoner["fear"]
+if prisoner["courage"] = 0: prisoner_obedience_bonus += prisoner["fear"]
+if prisoner["courage"] = -1: prisoner_obedience_bonus += prisoner["fear"]*2
+prisoner["obedience"] = prisoner_obedience_bonus + prisoner["moral"] + prisoner["fear"] + prisoner["custom"] + prisoner["rational"] + prisoner["instinct"] + prisoner_mood_bonus - prisoner["spoil"] - rebell[$prisoner_psy_basic]
+
+$prev_status = $prisoner_psy_status
+
+$prisoner_psy_status = $prisoner_psy_basic
+
+if prisoner["obedience"] > 4: $prisoner_psy_status = 'soft'
+
+pmax_motivation = max (prisoner["moral"],prisoner["fear"],prisoner["custom"],prisoner["rational"],prisoner["instinct"],prisoner["mood"],prisoner["spoil"])
+
+pcourage = prisoner["ego"] + prisoner_courage
+if prisoner["mood"] > 0: pcourage += prisoner["mood"]
+if prisoner["fear"] = pmax_motivation and prisoner["fear"] > pcourage: $prisoner_psy_status = 'frightened'
+
+IF prisoner["obedience"] > 4:
+ if prisoner["moral"] = max_motivation: $prisoner_psy_status = 'servile'
+ if prisoner["rational"] = max_motivation: $prisoner_psy_status = 'obedient'
+ if prisoner["instinct"] = max_motivation: $prisoner_psy_status = 'obedient'
+ if prisoner["custom"] = max_motivation: $prisoner_psy_status = 'obedient'  
+ if $prisoner_psy_status ! 'frightened' and prisoner["fear"] = pmax_motivation: $prisoner_psy_status = 'obedient'
+END
+
+IF prisoner["obedience"] > 2 and prisoner["arousal"] > 3 and prisoner["arousal"] => prisoner["moral"] and $prisoner_psy_status ! 'frightened':
+ $prisoner_psy_status = 'horny'
+END
+
+poptimism = prisoner["temper"] + prisoner["mood"]
+IF prisoner["angst"] > 0 and poptimism < 0:
+ $prisoner_psy_status = 'depresive'
+END
+
+IF prisoner["mood"] < 0 and prisoner["spoil"] > prisoner["fear"] and prisoner["spoil"] > prisoner["moral"]:
+ $prisoner_psy_status = 'hysteric'
+END
+
+psanity = prisoner["ego"] + prisoner["temper"]
+IF psanity < 2:
+ $prisoner_psy_status = 'broken' 
+ prisoner["custom"] = 200
+ prisoner["fear"] = 0
+ prisoner["moral"] = 0
+ prisoner["rational"] = 0
+ prisoner["instinct"] = 0 
+END
+
+!АССИСТЕНТКА
+!Особенности
+$assistant_features_list = ''
+IF assistant["wounds"] > 0: $assistant_features_list += '<<$slave_wounds[assistant["wounds"]]>><BR>'
+IF assistant["scares"] > 0: $assistant_features_list += '<<$slave_scares[assistant["scares"]]>><BR>'
+IF assistant["bruises"] > 0: $assistant_features_list += '<<$slave_bruises[assistant["bruises"]]>><BR>'
+IF assistant['arena_level'] > 4: $assistant_features_list += 'Чемпионка арены<BR>'
+if assistant['fertility'] = -2: $assistant_features_list += 'Незрелая<BR>' 
+IF assistant["fertility"] = -1: $assistant_features_list += 'Бесплодная<BR>' 
+IF assistant["fertility"] = 1: $assistant_features_list += 'Яйцекладущая<BR>' 
+IF assistant["pregnant"] = 1 and assistant['pregnant_revealed'] > 0: $assistant_features_list += 'Беременная<BR>' 
+IF assistant["nymphomania"] > 0: $assistant_features_list += 'Нимфоманка<BR>' 
+IF assistant["nymphomania"] < 0: $assistant_features_list += 'Фригидная<BR>' 
+IF assistant["masohism"] = 2: $assistant_features_list += 'Мазохистка<BR>'
+IF assistant["masohism"] = 1: $assistant_features_list += 'Привычна к боли<BR>'
+IF assistant["masohism"] = -1: $assistant_features_list += 'Боится боли<BR>'
+IF assistant["exhibitionism"] = 2: $assistant_features_list += 'Эксгибиционистка<BR>'
+IF assistant["exhibitionism"] = -1: $assistant_features_list += 'Стеснительная<BR>'
+IF assistant["preversion"] = 2: $assistant_features_list += 'Извращенка<BR>'
+IF assistant["preversion"] = -1: $assistant_features_list += 'Пуристка<BR>'
+IF assistant["homosexualism"] = 2: $assistant_features_list += 'Лесбиянка<BR>'
+IF assistant["homosexualism"] = 1: $assistant_features_list += 'Бисексуальная<BR>'
+IF assistant["homosexualism"] = -1: $assistant_features_list += 'Гомофобка<BR>'
+IF assistant["abuse_attitude"] = 2: $assistant_features_list += 'Пси-мазохистка<BR>'
+IF assistant["abuse_attitude"] = -1: $assistant_features_list += 'Истеричка<BR>'
+IF assistant["darkness_attitude"] = 2: $assistant_features_list += 'Дитя тьмы<BR>'
+IF assistant["darkness_attitude"] = -1: $assistant_features_list += 'Боится темноты<BR>'
+IF assistant["blood_attitude"] = 2: $assistant_features_list += 'Кровожадная<BR>'
+IF assistant["blood_attitude"] = -1: $assistant_features_list += 'Боится вида крови<BR>'
+IF assistant["fire_attitude"] = 2: $assistant_features_list += 'Пиромания<BR>'
+IF assistant["fire_attitude"] = -1: $assistant_features_list += 'Пирофобия<BR>'
+IF assistant["water_attitude"] = 2: $assistant_features_list += 'Дитя воды<BR>'
+IF assistant["water_attitude"] = -1: $assistant_features_list += 'Гидрофобия<BR>'
+IF assistant["vermin_attitude"] = 2: $assistant_features_list += 'Арахнофилия<BR>'
+IF assistant["vermin_attitude"] = -1: $assistant_features_list += 'Арахнофобия<BR>'
+IF assistant["deprivation_attitude"] = 2: $assistant_features_list += 'Любит беспомощность<BR>'
+IF assistant["deprivation_attitude"] = -1: $assistant_features_list += 'Клаустрофобия<BR>'
+IF assistant["passion_comfort"] = 1: $assistant_features_list += 'Ленивая<BR>'
+IF assistant["passion_comfort"] = -1: $assistant_features_list += 'Гиперактивная<BR>'
+IF assistant["passion_luxury"] = 1: $assistant_features_list += 'Любит роскошь<BR>'
+IF assistant["passion_luxury"] = -1: $assistant_features_list += 'Аскетичная<BR>'
+IF assistant["passion_sweets"] = 1: $assistant_features_list += 'Сладкоежка<BR>'
+IF assistant["passion_sweets"] = -1: $assistant_features_list += 'Не любит сладкое<BR>'
+IF assistant["passion_fame"] = 1: $assistant_features_list += 'Тщеславная<BR>'
+IF assistant["passion_fame"] = -1: $assistant_features_list += 'Хикикомори<BR>'
+IF assistant["courage"] = 2: $assistant_features_list += 'Отмороженная<BR>'
+IF assistant["courage"] = 1: $assistant_features_list += 'Храбрая<BR>'
+IF assistant["courage"] = -1: $assistant_features_list += 'Трусиха<BR>'
+IF assistant["metabolism"] = 5: $assistant_features_list += 'Мощный метаболизм<BR>'
+IF assistant["metabolism"] = 4: $assistant_features_list += 'Хороший метаболизм<BR>'
+IF assistant["metabolism"] = 2: $assistant_features_list += 'Ослабленный метаболизм<BR>'
+IF assistant["metabolism"] = 1: $assistant_features_list += 'Слабый метаболизм<BR>'
+IF assistant["grace"] = 1: $assistant_features_list += 'Грациозная<BR>'
+IF assistant["grace"] = -1: $assistant_features_list += 'Угловатая<BR>'
+IF assistant["sport_affinity"] = 1: $assistant_features_list += 'Спортивная<BR>'
+IF assistant["sport_affinity"] = -1: $assistant_features_list += 'Апатичная<BR>'
+if assistant["expression_affinity"]: $assistant_features_list += 'Талант: оратор<BR>'
+if assistant["pet_affinity"]:  $assistant_features_list += 'Талант: питомец<BR>'
+if assistant["dressage_affinity"]:  $assistant_features_list += 'Brony<BR>' 
+if assistant["nurse_affinity"]:  $assistant_features_list += 'Талант: медсестра<BR>'
+if assistant["service_affinity"]:  $assistant_features_list += 'Талант: горничная<BR>'
+if assistant["cook_affinity"]:  $assistant_features_list += 'Талант: кухарка<BR>'
+if assistant["gladiatrix_affinity"]: $assistant_features_list += 'Талант: воительница<BR>'
+if assistant["enchanter_affinity"]: $assistant_features_list += 'Талант: чародейка<BR>'
+if assistant["vocal_affinity"]: $assistant_features_list += 'Талант: певица<BR>'
+if assistant["music_affinity"]: $assistant_features_list += 'Талант: музыкантка<BR>'
+if assistant["callisthenics_affinity"]:  $assistant_features_list += 'Талант: танцовщица<BR>'
+if assistant["secretary_affinity"]:  $assistant_features_list += 'Талант: секретарша<BR>'  
+IF assistant["memory"] = 1: $assistant_features_list += 'Эйдетическая память<BR>'
+IF assistant["memory"] = -1: $assistant_features_list += 'Забывчивая<BR>'
+IF assistant["meekness"] > 0: $assistant_features_list += 'Дисциплинированная<BR>'
+IF assistant["meekness"] < 0: $assistant_features_list += 'Своенравная<BR>'
+IF assistant["selfesteem"] > 0: $assistant_features_list += 'Мания величия<BR>'
+IF assistant["selfesteem"] < 0: $assistant_features_list += 'Комплекс вины<BR>'
+IF assistant["voice"] > 0: $assistant_features_list += 'Чарующий голос<BR>'
+IF assistant["voice"] < 0: $assistant_features_list += 'Хриплый голос<BR>'
+IF assistant["compassion"] > 0: $assistant_features_list += 'Милосердная<BR>'
+IF assistant["compassion"] < 0: $assistant_features_list += 'Садистка<BR>'
+
+!Определяем секс-навыки асситентки
+if assistant["sub_hj"] < assistant["petting"]: assistant["sub_hj"] = assistant["petting"]
+assistant["petting"] = (assistant["sub_hj"] + assistant["sub_fj"] + assistant["sub_hug"] + assistant["sub_pazuri"])/4
+
+if assistant["sub_dt"] < assistant["sub_bj"]: assistant["sub_dt"] = assistant["sub_bj"]
+if assistant["sub_thongue"] < assistant["oral"]: assistant["sub_thongue"] = assistant["oral"]
+assistant["oral"] = (assistant["sub_kiss"] + assistant["sub_thongue"] + assistant["sub_bj"] + assistant["sub_dt"] + assistant["sub_asslik"])/5
+
+if assistant["sub_anal"] < assistant["anal_stretch"]: assistant["sub_anal"] = assistant["anal_stretch"]
+assistant["penetration"] = (assistant["sub_vaginal"] + assistant["sub_anal"] + assistant["sub_fisting"] + assistant["anal_stretch"])/4
+
+if assistant["sub_exhibit"] < assistant["roleplay"]: assistant["sub_exhibit"] = assistant["roleplay"]
+if assistant["sub_masturbation"] < assistant["sub_dildo"]: assistant["sub_masturbation"] = assistant["sub_dildo"]
+assistant["roleplay"] = (assistant["sub_seduce"] + assistant["sub_masturbation"] + assistant["sub_dildo"] + assistant["sub_exhibit"] + assistant["sub_humiliation"])/5
+
+if assistant["sub_mazo"] < assistant["sub_selfpain"]: assistant["sub_mazo"] = assistant["sub_selfpain"]
+if assistant["sub_piss"] < assistant["sub_kopro"]: assistant["sub_piss"] = assistant["sub_kopro"]
+assistant["fetishism"] = (assistant["sub_enema"] + assistant["sub_mazo"] + assistant["sub_selfpain"] + assistant["sub_piss"] + assistant["sub_kopro"])/5
+
+assistant["orgy"] = (assistant["sub_threesome"] + assistant["sub_dp"] + assistant["sub_tp"] + assistant["sub_gangbang"] + assistant["sub_bukake"])/5
+
+assistant["xenophily"] = (assistant["sub_zoosex"] + assistant["sub_bestiality"] + assistant["sub_insectsex"] + assistant["sub_tentacles"])/4
+
+!Стиль
+assistant["style"] = (assistant["expression"] + assistant["callisthenics"] + assistant["makeup"] + assistant_dressup + assistant_jewelry)/4 - assistant["hygiene"] 
+if assistant["style"] > 5: assistant["style"] = 5
+if assistant["style"] < 0: assistant["style"] = 0
+
+!Проверка на привычку
+if assistant["exhibitionism_xp"] > 10 and assistant["exhibitionism"] = 0: assistant["exhibitionism"] = 1
+if assistant["masohism_xp"] > 30 and assistant["masohism"] = 0: assistant["masohism"] = 1
+if assistant["preversion_xp"] > 10 and assistant["preversion"] = 0: assistant["preversion"] = 1
+if assistant["lesbian_xp"] > 10 and assistant["homosexualism"] = 0: assistant["homosexualism"] = 1
+if assistant["abuse_xp"] > 10 and assistant["abuse_attitude"] = 0: assistant["abuse_attitude"] = 1
+if assistant["darkness_xp"] > 10 and assistant["darkness_attitude"] = 0: assistant["darkness_attitude"] = 1
+if assistant["blood_xp"] > 10 and assistant["blood_attitude"] = 0: assistant["blood_attitude"] = 1 
+if assistant["fire_xp"] > 10 and assistant["fire_attitude"] = 0: assistant["fire_attitude"] = 1
+if assistant["water_xp"] > 10 and assistant["water_attitude"] = 0: assistant["water_attitude"] = 1
+if assistant["vermin_xp"] > 10 and assistant["vermin_attitude"] = 0: assistant["vermin_attitude"] = 1
+if assistant["deprivation_xp"] > 10 and assistant["deprivation_attitude"] = 0: assistant["deprivation_attitude"] = 1 
+
+!Нормализация переменных
+if assistant_state < 1: assistant_alchemist_rule = 0
+if assistant_state = 1 and slave_state = 0: assistant_alchemist_rule = 1
+
+if slave["beauty"] < 0: slave["beauty"] = 0
+if slave["sensitivity"] < 0: slave["sensitivity"] = 0
+if slave["temper"] < 0: slave["temper"] = 0
+if slave["ego"] < 0: slave["ego"] = 0
+if slave["pride"] < 0: slave["pride"] = 0
+if slave["intellect"] < 0: slave["intellect"] = 0
+if slave["exotic"] < 0: slave["exotic"] = 0
+if slave["fat"] < 0: slave["fat"] = 0
+if slave["bruises"] < 0: slave["bruises"] = 0
+if slave["scares"] < 0: slave["scares"] = 0
+if slave["fear"] < 0: slave["fear"] = 0
+if slave["angst"] < 0: slave["angst"] = 0
+if slave["spoil"] < 0: slave["spoil"] = 0
+if slave["instinct"] < 0: slave["instinct"] = 0
+if slave["rational"] < 0: slave["rational"] = 0
+if slave["moral"] < 0: slave["moral"] = 0
+if slave["arousal"] < 0: slave["arousal"] = 0
+if slave["hygiene"] < 0: slave["hygiene"] = 0
+if slave["custom"] < 0: slave["custom"] = 0
+if assistant["beauty"] < 0: assistant["beauty"] = 0
+if assistant["sensitivity"] < 0: assistant["sensitivity"] = 0
+if assistant["temper"] < 0: assistant["temper"] = 0
+if assistant["ego"] < 0: assistant["ego"] = 0
+if assistant["pride"] < 0: assistant["pride"] = 0
+if assistant["intellect"] < 0: assistant["intellect"] = 0
+if assistant["exotic"] < 0: assistant["exotic"] = 0
+if assistant["fat"] < 0: assistant["fat"] = 0
+if assistant["bruises"] < 0: assistant["bruises"] = 0
+if assistant["scares"] < 0: assistant["scares"] = 0
+if assistant["fear"] < 0: assistant["fear"] = 0
+if assistant["angst"] < 0: assistant["angst"] = 0
+if assistant["spoil"] < 0: assistant["spoil"] = 0
+if assistant["instinct"] < 0: assistant["instinct"] = 0
+if assistant["rational"] < 0: assistant["rational"] = 0
+if assistant["moral"] < 0: assistant["moral"] = 0
+if assistant["arousal"] < 0: assistant["arousal"] = 0
+if assistant["hygiene"] < 0: assistant["hygiene"] = 0
+if assistant["custom"] < 0: assistant["custom"] = 0
+
+if master_wealth < 0: master_wealth = 0
+if master_cha < 0: master_cha = 0
+if master_hygiene < 0: master_hygiene = 0
+if house_mess < 0: house_mess = 0
+if slave["voice"] > 0: slave["vocal"] += 1
+if slave["vocal"] > 5: slave["vocal"] = 5
+
+if assistant_state ! 1: assistant_account_rule = 0
+if slave_state = 0: slave_account_rule = 0
+
+восприятие = master_fighter - 1
+ловкость = master_fighter - 1
+сила = master_fighter - 1
+
+!Отображаемые показатели
+gs '$moodlets_account'
+master_energy_plus = master_energy
+if master_energy_plus < 0: master_energy_plus = 5 - master_energy
+master_mood_plus = master_mood
+if master_mood_plus < 0: master_mood_plus = 5 - master_mood
+master_excitement_plus = master_excitement
+if master_excitement_plus < 0: master_excitement_plus = 5 - master_excitement
+
+slave_energy_plus = slave["energy"]
+if slave_energy_plus < 0: slave_energy_plus = 5 - slave["energy"]
+slave_mood_plus = slave["mood"]
+if slave_mood_plus < 0: slave_mood_plus = 5 - slave["mood"]
+slave_arousal_plus = slave["arousal"]
+if slave_arousal_plus < 0: slave_arousal_plus = 5 - slave["arousal"]
+
+assistant_energy_plus = assistant["energy"]
+if assistant_energy_plus < 0: assistant_energy_plus = 5 - assistant["energy"]
+
+IF cooked_food < 0: cooked_food_plus = 0
+IF cooked_food = 0: cooked_food_plus = 1
+IF cooked_food > 0: cooked_food_plus = 2
+
+!Подсчёт запасов
+!TODO: заменить на вызов $get_frige_space ?
+frige_items = frige["vegetables"] + frige["flower"] + frige["spice"] + frige["cheese"] + frige["eggs"] + frige["milk"] + frige["cream"] + frige["mince"] + frige["meat"] + frige["virgin_meat"]
+frige_space = estate_size[$estate] - frige_items
+if spawn_semen > estate_size[$estate]: spawn_semen = estate_size[$estate]
+
+!Активные квесты
+$quest_description[1] = "<<$brand_fame[brand_reputation]>><br>
+   <<$taurus_fame[faction_fame['taurus']]>><br>
+   <<$serpis_fame[faction_fame['serpis']]>><br>
+   <<$kamira_fame[faction_fame['kamira']]>><br>
+   <<$korvus_fame[faction_fame['korvus']]>><br>
+
+<a href = 'EXEC: quest_description_mode = 0 & gt curloc'>Назад</a>"
+
+IF slave_state > 0:
+ active[$quest[2]] = 1
+ else
+ active[$quest[2]] = 0
+ gs '#quest_base'
+END
+
+
+
+--- $newloc ---------------------------------
+

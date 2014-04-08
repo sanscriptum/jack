@@ -1,0 +1,44 @@
+# sex_end
+$return_lock = $return_lock_prev
+$sex_partner = ''
+
+gs 'main_layout'
+menu_form = 0
+$onnewloc = '$newloc' 
+
+dynamic $master_energy_drop
+a = 0
+
+if master_excitement > sex['pc_boner']: a = master_excitement - sex['pc_boner']
+if a > master_mood['pos_statisfied']: master_mood['pos_statisfied'] = a
+master_excitement = sex['pc_boner']
+
+IF $sex['partner'] = '':
+ if slave["nymphomania_revealed"] = 0:  slave["nymphomania_revealed"] = 1  
+
+ killvar 'already_sex_curslave'
+ copyarr 'already_sex_curslave','sex_done_thisperson'
+ killvar 'today_sex_curslave'
+ copyarr 'today_sex_curslave','sex_done_today'
+ 
+ IF deflorated = 1:
+  virginity = 2
+  slave['neg_defloration'] = slave["sensitivity"] + slave['pride'] - slave["moral"] - slave["arousal"] - master_penetration
+  if slave['neg_defloration'] > 0: gs '$mod_slave_drop', slave['neg_defloration']    
+ END
+ IF sex["climax_count"] > 0:
+  if orgasm_prohibited > 0: sin_gained = max (1, slave["moral"])
+  slave_rate["arousal"] -= sex["climax_count"] * slave["arousal"] * sex["climax_top"]
+ END
+ if sex["climax_top"] > slave['pos_orgasm']: slave['pos_orgasm'] = sex["climax_top"]
+ slave['orgasm_type'] = sex['girl_orgasm_type_change']
+ dynamic $slave_energy_drop
+ slave['newness'] = sex['girl_newness'] 
+ if sex['girl_get_pregnant'] = 1 and slave['pregnant'] < 1: slave['pregnant'] = 1
+END
+
+killvar 'sex'
+sex_num = 0
+GT '<<$return_lock>>'
+--- sex_end ---------------------------------
+

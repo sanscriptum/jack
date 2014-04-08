@@ -1,0 +1,70 @@
+# choice_screen
+!Экран принятия решений да/нет
+GS '_layout'
+
+*p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+*p '<div id = "text"><<$text[txt]>></div>'
+
+IF $picture_type = 'pic_jpg':
+ *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.jpg"></div>'
+END
+IF $picture_type = 'slave_picture':
+ *p '<div id = "bg"><img src="content\pic\<<$fullimage[slave_type]>>.gif"></div>'
+END
+IF $picture_type = 'stock_picture':
+ *p '<div id = "bg"><img src="content\pic\<<$fullimage[stock_type]>>.gif"></div>'
+END
+IF $picture_type = 'prisoner_picture':
+ *p '<div id = "bg"><img src="content\pic\<<$fullimage[prisoner_type]>>.gif"></div>'
+END
+
+if npc = 0:
+ $info_bar = ''
+ *p '<div id = "side_panel_main"><center><font size = 50%><<$place_name[$place]>></font>
+<<$place_location[$place]>>
+
+ Информация к размышлению:
+ </center></div>'
+ *p '<div id = "side_panel_text">  <<$place_info[$place]>>
+</div>'  
+END
+IF npc ! 9999 and npc ! 0:
+ $info_bar = '' 
+ *p '<div id = "bg"><img src="content\pic\characters\<<$npc_image[$npc_id]>>.gif"></div>'
+ *p '<div id = "side_panel_main"><center><font size = 50%><<$npc_name[$npc_id]>></font>
+<<$npc_status[$npc_id]>>
+
+Информация к размышлению:
+</center></div>'
+ *p '<div id = "side_panel_text">  <<$npc_attitude[npc_attitude[$npc_id]]>>
+
+ <<$npc_info[$npc_id]>>
+</div>'
+END
+IF npc = 9999:
+  *p '<div id = "interaction_stat_bar">ОЦЕНКА:
+<<$beauty[stock["beauty"]]>> 
+<<$stamina[stock["stamina"]]>> 
+<<$exotic[stock["exotic"]]>> 
+<<$fat[stock["fat"]]>> 
+<<$sensitivity[stock["sensitivity"]]>> 
+<<$style[stock["style"]]>> 
+<<$temper[stock["temper"]]>> 
+
+ОСОБЕННОСТИ:
+<<$stock_features_list>>
+</div>'
+END
+
+*p '<div id = "interaction_stat_bar"><<$info_bar>></div>'
+IF $special_image[txt] ! '':
+ *p '<div id = "bg"><img src="content\pic\<<$special_image[txt]>>"></div>'
+END
+
+if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3'
+
+
+*p {<div id = "approve"><a href = 'EXEC: dynamic $yes'><img src="content\approve.png"></a></div>}
+*p {<div id = "deny"><a href = 'EXEC: dynamic $no'><img src="content\deny.png"></a></div>}
+--- choice_screen ---------------------------------
+

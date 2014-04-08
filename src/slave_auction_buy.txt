@@ -1,0 +1,104 @@
+# slave_auction_buy
+!Аукцион. Покупаем неподготовленных рабынь.
+IF farid_potential_debt > 0:
+ if slave_state = 0: interaction_city = 1191
+ if slave_state > 0: interaction_city = 1192
+ gt 'interaction_city'
+END
+if farid_debt > 0: interaction_city = 1193 & gt 'interaction_city'
+killobj
+
+if stock_pending = 0:
+ master_energy -= 1 
+ gs 'generate_stock'
+END
+$place = 'slave_stage'
+GS '_layout'
+
+IF stock_sold = 0:
+ $text = '<<$auction_start>>'
+END
+
+stock_base_price = 5
+
+IF auction_phase = 0:
+
+ if stock_sold = 1: $text = '  [ФАРИД]
+  Наш первый лот на сегодня! <<$stock_name>> &#45; <<$stock_epithet>> <<$stock_occupation_auk>> из <<$stock_world_auk>>, <<$stock_family_auk>>. Стартовая цена <<stock_base_price>> искр. Итак, кто даст стартовую цену?
+'
+
+ if stock_sold > 1: $text = '  [ФАРИД]
+  Следующий лот! <<$stock_name>> &#45; <<$stock_epithet>> <<$stock_occupation_auk>> из <<$stock_world_auk>>, <<$stock_family_auk>>. Стартовая цена <<stock_base_price>> искр. Итак, кто даст стартовую цену?
+'
+ if stock_sold => stock_limit: $text = '  [ФАРИД]
+  И последний лот на сегодня! <<$stock_name>> &#45; <<$stock_epithet>> <<$stock_occupation_auk>> из <<$stock_world_auk>>, <<$stock_family_auk>>. Стартовая цена <<stock_base_price>> искр. Итак, кто даст стартовую цену?
+'
+END
+
+IF auction_phase = 2:
+  b = RAND (1,9)
+  $text = '  [ФАРИД]
+  Принято! <<cur_stock_price>> искр раз... <<$auk_add[b]>>'
+END
+
+IF auction_phase = 3:
+  b = RAND (1,6)
+  $text = '  [ФАРИД]
+  <<cur_stock_price>> искр два... <<$auk_add[b]>>'
+END
+
+IF auction_phase = 4:
+  b = RAND (1,6)
+  $text = '  [ФАРИД]
+  <<cur_stock_price>> искр три! Продано.'
+END
+
+IF auction_phase = 5:
+  $text = '  [ФАРИД]
+  И на этом мы завершаем сегодняшний аукцион! Все лоты проданы. Пожалуйста приходите завтра &#45; Туманы подарят нам еще много дивных красавиц!'
+END
+
+IF auction_phase = 6:
+  $text = '  Вы забираете вновь приобретенную рабыню с собой и отправляетесь домой.'
+END
+
+*p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+if stock_sold = 0: *p '<div id = "bg"><img src="content\pic\characters\slaver_fharid.gif"></div>'
+if stock_sold > 0 and auction_phase < 5: *p '<div id = "bg"><img src="content\pic\<<$stock_fullimage>>.gif"></div>'
+*p '<div id = "text"><<$text>></div>'
+
+IF haggling_stage = 1:
+ if auction_phase < 4 and sparks => rise_stock_price: *p '<div id = "auction_price">Поднять до <<rise_stock_price>> искр</div>' & *p '<div id = "auction_rise_up"><a href = "EXEC: gt ''slave_auction_rise''"><img src="content\pic\buttons\rise_up.png"></a></div>'
+ else
+ if haggling_stage = 2: *p '<div id = "auction_price">Ставка: <<cur_stock_price>> искр </div>'
+END
+
+IF haggling_stage = 1:
+ *p '<div id = "auction_next"><a href = "EXEC: gt ''slave_auction_next''"><img src="content\pic\buttons\auk_next.png"></a></div>'
+END
+
+addobj '<img src = "content\pic\buttons\auk_fwrd.png">'
+
+IF stock_sold > 0 and auction_phase < 5: 
+ *p '<div id = "interaction_stat_bar">ОЦЕНКА:
+<<$beauty[stock["beauty"]]>> 
+<<$stamina[stock["stamina"]]>> 
+<<$fat[stock["fat"]]>> 
+<<$sensitivity[stock["sensitivity"]]>> 
+<<$style[stock["style"]]>> 
+<<$temper[stock["temper"]]>> 
+
+ОСОБЕННОСТИ:
+<<$stock_features_list>>
+</div>'
+ else
+ $info_bar = ''
+ *p '<div id = "side_panel_main"><center><font size = 50%><<$place_name[$place]>></font>
+<<$place_location[$place]>>
+
+ Информация к размышлению:</center></div>'
+ *p '<div id = "side_panel_text">  <<$place_info[$place]>>
+ </div>'  
+END
+--- slave_auction_buy ---------------------------------
+

@@ -1,0 +1,36 @@
+# colloseum_fight
+количество_врагов = 1
+
+IF colloseum_fight = 1 or colloseum_fight = 11 or colloseum_fight = 21 or colloseum_fight = 31:
+ $враг[1] = 'голая_рабыня'
+END
+
+IF colloseum_fight = 2 or colloseum_fight = 12 or colloseum_fight = 22 or colloseum_fight = 32:
+ $враг[1] = 'госпожа'
+END
+
+IF colloseum_fight = 3 or colloseum_fight = 13 or colloseum_fight = 23 or colloseum_fight = 33:
+ $враг[1] = 'шиноби'
+END
+
+IF colloseum_fight = 4 or colloseum_fight = 14 or colloseum_fight = 24 or colloseum_fight = 34:
+ $враг[1] = 'амазонка'
+END
+
+IF colloseum_fight = 5 or colloseum_fight = 15 or colloseum_fight = 25 or colloseum_fight = 35:
+ $враг[1] = 'латница'
+END
+
+IF colloseum_fight > 10:
+combatant = 1
+END
+
+IF colloseum_fight > 20:
+combatant = 2
+END
+
+interaction_city = 199
+gt 'interaction_city'
+!gt 'начать_бой'
+--- colloseum_fight ---------------------------------
+

@@ -1,0 +1,58 @@
+# hard_return
+!Возвращение через лишнюю локацию в интересах правильного отображения характеристик
+sbros = 1
+
+if get_initial_slave = 1: 
+ slave["beauty"] = 1
+ slave['custom'] = 5
+ slave['instinct'] = 5
+ slave["intellect"] = 4
+ slave['rational'] = 5
+ slave['moral'] = 5 
+ slave["pride"] = 0
+ slave["ego"] = 3
+ sparks = 10000
+ npc_reveal['realtor'] = 1
+ noble_status = 1
+ active[$quest[3]] = 0
+ faction_fame['neutral'] = 1
+ faction_fame['taurus'] = 1
+ faction_fame['serpis'] = 1
+ faction_fame['korvus'] = 1
+ faction_fame['kamira'] = 1
+ 
+ $master_armor = 'плейт'
+ $master_cloth = 'fancy_suit'
+ 
+ $master_back_wpn = 'грейтекс'
+ $master_left_wpn = 'демократизатор'
+ $master_right_wpn = 'кнут'
+ $master_arm_wpn = 'нагайка'
+ $master_leg_wpn = 'кинжал'
+
+
+ slave_inventory['maid_dress'] = 1
+
+ slave['stamina'] = 4
+ slave['temper'] = 3
+ slave['cook'] = 4
+ slave['secretary'] = 4
+ slave['expression'] = 3
+ slave['service'] = 3
+
+ slave["sub_vaginal"] = 3
+ slave["brand"] = 1
+ 
+ get_initial_slave = 0
+ $estate = 'white_house'
+ $interior = 'gothic'
+ gs 'new_estate' 
+ gs 'generate_stock' 
+ gs 'slave_to_assistant'
+END
+
+gs '$newloc'
+gt '<<$return_lock>>'
+
+--- hard_return ---------------------------------
+

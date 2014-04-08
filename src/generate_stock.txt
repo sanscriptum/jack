@@ -1,0 +1,1535 @@
+# generate_stock
+stock_pending = 1
+killvar 'stock'
+killvar 'stock_rate'
+
+$stock_epithet = 'доступная по цене'
+$stock_occupation_auk = 'девочка'
+$stock_world_auk = 'загадочного мира'
+$stock_family_auk = 'сирота'
+
+:loop_meta
+meta_type = RAND (1,5)
+if meta_type = 4: meta_type = 2
+if meta_type = 5: meta_type = 3
+
+IF no_loli = 1:
+ if meta_type = 1: jump 'loop_meta'
+END
+IF no_milf = 1:
+ if meta_type = 3: jump 'loop_meta'
+END
+
+IF meta_type = 1: stock_type = RAND (1,28)
+IF meta_type = 2: stock_type = RAND (201,241)
+IF meta_type = 3: stock_type = RAND (501,542)
+
+!Берем специфическую рабыню
+IF special_stock > 0: 
+ stock_type = special_stock
+ special_stock = 0
+END
+IF $special_age ! '': 
+ seed_age = age_code[$special_age]
+ $special_age = ''
+END
+
+$stock_type = 'common'
+stock["null"] = 0
+stock["age"] = seed_age[stock_type]
+
+if stock["age"] = CONST_INT['loli_age']: stock['fertility'] = -2
+
+!БАЗОВЫЕ АТРИБУТЫ
+stat_count = 7
+i = 0
+:loop
+i += 1
+gen = RAND (1,12)
+if gen > 0: atribute = 1
+if gen > 3: atribute = 2
+if gen > 6: atribute = 3
+if gen > 9: atribute = 4
+if gen = 12: atribute = 5 
+
+dynamic '<<$stockatr[i]>> = atribute'
+
+if i < stat_count: jump 'loop'
+
+stock["fat"] = RAND (0,2)
+stock["metabolism"] = 3
+
+!ОСОБЕННОСТИ
+stock["boobs"] = seed_boobs[stock_type]
+stock_virginity = 0
+
+display_psy_status = 1
+
+!СОЗДАНИЕ СЛУЧАЙНОЙ ПРЕДЫСТОРИИ
+IF $seed_world[stock_type] = '':
+ chance = RAND (1,18)
+ $stock_world = $origin_world[chance]
+ else
+ $stock_world = $seed_world[stock_type]
+END
+
+chance = RAND (1,3)
+dynamic '$stock_world_description = $<<$stock_world>>_description[chance]'
+
+IF $stock_world = 'prehistoric': 
+ cf_max = 2
+ $namebase = 'prehistoric'
+ nm_max = 20
+ $stock_world_auk = 'доисторического мира' 
+ stock_rate["exotic"] += 10
+ if stock["stamina"] < 5: stock["stamina"] += 1
+ if stock["temper"] < 5: stock["temper"] += 1
+ if stock["ego"] > 1: stock["ego"] -= 1
+ if stock["intellect"] > 1: stock["intellect"] -= 1 
+END
+IF $stock_world = 'barbarian': 
+ cf_max = 7
+ $namebase = 'barbarian' 
+ nm_max = 61
+ $stock_world_auk = 'варварского мира' 
+ if stock["stamina"] < 5: stock["stamina"] += 1
+ if stock["temper"] < 5: stock["temper"] += 1
+ if stock["ego"] > 1: stock["ego"] -= 1
+ if stock["intellect"] > 1: stock["intellect"] -= 1  
+END
+IF $stock_world = 'sns': 
+ cf_max = 7
+ $namebase = 'barbarian'  
+ nm_max = 61
+ $stock_world_auk = 'мира меча и магии' 
+ if stock["stamina"] < 5: stock["stamina"] += 1 
+ if stock["ego"] > 1: stock["ego"] -= 1
+ if stock["intellect"] > 1: stock["intellect"] -= 1  
+END
+IF $stock_world = 'medieval': 
+ cf_max = 9
+ $namebase = 'medieval'  
+ nm_max = 35
+ $stock_world_auk = 'традиционно-аграрного мира' 
+ if stock["temper"] < 5: stock["temper"] -= 1
+ if stock["ego"] > 1: stock["ego"] -= 1
+ if stock["intellect"] > 1: stock["intellect"] -= 1   
+ if stock["custom"] < 5: stock["custom"] += 1  
+END
+IF $stock_world = 'highfantasy': 
+ cf_max = 9
+ nc = RAND (1,2)
+ IF nc = 1:
+  nm_max = 35
+  $namebase = 'medieval'  
+ END
+ IF nc = 2:
+  nm_max = 25
+  $namebase = 'fantasy'  
+ END 
+ $stock_world_auk = 'магического мира' 
+ if stock["sensitivity"] < 5: stock["sensitivity"] += 1
+ stock_rate["exotic"] += 10
+END
+IF $stock_world = 'darkfantasy': 
+ cf_max = 9
+ nc = RAND (1,2)
+ IF nc = 1:
+  nm_max = 35
+  $namebase = 'medieval'  
+ END
+ IF nc = 2:
+  nm_max = 61
+  $namebase = 'barbarian'  
+ END 
+ $stock_world_auk = 'мира темной магии' 
+ if stock["stamina"] > 1: stock["stamina"] -= 1
+ if stock["temper"] > 1: stock["temper"] -= 1
+ if stock["ego"] > 1: stock["ego"] -= 1
+ if stock["sensitivity"] > 1: stock["sensitivity"] -= 1
+ if stock["intellect"] > 1: stock["intellect"] -= 1  
+ if stock["pride"] > 1: stock["pride"] -= 1      
+ stock_rate["exotic"] += 10 
+ if stock["custom"] < 5: stock["custom"] += 2  
+END
+IF $stock_world = 'steampunk': 
+ cf_max = 12
+ $namebase = 'oldscool'   
+ nm_max = 40
+ $stock_world_auk = 'мира паровых технологий' 
+ if stock["custom"] < 5: stock["custom"] += 1
+END
+IF $stock_world = 'industrial': 
+ cf_max = 12
+ nc = RAND (1,2)
+ IF nc = 1:
+  nm_max = 40
+  $namebase = 'oldscool'  
+ END
+ IF nc = 2:
+  nm_max = 40
+  $namebase = 'euro'  
+ END 
+ $stock_world_auk = 'индустриально развитого мира' 
+ if stock["custom"] < 5: stock["custom"] += 1
+END
+IF $stock_world = 'modern': 
+ cf_max = 10
+ nc = RAND (1,2)
+ IF nc = 1:
+  nm_max = 30
+  $namebase = 'russian'  
+ END
+ IF nc = 2:
+  nm_max = 40
+  $namebase = 'euro'  
+ END 
+ $stock_world_auk = 'экономически развитого мира' 
+ if stock["ego"] < 5: stock["ego"] += 1
+ if stock["pride"] < 5: stock["pride"] += 1
+ if stock["intellect"] < 5: stock["intellect"] += 1 
+ if stock["stamina"] > 1: stock["stamina"] -= 1
+END
+IF $stock_world = 'cyberpunk': 
+ cf_max = 11
+ nc = RAND (1,2)
+ IF nc = 1:
+  nm_max = 30
+  $namebase = 'russian'  
+ END
+ IF nc = 2:
+  nm_max = 40
+  $namebase = 'euro'  
+ END 
+ $stock_world_auk = 'мира высоких технологий' 
+ if stock["ego"] < 5: stock["ego"] += 1
+ if stock["intellect"] < 5: stock["intellect"] += 1 
+ if stock["temper"] > 1: stock["temper"] -= 1
+ if stock["stamina"] > 1: stock["stamina"] -= 1
+END
+IF $stock_world = 'utopia': 
+ cf_max = 4
+ nm_max = 20
+ $namebase = 'utopia'   
+ $stock_world_auk = 'идиллической утопии' 
+ if stock["spoil"] < 5: stock["spoil"] += 1
+ if stock["intellect"] < 5: stock["intellect"] += 1
+ stock_rate["exotic"] += 10 
+ if stock["sensitivity"] < 5: stock["sensitivity"] += 1   
+ if stock["sensitivity"] < 5: stock["sensitivity"] += 1  
+ if stock["pride"] < 5: stock["pride"] += 1
+END
+
+IF $stock_world = 'darkfuture': 
+ cf_max = 4
+ nm_max = 40
+ $namebase = 'euro'    
+ $stock_world_auk = 'тоталитарной страны' 
+ if stock["stamina"] > 1: stock["stamina"] -= 1 
+ if stock["temper"] > 1: stock["temper"] -= 1
+ if stock["intellect"] < 5: stock["intellect"] += 1
+ if stock["custom"] < 4: stock["custom"] += 2 
+ if stock["temper"] > 1: stock["temper"] -= 1
+ if stock["temper"] > 1: stock["temper"] -= 1
+ if stock["ego"] > 1: stock["ego"] -= 1
+ if stock["ego"] > 1: stock["ego"] -= 1
+ if stock["sensitivity"] > 1: stock["sensitivity"] -= 1 
+ if stock["pride"] > 1: stock["pride"] = 1
+ if stock["fat"] > 1: stock["fat"] = 1 
+END
+
+IF $stock_world = 'space': 
+ cf_max = 7
+ nc = RAND (1,2)
+ IF nc = 1:
+  nm_max = 20
+  $namebase = 'utopia'  
+ END
+ IF nc = 2:
+  nm_max = 40
+  $namebase = 'euro'  
+ END   
+ $stock_world_auk = 'высокоразвитой космической цивилизации' 
+ if stock["stamina"] > 1: stock["stamina"] -= 1
+ if stock["intellect"] < 5: stock["intellect"] += 1
+ stock_rate["exotic"] += 10 
+ if stock["ego"] < 5: stock["ego"] += 1
+ if stock["pride"] < 5: stock["pride"] += 1 
+END
+
+chance = RAND (1,cf_max)
+dynamic '$stock_family = $<<$stock_world>>_family[chance]'
+
+IF $stock_family = 'tribe': 
+ co_max = 2
+ $stock_family_auk = 'выросшая в племени дикарей' 
+ if stock["stamina"] < 5: stock["stamina"] += 1 
+END
+IF $stock_family = 'amazon': 
+ co_max = 3
+ $stock_family_auk = 'воспитанная отважными амазонками' 
+ if stock["temper"] < 5: stock["temper"] += 1
+ if stock["ego"] < 5: stock["ego"] += 1 
+ if stock["pride"] < 5: stock["pride"] += 1
+ if stock["sensitivity"] > 1: stock["sensitivity"] -= 1
+END
+IF $stock_family = 'nomad': 
+ co_max = 3
+ $stock_family_auk = 'воспитанная кочевниками' 
+END
+IF $stock_family = 'pesant': 
+ co_max = 4
+ $stock_family_auk = 'дочь крестьянина' 
+ if stock["stamina"] < 5: stock["stamina"] += 1 
+ if stock["temper"] > 1: stock["temper"] -= 1
+ if stock["ego"] > 1: stock["ego"] -= 1  
+ if stock["sensitivity"] > 1: stock["sensitivity"] -= 1
+ if stock["custom"] < 5: stock["custom"] += 1 
+ if stock["intellect"] > 1: stock["intellect"] -= 1 
+ if stock["sensitivity"] > 1: stock["sensitivity"] -= 1  
+END
+IF $stock_family = 'hunter': 
+ co_max = 5
+ if stock["temper"] < 5: stock["temper"] += 1 
+ if stock["stamina"] < 5: stock["stamina"] += 1  
+ $stock_family_auk = 'дочь охотника' 
+END
+IF $stock_family = 'fisher': 
+ co_max = 3
+ if stock["temper"] > 1: stock["temper"] -= 1 
+ if stock["custom"] < 5: stock["custom"] += 1  
+ $stock_family_auk = 'дочь рыбака' 
+END
+IF $stock_family = 'viking': 
+ co_max = 3
+ $stock_family_auk = 'дочь морского разбойника'  
+ if stock["temper"] < 5: stock["temper"] += 1 
+ if stock["pride"] < 5: stock["pride"] += 1 
+ if stock["intellect"] > 1: stock["intellect"] -= 1  
+ if stock["sensitivity"] > 1: stock["sensitivity"] -= 1 
+END
+IF $stock_family = 'barbarian_king': 
+ co_max = 1
+ $stock_family_auk = 'принцесса варваров'  
+ if stock["temper"] < 5: stock["temper"] += 1 
+ if stock["ego"] < 5: stock["ego"] += 1   
+ if stock["pride"] < 5: stock["pride"] += 1
+ if stock["spoi"] < 4: stock["spoi"] += 2  
+ if stock["custom"] > 0: stock["custom"] = 0   
+ $stock_occupation_auk = 'аристократка' 
+END
+
+IF $stock_family = 'orphan': 
+ if stock["stamina"] > 1: stock["stamina"] -= 1
+ if stock["temper"] < 5: stock["temper"] += 1  
+ if stock["pride"] > 1: stock["pride"] -= 1 
+ if stock["intellect"] > 1: stock["intellect"] -= 1  
+ co_max = 8
+ $stock_family_auk = 'беспризорница' 
+END
+IF $stock_family = 'bondman': 
+ if stock["temper"] > 1: stock["temper"] -= 1
+ if stock["ego"] > 1: stock["ego"] -= 1  
+ if stock["sensitivity"] > 1: stock["sensitivity"] -= 1
+ if stock["custom"] < 5: stock["custom"] += 1 
+ if stock["intellect"] > 1: stock["intellect"] -= 1 
+ if stock["sensitivity"] > 1: stock["sensitivity"] -= 1  
+ co_max = 7
+ $stock_family_auk = 'дочь крепостных крестьян' 
+END
+IF $stock_family = 'gypsy': 
+ stock_rate["exotic"] += 10 
+ if stock["temper"] < 5: stock["temper"] += 1  
+ co_max = 8
+ $stock_family_auk = 'воспитаная в цыганском таборе' 
+END
+IF $stock_family = 'church': 
+ if stock["temper"] > 1: stock["temper"] -= 1
+ if stock["ego"] > 1: stock["ego"] -= 1  
+ if stock["intellect"] < 5: stock["intellect"] += 1 
+ if stock["custom"] < 5: stock["custom"] += 1  
+ co_max = 5
+ $stock_family_auk = 'воспитанница церковного приюта' 
+END
+IF $stock_family = 'craftsman': 
+ co_max = 8
+ $stock_family_auk = 'дочь ремесленника' 
+END
+IF $stock_family = 'merchant': 
+ co_max = 5
+ if stock["spoi"] < 5: stock["spoi"] += 1   
+ $stock_family_auk = 'купеческая дочь' 
+END
+IF $stock_family = 'valetry': 
+ if stock["custom"] < 4: stock["custom"] += 2  
+ if stock["temper"] > 1: stock["temper"] -= 1
+ if stock["ego"] > 1: stock["ego"] -= 1   
+ co_max = 8
+ $stock_family_auk = 'дочь служанки' 
+END
+IF $stock_family = 'knight': 
+ if stock["spoi"] < 5: stock["spoi"] += 1   
+ if stock["ego"] < 5: stock["ego"] += 1    
+ if stock["pride"] < 5: stock["pride"] += 1     
+ if stock["sensitivity"] < 5: stock["sensitivity"] += 1    
+ co_max = 6
+ $stock_family_auk = 'дочь поместного феодала' 
+END
+IF $stock_family = 'mprincess': 
+ if stock["temper"] < 5: stock["temper"] += 1 
+ if stock["ego"] < 5: stock["ego"] += 1   
+ if stock["pride"] < 5: stock["pride"] += 1
+ if stock["spoi"] < 4: stock["spoi"] += 2  
+ if stock["custom"] > 0: stock["custom"] = 0  
+ co_max = 1
+ $stock_family_auk = 'принцесса' 
+END
+
+IF $stock_family = 'farmers': 
+ if stock["stamina"] < 5: stock["stamina"] += 1 
+ if stock["intellect"] > 1: stock["intellect"] -= 1   
+ if stock["pride"] > 1: stock["pride"] -= 1    
+ if stock["custom"] < 5: stock["custom"] += 1   
+ co_max = 4
+ $stock_family_auk = 'фермерская дочка' 
+END
+IF $stock_family = 'workhouse': 
+ if stock["stamina"] > 1: stock["stamina"] -= 1 
+ if stock["temper"] > 1: stock["temper"] -= 1   
+ if stock["ego"] > 1: stock["ego"] -= 1   
+ if stock["pride"] > 2: stock["pride"] -= 2    
+ if stock["custom"] < 4: stock["custom"] += 2   
+ if stock["sensitivity"] > 1: stock["sensitivity"] -= 1  
+ co_max = 9
+ $stock_family_auk = 'воспитанница в сиротского приюта' 
+END
+IF $stock_family = 'proletarian': 
+ if stock["stamina"] > 1: stock["stamina"] -= 1 
+ if stock["pride"] > 1: stock["pride"] -= 1     
+ co_max = 10
+ $stock_family_auk = 'дочь заводского работника' 
+END
+IF $stock_family = 'clerk': 
+ if stock["intellect"] < 5: stock["intellect"] += 1 
+ co_max = 8
+ $stock_family_auk = 'дочь конторского работника' 
+END
+IF $stock_family = 'naturalist': 
+ if stock["intellect"] < 5: stock["intellect"] += 1 
+ co_max = 4
+ $stock_family_auk = 'дочь ученого-естествоиспытателя' 
+END
+IF $stock_family = 'ingeneer': 
+ if stock["intellect"] < 5: stock["intellect"] += 1 
+ co_max = 6
+ $stock_family_auk = 'дочь инженера' 
+END
+IF $stock_family = 'doctor': 
+ if stock["stamina"] < 5: stock["stamina"] += 1 
+ if stock["intellect"] < 5: stock["intellect"] += 1 
+ co_max = 6
+ $stock_family_auk = 'дочь известного врача' 
+END
+IF $stock_family = 'servant': 
+ if stock["custom"] < 4: stock["custom"] += 2  
+ if stock["temper"] > 1: stock["temper"] -= 1
+ if stock["ego"] > 1: stock["ego"] -= 1   
+ co_max = 9
+ $stock_family_auk = 'дочь слуг при богатом доме' 
+END
+IF $stock_family = 'magnat': 
+ if stock["spoi"] < 5: stock["spoi"] += 1   
+ if stock["ego"] < 5: stock["ego"] += 1    
+ if stock["pride"] < 5: stock["pride"] += 1     
+ if stock["sensitivity"] < 5: stock["sensitivity"] += 1   
+ co_max = 4
+ $stock_family_auk = 'выросшая в семье промышленного магната' 
+END
+IF $stock_family = 'bankeer': 
+ if stock["spoi"] < 5: stock["spoi"] += 1   
+ if stock["ego"] < 5: stock["ego"] += 1    
+ if stock["pride"] < 5: stock["pride"] += 1     
+ if stock["sensitivity"] < 5: stock["sensitivity"] += 1
+ co_max = 4
+ $stock_family_auk = 'дочь богатого банкира' 
+END
+IF $stock_family = 'mayor': 
+ if stock["spoi"] < 5: stock["spoi"] += 1   
+ if stock["ego"] < 5: stock["ego"] += 1    
+ if stock["pride"] < 5: stock["pride"] += 1     
+ if stock["sensitivity"] < 5: stock["sensitivity"] += 1
+ co_max = 4
+ $stock_family_auk = 'дочь влиятельного политика' 
+END
+IF $stock_family = 'mafiosi': 
+ if stock["spoi"] < 5: stock["spoi"] += 1   
+ if stock["temper"] < 5: stock["temper"] += 1    
+ if stock["pride"] < 5: stock["pride"] += 1     
+ if stock["sensitivity"] > 1: stock["sensitivity"] -= 1
+ co_max = 4
+ $stock_family_auk = 'выросшая в мафиозной семье' 
+END
+
+IF $stock_family = 'orpnange': 
+ if stock["ego"] > 1: stock["ego"] -= 1   
+ if stock["pride"] > 1: stock["pride"] -= 1    
+ if stock["custom"] < 5: stock["custom"] += 1   
+ if stock["sensitivity"] > 1: stock["sensitivity"] -= 1  
+ co_max = 13
+ $stock_family_auk = 'воспитанница детского дома' 
+END
+IF $stock_family = 'worker': 
+ co_max = 11
+ $stock_family_auk = 'выросшая в семье простого работяги' 
+END
+IF $stock_family = 'policeman': 
+ co_max = 10
+ $stock_family_auk = 'дочь полицейского' 
+END
+IF $stock_family = 'manager': 
+ co_max = 13
+ $stock_family_auk = 'дочь офисного работника' 
+END
+IF $stock_family = 'biologist': 
+ if stock["intellect"] < 5: stock["intellect"] += 1 
+ co_max = 11
+ $stock_family_auk = 'воспитанная в интеллигентной семье' 
+END
+IF $stock_family = 'programmer': 
+ co_max = 13
+ $stock_family_auk = 'воспитанная в семье среднего класса' 
+END
+IF $stock_family = 'surgeon': 
+ if stock["stamina"] < 5: stock["stamina"] += 1 
+ if stock["beauty"] < 5: stock["beauty"] += 1  
+ co_max = 11
+ $stock_family_auk = 'дочь преуспевающего пластического хирурга' 
+END
+IF $stock_family = 'buissinesman': 
+ if stock["spoi"] < 5: stock["spoi"] += 1  
+ if stock["pride"] < 5: stock["pride"] += 1  
+ co_max = 4
+ $stock_family_auk = 'дочь преуспевающего бизнесмена' 
+END
+IF $stock_family = 'finance': 
+ if stock["spoi"] < 5: stock["spoi"] += 1  
+ if stock["pride"] < 5: stock["pride"] += 1  
+ co_max = 4
+ $stock_family_auk = 'дочь преуспевающего финансиста' 
+END
+IF $stock_family = 'general': 
+ if stock["custom"] < 5: stock["custom"] += 1   
+ if stock["pride"] < 5: stock["pride"] += 1     
+ co_max = 4
+ $stock_family_auk = 'генеральская дочка' 
+END
+
+IF $stock_family = 'poet': 
+ if stock["sensitivity"] < 5: stock["sensitivity"] += 1
+ co_max = 4
+ $stock_family_auk = 'воспитанная в семье поэтов' 
+END
+IF $stock_family = 'operator': 
+ co_max = 4
+ $stock_family_auk = 'дочь оператора производственной базы' 
+END
+IF $stock_family = 'artist': 
+ if stock["sensitivity"] < 5: stock["sensitivity"] += 1
+ co_max = 4
+ $stock_family_auk = 'воспитанная в творческой семье' 
+END
+IF $stock_family = 'architect': 
+ if stock["intellect"] < 5: stock["intellect"] += 1 
+ co_max = 4
+ $stock_family_auk = 'воспитанная в семье архитекторов' 
+END
+
+IF $stock_family = 'jailer': 
+ if stock["sensitivity"] > 1: stock["sensitivity"] -= 1  
+ co_max = 4
+ $stock_family_auk = 'дочь тюремщика' 
+END
+IF $stock_family = 'bioreactor': 
+ if stock["sensitivity"] > 1: stock["sensitivity"] -= 1  
+ co_max = 4
+ $stock_family_auk = 'дочь оператора биореактора' 
+END
+IF $stock_family = 'minitruth': 
+ if stock["intellect"] < 5: stock["intellect"] += 1 
+ co_max = 4
+ $stock_family_auk = 'дочь функционера министерства правды' 
+END
+IF $stock_family = 'anter': 
+ if stock["custom"] < 5: stock["custom"] += 1   
+ co_max = 4
+ $stock_family_auk = 'выросшая в промышленном муравейнике' 
+END
+IF $stock_family = 'freetrader': 
+ co_max = 3
+ $stock_family_auk = 'выросшая на торговом транспорте' 
+END
+IF $stock_family = 'asteroid': 
+ co_max = 6
+ $stock_family_auk = 'выросшая на астероидной буровой базе' 
+END
+IF $stock_family = 'astrofarm': 
+ co_max = 6
+ $stock_family_auk = 'выросшая на орбитальной станции' 
+END
+IF $stock_family = 'astrogator': 
+ if stock["intellect"] < 5: stock["intellect"] += 1 
+ co_max = 4
+ $stock_family_auk = 'воспитаная на развитой планете' 
+END
+IF $stock_family = 'admiral': 
+ if stock["custom"] < 5: stock["custom"] += 1   
+ if stock["pride"] < 5: stock["pride"] += 1   
+ co_max = 3
+ $stock_family_auk = 'адмиральская дочка' 
+END
+IF $stock_family = 'nanofarmacist': 
+ if stock["intellect"] < 5: stock["intellect"] += 1 
+ co_max = 3
+ $stock_family_auk = 'выросшая на промышленной станции' 
+END
+IF $stock_family = 'gendesigner': 
+ if stock["beauty"] < 5: stock["beauty"] += 1 
+ if stock["intellect"] < 5: stock["intellect"] += 1 
+ co_max = 4
+ $stock_family_auk = 'дочь знаменитого генетического дизайнера' 
+END
+
+$stock_family_description = $family_description[$stock_family]
+
+IF meta_type = 2:
+ chance = RAND (1,4)
+ if chance = 1: stock["sub_anal"] += 1  
+ chance = RAND (1,3)
+ if chance = 1: stock["sub_bj"] += 1  
+ chance = RAND (1,2)
+ if chance = 1: stock["sub_masturbation"] += 1   
+ chance = RAND (1,3)
+ if chance = 1: stock["sub_masturbation"] += 1   
+ chance = RAND (1,4)
+ IF chance = 1:  
+  stock_virginity = 2
+  if stock["sub_hug"] < 5: stock["sub_hug"] += 1 
+  if stock["sub_kiss"] < 5: stock["sub_kiss"] += 1  
+  if stock["sub_vaginal"] < 5: stock["sub_vaginal"] += 1 
+  chance = RAND (1,3)
+  if chance = 1: stock["sub_anal"] += 1  
+  chance = RAND (1,3)
+  if chance = 1: stock["sub_bj"] += 1  
+ END
+END
+
+if meta_type = 3:
+ if stock["sub_hug"] < 5: stock["sub_hug"] += 1 
+ if stock["sub_kiss"] < 5: stock["sub_kiss"] += 1 
+ chance = RAND (1,2)
+ if chance = 1: stock["sub_masturbation"] += 1   
+ chance = RAND (1,3)
+ if chance = 1: stock["sub_masturbation"] += 1   
+ chance = RAND (1,4)
+ if chance = 1: stock["sub_masturbation"] += 1    
+ chance = RAND (1,4)
+ if chance = 1: stock["sub_anal"] += 1  
+ chance = RAND (1,3)
+ if chance = 1: stock["sub_bj"] += 1   
+ chance = RAND (1,4)
+ IF chance > 1:  
+  stock_virginity = 2
+  if stock["sub_hug"] < 5: stock["sub_hug"] += 1 
+  if stock["sub_kiss"] < 5: stock["sub_kiss"] += 1  
+  if stock["sub_seduce"] < 5: stock["sub_seduce"] += 1 
+  if stock["sub_vaginal"] < 4: stock["sub_vaginal"] += 2    
+  chance = RAND (1,3)
+  if chance = 1: stock["sub_anal"] += 1  
+  chance = RAND (1,2)
+  if chance = 1: stock["sub_bj"] += 1     
+  chance = RAND (1,4)
+  if chance = 1: stock["sub_anal"] += 1  
+  chance = RAND (1,3)
+  if chance = 1: stock["sub_bj"] += 1     
+ END
+END
+
+!РОД ДЕЯТЕЛЬНОСТИ
+chance = RAND (1,co_max)
+if stock['age'] = CONST_INT['loli_age']: chance = 0
+dynamic '$stock_occupation = $<<$stock_family>>_occupation[chance]'
+$stock_occupation_description = $occupation_description[$stock_occupation]
+
+IF $stock_occupation = 'tribal_girl':
+ $stock_occupation_auk = 'девушка'
+ if stock["stamina"] < 5: stock["stamina"] += 1 
+ if stock["sensitivity"] > 1: stock["sensitivity"] -= 1   
+END
+IF $stock_occupation = 'shaman':
+ $stock_occupation_auk = 'шаманка'
+ if stock["enchanter"] < 5: stock["enchanter"] += 1
+ if stock["nurse"] < 5: stock["nurse"] += 1
+END
+IF $stock_occupation = 'huntress':
+ $stock_occupation_auk = 'охотница'
+ if stock["stamina"] < 5: stock["stamina"] += 1
+ if stock["gladiatrix"] < 5:  stock["gladiatrix"] += 1
+ if stock["sensitivity"] > 1: stock["sensitivity"] -= 1
+END
+IF $stock_occupation = 'heroine':
+ $stock_occupation_auk = 'героиня-воительница'
+ if stock["stamina"] < 5: stock["stamina"] += 1 
+ if stock["stamina"] < 3: stock["stamina"] = 3 
+ if stock["gladiatrix"] < 4: stock["gladiatrix"] = 4
+ if stock["sensitivity"] > 1: stock["sensitivity"] -= 1
+ if stock["temper"] < 5: stock["temper"] += 1 
+ if stock["ego"] < 5: stock["ego"] += 1   
+ if stock["pride"] < 5: stock["pride"] += 1
+END
+IF $stock_occupation = 'bride':
+ $stock_occupation_auk = 'девственница'
+ stock_virginity = 0
+ if stock["sensitivity"] < 5: stock["sensitivity"] += 1
+ if stock["temper"] > 1: stock["temper"] -= 1  
+END
+IF $stock_occupation = 'viking_wife':
+ $stock_occupation_auk = 'молодая жена викинга'
+ stock_virginity = 2
+ if stock["temper"] > 1: stock["temper"] -= 1  
+ if stock["cook"] < 5: stock["cook"] += 1
+ if stock["service"] < 5: stock["service"] += 1
+ if stock["sub_hug"] < 5: stock["sub_hug"] += 1 
+ if stock["sub_kiss"] < 4: stock["sub_kiss"] += 2 
+ if stock["sub_vaginal"] < 4: stock["sub_vaginal"] += 2 
+ if stock["sub_masturbation"] < 5: stock["sub_masturbation"] += 1
+ if stock["sub_exhibit"] < 5: stock["sub_exhibit"] += 1
+ if stock["sub_humiliation"] < 5: stock["sub_humiliation"] += 1  
+END
+IF $stock_occupation = 'herbalist':
+ $stock_occupation_auk = 'травница'
+ if stock["nurse"] < 5: stock["nurse"] += 1
+END
+IF $stock_occupation = 'witch':
+ $stock_occupation_auk = 'ведунья'
+ if stock["enchanter"] < 4:  stock["enchanter"] += 2
+END
+
+IF $stock_occupation = 'thief':
+ $stock_occupation_auk = 'воровка'
+END
+IF $stock_occupation = 'beggar':
+ if stock["expression"] < 4: stock["expression"] += 2
+ if stock["pet"] < 5: stock["pet"] += 1 
+ if stock["stamina"] > 1: stock["stamina"] -= 1
+ if stock["pride"] > 1: stock["pride"] = 1   
+ if stock["fat"] > 0: stock["fat"] = 0  
+ if stock["intellect"] > 1: stock["intellect"] -= 1 
+ $stock_occupation_auk = 'нищенка'
+END
+IF $stock_occupation = 'gypsy':
+ if stock["expression"] < 4: stock["expression"] += 2
+ if stock["callisthenics"] < 4: stock["callisthenics"] += 2 
+ if stock["enchanter"] < 5: stock["enchanter"] += 1 
+ if stock["music"] < 5: stock["music"] += 1
+ if stock["vocal"] < 5: stock["vocal"] += 1 
+ $stock_occupation_auk = 'гадалка'
+END
+IF $stock_occupation = 'whore':
+ stock_virginity = 2
+ if stock["stamina"]> 1: stock["stamina"] -= 1
+ if stock["pride"]> 1: stock["pride"] -= 1
+ if stock["pride"]> 0: stock["pride"] -= 1 
+ if stock["sub_hug"] < 5: stock["sub_hug"] += 1 
+ if stock["sub_hug"] < 3: stock["sub_hug"] += 1 
+ if stock["sub_kiss"] < 5: stock["sub_kiss"] += 1 
+ if stock["sub_kiss"] < 2: stock["sub_kiss"] += 1  
+ if stock["sub_bj"] < 4: stock["sub_bj"] += 2  
+ if stock["sub_vaginal"] < 4: stock["sub_vaginal"] += 2 
+ if stock["sub_vaginal"] < 3: stock["sub_vaginal"] += 1  
+ if stock["sub_anal"] < 5: stock["sub_anal"] += 1   
+ if stock["sub_exhibit"] < 4: stock["sub_exhibit"] += 2
+ if stock["sub_humiliation"] < 4: stock["sub_humiliation"] += 2  
+  $stock_occupation_auk = 'уличная шлюха'
+END
+IF $stock_occupation = 'markitane':
+ stock_virginity = 2
+ if stock["pride"]> 1: stock["pride"] -= 1
+ if stock["temper"] < 5: stock["temper"] += 1    
+ if stock["sub_hug"] < 5: stock["sub_hug"] += 1 
+ if stock["sub_hug"] < 3: stock["sub_hug"] += 1 
+ if stock["sub_kiss"] < 5: stock["sub_kiss"] += 1 
+ if stock["sub_kiss"] < 2: stock["sub_kiss"] += 1  
+ if stock["sub_bj"] < 4: stock["sub_bj"] += 2  
+ if stock["sub_vaginal"] < 4: stock["sub_vaginal"] += 2 
+ if stock["sub_vaginal"] < 3: stock["sub_vaginal"] += 1  
+ if stock["sub_anal"] < 5: stock["sub_anal"] += 1   
+ if stock["sub_exhibit"] < 4: stock["sub_exhibit"] += 2
+ if stock["sub_humiliation"] < 4: stock["sub_humiliation"] += 2  
+ $stock_occupation_auk = 'обозная шлюха'
+END
+IF $stock_occupation = 'brothel':
+ stock_virginity = 2
+ if stock["custom"] < 5: stock["custom"] += 1 
+ if stock["sub_hug"] < 5: stock["sub_hug"] += 1 
+ if stock["sub_hug"] < 3: stock["sub_hug"] += 1 
+ if stock["sub_kiss"] < 5: stock["sub_kiss"] += 1 
+ if stock["sub_kiss"] < 2: stock["sub_kiss"] += 1  
+ if stock["sub_bj"] < 4: stock["sub_bj"] += 2  
+ if stock["sub_vaginal"] < 4: stock["sub_vaginal"] += 2 
+ if stock["sub_vaginal"] < 3: stock["sub_vaginal"] += 1  
+ if stock["sub_anal"] < 5: stock["sub_anal"] += 1   
+ if stock["sub_exhibit"] < 4: stock["sub_exhibit"] += 2
+ if stock["sub_humiliation"] < 4: stock["sub_humiliation"] += 2  
+ $stock_occupation_auk = 'шлюха из борделя'
+END
+IF $stock_occupation = 'nun':
+ stock_virginity = 0
+ stock["sub_vaginal"] = 0
+ stock["sub_anal"] = 0
+ stock["sub_bj"] = 0
+ if stock["nurse"] < 5: stock["nurse"] += 1
+ if stock["service"] < 5: stock["service"] += 1 
+ if stock["secretary"] < 5: stock["secretary"] += 1 
+ $stock_occupation_auk = 'монахиня'
+END
+IF $stock_occupation = 'valertry':
+ if stock["service"] < 3: stock["service"] += 3 
+ if stock["custom"] < 5: stock["custom"] += 1  
+ if stock["pride"] > 1: stock["pride"] -= 1 
+ $stock_occupation_auk = 'служанка'
+END
+IF $stock_occupation = 'sorceress':
+ stock_virginity = 0
+ stock["sub_vaginal"] = 0
+ stock["sub_anal"] = 0
+ stock["sub_bj"] = 0
+ if stock["intellect"] < 5: stock["intellect"] += 1   
+ if stock["custom"] < 5: stock["custom"] += 1 
+ if stock["service"] < 4: stock["service"] += 2
+ if stock["cook"] < 5: stock["cook"] += 1  
+ if stock["enchanter"] < 4: stock["enchanter"] += 2 
+ $stock_occupation_auk = 'ученица чародейки'
+END
+IF $stock_occupation = 'thug':
+ if stock["stamina"] < 5: stock["stamina"] += 1   
+ if stock["stamina"] < 3: stock["stamina"] = 3 
+ if stock["gladiatrix"] < 3: stock["gladiatrix"] += 3
+ if stock["intellect"] > 1: stock["intellect"] -= 1 
+ if stock["temper"] < 5: stock["temper"] += 1    
+ $stock_occupation_auk = 'уличная грабительница'
+END
+IF $stock_occupation = 'poor_bride':
+ if meta_type = 3:
+  $stock_occupation = 'poor_wife'
+  else
+  stock_virginity = 0
+  stock["sub_vaginal"] = 0
+  stock["sub_anal"] = 0
+  stock["sub_bj"] = 0  
+ END
+ $stock_occupation_auk = 'простолюдинка'
+END
+IF $stock_occupation = 'poor_wife':
+ stock_virginity = 2
+ if stock["temper"] > 1: stock["temper"] -= 1  
+ if stock["cook"] < 5: stock["cook"] += 1
+ if stock["service"] < 5: stock["service"] += 1
+ if stock["sub_hug"] < 5: stock["sub_hug"] += 1 
+ if stock["sub_kiss"] < 4: stock["sub_kiss"] += 2 
+ if stock["sub_vaginal"] < 4: stock["sub_vaginal"] += 2 
+ $stock_occupation_auk = 'жена простолюдина'
+END
+IF $stock_occupation = 'brigand':
+ if stock["stamina"] < 5: stock["stamina"] += 1   
+ if stock["stamina"] < 3: stock["stamina"] = 3 
+ if stock["gladiatrix"] < 3: stock["gladiatrix"] += 3
+ if stock["intellect"] > 1: stock["intellect"] -= 1 
+ if stock["temper"] < 5: stock["temper"] += 1    
+ $stock_occupation_auk = 'лесная разбойница'
+END
+IF $stock_occupation = 'noble_bride':
+ if meta_type = 3: 
+  $stock_occupation = 'noble_wife'
+  else
+  stock_virginity = 0
+  stock["sub_vaginal"] = 0
+  stock["sub_anal"] = 0
+  stock["sub_bj"] = 0  
+ END
+ $stock_occupation_auk = 'благородная девушка'
+END
+IF $stock_occupation = 'noble_wife':
+ stock_virginity = 2
+ if stock["temper"] > 1: stock["temper"] -= 1  
+ if stock["music"] < 5: stock["music"] += 1
+ if stock["vocal"] < 5: stock["vocal"] += 1
+ if stock["sub_hug"] < 5: stock["sub_hug"] += 1 
+ if stock["sub_kiss"] < 4: stock["sub_kiss"] += 2 
+ if stock["sub_vaginal"] < 4: stock["sub_vaginal"] += 2 
+ $stock_occupation_auk = 'жена лорда'
+END
+IF $stock_occupation = 'mprincess':
+ stock_virginity = 0
+ stock["sub_vaginal"] = 0
+ stock["sub_anal"] = 0
+ stock["sub_bj"] = 0  
+ if stock["expression"] < 5: stock["expression"] += 1 
+ if stock["callisthenics"] < 5: stock["callisthenics"] += 1 
+ if stock["music"] < 5: stock["music"] += 1
+ if stock["vocal"] < 5: stock["vocal"] += 1 
+ $stock_occupation_auk = 'благородная принцесса'
+END
+IF $stock_occupation = 'farmer':
+ if stock["service"] < 5: stock["service"] += 1
+ if stock["cook"] < 5: stock["cook"] += 1
+ $stock_occupation_auk = 'сборщица хлопка'
+END
+IF $stock_occupation = 'milker':
+ if stock["service"] < 5: stock["service"] += 1
+ if stock["cook"] < 5: stock["cook"] += 1
+ $stock_occupation_auk = 'доярка'
+END
+IF $stock_occupation = 'swiner':
+ if stock["service"] < 5: stock["service"] += 1
+ if stock["cook"] < 5: stock["cook"] += 1
+ $stock_occupation_auk = 'свинарка'
+END
+IF $stock_occupation = 'weaver':
+ if stock["service"] < 5: stock["service"] += 1
+ $stock_occupation_auk = 'ткачиха'
+END
+IF $stock_occupation = 'freaser':
+ if stock["service"] < 5: stock["service"] += 1
+ $stock_occupation_auk = 'фрезеровщица'
+END
+IF $stock_occupation = 'maid':
+ if stock["service"] < 3: stock["service"] += 3 
+ if stock["custom"] < 5: stock["custom"] += 1  
+ if stock["pride"] > 1: stock["pride"] -= 1 
+ $stock_occupation_auk = 'горничная'
+END
+IF $stock_occupation = 'sufragist':
+ if stock["pride"] < 5: stock["pride"] += 1   
+ if stock["pride"] < 4: stock["pride"] += 1   
+ if stock["temper"] < 5: stock["temper"] += 1   
+ if stock["ego"] < 5: stock["ego"] += 1    
+ if stock["intellect"] < 5: stock["intellect"] += 1    
+ if stock["custom"] > 1: stock["custom"] -= 1 
+ if stock["expression"] < 4: stock["expression"] += 2 
+ $stock_occupation_auk = 'суражистка'
+END
+IF $stock_occupation = 'nurse':
+ if stock["nurse"] < 3: stock["nurse"] += 3
+ if stock["service"] < 5: stock["service"] += 1 
+ if stock["cook"] < 5: stock["cook"] += 1 
+ if stock["secretary"] < 5: stock["secretary"] += 1 
+ $stock_occupation_auk = 'медсестра'
+END
+IF $stock_occupation = 'teacher':
+ if stock["intellect"] < 5: stock["intellect"] += 1 
+ if stock["expression"] < 5: stock["expression"] += 1 
+ if stock["secretary"] < 5: stock["secretary"] += 1 
+ if stock["service"] < 5: stock["service"] += 1 
+ if stock["cook"] < 5: stock["cook"] += 1  
+ $stock_occupation_auk = 'учительница начальных классов'
+END
+IF $stock_occupation = 'oficiant':
+ if stock["expression"] < 5: stock["expression"] += 1 
+ if stock["service"] < 5: stock["service"] += 1 
+ if stock["cook"] < 5: stock["cook"] += 1   
+ $stock_occupation_auk = 'официантка'
+END
+IF $stock_occupation = 'avanturiste':
+ if stock["expression"] < 3: stock["expression"] += 3
+ if stock["sub_seduce"] < 3: stock["sub_seduce"] += 3   
+ if stock["intellect"] < 5: stock["intellect"] += 1    
+ if stock["ego"] < 5: stock["ego"] += 1    
+ if stock["pride"] < 5: stock["pride"] += 1    
+ if stock["spoil"] < 5: stock["spoil"] +=1   
+ if stock["custom"] > 1: stock["custom"] -= 1 
+ if stock["sub_hug"] < 5: stock["sub_hug"] += 1 
+ if stock["sub_kiss"] < 5: stock["sub_kiss"] += 1  
+ $stock_occupation_auk = 'светская авантюристка'
+END
+IF $stock_occupation = 'rich_bride':
+ if meta_type = 3:
+  $stock_occupation = 'rich_wife'
+  else
+  stock_virginity = 0
+  stock["sub_vaginal"] = 0
+  stock["sub_anal"] = 0
+  stock["sub_bj"] = 0  
+ END
+ $stock_occupation_auk = 'богатая невеста'
+END
+IF $stock_occupation = 'rich_wife':
+ stock_virginity = 2
+ if stock["temper"] > 1: stock["temper"] -= 1  
+ if stock["music"] < 5: stock["music"] += 1
+ if stock["vocal"] < 5: stock["vocal"] += 1
+ if stock["sub_hug"] < 5: stock["sub_hug"] += 1 
+ if stock["sub_kiss"] < 4: stock["sub_kiss"] += 2 
+ if stock["sub_vaginal"] < 4: stock["sub_vaginal"] += 2 
+ $stock_occupation_auk = 'жена богача'
+END
+IF $stock_occupation = 'punk':
+ if stock["sensitivity"] > 1: stock["sensitivity"] -= 1
+ if stock["custom"] > 1: stock["custom"] -= 1 
+ if stock["temper"] < 5: stock["temper"] += 1   
+ if stock["expression"] < 5: stock["expression"] += 1 
+ if stock["music"] < 5: stock["music"] += 1
+ if stock["vocal"] < 5: stock["vocal"] += 1 
+ if stock["gladiatrix"] < 5: stock["gladiatrix"] += 1 
+ $stock_occupation_auk = 'неформалка'
+END
+IF $stock_occupation = 'student':
+ if stock["intellect"] < 5: stock["intellect"] += 1    
+ if stock["expression"] < 5: stock["expression"] += 1 
+ if stock["secretary"] < 5: stock["secretary"] += 1 
+ $stock_occupation_auk = 'студентка'
+END
+IF $stock_occupation = 'secretary':
+ if stock["expression"] < 5: stock["expression"] += 1 
+ if stock["secretary"] < 3: stock["secretary"] += 3 
+ if stock["service"] < 5: stock["service"] += 1 
+ if stock["ego"] > 1: stock["ego"] -= 1
+ if stock["custom"] < 5: stock["custom"] += 1   
+ $stock_occupation_auk = 'секретарша'
+END
+IF $stock_occupation = 'voleyball':
+ if stock["stamina"] < 5: stock["stamina"] += 1   
+ if stock["stamina"] < 4: stock["stamina"] = 4    
+ if stock["temper"] < 5: stock["temper"] += 1   
+ if stock["fat"] > 1: stock["fat"] = 1     
+ if stock["callisthenics"] < 5: stock["callisthenics"] += 1
+ $stock_occupation_auk = 'волейболистка'
+END
+IF $stock_occupation = 'karateka':
+ if stock["stamina"] < 5: stock["stamina"] += 1   
+ if stock["stamina"] < 4: stock["stamina"] = 4    
+ if stock["temper"] < 5: stock["temper"] += 1   
+ if stock["gladiatrix"] < 3: stock["gladiatrix"] += 3
+ $stock_occupation_auk = 'кикбоксер'
+END
+IF $stock_occupation = 'hymnast':
+ if stock["stamina"] < 5: stock["stamina"] += 1   
+ if stock["stamina"] < 4: stock["stamina"] = 4    
+ if stock["temper"] < 5: stock["temper"] += 1   
+ if stock["fat"] > 1: stock["fat"] = 1      
+ if stock["callisthenics"] < 3: stock["callisthenics"] += 3
+ if stock["sensitivity"] < 5: stock["sensitivity"] += 1   
+ $stock_occupation_auk = 'гимнастка'
+END
+IF $stock_occupation = 'policewoman':
+ if stock["expression"] < 5: stock["expression"] += 1
+ if stock["ego"] < 5: stock["ego"] += 1    
+ if stock["gladiatrix"] < 4: stock["gladiatrix"] += 2
+ if stock["sensitivity"] > 1: stock["sensitivity"] -= 1 
+ if stock["secretary"] < 5: stock["secretary"] += 1 
+ if stock["nurse"] < 5: stock["nurse"] += 1 
+ $stock_occupation_auk = 'работница полиции'
+END
+IF $stock_occupation = 'model':
+ if stock["beauty"] < 5: stock["beauty"] += 1   
+ if stock["beauty"] < 4: stock["beauty"] = 4   
+ if stock["expression"] < 5: stock["expression"] += 1
+ if stock["callisthenics"] < 4: stock["callisthenics"] += 2 
+ if stock["pride"] < 5: stock["pride"] += 1    
+ if stock["dressage"] < 5: stock["dressage"] += 1 
+ if stock["fat"] > 0: stock["fat"] = 0      
+ $stock_occupation_auk = 'фотомодель'
+END
+IF $stock_occupation = 'hacker':
+ if stock["intellect"] < 5: stock["intellect"] += 1  
+ if stock["intellect"] < 4: stock["intellect"] = 4  
+ if stock["ego"] < 5: stock["ego"] += 1     
+ if stock["secretary"] < 5: stock["secretary"] += 1 
+ $stock_occupation_auk = 'хакерша'
+END
+IF $stock_occupation = 'writer':
+ if stock["intellect"] < 5: stock["intellect"] += 1 
+ if stock["expression"] < 4: stock["expression"] += 2 
+ $stock_occupation_auk = 'писательница женских романов'
+END
+IF $stock_occupation = 'major':
+ if stock["temper"] < 5: stock["temper"] += 1   
+ if stock["ego"] < 5: stock["ego"] += 1   
+ if stock["pride"] < 5: stock["pride"] += 1     
+ if stock["callisthenics"] < 5: stock["callisthenics"] += 1 
+ if stock["sub_seduce"] < 5: stock["sub_seduce"] += 1    
+ if stock["sub_bj"] < 5: stock["sub_bj"] += 1   
+ if stock["sub_hug"] < 5: stock["sub_hug"] += 1 
+ if stock["sub_kiss"] < 5: stock["sub_kiss"] += 1  
+ $stock_occupation_auk = 'представительница золотой молодежи'
+END
+IF $stock_occupation = 'artist':
+ if stock["stamina"] > 1: stock["stamina"] -= 1
+ if stock["expression"] < 5: stock["expression"] += 1
+ if stock["sensitivity"] < 5: stock["sensitivity"] += 1    
+ $stock_occupation_auk = 'художница'
+END
+IF $stock_occupation = 'mind_contol':
+ if stock["ego"] < 5: stock["ego"] += 1   
+ if stock["secretary"] < 5: stock["secretary"] += 1 
+ if stock["enchanter"] < 5: stock["enchanter"] += 1 
+ $stock_occupation_auk = 'работница полиции мысли'
+END
+IF $stock_occupation = 'time_plice':
+ if stock["stamina"] < 5: stock["stamina"] += 1   
+ if stock["expression"] < 5: stock["expression"] += 1
+ if stock["gladiatrix"] < 3: stock["gladiatrix"] += 3
+ if stock["secretary"] < 5: stock["secretary"] += 1  
+ $stock_occupation_auk = 'работница полиции времени'
+END
+IF $stock_occupation = 'jailer':
+ if stock["stamina"] < 5: stock["stamina"] += 1   
+ if stock["ego"] < 5: stock["ego"] += 1    
+ $stock_occupation_auk = 'тюремщица'
+END
+IF $stock_occupation = 'anter':
+ if stock["stamina"] > 1: stock["stamina"] -= 1
+ if stock["sensitivity"] > 1: stock["sensitivity"] -= 1
+ if stock["temper"] > 1: stock["temper"] -= 1
+ if stock["ego"] > 1: stock["ego"] -= 1
+ if stock["pride"] > 1: stock["pride"] -= 1
+ if stock["intellect"] > 1: stock["intellect"] -= 1 
+ if stock["custom"] < 5: stock["custom"] += 1  
+ if stock["service"] < 5: stock["service"] += 1 
+ $stock_occupation_auk = 'рядовая работница'
+END
+IF $stock_occupation = 'academy':
+ if stock["intellect"] < 5: stock["intellect"] += 1   
+ if stock["gladiatrix"] < 5: stock["gladiatrix"] += 1 
+ if stock["secretary"] < 5: stock["secretary"] += 1 
+ if stock["pride"] < 5: stock["pride"] += 1   
+ $stock_occupation_auk = 'выпускница академии звездного флота'
+END
+IF $stock_occupation = 'mech':
+ if stock["stamina"] < 5: stock["stamina"] += 1   
+ if stock["temper"] < 5: stock["temper"] += 1    
+ if stock["gladiatrix"] < 4: stock["gladiatrix"] += 2 
+ if stock["service"] < 5: stock["service"] += 1 
+ $stock_occupation_auk = 'пилот гигантского человекоподобного боевого робота'
+END
+IF $stock_occupation = 'contraband':
+ if stock["expression"] < 4: stock["expression"] += 2
+ if stock["gladiatrix"] < 5: stock["gladiatrix"] += 1 
+ if stock["secretary"] < 5: stock["secretary"] += 1 
+ if stock["ego"] < 5: stock["ego"] += 1   
+ if stock["intellect"] < 5: stock["intellect"] += 1   
+ if stock["custom"] > 1: stock["custom"] -= 1 
+ $stock_occupation_auk = 'контрабандистка'
+END
+IF $stock_occupation = 'astrofarmer':
+ if stock["temper"] > 1: stock["temper"] -= 1
+ if stock["service"] < 5: stock["service"] += 1
+ if stock["cook"] < 5: stock["cook"] += 1
+ $stock_occupation_auk = 'оператор орбитальной фермы'
+END
+IF $stock_occupation = 'installer':
+ if stock["stamina"] < 5: stock["stamina"] += 1  
+ if stock["service"] < 5: stock["service"] += 1
+ $stock_occupation_auk = 'орбитальная монтажница'
+END
+
+chance = RAND (1,nm_max)
+dynamic '$stock_name = $<<$namebase>>_name[chance]'
+
+a = RAND (1,3)
+if a = 1: stock['ill'] = 1
+if stock_virginity = 0: stock['ill'] = 0
+
+a = RAND (1,3)
+if a = 1: stock['parasite'] = 1
+if stock_virginity = 0: stock['parasite'] = 0
+if meta_type = 1: stock['parasite'] = 0
+
+
+i = 0
+:loop10
+i += 1
+
+a = RAND (-70,35)
+
+IF a = 1:
+ chance = RAND (1,15)
+ if chance > 0: b = 1
+ if chance > 5: b = 2
+ if chance > 9: b = 3
+ if chance > 12: b = 4
+ if chance = 15: b = 5 
+ stock["scares"] = b
+END
+
+IF a => 2 and a < 4:
+ chance = RAND (1,15)
+ if chance > 0: b = 1
+ if chance > 5: b = 2
+ if chance > 9: b = 3
+ if chance > 12: b = 4
+ if chance = 15: b = 5 
+ stock["bruises"] = b
+END
+
+IF a = 4:
+ chance = RAND (1,2)
+ stock["nymphomania"] = IIF(chance = 1, -1, 1)
+END
+
+IF a = 5:
+ chance = RAND (1,3)
+ IF chance = 1:
+  stock["masohism"] = -1
+  else
+  if chance = 2: stock["masohism"] = 1 
+  if chance = 3: stock["masohism"] = 2 
+ END
+END
+
+IF a = 6:
+ chance = RAND (1,2)
+ stock["exhibitionism"] = IIF(chance = 1, -1, 2)
+END
+
+IF a = 7:
+ chance = RAND (1,2)
+ stock["preversion"] = IIF(chance = 1, -1, 2)
+END
+
+IF a = 8:
+ chance = RAND (1,3)
+ IF chance = 1:
+  stock["homosexualism"] = -1
+  else
+  if chance = 2: stock["homosexualism"] = 1 
+  if chance = 3: stock["homosexualism"] = 2 
+ END
+END
+
+IF a = 9:
+ chance = RAND (1,2)
+ stock["abuse_attitude"] = IIF(chance = 1, -1, 2)
+END
+
+IF a = 10:
+ chance = RAND (1,2)
+ stock["darkness_attitude"] = IIF(chance = 1, -1, 2)
+END
+
+IF a = 11:
+ chance = RAND (1,2)
+ stock["blood_attitude"] = IIF(chance = 1, -1, 2)
+END
+
+IF a = 11:
+ chance = RAND (1,2)
+ stock["fire_attitude"] = IIF(chance = 1, -1, 2)
+END
+
+IF a = 12:
+ chance = RAND (1,2)
+ stock["water_attitude"] = IIF(chance = 1, -1, 2)
+END
+
+IF a = 13:
+ chance = RAND (1,2)
+ stock["vermin_attitude"] = IIF(chance = 1, -1, 2)
+END
+
+IF a = 14:
+ chance = RAND (1,2)
+ stock["deprivation_attitude"] = IIF(chance = 1, -1, 2)
+END
+
+IF a = 15:
+ chance = RAND (1,2)
+ stock["passion_comfort"] = IIF(chance = 1, -1, 2)
+END
+
+IF a = 16:
+ chance = RAND (1,2)
+ stock["passion_luxury"] = IIF(chance = 1, -1, 2)
+END
+
+IF a = 17:
+ chance = RAND (1,2)
+ stock["passion_sweets"] = IIF(chance = 1, -1, 2)
+END
+
+IF a = 18:
+ chance = RAND (1,2)
+ stock["passion_fame"] = IIF(chance = 1, -1, 2)
+END
+
+IF a = 19:
+ chance = RAND (1,2)
+ stock["courage"] = IIF(chance = 1, -1, 2)
+END
+
+IF a = 20:
+ chance = RAND (1,2)
+ stock["metabolism"] = IIF(chance = 1, 1, 5)
+END
+
+IF a = 21:
+ chance = RAND (1,2)
+ stock["grace"] = IIF(chance = 1, -1, 1)
+END
+
+IF a = 22:
+ chance = RAND (1,2)
+ stock["sport_affinity"] = IIF(chance = 1, -1, 1)
+END
+
+IF a => 22 and a < 30:
+ chance = RAND (1,12)
+ if chance = 1: stock["expression_affinity"] = 1
+ if chance = 2: stock["pet_affinity"] = 1
+ if chance = 3: stock["dressage_affinity"] = 1 
+ if chance = 4: stock["nurse_affinity"] = 1
+ if chance = 5: stock["service_affinity"] = 1
+ if chance = 6: stock["cook_affinity"] = 1
+ if chance = 7: stock["gladiatrix_affinity"] = 1
+ if chance = 8: stock["enchanter_affinity"] = 1
+ if chance = 9: stock["vocal_affinity"] = 1
+ if chance = 10: stock["music_affinity"] = 1
+ if chance = 12: stock["callisthenics_affinity"] = 1
+ if chance = 12: stock["secretary_affinity"] = 1  
+END
+
+IF a = 31:
+ chance = RAND (1,2)
+ stock["memory"] = IIF(chance = 1, -1, 1)
+END
+
+IF a = 32:
+ chance = RAND (1,2)
+ stock["meekness"] = IIF(chance = 1, -2, 2)
+END
+
+IF a = 33:
+ chance = RAND (1,2)
+ stock["selfesteem"] = IIF(chance = 1, -1, 1)
+END
+
+IF a = 34:
+ chance = RAND (1,2)
+ stock["voice"] = IIF(chance = 1, -1, 1)
+END
+
+IF a = 35:
+ chance = RAND (1,2)
+ stock["compassion"] = IIF(chance = 1, -1, 2)
+END
+
+if i < 10: jump 'loop10'
+
+
+!Выравнивание характеристик
+stock["energy"] = RAND (0,3)
+stock["hygiene"] = RAND (1,3)
+if stock["beauty"] > 5: stock["beauty"] = 5
+if stock["beauty"] < 1: stock["beauty"] = 1
+if stock["stamina"] > 5: stock["stamina"] = 5
+if stock["stamina"] < 1: stock["stamina"] = 1
+if stock["sensitivity"] > 5: stock["sensitivity"] = 5
+if stock["sensitivity"] < 1: stock["sensitivity"] = 1
+if stock["pride"] > 5: stock["pride"] = 5
+if stock["pride"] < 1: stock["pride"] = 1
+if stock["ego"] > 5: stock["ego"] = 5
+if stock["ego"] < 1: stock["ego"] = 1
+if stock["intellect"] > 5: stock["intellect"] = 5
+if stock["intellect"] < 1: stock["intellect"] = 1
+if stock["style"] > 5: stock["style"] = 5
+if stock["style"] < 0: stock["style"] = 0
+
+if stock_rate["exotic"] => 10: stock["exotic"] = 1
+if stock_rate["exotic"] => 20: stock["exotic"] = 2
+if stock_rate["exotic"] => 40: stock["exotic"] = 3
+if stock_rate["exotic"] => 80: stock["exotic"] = 4
+if stock_rate["exotic"] => 160: stock["exotic"] = 5
+
+if stock["stamina"] = 5: stock["metabolism"] += 1
+if stock["stamina"] = 1: stock["metabolism"] -= 1
+if stock["metabolism"] < 1: stock["metabolism"] = 1
+if stock["metabolism"] > 5: stock["metabolism"] = 5
+
+!'
+gen = RAND (1,12)
+if gen = 1: atribute = 1
+if gen > 1: atribute = 2
+if gen > 3: atribute = 3
+if gen > 9: atribute = 4
+if gen = 12: atribute = 5 
+stock["metabolism"] = atribute'
+
+!Определение характера
+a = RAND (1,3)
+if a = 1: $stock_psy_basic = 'reluctant'
+if a = 2: $stock_psy_basic = 'soft'
+if a = 3: $stock_psy_basic = 'optimistic'
+if stock["sensitivity"] => 4: $stock_psy_basic = 'lachrymose'
+a = stock["ego"] + stock["temper"] + stock["pride"]
+IF a > 10:
+ if stock["ego"] => 4: $stock_psy_basic = 'resistant'
+ if stock["temper"] => 4: $stock_psy_basic = 'hateful'
+ if stock["pride"] => 4: $stock_psy_basic = 'arrogant'
+END
+if stock["ego"] = 5: $stock_psy_basic = 'resistant'
+if stock["temper"] = 5: $stock_psy_basic = 'hateful'
+if stock["pride"] = 5: $stock_psy_basic = 'arrogant'
+
+if $seed_psy_basic[stock_type] ! '': $stock_psy_basic = $seed_psy_basic[stock_type]
+
+stock["neg_slave"] = 1 + stock["pride"] + stock["temper"] + stock["ego"] - stock["custom"]
+stock['cycle_day'] = RAND (1,28)
+stock["calories"] = stock["stamina"]
+
+$stock_fullimage = $fullimage[stock_type]
+$stock_ava = $seed_ava[stock_type]
+$stock_ava_gray = $seed_ava_gray[stock_type]
+
+!Инициализация
+IF stock["fat"] = 1: $stock_epithet = 'стройная словно кипарис'
+IF stock["beauty"] = 3: $stock_epithet = 'очаровательная'
+IF stock["temper"] = 4: $stock_epithet = 'норовистая'
+IF stock["sensitivity"] = 4: $stock_epithet = 'нежная и чуткая'
+IF stock["stamina"] = 4: $stock_epithet = 'крепкая и здоровая'
+IF stock["beauty"] = 4: $stock_epithet = 'прелестная'
+IF stock["temper"] = 5: $stock_epithet = 'горячая как огонь'
+IF stock["sensitivity"] = 5: $stock_epithet = 'нежная как прекрасный цветок'
+IF stock["stamina"] = 5: $stock_epithet = 'необычайно сильная и выносливая'
+IF stock["beauty"] = 5: $stock_epithet = 'прекрасная как сами звезды'
+IF stock["exotic"] => 2: $stock_epithet = 'экзотическая'
+
+!БАЗОВАЯ ЦЕНА
+stock["style"] = (stock_expression + stock_callisthenics)/2 + stock["grace"]
+
+stock_base_price = 5
+if stock["stamina"] > 2: stock_base_price += 5
+if stock["stamina"] > 3: stock_base_price += 10
+if stock["stamina"] > 4: stock_base_price += 20
+if stock["beauty"] > 1: stock_base_price += 5
+if stock["beauty"] > 2: stock_base_price += 10
+if stock["beauty"] > 3: stock_base_price += 20
+if stock["beauty"] > 4: stock_base_price += 40
+if stock["fat"] = 1: stock_base_price += 5
+if stock["fat"] > 2: stock_base_price -= 5
+if stock["fat"] > 3: stock_base_price -= 10
+if stock["fat"] > 4: stock_base_price -= 20
+if stock["scares"] > 0: stock_base_price -= 5
+if stock["scares"] > 1: stock_base_price -= 10
+if stock["scares"] > 2: stock_base_price -= 20
+if stock["scares"] > 3: stock_base_price -= 40
+if stock["scares"] > 4: stock_base_price -= 80
+if stock["bruises"] > 1: stock_base_price -= 5
+if stock["bruises"] > 2: stock_base_price -= 10
+if stock["bruises"] > 3: stock_base_price -= 20
+if stock["bruises"] > 4: stock_base_price -= 40
+if stock["style"] > 0: stock_base_price += 5
+if stock["style"] > 1: stock_base_price += 10
+if stock["style"] > 2: stock_base_price += 20
+if stock["style"] > 3: stock_base_price += 40
+if stock["style"] > 4: stock_base_price += 80
+if stock["sensitivity"] > 2: stock_base_price += 5
+if stock["sensitivity"] > 3: stock_base_price += 10
+if stock["sensitivity"] > 4: stock_base_price += 20
+if stock["temper"] > 2: stock_base_price += 5
+if stock["temper"] > 3: stock_base_price += 10
+if stock["temper"] > 4: stock_base_price += 20
+if stock_base_price < 5: stock_base_price = 5
+haggling_limit = stock_base_price/3
+stock_base_price = 5
+
+!СНАРЯЖЕНИЕ
+$stock["wpn"] = 'безоружный'
+$stock["armor"] = 'без_брони'
+$stock["scnd"] = ''
+
+$stock["back_wpn"] = ''
+$stock["left_wpn"] = ''
+$stock["right_wpn"] = ''
+$stock["arm_wpn"] = ''
+$stock["leg_wpn"] = ''
+
+$stock["cloth"] = 'лохмотья'
+
+stock['newness'] = 10 - brand_reputation
+
+!ОСОБЕННОСТИ
+$stock_features_list = ''
+IF stock["scares"] > 0: $stock_features_list += '<<$slave_scares[stock["scares"]]>><BR>'
+IF stock["bruises"] > 0: $stock_features_list += '<<$slave_bruises[stock["bruises"]]>><BR>'
+IF stock_virginity < 2: $stock_features_list += 'Девственница<BR>' 
+if stock['fertility'] = -2: $stock_features_list += 'Незрелая<BR>'
+IF stock["grace"] = 1: $stock_features_list += 'Грациозная<BR>'
+IF stock["grace"] = -1: $stock_features_list += 'Угловатая<BR>'
+IF stock["voice"] > 0: $stock_features_list += 'Чарующий голос<BR>'
+IF stock["voice"] < 0: $stock_features_list += 'Хриплый голос<BR>'
+!'
+IF stock["nymphomania"] > 0: $stock_features_list += '<font color="#666666">Нимфоманка</font><BR>' 
+IF stock["nymphomania"] < 0: $stock_features_list += '<font color="#666666">Фригидная</font><BR>' 
+IF stock["masohism"] = 2: $stock_features_list += '<font color="#666666">Мазохистка</font><BR>'
+IF stock["masohism"] = 1: $stock_features_list += '<font color="#666666">Привычна к боли</font><BR>'
+IF stock["masohism"] = -1: $stock_features_list += '<font color="#666666">Боится боли</font><BR>'
+IF stock["exhibitionism"] = 2: $stock_features_list += '<font color="#666666">Эксгибиционистка</font><BR>'
+IF stock["exhibitionism"] = -1: $stock_features_list += '<font color="#666666">Стеснительная</font><BR>'
+IF stock["preversion"] = 2: $stock_features_list += '<font color="#666666">Извращенка</font><BR>'
+IF stock["preversion"] = -1: $stock_features_list += '<font color="#666666">Пуристка</font><BR>'
+IF stock["homosexualism"] = 2: $stock_features_list += '<font color="#666666">Лесбиянка</font><BR>'
+IF stock["homosexualism"] = 1: $stock_features_list += '<font color="#666666">Бисексуальная</font><BR>'
+IF stock["homosexualism"] = -1: $stock_features_list += '<font color="#666666">Гомофобка</font><BR>'
+IF stock["abuse_attitude"] = 2: $stock_features_list += '<font color="#666666">Пси-мазохистка</font><BR>'
+IF stock["abuse_attitude"] = -1: $stock_features_list += '<font color="#666666">Истеричка</font><BR>'
+IF stock["darkness_attitude"] = 2: $stock_features_list += '<font color="#666666">Дитя тьмы</font><BR>'
+IF stock["darkness_attitude"] = -1: $stock_features_list += '<font color="#666666">Боится темноты</font><BR>'
+IF stock["blood_attitude"] = 2: $stock_features_list += '<font color="#666666">Кровожадная</font><BR>'
+IF stock["blood_attitude"] = -1: $stock_features_list += '<font color="#666666">Боится вида крови</font><BR>'
+IF stock["fire_attitude"] = 2: $stock_features_list += '<font color="#666666">Пиромания</font><BR>'
+IF stock["fire_attitude"] = -1: $stock_features_list += '<font color="#666666">Пирофобия</font><BR>'
+IF stock["water_attitude"] = 2: $stock_features_list += '<font color="#666666">Дитя воды</font><BR>'
+IF stock["water_attitude"] = -1: $stock_features_list += '<font color="#666666">Гидрофобия</font><BR>'
+IF stock["vermin_attitude"] = 2: $stock_features_list += '<font color="#666666">Арахнофилия</font><BR>'
+IF stock["vermin_attitude"] = -1: $stock_features_list += '<font color="#666666">Арахнофобия</font><BR>'
+IF stock["deprivation_attitude"] = 2: $stock_features_list += '<font color="#666666">Любит беспомощность</font><BR>'
+IF stock["deprivation_attitude"] = -1: $stock_features_list += '<font color="#666666">Клаустрофобия</font><BR>'
+IF stock["passion_comfort"] = 1: $stock_features_list += '<font color="#666666">Ленивая</font><BR>'
+IF stock["passion_comfort"] = -1: $stock_features_list += '<font color="#666666">Гиперактивная</font><BR>'
+IF stock["passion_luxury"] = 1: $stock_features_list += '<font color="#666666">Любит роскошь</font><BR>'
+IF stock["passion_luxury"] = -1: $stock_features_list += '<font color="#666666">Аскетичная</font><BR>'
+IF stock["passion_sweets"] = 1: $stock_features_list += '<font color="#666666">Сладкоежка</font><BR>'
+IF stock["passion_sweets"] = -1: $stock_features_list += '<font color="#666666">Не любит сладкое</font><BR>'
+IF stock["passion_fame"] = 1: $stock_features_list += '<font color="#666666">Тщеславная</font><BR>'
+IF stock["passion_fame"] = -1: $stock_features_list += '<font color="#666666">Хикикомори</font><BR>'
+IF stock["courage"] = 1: $stock_features_list += '<font color="#666666">Храбрая</font><BR>'
+IF stock["courage"] = -1: $stock_features_list += '<font color="#666666">Трусиха</font><BR>'
+IF stock["metabolism"] = 5: $stock_features_list += '<font color="#666666">Мощный метаболизм</font><BR>'
+IF stock["metabolism"] = 4: $stock_features_list += '<font color="#666666">Хороший метаболизм</font><BR>'
+IF stock["metabolism"] = 2: $stock_features_list += '<font color="#666666">Ослабленный метаболизм</font><BR>'
+IF stock["metabolism"] = 1: $stock_features_list += '<font color="#666666">Слабый метаболизм</font><BR>'
+IF stock["sport_affinity"] = 1: $stock_features_list += '<font color="#666666">Спортивная</font><BR>'
+IF stock["sport_affinity"] = -1: $stock_features_list += '<font color="#666666">Апатичная</font><BR>'
+if stock["expression_affinity"]:  $stock_features_list += '<font color="#666666">Талант: оратор</font><BR>'
+if stock["pet_affinity"]:  $stock_features_list += '<font color="#666666">Талант: питомец</font><BR>'
+if stock["dressage_affinity"]:  $stock_features_list += '<font color="#666666">Brony</font><BR>' 
+if stock["nurse_affinity"]:  $stock_features_list += '<font color="#666666">Талант: медсестра</font><BR>'
+if stock["service_affinity"]:  $stock_features_list += '<font color="#666666">Талант: горничная</font><BR>'
+if stock["cook_affinity"]:  $stock_features_list += '<font color="#666666">Талант: кухарка</font><BR>'
+if stock["gladiatrix_affinity"]:  $stock_features_list += '<font color="#666666">Талант: воительница</font><BR>'
+if stock["enchanter_affinity"]:  $stock_features_list += '<font color="#666666">Талант: чародейка</font><BR>'
+if stock["vocal_affinity"]:  $stock_features_list += '<font color="#666666">Талант: певица</font><BR>'
+if stock["music_affinity"]: $stock_features_list += '<font color="#666666">Талант: музыкантка</font><BR>'
+if stock["callisthenics_affinity"]: $stock_features_list += '<font color="#666666">Талант: танцовщица</font><BR>'
+if stock["secretary_affinity"]: $stock_features_list += '<font color="#666666">Талант: секретарша</font><BR>'   
+IF stock["memory"] = 1: $stock_features_list += '<font color="#666666">Эйдетическая память</font><BR>'
+IF stock["memory"] = -1: $stock_features_list += '<font color="#666666">Забывчивая</font><BR>'
+IF stock["meekness"] > 0: $stock_features_list += '<font color="#666666">Дисциплинированная</font><BR>'
+IF stock["meekness"] < 0: $stock_features_list += '<font color="#666666">Своенравная</font><BR>'
+IF stock["selfesteem"] > 0: $stock_features_list += '<font color="#666666">Мания величия</font><BR>'
+IF stock["selfesteem"] < 0: $stock_features_list += '<font color="#666666">Комплекс вины</font><BR>'
+'
+
+gs '#txt'
+gs '#txt_2'
+--- generate_stock ---------------------------------
+

@@ -1,0 +1,88 @@
+# interaction_screen_city
+GS '_layout'
+IF $special_action[txt] ! '':
+ dynamic $special_action[txt]
+END
+
+*p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+*p '<div id = "text"><<$text[txt]>></div>'
+
+IF $picture_type = 'pic_jpg':
+ *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.jpg"></div>'
+END
+
+IF $picture_type = 'pic_gif':
+ *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+END
+
+IF $picture_type = 'pic_png':
+ *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.png"></div>'
+END
+
+IF $picture_type = 'untyped':
+ *p '<div id = "bg"><img src="<<$special_bg>>"></div>'
+END
+
+IF $interaction_type = 'drop_to_farid' and txt = 3:
+ npc = 0
+ jump 'first_point'
+END
+
+if npc = 0:
+ $info_bar = ''
+ *p '<div id = "side_panel_main"><center><font size = 50%><<$place_name[$place]>></font>
+<<$place_location[$place]>>
+
+ Информация к размышлению:
+ </center></div>'
+ *p '<div id = "side_panel_text">  <<$place_info[$place]>>
+</div>'  
+ else
+ $info_bar = '' 
+ *p '<div id = "bg"><img src="content\pic\characters\<<$npc_image[$npc_id]>>.gif"></div>'
+ *p '<div id = "side_panel_main"><center><font size = 50%><<$npc_name[$npc_id]>></font>
+<<$npc_status[$npc_id]>>
+
+Информация к размышлению:
+</center></div>'
+ *p '<div id = "side_panel_text">  <<$npc_attitude[npc_attitude[$npc_id]]>>
+
+ <<$npc_info[$npc_id]>>
+</div>'
+END
+
+jump 'second_point'
+:first_point
+$info_bar = 'ОЦЕНКА:
+<<$beauty[stock["beauty"]]>> 
+<<$stamina[stock["stamina"]]>> 
+<<$exotic[stock["exotic"]]>> 
+<<$fat[stock["fat"]]>> 
+<<$sensitivity[stock["sensitivity"]]>> 
+<<$style[stock["style"]]>> 
+<<$temper[stock["temper"]]>> 
+
+ОСОБЕННОСТИ:
+<<$stock_features_list>>' 
+$special_image[3] = '<<$stock_fullimage>>.gif' 
+:second_point
+
+*p '<div id = "interaction_stat_bar"><<$info_bar>></div>'
+IF $special_image[txt] ! '':
+ *p '<div id = "bg"><img src="content\pic\<<$special_image[txt]>>"></div>'
+END
+IF $special_image_full[txt] ! '':
+ *p '<div id = "bg"><img src="<<$special_image_full[txt]>>"></div>'
+END
+
+if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3'
+
+if txt > 1: 
+ addobj '<img src = "content\back_button.png">'
+ else
+ addobj '<img src = "content\noback_button.png">' 
+END 
+addobj '<img src = "content\forward_button.png">'
+
+--- interaction_screen_city ---------------------------------
+

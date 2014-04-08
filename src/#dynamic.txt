@@ -1,0 +1,1788 @@
+# #dynamic
+$scroll_heroes = {
+    IF hero_choice < 10: 
+        hero_choice += 1
+    else
+        hero_choice = 1
+    END
+    gt $curloc
+}
+
+$scroll_heroes_back = {
+    IF hero_choice > 1: 
+        hero_choice -= 1
+    else
+        hero_choice = 10
+    END
+    gt $curloc
+}
+
+$name_and_start = {
+    $a = input ('Напишите имя своего персонажа. По возможности не делайте его длиннее четырнадцати знаков.')
+    if $a !'': $master_name = $a
+    gt 'start_game'
+}
+
+$go_forward = {
+    IF txt < txt_count:
+        txt += 1
+    else
+        delobj '@'
+        if $msg_txt ! '' and txt_count = txt:
+            msg '<<$msg_txt>>'
+            $msg_txt = ''
+        END
+        GT 'menu_form'
+    END
+    unsel
+    GT curloc
+}
+
+$meat_evaluation = {
+base_meat_gain = (slave["boobs"] + 2)
+if slave["fat"] > 0: base_meat_gain = base_meat_gain*2
+mince_gain = 0
+mince_bonus = 0
+if slave["fat"] = 1: mince_gain = slave["boobs"]
+if slave["fat"] = 2: mince_gain = slave["boobs"]*2
+if slave["fat"] = 3: mince_gain = slave["boobs"]*3
+if slave["fat"] = 4: mince_gain = slave["boobs"]*4
+if slave["fat"] = 5: mince_gain = slave["boobs"]*5
+if mince_gain < slave["fat"]: mince_gain = slave["fat"] 
+meat_max = 1 + slave["stamina"]
+IF base_meat_gain > meat_max:
+ meat_gain = meat_max
+ mince_bonus = base_meat_gain - meat_max
+ else
+ meat_gain = base_meat_gain
+END
+mince_gain += mince_bonus
+IF slave['age'] = CONST_INT['loli_age']:
+ virgin_meat_gain = meat_gain
+ meat_gain = 0
+END
+IF slave['age'] = CONST_INT['young_age'] and virginity = 1:
+ virgin_meat_gain = meat_gain
+ meat_gain = 0
+END
+meat_price = mince_gain + meat_gain*2 + virgin_meat_gain*4
+}
+
+$get_meat = {
+slave_state = 0 
+IF frige_space > 0:
+ IF frige_space => virgin_meat_gain:
+  frige["virgin_meat"] += virgin_meat_gain
+  else
+  frige["virgin_meat"] += frige_space
+ END
+END
+IF frige_space > 0:
+ IF frige_space => meat_gain:
+  frige["meat"] += meat_gain
+  else
+  frige["meat"] += frige_space
+ END
+END
+IF frige_space > 0:
+ IF frige_space => mince_gain:
+  frige["mince"] += mince_gain
+  else
+  frige["mince"] += frige_space
+ END
+END 
+}
+
+$get_frige_space = {
+    frige_items = frige["vegetables"] + frige["flower"] + frige["spice"] + frige["cheese"] + frige["eggs"] + frige["milk"] + frige["cream"] + frige["mince"] + frige["meat"] + frige["virgin_meat"]
+    frige_space = estate_size[$estate] - frige_items
+}
+
+$slave_pass_out = {
+IF slave_state ! 0:
+ if slave["energy"] = -5: slave_state = 2
+ IF slave["stamina"] = 0: 
+  slave_state = 2
+  else
+  if slave["energy"] > -5: slave_state = 1
+ END
+ IF slave["stamina"] < 0: 
+  slave_state = 0
+  msg 'Ваша воспитуемая умерла от истощения. Вы продали ее труп мяснику за 5 искр.'
+  sparks += 5
+ END
+END
+}
+
+$prisoner_pass_out = {
+IF prisoner_state ! 0:
+ if prisoner["energy"] = -5: prisoner_state = 2
+ IF prisoner["stamina"] = 0: 
+  prisoner_state = 2
+  else
+  if prisoner["energy"] > -5: prisoner_state = 1
+ END
+ IF prisoner["stamina"] < 0: 
+  prisoner_state = 0
+  msg 'Ваша заключенная умерла от истощения, забытая в своей клетке. Вы продали ее труп мяснику за 5 искр.'
+  sparks += 5
+ END
+END
+}
+
+$master_pass_out = {
+IF master_str <= 0:
+ dynamic $death, 'Работа настолько истощила ваше здоровье, что вы тяжело заболели и вынуждены были отступиться от своей цели. Вам никогда не стать настоящим тренером рабов...'
+END
+IF master_energy <= -5: gt 'next_day'
+}
+
+$repulse_check = {
+res = slave["obedience"] - repulse + sex_acceptance
+if $interaction_type = 'talk': res = slave["obedience"] - repulse
+IF $interaction_type = 'master_teaches_slave': res = slave["obedience"] - repulse
+IF sex_acceptance < 0: 
+ slave_rate["mood"] -= repulse - sex_acceptance
+ else
+ if erotic_stimulation > 0: res -= slave["arousal"]
+END
+if slave['domini_dictum'] = 1 and res < 0: res = 0
+}
+
+$sex_acceptance = {
+IF shameful > 0:
+ sex_acceptance += slave["exhibitionism"] - shameful
+ if slave["exhibitionism"] < 1 and slave['neg_shame'] < 1: slave['neg_shame'] = 1
+ slave["exhibitionism_xp"] += 1
+END
+IF painful > 0: 
+ sex_acceptance += slave["masohism"] - painful
+ if slave["masohism"] < 1 and slave['neg_pain'] < 1: slave['neg_pain'] = 1 
+ slave["masohism_xp"] += 1  
+END
+IF disgusting > 0: 
+ sex_acceptance += slave["preversion"] - disgusting
+ if slave["preversion"] < 1 and slave['neg_disgust'] < 1: slave['neg_disgust'] = 1  
+ slave["preversion_xp"] += 1
+END
+IF lesbian > 0: 
+ sex_acceptance += slave["homosexualism"] - lesbian
+ slave["lesbian_xp"] += 1
+ else
+ if slave["homosexualism"] = 2: sex_acceptance -= 1 
+END
+IF $interaction_type = 'rape':
+ sex_acceptance += slave["arousal"] + slave["sub_vaginal"] + slave["obedience"] - repulse
+ if sex_acceptance > 1: sex_acceptance = 1
+END
+}
+
+$torture_phobia = {
+phobia = 100
+IF shameful > 0: 
+ a = slave["exhibitionism"]
+ if phobia > a: phobia = a 
+ slave["exhibitionism_xp"] += 1
+ if slave["exhibitionism_revealed"] = 0: slave["exhibitionism_revealed"] = 1
+END
+IF painful > 0: 
+ a = slave["masohism"]
+ if phobia > a: phobia = a  
+ slave["masohism_xp"] += 1   
+ if slave["masohism_revealed"] = 0: slave["masohism_revealed"] = 1 
+END
+IF abuse > 0: 
+ a = slave["abuse_attitude"]
+ if phobia > a: phobia = a  
+ slave["abuse_xp"] += 1   
+ if slave["abuse_attitude_revealed"] = 0: slave["abuse_attitude_revealed"] = 1 
+END
+IF disgusting > 0: 
+ a = slave["preversion"]
+ if phobia > a: phobia = a  
+ slave["preversion_xp"] += 1 
+ if slave["preversion_revealed"] = 0: slave["preversion_revealed"] = 1 
+END
+IF darkness > 0: 
+ a = slave["darkness_attitude"] 
+ if phobia > a: phobia = a  
+ slave["darkness_xp"] += 1 
+ if slave["darkness_attitude_revealed"] = 0: slave["darkness_attitude_revealed"] = 1 
+END
+IF bloody > 0: 
+ a = slave["blood_attitude"]
+ if phobia > a: phobia = a  
+ slave["blood_xp"] += 1
+ if slave["blood_attitude_revealed"] = 0: slave["blood_attitude_revealed"] = 1 
+END
+IF fire_based > 0: 
+ a = slave["fire_attitude"]
+ if phobia > a: phobia = a  
+ slave["fire_xp"] += 1
+ if slave["fire_attitude_revealed"] = 0: slave["fire_attitude_revealed"] = 1 
+END
+IF water_based > 0: 
+ a = slave["water_attitude"]
+ if phobia > a: phobia = a  
+ slave["water_xp"] += 1
+ if slave["water_attitude_revealed"] = 0: slave["water_attitude_revealed"] = 1 
+END
+IF vermin_based > 0: 
+ a = slave["vermin_attitude"]
+ if phobia > a: phobia = a  
+ slave["vermin_xp"] += 1
+ if slave["vermin_attitude_revealed"] = 0: slave["vermin_attitude_revealed"] = 1 
+END
+IF deprivation > 0: 
+ phobia = slave["deprivation_attitude"]
+ if phobia > a: phobia = a  
+ slave["deprivation_xp"] += 1
+ if slave["deprivation_attitude_revealed"] = 0: slave["deprivation_attitude_revealed"] = 1 
+END
+IF compassion > 0: 
+ phobia = slave["compassion"]
+ if phobia > a: phobia = a  
+ slave["compassion_xp"] += 1
+ if slave["compassion_revealed"] = 0: slave["compassion_revealed"] = 1 
+END
+if phobia = 100: phobia = 0
+}
+
+$torture_result = {
+gs 'torture_result'
+}
+
+$prise_potence = {
+ if already_done_curslave[interaction] = 0: prise_potence += 1
+ prise_potence += slave["moral"]
+ if slave["obedience"] < 0: prise_potence += slave["obedience"]
+ if prise_potence < 0: prise_potence = 1 
+}
+
+$erotic_stimulation = {
+if sex_acceptance > 0: erotic_stimulation += sex_acceptance
+IF slave["arousal"] = 0: 
+ final_stimulation = 1
+ else
+ final_stimulation = erotic_stimulation * slave["arousal"]
+END
+if sex_acceptance < 0: final_stimulation = 0
+if orgastic = 0: slave_rate["arousal"] += final_stimulation
+}
+
+$slave_orgasm = {
+IF orgasm_prohibited = 0:
+ slave_rate["mood"] += final_stimulation * slave['orgasm_type']
+ slave_rate["arousal"] -= final_stimulation
+ if slave_rate["arousal"] < 0: slave_rate["arousal"] = 0
+ riser = min (master_supermacy, final_stimulation)
+ if riser < 0: riser = 1
+ slave_rate["instinct"] += riser
+ orgasm_description = 1    
+ if slave['pos_orgasm'] < slave['orgasm_type']: slave['pos_orgasm'] = slave['orgasm_type']
+ slave['neg_horny'] = 0
+ else
+ IF final_stimulation <= slave["obedience"]:
+  slave_rate["arousal"] += final_stimulation
+  slave_rate["sensitivity"] += 1
+  orgasm_description = 2    
+  slave_rate["instinct"] += 1
+  slave['neg_horny'] += 1
+  else
+  slave_rate["mood"] += final_stimulation
+  if slave['pos_orgasm'] < slave['orgasm_type']: slave['pos_orgasm'] = slave['orgasm_type']
+  slave_rate["arousal"] -= final_stimulation * slave['orgasm_type']
+  if slave_rate["arousal"] < 0: slave_rate["arousal"] = 0
+  slave_rate["temper"] += 1
+  sin_gained = max (1, slave["moral"])
+  if sin_gained > 5: sin_gained = 5
+  slave['neg_horny'] = 0
+  IF sin_gained => slave["virtue"]:
+   slave["virtue"] = 0
+   if sin_gained > slave["sin"]: slave["sin"] = sin_gained
+  END  
+  orgasm_description = 3    
+ END
+END
+}
+
+$sin_potential = {
+IF repulse > 0: 
+ sin_potential = 2 + repulse
+ else
+ sin_potential = 3
+END
+if sin_potential > 6: sin_potential = 6
+}
+
+$sin_gained_now = {
+IF already_done_today[interaction] = 0:
+ sin_gained = sin_potential + res
+ if sin_gained <= 0: sin_gained = 1
+ if sin_gained > 5: sin_gained = 5
+ IF sin_gained => slave["virtue"]:
+  slave["virtue"] = 0
+  IF sin_gained > slave["sin"]: 
+   slave["sin"] = sin_gained
+   master_bad_mood['neg_nice_slave'] = 1
+   gs '$mod_master_drop', 1
+  END 
+ END
+END
+if sententia_veritas = 1: slave["virtue"] = 0 & slave["sin"] = 5
+}
+
+$virtue_gained_now = {
+IF already_done_today[interaction] = 0:
+ virtue_gained = diligence
+ if slave_skill > 0: virtue_gained = min (diligence, slave_skill)
+ if virtue_gained <= 0: virtue_gained = 1
+ if virtue_gained > 5: virtue_gained = 5
+ IF virtue_gained => slave["sin"]:
+  slave["sin"] = 0
+  if virtue_gained > slave["virtue"]: slave["virtue"] = virtue_gained
+  if virtue_gained > slave["virtue"]: master_mood_rate += virtue_gained    
+ END
+ if sententia_veritas = 1: slave["virtue"] = 5 & slave["sin"] = 0 
+END
+}
+
+$virtue_gained_eroles = {
+IF already_done_today[interaction] = 0:
+ IF succes > 0: 
+  virtue_gained = diligence + 1
+  else
+  virtue_gained = (diligence + 1)/2
+ END
+ if virtue_gained <= 0: virtue_gained = 1
+ if virtue_gained > 5: virtue_gained = 5
+ IF virtue_gained => slave["sin"]:
+  slave["sin"] = 0
+  if virtue_gained > slave["virtue"]: slave["virtue"] = virtue_gained
+  if virtue_gained > slave["virtue"]: master_mood_rate += virtue_gained  
+ END
+END
+}
+
+$diligence = {
+diligence = min (res, 5) 
+if diligence < 0: diligence = 0
+if $slave_psy_status = 'broken': diligence = 0
+if repulse > 0: slave_rate["custom"] += 1
+if slave_rate["custom"] < 0: slave_rate["custom"] = 0
+}
+
+$complex_diligence = {
+complex_diligence = 0
+if complex_repulse > slave["obedience"]: complex_diligence = -1
+if repulse > slave["obedience"]: complex_diligence = -1
+if rebell[$slave_psy_status] > 0: complex_diligence -= 1
+if slave['fear'] > complex_repulse: complex_diligence += 1
+if slave['mood'] > complex_repulse: complex_diligence += 1
+if slave['moral'] > complex_repulse: complex_diligence += 1
+if slave['custom'] > complex_repulse: complex_diligence += 1
+if slave['rational'] > complex_repulse: complex_diligence += 1
+if slave['instinct'] > complex_repulse: complex_diligence += 1
+a = slave['spoil'] + complex_repulse
+if  a > 5: complex_diligence -= 1
+a = slave['pride'] + complex_repulse
+if a > 5: complex_diligence -= 1
+
+phobia = 0
+IF stimulating > 0: 
+ phobia += slave["nymphomania"]
+END
+IF shameful > 0: phobia += slave["exhibitionism"] - shameful
+IF painful > 0: phobia += slave["masohism"] - painful
+IF abuse > 0: phobia += slave["abuse_attitude"] - abuse
+IF disgusting > 0: phobia += slave["preversion"] - disgusting
+IF darkness > 0: phobia += slave["darkness_attitude"] - darkness
+IF bloody > 0: phobia += slave["blood_attitude"] - bloody
+IF fire_based > 0: phobia += slave["fire_attitude"] - fire_based
+IF water_based > 0: phobia += slave["water_attitude"] - water_based
+IF vermin_based > 0: phobia += slave["vermin_attitude"] - vermin_based 
+IF deprivation > 0: phobia += slave["deprivation_attitude"] - deprivation
+complex_diligence += phobia & $dil_message += 'phobia <<phobia>><br>'
+
+if slave['energy'] < 0: complex_diligence += slave['energy']
+a = slave['angst'] + complex_repulse
+if complex_diligence > 0 and a > 5: complex_diligence -= 1
+if slave['moral'] > complex_diligence and slave['moral'] > 0: complex_diligence = slave['moral']
+if $slave_psy_status = 'broken': complex_diligence = 0
+if complex_diligence > 5: complex_diligence = 5 
+if slave['domini_dictum'] = 1 and complex_diligence < 0: complex_diligence = 0
+}
+
+$sex_diligence = {
+ phobia = 0
+ IF stimulating > 0: 
+  phobia += sex['girl_nympo']
+ END
+ IF shameful > 0: 
+  phobia += sex["girl_exhibitionism"] - shameful
+  if $sex['partner'] = '': slave["exhibitionism_xp"] += 1
+ END
+ IF painful > 0: 
+  phobia += sex["girl_masohism"] - painful
+  if $sex['partner'] = '': slave["masohism_xp"] += 1   
+ END
+ IF abuse > 0: 
+  phobia += sex["girl_abuse_attitude"] - abuse
+  if $sex['partner'] = '': slave["abuse_xp"] += 1   
+ END
+ IF disgusting > 0:  
+  phobia += sex["girl_preversion"] - disgusting
+  if $sex['partner'] = '': slave["preversion_xp"] += 1 
+ END
+ IF darkness > 0: 
+  phobia += sex["girl_darkness_attitude"] - darkness
+  if $sex['partner'] = '': slave["darkness_xp"] += 1 
+ END
+ IF bloody > 0: 
+  phobia += sex["girl_blood_attitude"] - bloody
+  if $sex['partner'] = '': slave["blood_xp"] += 1
+ END
+ IF fire_based > 0: 
+  phobia += sex["girl_fire_attitude"] - fire_based
+  if $sex['partner'] = '': slave["fire_xp"] += 1
+ END
+ IF water_based > 0: 
+  phobia += sex["girl_water_attitude"] - water_based
+  if $sex['partner'] = '': slave["water_xp"] += 1
+ END
+ IF vermin_based > 0: 
+  phobia += sex["girl_vermin_attitude"] - vermin_based 
+  if $sex['partner'] = '': slave["vermin_xp"] += 1
+ END
+ IF deprivation > 0: 
+  phobia += sex["girl_deprivation_attitude"] - deprivation
+  if $sex['partner'] = '': slave["deprivation_xp"] += 1
+ END
+
+ diligence = 0
+ if sex['girl_mood'] > res: diligence += 1
+ if sex['girl_love'] > res: diligence += 1
+ if sex['girl_fear'] > res: diligence += 1
+ if sex['girl_submission'] > res: diligence += 1
+ if sex['girl_greed'] > res: diligence += 1
+ if sex['girl_affection'] > res: diligence += 1
+ if sex['girl_spoil'] + res > 5: diligence -= 1
+ if sex['girl_pride'] + res > 5: diligence -= 1
+ diligence += phobia
+ if diligence > 0: if sex['girl_angst'] + res > 5: diligence -= 1
+ if sex['girl_love'] > diligence: diligence = sex['girl_love']  
+ if stimulating > 0 and sex['girl_excitement'] > diligence: diligence = sex['girl_excitement']
+ if stimulating = 0 and sex['girl_excitement'] > diligence: diligence += 1
+ if sex['bondage'] = 1: diligence += 1
+
+ if $sex['partner'] = '' and $slave_psy_status = 'broken': diligence = 0
+ if sex['girl_energy'] <= 0: diligence = 0
+ if diligence > 5: diligence = 5
+
+ IF $sex['partner'] = '' and diligence > 0:
+  if repulse > 0:
+   slave_rate["custom"] += repulse
+   else
+   slave_rate["custom"] -= repulse
+  end
+ END
+}
+
+!TODO: какой-то странный прирост стамины
+$slave_energy_drop = {
+slave["energy"] -= 1
+if slave["energy"] < -5: slave["energy"] = -5
+if slave["energy"] < 0: slave_rate["stamina"] += slave["energy"]
+slave["calories"] -= 1
+}
+
+$assistant_energy_drop = {
+assistant["energy"] -= 1
+if assistant["energy"] < -5: assistant["energy"] = -5
+if assistant["energy"] < 0: assistant_rate["stamina"] += assistant["energy"]
+}
+
+$master_energy_drop = {
+master_energy -= 1
+if master_energy < -5: master_energy = -5
+if master_energy < 0: master_str_rate += master_energy
+}
+
+$master_ejaculate = {
+IF master_excitement > 0: 
+ master_mood_rate += ejaculation_intensity * master_excitement
+ if ejaculation_intensity > master_mood['pos_statisfied']: master_mood['pos_statisfied'] = ejaculation_intensity
+END
+master_excitement -= ejaculation_intensity
+if master_excitement < -5: master_excitement = -5
+if master_excitement < 0: dynamic $master_energy_drop
+}
+
+$house_cleaning = {
+    house_mess_rate = 0
+    if house_mess = 1: house_mess_rate = 10
+    if house_mess = 2: house_mess_rate = 20
+    if house_mess = 3: house_mess_rate = 40
+    if house_mess = 4: house_mess_rate = 80
+    if house_mess = 5: house_mess_rate = 160
+}
+
+$slave_damaged = {
+damage += slave["sensitivity"] + slave["hygiene"] - slave["stamina"]
+slave_rate["stamina"] -= damage
+if damage < 0: damage = 0
+if bruising = 1: slave_rate["bruises"] += damage*3
+if scarification = 1: slave_rate["scares"] += damage
+}
+
+$slave_fights_back = {
+killvar  '$play_sound'
+$play_sound[1] = '<<$cane_sound>>'
+msg "Воспитуемая дает вам решительный отпор и вы вынуждены сражаться с ней. Начинается бой..."
+slave["virtue"] = 0
+slave["sin"] = 5
+количество_врагов = 1
+$враг[1] = 'воспитуемая'
+slave["beaten"] = 1
+slave['beaten_ever'] = 1
+get_girl = 0
+$fight_return = 'menu_form'
+copyarr '$display_options', '$edge_of_mists'  
+gt 'начать_бой'
+}
+
+$slave_forced = {
+killvar  '$play_sound'
+$play_sound[1] = '<<$cane_sound>>'
+msg "<<$slave_name>> даёт вам решительный отпор, так что приходится применить грубую силу. К счастью она слишком слаба чтобы представлять реальную угрозу. Эта драка не кончится ничем страшнее пары синяков... у неё!"
+slave["virtue"] = 0
+slave["sin"] = 5
+bruising = 1
+damage = slave["stamina"] + master_str - master_fighter
+slave["beaten"] = 1
+slave['beaten_ever'] = 1
+slave['neg_forced'] = 1
+if damage > 0: gs '$mod_slave_drop', damage
+}
+
+
+
+!ГОНКИ НА КОЛЕСНИЦАХ
+$damage_frame = {
+IF boards => frame:
+ boards -= 1
+ else
+ frame -= 1
+END
+}
+
+$damage_wheels = {
+IF wheels => chasis:
+ wheels -= 1
+ else
+ chasis -= 1
+END
+}
+
+$charriot_crush = {
+IF charriot['inertion'] > 1:
+ frame = 0
+ else
+ dynamic $damage_frame
+END
+}
+
+$pony_death = {
+charriot['pony_health'] = 0
+}
+
+
+!ТРИНИТИ (БОЕВОЙ ДВИЖОК)
+
+$в_боевое_меню = {
+gs 'боевое_меню'
+gt 'боевой_интерфейс'
+}
+
+!Из локации 'сменить_оружие'
+$сменить_вторичное = {
+GT 'боевой_интерфейс'
+}
+$убрать_основное = {
+$оружие = 'безоружный'
+gs 'боевое_меню'
+GT 'боевой_интерфейс'
+}
+$убрать_вторичное = {
+$вторичный = ''
+gs 'боевое_меню'
+GT 'боевой_интерфейс'
+}
+
+$взять_оружие_за_спиной = {
+IF $класс_оружия[$за_спиной]!'вторичное_оружие':
+ IF $за_спиной ! 'вторичный':
+  $оружие = $за_спиной
+  if $класс_оружия[$за_спиной] = 'тяжелое_оружие': $вторичный = ''
+  if nogoto = 0: $действия_игрока = 'Вы достаете <<$название_предмета[$за_спиной]>>'
+  if nogoto = 0: GT 'ход_противников'
+ END
+END
+}
+$взять_оружие_слева = {
+IF $класс_оружия[$слева]!'вторичное_оружие':
+ IF $слева ! $вторичный:
+  $оружие = $слева
+  if nogoto = 0: $действия_игрока = 'Вы достаете <<$название_предмета[$слева]>>'
+  if nogoto = 0: GT 'ход_противников'
+ END
+END
+}
+$взять_оружие_справа = {
+IF $класс_оружия[$справа]!'вторичное_оружие':
+ IF $справа ! $вторичный:
+  $оружие = $справа
+  if nogoto = 0: $действия_игрока = 'Вы достаете <<$название_предмета[$справа]>>'
+  if nogoto = 0: GT 'ход_противников'
+ END
+END
+}
+$взять_оружие_предплечье = {
+IF $класс_оружия[$предплечье]!'вторичное_оружие':
+ IF $предплечье ! $вторичный:
+  $оружие = $предплечье
+  if nogoto = 0: $действия_игрока = 'Вы достаете <<$название_предмета[$предплечье]>>'
+  if nogoto = 0: GT 'ход_противников'
+ END
+END
+}
+$взять_оружие_в_сапоге = {
+IF $класс_оружия[$в_сапоге]!'вторичное_оружие':
+ IF $в_сапоге ! $вторичный:
+  $оружие = $в_сапоге
+  if nogoto = 0: $действия_игрока = 'Вы достаете <<$название_предмета[$в_сапоге]>>'
+  if nogoto = 0: GT 'ход_противников'
+ END
+END
+}
+!TODO: лишние endы, надо проверить
+$взять_вторичный_в_сапоге = {
+ $вторичный = $в_сапоге
+ if $класс_оружия[$оружие] = 'тяжелое_оружие': $оружие = ''
+ if nogoto = 0: $действия_игрока = 'Вы достаете <<$название_предмета[$в_сапоге]>>'
+ if nogoto = 0: GT 'ход_противников'
+END
+}
+$взять_вторичный_предплечье = {
+ $вторичный = $предплечье
+ if $класс_оружия[$оружие] = 'тяжелое_оружие': $оружие = '' 
+ if nogoto = 0: $действия_игрока = 'Вы достаете <<$название_предмета[$предплечье]>>'
+ if nogoto = 0: GT 'ход_противников' 
+END
+}
+$взять_вторичный_справа = {
+ IF $класс_оружия[$справа] ! 'оружие':
+  $вторичный = $справа
+  if $класс_оружия[$оружие] = 'тяжелое_оружие': $оружие = ''  
+  if nogoto = 0: $действия_игрока = 'Вы достаете <<$название_предмета[$справа]>>'
+  if nogoto = 0: GT 'ход_противников'   
+ END
+END
+}
+$взять_вторичный_слева = {
+ IF $класс_оружия[$слева] ! 'оружие':
+  $вторичный = $слева
+  if $класс_оружия[$оружие] = 'тяжелое_оружие': $оружие = ''  
+  if nogoto = 0: $действия_игрока = 'Вы достаете <<$название_предмета[$слева]>>'
+  if nogoto = 0: GT 'ход_противников'     
+ END
+END
+}
+$взять_вторичный_за_спиной = {
+ IF $класс_оружия[$за_спиной] ! 'оружие' and $класс_оружия[$за_спиной] ! 'тяжелое_оружие':
+  $вторичный = $за_спиной
+  if $класс_оружия[$оружие] = 'тяжелое_оружие': $оружие = ''  
+  if nogoto = 0: $действия_игрока = 'Вы достаете <<$название_предмета[$за_спиной]>>'
+  if nogoto = 0: GT 'ход_противников'       
+ END
+END
+}
+
+$сменить_защиту = {
+if $защита[0] = 'контратака': $защита[0] = 'блок' & gt curloc
+if $защита[0] = 'уклонение': $защита[0] = 'контратака' & gt curloc
+if $защита[0] = 'блок': $защита[0] = 'уклонение' & gt curloc
+}
+
+!Чтобы показать наложенные на игрока эффекты
+$слабость_игрока = {
+if слабость > 0: $плохие_эффекты_игрока += "<a href='EXEC: msg $слабость_справка'><font color='red'>СЛАБОСТЬ</font>[<<слабость>>]</a><br>"
+}
+
+$скованность_игрока = {
+if скованность > 0: $плохие_эффекты_игрока += "<a href='EXEC: msg $скованность_справка'><font color='green'>СКОВАННОСТЬ</font>[<<скованность>>]</a><br>"
+}
+
+$боль_игрока = {
+if боль > 0: $плохие_эффекты_игрока += "<a href='EXEC: msg $боль_справка'><font color='purple'>СИЛЬНАЯ БОЛЬ</font>[<<боль>>]</a><br><br>"
+}
+
+$шаткость_игрока = {
+if шаткость > 0: $плохие_эффекты_игрока += "<a href='EXEC: msg $шаткость_справка'><font color='red'>ШАТКОСТЬ</font>[<<шаткость>>]</a><br>"
+}
+
+$ошеломление_игрока = {
+if ошеломление > 0: $плохие_эффекты_игрока += "<a href='EXEC: msg $ошеломление_справка'><font color='green'>ОШЕЛОМЛЕНИЕ</font>[<<ошеломление>>]</a><br>"
+}
+
+$рассеянность_игрока = {
+if рассеянность > 0: $плохие_эффекты_игрока += "<a href='EXEC: msg $рассеянность_справка'><font color='purple'>РАССЕЯННОСТЬ</font>[<<рассеянность>>]</a><br>"
+}
+
+$бешенство_игрока = {
+if бешенство > 0: $хорошие_эффекты_игрока += "<a href='EXEC: msg $бешенство_справка'><font color='red'>БЕШЕНСТВО</font>[<<бешенство>>]</a><br>"
+}
+
+$разгон_игрока = {
+if разгон > 0: $хорошие_эффекты_игрока += "<a href='EXEC: msg $разгон_справка'><font color='green'>РАЗГОН</font>[<<разгон>>]</a><br>"
+}
+
+$меткость_игрока = {
+if меткость > 0: $хорошие_эффекты_игрока += "<a href='EXEC: msg $меткость_справка'><font color='purple'>МЕТКОСТЬ</font>[<<меткость>>]</a><br><br>"
+}
+
+$адреналин_игрока = {
+if адреналин > 0: $хорошие_эффекты_игрока += "<a href='EXEC: msg $адреналин_справка'><font color='red'>АДРЕНАЛИН</font>[<<адреналин>>]</a><br>"
+}
+
+$верткость_игрока = {
+if верткость > 0: $хорошие_эффекты_игрока += "<a href='EXEC: msg $верткость_справка'><font color='green'>ВЕРТКОСТЬ</font>[<<верткость>>]</a><br>"
+}
+
+$внимание_игрока = {
+if внимание > 0: $хорошие_эффекты_игрока += "<a href='EXEC: msg $внимание_справка'><font color='purple'>ВНИМАНИЕ</font>[<<внимание>>]</a><br>"
+}
+
+!Чтобы показать наложенные на текущего противника эффекты
+
+$слабость_противника = {
+ if слабость[текущий] > 0: $плохие_эффекты_проивника += "<a href='EXEC: msg $слабость_справка'><font color='red'>СЛАБОСТЬ</font>[<<слабость[текущий]>>]</a><br>"
+}
+$скованность_противника = {
+ if скованность[текущий] > 0: $плохие_эффекты_проивника += "<a href='EXEC: msg $скованность_справка'><font color='green'>СКОВАННОСТЬ</font>[<<скованность[текущий]>>]</a><br>"
+}
+$боль_противника = {
+ if боль[текущий] > 0: $плохие_эффекты_проивника += "<a href='EXEC: msg $боль_справка'><font color='purple'>СИЛЬНАЯ БОЛЬ</font>[<<боль[текущий]>>]</a><br>"
+}
+$шаткость_противника = {
+ if шаткость[текущий] > 0: $плохие_эффекты_проивника += "<a href='EXEC: msg $шаткость_справка'><font color='red'>ШАТКОСТЬ</font>[<<шаткость[текущий]>>]</a><br>"
+}
+$ошеломление_противника = {
+ if ошеломление[текущий] > 0: $плохие_эффекты_проивника += "<a href='EXEC: msg $ошеломление_справка'><font color='green'>ОШЕЛОМЛЕНИЕ</font>[<<ошеломление[текущий]>>]</a><br>"
+}
+$рассеянность_противника = {
+ if рассеянность[текущий] > 0: $плохие_эффекты_проивника += "<a href='EXEC: msg $рассеянность_справка'><font color='purple'>РАССЕЯННОСТЬ</font>[<<рассеянность[текущий]>>]</a><br>"
+}
+
+$бешенство_противника = {
+ if бешенство[текущий] > 0: $хорошие_эффекты_противника += "[<a href='EXEC: msg $бешенство_справка'><<бешенство[текущий]>>]<font color='red'>БЕШЕНСТВО</font></a><br>"
+}
+$разгон_противника = {
+ if разгон[текущий] > 0: $хорошие_эффекты_противника += "[<a href='EXEC: msg $разгон_справка'><<разгон[текущий]>>]<font color='green'>РАЗГОН</font></a><br>"
+}
+$меткость_противника = {
+ if меткость[текущий] > 0: $хорошие_эффекты_противника += "[<a href='EXEC: msg $меткость_справка'><<меткость[текущий]>>]<font color='purple'>МЕТКОСТЬ</font></a><br>"
+}
+$адреналин_противника = {
+ if адреналин[текущий] > 0: $хорошие_эффекты_противника += "[<a href='EXEC: msg $адреналин_справка'><<адреналин[текущий]>>]<font color='red'>АДРЕНАЛИН</font></a><br>"
+}
+$верткость_противника = {
+ if верткость[текущий] > 0: $хорошие_эффекты_противника += "[<a href='EXEC: msg $верткость_справка'><<верткость[текущий]>>]<font color='green'>ВЕРТКОСТЬ</font></a><br>"
+}
+$внимание_противника = {
+ if внимание[текущий] > 0: $хорошие_эффекты_противника += "[<a href='EXEC: msg $внимание_справка'><<внимание[текущий]>>]<font color='purple'>ВНИМАНИЕ</font></a><br>"
+}
+
+!Атаки
+$первое_действие = {gt 'атака_игрока',1}
+$второе_действие = {gt 'атака_игрока',2}
+$атака_второй_рукой = {gt 'атака_игрока',31}
+
+$пинок = {gt 'атака_игрока',11}
+$толчок = {gt 'атака_игрока',12}
+$подсечка = {gt 'атака_игрока',13}
+
+$суперудар_1 = {
+суперудар_сделан[1] = 1
+gt 'атака_игрока',21
+}
+$суперудар_2 = {
+суперудар_сделан[2] = 1
+gt 'атака_игрока',22
+}
+$суперудар_3 = {
+суперудар_сделан[3] = 1
+gt 'атака_игрока',23
+}
+$суперудар_4 = {
+суперудар_сделан[4] = 1
+gt 'атака_игрока',24
+}
+$суперудар_5 = {
+суперудар_сделан[5] = 1
+gt 'атака_игрока',25
+}
+
+$вернуться_в_корень = {
+gs 'боевое_меню'
+GT 'боевой_интерфейс'
+}
+
+!Переключение между врагами
+$переключатель_врагов[1] = {
+IF враг[1] = 1:
+ $панель_переключений += '[<a href="EXEC:текущий=1&gt''боевой_интерфейс''">1</a>] '
+ else
+ $панель_переключений += '<font color="silver">[1]</font> '
+END
+}
+$переключатель_врагов[2] = {
+IF враг[2] = 1:
+ $панель_переключений += '[<a href="EXEC:текущий=2&gt''боевой_интерфейс''">2</a>] '
+ else
+ $панель_переключений += '<font color="silver">[2]</font> '
+END
+}
+$переключатель_врагов[3] = {
+IF враг[3] = 1:
+ $панель_переключений += '[<a href="EXEC:текущий=3&gt''боевой_интерфейс''">3</a>] '
+ else
+ $панель_переключений += '<font color="silver">[3]</font> '
+END
+}
+$переключатель_врагов[4] = {
+IF враг[4] = 1:
+ $панель_переключений += '[<a href="EXEC:текущий=4&gt''боевой_интерфейс''">4</a>] '
+ else
+ $панель_переключений += '<font color="silver">[4]</font> '
+END
+}
+$переключатель_врагов[5] = {
+IF враг[5] = 1:
+ $панель_переключений += '[<a href="EXEC:текущий=5&gt''боевой_интерфейс''">5</a>]'
+ else
+ $панель_переключений += '<font color="silver">[5]</font>'
+END
+}
+
+$master_armor_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''без_брони'' & dynamic $slot_1_change">Снять броню</a>'
+if комбез > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''комбез'' & dynamic $slot_1_change">Арамидный комбез [<<комбез>>]</a>'
+if кожан > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кожан'' & dynamic $slot_1_change">Кожаный доспех [<<кожан>>]</a>'
+if эльчуга > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''эльчуга'' & dynamic $slot_1_change">Эльфийская кольчуга [<<эльчуга>>]</a>'
+if ячуга > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''ячуга'' & dynamic $slot_1_change">Яцериновая кольчуга [<<ячуга>>]</a>'
+if полудоспех > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''полудоспех'' & dynamic $slot_1_change">Комбинированный доспех [<<полудоспех>>]</a>'
+if плейт > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''плейт'' & dynamic $slot_1_change">Готические латы [<<плейт>>]</a>'
+gt curloc
+}
+
+$master_wpn_list_large = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''none'' & dynamic $slot_2_change">Отложить оружие</a>'
+if фламберг > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''фламберг'' & dynamic $slot_2_change">Фламберг [<<фламберг>>]</a>'
+if нагината > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагината'' & dynamic $slot_2_change">Нагината [<<нагината>>]</a>'
+if моргенштерн > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''моргенштерн'' & dynamic $slot_2_change">Моргенштерн [<<моргенштерн>>]</a>'
+if грейтекс > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''грейтекс'' & dynamic $slot_2_change">Топор дровосека [<<грейтекс>>]</a>'
+if бита > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''бита'' & dynamic $slot_2_change">Бейсбольная бита [<<бита>>]</a>'
+if скотобой > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''скотобой'' & dynamic $slot_2_change">Шокер для скота [<<скотобой>>]</a>'
+if кнут > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кнут'' & dynamic $slot_2_change">Кнут [<<кнут>>]</a>'
+if шпага > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''шпага'' & dynamic $slot_2_change">Шпага [<<шпага>>]</a>'
+if рапира > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''рапира'' & dynamic $slot_2_change">Рапира [<<рапира>>]</a>'
+if кончар > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кончар'' & dynamic $slot_2_change">Кончар [<<кончар>>]</a>'
+if гладиус > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''гладиус'' & dynamic $slot_2_change">Гладиус [<<гладиус>>]</a>'
+if бастард > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''бастард'' & dynamic $slot_2_change">Бастард [<<бастард>>]</a>'
+if клевец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''клевец'' & dynamic $slot_2_change">Клевец [<<клевец>>]</a>'
+if мачете > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''мачете'' & dynamic $slot_2_change">Мачете [<<мачете>>]</a>'
+if катана > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''катана'' & dynamic $slot_2_change">Катана [<<катана>>]</a>'
+if томагавк > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''томагавк'' & dynamic $slot_2_change">Томагавк [<<томагавк>>]</a>'
+if демократизатор > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''демократизатор'' & dynamic $slot_2_change">Демократизатор [<<демократизатор>>]</a>'
+gt curloc
+}
+
+$master_wpn_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''none'' & dynamic $slot_3_change">Отложить оружие</a>'
+if кнут > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кнут'' & dynamic $slot_3_change">Кнут [<<кнут>>]</a>'
+if шпага > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''шпага'' & dynamic $slot_3_change">Шпага [<<шпага>>]</a>'
+if рапира > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''рапира'' & dynamic $slot_3_change">Рапира [<<рапира>>]</a>'
+if кончар > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кончар'' & dynamic $slot_3_change">Кончар [<<кончар>>]</a>'
+if гладиус > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''гладиус'' & dynamic $slot_3_change">Гладиус [<<гладиус>>]</a>'
+if бастард > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''бастард'' & dynamic $slot_3_change">Бастард [<<бастард>>]</a>'
+if клевец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''клевец'' & dynamic $slot_3_change">Клевец [<<клевец>>]</a>'
+if мачете > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''мачете'' & dynamic $slot_3_change">Мачете [<<мачете>>]</a>'
+if катана > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''катана'' & dynamic $slot_3_change">Катана [<<катана>>]</a>'
+if томагавк > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''томагавк'' & dynamic $slot_3_change">Томагавк [<<томагавк>>]</a>'
+if демократизатор > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''демократизатор'' & dynamic $slot_3_change">Демократизатор [<<демократизатор>>]</a>'
+if кинжал > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кинжал'' & dynamic $slot_3_change">Кинжал [<<кинжал>>]</a>'
+if стилет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''стилет'' & dynamic $slot_3_change">Стилет [<<стилет>>]</a>'
+if кастет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кастет'' & dynamic $slot_3_change">Кастет [<<кастет>>]</a>'
+if нагайка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагайка'' & dynamic $slot_3_change">Нагайка [<<нагайка>>]</a>'
+if глушилка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''глушилка'' & dynamic $slot_3_change">Глушилка [<<глушилка>>]</a>'
+if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_3_change">Мясницкий тесак [<<тесак>>]</a>'
+if щит > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''щит'' & dynamic $slot_3_change">Прочный щит [<<щит>>]</a>'
+gt curloc
+}
+
+$master_wpn_list_2 = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''none'' & dynamic $slot_4_change">Отложить оружие</a>'
+if кнут > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кнут'' & dynamic $slot_4_change">Кнут [<<кнут>>]</a>'
+if шпага > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''шпага'' & dynamic $slot_4_change">Шпага [<<шпага>>]</a>'
+if рапира > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''рапира'' & dynamic $slot_4_change">Рапира [<<рапира>>]</a>'
+if кончар > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кончар'' & dynamic $slot_4_change">Кончар [<<кончар>>]</a>'
+if гладиус > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''гладиус'' & dynamic $slot_4_change">Гладиус [<<гладиус>>]</a>'
+if бастард > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''бастард'' & dynamic $slot_4_change">Бастард [<<бастард>>]</a>'
+if клевец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''клевец'' & dynamic $slot_4_change">Клевец [<<клевец>>]</a>'
+if мачете > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''мачете'' & dynamic $slot_4_change">Мачете [<<мачете>>]</a>'
+if катана > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''катана'' & dynamic $slot_4_change">Катана [<<катана>>]</a>'
+if томагавк > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''томагавк'' & dynamic $slot_4_change">Томагавк [<<томагавк>>]</a>'
+if демократизатор > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''демократизатор'' & dynamic $slot_4_change">Демократизатор [<<демократизатор>>]</a>'
+if кинжал > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кинжал'' & dynamic $slot_4_change">Кинжал [<<кинжал>>]</a>'
+if стилет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''стилет'' & dynamic $slot_4_change">Стилет [<<стилет>>]</a>'
+if кастет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кастет'' & dynamic $slot_4_change">Кастет [<<кастет>>]</a>'
+if нагайка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагайка'' & dynamic $slot_4_change">Нагайка [<<нагайка>>]</a>'
+if глушилка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''глушилка'' & dynamic $slot_4_change">Глушилка [<<глушилка>>]</a>'
+if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_4_change">Мясницкий тесак [<<тесак>>]</a>'
+if щит > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''щит'' & dynamic $slot_4_change">Прочный щит [<<щит>>]</a>'
+gt curloc
+}
+
+$master_wpn_list_small = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''none'' & dynamic $slot_5_change">Отложить оружие</a>'
+if кинжал > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кинжал'' & dynamic $slot_5_change">Кинжал [<<кинжал>>]</a>'
+if стилет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''стилет'' & dynamic $slot_5_change">Стилет [<<стилет>>]</a>'
+if кастет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кастет'' & dynamic $slot_5_change">Кастет [<<кастет>>]</a>'
+if нагайка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагайка'' & dynamic $slot_5_change">Нагайка [<<нагайка>>]</a>'
+if глушилка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''глушилка'' & dynamic $slot_5_change">Глушилка [<<глушилка>>]</a>'
+if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_5_change">Мясницкий тесак [<<тесак>>]</a>'
+if щит > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''щит'' & dynamic $slot_5_change">Прочный щит [<<щит>>]</a>'
+gt curloc
+}
+
+$master_wpn_list_small_2 = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''none'' & dynamic $slot_6_change">Отложить оружие</a>'
+if кинжал > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кинжал'' & dynamic $slot_6_change">Кинжал [<<кинжал>>]</a>'
+if стилет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''стилет'' & dynamic $slot_6_change">Стилет [<<стилет>>]</a>'
+if кастет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кастет'' & dynamic $slot_6_change">Кастет [<<кастет>>]</a>'
+if нагайка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагайка'' & dynamic $slot_6_change">Нагайка [<<нагайка>>]</a>'
+if глушилка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''глушилка'' & dynamic $slot_6_change">Глушилка [<<глушилка>>]</a>'
+if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_6_change">Мясницкий тесак [<<тесак>>]</a>'
+if щит > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''щит'' & dynamic $slot_6_change">Прочный щит [<<щит>>]</a>'
+gt curloc
+}
+
+$master_cloth_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''man_rugs'' & dynamic $slot_7_change">Поношенная одежда</a>'
+if comfy_robes > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''comfy_robes'' & dynamic $slot_7_change">Домашний халат</a>'
+if fancy_suit > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''fancy_suit'' & dynamic $slot_7_change">Красивая одежда</a>'
+if regal_suit > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''regal_suit'' & dynamic $slot_7_change">Пафосный наряд</a>'
+if formal_suit > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''formal_suit'' & dynamic $slot_7_change">Формальный костюм</a>'
+if aketon > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''aketon'' & dynamic $slot_7_change">Акетон</a>'
+if livery > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''livery'' & dynamic $slot_7_change">Ливрея</a>'
+if medic_robes > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''medic_robes'' & dynamic $slot_7_change">Медицинский халат</a>'
+if wizard_robes > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''wizard_robes'' & dynamic $slot_7_change">Роба волшебника</a>'
+gt curloc
+}
+
+$master_head_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''none'' & dynamic $slot_8_change">Снять головной убор</a>'
+if raven_crown > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''raven_crown'' & dynamic $slot_8_change">Вороний венец</a>'
+gt curloc
+}
+
+$master_ears_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''none'' & dynamic $slot_9_change">Вынуть серьгу</a>'
+if chimera_earring > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''chimera_earring'' & dynamic $slot_9_change">Самоцвет химеры</a>'
+gt curloc
+}
+
+$master_neck_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''none'' & dynamic $slot_10_change">Снять амулет</a>'
+if snake_amulet > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''snake_amulet'' & dynamic $slot_10_change">Змеиный талисман</a>'
+gt curloc
+}
+
+$master_ring_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''none'' & dynamic $slot_11_change">Снять кольцо</a>'
+if bull_ring > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''bull_ring'' & dynamic $slot_11_change">Кольцо быка</a>'
+gt curloc
+}
+
+
+$slave_armor_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''без_брони'' & dynamic $slot_20_change">Снять броню</a>'
+if комбез > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''комбез'' & dynamic $slot_20_change">Арамидный комбез [<<комбез>>]</a>'
+if кожан > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кожан'' & dynamic $slot_20_change">Кожаный доспех [<<кожан>>]</a>'
+if эльчуга > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''эльчуга'' & dynamic $slot_20_change">Эльфийская кольчуга [<<эльчуга>>]</a>'
+if ячуга > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''ячуга'' & dynamic $slot_20_change">Яцериновая кольчуга [<<ячуга>>]</a>'
+if полудоспех > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''полудоспех'' & dynamic $slot_20_change">Комбинированный доспех [<<полудоспех>>]</a>'
+if плейт > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''плейт'' & dynamic $slot_20_change">Готические латы [<<плейт>>]</a>'
+gt curloc
+}
+
+$slave_wpn_list_large = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''none'' & dynamic $slot_21_change">Отложить оружие</a>'
+if фламберг > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''фламберг'' & dynamic $slot_21_change">Фламберг [<<фламберг>>]</a>'
+if нагината > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагината'' & dynamic $slot_21_change">Нагината [<<нагината>>]</a>'
+if моргенштерн > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''моргенштерн'' & dynamic $slot_21_change">Моргенштерн [<<моргенштерн>>]</a>'
+if грейтекс > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''грейтекс'' & dynamic $slot_21_change">Топор дровосека [<<грейтекс>>]</a>'
+if бита > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''бита'' & dynamic $slot_21_change">Бейсбольная бита [<<бита>>]</a>'
+if скотобой > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''скотобой'' & dynamic $slot_21_change">Шокер для скота [<<скотобой>>]</a>'
+if кнут > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кнут'' & dynamic $slot_21_change">Кнут [<<кнут>>]</a>'
+if шпага > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''шпага'' & dynamic $slot_21_change">Шпага [<<шпага>>]</a>'
+if рапира > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''рапира'' & dynamic $slot_21_change">Рапира [<<рапира>>]</a>'
+if кончар > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кончар'' & dynamic $slot_21_change">Кончар [<<кончар>>]</a>'
+if гладиус > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''гладиус'' & dynamic $slot_21_change">Гладиус [<<гладиус>>]</a>'
+if бастард > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''бастард'' & dynamic $slot_21_change">Бастард [<<бастард>>]</a>'
+if клевец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''клевец'' & dynamic $slot_21_change">Клевец [<<клевец>>]</a>'
+if мачете > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''мачете'' & dynamic $slot_21_change">Мачете [<<мачете>>]</a>'
+if катана > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''катана'' & dynamic $slot_21_change">Катана [<<катана>>]</a>'
+if томагавк > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''томагавк'' & dynamic $slot_21_change">Томагавк [<<томагавк>>]</a>'
+if демократизатор > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''демократизатор'' & dynamic $slot_21_change">Демократизатор [<<демократизатор>>]</a>'
+gt curloc
+}
+
+$slave_wpn_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''none'' & dynamic $slot_22_change">Отложить оружие</a>'
+if кнут > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кнут'' & dynamic $slot_22_change">Кнут [<<кнут>>]</a>'
+if шпага > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''шпага'' & dynamic $slot_22_change">Шпага [<<шпага>>]</a>'
+if рапира > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''рапира'' & dynamic $slot_22_change">Рапира [<<рапира>>]</a>'
+if кончар > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кончар'' & dynamic $slot_22_change">Кончар [<<кончар>>]</a>'
+if гладиус > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''гладиус'' & dynamic $slot_22_change">Гладиус [<<гладиус>>]</a>'
+if бастард > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''бастард'' & dynamic $slot_22_change">Бастард [<<бастард>>]</a>'
+if клевец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''клевец'' & dynamic $slot_22_change">Клевец [<<клевец>>]</a>'
+if мачете > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''мачете'' & dynamic $slot_22_change">Мачете [<<мачете>>]</a>'
+if катана > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''катана'' & dynamic $slot_22_change">Катана [<<катана>>]</a>'
+if томагавк > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''томагавк'' & dynamic $slot_22_change">Томагавк [<<томагавк>>]</a>'
+if демократизатор > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''демократизатор'' & dynamic $slot_22_change">Демократизатор [<<демократизатор>>]</a>'
+if кинжал > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кинжал'' & dynamic $slot_22_change">Кинжал [<<кинжал>>]</a>'
+if стилет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''стилет'' & dynamic $slot_22_change">Стилет [<<стилет>>]</a>'
+if кастет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кастет'' & dynamic $slot_22_change">Кастет [<<кастет>>]</a>'
+if нагайка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагайка'' & dynamic $slot_22_change">Нагайка [<<нагайка>>]</a>'
+if глушилка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''глушилка'' & dynamic $slot_22_change">Глушилка [<<глушилка>>]</a>'
+if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_22_change">Мясницкий тесак [<<тесак>>]</a>'
+if щит > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''щит'' & dynamic $slot_22_change">Прочный щит [<<щит>>]</a>'
+gt curloc
+}
+
+$slave_wpn_list_2 = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''none'' & dynamic $slot_23_change">Отложить оружие</a>'
+if кнут > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кнут'' & dynamic $slot_23_change">Кнут [<<кнут>>]</a>'
+if шпага > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''шпага'' & dynamic $slot_23_change">Шпага [<<шпага>>]</a>'
+if рапира > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''рапира'' & dynamic $slot_23_change">Рапира [<<рапира>>]</a>'
+if кончар > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кончар'' & dynamic $slot_23_change">Кончар [<<кончар>>]</a>'
+if гладиус > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''гладиус'' & dynamic $slot_23_change">Гладиус [<<гладиус>>]</a>'
+if бастард > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''бастард'' & dynamic $slot_23_change">Бастард [<<бастард>>]</a>'
+if клевец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''клевец'' & dynamic $slot_23_change">Клевец [<<клевец>>]</a>'
+if мачете > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''мачете'' & dynamic $slot_23_change">Мачете [<<мачете>>]</a>'
+if катана > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''катана'' & dynamic $slot_23_change">Катана [<<катана>>]</a>'
+if томагавк > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''томагавк'' & dynamic $slot_23_change">Томагавк [<<томагавк>>]</a>'
+if демократизатор > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''демократизатор'' & dynamic $slot_23_change">Демократизатор [<<демократизатор>>]</a>'
+if кинжал > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кинжал'' & dynamic $slot_23_change">Кинжал [<<кинжал>>]</a>'
+if стилет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''стилет'' & dynamic $slot_23_change">Стилет [<<стилет>>]</a>'
+if кастет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кастет'' & dynamic $slot_23_change">Кастет [<<кастет>>]</a>'
+if нагайка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагайка'' & dynamic $slot_23_change">Нагайка [<<нагайка>>]</a>'
+if глушилка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''глушилка'' & dynamic $slot_23_change">Глушилка [<<глушилка>>]</a>'
+if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_23_change">Мясницкий тесак [<<тесак>>]</a>'
+gt curloc
+}
+
+$slave_cloth_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''голая'' & dynamic $slot_24_change">Раздеть догола</a>'
+if slave_inventory['apron'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''apron'' & dynamic $slot_24_change">Фартук с оборками</a>'
+if slave_inventory['maid_dress'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''maid_dress'' & dynamic $slot_24_change">Униформа горничной</a>'
+if slave_inventory['nurse_dress'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''nurse_dress'' & dynamic $slot_24_change">Униформа медсестры</a>'
+if slave_inventory['sailor_foku'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''sailor_foku'' & dynamic $slot_24_change">Школьная униформа</a>'
+if slave_inventory['enchanter_robe'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''enchanter_robe'' & dynamic $slot_24_change">Чародейская роба</a>'
+if slave_inventory['leotard'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''leotard'' & dynamic $slot_24_change">Трико для гимнастики</a>'
+if slave_inventory['chainmail_bikini'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''chainmail_bikini'' & dynamic $slot_24_change">Кольчужное бикини</a>'
+if slave_inventory['ukata'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''ukata'' & dynamic $slot_24_change">Кимоно-юката</a>'
+if slave_inventory['sun_dress'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''sun_dress'' & dynamic $slot_24_change">Легкий сарафан</a>'
+if slave_inventory['laced_underwear'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''laced_underwear'' & dynamic $slot_24_change">Кружевное бельё</a>'
+if slave_inventory['cocktail_dress'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''cocktail_dress'' & dynamic $slot_24_change">Вечернее платье</a>'
+if slave_inventory['rubber_dress'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''rubber_dress'' & dynamic $slot_24_change">Платье из латекса</a>'
+if slave_inventory['bellydance'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''bellydance'' & dynamic $slot_24_change">Экзотический наряд</a>'
+if slave_inventory['leather_corset'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''leather_corset'' & dynamic $slot_24_change">Кожаный корсет</a>'
+if slave_inventory['rich_dress'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''rich_dress'' & dynamic $slot_24_change">Роскошное платье</a>'
+if slave_inventory['wedding_dress'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''wedding_dress'' & dynamic $slot_24_change">Подвенечное платье</a>'
+if slave_inventory['anal_tail'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''anal_tail'' & dynamic $slot_24_change">Анальный хвост</a>'
+gt curloc
+}
+
+$slave_head_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''пусто'' & dynamic $slot_25_change">Снять головной убор</a>'
+if slave_inventory['hijab'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''hijab'' & dynamic $slot_25_change">Хиджаб</a>'
+if slave_inventory['crown_of_thorns'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''crown_of_thorns'' & dynamic $slot_25_change">Терновый венок</a>'
+if slave_inventory['plain_tiara'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''plain_tiara'' & dynamic $slot_25_change">Фигурная диадема</a>'
+if slave_inventory['incrusted_tiara'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''incrusted_tiara'' & dynamic $slot_25_change">Драгоценная тиара</a>'
+if slave_inventory['plain_headband'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''plain_headband'' & dynamic $slot_25_change">Ободок для волос</a>'
+if slave_inventory['glasses'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''glasses'' & dynamic $slot_25_change">Изящные очки</a>'
+if slave_inventory['nekomimi'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''nekomimi'' & dynamic $slot_25_change">Кошачьи ушки</a>'
+if slave_inventory['hairnet'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''hairnet'' & dynamic $slot_25_change">Сеточка для волос</a>'
+if slave_inventory['exotic_wig'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''exotic_wig'' & dynamic $slot_25_change">Экзотический парик</a>'
+if slave_inventory['pony_plume'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''pony_plume'' & dynamic $slot_25_change">Уздечка с плюмажем</a>'
+gt curloc
+}
+
+$slave_ears_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''пусто'' & dynamic $slot_26_change">Снять серьги</a>'
+if slave_inventory['plain_earring'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''plain_earring'' & dynamic $slot_26_change">Блестящие сережки <<slave_inventory["plain_earring"]>></a>'
+if slave_inventory['incrusted_earrings'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''incrusted_earrings'' & dynamic $slot_26_change">Инкрустированные сережки <<slave_inventory["incrusted_earrings"]>></a>'
+gt curloc
+}
+
+$slave_neck_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''пусто'' & dynamic $slot_27_change">Снять предмет</a>'
+if slave_inventory['leather_collar'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''leather_collar'' & dynamic $slot_27_change">Кожаный ошейник</a>'
+if slave_inventory['steel_collar'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''steel_collar'' & dynamic $slot_27_change">Стальной ошейник</a>'
+if slave_inventory['spiked_collar'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''spiked_collar'' & dynamic $slot_27_change">Шипастый ошейник</a>'
+if slave_inventory['dog_collar'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''dog_collar'' & dynamic $slot_27_change">Собачий ошейник</a>'
+if slave_inventory['golden_collar'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''golden_collar'' & dynamic $slot_27_change">Украшенный ошейник</a>'
+if slave_inventory['plain_pendant'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''plain_pendant'' & dynamic $slot_27_change">Цепочка с кулоном</a>'
+if slave_inventory['incrusted_necklace'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''incrusted_necklace'' & dynamic $slot_27_change">Сверкающее ожерелье</a>'
+gt curloc
+}
+
+$slave_hands_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''пусто'' & dynamic $slot_28_change">Снять перчатки</a>'
+if slave_inventory['leather_straps'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''leather_straps'' & dynamic $slot_28_change">Кожаные кандалы</a>'
+if slave_inventory['rubber_gloves'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''rubber_gloves'' & dynamic $slot_28_change">Резиновые перчатки</a>'
+if slave_inventory['laced_gloves'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''laced_gloves'' & dynamic $slot_28_change">Кружевные перчатки</a>'
+if slave_inventory['plastic_bracers'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''plastic_bracers'' & dynamic $slot_28_change">Углепластиковые наручи</a>'
+if slave_inventory['fluffy_gloves'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''fluffy_gloves'' & dynamic $slot_28_change">Пушистые лапки</a>'
+if slave_inventory['leather_gloves'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''leather_gloves'' & dynamic $slot_28_change">Кожаные перчатки</a>'
+if slave_inventory['ponygirl_harness'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''ponygirl_harness'' & dynamic $slot_28_change">Сбруя понидевки</a>'
+gt curloc
+}
+
+$slave_niples_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''пусто'' & dynamic $slot_29_change">Вынуть украшения</a>'
+if slave_inventory['nipple_chain'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''nipple_chain'' & dynamic $slot_29_change">Цепь на соски <<slave_inventory["plain_earring"]>></a>'
+if slave_inventory['plain_earring'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''plain_earring'' & dynamic $slot_29_change">Кольца в соски <<slave_inventory["plain_earring"]>></a>'
+if slave_inventory['incrusted_earrings'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''incrusted_earrings'' & dynamic $slot_29_change">Подвески на соски <<slave_inventory["incrusted_earrings"]>></a>'
+if slave["niple_piercing"] = 0: $equip_choice = 'Соски не проколоты'
+gt curloc
+}
+
+$slave_clitor_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''пусто'' & dynamic $slot_30_change">Вынуть украшение</a>'
+if slave_inventory['plain_earring'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''plain_earring'' & dynamic $slot_30_change">Кольцо в клитор <<slave_inventory["plain_earring"]>></a>'
+if slave_inventory['incrusted_earrings'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''incrusted_earrings'' & dynamic $slot_30_change">Подвеска на клитор <<slave_inventory["incrusted_earrings"]>></a>'
+if slave["clit_piercing"] = 0: $equip_choice = 'Клитор не проколот'
+gt curloc
+}
+
+$slave_feet_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''пусто'' & dynamic $slot_31_change">Снять обувь</a>'
+if slave_inventory['leather_straps'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''leather_straps'' & dynamic $slot_31_change">Кожаные кандалы</a>'
+if slave_inventory['tabi'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''tabi'' & dynamic $slot_31_change">Носки-таби</a>'
+if slave_inventory['fluffy_stepins'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''fluffy_stepins'' & dynamic $slot_31_change">Пушистые тапочки</a>'
+if slave_inventory['pointes'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''pointes'' & dynamic $slot_31_change">Балетные чешки</a>'
+if slave_inventory['sneakers'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''sneakers'' & dynamic $slot_31_change">Кроссовки</a>'
+if slave_inventory['high_heels'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''high_heels'' & dynamic $slot_31_change">Туфли на шпильке</a>'
+if slave_inventory['high_boots'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''high_boots'' & dynamic $slot_31_change">Высокие сапоги</a>'
+if slave_inventory['hoofed_boots'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''hoofed_boots'' & dynamic $slot_31_change">Копытные сапоги</a>'
+gt curloc
+}
+
+$slave_ring_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''пусто'' & dynamic $slot_32_change">Снять кольцо</a>'
+if slave_inventory['plain_ring'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''plain_ring'' & dynamic $slot_32_change">Изящное колечко <<slave_inventory["plain_ring"]>></a>'
+if slave_inventory['incrusted_ring'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''incrusted_ring'' & dynamic $slot_32_change">Перстень с самоцветом <<slave_inventory["incrusted_ring"]>></a>'
+gt curloc
+}
+
+$slave_ring_list_2 = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''пусто'' & dynamic $slot_33_change">Снять кольцо</a>'
+if slave_inventory['plain_ring'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''plain_ring'' & dynamic $slot_33_change">Изящное колечко <<slave_inventory["plain_ring"]>></a>'
+if slave_inventory['incrusted_ring'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''incrusted_ring'' & dynamic $slot_33_change">Перстень с самоцветом <<slave_inventory["incrusted_ring"]>></a>'
+gt curloc
+}
+
+$assistant_armor_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''без_брони'' & dynamic $slot_40_change">Снять броню</a>'
+if комбез > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''комбез'' & dynamic $slot_40_change">Арамидный комбез [<<комбез>>]</a>'
+if кожан > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кожан'' & dynamic $slot_40_change">Кожаный доспех [<<кожан>>]</a>'
+if эльчуга > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''эльчуга'' & dynamic $slot_40_change">Эльфийская кольчуга [<<эльчуга>>]</a>'
+if ячуга > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''ячуга'' & dynamic $slot_40_change">Яцериновая кольчуга [<<ячуга>>]</a>'
+if полудоспех > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''полудоспех'' & dynamic $slot_40_change">Комбинированный доспех [<<полудоспех>>]</a>'
+if плейт > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''плейт'' & dynamic $slot_40_change">Готические латы [<<плейт>>]</a>'
+gt curloc
+}
+
+$assistant_wpn_list_large = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''none'' & dynamic $slot_41_change">Отложить оружие</a>'
+if фламберг > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''фламберг'' & dynamic $slot_41_change">Фламберг [<<фламберг>>]</a>'
+if нагината > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагината'' & dynamic $slot_41_change">Нагината [<<нагината>>]</a>'
+if моргенштерн > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''моргенштерн'' & dynamic $slot_41_change">Моргенштерн [<<моргенштерн>>]</a>'
+if грейтекс > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''грейтекс'' & dynamic $slot_41_change">Топор дровосека [<<грейтекс>>]</a>'
+if бита > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''бита'' & dynamic $slot_41_change">Бейсбольная бита [<<бита>>]</a>'
+if скотобой > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''скотобой'' & dynamic $slot_41_change">Шокер для скота [<<скотобой>>]</a>'
+if кнут > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кнут'' & dynamic $slot_41_change">Кнут [<<кнут>>]</a>'
+if шпага > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''шпага'' & dynamic $slot_41_change">Шпага [<<шпага>>]</a>'
+if рапира > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''рапира'' & dynamic $slot_41_change">Рапира [<<рапира>>]</a>'
+if кончар > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кончар'' & dynamic $slot_41_change">Кончар [<<кончар>>]</a>'
+if гладиус > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''гладиус'' & dynamic $slot_41_change">Гладиус [<<гладиус>>]</a>'
+if бастард > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''бастард'' & dynamic $slot_41_change">Бастард [<<бастард>>]</a>'
+if клевец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''клевец'' & dynamic $slot_41_change">Клевец [<<клевец>>]</a>'
+if мачете > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''мачете'' & dynamic $slot_41_change">Мачете [<<мачете>>]</a>'
+if катана > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''катана'' & dynamic $slot_41_change">Катана [<<катана>>]</a>'
+if томагавк > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''томагавк'' & dynamic $slot_41_change">Томагавк [<<томагавк>>]</a>'
+if демократизатор > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''демократизатор'' & dynamic $slot_41_change">Демократизатор [<<демократизатор>>]</a>'
+gt curloc
+}
+
+$assistant_wpn_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''none'' & dynamic $slot_42_change">Отложить оружие</a>'
+if кнут > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кнут'' & dynamic $slot_42_change">Кнут [<<кнут>>]</a>'
+if шпага > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''шпага'' & dynamic $slot_42_change">Шпага [<<шпага>>]</a>'
+if рапира > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''рапира'' & dynamic $slot_42_change">Рапира [<<рапира>>]</a>'
+if кончар > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кончар'' & dynamic $slot_42_change">Кончар [<<кончар>>]</a>'
+if гладиус > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''гладиус'' & dynamic $slot_42_change">Гладиус [<<гладиус>>]</a>'
+if бастард > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''бастард'' & dynamic $slot_42_change">Бастард [<<бастард>>]</a>'
+if клевец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''клевец'' & dynamic $slot_42_change">Клевец [<<клевец>>]</a>'
+if мачете > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''мачете'' & dynamic $slot_42_change">Мачете [<<мачете>>]</a>'
+if катана > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''катана'' & dynamic $slot_42_change">Катана [<<катана>>]</a>'
+if томагавк > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''томагавк'' & dynamic $slot_42_change">Томагавк [<<томагавк>>]</a>'
+if демократизатор > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''демократизатор'' & dynamic $slot_42_change">Демократизатор [<<демократизатор>>]</a>'
+if кинжал > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кинжал'' & dynamic $slot_42_change">Кинжал [<<кинжал>>]</a>'
+if стилет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''стилет'' & dynamic $slot_42_change">Стилет [<<стилет>>]</a>'
+if кастет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кастет'' & dynamic $slot_42_change">Кастет [<<кастет>>]</a>'
+if нагайка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагайка'' & dynamic $slot_42_change">Нагайка [<<нагайка>>]</a>'
+if глушилка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''глушилка'' & dynamic $slot_42_change">Глушилка [<<глушилка>>]</a>'
+if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_42_change">Мясницкий тесак [<<тесак>>]</a>'
+if щит > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''щит'' & dynamic $slot_42_change">Прочный щит [<<щит>>]</a>'
+gt curloc
+}
+
+$assistant_wpn_list_2 = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''none'' & dynamic $slot_43_change">Отложить оружие</a>'
+if кнут > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кнут'' & dynamic $slot_43_change">Кнут [<<кнут>>]</a>'
+if шпага > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''шпага'' & dynamic $slot_43_change">Шпага [<<шпага>>]</a>'
+if рапира > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''рапира'' & dynamic $slot_43_change">Рапира [<<рапира>>]</a>'
+if кончар > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кончар'' & dynamic $slot_43_change">Кончар [<<кончар>>]</a>'
+if гладиус > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''гладиус'' & dynamic $slot_43_change">Гладиус [<<гладиус>>]</a>'
+if бастард > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''бастард'' & dynamic $slot_43_change">Бастард [<<бастард>>]</a>'
+if клевец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''клевец'' & dynamic $slot_43_change">Клевец [<<клевец>>]</a>'
+if мачете > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''мачете'' & dynamic $slot_43_change">Мачете [<<мачете>>]</a>'
+if катана > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''катана'' & dynamic $slot_43_change">Катана [<<катана>>]</a>'
+if томагавк > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''томагавк'' & dynamic $slot_43_change">Томагавк [<<томагавк>>]</a>'
+if демократизатор > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''демократизатор'' & dynamic $slot_43_change">Демократизатор [<<демократизатор>>]</a>'
+if кинжал > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кинжал'' & dynamic $slot_43_change">Кинжал [<<кинжал>>]</a>'
+if стилет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''стилет'' & dynamic $slot_43_change">Стилет [<<стилет>>]</a>'
+if кастет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кастет'' & dynamic $slot_43_change">Кастет [<<кастет>>]</a>'
+if нагайка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагайка'' & dynamic $slot_43_change">Нагайка [<<нагайка>>]</a>'
+if глушилка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''глушилка'' & dynamic $slot_43_change">Глушилка [<<глушилка>>]</a>'
+if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_43_change">Мясницкий тесак [<<тесак>>]</a>'
+if щит > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''щит'' & dynamic $slot_43_change">Прочный щит [<<щит>>]</a>'
+gt curloc
+}
+
+$assistant_cloth_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''голая'' & dynamic $slot_44_change">Раздеть догола</a>'
+if assistant_inventory['apron'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''apron'' & dynamic $slot_44_change">Фартук с оборками</a>'
+if assistant_inventory['maid_dress'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''maid_dress'' & dynamic $slot_44_change">Униформа горничной</a>'
+if assistant_inventory['nurse_dress'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''nurse_dress'' & dynamic $slot_44_change">Униформа медсестры</a>'
+if assistant_inventory['sailor_foku'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''sailor_foku'' & dynamic $slot_44_change">Школьная униформа</a>'
+if assistant_inventory['enchanter_robe'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''enchanter_robe'' & dynamic $slot_44_change">Чародейская роба</a>'
+if assistant_inventory['leotard'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''leotard'' & dynamic $slot_44_change">Трико для гимнастики</a>'
+if assistant_inventory['chainmail_bikini'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''chainmail_bikini'' & dynamic $slot_44_change">Кольчужное бикини</a>'
+if assistant_inventory['sun_dress'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''ukata'' & dynamic $slot_44_change">Кимоно-юката</a>'
+if assistant_inventory['sun_dress'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''sun_dress'' & dynamic $slot_44_change">Легкий сарафан</a>'
+if assistant_inventory['laced_underwear'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''laced_underwear'' & dynamic $slot_44_change">Кружевное бельё</a>'
+if assistant_inventory['cocktail_dress'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''cocktail_dress'' & dynamic $slot_44_change">Вечернее платье</a>'
+if assistant_inventory['rubber_dress'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''rubber_dress'' & dynamic $slot_44_change">Платье из латекса</a>'
+if assistant_inventory['bellydance'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''bellydance'' & dynamic $slot_44_change">Экзотический наряд</a>'
+if assistant_inventory['leather_corset'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''leather_corset'' & dynamic $slot_44_change">Кожаный корсет</a>'
+if assistant_inventory['rich_dress'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''rich_dress'' & dynamic $slot_44_change">Роскошное платье</a>'
+if assistant_inventory['wedding_dress'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''wedding_dress'' & dynamic $slot_44_change">Подвенечное платье</a>'
+if assistant_inventory['anal_tail'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''anal_tail'' & dynamic $slot_44_change">Анальный хвост</a>'
+gt curloc
+}
+
+$assistant_head_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''пусто'' & dynamic $slot_45_change">Снять головной убор</a>'
+if assistant_inventory['hijab'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''hijab'' & dynamic $slot_45_change">Хиджаб</a>'
+if assistant_inventory['crown_of_thorns'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''crown_of_thorns'' & dynamic $slot_45_change">Терновый венок</a>'
+if assistant_inventory['plain_tiara'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''plain_tiara'' & dynamic $slot_45_change">Фигурная диадема</a>'
+if assistant_inventory['incrusted_tiara'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''incrusted_tiara'' & dynamic $slot_45_change">Драгоценная тиара</a>'
+if assistant_inventory['plain_headband'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''plain_headband'' & dynamic $slot_45_change">Ободок для волос</a>'
+if assistant_inventory['glasses'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''glasses'' & dynamic $slot_45_change">Изащные очки</a>'
+if assistant_inventory['nekomimi'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''nekomimi'' & dynamic $slot_45_change">Кошачьи ушки</a>'
+if assistant_inventory['hairnet'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''hairnet'' & dynamic $slot_45_change">Сеточка для волос</a>'
+if assistant_inventory['exotic_wig'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''exotic_wig'' & dynamic $slot_45_change">Экзотический парик</a>'
+if assistant_inventory['pony_plume'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''pony_plume'' & dynamic $slot_45_change">Уздечка с плюмажем</a>'
+gt curloc
+}
+
+$assistant_ears_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''пусто'' & dynamic $slot_46_change">Снять серьги</a>'
+if assistant_inventory['plain_earring'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''plain_earring'' & dynamic $slot_46_change">Блестящие сережки <<slave_inventory["plain_earring"]>></a>'
+if assistant_inventory['incrusted_earrings'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''incrusted_earrings'' & dynamic $slot_46_change">Инкрустированные сережки <<slave_inventory["incrusted_earrings"]>></a>'
+gt curloc
+}
+
+$assistant_neck_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''пусто'' & dynamic $slot_47_change">Снять предмет</a>'
+if assistant_inventory['leather_collar'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''leather_collar'' & dynamic $slot_47_change">Кожаный ошейник</a>'
+if assistant_inventory['steel_collar'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''steel_collar'' & dynamic $slot_47_change">Стальной ошейник</a>'
+if assistant_inventory['spiked_collar'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''spiked_collar'' & dynamic $slot_47_change">Шипастый ошейник</a>'
+if assistant_inventory['dog_collar'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''dog_collar'' & dynamic $slot_47_change">Собачий ошейник</a>'
+if assistant_inventory['golden_collar'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''golden_collar'' & dynamic $slot_47_change">Украшенный ошейник</a>'
+if assistant_inventory['plain_pendant'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''plain_pendant'' & dynamic $slot_47_change">Цепочка с кулоном</a>'
+if assistant_inventory['incrusted_necklace'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''incrusted_necklace'' & dynamic $slot_47_change">Сверкающее ожерелье</a>'
+gt curloc
+}
+
+$assistant_hands_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''пусто'' & dynamic $slot_48_change">Снять перчатки</a>'
+if assistant_inventory['leather_straps'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''leather_straps'' & dynamic $slot_48_change">Кожаные кандалы</a>'
+if assistant_inventory['rubber_gloves'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''rubber_gloves'' & dynamic $slot_48_change">Резиновые перчатки</a>'
+if assistant_inventory['laced_gloves'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''laced_gloves'' & dynamic $slot_48_change">Кружевные перчатки</a>'
+if assistant_inventory['plastic_bracers'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''plastic_bracers'' & dynamic $slot_48_change">Углепластиковые наручи</a>'
+if assistant_inventory['fluffy_gloves'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''fluffy_gloves'' & dynamic $slot_48_change">Пушистые лапки</a>'
+if assistant_inventory['leather_gloves'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''leather_gloves'' & dynamic $slot_48_change">Кожаные перчатки</a>'
+if assistant_inventory['ponygirl_harness'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''ponygirl_harness'' & dynamic $slot_48_change">Сбруя понидевки</a>'
+gt curloc
+}
+
+$assistant_niples_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''пусто'' & dynamic $slot_49_change">Вынуть украшения</a>'
+if assistant_inventory['nipple_chain'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''nipple_chain'' & dynamic $slot_49_change">Цепь на соски <<slave_inventory["plain_earring"]>></a>'
+if assistant_inventory['plain_earring'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''plain_earring'' & dynamic $slot_49_change">Кольца в соски <<slave_inventory["plain_earring"]>></a>'
+if assistant_inventory['incrusted_earrings'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''incrusted_earrings'' & dynamic $slot_49_change">Подвески на соски <<slave_inventory["incrusted_earrings"]>></a>'
+if assistant["niple_piercing"] = 0: $equip_choice = 'Соски не проколоты'
+gt curloc
+}
+
+$assistant_clitor_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''пусто'' & dynamic $slot_50_change">Вынуть украшение</a>'
+if assistant_inventory['plain_earring'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''plain_earring'' & dynamic $slot_50_change">Кольцо в клитор <<slave_inventory["plain_earring"]>></a>'
+if assistant_inventory['incrusted_earrings'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''incrusted_earrings'' & dynamic $slot_50_change">Подвеска на клитор <<slave_inventory["incrusted_earrings"]>></a>'
+if assistant["clit_piercing"] = 0: $equip_choice = 'Клитор не проколот'
+gt curloc
+}
+
+$assistant_feet_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''пусто'' & dynamic $slot_51_change">Снять обувь</a>'
+if assistant_inventory['leather_straps'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''leather_straps'' & dynamic $slot_51_change">Кожаные кандалы</a>'
+if assistant_inventory['tabi'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''tabi'' & dynamic $slot_51_change">Носки-таби</a>'
+if assistant_inventory['fluffy_stepins'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''fluffy_stepins'' & dynamic $slot_51_change">Пушистые тапочки</a>'
+if assistant_inventory['pointes'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''pointes'' & dynamic $slot_51_change">Балетные чешки</a>'
+if assistant_inventory['sneakers'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''sneakers'' & dynamic $slot_51_change">Кроссовки</a>'
+if assistant_inventory['high_heels'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''high_heels'' & dynamic $slot_51_change">Туфли на шпильке</a>'
+if assistant_inventory['high_boots'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''high_boots'' & dynamic $slot_51_change">Высокие сапоги</a>'
+if assistant_inventory['hoofed_boots'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''hoofed_boots'' & dynamic $slot_51_change">Копытные сапоги</a>'
+gt curloc
+}
+
+$assistant_ring_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''пусто'' & dynamic $slot_52_change">Снять кольцо</a>'
+if assistant_inventory['plain_ring'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''plain_ring'' & dynamic $slot_52_change">Изящное колечко <<slave_inventory["plain_ring"]>></a>'
+if assistant_inventory['incrusted_ring'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''incrusted_ring'' & dynamic $slot_52_change">Перстень с самоцветом <<slave_inventory["incrusted_ring"]>></a>'
+gt curloc
+}
+
+$assistant_ring_list_2 = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''пусто'' & dynamic $slot_53_change">Снять кольцо</a>'
+if assistant_inventory['plain_ring'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''plain_ring'' & dynamic $slot_53_change">Изящное колечко <<slave_inventory["plain_ring"]>></a>'
+if assistant_inventory['incrusted_ring'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''incrusted_ring'' & dynamic $slot_53_change">Перстень с самоцветом <<slave_inventory["incrusted_ring"]>></a>'
+gt curloc
+}
+
+
+
+$slot_1_change = {
+slot = 1
+gt 'item_change'
+}
+
+$slot_2_change = {
+slot = 2
+gt 'item_change'
+}
+
+$slot_3_change = {
+slot = 3
+gt 'item_change'
+}
+
+$slot_4_change = {
+slot = 4
+gt 'item_change'
+}
+
+$slot_5_change = {
+slot = 5
+gt 'item_change'
+}
+
+$slot_6_change = {
+slot = 6
+gt 'item_change'
+}
+
+$slot_7_change = {
+slot = 7
+gt 'item_change'
+}
+
+$slot_8_change = {
+slot = 8
+gt 'item_change'
+}
+
+$slot_9_change = {
+slot = 9
+gt 'item_change'
+}
+
+$slot_10_change = {
+slot = 10
+gt 'item_change'
+}
+
+$slot_11_change = {
+slot = 11
+gt 'item_change'
+}
+
+$slot_12_change = {
+slot = 12
+gt 'item_change'
+}
+
+$slot_13_change = {
+slot = 13
+gt 'item_change'
+}
+
+$slot_14_change = {
+slot = 14
+gt 'item_change'
+}
+
+$slot_20_change = {
+slot = 20
+gt 'item_change'
+}
+
+$slot_21_change = {
+slot = 21
+gt 'item_change'
+}
+
+$slot_22_change = {
+slot = 22
+gt 'item_change'
+}
+
+$slot_23_change = {
+slot = 23
+gt 'item_change'
+}
+
+$slot_24_change = {
+slave_inventory[$slave["cloth"]] += 1
+slave_inventory[$new_item] -= 1
+$slave["cloth"] = $new_item
+$equip_choice = ''
+gt curloc
+}
+
+$slot_25_change = {
+slave_inventory[$slave["headband"]] += 1
+slave_inventory[$new_item] -= 1
+$slave["headband"] = $new_item
+$equip_choice = ''
+gt curloc
+}
+
+$slot_26_change = {
+slave_inventory[$slave["earrings"]] += 1
+slave_inventory[$new_item] -= 1
+$slave["earrings"] = $new_item
+$equip_choice = ''
+gt curloc
+}
+
+$slot_27_change = {
+slave_inventory[$slave["collar"]] += 1
+slave_inventory[$new_item] -= 1
+$slave["collar"] = $new_item
+$equip_choice = ''
+gt curloc
+}
+
+$slot_28_change = {
+slave_inventory[$slave["gloves"]] += 1
+slave_inventory[$new_item] -= 1
+$slave["gloves"] = $new_item
+$equip_choice = ''
+gt curloc
+}
+
+$slot_29_change = {
+slave_inventory[$slave["nipplerings"]] += 1
+slave_inventory[$new_item] -= 1
+$slave["nipplerings"] = $new_item
+$equip_choice = ''
+gt curloc
+}
+
+$slot_30_change = {
+slave_inventory[$slave["clitring"]] += 1
+slave_inventory[$new_item] -= 1
+$slave["clitring"] = $new_item
+$equip_choice = ''
+gt curloc
+}
+
+$slot_31_change = {
+slave_inventory[$slave["boots"]] += 1
+slave_inventory[$new_item] -= 1
+$slave["boots"] = $new_item
+$equip_choice = ''
+gt curloc
+}
+
+$slot_32_change = {
+slave_inventory[$slave["ring_left"]] += 1
+slave_inventory[$new_item] -= 1
+$slave["ring_left"] = $new_item
+$equip_choice = ''
+gt curloc
+}
+
+$slot_33_change = {
+slave_inventory[$slave["ring_right"]] += 1
+slave_inventory[$new_item] -= 1
+$slave["ring_right"] = $new_item
+$equip_choice = ''
+gt curloc
+}
+
+$slot_40_change = {
+slot = 40
+gt 'item_change'
+}
+
+$slot_41_change = {
+slot = 41
+gt 'item_change'
+}
+
+$slot_42_change = {
+slot = 42
+gt 'item_change'
+}
+
+$slot_43_change = {
+slot = 43
+gt 'item_change'
+}
+
+$slot_44_change = {
+assistant_inventory[$assistant["cloth"]] += 1
+assistant_inventory[$new_item] -= 1
+$assistant["cloth"] = $new_item
+$equip_choice = ''
+gt curloc
+}
+
+$slot_45_change = {
+assistant_inventory[$assistant["headband"]] += 1
+assistant_inventory[$new_item] -= 1
+$assistant["headband"] = $new_item
+$equip_choice = ''
+gt curloc
+}
+
+$slot_46_change = {
+assistant_inventory[$assistant["earrings"]] += 1
+assistant_inventory[$new_item] -= 1
+$assistant["earrings"] = $new_item
+$equip_choice = ''
+gt curloc
+}
+
+$slot_47_change = {
+assistant_inventory[$assistant["collar"]] += 1
+assistant_inventory[$new_item] -= 1
+$assistant["collar"] = $new_item
+$equip_choice = ''
+gt curloc
+}
+
+$slot_48_change = {
+assistant_inventory[$assistant["gloves"]] += 1
+assistant_inventory[$new_item] -= 1
+$assistant["gloves"] = $new_item
+$equip_choice = ''
+gt curloc
+}
+
+$slot_49_change = {
+assistant_inventory[$assistant["nipplerings"]] += 1
+assistant_inventory[$new_item] -= 1
+$assistant["nipplerings"] = $new_item
+$equip_choice = ''
+gt curloc
+}
+
+$slot_50_change = {
+assistant_inventory[$assistant["clitring"]] += 1
+assistant_inventory[$new_item] -= 1
+$assistant["clitring"] = $new_item
+$equip_choice = ''
+gt curloc
+}
+
+$slot_51_change = {
+assistant_inventory[$assistant["boots"]] += 1
+assistant_inventory[$new_item] -= 1
+$assistant["boots"] = $new_item
+$equip_choice = ''
+gt curloc
+}
+
+$slot_52_change = {
+assistant_inventory[$assistant["ring_left"]] += 1
+assistant_inventory[$new_item] -= 1
+$assistant["ring_left"] = $new_item
+$equip_choice = ''
+gt curloc
+}
+
+$slot_53_change = {
+assistant_inventory[$assistant["ring_right"]] += 1
+assistant_inventory[$new_item] -= 1
+$assistant["ring_right"] = $new_item
+$equip_choice = ''
+gt curloc
+}
+
+$next_enemy_click = {
+текущий += 1
+if враг[текущий] ! 1: текущий += 1
+if враг[текущий] ! 1: текущий += 1
+if враг[текущий] ! 1: текущий += 1
+if враг[текущий] ! 1: текущий += 1
+gt curloc
+}
+
+$prev_enemy_click = {
+текущий -= 1
+if враг[текущий] ! 1: текущий -= 1
+if враг[текущий] ! 1: текущий -= 1
+if враг[текущий] ! 1: текущий -= 1
+if враг[текущий] ! 1: текущий -= 1
+gt curloc
+}
+
+$enlarge_breast = {
+slave['breast_enchanced'] = 1
+slave["boobs"] += 1
+if slave["sub_pazuri"] > 0 and slave["sub_pazuri"] < 5: slave["sub_pazuri"] += 1
+if $slave["boobs_img"] = 'boobs_G': $slave["boobs_img"] = 'boobs_H' 
+if $slave["boobs_img"] = 'boobs_F': $slave["boobs_img"] = 'boobs_G' 
+if $slave["boobs_img"] = 'boobs_EE': $slave["boobs_img"] = 'boobs_F' 
+if $slave["boobs_img"] = 'boobs_E': $slave["boobs_img"] = 'boobs_F' 
+if $slave["boobs_img"] = 'boobs_DD': $slave["boobs_img"] = 'boobs_EE' 
+if $slave["boobs_img"] = 'boobs_D': $slave["boobs_img"] = 'boobs_E' 
+if $slave["boobs_img"] = 'boobs_CC': $slave["boobs_img"] = 'boobs_DD' 
+if $slave["boobs_img"] = 'boobs_C': $slave["boobs_img"] = 'boobs_D' 
+if $slave["boobs_img"] = 'boobs_BB': $slave["boobs_img"] = 'boobs_CC' 
+if $slave["boobs_img"] = 'boobs_B': $slave["boobs_img"] = 'boobs_C' 
+if $slave["boobs_img"] = 'boobs_A': $slave["boobs_img"] = 'boobs_B' 
+
+if $slave["boobs_img"] = 'boobs_FP': $slave["boobs_img"] = 'boobs_HP' 
+if $slave["boobs_img"] = 'boobs_EP': $slave["boobs_img"] = 'boobs_FP' 
+if $slave["boobs_img"] = 'boobs_DP': $slave["boobs_img"] = 'boobs_EP' 
+if $slave["boobs_img"] = 'boobs_CP': $slave["boobs_img"] = 'boobs_DP' 
+if $slave["boobs_img"] = 'boobs_BP': $slave["boobs_img"] = 'boobs_CP' 
+if $slave["boobs_img"] = 'boobs_AP': $slave["boobs_img"] = 'boobs_BP' 
+}
+
+$pierse_breast = {
+if $slave["boobs_img"] = 'boobs_H': $slave["boobs_img"] = 'boobs_HP' 
+if $slave["boobs_img"] = 'boobs_G': $slave["boobs_img"] = 'boobs_FP' 
+if $slave["boobs_img"] = 'boobs_F': $slave["boobs_img"] = 'boobs_FP' 
+if $slave["boobs_img"] = 'boobs_EE': $slave["boobs_img"] = 'boobs_EP' 
+if $slave["boobs_img"] = 'boobs_E': $slave["boobs_img"] = 'boobs_EP' 
+if $slave["boobs_img"] = 'boobs_DD': $slave["boobs_img"] = 'boobs_DP' 
+if $slave["boobs_img"] = 'boobs_D': $slave["boobs_img"] = 'boobs_DP' 
+if $slave["boobs_img"] = 'boobs_CC': $slave["boobs_img"] = 'boobs_CP' 
+if $slave["boobs_img"] = 'boobs_C': $slave["boobs_img"] = 'boobs_CP' 
+if $slave["boobs_img"] = 'boobs_BB': $slave["boobs_img"] = 'boobs_BP' 
+if $slave["boobs_img"] = 'boobs_B': $slave["boobs_img"] = 'boobs_BP' 
+if $slave["boobs_img"] = 'boobs_A': $slave["boobs_img"] = 'boobs_AP' 
+}
+
+$pierse_clitoris = {
+}
+
+$rise_faction_fame = {
+no_rise = 0
+if $npc_alignment[$npc_id] = 'taurus' and faction_fame['kamira'] > 2: no_rise = 1
+if $npc_alignment[$npc_id] = 'serpis' and faction_fame['korvus'] > 2: no_rise = 1
+if $npc_alignment[$npc_id] = 'kamira' and faction_fame['taurus'] > 2: no_rise = 1
+if $npc_alignment[$npc_id] = 'korvus' and faction_fame['serpis'] > 2: no_rise = 1
+if noble_status > 0 and faction_fame[$npc_alignment[$npc_id]] => 4: no_rise = 1
+if no_rise = 0: faction_fame[$npc_alignment[$npc_id]] += 1
+}
+
+$death = {
+    ! Просто выводим сообщение и просим нажать что-либо, для подтвержения прочтения
+    $_d_answer = input($args[0] + ' Перезапустите игру.')
+    killvar '$_d_answer'
+    gt 'exid'
+}
+--- #dynamic ---------------------------------
+

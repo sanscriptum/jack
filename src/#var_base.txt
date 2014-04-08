@@ -1,0 +1,1773 @@
+# #var_base
+!РАЗЛИЧНЫЕ ТЕХНИЧЕСКИЕ ПЕРЕМЕННЫЕ И МАССИВЫ
+
+!Замена для копипасты фонтов, by Lyazar
+$_font_col_rep[0] = '<font color="#cd0000">'
+$_font_col_rep[1] = '<font color="#C71585">'
+$_font_col_rep[2] = '<font color="#4B0082">'
+$_font_col_rep[3] = '<font color="#0000CD">'
+$_font_col_rep[4] = '<font color="#008080">'
+$_font_col_rep[5] = '<font color="#008000">'
+$_font_closer = '</font>'
+!TODO: добить замены во всем файле
+$vb_cycle = {
+    $result = $_font_col_rep[args[0]] + $args[1] + $_font_closer
+}
+!-----Замена для копипасты фонтов, by Lyazar-----
+
+!Таблица констант замены магических чисел
+!Замена для возраста рабынь\ассистенток etc.
+!TODO: заменить в коде числа [0-2] на CONST_INT[?]
+CONST_INT['young_age'] = 0
+CONST_INT['loli_age']  = 1
+CONST_INT['milf_age']  = 2
+
+!ОСНОВНОЙ КОД
+!Оставлена старая замена, пока лень ковырять
+age_code['young'] = CONST_INT['young_age']
+age_code['loli']  = CONST_INT['loli_age']
+age_code['milf']  = CONST_INT['milf_age']
+
+!Стилевое оружие гладиаторов
+$style_wpn['retiarius'] = 'трезубец'
+$style_wpn['flagrius'] = 'пилохлыст'
+$style_wpn['dimacherus'] = 'бастард'
+$style_wpn['hoplomachus'] = 'гладиус'
+$style_wpn['kimerian'] = 'грейтекс'
+
+$style_freehand['retiarius'] = ''
+$style_freehand['flagrius'] = ''
+$style_freehand['dimacherus'] = 'короткий_меч'
+$style_freehand['hoplomachus'] = ''
+$style_freehand['kimerian'] = ''
+
+$armor['retiarius'] = 'без_брони'
+$armor['flagrius'] = 'полудоспех'
+$armor['dimacherus'] = 'комбез'
+$armor['hoplomachus'] = 'эльчуга'
+$armor['kimerian'] = 'без_брони'
+
+$gt_spm['retiarius'] = 'бросок_сети'
+$gt_spm['flagrius'] = 'серейтор'
+$gt_spm['dimacherus'] = 'ножницы'
+$gt_spm['hoplomachus'] = 'толчок_щитом'
+$gt_spm['kimerian'] = 'удар_с_разворота'
+
+!Показатели исчадия
+semen_gain[0] = 3
+semen_gain[1] = 6
+semen_gain[2] = 12
+semen_gain[3] = 24
+semen_gain[4] = 48
+
+tentacle_grow[0] = 3
+tentacle_grow[1] = 6
+tentacle_grow[2] = 25
+tentacle_grow[3] = 50
+tentacle_grow[4] = 999999
+
+tentacle_death[0] = -5
+tentacle_death[1] = -10
+tentacle_death[2] = -10
+tentacle_death[3] = -10
+tentacle_death[4] = -25
+
+$tentacle_state[0] = ''
+$tentacle_state[1] = $_font_col_rep[0] + 'Исчадие жаждет' + $_font_closer
+$tentacle_state[2] = $_font_col_rep[5] + 'Исчадие довольно' + $_font_closer 
+
+!Стоимость обучения
+$couch_price[0] = '5 искр'
+$couch_price[1] = '5 искр'
+$couch_price[2] = '10 искр'
+$couch_price[3] = '15 искр'
+$couch_price[4] = '20 искр'
+$couch_price[5] = '25 искр'
+
+couch_price[0] = 5
+couch_price[1] = 5
+couch_price[2] = 10
+couch_price[3] = 15
+couch_price[4] = 20
+couch_price[5] = 25
+
+$school_price[0] = '1 искра'
+$school_price[1] = '2 искры'
+$school_price[2] = '4 искры'
+$school_price[3] = '8 искр'
+$school_price[4] = '12 искр'
+$school_price[5] = '16 искр'
+
+school_price[0] = 1
+school_price[1] = 2
+school_price[2] = 4
+school_price[3] = 8
+school_price[4] = 12
+school_price[5] = 16
+
+!Контракты
+prepay[0] = 200
+prepay[1] = 200
+prepay[2] = 300
+prepay[3] = 300
+prepay[4] = 500
+prepay[5] = 500
+
+contract_level[0] = 1
+contract_level[1] = 1
+contract_level[2] = 2
+contract_level[3] = 2
+contract_level[4] = 3
+contract_level[5] = 3
+
+$specialisation[0] = 'none'
+$specialisation[1] = 'refferent'
+$specialisation[2] = 'pet'
+$specialisation[3] = 'nurse'
+$specialisation[4] = 'maid'
+$specialisation[5] = 'gladiatrix'
+$specialisation[6] = 'enchanter'
+$specialisation[7] = 'artist'
+$specialisation[8] = 'concubine'
+
+!ОБЩИЕ КАРТИНКИ
+$fullimage[0] = ''
+
+$cooked_food = 'scene/food'   
+$cooked_food[1] = 'scene/food1' 
+$cooked_food[2] = 'scene/food2' 
+$cooked_food[3] = 'scene/food3' 
+$cooked_food[4] = 'scene/food4' 
+$cooked_food[5] = 'scene/food5' 
+
+$chokolate = 'scene/chokolate'
+$cake = 'scene/cake'
+$ice_cream = 'scene/ice_cream'   
+$jelly = 'scene/jelly'
+$ambrosia = 'scene/ambrosia' 
+
+$master_fap = 'scene/master_fap'
+
+
+$games = 'scene/'
+
+$finger_gripe = 'girls\torture\fingergrip'
+
+!ЗВУКИ
+!0 - девушка
+!1 - loli
+!2 - MILF
+
+
+$spank_sound = 'cane'
+$slap_sound = 'cane'
+$whip_sound = 'cane'
+$money_sound = 'kkm'
+
+$slopy[0] = 'sloppy_sounds3'
+$slopy[1] = 'sloppy_sounds3'
+$slopy[2] = 'sloppy_sounds3'
+
+$petting_sound[0] = 'moans01'
+$petting_sound[1] = 'moans03'
+$petting_sound[2] = 'moans05'
+
+$kiss_sound[0] = 'moan0'
+$kiss_sound[1] = 'pant03'
+$kiss_sound[2] = 'moan0'
+
+$bj_sound[0] = 'blowjob01'
+$bj_sound[1] = 'blowjob06'
+$bj_sound[2] = 'blowjob_calm'
+
+$throatfuck_sound[0] = 'throat_fuck2'
+$throatfuck_sound[1] = 'blowjob04'
+$throatfuck_sound[2] = 'throat_fuck1'
+
+$fuck_sound[0] = 'fuck_moan_painfull'
+$fuck_sound[1] = 'fuck_moan2'
+$fuck_sound[2] = 'fuck_moan3'
+
+$assfuck_sound[0] = 'girl_suffering'
+$assfuck_sound[1] = 'girl_pain26'
+$assfuck_sound[2] = 'woman_pain10'
+
+$fisting_sound[0] = 'girl_pain18'
+$fisting_sound[1] = 'girl_pain16'
+$fisting_sound[2] = 'woman_pain17'
+
+$soft_pain[0] = 'girl_pain37'
+$soft_pain[1] = 'girl_pain41'
+$soft_pain[2] = 'woman_pain01'
+
+$pain[0] = 'girl_pain37'
+$pain[1] = 'girl_pain41'
+$pain[2] = 'woman_pain01'
+
+$severe_pain[0] = 'girl_pain37'
+$severe_pain[1] = 'girl_pain41'
+$severe_pain[2] = 'woman_pain01'
+
+$urine[0] = 'gulps01'
+$urine[1] = 'gulps'
+$urine[2] = 'gulps02'
+
+$kopro_sound[0] = 'gulps01'
+$kopro_sound[1] = 'gulps'
+$kopro_sound[2] = 'gulps02'
+
+$seduce_sound[0] = 'girl_laugh03'
+$seduce_sound[1] = 'girl_laugh01'
+$seduce_sound[2] = 'girl_laugh_quiet'
+
+$masturbate_sound[0] = 'fuck_moan2'
+$masturbate_sound[1] = 'fuck_moan2'
+$masturbate_sound[2] = 'woman_pleased01'
+
+$moan[0] = 'moans01'
+$moan[1] = 'moans03'
+$moan[2] = 'moans05'
+
+$cry[0] = 'girl_angry01'
+$cry[1] = 'little_girl_cry'
+$cry[2] = 'woman_cry01'
+
+$fist_hit[0] = 'girl_punch'
+$fist_hit[1] = 'girl_punch'
+$fist_hit[2] = 'girl_punch'
+
+$drowing[0] = 'drawning01'
+$drowing[1] = 'drawning01'
+$drowing[2] = 'woman_drawning01'
+
+$licking_sound[0] = ''
+$licking_sound[1] = ''
+$licking_sound[2] = ''
+
+$orgasm_sound[0] = 'orgasm01'
+$orgasm_sound[1] = 'girl_orgasm02'
+$orgasm_sound[2] = 'orgasm_laugth'
+
+$panik_sound[0] = 'scream10'
+$panik_sound[1] = 'girl_scream01'
+$panik_sound[2] = 'woman_scared01'
+
+$gag_sound[0] = 'gaged01'
+$gag_sound[1] = 'gaged01'
+$gag_sound[2] = 'woman_gaged01'
+
+$slaughter_sound = 'slaughter'
+
+!БУНТАРСТВО ПО СОСТОЯНИЯМ
+rebell['reluctant'] = 1
+rebell['arrogant'] = 2
+rebell['hateful'] = 4
+rebell['resistant'] = 3
+rebell['lachrymose'] = -1
+rebell['soft'] = 0
+rebell['servile'] = -1
+rebell['frightened'] = -1
+rebell['obedient'] = 0
+rebell['broken'] = -100
+rebell['depresive'] = -2
+rebell['horny'] = 0
+rebell['hysteric'] = 3
+
+rebell['optimistic'] = 0
+rebell['docile'] = -1
+
+!МИРЫ
+$origin_world[1] = 'prehistoric'
+$origin_world[2] = 'barbarian'
+$origin_world[3] = 'sns'
+$origin_world[4] = 'medieval'
+$origin_world[5] = 'darkfantasy'
+$origin_world[6] = 'highfantasy'
+$origin_world[7] = 'steampunk'
+$origin_world[8] = 'industrial'
+$origin_world[9] = 'industrial'
+$origin_world[10] = 'modern'
+$origin_world[11] = 'cyberpunk'
+$origin_world[12] = 'utopia'
+$origin_world[13] = 'darkfuture'
+$origin_world[14] = 'space'
+$origin_world[15] = 'industrial'
+$origin_world[16] = 'cyberpunk'
+$origin_world[17] = 'modern'
+$origin_world[18] = 'space'
+
+!СЕМЬИ
+$prehistoric_family[1] = 'tribe'
+$prehistoric_family[2] = 'amazon'
+
+$barbarian_family[1] = 'amazon'
+$barbarian_family[2] = 'nomad'
+$barbarian_family[3] = 'pesant'
+$barbarian_family[4] = 'hunter'
+$barbarian_family[5] = 'fisher'
+$barbarian_family[6] = 'viking'
+$barbarian_family[7] = 'barbarian_king'
+
+$sns_family[1] = 'amazon'
+$sns_family[2] = 'nomad'
+$sns_family[3] = 'pesant'
+$sns_family[4] = 'hunter'
+$sns_family[5] = 'fisher'
+$sns_family[6] = 'viking'
+$sns_family[7] = 'barbarian_king'
+
+$medieval_family[1] = 'orphan'
+$medieval_family[2] = 'bondman'
+$medieval_family[3] = 'gypsy'
+$medieval_family[4] = 'church'
+$medieval_family[5] = 'craftsman'
+$medieval_family[6] = 'merchant'
+$medieval_family[7] = 'valetry'
+$medieval_family[8] = 'knight'
+$medieval_family[9] = 'mprincess'
+
+$darkfantasy_family[1] = 'orphan'
+$darkfantasy_family[2] = 'bondman'
+$darkfantasy_family[3] = 'gypsy'
+$darkfantasy_family[4] = 'church'
+$darkfantasy_family[5] = 'craftsman'
+$darkfantasy_family[6] = 'merchant'
+$darkfantasy_family[7] = 'valetry'
+$darkfantasy_family[8] = 'knight'
+$darkfantasy_family[9] = 'mprincess'
+
+$highfantasy_family[1] = 'orphan'
+$highfantasy_family[2] = 'bondman'
+$highfantasy_family[3] = 'gypsy'
+$highfantasy_family[4] = 'church'
+$highfantasy_family[5] = 'craftsman'
+$highfantasy_family[6] = 'merchant'
+$highfantasy_family[7] = 'valetry'
+$highfantasy_family[8] = 'knight'
+$highfantasy_family[9] = 'mprincess'
+
+$steampunk_family[1] = 'farmers'
+$steampunk_family[2] = 'workhouse'
+$steampunk_family[3] = 'proletarian'
+$steampunk_family[4] = 'clerk'
+$steampunk_family[5] = 'naturalist'
+$steampunk_family[6] = 'ingeneer'
+$steampunk_family[7] = 'doctor'
+$steampunk_family[8] = 'servant'
+$steampunk_family[9] = 'magnat'
+$steampunk_family[10] = 'bankeer'
+$steampunk_family[11] = 'mayor'
+$steampunk_family[12] = 'mafiosi'
+
+$industrial_family[1] = 'farmers'
+$industrial_family[2] = 'workhouse'
+$industrial_family[3] = 'proletarian'
+$industrial_family[4] = 'clerk'
+$industrial_family[5] = 'naturalist'
+$industrial_family[6] = 'ingeneer'
+$industrial_family[7] = 'doctor'
+$industrial_family[8] = 'servant'
+$industrial_family[9] = 'magnat'
+$industrial_family[10] = 'bankeer'
+$industrial_family[11] = 'mayor'
+$industrial_family[12] = 'mafiosi'
+
+$modern_family[1] = 'orpnange'
+$modern_family[2] = 'worker'
+$modern_family[3] = 'policeman'
+$modern_family[4] = 'manager'
+$modern_family[5] = 'biologist'
+$modern_family[6] = 'programmer'
+$modern_family[7] = 'surgeon'
+$modern_family[8] = 'buissinesman'
+$modern_family[9] = 'finance'
+$modern_family[10] = 'general'
+
+$cyberpunk_family[1] = 'orpnange'
+$cyberpunk_family[2] = 'worker'
+$cyberpunk_family[3] = 'policeman'
+$cyberpunk_family[4] = 'manager'
+$cyberpunk_family[5] = 'biologist'
+$cyberpunk_family[6] = 'programmer'
+$cyberpunk_family[7] = 'surgeon'
+$cyberpunk_family[8] = 'buissinesman'
+$cyberpunk_family[9] = 'finance'
+$cyberpunk_family[10] = 'general'
+$cyberpunk_family[11] = 'gendesigner'
+
+$utopia_family[1] = 'poet'
+$utopia_family[2] = 'artist'
+$utopia_family[3] = 'architect'
+$utopia_family[4] = 'operator'
+
+$darkfuture_family[1] = 'jailer'
+$darkfuture_family[2] = 'bioreactor'
+$darkfuture_family[3] = 'minitruth'
+$darkfuture_family[4] = 'anter'
+
+$space_family[1] = 'freetrader'
+$space_family[2] = 'astrofarm'
+$space_family[3] = 'asteroid'
+$space_family[4] = 'astrogator'
+$space_family[5] = 'admiral'
+$space_family[6] = 'nanofarmacist'
+$space_family[7] = 'gendesigner'
+
+!ЗАНЯТИЯ
+$tribe_occupation[1] = 'tribal_girl'
+$tribe_occupation[2] = 'shaman'
+
+$amazon_occupation[1] = 'heroine'
+$amazon_occupation[2] = 'shaman'
+$amazon_occupation[3] = 'huntress'
+
+$nomad_occupation[1] = 'heroine'
+$nomad_occupation[2] = 'shaman'
+$nomad_occupation[3] = 'huntress'
+
+$pesant_occupation[1] = 'bride'
+$pesant_occupation[2] = 'viking_wife'
+$pesant_occupation[3] = 'witch'
+$pesant_occupation[4] = 'herbalist'
+
+$hunter_occupation[1] = 'bride'
+$hunter_occupation[2] = 'viking_wife'
+$hunter_occupation[3] = 'heroine'
+$hunter_occupation[4] = 'witch'
+$hunter_occupation[5] = 'herbalist'
+
+$fisher_occupation[1] = 'bride'
+$fisher_occupation[2] = 'viking_wife'
+$fisher_occupation[3] = 'witch'
+
+$viking_occupation[1] = 'heroine'
+$viking_occupation[2] = 'viking_wife'
+$viking_occupation[3] = 'witch'
+
+$barbarian_king_occupation[1] = 'barbarian_princess'
+
+$orphan_occupation[1] = 'thief'
+$orphan_occupation[2] = 'beggar'
+$orphan_occupation[3] = 'whore'
+$orphan_occupation[4] = 'markitane'
+$orphan_occupation[5] = 'valertry'
+$orphan_occupation[6] = 'heroine'
+$orphan_occupation[7] = 'sorceress'
+$orphan_occupation[8] = 'thug'
+
+$bondman_occupation[1] = 'poor_bride'
+$bondman_occupation[2] = 'herbalist'
+$bondman_occupation[3] = 'brigand'
+$bondman_occupation[4] = 'markitane'
+$bondman_occupation[5] = 'valertry'
+$bondman_occupation[6] = 'sorceress'
+$bondman_occupation[7] = 'nun'
+
+$gypsy_occupation[1] = 'thief'
+$gypsy_occupation[2] = 'gypsy'
+$gypsy_occupation[3] = 'whore'
+$gypsy_occupation[4] = 'markitane'
+$gypsy_occupation[5] = 'brigand'
+$gypsy_occupation[6] = 'heroine'
+$gypsy_occupation[7] = 'sorceress'
+$gypsy_occupation[8] = 'thug'
+
+$church_occupation[1] = 'beggar'
+$church_occupation[2] = 'nun'
+$church_occupation[3] = 'valertry'
+$church_occupation[4] = 'nun'
+$church_occupation[5] = 'nun'
+
+$craftsman_occupation[1] = 'poor_bride'
+$craftsman_occupation[2] = 'nun'
+$craftsman_occupation[3] = 'whore'
+$craftsman_occupation[4] = 'brothel'
+$craftsman_occupation[5] = 'thug'
+$craftsman_occupation[6] = 'valertry'
+$craftsman_occupation[7] = 'sorceress'
+$craftsman_occupation[8] = 'poor_bride'
+
+$merchant_occupation[1] = 'rich_bride'
+$merchant_occupation[2] = 'nun'
+$merchant_occupation[3] = 'sorceress'
+$merchant_occupation[4] = 'rich_bride'
+$merchant_occupation[5] = 'heroine'
+
+$valetry_occupation[1] = 'valertry'
+$valetry_occupation[2] = 'nun'
+$valetry_occupation[3] = 'markitane'
+$valetry_occupation[4] = 'herbalist'
+$valetry_occupation[5] = 'brigand'
+$valetry_occupation[6] = 'valertry'
+$valetry_occupation[7] = 'sorceress'
+$valetry_occupation[8] = 'heroine'
+
+$knight_occupation[1] = 'noble_bride'
+$knight_occupation[2] = 'heroine'
+$knight_occupation[3] = 'sorceress'
+$knight_occupation[4] = 'brigand'
+$knight_occupation[5] = 'noble_bride'
+$knight_occupation[6] = 'heroine'
+
+$mprincess_occupation[1] = 'mprincess'
+
+$farmers_occupation[1] = 'farmer'
+$farmers_occupation[2] = 'milker'
+$farmers_occupation[3] = 'swiner'
+$farmers_occupation[4] = 'poor_bride'
+
+$workhouse_occupation[1] = 'thief'
+$workhouse_occupation[2] = 'beggar'
+$workhouse_occupation[3] = 'whore'
+$workhouse_occupation[4] = 'weaver'
+$workhouse_occupation[5] = 'freaser'
+$workhouse_occupation[6] = 'thug'
+$workhouse_occupation[7] = 'sufragist'
+$workhouse_occupation[8] = 'maid'
+$workhouse_occupation[9] = 'maid'
+
+$proletarian_occupation[1] = 'thief'
+$proletarian_occupation[2] = 'beggar'
+$proletarian_occupation[3] = 'whore'
+$proletarian_occupation[4] = 'weaver'
+$proletarian_occupation[5] = 'freaser'
+$proletarian_occupation[6] = 'thug'
+$proletarian_occupation[7] = 'sufragist'
+$proletarian_occupation[8] = 'brothel'
+$proletarian_occupation[9] = 'maid'
+$proletarian_occupation[10] = 'maid'
+
+$clerk_occupation[1] = 'thief'
+$clerk_occupation[2] = 'nun'
+$clerk_occupation[3] = 'oficiant'
+$clerk_occupation[4] = 'weaver'
+$clerk_occupation[5] = 'freaser'
+$clerk_occupation[6] = 'teacher'
+$clerk_occupation[7] = 'sufragist'
+$clerk_occupation[8] = 'nurse'
+
+$naturalist_occupation[1] = 'avanturiste'
+$naturalist_occupation[2] = 'sufragist'
+$naturalist_occupation[3] = 'teacher'
+$naturalist_occupation[4] = 'nurse'
+
+$ingeneer_occupation[1] = 'avanturiste'
+$ingeneer_occupation[2] = 'nurse'
+$ingeneer_occupation[3] = 'oficiant'
+$ingeneer_occupation[4] = 'sufragist'
+$ingeneer_occupation[5] = 'freaser'
+$ingeneer_occupation[6] = 'teacher'
+
+$doctor_occupation[1] = 'avanturiste'
+$doctor_occupation[2] = 'nurse'
+$doctor_occupation[3] = 'oficiant'
+$doctor_occupation[4] = 'sufragist'
+$doctor_occupation[5] = 'freaser'
+$doctor_occupation[6] = 'teacher'
+
+$servant_occupation[1] = 'thief'
+$servant_occupation[2] = 'beggar'
+$servant_occupation[3] = 'whore'
+$servant_occupation[4] = 'weaver'
+$servant_occupation[5] = 'freaser'
+$servant_occupation[6] = 'maid'
+$servant_occupation[7] = 'sufragist'
+$servant_occupation[8] = 'brothel'
+$servant_occupation[9] = 'maid'
+
+$magnat_occupation[1] = 'avanturiste'
+$magnat_occupation[2] = 'rich_bride'
+$magnat_occupation[3] = 'rich_bride'
+$magnat_occupation[4] = 'sufragist'
+
+$bankeer_occupation[1] = 'avanturiste'
+$bankeer_occupation[2] = 'rich_bride'
+$bankeer_occupation[3] = 'rich_bride'
+$bankeer_occupation[4] = 'sufragist'
+
+$mayor_occupation[1] = 'avanturiste'
+$mayor_occupation[2] = 'rich_bride'
+$mayor_occupation[3] = 'rich_bride'
+$mayor_occupation[4] = 'sufragist'
+
+$mafiosi_occupation[1] = 'avanturiste'
+$mafiosi_occupation[2] = 'rich_bride'
+$mafiosi_occupation[3] = 'rich_bride'
+$mafiosi_occupation[4] = 'sufragist'
+
+$orpnange_occupation[1] = 'thief'
+$orpnange_occupation[2] = 'nurse'
+$orpnange_occupation[3] = 'punk'
+$orpnange_occupation[4] = 'oficiant'
+$orpnange_occupation[5] = 'secretary'
+$orpnange_occupation[6] = 'teacher'
+$orpnange_occupation[7] = 'voleyball'
+$orpnange_occupation[8] = 'karateka'
+$orpnange_occupation[9] = 'hymnast'
+$orpnange_occupation[10] = 'policewoman'
+$orpnange_occupation[11] = 'whore'
+$orpnange_occupation[12] = 'hacker'
+$orpnange_occupation[13] = 'brothel'
+
+$worker_occupation[1] = 'student'
+$worker_occupation[2] = 'nurse'
+$worker_occupation[3] = 'punk'
+$worker_occupation[4] = 'oficiant'
+$worker_occupation[5] = 'secretary'
+$worker_occupation[6] = 'teacher'
+$worker_occupation[7] = 'voleyball'
+$worker_occupation[8] = 'karateka'
+$worker_occupation[9] = 'hymnast'
+$worker_occupation[10] = 'policewoman'
+$worker_occupation[11] = 'hacker'
+
+$policeman_occupation[1] = 'student'
+$policeman_occupation[2] = 'nurse'
+$policeman_occupation[3] = 'punk'
+$policeman_occupation[4] = 'oficiant'
+$policeman_occupation[5] = 'secretary'
+$policeman_occupation[6] = 'teacher'
+$policeman_occupation[7] = 'voleyball'
+$policeman_occupation[8] = 'karateka'
+$policeman_occupation[9] = 'hymnast'
+$policeman_occupation[10] = 'policewoman'
+
+$manager_occupation[1] = 'student'
+$manager_occupation[2] = 'nurse'
+$manager_occupation[3] = 'punk'
+$manager_occupation[4] = 'oficiant'
+$manager_occupation[5] = 'secretary'
+$manager_occupation[6] = 'teacher'
+$manager_occupation[7] = 'voleyball'
+$manager_occupation[8] = 'karateka'
+$manager_occupation[9] = 'hymnast'
+$manager_occupation[10] = 'policewoman'
+$manager_occupation[11] = 'model'
+$manager_occupation[12] = 'hacker'
+$manager_occupation[13] = 'writer'
+
+$biologist_occupation[1] = 'student'
+$biologist_occupation[2] = 'nurse'
+$biologist_occupation[3] = 'writer'
+$biologist_occupation[4] = 'oficiant'
+$biologist_occupation[5] = 'secretary'
+$biologist_occupation[6] = 'teacher'
+$biologist_occupation[7] = 'voleyball'
+$biologist_occupation[8] = 'karateka'
+$biologist_occupation[9] = 'hymnast'
+$biologist_occupation[10] = 'hacker'
+$biologist_occupation[11] = 'artist'
+
+$programmer_occupation[1] = 'student'
+$programmer_occupation[2] = 'nurse'
+$programmer_occupation[3] = 'punk'
+$programmer_occupation[4] = 'oficiant'
+$programmer_occupation[5] = 'secretary'
+$programmer_occupation[6] = 'teacher'
+$programmer_occupation[7] = 'voleyball'
+$programmer_occupation[8] = 'karateka'
+$programmer_occupation[9] = 'hymnast'
+$programmer_occupation[10] = 'policewoman'
+$programmer_occupation[11] = 'model'
+$programmer_occupation[12] = 'hacker'
+$programmer_occupation[13] = 'writer'
+
+$surgeon_occupation[1] = 'student'
+$surgeon_occupation[2] = 'nurse'
+$surgeon_occupation[3] = 'writer'
+$surgeon_occupation[4] = 'oficiant'
+$surgeon_occupation[5] = 'secretary'
+$surgeon_occupation[6] = 'teacher'
+$surgeon_occupation[7] = 'voleyball'
+$surgeon_occupation[8] = 'karateka'
+$surgeon_occupation[9] = 'hymnast'
+$surgeon_occupation[10] = 'hacker'
+$surgeon_occupation[11] = 'artist'
+
+$buissinesman_occupation[1] = 'major'
+$buissinesman_occupation[2] = 'model'
+$buissinesman_occupation[3] = 'writer'
+$buissinesman_occupation[4] = 'artist'
+
+$finance_occupation[1] = 'major'
+$finance_occupation[2] = 'model'
+$finance_occupation[3] = 'writer'
+$finance_occupation[4] = 'artist'
+
+$general_occupation[1] = 'major'
+$general_occupation[2] = 'model'
+$general_occupation[3] = 'writer'
+$general_occupation[4] = 'artist'
+
+$poet_occupation[1] = 'student'
+$poet_occupation[2] = 'hymnast'
+$poet_occupation[3] = 'writer'
+$poet_occupation[4] = 'artist'
+
+$operator_occupation[1] = 'student'
+$operator_occupation[2] = 'hymnast'
+$operator_occupation[3] = 'writer'
+$operator_occupation[4] = 'artist'
+
+$artist_occupation[1] = 'student'
+$artist_occupation[2] = 'hymnast'
+$artist_occupation[3] = 'writer'
+$artist_occupation[4] = 'artist'
+
+$architect_occupation[1] = 'student'
+$architect_occupation[2] = 'hymnast'
+$architect_occupation[3] = 'writer'
+$architect_occupation[4] = 'artist'
+
+$jailer_occupation[1] = 'mind_contol'
+$jailer_occupation[2] = 'time_plice'
+$jailer_occupation[3] = 'jailer'
+$jailer_occupation[4] = 'anter'
+
+$bioreactor_occupation[1] = 'mind_contol'
+$bioreactor_occupation[2] = 'time_plice'
+$bioreactor_occupation[3] = 'jailer'
+$bioreactor_occupation[4] = 'anter'
+
+$minitruth_occupation[1] = 'mind_contol'
+$minitruth_occupation[2] = 'time_plice'
+$minitruth_occupation[3] = 'jailer'
+$minitruth_occupation[4] = 'anter'
+
+$anter_occupation[1] = 'mind_contol'
+$anter_occupation[2] = 'time_plice'
+$anter_occupation[3] = 'jailer'
+$anter_occupation[4] = 'anter'
+
+$freetrader_occupation[1] = 'academy'
+$freetrader_occupation[2] = 'mech'
+$freetrader_occupation[3] = 'contraband'
+
+$asteroid_occupation[1] = 'time_plice'
+$asteroid_occupation[2] = 'academy'
+$asteroid_occupation[3] = 'mech'
+$asteroid_occupation[4] = 'astrofarmer'
+$asteroid_occupation[5] = 'installer'
+$asteroid_occupation[6] = 'contraband'
+
+$astrofarm_occupation[1] = 'time_plice'
+$astrofarm_occupation[2] = 'academy'
+$astrofarm_occupation[3] = 'mech'
+$astrofarm_occupation[4] = 'astrofarmer'
+$astrofarm_occupation[5] = 'installer'
+$astrofarm_occupation[6] = 'contraband'
+
+$astrogator_occupation[1] = 'time_plice'
+$astrogator_occupation[2] = 'academy'
+$astrogator_occupation[3] = 'mech'
+$astrogator_occupation[4] = 'contraband'
+
+$admiral_occupation[1] = 'time_plice'
+$admiral_occupation[2] = 'academy'
+$admiral_occupation[3] = 'mech'
+
+$nanofarmacist_occupation[1] = 'time_plice'
+$nanofarmacist_occupation[2] = 'academy'
+$nanofarmacist_occupation[3] = 'mech'
+
+$gendesigner_occupation[1] = 'time_plice'
+$gendesigner_occupation[2] = 'academy'
+$gendesigner_occupation[3] = 'mech'
+$gendesigner_occupation[4] = 'astrofarmer'
+
+!СТАТУС
+$taurus_fame[0] = $_font_col_rep[0] + 'У меня нет никаких отношений с Домом Таурус. Надо бы заняться прямыми продажами на их территории.' + $_font_closer
+$taurus_fame[1] = $_font_col_rep[1] + 'Кое кто из Дома Таурус обо мне уже слышал. Этого достаточно чтобы получить разрешение на проживание в квартале Быка, но не более того.' + $_font_closer
+$taurus_fame[2] = $_font_col_rep[2] + 'Я завел некоторые полезные знакомства с представителями Дома Таурус. Но чтобы меня допустили в Белый Дворец, надо бы сделать своим клиентом кого-то важного.' + $_font_closer
+$taurus_fame[3] = $_font_col_rep[3] + 'У меня достаточно влиятельных друзей в Доме Таурус чтобы получить доступ в Белый Дворец и начать работать с элитными покупателями!' + $_font_closer
+$taurus_fame[4] = $_font_col_rep[4] + 'Теперь, когда я завел дружбу с одним из высших представителей Дома Таурус, я могу получить аудиенцию у самого Короля!' + $_font_closer
+$taurus_fame[5] = $_font_col_rep[5] + 'Король лично посвятил меня в рыцарство и это значит что теперь я не простой человек - за мной стоит Дом Таурус!' + $_font_closer
+
+$serpis_fame[0] = $_font_col_rep[0] + 'Представителям Дома Серпис я практически незнаком. Если я найду хотя бы захудалого клиента в квартале Змеи - обо мне услышат.' + $_font_closer
+$serpis_fame[1] = $_font_col_rep[1] + 'У меня достаточно связей в Доме Серпис чтобы получить разрешение на проживание в Муравейнике, но не более того. Нужно работать над репутацией.' + $_font_closer
+$serpis_fame[2] = $_font_col_rep[2] + 'Теперь я имею пару друзей среди представителей Дома Серпис, но этого всё ещё мало для доступа в административные шпили. Надо бы продать рабыню кому-то из серьёзных шишек.' + $_font_closer
+$serpis_fame[3] = $_font_col_rep[3] + 'Я завёл множество нужных связей в Доме Серпис и у меня достаточно влияния, чтобы пройти в Административные Шпили и встретиться с теми, кто там заправляет.' + $_font_closer
+$serpis_fame[4] = $_font_col_rep[4] + 'Благодаря знакомству с высшими чинами Дома Серпис, я могу получить аудиенцию у господина Президента и предложить ему свой товар. Большой шаг!' + $_font_closer
+$serpis_fame[5] = $_font_col_rep[5] + 'Я получил грамоту почётного гражданина Дома Серпис лично из рук господина Президента. Это не простая формальность - теперь за мной стоит настоящая Сила!' + $_font_closer
+
+$kamira_fame[0] = $_font_col_rep[0] + 'Нелюдям из Дома Камира я не знаком. Но они узнают меня если я заключу хотя бы один личный контракт с представителем этого дома.' + $_font_closer
+$kamira_fame[1] = $_font_col_rep[1] + 'Благодаря своим клиентам я получил разрешение на проживание в квартале отверженных. Но мне надо найти ещё клиентов чтобы меня начали уважать.' + $_font_closer
+$kamira_fame[2] = $_font_col_rep[2] + 'Я знаю кое-кого в Доме Камира, но чтобы получить настоящее влияние и доступ в Огненную Цитадель, мне стоит завести дружбу с кем-то из влиятельных нелюдей.' + $_font_closer
+$kamira_fame[3] = $_font_col_rep[3] + 'У меня достаточно друзей в Доме Камира, чтобы меня пропустили в Огненную Цитадель и представили самым знатным представителям Дома. Предчувствую отличные сделки!' + $_font_closer
+$kamira_fame[4] = $_font_col_rep[4] + 'Благодаря моей дружбе с высшими иерархами Дома Камира, я могу добиться аудиенции с Владычицей Тиамат, лидером Дома Камира.' + $_font_closer
+$kamira_fame[5] = $_font_col_rep[5] + 'Лично Тиамат признала меня "одним из своей стаи". Это значит что Дом Камира вступится за меня в любой сложной ситуации!' + $_font_closer
+
+$korvus_fame[0] = $_font_col_rep[0] + 'Нежить меня не замечает, так словно меня и вовсе нету. Если я хочу сделать имя в Доме Корвус, надо сделать кого то из мертвяков своим клиентом.' + $_font_closer
+$korvus_fame[1] = $_font_col_rep[1] + 'Обычно нежить не позволяет селиться таким как я в Некрополисе, но мне удалось добиться исключительного статуса. Впрочем в доме Корвус меня всё ещё мало кто знает.' + $_font_closer
+$korvus_fame[2] = $_font_col_rep[2] + 'У меня есть кое какие знакомства в Доме Корвус, но их пока недостаточно для доступа в Воронью Башню. Нужно сделать своим клиентом кого-то из аристокартов.' + $_font_closer
+$korvus_fame[3] = $_font_col_rep[3] + 'Моя слава поставщика лучших рабов дошла до Вороньей Башни и теперь у меня есть возможность встретиться с самой высокопоставленной нежитью Дома Корвус.' + $_font_closer
+$korvus_fame[4] = $_font_col_rep[4] + 'Благодаря тому, что я заслужил расположение высших иерархов Дома Корвус, у меня есть возможность попросить аудиенции с самим Князем Нежити!' + $_font_closer
+$korvus_fame[5] = $_font_col_rep[5] + 'Князь Нежити даровал мне младший дворянский титул. Теперь Дом Корвус будет на моей стороне в любой тяжелой ситуации!' + $_font_closer
+
+$brand_fame[0] = $_font_col_rep[0] + 'Моё клеймо никому не известно и это плохо влияет на цену рабынь. Надо продавать больше рабынь под своим брендом или заставить их выигрывать для меня соревнования!' + $_font_closer
+$brand_fame[1] = $_font_col_rep[1] + 'Среди всех клейм гильдии моё ценится меньше других, но если я буду продавать хороших рабынь, это быстро изменится.' + $_font_closer
+$brand_fame[2] = $_font_col_rep[2] + 'По крайней мере моё клеймо уже узнают, хотя оно и не прибавляет особой цены рабыням на которых поставлено. Надо повышать качество своего товара!' + $_font_closer
+$brand_fame[3] = $_font_col_rep[3] + 'Я известен как поставщик качественного товара и моё клеймо на бедре девушки уже чего-то стоит. Но это ещё не высшая лига.' + $_font_closer
+$brand_fame[4] = $_font_col_rep[4] + 'Работа над имиджем сделала своё дело. Моё клеймо сейчас все узнают и всеми я признан как отличный тренер. Продавать товар ещё никогда не было так просто!' + $_font_closer
+$brand_fame[5] = $_font_col_rep[5] + 'Может я себя перехваливаю, но помоему моё клеймо действительно лучшее среди всех представителей гильдии. Даже если я поставлю его на кусок дерьма, за это дерьмо мне заплатят искры!' + $_font_closer
+
+!ОТОБРАЖЕНИЕ ХАРАКТЕРИСТИК
+$slave_type_name['refferent'] = 'ассистентка'
+$slave_type_name['pet'] = 'домашнее животное'
+$slave_type_name['nurse'] = 'медсестра'
+$slave_type_name['maid'] = 'служанка'
+$slave_type_name['gladiatrix'] = 'гладиаторша'
+$slave_type_name['enchanter'] = 'чародейка'
+$slave_type_name['artist'] = 'артистка'
+$slave_type_name['concubine'] = 'наложница'
+
+$slave_type_name_sk['refferent'] = 'ассистентку'
+$slave_type_name_sk['pet'] = 'домашнее животное'
+$slave_type_name_sk['nurse'] = 'медсестру'
+$slave_type_name_sk['maid'] = 'служанку'
+$slave_type_name_sk['gladiatrix'] = 'гладиаторшу'
+$slave_type_name_sk['enchanter'] = 'чародейку'
+$slave_type_name_sk['artist'] = 'артистку'
+$slave_type_name_sk['concubine'] = 'наложницу'
+
+$rating[0] = dyneval($vb_cycle, 0, '<b>F-</b>')
+$rating[1] = dyneval($vb_cycle, 1, '<b>D</b>')
+$rating[2] = dyneval($vb_cycle, 2, '<b>C</b>')
+$rating[3] = dyneval($vb_cycle, 3, '<b>B</b>')
+$rating[4] = dyneval($vb_cycle, 4, '<b>A</b>')
+$rating[5] = dyneval($vb_cycle, 5, '<b>S+</b>')
+
+common_price[0] = 5
+common_price[1] = 500
+common_price[2] = 1000
+common_price[3] = 2500
+common_price[4] = 5000
+common_price[5] = 10000
+
+discount_price[0] = 1
+discount_price[1] = 300
+discount_price[2] = 600
+discount_price[3] = 1500
+discount_price[4] = 3000
+discount_price[5] = 6000
+
+auction_price[0] = 5
+auction_price[1] = 250
+auction_price[2] = 500
+auction_price[3] = 1200
+auction_price[4] = 2500
+auction_price[5] = 5000
+
+auction_increment[1] = 25
+auction_increment[2] = 50
+auction_increment[3] = 100
+auction_increment[4] = 250
+auction_increment[5] = 500
+
+base_charm[0] = 0
+base_charm[1] = 10
+base_charm[2] = 11
+base_charm[3] = 12
+base_charm[4] = 13
+base_charm[5] = 14
+
+$orgasm_type[0] = 'клиторальный'
+$orgasm_type[1] = 'глубокий'
+$orgasm_type[2] = 'струйный'
+
+$stars[10] = dyneval($vb_cycle, 0, '*****')
+$stars[9] = '<font color="#D3D3D3">*</font><font color="#cd0000">****' + $_font_closer
+$stars[8] = '<font color="#D3D3D3">**</font><font color="#cd0000">***' + $_font_closer
+$stars[7] = '<font color="#D3D3D3">***</font><font color="#cd0000">**' + $_font_closer
+$stars[6] = '<font color="#D3D3D3">****</font><font color="#cd0000">*' + $_font_closer
+$stars[0] = '-'
+$stars[1] = $_font_col_rep[5] + '*</font><font color="#D3D3D3">****' + $_font_closer
+$stars[2] = $_font_col_rep[5] + '**</font><font color="#D3D3D3">***' + $_font_closer
+$stars[3] = $_font_col_rep[5] + '***</font><font color="#D3D3D3">**' + $_font_closer
+$stars[4] = $_font_col_rep[5] + '****</font><font color="#D3D3D3">*' + $_font_closer
+$stars[5] = $_font_col_rep[5] + '*****' + $_font_closer
+
+$boy_mood[10] = dyneval($vb_cycle, 0, 'Клиническая депрессия')
+$boy_mood[9] = dyneval($vb_cycle, 0, 'Депрессия')
+$boy_mood[8] = dyneval($vb_cycle, 0, 'Подавлен')
+$boy_mood[7] = dyneval($vb_cycle, 0, 'Недоволен')
+$boy_mood[6] = dyneval($vb_cycle, 0, 'Уныл')
+$boy_mood[0] = 'Спокоен'
+$boy_mood[1] = dyneval($vb_cycle, 5, 'Умиротворен')
+$boy_mood[2] = dyneval($vb_cycle, 5, 'Позитивен')
+$boy_mood[3] = dyneval($vb_cycle, 5, 'Доволен')
+$boy_mood[4] = dyneval($vb_cycle, 5, 'Весел')
+$boy_mood[5] = dyneval($vb_cycle, 5, 'Счастлив')
+
+$girl_mood[10] = dyneval($vb_cycle, 0, 'Хроническая депрессия')
+$girl_mood[9] = dyneval($vb_cycle, 0, 'Депрессия')
+$girl_mood[8] = dyneval($vb_cycle, 0, 'Подавлена')
+$girl_mood[7] = dyneval($vb_cycle, 0, 'Грустит')
+$girl_mood[6] = dyneval($vb_cycle, 0, 'Дуется')
+$girl_mood[0] = 'Спокойна'
+$girl_mood[1] = dyneval($vb_cycle, 5, 'Умиротворена')
+$girl_mood[2] = dyneval($vb_cycle, 5, 'Позитивна')
+$girl_mood[3] = dyneval($vb_cycle, 5, 'Довольна')
+$girl_mood[4] = dyneval($vb_cycle, 5, 'Весела')
+$girl_mood[5] = dyneval($vb_cycle, 5, 'Счастлива')
+
+$excitement[10] = dyneval($vb_cycle, 0, 'Висяк')
+$excitement[9] = dyneval($vb_cycle, 0, 'Вялый')
+$excitement[8] = dyneval($vb_cycle, 0, 'Затрахался')
+$excitement[7] = dyneval($vb_cycle, 0, 'Пресыщен')
+$excitement[6] = dyneval($vb_cycle, 0, 'Холоден')
+$excitement[0] = 'Удовлетворен'
+$excitement[1] = dyneval($vb_cycle, 5, 'Стояк')
+$excitement[2] = dyneval($vb_cycle, 5, 'Мощный стояк')
+$excitement[3] = dyneval($vb_cycle, 5, 'Каменный стояк')
+$excitement[4] = dyneval($vb_cycle, 5, 'Жеребец')
+$excitement[5] = dyneval($vb_cycle, 5, 'Дикий жеребец')
+
+$behavior_evaluation[10] = dyneval($vb_cycle, 0, 'Провинилась [5]')
+$behavior_evaluation[9] = dyneval($vb_cycle, 0, 'Провинилась [4]')
+$behavior_evaluation[8] = dyneval($vb_cycle, 0, 'Провинилась [3]')
+$behavior_evaluation[7] = dyneval($vb_cycle, 0, 'Провинилась [2]')
+$behavior_evaluation[6] = dyneval($vb_cycle, 0, 'Провинилась [1]')
+$behavior_evaluation[0] = 'Не имеет заслуг'
+$behavior_evaluation[1] = dyneval($vb_cycle, 5, 'Отличилась [1]')
+$behavior_evaluation[2] = dyneval($vb_cycle, 5, 'Отличилась [2]')
+$behavior_evaluation[3] = dyneval($vb_cycle, 5, 'Отличилась [3]')
+$behavior_evaluation[4] = dyneval($vb_cycle, 5, 'Отличилась [4]')
+$behavior_evaluation[5] = dyneval($vb_cycle, 5, 'Отличилась [5]')
+
+$girl_hygiene[0] = $_font_col_rep[5] + 'Чиста и свежа' + $_font_closer
+$girl_hygiene[1] = $_font_col_rep[4] + 'Чистая' + $_font_closer
+$girl_hygiene[2] = $_font_col_rep[3] + 'Пора мыться' + $_font_closer
+$girl_hygiene[3] = $_font_col_rep[2] + 'Грязнуля' + $_font_closer
+$girl_hygiene[4] = $_font_col_rep[1] + 'Замарашка' + $_font_closer
+$girl_hygiene[5] = $_font_col_rep[0] + 'Покрыта коростой' + $_font_closer
+
+$boy_hygiene[0] = $_font_col_rep[5] + 'Чист и свеж' + $_font_closer
+$boy_hygiene[1] = $_font_col_rep[4] + 'Чистый' + $_font_closer
+$boy_hygiene[2] = $_font_col_rep[3] + 'Пора мыться' + $_font_closer
+$boy_hygiene[3] = $_font_col_rep[2] + 'Грязнуля' + $_font_closer
+$boy_hygiene[4] = $_font_col_rep[1] + 'Трубочист' + $_font_closer
+$boy_hygiene[5] = $_font_col_rep[0] + 'Покрыт коростой' + $_font_closer
+
+$girl_fame[0] = $_font_col_rep[0] + 'Безвестная' + $_font_closer
+$girl_fame[1] = $_font_col_rep[1] + 'Известная' + $_font_closer
+$girl_fame[2] = $_font_col_rep[2] + 'Знаменитость' + $_font_closer
+$girl_fame[3] = $_font_col_rep[3] + 'Прославленная' + $_font_closer
+$girl_fame[4] = $_font_col_rep[4] + 'Суперзвезда' + $_font_closer
+$girl_fame[5] = $_font_col_rep[5] + 'Легенда Рима' + $_font_closer
+
+$stamina[0] = $_font_col_rep[0] + 'Умирает' + $_font_closer
+$stamina[1] = $_font_col_rep[1] + 'Немощная' + $_font_closer
+$stamina[2] = $_font_col_rep[2] + 'Слабое здоровье' + $_font_closer
+$stamina[3] = $_font_col_rep[3] + 'Здорова' + $_font_closer
+$stamina[4] = $_font_col_rep[4] + 'Выносливая' + $_font_closer
+$stamina[5] = $_font_col_rep[5] + 'Вынослива как лошадь' + $_font_closer
+
+$beauty[0] = $_font_col_rep[0] + 'Изуродована' + $_font_closer
+$beauty[1] = $_font_col_rep[1] + 'Дурнушка' + $_font_closer
+$beauty[2] = $_font_col_rep[2] + 'Миловидная' + $_font_closer
+$beauty[3] = $_font_col_rep[3] + 'Привлекательная' + $_font_closer
+$beauty[4] = $_font_col_rep[4] + 'Красавица' + $_font_closer
+$beauty[5] = $_font_col_rep[5] + 'Королева красоты' + $_font_closer
+
+$intellect[0] = $_font_col_rep[0] + 'Дура' + $_font_closer
+$intellect[1] = $_font_col_rep[1] + 'Глупая' + $_font_closer
+$intellect[2] = $_font_col_rep[2] + 'Недалекая' + $_font_closer
+$intellect[3] = $_font_col_rep[3] + 'Сообразительная' + $_font_closer
+$intellect[4] = $_font_col_rep[4] + 'Умная' + $_font_closer
+$intellect[5] = $_font_col_rep[5] + 'Интеллектуальная' + $_font_closer
+
+$exotic[0] = $_font_col_rep[0] + 'Не выделяется' + $_font_closer
+$exotic[1] = $_font_col_rep[1] + 'Имеет изюминку' + $_font_closer
+$exotic[2] = $_font_col_rep[2] + 'Загадочный вид' + $_font_closer
+$exotic[3] = $_font_col_rep[3] + 'Экзотична' + $_font_closer
+$exotic[4] = $_font_col_rep[4] + 'Весьма экзотична' + $_font_closer
+$exotic[5] = $_font_col_rep[5] + 'Дико экзотична' + $_font_closer
+
+$fat[5] = $_font_col_rep[0] + 'Жирная' + $_font_closer
+$fat[4] = $_font_col_rep[1] + 'Толстая' + $_font_closer
+$fat[3] = $_font_col_rep[2] + 'Полная' + $_font_closer
+$fat[0] = $_font_col_rep[3] + 'Худосочная' + $_font_closer
+$fat[2] = $_font_col_rep[4] + 'Ядреная' + $_font_closer
+$fat[1] = $_font_col_rep[5] + 'Стройная' + $_font_closer
+
+$sensitivity[0] = $_font_col_rep[0] + 'Бесчувственная' + $_font_closer
+$sensitivity[1] = $_font_col_rep[1] + 'Огрубевшая' + $_font_closer
+$sensitivity[2] = $_font_col_rep[2] + 'Слегка огрубевшая' + $_font_closer
+$sensitivity[3] = $_font_col_rep[3] + 'Чувствительная' + $_font_closer
+$sensitivity[4] = $_font_col_rep[4] + 'Нежная' + $_font_closer
+$sensitivity[5] = $_font_col_rep[5] + 'Нежная как цветок' + $_font_closer
+
+$style[0] = $_font_col_rep[0] + 'Чумичка' + $_font_closer
+$style[1] = $_font_col_rep[1] + 'Невзрачная' + $_font_closer
+$style[2] = $_font_col_rep[2] + 'Ухоженная' + $_font_closer
+$style[3] = $_font_col_rep[3] + 'Изящная' + $_font_closer
+$style[4] = $_font_col_rep[4] + 'Элегантная' + $_font_closer
+$style[5] = $_font_col_rep[5] + 'Икона стиля' + $_font_closer
+
+$temper[0] = $_font_col_rep[0] + 'Апатичная' + $_font_closer
+$temper[1] = $_font_col_rep[1] + 'Холодная' + $_font_closer
+$temper[2] = $_font_col_rep[2] + 'Сдержаная' + $_font_closer
+$temper[3] = $_font_col_rep[3] + 'Уравновешенная' + $_font_closer
+$temper[4] = $_font_col_rep[4] + 'Темпераментная' + $_font_closer
+$temper[5] = $_font_col_rep[5] + 'Вулкан страстей' + $_font_closer
+
+$ego[0] = $_font_col_rep[0] + 'Безвольная' + $_font_closer
+$ego[1] = $_font_col_rep[1] + 'Бесхребетная' + $_font_closer
+$ego[2] = $_font_col_rep[2] + 'Слабохарактерная' + $_font_closer
+$ego[3] = $_font_col_rep[3] + 'Самостоятельная' + $_font_closer
+$ego[4] = $_font_col_rep[4] + 'Твердый характер' + $_font_closer
+$ego[5] = $_font_col_rep[5] + 'Волевая' + $_font_closer
+
+$pride[0] = $_font_col_rep[5] + 'Без комплексов' + $_font_closer
+$pride[1] = $_font_col_rep[4] + 'Открытая' + $_font_closer
+$pride[2] = $_font_col_rep[3] + 'Брезгливая' + $_font_closer
+$pride[3] = $_font_col_rep[2] + 'Гордячка' + $_font_closer
+$pride[4] = $_font_col_rep[1] + 'Надменная' + $_font_closer
+$pride[5] = $_font_col_rep[0] + 'Высокомерная' + $_font_closer
+
+$slave_service[0] = dyneval($vb_cycle, 0, 'Не горничная')
+$slave_service[1] = dyneval($vb_cycle, 1, 'Горничная')
+$slave_service[2] = dyneval($vb_cycle, 2, 'Горничная')
+$slave_service[3] = dyneval($vb_cycle, 3, 'Горничная')
+$slave_service[4] = dyneval($vb_cycle, 4, 'Горничная')
+$slave_service[5] = dyneval($vb_cycle, 5, 'Горничная')
+
+$slave_cook[0] = dyneval($vb_cycle, 0, 'Не кухарка')
+$slave_cook[1] = dyneval($vb_cycle, 1, 'Кухарка')
+$slave_cook[2] = dyneval($vb_cycle, 2, 'Кухарка')
+$slave_cook[3] = dyneval($vb_cycle, 3, 'Кухарка')
+$slave_cook[4] = dyneval($vb_cycle, 4, 'Кухарка')
+$slave_cook[5] = dyneval($vb_cycle, 5, 'Кухарка')
+
+$slave_nurse[0] = $_font_col_rep[0] + 'Не медсестра' + $_font_closer
+$slave_nurse[1] = $_font_col_rep[1] + 'Медсестра' + $_font_closer
+$slave_nurse[2] = $_font_col_rep[2] + 'Медсестра' + $_font_closer
+$slave_nurse[3] = $_font_col_rep[3] + 'Медсестра' + $_font_closer
+$slave_nurse[4] = $_font_col_rep[4] + 'Медсестра' + $_font_closer
+$slave_nurse[5] = $_font_col_rep[5] + 'Медсестра' + $_font_closer
+
+$slave_secretary[0] = $_font_col_rep[0] + 'Не секретарша' + $_font_closer
+$slave_secretary[1] = $_font_col_rep[1] + 'Секретарша' + $_font_closer
+$slave_secretary[2] = $_font_col_rep[2] + 'Секретарша' + $_font_closer
+$slave_secretary[3] = $_font_col_rep[3] + 'Секретарша' + $_font_closer
+$slave_secretary[4] = $_font_col_rep[4] + 'Секретарша' + $_font_closer
+$slave_secretary[5] = $_font_col_rep[5] + 'Секретарша' + $_font_closer
+
+$slave_gladiatrix[0] = $_font_col_rep[0] + 'Не гладиатор' + $_font_closer
+$slave_gladiatrix[1] = $_font_col_rep[1] + 'Гладиатор' + $_font_closer
+$slave_gladiatrix[2] = $_font_col_rep[2] + 'Гладиатор' + $_font_closer
+$slave_gladiatrix[3] = $_font_col_rep[3] + 'Гладиатор' + $_font_closer
+$slave_gladiatrix[4] = $_font_col_rep[4] + 'Гладиатор' + $_font_closer
+$slave_gladiatrix[5] = $_font_col_rep[5] + 'Гладиатор' + $_font_closer
+
+$slave_enchanter[0] = $_font_col_rep[0] + 'Не чародейка' + $_font_closer
+$slave_enchanter[1] = $_font_col_rep[1] + 'Чародейка' + $_font_closer
+$slave_enchanter[2] = $_font_col_rep[2] + 'Чародейка' + $_font_closer
+$slave_enchanter[3] = $_font_col_rep[3] + 'Чародейка' + $_font_closer
+$slave_enchanter[4] = $_font_col_rep[4] + 'Чародейка' + $_font_closer
+$slave_enchanter[5] = $_font_col_rep[5] + 'Чародейка' + $_font_closer
+
+$slave_expression[0] = $_font_col_rep[0] + 'Не эскорт' + $_font_closer
+$slave_expression[1] = $_font_col_rep[1] + 'Эскорт' + $_font_closer
+$slave_expression[2] = $_font_col_rep[2] + 'Эскорт' + $_font_closer
+$slave_expression[3] = $_font_col_rep[3] + 'Эскорт' + $_font_closer
+$slave_expression[4] = $_font_col_rep[4] + 'Эскорт' + $_font_closer
+$slave_expression[5] = $_font_col_rep[5] + 'Эскорт' + $_font_closer
+
+$slave_callisthenics[0] = $_font_col_rep[0] + 'Не танцовщица' + $_font_closer
+$slave_callisthenics[1] = $_font_col_rep[1] + 'Танцовщица' + $_font_closer
+$slave_callisthenics[2] = $_font_col_rep[2] + 'Танцовщица' + $_font_closer
+$slave_callisthenics[3] = $_font_col_rep[3] + 'Танцовщица' + $_font_closer
+$slave_callisthenics[4] = $_font_col_rep[4] + 'Танцовщица' + $_font_closer
+$slave_callisthenics[5] = $_font_col_rep[5] + 'Танцовщица' + $_font_closer
+
+$slave_music[0] = $_font_col_rep[0] + 'Не музыкантка' + $_font_closer
+$slave_music[1] = $_font_col_rep[1] + 'Флейтистка' + $_font_closer
+$slave_music[2] = $_font_col_rep[2] + 'Гитаристка' + $_font_closer
+$slave_music[3] = $_font_col_rep[3] + 'Виолончелистка' + $_font_closer
+$slave_music[4] = $_font_col_rep[4] + 'Скрипачка' + $_font_closer
+$slave_music[5] = $_font_col_rep[5] + 'Пианистка' + $_font_closer
+
+$slave_vocal[0] = $_font_col_rep[0] + 'Не певица' + $_font_closer
+$slave_vocal[1] = $_font_col_rep[1] + 'Певица' + $_font_closer
+$slave_vocal[2] = $_font_col_rep[2] + 'Певица' + $_font_closer
+$slave_vocal[3] = $_font_col_rep[3] + 'Певица' + $_font_closer
+$slave_vocal[4] = $_font_col_rep[4] + 'Певица' + $_font_closer
+$slave_vocal[5] = $_font_col_rep[5] + 'Певица' + $_font_closer
+
+$slave_pet[0] = $_font_col_rep[0] + 'Не питомец' + $_font_closer
+$slave_pet[1] = $_font_col_rep[1] + 'Питомец' + $_font_closer
+$slave_pet[2] = $_font_col_rep[2] + 'Питомец' + $_font_closer
+$slave_pet[3] = $_font_col_rep[3] + 'Питомец' + $_font_closer
+$slave_pet[4] = $_font_col_rep[4] + 'Питомец' + $_font_closer
+$slave_pet[5] = $_font_col_rep[5] + 'Питомец' + $_font_closer
+
+$slave_dressage[0] = $_font_col_rep[0] + 'Не лошадка' + $_font_closer
+$slave_dressage[1] = $_font_col_rep[1] + 'Лошадка' + $_font_closer
+$slave_dressage[2] = $_font_col_rep[2] + 'Лошадка' + $_font_closer
+$slave_dressage[3] = $_font_col_rep[3] + 'Лошадка' + $_font_closer
+$slave_dressage[4] = $_font_col_rep[4] + 'Лошадка' + $_font_closer
+$slave_dressage[5] = $_font_col_rep[5] + 'Лошадка' + $_font_closer
+
+$slave_petting[0] = dyneval($vb_cycle, 0, 'Петтинг')
+$slave_petting[1] = dyneval($vb_cycle, 1, 'Петтинг')
+$slave_petting[2] = dyneval($vb_cycle, 2, 'Петтинг')
+$slave_petting[3] = dyneval($vb_cycle, 3, 'Петтинг')
+$slave_petting[4] = dyneval($vb_cycle, 4, 'Петтинг')
+$slave_petting[5] = dyneval($vb_cycle, 5, 'Петтинг')
+
+$slave_penetration[0] = dyneval($vb_cycle, 0, 'Пенетрация')
+$slave_penetration[1] = dyneval($vb_cycle, 1, 'Пенетрация')
+$slave_penetration[2] = dyneval($vb_cycle, 2, 'Пенетрация')
+$slave_penetration[3] = dyneval($vb_cycle, 3, 'Пенетрация')
+$slave_penetration[4] = dyneval($vb_cycle, 4, 'Пенетрация')
+$slave_penetration[5] = dyneval($vb_cycle, 5, 'Пенетрация')
+
+$slave_oral[0] = dyneval($vb_cycle, 0, 'Оральные ласки')
+$slave_oral[1] = dyneval($vb_cycle, 1, 'Оральные ласки')
+$slave_oral[2] = dyneval($vb_cycle, 2, 'Оральные ласки')
+$slave_oral[3] = dyneval($vb_cycle, 3, 'Оральные ласки')
+$slave_oral[4] = dyneval($vb_cycle, 4, 'Оральные ласки')
+$slave_oral[5] = dyneval($vb_cycle, 5, 'Оральные ласки')
+
+$slave_orgy[0] = dyneval($vb_cycle, 0, 'Групповой секс')
+$slave_orgy[1] = dyneval($vb_cycle, 1, 'Групповой секс')
+$slave_orgy[2] = dyneval($vb_cycle, 2, 'Групповой секс')
+$slave_orgy[3] = dyneval($vb_cycle, 3, 'Групповой секс')
+$slave_orgy[4] = dyneval($vb_cycle, 4, 'Групповой секс')
+$slave_orgy[5] = dyneval($vb_cycle, 5, 'Групповой секс')
+
+$slave_xenophily[0] = dyneval($vb_cycle, 0, 'Ксенофилия')
+$slave_xenophily[1] = dyneval($vb_cycle, 1, 'Ксенофилия')
+$slave_xenophily[2] = dyneval($vb_cycle, 2, 'Ксенофилия')
+$slave_xenophily[3] = dyneval($vb_cycle, 3, 'Ксенофилия')
+$slave_xenophily[4] = dyneval($vb_cycle, 4, 'Ксенофилия')
+$slave_xenophily[5] = dyneval($vb_cycle, 5, 'Ксенофилия')
+
+$slave_fetishism[0] = dyneval($vb_cycle, 0, 'Фетишизм')
+$slave_fetishism[1] = dyneval($vb_cycle, 1, 'Фетишизм')
+$slave_fetishism[2] = dyneval($vb_cycle, 2, 'Фетишизм')
+$slave_fetishism[3] = dyneval($vb_cycle, 3, 'Фетишизм')
+$slave_fetishism[4] = dyneval($vb_cycle, 4, 'Фетишизм')
+$slave_fetishism[5] = dyneval($vb_cycle, 5, 'Фетишизм')
+
+$slave_roleplay[0] = dyneval($vb_cycle, 0, 'Демонстрация')
+$slave_roleplay[1] = dyneval($vb_cycle, 1, 'Демонстрация')
+$slave_roleplay[2] = dyneval($vb_cycle, 2, 'Демонстрация')
+$slave_roleplay[3] = dyneval($vb_cycle, 3, 'Демонстрация')
+$slave_roleplay[4] = dyneval($vb_cycle, 4, 'Демонстрация')
+$slave_roleplay[5] = dyneval($vb_cycle, 5, 'Демонстрация')
+
+$slave_wounds[1] = $_font_col_rep[2] + 'Легко ранена' + $_font_closer
+$slave_wounds[2] = $_font_col_rep[1] + 'Ранена' + $_font_closer
+$slave_wounds[3] = $_font_col_rep[0] + 'Серьезно ранена' + $_font_closer
+$slave_wounds[4] = $_font_col_rep[0] + 'Тяжело ранена' + $_font_closer
+$slave_wounds[5] = $_font_col_rep[0] + 'Смертельно ранена' + $_font_closer
+
+$master_wounds[0] = $_font_col_rep[5] + 'Цел и невредим' + $_font_closer 
+$master_wounds[1] = $_font_col_rep[2] + 'Легко ранен' + $_font_closer
+$master_wounds[2] = $_font_col_rep[1] + 'Ранен' + $_font_closer
+$master_wounds[3] = $_font_col_rep[0] + 'Серьезно ранен' + $_font_closer
+$master_wounds[4] = $_font_col_rep[0] + 'Тяжело ранен' + $_font_closer
+$master_wounds[5] = $_font_col_rep[0] + 'Смертельно ранен' + $_font_closer
+
+$slave_scares[1] = $_font_col_rep[2] + 'Небольшой шрам' + $_font_closer
+$slave_scares[2] = $_font_col_rep[1] + 'Шрам' + $_font_closer
+$slave_scares[3] = $_font_col_rep[0] + 'Шрамы' + $_font_closer
+$slave_scares[4] = $_font_col_rep[0] + 'Жуткие шрамы' + $_font_closer
+$slave_scares[5] = $_font_col_rep[0] + 'Уродливые шрамы' + $_font_closer
+
+$slave_bruises[1] = $_font_col_rep[2] + 'Синяк' + $_font_closer
+$slave_bruises[2] = $_font_col_rep[1] + 'Синяки' + $_font_closer
+$slave_bruises[3] = $_font_col_rep[0] + 'Следы побоев' + $_font_closer
+$slave_bruises[4] = $_font_col_rep[0] + 'Следы побоев+' + $_font_closer
+$slave_bruises[5] = $_font_col_rep[0] + 'Следы побоев++' + $_font_closer
+
+$master_str[0] = dyneval($vb_cycle, 0, 'Беспомощен')
+$master_str[1] = dyneval($vb_cycle, 1, 'Задохлик')
+$master_str[2] = dyneval($vb_cycle, 2, 'Слабак')
+$master_str[3] = dyneval($vb_cycle, 3, 'Крепкий')
+$master_str[4] = dyneval($vb_cycle, 4, 'Атлетичный')
+$master_str[5] = dyneval($vb_cycle, 5, 'Могучий')
+
+$master_cha[0] = dyneval($vb_cycle, 0, 'Зомби')
+$master_cha[1] = dyneval($vb_cycle, 1, 'Бесхребетный')
+$master_cha[2] = dyneval($vb_cycle, 2, 'Лузер')
+$master_cha[3] = dyneval($vb_cycle, 3, 'Целеустремленный')
+$master_cha[4] = dyneval($vb_cycle, 4, 'Волевой')
+$master_cha[5] = dyneval($vb_cycle, 5, 'Лидер')
+
+$master_style[0] = dyneval($vb_cycle, 0, 'Отвратительный')
+$master_style[1] = dyneval($vb_cycle, 1, 'Неприятный')
+$master_style[2] = dyneval($vb_cycle, 2, 'Невзрачный')
+$master_style[3] = dyneval($vb_cycle, 3, 'Привлекательный')
+$master_style[4] = dyneval($vb_cycle, 4, 'Импозантный')
+$master_style[5] = dyneval($vb_cycle, 5, 'Очаровательный')
+
+$brand[0] = dyneval($vb_cycle, 0, 'Безвестное клеймо')
+$brand[1] = dyneval($vb_cycle, 1, 'Клеймо новичка')
+$brand[2] = dyneval($vb_cycle, 2, 'Клеймо профессионала')
+$brand[3] = dyneval($vb_cycle, 3, 'Известное клеймо')
+$brand[4] = dyneval($vb_cycle, 4, 'Знаменитое клеймо')
+$brand[5] = dyneval($vb_cycle, 5, 'Легендарное клеймо')
+
+$master_wealth[0] = dyneval($vb_cycle, 0, 'Нищий')
+$master_wealth[1] = dyneval($vb_cycle, 1, 'Бедный')
+$master_wealth[2] = dyneval($vb_cycle, 2, 'Малоимущий')
+$master_wealth[3] = dyneval($vb_cycle, 3, 'Обеспеченный')
+$master_wealth[4] = dyneval($vb_cycle, 4, 'Респектабельный')
+$master_wealth[5] = dyneval($vb_cycle, 5, 'Патриций')
+$master_wealth[6] = dyneval($vb_cycle, 5, 'Негоциант')
+
+base_expense[0] = 0
+base_expense[1] = 25
+base_expense[2] = 50
+base_expense[3] = 100
+base_expense[4] = 250
+base_expense[5] = 500
+base_expense[6] = 1000
+
+$master_tutor[0] = dyneval($vb_cycle, 0, 'Не учитель')
+$master_tutor[1] = dyneval($vb_cycle, 1, 'Плохой учитель')
+$master_tutor[2] = dyneval($vb_cycle, 2, 'Учитель')
+$master_tutor[3] = dyneval($vb_cycle, 3, 'Хороший учитель')
+$master_tutor[4] = dyneval($vb_cycle, 4, 'Отличный учитель')
+$master_tutor[5] = dyneval($vb_cycle, 5, 'Мастер обучения')
+
+$master_butler[0] = dyneval($vb_cycle, 0, 'Не дворецкий')
+$master_butler[1] = dyneval($vb_cycle, 1, 'Плохой дворецкий')
+$master_butler[2] = dyneval($vb_cycle, 2, 'Дворецкий')
+$master_butler[3] = dyneval($vb_cycle, 3, 'Хороший дворецкий')
+$master_butler[4] = dyneval($vb_cycle, 4, 'Отличный дворецкий')
+$master_butler[5] = dyneval($vb_cycle, 5, 'Мастер-дворецкий')
+
+$master_artdirector[0] = dyneval($vb_cycle, 0, 'Не режиссер')
+$master_artdirector[1] = dyneval($vb_cycle, 1, 'Плохой режиссер')
+$master_artdirector[2] = dyneval($vb_cycle, 2, 'Режиссер')
+$master_artdirector[3] = dyneval($vb_cycle, 3, 'Хороший режиссер')
+$master_artdirector[4] = dyneval($vb_cycle, 4, 'Отличный режиссер')
+$master_artdirector[5] = dyneval($vb_cycle, 5, 'Мастер режиссуры')
+
+$master_medic[0] = dyneval($vb_cycle, 0, 'Не врач')
+$master_medic[1] = dyneval($vb_cycle, 1, 'Плохой врач')
+$master_medic[2] = dyneval($vb_cycle, 2, 'Врач')
+$master_medic[3] = dyneval($vb_cycle, 3, 'Хороший врач')
+$master_medic[4] = dyneval($vb_cycle, 4, 'Отличный врач')
+$master_medic[5] = dyneval($vb_cycle, 5, 'Мастер медицины')
+
+$master_fighter[0] = dyneval($vb_cycle, 0, 'Не боец')
+$master_fighter[1] = dyneval($vb_cycle, 1, 'Слабый боец')
+$master_fighter[2] = dyneval($vb_cycle, 2, 'Боец')
+$master_fighter[3] = dyneval($vb_cycle, 3, 'Сильный боец')
+$master_fighter[4] = dyneval($vb_cycle, 4, 'Отличный боец')
+$master_fighter[5] = dyneval($vb_cycle, 5, 'Мастер меча')
+
+$master_mage[0] = dyneval($vb_cycle, 0, 'Не маг')
+$master_mage[1] = dyneval($vb_cycle, 1, 'Слабый маг')
+$master_mage[2] = dyneval($vb_cycle, 2, 'Маг-ученик')
+$master_mage[3] = dyneval($vb_cycle, 3, 'Сильный маг')
+$master_mage[4] = dyneval($vb_cycle, 4, 'Могучий волшебник')
+$master_mage[5] = dyneval($vb_cycle, 5, 'Архимаг')
+
+$master_domination[0] = dyneval($vb_cycle, 0, 'Не хозяин')
+$master_domination[1] = dyneval($vb_cycle, 1, 'Мягкий хозяин')
+$master_domination[2] = dyneval($vb_cycle, 2, 'Хозяин')
+$master_domination[3] = dyneval($vb_cycle, 3, 'Господин')
+$master_domination[4] = dyneval($vb_cycle, 4, 'Повелитель')
+$master_domination[5] = dyneval($vb_cycle, 5, 'Властелин')
+
+$master_flagelation[0] = dyneval($vb_cycle, 0, 'Не умеет пороть')
+$master_flagelation[1] = dyneval($vb_cycle, 1, 'Азы порки')
+$master_flagelation[2] = dyneval($vb_cycle, 2, 'Умеет пороть')
+$master_flagelation[3] = dyneval($vb_cycle, 3, 'Больно порет')
+$master_flagelation[4] = dyneval($vb_cycle, 4, 'Знаток порки')
+$master_flagelation[5] = dyneval($vb_cycle, 5, 'Мастер кнута')
+
+$master_torture[0] = dyneval($vb_cycle, 0, 'Не палач')
+$master_torture[1] = dyneval($vb_cycle, 1, 'Плохой палач')
+$master_torture[2] = dyneval($vb_cycle, 2, 'Палач')
+$master_torture[3] = dyneval($vb_cycle, 3, 'Умелый палач')
+$master_torture[4] = dyneval($vb_cycle, 4, 'Страшный палач')
+$master_torture[5] = dyneval($vb_cycle, 5, 'Мастер-пыток')
+
+$master_bondage[0] = dyneval($vb_cycle, 0, 'Не умеет вязать')
+$master_bondage[1] = dyneval($vb_cycle, 1, 'Новичок связывания')
+$master_bondage[2] = dyneval($vb_cycle, 2, 'Грамотно связывает')
+$master_bondage[3] = dyneval($vb_cycle, 3, 'Умело связывает')
+$master_bondage[4] = dyneval($vb_cycle, 4, 'Отлично связывает')
+$master_bondage[5] = dyneval($vb_cycle, 5, 'Мастер-веревки')
+
+$master_petting[0] = dyneval($vb_cycle, 0, 'Неуклюжий')
+$master_petting[1] = dyneval($vb_cycle, 1, 'Петтинг')
+$master_petting[2] = dyneval($vb_cycle, 2, 'Петтинг')
+$master_petting[3] = dyneval($vb_cycle, 3, 'Петтинг')
+$master_petting[4] = dyneval($vb_cycle, 4, 'Петтинг')
+$master_petting[5] = dyneval($vb_cycle, 5, 'Петтинг')
+
+$master_penetration[0] = dyneval($vb_cycle, 0, 'Девственник')
+$master_penetration[1] = dyneval($vb_cycle, 1, 'Пенетрация')
+$master_penetration[2] = dyneval($vb_cycle, 2, 'Пенетрация')
+$master_penetration[3] = dyneval($vb_cycle, 3, 'Пенетрация')
+$master_penetration[4] = dyneval($vb_cycle, 4, 'Пенетрация')
+$master_penetration[5] = dyneval($vb_cycle, 5, 'Пенетрация')
+
+$master_oral[0] = dyneval($vb_cycle, 0, 'Нецелованный')
+$master_oral[1] = dyneval($vb_cycle, 1, 'Оральный секс')
+$master_oral[2] = dyneval($vb_cycle, 2, 'Оральный секс')
+$master_oral[3] = dyneval($vb_cycle, 3, 'Оральный секс')
+$master_oral[4] = dyneval($vb_cycle, 4, 'Оральный секс')
+$master_oral[5] = dyneval($vb_cycle, 5, 'Оральный секс')
+
+$master_fetish[0] = dyneval($vb_cycle, 0, 'Фетишизм')
+$master_fetish[1] = dyneval($vb_cycle, 1, 'Фетишизм')
+$master_fetish[2] = dyneval($vb_cycle, 2, 'Фетишизм')
+$master_fetish[3] = dyneval($vb_cycle, 3, 'Фетишизм')
+$master_fetish[4] = dyneval($vb_cycle, 4, 'Фетишизм')
+$master_fetish[5] = dyneval($vb_cycle, 5, 'Конченный извращенец')
+
+$master_libido[0] = dyneval($vb_cycle, 0, 'Импотент')
+$master_libido[1] = dyneval($vb_cycle, 1, 'Вялый')
+$master_libido[2] = dyneval($vb_cycle, 2, 'Сексуальный')
+$master_libido[3] = dyneval($vb_cycle, 3, 'Страстный')
+$master_libido[4] = dyneval($vb_cycle, 4, 'Жеребец')
+$master_libido[5] = dyneval($vb_cycle, 5, 'Дикий жеребец')
+
+$house_mess[0] = $_font_col_rep[5] + 'Чисто и прибрано' + $_font_closer
+$house_mess[1] = $_font_col_rep[4] + 'В доме порядок' + $_font_closer
+$house_mess[2] = $_font_col_rep[3] + 'Легкий беспорядок' + $_font_closer
+$house_mess[3] = $_font_col_rep[2] + 'Грязновато' + $_font_closer
+$house_mess[4] = $_font_col_rep[1] + 'Бардак и грязь' + $_font_closer
+$house_mess[5] = $_font_col_rep[0] + 'Дом как свинарник' + $_font_closer
+
+$cooked_food[0] = $_font_col_rep[0] + 'Еда не готова' + $_font_closer
+$cooked_food[1] = $_font_col_rep[3] + 'На ужин консервы' + $_font_closer
+$cooked_food[2] = $_font_col_rep[5] + 'Кушать подано' + $_font_closer
+
+$hair_style[0] = $_font_col_rep[0] + 'Растрепанные волосы' + $_font_closer
+$hair_style[1] = $_font_col_rep[1] + 'Помятая прическа' + $_font_closer
+$hair_style[2] = $_font_col_rep[2] + 'Помятая прическа' + $_font_closer
+$hair_style[3] = $_font_col_rep[3] + 'Помятая прическа' + $_font_closer
+$hair_style[4] = $_font_col_rep[4] + 'Стильная прическа' + $_font_closer
+$hair_style[5] = $_font_col_rep[5] + 'Стильная прическа' + $_font_closer
+
+$slave_makeup[0] = $_font_col_rep[0] + 'Без косметики' + $_font_closer
+$slave_makeup[1] = $_font_col_rep[3] + 'Стильный макияж' + $_font_closer
+$slave_makeup[2] = $_font_col_rep[5] + 'Естественная красота' + $_font_closer
+$slave_makeup[3] = $_font_col_rep[5] + 'Татуаж' + $_font_closer
+
+$slave_boobs[0] = $_font_col_rep[0] + 'Плоская грудь' + $_font_closer
+$slave_boobs[1] = $_font_col_rep[1] + 'Маленькие сисечки' + $_font_closer
+$slave_boobs[2] = $_font_col_rep[2] + 'Небольшая грудь' + $_font_closer
+$slave_boobs[3] = $_font_col_rep[3] + 'Большая грудь' + $_font_closer
+$slave_boobs[4] = $_font_col_rep[4] + 'Огромные сиськи' + $_font_closer
+$slave_boobs[5] = $_font_col_rep[5] + 'Гигантское вымя' + $_font_closer
+
+$niple_piercing[0] = dyneval($vb_cycle, 0, 'Соски не проколоты')
+$niple_piercing[1] = dyneval($vb_cycle, 5, 'Соски проколоты')
+
+$slave_lactation[0] = $_font_col_rep[0] + 'Лактация нулевая' + $_font_closer
+$slave_lactation[1] = $_font_col_rep[1] + 'Минимальная лактация' + $_font_closer
+$slave_lactation[2] = $_font_col_rep[2] + 'Лактация' + $_font_closer
+$slave_lactation[3] = $_font_col_rep[3] + 'Хорошая лактация' + $_font_closer
+$slave_lactation[4] = $_font_col_rep[4] + 'Отличная лактация' + $_font_closer
+$slave_lactation[5] = $_font_col_rep[5] + 'Молочная ферма' + $_font_closer
+
+$boobs_modification[0] = 'Модификаций груди нет'
+$boobs_modification[1] = 'Грудь увеличена'
+$boobs_modification[2] = 'Грудные влагалища'
+$boobs_modification[3] = 'Соски-ротики'
+
+$virginity[3] = $_font_col_rep[0] + 'Рожавшая' + $_font_closer
+$virginity[2] = $_font_col_rep[3] + 'Упругое влагалище' + $_font_closer
+$virginity[1] = $_font_col_rep[4] + 'Восстановленная плева' + $_font_closer
+$virginity[0] = $_font_col_rep[5] + 'Девственница' + $_font_closer
+
+$clit_piercing[0] = dyneval($vb_cycle, 0, 'Клитор не проколот')
+$clit_piercing[1] = dyneval($vb_cycle, 5, 'Клитор проколот')
+
+$slave_anal_description[0] = $_font_col_rep[0] + 'Зажатый анус' + $_font_closer
+$slave_anal_description[1] = $_font_col_rep[1] + 'Тугой анус' + $_font_closer
+$slave_anal_description[2] = $_font_col_rep[2] + 'Плотный анус' + $_font_closer
+$slave_anal_description[3] = $_font_col_rep[3] + 'Разработанный анус' + $_font_closer
+$slave_anal_description[4] = $_font_col_rep[4] + 'Эластичный анус' + $_font_closer
+$slave_anal_description[5] = $_font_col_rep[5] + 'Пластичный анус' + $_font_closer
+
+$slave_tatoo[0] = 'Татуировок нет'
+$slave_tatoo[1] = 'Маленькая татушка'
+$slave_tatoo[2] = 'Контур татуировки'
+$slave_tatoo[3] = 'Цветная татуировка'
+$slave_tatoo[4] = 'Расчерченное тело'
+$slave_tatoo[5] = 'Изукрашенное тело'
+
+$slave_brand[0] = '<a href = "EXEC: interaction = 1811 & gt ''interaction''"><font color="#cd0000">Клейма нет</font></a>'
+$slave_brand[1] = $_font_col_rep[3] + 'Заклеймлена' + $_font_closer
+$slave_brand[2] = $_font_col_rep[3] + 'Рабская татуировка' + $_font_closer
+$slave_brand[3] = $_font_col_rep[5] + 'Волшебное клеймо' + $_font_closer
+$slave_brand[4] = $_font_col_rep[2] + 'Чужое клеймо' + $_font_closer
+
+$vaginal_modification[0] = 'Модификаций влагалища нет'
+$vaginal_modification[1] = 'Шариковые импланты влагалища'
+$vaginal_modification[2] = 'Лубрикационные железы+'
+$vaginal_modification[3] = 'Влагалищный язычок'
+$vaginal_modification[4] = 'Яйцерождение'
+
+$service_lesson[0] = dyneval($vb_cycle, 0, 'Урок домоводства')
+$service_lesson[1] = dyneval($vb_cycle, 1, 'Урок домоводства')
+$service_lesson[2] = dyneval($vb_cycle, 2, 'Урок домоводства')
+$service_lesson[3] = dyneval($vb_cycle, 3, 'Урок домоводства')
+$service_lesson[4] = dyneval($vb_cycle, 4, 'Урок домоводства')
+$service_lesson[5] = dyneval($vb_cycle, 5, 'Урок домоводства')
+
+$cook_lesson[0] = dyneval($vb_cycle, 0, 'Урок кулинарии')
+$cook_lesson[1] = dyneval($vb_cycle, 1, 'Урок кулинарии')
+$cook_lesson[2] = dyneval($vb_cycle, 2, 'Урок кулинарии')
+$cook_lesson[3] = dyneval($vb_cycle, 3, 'Урок кулинарии')
+$cook_lesson[4] = dyneval($vb_cycle, 4, 'Урок кулинарии')
+$cook_lesson[5] = dyneval($vb_cycle, 5, 'Урок кулинарии')
+
+$nurse_lesson[0] = dyneval($vb_cycle, 0, 'Урок медицины')
+$nurse_lesson[1] = dyneval($vb_cycle, 1, 'Урок медицины')
+$nurse_lesson[2] = dyneval($vb_cycle, 2, 'Урок медицины')
+$nurse_lesson[3] = dyneval($vb_cycle, 3, 'Урок медицины')
+$nurse_lesson[4] = dyneval($vb_cycle, 4, 'Урок медицины')
+$nurse_lesson[5] = dyneval($vb_cycle, 5, 'Урок медицины')
+
+$dance_lesson[0] = dyneval($vb_cycle, 0, 'Урок танцев')
+$dance_lesson[1] = dyneval($vb_cycle, 1, 'Урок танцев')
+$dance_lesson[2] = dyneval($vb_cycle, 2, 'Урок танцев')
+$dance_lesson[3] = dyneval($vb_cycle, 3, 'Урок танцев')
+$dance_lesson[4] = dyneval($vb_cycle, 4, 'Урок танцев')
+$dance_lesson[5] = dyneval($vb_cycle, 5, 'Урок танцев')
+
+$vocal_lesson[0] = dyneval($vb_cycle, 0, 'Урок вокала')
+$vocal_lesson[1] = dyneval($vb_cycle, 1, 'Урок вокала')
+$vocal_lesson[2] = dyneval($vb_cycle, 2, 'Урок вокала')
+$vocal_lesson[3] = dyneval($vb_cycle, 3, 'Урок вокала')
+$vocal_lesson[4] = dyneval($vb_cycle, 4, 'Урок вокала')
+$vocal_lesson[5] = dyneval($vb_cycle, 5, 'Урок вокала')
+
+$secretary_lesson[0] = dyneval($vb_cycle, 0, 'Делопроизводство')
+$secretary_lesson[1] = dyneval($vb_cycle, 1, 'Делопроизводство')
+$secretary_lesson[2] = dyneval($vb_cycle, 2, 'Делопроизводство')
+$secretary_lesson[3] = dyneval($vb_cycle, 3, 'Делопроизводство')
+$secretary_lesson[4] = dyneval($vb_cycle, 4, 'Делопроизводство')
+$secretary_lesson[5] = dyneval($vb_cycle, 5, 'Делопроизводство')
+
+$exprtession_lesson[0] = dyneval($vb_cycle, 0, 'Этикет и риторика')
+$exprtession_lesson[1] = dyneval($vb_cycle, 1, 'Этикет и риторика')
+$exprtession_lesson[2] = dyneval($vb_cycle, 2, 'Этикет и риторика')
+$exprtession_lesson[3] = dyneval($vb_cycle, 3, 'Этикет и риторика')
+$exprtession_lesson[4] = dyneval($vb_cycle, 4, 'Этикет и риторика')
+$exprtession_lesson[5] = dyneval($vb_cycle, 5, 'Этикет и риторика')
+
+$fight_lesson[0] = dyneval($vb_cycle, 0, 'Боевая подготовка')
+$fight_lesson[1] = dyneval($vb_cycle, 1, 'Боевая подготовка')
+$fight_lesson[2] = dyneval($vb_cycle, 2, 'Боевая подготовка')
+$fight_lesson[3] = dyneval($vb_cycle, 3, 'Боевая подготовка')
+$fight_lesson[4] = dyneval($vb_cycle, 4, 'Боевая подготовка')
+$fight_lesson[5] = dyneval($vb_cycle, 5, 'Боевая подготовка')
+
+$gym_lesson[0] = $_font_col_rep[0] + 'Гимнастика' + $_font_closer
+$gym_lesson[1] = $_font_col_rep[1] + 'Гимнастика' + $_font_closer
+$gym_lesson[2] = $_font_col_rep[2] + 'Гимнастика' + $_font_closer
+$gym_lesson[3] = $_font_col_rep[3] + 'Гимнастика' + $_font_closer
+$gym_lesson[4] = $_font_col_rep[4] + 'Гимнастика' + $_font_closer
+$gym_lesson[5] = $_font_col_rep[5] + 'Гимнастика' + $_font_closer
+
+$slave_sub_kiss[0] = $_font_col_rep[0] + 'Поцелуи' + $_font_closer
+$slave_sub_kiss[1] = $_font_col_rep[1] + 'Поцелуи' + $_font_closer
+$slave_sub_kiss[2] = $_font_col_rep[2] + 'Поцелуи' + $_font_closer
+$slave_sub_kiss[3] = $_font_col_rep[3] + 'Поцелуи' + $_font_closer
+$slave_sub_kiss[4] = $_font_col_rep[4] + 'Поцелуи' + $_font_closer
+$slave_sub_kiss[5] = $_font_col_rep[5] + 'Поцелуи' + $_font_closer
+
+$slave_sub_thongue[0] = $_font_col_rep[0] + 'Вылизывание' + $_font_closer
+$slave_sub_thongue[1] = $_font_col_rep[1] + 'Вылизывание' + $_font_closer
+$slave_sub_thongue[2] = $_font_col_rep[2] + 'Вылизывание' + $_font_closer
+$slave_sub_thongue[3] = $_font_col_rep[3] + 'Вылизывание' + $_font_closer
+$slave_sub_thongue[4] = $_font_col_rep[4] + 'Вылизывание' + $_font_closer
+$slave_sub_thongue[5] = $_font_col_rep[5] + 'Вылизывание' + $_font_closer
+
+$slave_sub_bj[0] = $_font_col_rep[0] + 'Минет' + $_font_closer
+$slave_sub_bj[1] = $_font_col_rep[1] + 'Минет' + $_font_closer
+$slave_sub_bj[2] = $_font_col_rep[2] + 'Минет' + $_font_closer
+$slave_sub_bj[3] = $_font_col_rep[3] + 'Минет' + $_font_closer
+$slave_sub_bj[4] = $_font_col_rep[4] + 'Минет' + $_font_closer
+$slave_sub_bj[5] = $_font_col_rep[5] + 'Минет' + $_font_closer
+
+$slave_sub_dt[0] = $_font_col_rep[0] + 'Иррумация' + $_font_closer
+$slave_sub_dt[1] = $_font_col_rep[1] + 'Иррумация' + $_font_closer
+$slave_sub_dt[2] = $_font_col_rep[2] + 'Иррумация' + $_font_closer
+$slave_sub_dt[3] = $_font_col_rep[3] + 'Иррумация' + $_font_closer
+$slave_sub_dt[4] = $_font_col_rep[4] + 'Иррумация' + $_font_closer
+$slave_sub_dt[5] = $_font_col_rep[5] + 'Иррумация' + $_font_closer
+
+$slave_sub_asslik[0] = $_font_col_rep[0] + 'Римминг' + $_font_closer
+$slave_sub_asslik[1] = $_font_col_rep[1] + 'Римминг' + $_font_closer
+$slave_sub_asslik[2] = $_font_col_rep[2] + 'Римминг' + $_font_closer
+$slave_sub_asslik[3] = $_font_col_rep[3] + 'Римминг' + $_font_closer
+$slave_sub_asslik[4] = $_font_col_rep[4] + 'Римминг' + $_font_closer
+$slave_sub_asslik[5] = $_font_col_rep[5] + 'Римминг' + $_font_closer
+
+$slave_sub_hj[0] = $_font_col_rep[0] + 'Работа руками' + $_font_closer
+$slave_sub_hj[1] = $_font_col_rep[1] + 'Работа руками' + $_font_closer
+$slave_sub_hj[2] = $_font_col_rep[2] + 'Работа руками' + $_font_closer
+$slave_sub_hj[3] = $_font_col_rep[3] + 'Работа руками' + $_font_closer
+$slave_sub_hj[4] = $_font_col_rep[4] + 'Работа руками' + $_font_closer
+$slave_sub_hj[5] = $_font_col_rep[5] + 'Работа руками' + $_font_closer
+
+$slave_sub_fj[0] = $_font_col_rep[0] + 'Работа ногами' + $_font_closer
+$slave_sub_fj[1] = $_font_col_rep[1] + 'Работа ногами' + $_font_closer
+$slave_sub_fj[2] = $_font_col_rep[2] + 'Работа ногами' + $_font_closer
+$slave_sub_fj[3] = $_font_col_rep[3] + 'Работа ногами' + $_font_closer
+$slave_sub_fj[4] = $_font_col_rep[4] + 'Работа ногами' + $_font_closer
+$slave_sub_fj[5] = $_font_col_rep[5] + 'Работа ногами' + $_font_closer
+
+$slave_sub_hug[0] = $_font_col_rep[0] + 'Обжимание' + $_font_closer
+$slave_sub_hug[1] = $_font_col_rep[1] + 'Обжимание' + $_font_closer
+$slave_sub_hug[2] = $_font_col_rep[2] + 'Обжимание' + $_font_closer
+$slave_sub_hug[3] = $_font_col_rep[3] + 'Обжимание' + $_font_closer
+$slave_sub_hug[4] = $_font_col_rep[4] + 'Обжимание' + $_font_closer
+$slave_sub_hug[5] = $_font_col_rep[5] + 'Обжимание' + $_font_closer
+
+$slave_sub_pazuri[0] = $_font_col_rep[0] + 'Пазури' + $_font_closer
+$slave_sub_pazuri[1] = $_font_col_rep[1] + 'Пазури' + $_font_closer
+$slave_sub_pazuri[2] = $_font_col_rep[2] + 'Пазури' + $_font_closer
+$slave_sub_pazuri[3] = $_font_col_rep[3] + 'Пазури' + $_font_closer
+$slave_sub_pazuri[4] = $_font_col_rep[4] + 'Пазури' + $_font_closer
+$slave_sub_pazuri[5] = $_font_col_rep[5] + 'Пазури' + $_font_closer
+
+$slave_sub_vaginal[0] = $_font_col_rep[0] + 'Секс' + $_font_closer
+$slave_sub_vaginal[1] = $_font_col_rep[1] + 'Секс' + $_font_closer
+$slave_sub_vaginal[2] = $_font_col_rep[2] + 'Секс' + $_font_closer
+$slave_sub_vaginal[3] = $_font_col_rep[3] + 'Секс' + $_font_closer
+$slave_sub_vaginal[4] = $_font_col_rep[4] + 'Секс' + $_font_closer
+$slave_sub_vaginal[5] = $_font_col_rep[5] + 'Секс' + $_font_closer
+
+$slave_sub_anal[0] = $_font_col_rep[0] + 'Анальный секс' + $_font_closer
+$slave_sub_anal[1] = $_font_col_rep[1] + 'Анальный секс' + $_font_closer
+$slave_sub_anal[2] = $_font_col_rep[2] + 'Анальный секс' + $_font_closer
+$slave_sub_anal[3] = $_font_col_rep[3] + 'Анальный секс' + $_font_closer
+$slave_sub_anal[4] = $_font_col_rep[4] + 'Анальный секс' + $_font_closer
+$slave_sub_anal[5] = $_font_col_rep[5] + 'Анальный секс' + $_font_closer
+
+$slave_sub_fisting[0] = $_font_col_rep[0] + 'Фистинг' + $_font_closer
+$slave_sub_fisting[1] = $_font_col_rep[1] + 'Фистинг' + $_font_closer
+$slave_sub_fisting[2] = $_font_col_rep[2] + 'Фистинг' + $_font_closer
+$slave_sub_fisting[3] = $_font_col_rep[3] + 'Фистинг' + $_font_closer
+$slave_sub_fisting[4] = $_font_col_rep[4] + 'Фистинг' + $_font_closer
+$slave_sub_fisting[5] = $_font_col_rep[5] + 'Фистинг' + $_font_closer
+
+$slave_anal_stretch[0] = $_font_col_rep[0] + 'Анальный фистинг' + $_font_closer
+$slave_anal_stretch[1] = $_font_col_rep[1] + 'Анальный фистинг' + $_font_closer
+$slave_anal_stretch[2] = $_font_col_rep[2] + 'Анальный фистинг' + $_font_closer
+$slave_anal_stretch[3] = $_font_col_rep[3] + 'Анальный фистинг' + $_font_closer
+$slave_anal_stretch[4] = $_font_col_rep[4] + 'Анальный фистинг' + $_font_closer
+$slave_anal_stretch[5] = $_font_col_rep[5] + 'Анальный фистинг' + $_font_closer
+
+$slave_sub_seduce[0] = $_font_col_rep[0] + 'Соблазнение' + $_font_closer
+$slave_sub_seduce[1] = $_font_col_rep[1] + 'Соблазнение' + $_font_closer
+$slave_sub_seduce[2] = $_font_col_rep[2] + 'Соблазнение' + $_font_closer
+$slave_sub_seduce[3] = $_font_col_rep[3] + 'Соблазнение' + $_font_closer
+$slave_sub_seduce[4] = $_font_col_rep[4] + 'Соблазнение' + $_font_closer
+$slave_sub_seduce[5] = $_font_col_rep[5] + 'Соблазнение' + $_font_closer
+
+$slave_sub_masturbation[0] = $_font_col_rep[0] + 'Мастурбация' + $_font_closer
+$slave_sub_masturbation[1] = $_font_col_rep[1] + 'Мастурбация' + $_font_closer
+$slave_sub_masturbation[2] = $_font_col_rep[2] + 'Мастурбация' + $_font_closer
+$slave_sub_masturbation[3] = $_font_col_rep[3] + 'Мастурбация' + $_font_closer
+$slave_sub_masturbation[4] = $_font_col_rep[4] + 'Мастурбация' + $_font_closer
+$slave_sub_masturbation[5] = $_font_col_rep[5] + 'Мастурбация' + $_font_closer
+
+$slave_sub_dildo[0] = $_font_col_rep[0] + 'Фалоиммитаторы' + $_font_closer
+$slave_sub_dildo[1] = $_font_col_rep[1] + 'Фалоиммитаторы' + $_font_closer
+$slave_sub_dildo[2] = $_font_col_rep[2] + 'Фалоиммитаторы' + $_font_closer
+$slave_sub_dildo[3] = $_font_col_rep[3] + 'Фалоиммитаторы' + $_font_closer
+$slave_sub_dildo[4] = $_font_col_rep[4] + 'Фалоиммитаторы' + $_font_closer
+$slave_sub_dildo[5] = $_font_col_rep[5] + 'Фалоиммитаторы' + $_font_closer
+
+$slave_sub_exhibit[0] = $_font_col_rep[0] + 'Эксгибиционизм' + $_font_closer
+$slave_sub_exhibit[1] = $_font_col_rep[1] + 'Эксгибиционизм' + $_font_closer
+$slave_sub_exhibit[2] = $_font_col_rep[2] + 'Эксгибиционизм' + $_font_closer
+$slave_sub_exhibit[3] = $_font_col_rep[3] + 'Эксгибиционизм' + $_font_closer
+$slave_sub_exhibit[4] = $_font_col_rep[4] + 'Эксгибиционизм' + $_font_closer
+$slave_sub_exhibit[5] = $_font_col_rep[5] + 'Эксгибиционизм' + $_font_closer
+
+$slave_sub_humiliation[0] = $_font_col_rep[0] + 'Унижение' + $_font_closer
+$slave_sub_humiliation[1] = $_font_col_rep[1] + 'Унижение' + $_font_closer
+$slave_sub_humiliation[2] = $_font_col_rep[2] + 'Унижение' + $_font_closer
+$slave_sub_humiliation[3] = $_font_col_rep[3] + 'Унижение' + $_font_closer
+$slave_sub_humiliation[4] = $_font_col_rep[4] + 'Унижение' + $_font_closer
+$slave_sub_humiliation[5] = $_font_col_rep[5] + 'Унижение' + $_font_closer
+
+$slave_sub_enema[0] = $_font_col_rep[0] + 'Клизмы' + $_font_closer
+$slave_sub_enema[1] = $_font_col_rep[1] + 'Клизмы' + $_font_closer
+$slave_sub_enema[2] = $_font_col_rep[2] + 'Клизмы' + $_font_closer
+$slave_sub_enema[3] = $_font_col_rep[3] + 'Клизмы' + $_font_closer
+$slave_sub_enema[4] = $_font_col_rep[4] + 'Клизмы' + $_font_closer
+$slave_sub_enema[5] = $_font_col_rep[5] + 'Клизмы' + $_font_closer
+
+$slave_sub_mazo[0] = $_font_col_rep[0] + 'Мазохизм' + $_font_closer
+$slave_sub_mazo[1] = $_font_col_rep[1] + 'Мазохизм' + $_font_closer
+$slave_sub_mazo[2] = $_font_col_rep[2] + 'Мазохизм' + $_font_closer
+$slave_sub_mazo[3] = $_font_col_rep[3] + 'Мазохизм' + $_font_closer
+$slave_sub_mazo[4] = $_font_col_rep[4] + 'Мазохизм' + $_font_closer
+$slave_sub_mazo[5] = $_font_col_rep[5] + 'Мазохизм' + $_font_closer
+
+$slave_sub_selfpain[0] = $_font_col_rep[0] + 'Самоистязание' + $_font_closer
+$slave_sub_selfpain[1] = $_font_col_rep[1] + 'Самоистязание' + $_font_closer
+$slave_sub_selfpain[2] = $_font_col_rep[2] + 'Самоистязание' + $_font_closer
+$slave_sub_selfpain[3] = $_font_col_rep[3] + 'Самоистязание' + $_font_closer
+$slave_sub_selfpain[4] = $_font_col_rep[4] + 'Самоистязание' + $_font_closer
+$slave_sub_selfpain[5] = $_font_col_rep[5] + 'Самоистязание' + $_font_closer
+
+$slave_sub_piss[0] = $_font_col_rep[0] + 'Золотой дождь' + $_font_closer
+$slave_sub_piss[1] = $_font_col_rep[1] + 'Золотой дождь' + $_font_closer
+$slave_sub_piss[2] = $_font_col_rep[2] + 'Золотой дождь' + $_font_closer
+$slave_sub_piss[3] = $_font_col_rep[3] + 'Золотой дождь' + $_font_closer
+$slave_sub_piss[4] = $_font_col_rep[4] + 'Золотой дождь' + $_font_closer
+$slave_sub_piss[5] = $_font_col_rep[5] + 'Золотой дождь' + $_font_closer
+
+$slave_sub_kopro[0] = $_font_col_rep[0] + 'Копрофилия' + $_font_closer
+$slave_sub_kopro[1] = $_font_col_rep[1] + 'Копрофилия' + $_font_closer
+$slave_sub_kopro[2] = $_font_col_rep[2] + 'Копрофилия' + $_font_closer
+$slave_sub_kopro[3] = $_font_col_rep[3] + 'Копрофилия' + $_font_closer
+$slave_sub_kopro[4] = $_font_col_rep[4] + 'Копрофилия' + $_font_closer
+$slave_sub_kopro[5] = $_font_col_rep[5] + 'Копрофилия' + $_font_closer
+
+$slave_sub_threesome[0] = $_font_col_rep[0] + 'М+Ж+Ж' + $_font_closer
+$slave_sub_threesome[1] = $_font_col_rep[1] + 'М+Ж+Ж' + $_font_closer
+$slave_sub_threesome[2] = $_font_col_rep[2] + 'М+Ж+Ж' + $_font_closer
+$slave_sub_threesome[3] = $_font_col_rep[3] + 'М+Ж+Ж' + $_font_closer
+$slave_sub_threesome[4] = $_font_col_rep[4] + 'М+Ж+Ж' + $_font_closer
+$slave_sub_threesome[5] = $_font_col_rep[5] + 'М+Ж+Ж' + $_font_closer
+
+$slave_sub_dp[0] = $_font_col_rep[0] + 'Два ствола' + $_font_closer
+$slave_sub_dp[1] = $_font_col_rep[1] + 'Два ствола' + $_font_closer
+$slave_sub_dp[2] = $_font_col_rep[2] + 'Два ствола' + $_font_closer
+$slave_sub_dp[3] = $_font_col_rep[3] + 'Два ствола' + $_font_closer
+$slave_sub_dp[4] = $_font_col_rep[4] + 'Два ствола' + $_font_closer
+$slave_sub_dp[5] = $_font_col_rep[5] + 'Два ствола' + $_font_closer
+
+$slave_sub_tp[0] = $_font_col_rep[0] + 'Три ствола' + $_font_closer
+$slave_sub_tp[1] = $_font_col_rep[1] + 'Три ствола' + $_font_closer
+$slave_sub_tp[2] = $_font_col_rep[2] + 'Три ствола' + $_font_closer
+$slave_sub_tp[3] = $_font_col_rep[3] + 'Три ствола' + $_font_closer
+$slave_sub_tp[4] = $_font_col_rep[4] + 'Три ствола' + $_font_closer
+$slave_sub_tp[5] = $_font_col_rep[5] + 'Три ствола' + $_font_closer
+
+$slave_sub_gangbang[0] = dyneval($vb_cycle, 0, 'Пятёрка')
+$slave_sub_gangbang[1] = dyneval($vb_cycle, 1, 'Пятёрка')
+$slave_sub_gangbang[2] = dyneval($vb_cycle, 2, 'Пятёрка')
+$slave_sub_gangbang[3] = dyneval($vb_cycle, 3, 'Пятёрка')
+$slave_sub_gangbang[4] = dyneval($vb_cycle, 4, 'Пятёрка')
+$slave_sub_gangbang[5] = dyneval($vb_cycle, 5, 'Пятёрка')
+
+$slave_sub_bukake[0] = dyneval($vb_cycle, 0, 'Букакэ')
+$slave_sub_bukake[1] = dyneval($vb_cycle, 1, 'Букакэ')
+$slave_sub_bukake[2] = dyneval($vb_cycle, 2, 'Букакэ')
+$slave_sub_bukake[3] = dyneval($vb_cycle, 3, 'Букакэ')
+$slave_sub_bukake[4] = dyneval($vb_cycle, 4, 'Букакэ')
+$slave_sub_bukake[5] = dyneval($vb_cycle, 5, 'Букакэ')
+
+$slave_sub_zoosex[0] = dyneval($vb_cycle, 0, 'Кобель')
+$slave_sub_zoosex[1] = dyneval($vb_cycle, 1, 'Кобель')
+$slave_sub_zoosex[2] = dyneval($vb_cycle, 2, 'Кобель')
+$slave_sub_zoosex[3] = dyneval($vb_cycle, 3, 'Кобель')
+$slave_sub_zoosex[4] = dyneval($vb_cycle, 4, 'Кобель')
+$slave_sub_zoosex[5] = dyneval($vb_cycle, 5, 'Кобель')
+
+$slave_svinesex[0] = dyneval($vb_cycle, 0, 'Хряк')
+$slave_svinesex[1] = dyneval($vb_cycle, 1, 'Хряк')
+$slave_svinesex[2] = dyneval($vb_cycle, 2, 'Хряк')
+$slave_svinesex[3] = dyneval($vb_cycle, 3, 'Хряк')
+$slave_svinesex[4] = dyneval($vb_cycle, 4, 'Хряк')
+$slave_svinesex[5] = dyneval($vb_cycle, 5, 'Хряк')
+
+$slave_horsesex[0] = dyneval($vb_cycle, 0, 'Жеребец')
+$slave_horsesex[1] = dyneval($vb_cycle, 1, 'Жеребец')
+$slave_horsesex[2] = dyneval($vb_cycle, 2, 'Жеребец')
+$slave_horsesex[3] = dyneval($vb_cycle, 3, 'Жеребец')
+$slave_horsesex[4] = dyneval($vb_cycle, 4, 'Жеребец')
+$slave_horsesex[5] = dyneval($vb_cycle, 5, 'Жеребец')
+
+$slave_tentacle[0] = dyneval($vb_cycle, 0, 'Исчадие')
+$slave_tentacle[1] = dyneval($vb_cycle, 1, 'Исчадие')
+$slave_tentacle[2] = dyneval($vb_cycle, 2, 'Исчадие')
+$slave_tentacle[3] = dyneval($vb_cycle, 3, 'Исчадие')
+$slave_tentacle[4] = dyneval($vb_cycle, 4, 'Исчадие')
+$slave_tentacle[5] = dyneval($vb_cycle, 5, 'Исчадие')
+
+$music_lesson[0] = dyneval($vb_cycle, 0, 'Музыка')
+$music_lesson[1] = dyneval($vb_cycle, 1, 'Музыка')
+$music_lesson[2] = dyneval($vb_cycle, 2, 'Музыка')
+$music_lesson[3] = dyneval($vb_cycle, 3, 'Музыка')
+$music_lesson[4] = dyneval($vb_cycle, 4, 'Музыка')
+$music_lesson[5] = dyneval($vb_cycle, 5, 'Музыка')
+
+$alchemy_lesson[0] = dyneval($vb_cycle, 0, 'Алхимия')
+$alchemy_lesson[1] = dyneval($vb_cycle, 1, 'Алхимия')
+$alchemy_lesson[2] = dyneval($vb_cycle, 2, 'Алхимия')
+$alchemy_lesson[3] = dyneval($vb_cycle, 3, 'Алхимия')
+$alchemy_lesson[4] = dyneval($vb_cycle, 4, 'Алхимия')
+$alchemy_lesson[5] = dyneval($vb_cycle, 5, 'Алхимия')
+
+$enchant_lesson[0] = dyneval($vb_cycle, 0, 'Зачарование')
+$enchant_lesson[1] = dyneval($vb_cycle, 1, 'Зачарование')
+$enchant_lesson[2] = dyneval($vb_cycle, 2, 'Зачарование')
+$enchant_lesson[3] = dyneval($vb_cycle, 3, 'Зачарование')
+$enchant_lesson[4] = dyneval($vb_cycle, 4, 'Зачарование')
+$enchant_lesson[5] = dyneval($vb_cycle, 5, 'Зачарование')
+
+$domestik_lesson[0] = dyneval($vb_cycle, 0, 'Приручение')
+$domestik_lesson[1] = dyneval($vb_cycle, 1, 'Приручение')
+$domestik_lesson[2] = dyneval($vb_cycle, 2, 'Приручение')
+$domestik_lesson[3] = dyneval($vb_cycle, 3, 'Приручение')
+$domestik_lesson[4] = dyneval($vb_cycle, 4, 'Приручение')
+$domestik_lesson[5] = dyneval($vb_cycle, 5, 'Приручение')
+
+$dressur_lesson[0] = dyneval($vb_cycle, 0, 'Дрессировка')
+$dressur_lesson[1] = dyneval($vb_cycle, 1, 'Дрессировка')
+$dressur_lesson[2] = dyneval($vb_cycle, 2, 'Дрессировка')
+$dressur_lesson[3] = dyneval($vb_cycle, 3, 'Дрессировка')
+$dressur_lesson[4] = dyneval($vb_cycle, 4, 'Дрессировка')
+$dressur_lesson[5] = dyneval($vb_cycle, 5, 'Дрессировка')
+
+$dressage_lesson[0] = dyneval($vb_cycle, 0, 'Выездка')
+$dressage_lesson[1] = dyneval($vb_cycle, 1, 'Выездка')
+$dressage_lesson[2] = dyneval($vb_cycle, 2, 'Выездка')
+$dressage_lesson[3] = dyneval($vb_cycle, 3, 'Выездка')
+$dressage_lesson[4] = dyneval($vb_cycle, 4, 'Выездка')
+$dressage_lesson[5] = dyneval($vb_cycle, 5, 'Выездка')
+
+$draft_lesson[0] = dyneval($vb_cycle, 0, 'Упряжка')
+$draft_lesson[1] = dyneval($vb_cycle, 1, 'Упряжка')
+$draft_lesson[2] = dyneval($vb_cycle, 2, 'Упряжка')
+$draft_lesson[3] = dyneval($vb_cycle, 3, 'Упряжка')
+$draft_lesson[4] = dyneval($vb_cycle, 4, 'Упряжка')
+$draft_lesson[5] = dyneval($vb_cycle, 5, 'Упряжка')
+
+$tantra_lesson[0] = dyneval($vb_cycle, 0, 'Тантра-йога')
+$tantra_lesson[1] = dyneval($vb_cycle, 1, 'Тантра-йога')
+$tantra_lesson[2] = dyneval($vb_cycle, 2, 'Тантра-йога')
+$tantra_lesson[3] = dyneval($vb_cycle, 3, 'Тантра-йога')
+$tantra_lesson[4] = dyneval($vb_cycle, 4, 'Тантра-йога')
+$tantra_lesson[5] = dyneval($vb_cycle, 5, 'Тантра-йога')
+
+$_lesson[0] = dyneval($vb_cycle, 0, 'Урок')
+$_lesson[1] = dyneval($vb_cycle, 1, 'Урок')
+$_lesson[2] = dyneval($vb_cycle, 2, 'Урок')
+$_lesson[3] = dyneval($vb_cycle, 3, 'Урок')
+$_lesson[4] = dyneval($vb_cycle, 4, 'Урок')
+$_lesson[5] = dyneval($vb_cycle, 5, 'Урок')
+
+$fff[0] = ''
+$fff[1] = ''
+$fff[2] = ''
+$fff[3] = ''
+$fff[4] = ''
+$fff[5] = ''
+
+--- #var_base ---------------------------------
+

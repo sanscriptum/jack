@@ -1,0 +1,68 @@
+# shop_general
+!Общий интерфейс для выбора опций в разных заведениях\
+GS '_layout'
+if colloseum_fight > 0:
+ gt 'colloseum_fight'
+END
+
+IF skip_to > 0: 
+ sp_txt = skip_to
+ skip_to = 0
+END
+
+$text_display = ''
+dynamic $display_options[sp_txt]
+
+IF $interaction_type = 'special':
+ *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+END
+
+IF $place = 'gastronom':
+! сразу выводится сумма запасов дома, минус алкоголь(не занимает места?), by Lyazar
+! возможно и не нужно, т.к. впилил подсчет в каждый пункт магаза, но пусть будет
+ dynamic $get_frige_space
+ $place_info['gastronom'] = 'ЗАПАСЫ ДОМА [<<frige_items>>/<<estate_size[$estate]>>]:
+Овощи х<<frige["vegetables"]>>
+Мука и крупы х<<frige["flower"]>>
+Зелень и специи х<<frige["spice"]>>
+Сыр и масло х<<frige["cheese"]>>
+Алкоголь х<<frige["alcohol"]>>
+Яйца х<<frige["eggs"]>>
+Молоко х<<frige["milk"]>>
+Сливки х<<frige["cream"]>>
+Мясной фарш х<<frige["mince"]>>
+Вырезка х<<frige["meat"]>>
+Девчатина х<<frige["virgin_meat"]>><br> '
+END
+
+if npc = 0:
+ $info_bar = ''
+ *p '<div id = "side_panel_main"><center><font size = 50%><<$place_name[$place]>></font>
+<<$place_location[$place]>>
+
+ Информация к размышлению:
+ </center></div>'
+ *p '<div id = "side_panel_text">  <<$place_info[$place]>>
+</div>'  
+ else
+ $info_bar = '' 
+ *p '<div id = "bg"><img src="content\pic\characters\<<$npc_image[$npc_id]>>.gif"></div>' 
+ *p '<div id = "side_panel_main"><center><font size = 50%><<$npc_name[$npc_id]>></font>
+<<$npc_status[$npc_id]>>
+
+Информация к размышлению:
+</center></div>'
+ *p '<div id = "side_panel_text">  <<$npc_attitude[npc_attitude[$npc_id]]>>
+
+ <<$npc_info[$npc_id]>>
+</div>'
+END
+
+*p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+*p '<div id = "text"><<$sp_text[sp_txt]>></div>'
+*p '<div id = "bg"><<$text_display>></div>'
+*p '<div id = "sparks_display"><<sparks>>$</div>'
+
+if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3'
+--- shop_general ---------------------------------
+

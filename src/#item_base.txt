@@ -1,0 +1,778 @@
+# #item_base
+!База данных по предметам
+![0]
+$item_name[0] = '-'
+item_price[0] = 0
+item_size[0] = 0
+$item_description[0] = ''
+$item_demo[0] = 'scene\'
+
+$item_property[0] = {}
+$item_property_off[0] = {
+}
+
+!TODO: заменить хардкод цены в описании на переменную
+!TODO: допилить замены до конца
+!TODO: проверить соответствие цены в тексте и цены
+!Замена для копипасты предметов, by Lyazar
+$ib_cycle = {
+    $_ib_cycle_name = $args[0]
+    $item_name[$_ib_cycle_name] = $args[1]
+    item_price[$_ib_cycle_name] = args[2]
+    $item_description[$_ib_cycle_name] = $args[3]
+    $item_demo[$_ib_cycle_name] = $args[4]
+    
+    killvar '$_ib_cycle_name'
+}
+
+!Например:
+
+!$item_name["голая"] = 'Обнажена'
+!item_price["голая"] = 0
+!$item_description["голая"] = '   Ваша рабыня совершенно голая.'
+!$item_demo["голая"] = 'scene\'
+
+! Заменяется на:
+
+!dynamic $ib_cycle, 'голая', 'Обнажена', 0, '   Ваша рабыня совершенно голая.', 'scene\'
+!-----Замена для копипасты предметов, by Lyazar-----
+
+!ПРЕДМЕТЫ ДЛЯ ГЕРОЯ
+!["man_rugs"]
+$item_name['man_rugs'] = 'Поношенная одежда'
+item_price['man_rugs'] = 0
+item_size['man_rugs'] = 0
+$item_description['man_rugs'] = '   Эта старая одежда слишком износилась и вышла из моды. Совершенно не отвечает никаким вашим целям. Лучще бы её на что-то поменять.'
+style_modifer['man_rugs'] = -1
+comfort_modifer['man_rugs'] = -1
+$item_property['man_rugs'] = {
+}
+
+!["comfy_robes"]
+$item_name['comfy_robes'] = 'Домашний халат'
+item_price['comfy_robes'] = 10
+item_size['comfy_robes'] = 0
+$item_description['comfy_robes'] = '   Удобный и мягкий домашний халат. Выглядит не особо красиво, зато очень комфортен в ношении. То что надо, чтобы расслабиться!'
+style_modifer['comfy_robes'] = -1
+comfort_modifer['comfy_robes'] = 1
+$item_property['comfy_robes'] = {
+if master_mood['pos_master_cloth'] < 1: master_mood['pos_master_cloth'] = 1
+master_mood['neg_master_cloth'] = 0
+}
+
+!["regal_suit"]
+$item_name['regal_suit'] = 'Пафосный наряд'
+item_price['regal_suit'] = 20
+item_size['regal_suit'] = 0
+$item_description['regal_suit'] = '   Эта тяжелая одежда богато украшена драгоценными вставками и декоративными элементами, заставляющими вас выглядеть больше и величественнее. Красиво и внушительно конечно, однако совсем не практично.'
+style_modifer['regal_suit'] = 1
+comfort_modifer['regal_suit'] = -1
+$item_property['regal_suit'] = {
+}
+
+!["fancy_suit"]
+$item_name['fancy_suit'] = 'Красивый наряд'
+item_price['fancy_suit'] = 10
+item_size['fancy_suit'] = 0
+$item_description['fancy_suit'] = '   Уследить за модой Вечного Рима практически невозможно, но многие пытаются. В любом случае этот наряд представляет собой идеальный компромисс между роскошью и удобством.'
+style_modifer['fancy_suit'] = 1
+comfort_modifer['fancy_suit'] = 0
+$item_property['fancy_suit'] = {
+}
+
+!["formal_suit"]
+$item_name['formal_suit'] = 'Формальный костюм'
+item_price['formal_suit'] = 10
+item_size['formal_suit'] = 0
+$item_description['formal_suit'] = '   Очень строгая одежда. Выглядит довольно старомодно и не придаёт очарования, но по крайней мере вас будут воспринимать серьёзно. Отлично подойдёт для импрессарио или конферансье.'
+style_modifer['formal_suit'] = 0
+comfort_modifer['formal_suit'] = 0
+$item_property['formal_suit'] = {
+boost_up['master_artdirector'] = 1
+if master_mood['neg_master_cloth'] < 1: master_mood['neg_master_cloth'] = 1
+master_mood['pos_master_cloth'] = 0
+}
+
+!["aketon"]
+$item_name['aketon'] = 'Акетон'
+item_price['aketon'] = 10
+item_size['aketon'] = 0
+$item_description['aketon'] = '   Стёганный поддоспешник, достаточно лёгкий чтобы использоваться в качестве повседневной одежды. Отличный наряд для воина.'
+style_modifer['aketon'] = 0
+comfort_modifer['aketon'] = 0
+$item_property['aketon'] = {
+boost_up['master_fighter'] = 1
+}
+
+!["livery"]
+$item_name['livery'] = 'Ливрея'
+item_price['livery'] = 10
+item_size['livery'] = 0
+$item_description['livery'] = '   Богато украшенная ливрея старшего-дворецкого. В такой вы сразу почувствуете себя опытным начальником над слугами.'
+style_modifer['livery'] = 0
+comfort_modifer['livery'] = 0
+$item_property['livery'] = {
+boost_up['master_butler'] = 1
+}
+
+!["medic_robes"]
+$item_name['medic_robes'] = 'Медицинский халат'
+item_price['medic_robes'] = 10
+item_size['medic_robes'] = 0
+$item_description['medic_robes'] = '   Очень удобная и практичная одежда для медицинского работника. Сразу делает вас более компетентным доктором - хотя бы за счёт самовнушения.'
+style_modifer['medic_robes'] = 0
+comfort_modifer['medic_robes'] = 0
+$item_property['medic_robes'] = {
+boost_up['master_medic'] = 1
+}
+
+!["wizard_robes"]
+$item_name['wizard_robes'] = 'Роба волшебника'
+item_price['wizard_robes'] = 10
+item_size['wizard_robes'] = 0
+$item_description['wizard_robes'] = '   Этот ритуальный костюм, усеянный магическими знаками действительно способен увеличивать вашу магическую силу!'
+style_modifer['wizard_robes'] = 0
+comfort_modifer['wizard_robes'] = 0
+$item_property['wizard_robes'] = {
+boost_up['master_mage'] = 1
+}
+
+!Вороний венец ["raven_crown"]
+dynamic $ib_cycle, 'raven_crown', 'Вороний венец', 0, '   Тут ничего нет.', 'scene\'
+
+$item_property["raven_crown"] = {
+    auspex = 1
+    item_supermacy_bonus += 1
+    raven_crown_on = 1
+}
+$item_property_off["raven_crown"] = {
+    auspex = 0
+    item_supermacy_bonus -= 1
+    raven_crown_on = 0
+}
+
+!Самоцвет химеры ["chimera_earring"]
+dynamic $ib_cycle, 'chimera_earring', 'Самоцвет химеры', 0, '   Тут ничего нет.', 'scene\'
+
+$item_property["chimera_earring"] = {
+    chimera_gem_on = 1
+    item_supermacy_bonus += 2
+}
+$item_property_off["chimera_earring"] = {
+    chimera_gem_on = 0
+    item_supermacy_bonus -= 2
+}
+
+!Амулет змеи ["snake_amulet"]
+dynamic $ib_cycle, 'snake_amulet', 'Змеиный талисман', 0, '   Тут ничего нет.', 'scene\'
+
+$item_property["snake_amulet"] = {
+    snake_amulet_on = 1
+    item_supermacy_bonus += 1
+}
+$item_property_off["snake_amulet"] = {
+    snake_amulet_on = 0
+    item_supermacy_bonus -= 1
+}
+
+!Кольцо быка ["bull_ring"]
+dynamic $ib_cycle, 'bull_ring', 'Кольцо быка', 0, '   Тут ничего нет.', 'scene\'
+
+$item_property["bull_ring"] = {
+    bull_ring_on = 1
+    item_supermacy_bonus += 1
+}
+$item_property_off["bull_ring"] = {
+    bull_ring_on = 0
+    item_supermacy_bonus -= 1
+}
+
+
+!ДРУГИЕ ПРЕДМЕТЫ
+!["пусто"]
+dynamic $ib_cycle, 'пусто', '-', 0, '   Тут ничего нет.', 'scene\'
+
+$item_property["пусто"] = {
+}
+
+!ОДЕЖДА
+!["голая"]
+dynamic $ib_cycle, 'голая', 'Обнажена', 0, '   Ваша рабыня совершенно голая.', 'scene\'
+
+$item_property["голая"] = {
+    daily_bonus["mood"] -= 1
+}
+
+!Фартук ['apron']
+dynamic $ib_cycle, 'apron', 'Фартук с оборками', 5, '   Цена: 5 искр. <br>   Такой фартук очень удобен на кухне. Традиционно носится на голое тело, оставляя массу возможностей насладиться зрелищем вашей женщины работающей на кухне.', 'scene\item_apron'
+
+$item_property["apron"] = {
+    slave_rate["style"] += 1
+    learn_bonus["cook"] += 1
+}
+
+!Платье горничной ["maid_dress"]
+dynamic $ib_cycle, 'maid_dress', 'Униформа горничной', 5, '   Цена: 5 искр.  <br>   Модель кроя этого платья внушена классической униформой французской горничной, однако для экономии ткани юбка предельно укорочена, а грудь часто оставляется открытой. Клиентов это как правило вполне устраивает.', 'scene\item_maido'
+
+$item_property["maid_dress"] = {
+    slave_rate["style"] += 1
+    learn_bonus["service"] += 1
+}
+
+!Платье медсестры ["nurse_dress"]
+dynamic $ib_cycle, 'nurse_dress', 'Униформа медсестры', 5, '   Цена: 5 искр.  <br>   Стоит надеть на вашу рабыню радикально обрезанный розовый или белый халатик и шапочку с крестом, как она превращается в очаровательную шаловливую медсестру. То что нужно для подъема духа любого больного.', 'scene\item_nurse'
+
+$item_property["nurse_dress"] = {
+    learn_bonus["nurse"] += 1
+    slave_rate["style"] += 1
+}
+
+!["sailor_foku"]
+dynamic $ib_cycle, 'sailor_foku', 'Школьная форма', 10, '   Цена: 10 искр  <br>   Это платье выполнено по тем же лекалам что и униформа девушек из академии св. Петра. Если ваша рабыня когда либо будет посещать занятия там, в этом платье она не будет чувствовать себя чужой. В любом случае, что может быть очаровательней наивной и юной школьницы?', 'scene\item_sailor'
+
+$item_property["sailor_foku"] = {
+    slave_rate["style"] += 1
+    learn_bonus["secretary"] += 1
+    learn_bonus["academy"] += 1
+}
+
+!["enchanter_robe"]
+dynamic $ib_cycle, 'enchanter_robe', 'Роба чародейки', 5, '   Цена: 5 искр  <br>   Выполненная из очень легкой но непрозрачной ткани эта чародейская роба с капюшоном полностью скрывает фигуру вашей рабыни. Не очень сексуально, зато весьма загадочно и помогает настроиться на мистический лад.', 'scene\item_robe'
+
+$item_property["enchanter_robe"] = {
+    slave_rate["style"] += 0
+    learn_bonus["enchanter"] += 2
+}
+
+!["leotard"]
+dynamic $ib_cycle, 'leotard', 'Трико для гимнастики', 5, '   Цена: 5 искр  <br>   Облегающее трико выгодно подчеркнет фигуру вашей подопечной, при этом совершенно не будет стеснять её движений. Отлично подойдет для любой спортивной активности, за исключением сражений.', 'scene\item_leotard'
+
+$item_property["leotard"] = {
+    learn_bonus["stamina"] += 1
+    learn_bonus["callisthenics"] += 1
+}
+
+!["chainmail_bikini"]
+dynamic $ib_cycle, 'chainmail_bikini', 'Кольчужное бикини', 5, '   Цена: 5 искр  <br>   Классическая одежда гладиаторов. Я повторяю - одежда. Это не броня, а сценический реквизит выполненный из легкого и блестящего анодированного алюминия. Покрой настолько минимален, что почти ничего не скрывает.', 'scene\item_chainmail_bikini'
+
+$item_property["chainmail_bikini"] = {
+    slave_rate["style"] += 1
+    learn_bonus["gladiatrix"] += 1
+}
+
+!["sun_dress"]
+dynamic $ib_cycle, 'sun_dress', 'Лёгкий сарафан', 5, '   Цена: 5 искр  <br>   Это милое платьице отлично подходит для отдыха и настраивает на позитивный лад. Конечно есть платья покрасивее, есть более функциональные, но носить сарафан просто очень приятно.', 'scene\item_sundress'
+
+$item_property["sun_dress"] = {
+    slave_rate["style"] += 1
+    daily_bonus["mood"] += 1
+    if slave["pos_clothes"] < 2: slave["pos_clothes"] += 1
+}
+
+!["laced_underwear"]
+dynamic $ib_cycle, 'laced_underwear', 'Кружевное бельё', 5, '   Цена: 5 искр  <br>   В этом наборе сексуального кружевного белья, включающем бюстгальтер, трусики, легкий корсет и чулки с подвязками, любая девушка будет желанной. Порадуйте себя красивым зрелищем и настройте вашу рабыню на сексуальный лад!', 'scene\item_laced_underwear'
+
+$item_property["laced_underwear"] = {
+    slave_rate["style"] += 1
+    learn_bonus["sex"] += 1
+}
+
+!["cocktail_dress"]
+dynamic $ib_cycle, 'cocktail_dress', 'Вечернее платье', 10, '   Цена: 10 искр  <br>   Мы подберем оптимальный для фигуры вашей рабыни покрой и лучшую ткань. В таком платье не стыдно будет появиться на любом приеме. Очень стильно и вполне по доступно по цене - великолепный выбор.', 'scene\item_laced_gloves'
+
+$item_property["cocktail_dress"] = {
+    slave_rate["style"] += 2
+}
+
+!["rubber_dress"]
+dynamic $ib_cycle, 'rubber_dress', 'Платье из латекса', 20, '   Цена: 20 искр  <br>   Это выполненное из тонкого латекса платье будет облегать тело вашей рабыни так плотно, что будут заметны даже мельчайшие детали. В то же время платье обладает строгим кроем, который позволит с успехом использовать его на званных вечерах.', 'scene\item_rubber_dress'
+
+$item_property["rubber_dress"] = {
+    slave_rate["style"] += 2 
+    learn_bonus["sex"] += 1
+}
+
+!["bellydance"]
+dynamic $ib_cycle, 'bellydance', 'Экзотический наряд', 25, '   Цена: 25 искр  <br>   В нашем городе трудно удивить кого-то экзотическими нарядами, но этот костюм с прозрачными шароварами и рукавами, с блестящей и звенящей золотой манистой определенно подойдет для такой задачи. И для танцев живота тоже!', 'scene\item_bellydance'
+
+$item_property["bellydance"] = {
+    slave_rate["style"] += 2 
+    slave_rate["exotic_bonus"] += 10 
+    learn_bonus["callisthenics"] += 1
+}
+
+!["ukata"]
+dynamic $ib_cycle, 'ukata', 'Кимоно-юката', 20, '   Цена: 20 искр  <br>   Красивая, но строгая японская одежда - выбор гейши. Яркая расцветка ткани и пышный широкий пояс позволят подчеркнуть богатство и красоту наряда, а строгий крой настроит на формальное общение в элитной компании.', 'scene\item_ukata'
+
+$item_property["ukata"] = {
+    slave_rate["style"] += 2
+    learn_bonus["expression"] += 1
+}
+
+!["leather_corset"]
+dynamic $ib_cycle, 'leather_corset', 'Кожаный корсет', 50, '   Цена: 50 искр  <br>   Корсетное платье - лучший выбор для любой сексуальной рабыни! Жёсткий корсет с металлическими ребрами напомнит ей о дисциплине и сформирует фигуру, а платье с открытым передом сексуально оголит грудь и киску. Красиво, возбуждающе и практично!', 'scene\item_corset'
+
+$item_property["leather_corset"] = {
+    slave_rate["style"] += 2
+    learn_bonus["sex"] += 2
+}
+
+!["rich_dress"]
+dynamic $ib_cycle, 'rich_dress', 'Роскошное платье', 50, '   Цена: 50 искр  <br>   Да это платье будет дорогим и не слишком удобным, но оно будет РОСКОШНЫМ! Наши лучшие модельеры и швеи позаботятся о том, чтобы ваша рабыня стала образцом элегантности и вкуса.', 'scene\item_rich_dress'
+
+$item_property["rich_dress"] = {
+    slave_rate["style"] += 3
+}
+
+!["wedding_dress"]
+dynamic $ib_cycle, 'wedding_dress', 'Подвенечное платье', 100, '   Цена: 100 искр  <br>   На свете нет ничего лучше подвенечного платья. Это не просто роскошный наряд, это символ чистоты и счастья. Каждая девушка мечтает носить свадебное платье и каждую оно сделает неотразимой! Для особых церемоний мы предлагаем сексуально открытый спереди вариант.', 'scene\item_wedding_dress'
+
+$item_property["wedding_dress"] = {
+    slave_rate["style"] += 3
+    daily_bonus["mood"] += 2
+    if slave["pos_clothes"] < 3: slave["pos_clothes"] += 2
+}
+
+
+!ОБУВЬ И ПЕРЧАТКИ
+!["rubber_gloves"]
+dynamic $ib_cycle, 'rubber_gloves', 'Резиновые перчатки', 5, '   Цена: 5 искр  <br>   Хотя резиновые перчатки не подойдут ни к одному костюму и не украсят ручки вашей рабыни, они имеют очень много применений. Такие перчатки защитят нежную кожу девушки во время уборки и мытья посуды, а еще пригодятся для некоторых медицинских процедур.', 'scene\item_rubber_gloves'
+
+$item_property["rubber_gloves"] = {
+    learn_bonus["nurse"] += 1
+    learn_bonus["service"] += 1
+}
+
+!["laced_gloves"]
+
+dynamic $ib_cycle, 'laced_gloves', 'Кружевные перчатки', 5, '   Цена: 5 искр  <br>   Длинные ажурные перчатки до локтя подчеркнут стиль и добавят костюму вашей рабыни особый шарм. Мы предлагаем варианты самых различных расцветок, сплошные и сеточкой, с пальцами и без.', 'scene\item_laced_gloves'
+
+$item_property["laced_gloves"] = {
+    slave_rate["style"] += 1
+}
+
+!["plastic_bracers"]
+dynamic $ib_cycle, 'plastic_bracers', 'Углепластиковые наручи', 10, '   Цена: 10 искр  <br>   Легкие и прочные наручи из черного углепластика вряд ли прибавят вашей рабыне элегантности, но зато отлично защитят её руки во время боевых тренировок. А здоровье иногда важнее красоты.', 'scene\item_bracers'
+
+$item_property["plastic_bracers"] = {
+    slave_rate["style"] -= 1
+    learn_bonus["gladiatrix"] += 2
+}
+
+!["fluffy_gloves"]
+dynamic $ib_cycle, 'fluffy_gloves', 'Пушистые лапки', 5, '   Цена: 10 искр  <br>   Эти пухлые и пушистые перчатки изготовлены в виде мягких кошачьих лапок. Совершенно не функциональное, но очень милое дополнение к гардеробу вашей рабыни. Ей проще будет почувствовать себя милым домашним питомцем!', 'scene\item_fluffy_gloves'
+
+$item_property["fluffy_gloves"] = {
+    slave_rate["style"] += 1
+    learn_bonus["pet"] += 1
+}
+
+!["leather_gloves"]
+dynamic $ib_cycle, 'leather_gloves', 'Кожаные перчатки', 10, '   Цена: 10 искр  <br>   Элегантные, но прочные кожаные перчатки не только послужат стильным дополнением к наряду, но и защитят руки вашей рабыни от мозолей во время тренировок с оружием.', 'scene\item_leather_gloves'
+
+$item_property["leather_gloves"] = {
+    slave_rate["style"] += 1
+    learn_bonus["gladiatrix"] += 1
+}
+
+!["tabi"]
+dynamic $ib_cycle, 'tabi', 'Носки-таби', 5, '   Цена: 10 искр  <br>   Этот тип плотных носков имеет покрой с отдельным большим пальцем. Классическая обувь для занятия боевыми искусствами и бесшумного передвижения. За десять искр мы предлагаем набор которого хватит на всё время обучения.', 'scene\item_tabi'
+
+$item_property["tabi"] = {
+    learn_bonus["gladiatrix"] += 1
+}
+
+!["fluffy_stepins"]
+dynamic $ib_cycle, 'fluffy_stepins', 'Пушистые тапочки', 5, '   Цена: 5 искр  <br>   Мы предлагаем самые разные варианты мягких и пушистых домашних тапочек, которые создадут непередаваемое ощущение тепла и комфорта. У нас есть даже варианты в виде мордочек разных милых животных!', 'scene\item_fluffy_stepins'
+
+$item_property["fluffy_stepins"] = {
+    daily_bonus["mood"] += 1
+    if slave["pos_clothes"] < 1: slave["pos_clothes"] += 1
+}
+
+!["pointes"]
+dynamic $ib_cycle, 'pointes', 'Балетные чешки', 5, '   Цена: 5 искр  <br>   Непременный атрибут каждой балерины - пуанты. Самая удобная обувь для бальных танцев.', 'scene\item_pointes'
+
+$item_property["pointes"] = {
+    learn_bonus["callisthenics"] += 1
+}
+
+!["sneakers"]
+dynamic $ib_cycle, 'sneakers', 'Кроссовки', 5, '   Цена: 5 искр  <br>   Удобная и практичная обувь для занятий спортом и повседневной носки.', 'scene\item_sneakers'
+
+$item_property["sneakers"] = {
+    learn_bonus["stamina"] += 1
+}
+
+!["high_heels"]
+dynamic $ib_cycle, 'high_heels', 'Туфли на шпильке', 5, '   Цена: 5 искр  <br>   Туфли на высоком и остром каблуке это образец изящества и стиля. Широкий ассортимент фасонов и расцветок позволит подобрать подходящую пару для любого костюма. И конечно ни один стильный костюм не будет полным без такой обуви.', 'scene\item_high_heels'
+
+$item_property["high_heels"] = {
+    slave_rate["style"] += 1
+}
+
+!["high_boots"]
+dynamic $ib_cycle, 'high_boots', 'Высокие сапоги', 20, '   Цена: 20 искр  <br>    Высокие кожаные ботфорты с блестящими пряжками и изящным каблуком не только могут соперничать по элегантности с туфлями-шпильками, но и подчеркнут сексуальность и необузданный темперамент вашей рабыни.', 'scene\item_high_boots'
+
+$item_property["high_boots"] = {
+    slave_rate["style"] += 1
+    learn_bonus["sex"] += 1
+    daily_bonus["temper"] += 1
+}
+
+!ЮВЕЛИРКА И АКСЕССУАРЫ
+!["plain_ring"]
+dynamic $ib_cycle, 'plain_ring', 'Изящное колечко', 3, '   Цена: 3 искры  <br>   Мы предлагаем огромный ассортимент гладких и фигурных колечек из самых разных драгоценных металлов.', 'scene\item_plain_ring'
+
+$item_property["plain_ring"] = {
+    slave_rate["style"] += 1
+}
+
+!["incrusted_ring"]
+dynamic $ib_cycle, 'incrusted_ring', 'Перстень с самоцветом', 5, '   Цена: 5 искр  <br>   У нас вы можете найти широчайший ассортимент роскошных женских перстней, инкрустированных драгоценными камнями высшего качества.', 'scene\item_incrusted_ring'
+
+$item_property["incrusted_ring"] = {
+    slave_rate["style"] += 1
+}
+
+!["plain_earring"]
+dynamic $ib_cycle, 'plain_earring', 'Блестящие серёжки', 3, '   Цена: 3 искры  <br>   К вашим услугам представлен широчайший ассортимент серег из разнообразных драгоценных металлов. Отлично подойдут для любых зон пирсинга. Для ушей есть вариант с клипсами, не требующий прокалывания.', 'scene\item_plain_earring'
+
+$item_property["plain_earring"] = {
+    slave_rate["style"] += 1
+}
+
+!["incrusted_earrings"]
+dynamic $ib_cycle, 'incrusted_earrings', 'Инкрустированные серьги', 5, '   Цена: 5 искр  <br>   К вашим услугам представлен широчайший ассортимент серег с подвесками из различных драгоценных камней и искусственных кристаллов.', 'scene\item_plain_earring'
+
+$item_property["incrusted_earrings"] = {
+    slave_rate["style"] += 1
+}
+
+!["plain_pendant"]
+dynamic $ib_cycle, 'plain_pendant', 'Цепочка с кулоном', 5, '   Цена: 5 искр  <br>   Цепочка из драгоценного металла с фигурным кулоном, отлично подчеркнет стиль и изящество вкуса вашей рабыни.', 'scene\item_plain_pendant'
+
+$item_property["plain_pendant"] = {
+    slave_rate["style"] += 1
+}
+
+!["incrusted_necklace"]
+dynamic $ib_cycle, 'incrusted_necklace', 'Сверкающее ожерелье', 10, '   Цена: 10 искр  <br>   Фигурное ожерелье, усыпанное прекрасными драгоценными камнями.', 'scene\item_incrusted_necklace'
+
+$item_property["incrusted_necklace"] = {
+    slave_rate["style"] += 1
+}
+
+!["plain_tiara"]
+dynamic $ib_cycle, 'plain_tiara', 'Фигурная диадема', 10, '   Цена: 10 искр  <br>   Стильная диадема из драгоценного металла отлично дополнит прическу вашей рабыни и придаст ей особый роскошный шарм.', 'scene\item_plain_tiara'
+
+$item_property["plain_tiara"] = {
+    slave_rate["style"] += 1
+}
+
+!["incrusted_tiara"]
+dynamic $ib_cycle, 'incrusted_tiara', 'Драгоценная тиара', 20, '   Цена: 20 искр  <br>   Эта массивная драгоценная тиара, украшенная переливающимися самоцветами высочайшего качества безусловно привлечет внимание и подчеркнет роскошь наряда вашей рабыни.', 'scene\item_incrusted_tiara'
+
+$item_property["incrusted_tiara"] = {
+    slave_rate["style"] += 1
+}
+
+!["plain_headband"]
+dynamic $ib_cycle, 'plain_headband', 'Ободок для волос', 3, '   Цена: 3 искр  <br>   Этот аксессуар предназначен не столько в качестве украшения, сколько для повседневного использования. Легкий и гибкий ободок позволит аккуратно убрать длинные волосы, чтобы они не лезли на лицо.', 'scene\item_headband'
+
+$item_property["plain_headband"] = {
+    if slave["pos_clothes"] < 1: slave["pos_clothes"] = 1
+    daily_bonus["mood"] += 1
+}
+
+!["glasses"]
+dynamic $ib_cycle, 'glasses', 'Изящные очки', 10, '   Цена: 10 искр  <br>   Красивый и практичный аксессуар. Наши специалисты подберут линзы, оптимальные для коррекции зрения вашей рабыни, что позволит ей лучше разбирать цифры в документах. А изящная оправа из драгоценного металла подчеркнет уникальный стиль девушки.', 'scene\item_glasses'
+
+$item_property["glasses"] = {
+    slave_rate["style"] += 1
+    learn_bonus["secretary"] += 1
+}
+
+!["nekomimi"]
+dynamic $ib_cycle, 'nekomimi', 'Кошачьи ушки', 10, '   Цена: 10 искр  <br>   Крупные меховые уши на гибком ободке безусловно привлекут внимание окружающих и помогут вашей рабыне почувствовать себя настоящим домашним питомцем.', 'scene\item_nekomimi'
+
+$item_property["nekomimi"] = {
+    slave_rate["exotic_bonus"] += 1
+    learn_bonus["pet"] += 1
+}
+
+!["golden_collar"]
+dynamic $ib_cycle, 'golden_collar', 'Украшенный ошейник', 20, '   Роскошный широкий ошейник из золота или серебра, украшенный драгоценными камнями и оснащенный кольцами для крепления поводка и кандалов. Каждую секунду этот стильный аксессуар напоминает рабыне о том, кому она принадлежит и каков её статус. В качестве бесплатного дополнения мы оснастим ошейник вашим именным жетоном. (20 искр)', 'scene\item_golden_collar'
+
+$item_property["golden_collar"] = {
+    slave_rate["style"] += 1
+    daily_bonus["custom"] += 1
+    slave['slave_collar'] = 1
+}
+
+!["hairnet"]
+dynamic $ib_cycle, 'hairnet', 'Сетка для волос', 10, '   Цена: 10 искр  <br>   Изящная сеточка для волос, украшенная жемчугом и драгоценным плетением, не только подчеркнет стиль вашей рабыни, но и надолго сохранит её прическу. В качестве бесплатного дополнения мы предоставляем набор серебряных заколок и перламутровый гребень.', 'scene\item_hairnet'
+
+$item_property["hairnet"] = {
+    slave_rate["style"] += 1
+    slave['wig'] = 1
+}
+
+!["exotic_wig"]
+dynamic $ib_cycle, 'exotic_wig', 'Экзотический парик', 20, '   Цена: 20 искр  <br>   Хотите придать внешнему виду вашей рабыни остроту? Используйте один из наших великолепных экзотических париков. Невероятные расцветки, перья, дреды, а так же звенящие и блестящие украшения вплетенные в волосы буквально притягивают взгляды окружающих.', 'scene\item_exotic_wig'
+
+$item_property["exotic_wig"] = {
+    slave_rate["style"] += 1
+    slave_rate["exotic_bonus"] += 10
+    slave['wig'] = 1
+}
+
+!["hijab"]
+dynamic $ib_cycle, 'hijab', 'Хиджаб', 3, '   Цена: 3 искры  <br>   Полностью закрывающая волосы косынка, возможно, не лучший вид украшения для головы, но зато она очень практична в повседневных делах. Волосы не будут сыпаться в суп или мешаться во время уборки!', 'scene\item_hijab'
+
+$item_property["hijab"] = {
+    learn_bonus["service"] += 1
+    learn_bonus["cook"] += 1
+}
+
+!["leather_collar"]
+dynamic $ib_cycle, 'leather_collar', 'Кожаный ошейник', 3, '   Цена: 3 искры  <br>   Широкий кожаный ошейник с заклепками и кольцами для крепления поводка и кандалов. Нося такую штучку, ваша рабыня никогда не забудет о своей участи. Не говоря уже о том, что это просто очень практичный атрибут для многих игр.', 'scene\item_leather_collar'
+
+$item_property["leather_collar"] = {
+    daily_bonus["ego"] -= 1
+    daily_bonus["pride"] -= 1
+    daily_bonus["custom"] += 1
+    daily_bonus["instinct"] += 1
+    learn_bonus["pet"] += 1
+}
+
+!["steel_collar"]
+dynamic $ib_cycle, 'steel_collar', 'Стальной ошейник', 10, '   Прочный стальной ошейник - тяжелое напоминание о рабской судьбе, от которого невозможно избавиться. Надо отметить, что носить такую штучку занятие не из приятных - натирает шею. Не говоря уже об ударе по гордости и самомнению. Я добавлю гравировку с вашим именем и адресом, чтобы её вернули в случае потери. (10 искр)', 'scene\item_steel_collar'
+
+$item_property["steel_collar"] = {
+    daily_bonus["ego"] -= 1
+    daily_bonus["mood"] -= 3
+    daily_bonus["pride"] -= 1
+    daily_bonus["custom"] += 2
+    daily_bonus["instinct"] += 2
+    slave['slave_collar'] = 1
+}
+
+!["spiked_collar"]
+dynamic $ib_cycle, 'spiked_collar', 'Ошейник с шипами', 10, '   Цена: 10 искр  <br>   Брутального вида ошейник, украшенный длинными и острыми стальными шипами. Он не только напоминает рабыне о её статусе, но и позволяет ей чувствовать себя более агрессивной. Неплохой аксессуар для гладиаторши, да и вообще любой темпераментной сучки.', 'scene\item_spiked_collar'
+
+$item_property["spiked_collar"] = {
+    daily_bonus["instinct"] += 1
+    daily_bonus["temper"] += 1
+    learn_bonus["pet"] += 1
+    learn_bonus["gladiatrix"] += 1
+}
+
+!["dog_collar"]
+dynamic $ib_cycle, 'dog_collar', 'Собачий ошейник', 5, '   Цена: 10 искр  <br>   По этому снабженному поводком ошейнику сразу видно, что он изготовлен не для человека, а для домашнего питомца. Поможет настроить рабыню на нужный лад, но его слишком просто снять. Как напоминание о рабской участи такой ошейник годится плохо.', 'scene\item_dog_collar'
+
+$item_property["dog_collar"] = {
+    daily_bonus["ego"] -= 1
+    daily_bonus["instinct"] += 1
+    learn_bonus["pet"] += 1
+}
+
+!["leather_straps"]
+dynamic $ib_cycle, 'leather_straps', 'Кожаные оковы', 5, '   Цена: 5 искр  <br>   Пара прочных кожаных браслетов со стальными кольцами для фиксации цепей. Можно надеть на руки или ноги, и с успехом использовать при любом бондаже. Крайне практичная штучка!', 'scene\item_leather_straps'
+
+$item_property["leather_straps"] = {
+    daily_bonus["instinct"] += 1
+    daily_bonus["custom"] += 1
+    daily_bonus["mood"] -= 1
+}
+
+!["nipple_chain"]
+dynamic $ib_cycle, 'nipple_chain', 'Цепь для сосков', 10, '   Цена: 10 искр  <br>   Если вставленные в соски колечки соединить цепочкой, она будет обеспечивать постоянную стимуляцию и повысит возбуждение рабыни. А зная, что вы всегда можете дернуть за цепочку, она будет вести себя почтительней - это больно.', 'scene\item_nipple_chain'
+
+$item_property["nipple_chain"] = {
+    slave_rate["style"] += 1
+    daily_bonus["arousal"] += 2
+    daily_bonus["rational"] += 1
+}
+
+!["crown_of_thorns"]
+dynamic $ib_cycle, 'crown_of_thorns', 'Терновый венец', 5, '   Конечно это только название, никакой он не терновый. Для изготовления этих венцов я использую колючую проволоку. Вся хитрость в механизме крепления, так, чтобы он причинял боль, но не ранил и не снимался так просто. Постоянная, хоть и слабая боль напоминает рабу о смирении. (5 искр)', 'scene\item_thorns'
+
+$item_property["crown_of_thorns"] = {
+    daily_bonus["instinct"] += 3
+    daily_bonus["temper"] -= 1
+    daily_bonus["mood"] -= 2
+}
+
+!["anal_tail"]
+dynamic $ib_cycle, 'anal_tail', 'Анальный хвост', 10, '   Этот девайс состоит из двух частей - крупного пластикового фаллоса с расширением, обеспечивающим надежную фиксацию в заднице, и набора крепящихся к нему сменных хвостов. Хорошо подойдет для игр в животных, и повысит возбуждение вашей рабыни. Правда хвост мешает носить обычную одежду. (10 искр)', 'scene\item_anal_tail'
+
+$item_property["anal_tail"] = {
+    daily_bonus["arousal"] += 2
+    daily_bonus["custom"] += 1
+    daily_bonus["mood"] -= 1
+    daily_bonus["ego"] -= 1
+    daily_bonus["pride"] -= 1
+    learn_bonus["pet"] += 1
+    learn_bonus["dressage"] += 1
+}
+
+!["pony_plume"]
+dynamic $ib_cycle, 'pony_plume', 'Уздечка с плюмажем', 10, '   Это просто необходимый аксессуар для любой понидевки. Кожаная узда надежно фиксирует во рту кляп, который в свою очередь служит удилами, благодаря кольцам для крепления поводьев. Плотные кожаные шоры позволяют глядеть только строго вперед, а яркий и высокий плюмаж делает всю конструкцию приятной глазу. (10 искр)', 'scene\item_pony_plume'
+
+$item_property["pony_plume"] = {
+    slave_rate["style"] += 1
+    daily_bonus["instinct"] += 1
+    daily_bonus["mood"] -= 3
+    daily_bonus["ego"] -= 2
+    daily_bonus["pride"] -= 3
+    learn_bonus["dressage"] += 2
+}
+
+!["hoofed_boots"]
+dynamic $ib_cycle, 'hoofed_boots', 'Копытные сапоги', 25, '   Цена: 25 искр  <br>   Это особый вид сапогов с каблуками, имитирующими конские копыта. Ходить на них даже более неудобно чем на обычных шпильках, но выглядит стильно и всегда можно звонко топнуть копытом, показывая свой норов.', 'scene\item_hoofs'
+
+$item_property["hoofed_boots"] = {
+    slave_rate["style"] += 1
+    daily_bonus["mood"] -= 1
+    daily_bonus["temper"] += 1
+    learn_bonus["dressage"] += 1
+}
+
+!["ponygirl_harness"]
+$item_name["ponygirl_harness"] = 'Сбруя понидевки'
+item_price["ponygirl_harness"] = 10
+$item_description["ponygirl_harness"] = '   Цена: 10 искр  <br>   Основная задача этой кожаной конструкции, зафиксировать руки понидевки за спиной, так чтобы она могла только ходить. Большое кольцо в районе сведенных кистей рук обеспечивает удобство упряжки, а дополнительные ремни спереди обеспечивают фиксацию и подчеркивают грудь.'
+$item_demo["ponygirl_harness"] = 'scene\item_harness'
+
+$item_property["ponygirl_harness"] = {
+daily_bonus["pride"] -= 2
+daily_bonus["custom"] += 1
+daily_bonus["ego"] -= 1
+daily_bonus["mood"] -= 2
+learn_bonus["dressage"] += 1
+}
+
+!["petsuit"]
+$item_name["petsuit"] = 'Петсьют'
+item_price["petsuit"] = 25
+$item_description["petsuit"] = '   Это версия депривационного костюма не препятствующая зрению и слуху, но сделанная так чтобы носитель становился похож на кошку или собаку. Позволяет перемещаться только на четвереньках, опираясь на локти и колени. (25 искр)'
+$item_demo["petsuit"] = 'scene\item_petsuit'
+
+$item_property["petsuit"] = {
+}
+
+!["vaginal_balls"]
+$item_name["vaginal_balls"] = 'Вагинальные шарики'
+item_price["vaginal_balls"] = 5
+$item_description["vaginal_balls"] = '   Цена: 5 искр<br>   Пара шариков на веревочке с кольцом предназначены для длительного ношения во влагалище. Они отлично помогают нарастить возбуждение и разработать мускулатуру.<br>   '
+$item_demo["vaginal_balls"] = 'scene\item_vaginal_balls'
+
+$item_property["vaginal_balls"] = {
+}
+
+!["anal_plug"]
+$item_name["anal_plug"] = 'Анальная груша'
+item_price["anal_plug"] = 20
+$item_description["anal_plug"] = '   Цена: 20 искр<br>   В отличие от обычной анальной пробки эта груша оснащена винтом который позволяет расширить её после помещения в задницу. Винт фиксируется небольшим замочком, так что извлечь грушу без ключа невозможно.'
+$item_demo["anal_plug"] = 'scene\item_toys'
+
+$item_property["anal_plug"] = {}
+
+!["secure_gag"]
+$item_name["secure_gag"] = 'Надежный кляп'
+item_price["secure_gag"] = 20
+$item_description["secure_gag"] = '   Внушительная металлическая конструкция, унаследовавшая лучшие черты конской узды и стоматологического расширителя. Снять её без ключа невозможно, при этом рот фиксируется в максимально раскрытом состоянии. (20 искр)'
+$item_demo["secure_gag"] = 'scene\item_secure_gag'
+
+$item_property["secure_gag"] = {
+}
+
+!["deprivation_suit"]
+$item_name["deprivation_suit"] = 'Депривационный костюм'
+item_price["deprivation_suit"] = 50
+$item_description["deprivation_suit"] = '   Хотя он и называется костюмом, но предназначен не для ношения, а для радикального бондажа. Толстая резиновая оболочка и прочные кожаные ремни препятствуют любому движению и обеспечивают постоянное равномерное давление. Глаза и уши плотно закрываются, а рот затыкается чтобы полностью отрезать носителя от внешнего мира. (50 искр)'
+$item_demo["deprivation_suit"] = 'scene\item_dsuit'
+
+$item_property["deprivation_suit"] = {
+}
+
+!["pissuar_stable"]
+$item_name["pissuar_stable"] = 'Писсуарная стойка'
+item_price["pissuar_stable"] = 100
+item_size[0] = 0
+$item_description["pissuar_stable"] = '   Этот предмет мебели занимает не слишком много места, так как основным его компонентом является рабыня. Стойка оборудована надежными фиксаторами для рук, ног и головы а так же кольцевым расширителем для рта и зажимом для носа. Можно установить прозрачную наголовную чашу модели «пей или захлебнись». (100 искр)'
+$item_demo["pissuar_stable"] = 'scene\item_pissuar'
+
+$item_property["pissuar_stable"] = {
+}
+
+!["toilet_stable"]
+$item_name["toilet_stable"] = 'Унитазное кресло'
+item_price["toilet_stable"] = 250
+item_size[0] = 0
+$item_description["toilet_stable"] = '   Довольно массивный предмет мебели, однако он стоит всего занимаемого им объема. Рабыня фиксируется внутри так, что наверх торчит только её открытый специальным устройством рот, на который вы можете удобно сесть чтобы справить большую нужду. Массивность конструкции препятствует любым попыткам вырваться. (250 искр)'
+$item_demo["toilet_stable"] = 'scene\item_toilet'
+
+$item_property["toilet_stable"] = {
+}
+
+![""]
+$item_name[""] = ''
+item_price[""] = 0
+$item_description[""] = ''
+$item_demo[""] = 'scene\item_'
+
+$item_property[""] = {
+slave_rate["nothing"] += 1
+learn_bonus["skill"] += 1
+}
+
+!ПОДАРКИ
+!Букет ["bouqet"]
+$item_name["bouqet"] = 'Букет цветов'
+item_price["bouqet"] = 2
+$item_description["bouqet"] = 'Небольшой но очень красивый букет цветов. Это особый скороспелый сорт, гидропонически выращенный в техносфере - держатся свежими всего один день, зато вполне доступны по цене.'
+$item_demo["bouqet"] = 'scene\item_bouqet'
+$item_property["bouqet"] = {}
+
+!Духи ["parfume"]
+$item_name["parfume"] = 'Флакон духов'
+item_price["parfume"] = 5
+$item_description["parfume"] = 'Красивый флакон с великолепной парфюмерной композицией, привезённой из-за туманов. Разумеется такой подарок порадует любую женщину, но вы преследуете двойную цель - теперь ваша воспитуемая добавит ещё одну черту к своему стилю и будет более желанной для клиентов.'
+$item_demo["parfume"] = 'scene\item_parfume'
+$item_property["parfume"] = {}
+
+!Плед ["plaid"]
+$item_name["plaid"] = 'Тёплый клетчатый плед'
+item_price["plaid"] = 9
+$item_description["plaid"] = 'Отличная мягкая ткань с рисунком-шотландкой. Завернувшись в такой плед девушка будет чувствовать себя уютно, а значит её легче будет пережить тяжелые моменты в жизни.'
+$item_demo["plaid"] = 'scene\item_plaid'
+$item_property["plaid"] = {}
+
+!Мягкая игрушка ["stuffed_toy"]
+$item_name["stuffed_toy"] = 'Мягкая игрушка'
+item_price["stuffed_toy"] = 15
+$item_description["stuffed_toy"] = 'Довольно крупная и от того не дешевая набивная игрушка будет хорошим подарком и заодно поможет рабыне согреться лёжа на тонкой циновке у двери.'
+$item_demo["stuffed_toy"] = 'scene\item_stuffed_toy'
+$item_property["stuffed_toy"] = {}
+
+!Мини-пони ["pony"]
+$item_name["pony"] = 'Мини-пони'
+item_price["pony"] = 50
+$item_description["pony"] = 'Эти невероятно милые существа, размером с кошку выращиваются в техносфере из яиц. Продолжительность жизни не очень большая и мясо не вкусное, но зато они верные и милые. Его придётся кормить и где-то держать! (1 искра/день)'
+$item_demo["pony"] = 'scene\item_pony'
+$item_property["pony"] = {
+if slave['pos_pony'] < 1: slave['pos_pony'] = 1
+}
+
+
+!'ОБРАЗЕЦ [""]
+$item_name[""] = ''
+item_price[""] = 0
+$item_description[""] = ''
+$item_demo[""] = 'scene\item_'
+
+$item_property[""] = {}'
+--- #item_base ---------------------------------
+

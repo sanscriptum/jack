@@ -2,8 +2,8 @@
 !ЭКРАН ПОДРОБНОЙ СТАТИСТИКИ ВОСПИТУЕМОЙ
 IF $info_text = '':
  $info_text = $psy_status[$slave_psy_status]
- if slave_state = 2: $info_text = '<<$slave_name>> лежит без сил и тихо стонет. Она явно находится в очень плохом состоянии. Надо дать ей отдохнуть или даже оказать медицинскую помощь.'
- if slave_state = 3: $info_text = '<<$slave_name>> мертва. Её бездыханный труп лежит на полу.'
+ if slave_state = CONST_INT['slave_faint']: $info_text = '<<$slave_name>> лежит без сил и тихо стонет. Она явно находится в очень плохом состоянии. Надо дать ей отдохнуть или даже оказать медицинскую помощь.'
+ if slave_state = CONST_INT['slave_dead']: $info_text = '<<$slave_name>> мертва. Её бездыханный труп лежит на полу.'
 END
 
 stat_importance['stamina'] = 1
@@ -351,7 +351,7 @@ If slave_stat_screen = 3:
  END 
 END
 
-IF slave_state = 1:
+IF slave_state = CONST_INT['slave_exist']:
  $skill_text = ''
  IF  house_mess > 0:
   $skill_text += '<a href = "EXEC: interaction = 1211 & gt ''interaction''"><<$slave_service[slave["service"]]>></a><BR>'

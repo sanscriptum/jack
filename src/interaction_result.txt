@@ -752,7 +752,7 @@ IF $interaction_type = 'execution':
  $text[2] = '   ' 
  master_hygiene_rate += add_master_hygiene 
  dynamic $special_part   
- slave_state = 0
+ slave_state = CONST_INT['no_slave']
  gs 'generate_stock'
 END
 

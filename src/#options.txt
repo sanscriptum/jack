@@ -175,18 +175,18 @@ $text_display += {<br><div id="under">Не имеет значения<br><div i
 $hospital_options[1] = {
 $text_display = '<br><br>'
 $text_display += {<div id="under">Пройти диагностику (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 3311 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-IF slave_state > 0:
+IF slave_state > CONST_INT['no_slave']:
  $text_display += {<div id="under">Обследовать воспитуемую (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 3312 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  else
  $text_display += {<div id="under_gray">Обследовать воспитуемую (5 искр)<br></div>}  
 END 
-IF slave['reabilitation'] < 1 and slave_state = 1:
+IF slave['reabilitation'] < 1 and slave_state = CONST_INT['slave_exist']:
  $text_display += {<div id="under">Аугментационная хирургия<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
  else
  $text_display += {<div id="under_gray">Аугментационная хирургия<br></div>} 
 END
 $text_display += {<div id="under">Проверить потребность в медсёстрах<div id = "clear"><a href = 'EXEC: interaction_city = 3313 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-IF slave_state = 1 and slave['brand'] > 0 and slave['brand'] ! 4:
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
  $text_display += {<div id="under">Предложить работницу<br><div id = "clear"><a href = 'EXEC: interaction_city = 3314 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  else
  $text_display += {<div id="under_gray">Предложить работницу<br></div>}
@@ -303,7 +303,7 @@ IF npc_reveal['realtor'] = 0:
  if $estate ! 'slum_house': $text_display += {<br><div id="under">Дизайн интерьеров<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
  if $estate = 'slum_house': $text_display += {<br><div id="under_gray">Расширенная аренда<br></div>}
  if $estate ! 'slum_house': $text_display += {<br><div id="under">Расширенная аренда<br><div id = "clear"><a href = 'EXEC: sp_txt = 3 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- IF slave_state = 1 and slave['brand'] > 0 and slave['brand'] ! 4:
+ IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
   $text_display += {<br><div id="under">Предложить работницу<br><div id = "clear"><a href = 'EXEC: interaction_city = 138 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Предложить работницу<br></div>} 
@@ -499,7 +499,7 @@ $text_display += {<br><div id="under">Назад<br><div id = "clear"><a href = 
 $forum_options[1] = {
 $sp_text[1] = "   Центральный форум предоставляет человеку вашей профессии огромные возможности. Здесь можно немного порекламировать себя и вставить палки в колеса тренерам-конкурентам или собрать информацию о лучших потенциальных покупателях для своей воспитуемой. Ну и конечно можно просто пообщаться." 
 $text_display = '<br><br>'
-IF slave_state = 1 and slave['brand'] > 0:
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0:
  $text_display += {<br><div id="under">Подобрать потенциальных покупателей<br><div id = "clear"><a href = 'EXEC: interaction_city = 151 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  else
  $text_display += {<br><div id="under_gray">Подобрать потенциальных покупателей<br></div>}  
@@ -523,7 +523,7 @@ $text_display += {<br><div id="under">Оглядеться<br><div id = "clear">
 $farm_options[1] = {
 $sp_text[1] = '   Длиннющий барак заполнен тесными стойлами, где вперемежку содержатся люди и животные. Запах тут царит мерзкий. Но бизнес есть бизнес.'
 $text_display = '<br><br>'
-IF slave_state = 1 and slave['brand'] > 0 and slave['brand'] ! 4:
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
  $text_display += {<br><div id="under">Предложить товар<br><div id = "clear"><a href = 'EXEC: interaction_city = 442 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  else
  $text_display += {<br><div id="under_gray">Предложить товар<br></div>} 
@@ -536,7 +536,7 @@ $text_display += {<br><div id="under">Покинуть звероферму<br><
 $warcamp_options[1] = {
 $sp_text[1] = '   Места здесь неспокойные, но за наспех возведенной оградой опорного лагеря можно чувствовать себя в относительной безопасности'
 $text_display = '<br>'
-IF slave_state = 1 and slave['brand'] > 0 and slave['brand'] ! 4:
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
  $text_display += {<br><div id="under">Предложить работницу<br><div id = "clear"><a href = 'EXEC: interaction_city = 642 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  else
  $text_display += {<br><div id="under_gray">Предложить работницу<br></div>} 
@@ -550,7 +550,7 @@ $morgue_options[1] = {
 npc = 1
 $sp_text[1] = '   Учитывая уровень смертности артистов, Малифисцент должен всегда нуждаться в новых девушках. Это хорошая возможность для бизнеса!'
 $text_display = '<br><br><br>'
-IF slave_state = 1 and slave['brand'] > 0 and slave['brand'] ! 4:
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
  $text_display += {<br><div id="under">Предложить артистку<br><div id = "clear"><a href = 'EXEC: interaction_city = 532 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  else
  $text_display += {<br><div id="under_gray">Предложить артистку<br></div>} 
@@ -563,7 +563,7 @@ $text_display += {<br><div id="under">Покинуть театр<br><div id = "
 $smugler_options[1] = {
 $sp_text[1] = '   На этой темной улочке мало кто может чувствовать себя комфортно. Но именно тут можно назначить встречу нужным людям, не желающим привлекать лишнего внимания.'
 $text_display = '<br><br>'
-IF slave_state = 0 and sparks => 2000:
+IF slave_state = CONST_INT['no_slave'] and sparks => 2000:
  $text_display += {<br><div id="under">Заказать "посылку" (2000 искр)<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
  else
  $text_display += {<br><div id="under_gray">Заказать "посылку" (2000 искр)<br></div>}  
@@ -675,7 +675,7 @@ $sp_text[1] = '   Джентльменский клуб сира Шелли пр
 $text_display = '<br><br>'
 if club_member = 0: $text_display += {<br><div id="under">Вступить в клуб<br><div id = "clear"><a href = 'EXEC: interaction_city = 231 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
 if club_member = 1: $text_display += {<br><div id="under">Посетить клуб<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
-IF slave_state = 1 and slave['brand'] > 0 and slave['brand'] ! 4:
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
  $text_display += {<br><div id="under">Предложить работницу<br><div id = "clear"><a href = 'EXEC: interaction_city = 232 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  else
  $text_display += {<br><div id="under_gray">Предложить работницу<br></div>} 
@@ -714,7 +714,7 @@ $text_display += {<br><div id="under">Быстрый сервис (1 искра)
 $text_display += {<br><div id="under">Стандартный сервис (5 искр)<br><div id = "clear"><a href = 'EXEC: sp_txt = 3 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 $text_display += {<br><div id="under">Элитный сервис (15 искр)<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 $text_display += {<br><div id="under">Узнать предпочтения хозяйки<div id = "clear"><a href = 'EXEC: interaction_city = 2251 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-IF slave_state = 1 and slave['brand'] > 0 and slave['brand'] ! 4:
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
  $text_display += {<div id="under">Предложить рабыню<br><div id = "clear"><a href = 'EXEC: interaction_city = 2252 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  else
  $text_display += {<div id="under_gray">Предложить рабыню<br></div>}
@@ -759,7 +759,7 @@ $text_display = '<br>'
 $text_display += {<br><div id="under_gray">Урок для воспитуемой<br></div>}
 $text_display += {<br><div id="under_gray">Персональный урок<br></div>}
 $text_display += {<br><div id="under">Узнать предпочтения хозяйки<div id = "clear"><a href = 'EXEC: interaction_city = 2253 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-IF slave_state = 1 and slave['brand'] > 0 and slave['brand'] ! 4:
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
  $text_display += {<div id="under">Предложить рабыню<br><div id = "clear"><a href = 'EXEC: interaction_city = 2254 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  else
  $text_display += {<div id="under_gray">Предложить рабыню<br></div>}
@@ -771,7 +771,7 @@ $text_display += {<br><div id="under">Завершить разговор<br><di
 $boutic_options[1] = {
 $text_display = '<br>'
 $text_display += {<br><div id="under">Мужская одежда<div id = "clear"><a href = 'EXEC: sp_txt = 6 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
-IF slave_state > 0:
+IF slave_state > CONST_INT['no_slave']:
  $text_display += {<div id="under">Женская униформа<div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<div id="under">Модная женская одежда<div id = "clear"><a href = 'EXEC: sp_txt = 3 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<div id="under">Перчатки<div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
@@ -783,7 +783,7 @@ IF slave_state > 0:
  $text_display += {<div id="under_gray">Обувь<br></div>}
 END
 $text_display += {<br><div id="under">Узнать предпочтения хозяйки<div id = "clear"><a href = 'EXEC: interaction_city = 11361 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-IF slave_state = 1 and slave['brand'] > 0 and slave['brand'] ! 4:
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
  $text_display += {<div id="under">Предложить работницу<br><div id = "clear"><a href = 'EXEC: interaction_city = 11362 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  else
  $text_display += {<div id="under_gray">Предложить работницу<br></div>}
@@ -869,7 +869,7 @@ $text_display += {<br><div id="under">Другие товары<div id = "clear"
 !Ювелирный магазин
 $jeweler_options[1] = {
 $text_display = '<br>'
-IF slave_state > 0:
+IF slave_state > CONST_INT['no_slave']:
  $text_display += {<br><div id="under">Женские украшения<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 $text_display += {<br><div id="under">Модные аксессуары<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
  else
@@ -878,7 +878,7 @@ $text_display += {<br><div id="under">Модные аксессуары<br><div 
 END
 $text_display += {<br><div id="under">Мужские украшения<br><div id = "clear"><a href = 'EXEC: sp_txt = 3 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 $text_display += {<br><div id="under">Узнать предпочтения хозяйки<div id = "clear"><a href = 'EXEC: interaction_city = 11441 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-IF slave_state = 1 and slave['brand'] > 0 and slave['brand'] ! 4:
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
  $text_display += {<br><div id="under">Предложить работниц<br><div id = "clear"><a href = 'EXEC: interaction_city = 11442 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  else
  $text_display += {<br><div id="under_gray">Предложить работницу<br></div>}
@@ -920,7 +920,7 @@ $text_display += {<br><div id="under">Другие товары<br><div id = "cl
 $beauty_options[1] = {
 $text_display = '<br>'
 $text_display += {<br><div id="under">Услуги для мужчин<div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
-IF slave_state = 1:
+IF slave_state = CONST_INT['slave_exist']:
  $text_display += {<div id="under">Спа и массаж (3 искры)<div id = "clear"><a href = 'EXEC: interaction_city = 11611 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>} 
  $text_display += {<div id="under">Модная стрижка (3 искры)<div id = "clear"><a href = 'EXEC: interaction_city = 11612 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<div id="under">Восковая эпиляция (3 искры)<div id = "clear"><a href = 'EXEC: interaction_city = 11613 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
@@ -932,7 +932,7 @@ IF slave_state = 1:
  $text_display += {<div id="under_gray">Визаж и маникюр</div>}   
 END
 $text_display += {<br><div id="under">Узнать предпочтения хозяйки<div id = "clear"><a href = 'EXEC: interaction_city = 11631 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-IF slave_state = 1 and slave['brand'] > 0 and slave['brand'] ! 4:
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
  $text_display += {<div id="under">Предложить работницу<br><div id = "clear"><a href = 'EXEC: interaction_city = 11632 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  else
  $text_display += {<div id="under_gray">Предложить работницу<br></div>}
@@ -960,7 +960,7 @@ $text_display += {<br><div id="under">Яйца и молоко<br><div id = "cle
 $text_display += {<br><div id="under">Бакалея и алкоголь<br><div id = "clear"><a href = 'EXEC: sp_txt = 3 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 $text_display += {<br><div id="under">Спуститься к мяснику<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 $text_display += {<br><div id="under">Узнать предпочтения хозяйки<div id = "clear"><a href = 'EXEC: interaction_city = 11591 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-IF slave_state = 1 and slave['brand'] > 0 and slave['brand'] ! 4:
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
  $text_display += {<br><div id="under">Предложить работницу<br><div id = "clear"><a href = 'EXEC: interaction_city = 11592 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  else
  $text_display += {<br><div id="under_gray">Предложить работницу<br></div>}
@@ -1031,12 +1031,12 @@ IF sparks => 20 and frige_space => 5:
  $text_display += {<br><div id="under_gray">Нежная вырезка х5 (20 искр)<br></div>}
 END
 $text_display += {<br><div id="under_gray">Расспросить о мясе<br></div>}
-IF slave_state = 1:
+IF slave_state = CONST_INT['slave_exist']:
  $text_display += {<br><div id="under">Сдать воспитуемую на мясо<div id = "clear"><a href = 'EXEC: interaction_city = 11544 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>} 
  else
  $text_display += {<br><div id="under_gray">Сдать воспитуемую на мясо<br></div>}
 END
-IF sparks => 5 and slave_state = 1:
+IF sparks => 5 and slave_state = CONST_INT['slave_exist']:
  $text_display += {<br><div id="under">Попросить разделать воспитуемую<div id = "clear"><a href = 'EXEC: interaction_city = 11545 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>} 
  else
  $text_display += {<br><div id="under_gray">Попросить разделать воспитуемую<br></div>}
@@ -1054,7 +1054,7 @@ IF sparks => 1:
  $text_display += {<br><div id="under_gray">Выпить (1 искра)<br></div>}
 END
 $text_display += {<br><div id="under">Узнать предпочтения<div id = "clear"><a href = 'EXEC: interaction_city = 32221 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-IF slave_state = 1 and slave['brand'] > 0 and slave['brand'] ! 4:
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
  $text_display += {<br><div id="under">Предложить рабыню<br><div id = "clear"><a href = 'EXEC: interaction_city = 32222 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  else
  $text_display += {<br><div id="under_gray">Предложить рабыню<br></div>}
@@ -1066,7 +1066,7 @@ $tabern_options[2] = {
 $text_display = '<br>'
 $text_display += {<br><div id="under_gray">Узнать новости (1 искра)<br></div>}
 $text_display += {<br><div id="under">Узнать предпочтения<div id = "clear"><a href = 'EXEC: interaction_city = 3222 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-IF slave_state = 1 and slave['brand'] > 0 and slave['brand'] ! 4:
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
  $text_display += {<br><div id="under">Предложить рабыню<br><div id = "clear"><a href = 'EXEC: interaction_city = 3223 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  else
  $text_display += {<br><div id="under_gray">Предложить рабыню<br></div>}
@@ -1080,7 +1080,7 @@ $text_display = '<br>'
 $text_display += {<br><div id="under_gray">Персональный урок<br></div>}
 $text_display += {<br><div id="under_gray">Урок для рабыни<br></div>}
 $text_display += {<br><div id="under">Узнать предпочтения<div id = "clear"><a href = 'EXEC: interaction_city = 3233 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-IF slave_state = 1 and slave['brand'] > 0 and slave['brand'] ! 4:
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
  $text_display += {<br><div id="under">Предложить рабыню<br><div id = "clear"><a href = 'EXEC: interaction_city = 3234 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  else
  $text_display += {<br><div id="under_gray">Предложить рабыню<br></div>}
@@ -1091,7 +1091,7 @@ $text_display += {<br><div id="under">Закончить разговор<br><di
 !Тату-студия дядюшки Бо
 $bo_options[1] = {
 $text_display = '<br>'
-IF slave_state = 1 and slave["tatoo_timeup"] = 0:
+IF slave_state = CONST_INT['slave_exist'] and slave["tatoo_timeup"] = 0:
  if slave["tatoo"] = 0: $text_display += {<br><div id="under">Маленькая татушка (5 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 4211 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  if slave["tatoo"] < 2: $text_display += {<div id="under">Начать татуировку (10 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 4212 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  if slave["tatoo"] = 2: $text_display += {<div id="under">Продолжить татуировку (25 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 4213 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
@@ -1110,7 +1110,7 @@ IF slave_state = 1 and slave["tatoo_timeup"] = 0:
  $text_display += {<div id="under_gray">Татуаж</div>}  
 END
  $text_display += {<br><div id="under">Узнать предпочтения<div id = "clear"><a href = 'EXEC: interaction_city = 421 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
- IF slave_state = 1 and slave['brand'] > 0 and slave['brand'] ! 4:
+ IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
   $text_display += {<div id="under">Предложить рабыню<br><div id = "clear"><a href = 'EXEC: interaction_city = 422 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
   else
   $text_display += {<div id="under_gray">Предложить рабыню<br></div>}
@@ -1245,14 +1245,14 @@ $text_display += {<br><div id="under">Прервать процесс<br><div id
 !Студия Стальная Роза
 $piercing_options[1] = {
 $text_display = '<br>'
-IF slave_state = 1:
+IF slave_state = CONST_INT['slave_exist']:
  $text_display += {<br><div id="under">Телесные модификации<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<div id="under">BDSM-атрибутика<br><div id = "clear"><a href = 'EXEC: sp_txt = 3 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<div id="under">Животная атрибутика<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 END
 $text_display += {<div id="under">Фетиш-атрибутика<br><div id = "clear"><a href = 'EXEC: sp_txt = 5 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 $text_display += {<br><div id="under">Узнать предпочтения<div id = "clear"><a href = 'EXEC: interaction_city = 521 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-IF slave_state = 1 and slave['brand'] > 0 and slave['brand'] ! 4:
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
  $text_display += {<div id="under">Предложить рабыню<br><div id = "clear"><a href = 'EXEC: interaction_city = 522 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  else
  $text_display += {<div id="under_gray">Предложить рабыню<br></div>}
@@ -1316,7 +1316,7 @@ $colloseum_options[1] = {
  IF ride_count ! 0: 
   $text_display += '<br><div id="under_gray">Дней до гонок: <<ride_count>><br></div>'
   else
-  IF slave_state = 1 and slave['energy'] > 0:
+  IF slave_state = CONST_INT['slave_exist'] and slave['energy'] > 0:
    $text_display += {<br><div id="under">Участвовать в заезде<br><div id = "clear"><a href = 'EXEC: sp_txt = 23 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
    else
    $text_display += {<br><div id="under">Смотреть гонки<div id = "clear"><a href = 'EXEC: interaction_city = 1251 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>} 
@@ -1325,7 +1325,7 @@ $colloseum_options[1] = {
  IF gladi_count ! 0: 
   $text_display += '<br><div id="under_gray">Дней до схваток: <<gladi_count>><br></div>'
   else
-  IF slave_state = 1 and slave['energy'] > 0:
+  IF slave_state = CONST_INT['slave_exist'] and slave['energy'] > 0:
    $text_display += {<br><div id="under">Выставить гладиаторшу<br><div id = "clear"><a href = 'EXEC: sp_txt = 24 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
    else
    $text_display += {<br><div id="under">Смотреть схватки<div id = "clear"><a href = 'EXEC: interaction_city = 1252 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>} 
@@ -1337,7 +1337,7 @@ $colloseum_options[1] = {
 $colloseum_options[21] = { 
  $text_display = '<br>'
  $text_display += {<br><div id="under">- Устрой мне спарринг<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- IF slave_state = 1: 
+ IF slave_state = CONST_INT['slave_exist']: 
   $text_display += {<div id="under">- Устрой спарринг для моей воспитуемой<br><div id = "clear"><a href = 'EXEC: sp_txt = 3 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
   else
   $text_display += {<div id="under_gray">- Устрой спарринг для моей воспитуемой<br></div>}   
@@ -1354,7 +1354,7 @@ $colloseum_options[21] = {
  END
  $text_display += {<br><div id="under_gray">- Расскажи мне про искусство поединка<br></div>} 
  $text_display += {<div id="under">- Какие тебе нужны рабыни?<div id = "clear"><a href = 'EXEC: interaction_city = 191 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
- IF slave_state = 1 and slave['brand'] > 0 and slave['brand'] ! 4:
+ IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
   $text_display += {<div id="under">- Взгляни на мой товар!<br><div id = "clear"><a href = 'EXEC: interaction_city = 192 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
   else
   $text_display += {<div id="under_gray">- Взгляни на мой товар!<br></div>}
@@ -1502,7 +1502,7 @@ IF debt <= 0:
 END
 $text_display += {<br><div id="under_gray">Поговорить о бизнесе<br></div>}
 $text_display += {<br><div id="under">Узнать предпочтения<br><div id = "clear"><a href = 'EXEC: interaction_city = 631 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-IF slave_state = 1 and slave['brand'] > 0 and slave['brand'] ! 4:
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
  $text_display += {<br><div id="under">Предложить рабыню<br><div id = "clear"><a href = 'EXEC: interaction_city = 632 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  else
  $text_display += {<br><div id="under_gray">Предложить рабыню<br></div>}
@@ -1534,7 +1534,7 @@ $text_display += {<br><div id="under">Сменить тему<br><div id = "clea
 !Дом Лаована
 $laovan_options[1] = {
 $text_display = '<br>'
-IF slave_state = 1 and slave['brand'] > 0 and slave['brand'] ! 4:
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
  $text_display += {<br><div id="under">Предложить товар<br><div id = "clear"><a href = 'EXEC: interaction_city = 3111 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  else
  $text_display += {<br><div id="under_gray">Предложить товар<br></div>}

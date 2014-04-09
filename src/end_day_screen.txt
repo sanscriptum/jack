@@ -146,7 +146,7 @@ IF end_of_the_day = 1:
  jump 'loop'  
 END
 
-IF slave_state = 0: 
+IF slave_state = CONST_INT['no_slave']: 
  IF active[$quest[3]] = 1 and noble_status = 1:
   active[$quest[3]] = 0
   gt 'epic_win'
@@ -170,7 +170,7 @@ END
 
 IF slave_escape = 1:
  $text = '   Пока вы спали, <<$slave_name>> сумела украсть ключ от двери и выскользнуть на улицу. К утру её и след простыл. Вряд ли ей удастся выжить одной на улице, но вам придётся покопать новую рабыню...'
- slave_state = 0
+ slave_state = CONST_INT['no_slave']
  jump 'loop'  
 END
 
@@ -249,7 +249,8 @@ IF slave_suicide = 1:
  $text = '   Вы находите свою воспитуемую, лежащую на полу в луже крови. Она не дышит. Иногда такое случается, но каждый раз неприятно - искры на ветер. Теперь придётся покупать новую...'
  $place = 'study' 
  slave_suicide = 0
- slave_state = 0 
+ !CHECK: replace to slave_dead?
+ slave_state = CONST_INT['no_slave']
  $special_bg = 'girls\scene\suicide'     
  jump 'loop'  
 END

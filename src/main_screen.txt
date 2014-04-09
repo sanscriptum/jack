@@ -47,7 +47,7 @@ IF assistant_state = 1:
 END
 
 IF cooked_food < 1 and kitchen > 0: 
- IF slave_state = 1 and slave_cooks_rule = 1:
+ IF slave_state = CONST_INT['slave_exist'] and slave_cooks_rule = 1:
   *p {<div id="fast_cook"><a href = "EXEC: interaction = 53 & gt 'interaction'"><img src="content\fast_button.png"></a></div>}  
   else
   IF assistant_cooks_rule = 1: *p {<div id="fast_cook"><a href = "EXEC: interaction = 43 & gt 'interaction'"><img src="content\fast_button.png"></a></div>} 
@@ -56,7 +56,7 @@ IF cooked_food < 1 and kitchen > 0:
 END
 
 IF house_mess > 1: 
- IF slave_state = 1 and slave_cleans_rule = 1:
+ IF slave_state = CONST_INT['slave_exist'] and slave_cleans_rule = 1:
   *p {<div id="fast_clean"><a href = "EXEC: interaction = 51 & gt 'interaction'"><img src="content\fast_button.png"></a></div>}  
   else
   if assistant_cleans_rule = 1: *p {<div id="fast_clean"><a href = "EXEC: interaction = 42 & gt 'interaction'"><img src="content\fast_button.png"></a></div>}    
@@ -64,19 +64,19 @@ IF house_mess > 1:
  END
 END
 
-IF slave_state = 3:
+IF slave_state = CONST_INT['slave_dead']:
  *p '<div id = "slave_short_ava"><a href = "EXEC: gt ''slave_stat''"><img src = "<<$slave[''ava_gray'']>>.jpg"></a></div>'
  *p '<div id = "slave_short_stat">Умерла
 </div>'
 END
 
-IF slave_state = 0:
+IF slave_state = CONST_INT['no_slave']:
  *p '<div id = "slave_short_ava"><img src = "content/pic/blank_ava.jpg"></div>'
  *p '<div id = "slave_short_stat">Нет воспитуемой
 </div>'
 END
 
-IF slave_state = 1:
+IF slave_state = CONST_INT['slave_exist']:
  *p '<div id = "slave_short_ava"><a href = "EXEC: gt ''slave_stat''"><img src = "<<$slave[''ava'']>>.jpg"></a></div>'
  *p '<div id = "slave_short_stat">Энергия <<$stars[slave_energy_plus]>>
 <<$girl_mood[slave_mood_plus]>> 
@@ -88,29 +88,29 @@ IF slave_state = 1:
  *p  {<div id="fast_question"><a href = "EXEC: menu_form = 111 & gt 'menu_form'"><img src="content\question.png"></a></div>}  
 END
 
-IF slave_state = 2:
+IF slave_state = CONST_INT['slave_faint']:
  *p '<div id = "slave_short_ava"><a href = "EXEC: gt ''slave_stat''"><img src = "<<$slave[''ava_gray'']>>.jpg"></a></div>'
  *p '<div id = "slave_short_stat">Без сознания
 </div>'
 END
 
-IF slave["hygiene"] > 1 and slave_state = 1 and bath > 0: *p {<div id="fast_wash_slave"><a href = "EXEC: interaction = 52 & gt 'interaction'"><img src="content\fast_button.png"></a></div>}  
+IF slave["hygiene"] > 1 and slave_state = CONST_INT['slave_exist'] and bath > 0: *p {<div id="fast_wash_slave"><a href = "EXEC: interaction = 52 & gt 'interaction'"><img src="content\fast_button.png"></a></div>}  
 
-IF slave_state = 1: 
+IF slave_state = CONST_INT['slave_exist']: 
  if slave["sin"] => 0: *p {<div id="fast_redeem"><a href = "EXEC: menu_form = 14 & gt 'menu_form'"><img src="content\fast_button.png"></a></div>} 
  if slave["virtue"] > 0: *p {<div id="fast_redeem"><a href = "EXEC: menu_form = 15 & gt 'menu_form'"><img src="content\fast_button.png"></a></div>} 
 END
 
 *p '<div id = "master_short_ava"><a href = "EXEC: gt ''master_stat''"><img src = "<<$master_ava>>"></a></div>'
 
-IF master_hygiene > 1 and slave_washes_rule = 1 and slave_state = 1 and bath > 0: 
+IF master_hygiene > 1 and slave_washes_rule = 1 and slave_state = CONST_INT['slave_exist'] and bath > 0: 
  *p {<div id="fast_wash_master"><a href = "EXEC: interaction = 5411 & gt 'interaction'"><img src="content\fast_button.png"></a></div>}   
  else
  if master_hygiene > 1 and bath > 0: *p {<div id="fast_wash_master"><a href = "EXEC: interaction = 34 & gt 'interaction'"><img src="content\fast_button.png"></a></div>}  
 END
 
 IF master_excitement > 0: 
- IF slave_state = 1:
+ IF slave_state = CONST_INT['slave_exist']:
   *p {<div id="fast_sex"><a href = "EXEC: menu_form = 16 & gt 'menu_form'"><img src="content\fast_button.png"></a></div>}  
  END
 END
@@ -134,12 +134,12 @@ IF stasis_tank > 0:
  END
 END
 
-IF slave_state = 1: 
+IF slave_state = CONST_INT['slave_exist']: 
  *p '<div id = "teach"><a href = "EXEC: gt ''teach_screen''"><img src="content\teach.png"></a></div>'
 END
 
 IF lab > 0:
- if slave_state = 1 or assistant_state = 1: *p '<div id = "lab"><a href = "EXEC: interaction = 21 & gt ''interaction''"><img src="content\lab.png"></a></div>'
+ if slave_state = CONST_INT['slave_exist'] or assistant_state = 1: *p '<div id = "lab"><a href = "EXEC: interaction = 21 & gt ''interaction''"><img src="content\lab.png"></a></div>'
 END
 
 gs 'revelations'

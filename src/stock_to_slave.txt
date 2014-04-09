@@ -1,7 +1,7 @@
 # stock_to_slave
 !Делаем новую рабыню воспитуемой
 
-slave_state = 1
+slave_state = CONST_INT['slave_exist']
 stock = 0
 
 slave_type = stock_type

@@ -10,7 +10,7 @@ IF sp_txt = 1:
  $text_display += {<br><br><br><div id="under">Оружие<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Доспехи<br><div id = "clear"><a href = 'EXEC: sp_txt = 3 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<br><br><div id="under">Узнать предпочтения<div id = "clear"><a href = 'EXEC: interaction_city = 1111 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
- IF slave_state = 1 and slave['brand'] > 0 and slave['brand'] ! 4:
+ IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
   $text_display += {<br><div id="under">Предложить рабыню<br><div id = "clear"><a href = 'EXEC: interaction_city = 1112 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Предложить рабыню<br></div>}

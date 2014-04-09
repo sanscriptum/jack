@@ -20,8 +20,9 @@ if a > 0:
  slave_rate["wounds"] += b 
 END
 pony_dead = 0
-IF charriot['pony_health'] = 0: 
- slave_state = 0
+IF charriot['pony_health'] = 0:
+!CHECK: почему no_slave а не slave_dead?
+ slave_state = CONST_INT['no_slave']
  pony_dead = 1 
  sparks += 5
 END

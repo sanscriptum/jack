@@ -16,7 +16,7 @@ IF $interaction_type = 'byer_invitation':
   $text[1] = '   [<<$npc_name[$npc_id]>>]
    - Мне пока не нужны новые рабы. Но я замолвлю словечко друзьям, уверен что на такой товар покупатели найдутся без труда.'
   else
-  IF slave_state = 1 and slave['brand'] > 0:   
+  IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0:   
    txt = 1
    $yes = {$interaction_type = 'sell_slave_simple'
    gt 'interaction_result_city'}
@@ -37,7 +37,7 @@ IF $interaction_type = 'sell_slave_simple':
   npc_progress[$npc_id] = 2
   $text[1] = $buy_quote[$npc_id]
   sparks += common_price[demand_rating[$npc_id]]
-  slave_state = 0
+  slave_state = CONST_INT['no_slave']
   IF fixed_brand_rise = 0:
    if brand_rate < demand_rating[$npc_id]: brand_rate += demand_rating[$npc_id]
    !if faction_fame[$npc_alignment[$npc_id]] < demand_rating[$npc_id]: dynamic $rise_faction_fame
@@ -69,7 +69,7 @@ IF $interaction_type = 'sell_slave_complex':
  IF byer_interested = 1:
   $text[1] = $buy_quote[$npc_id]
   if  noprice = 0: sparks += common_price[demand_rating[$npc_id]]
-  slave_state = 0
+  slave_state = CONST_INT['no_slave']
   if brand_rate < demand_rating[$npc_id]: brand_rate += demand_rating[$npc_id]
   !faction_fame[$npc_alignment[$npc_id]] < demand_rating[$npc_id]: dynamic $rise_faction_fame
    IF faction_fame[$npc_alignment[$npc_id]] < demand_rating[$npc_id]: 
@@ -131,7 +131,7 @@ IF $interaction_type = 'slave_sold':
   if npc_bennies[$npc_id] < 0: npc_bennies[$npc_id] = 0
  END
  $return_lock = $return_lock_transfer 
- slave_state = 0
+ slave_state = CONST_INT['no_slave']
  killvar 'slave'
  killvar '$slave' 
  killvar 'slave_rate'

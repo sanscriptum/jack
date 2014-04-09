@@ -4873,9 +4873,11 @@ IF interaction = 181:
  npc = 0
  if already_done_curslave[interaction] = 0: slave['abandon_treat'] = 0 
  $text[1] = '   Если вы выгоните рабыню из дома, то уже вряд ли увидите её снова. Вы точно хотите от неё избавиться навсегда?'
- $yes = {slave_state = 0
-gs 'generate_stock'
-gt 'menu_form'}
+ $yes = {
+     slave_state = CONST_INT['no_slave']
+     gs 'generate_stock'
+     gt 'menu_form'
+}
  $no = {gt 'menu_form'}
  menu_form = 0
  gt 'choice_screen'
@@ -4948,7 +4950,7 @@ IF interaction = 184:
  npc = 0
  if already_done_curslave[interaction] = 0: slave['death_treat'] = 0 
  $text[1] = '   <<$execution_reaction[$slave_psy_status]>>'
- $yes = {slave_state = 0
+ $yes = {slave_state = CONST_INT['no_slave']
 gs 'generate_stock'
 interaction = 1840 
 gt "interaction"
@@ -5845,7 +5847,7 @@ IF interaction = 9911:
  $place = 'study'  
  npc = 1
  $npc_id = 'ester'
- slave_state = 0
+ slave_state = CONST_INT['no_slave']
  IF slave["brand"] > 0:
   ransom = common_price[rating]
   else
@@ -5892,7 +5894,7 @@ END
 !РОЖДЕНИЕ ПАРАЗИТА
 IF interaction = 9921:
  $interaction_type = 'chestbuster'
- slave_state = 0
+ slave_state = CONST_INT['no_slave']
  killvar 'slave'
  killvar 'slave_rate'
  $special_bg = '<<$slave["fullimage"]>>' 

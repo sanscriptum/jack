@@ -28,19 +28,19 @@ IF assistant_state = 1:
 </div>'
 END
 
-IF slave_state = 3:
+IF slave_state = CONST_INT['slave_dead']:
  *p '<div id = "slave_short_ava"><img src = "<<$slave["ava_gray"]>>.jpg"></div>'
  *p '<div id = "slave_short_stat">Умерла
 </div>'
 END
 
-IF slave_state = 0:
+IF slave_state = CONST_INT['no_slave']:
  *p '<div id = "slave_short_ava"><img src = "content/pic/blank_ava.jpg"></div>'
  *p '<div id = "slave_short_stat">Нет воспитуемой
 </div>'
 END
 
-IF slave_state = 1:
+IF slave_state = CONST_INT['slave_exist']:
  *p '<div id = "slave_short_ava"><img src = "<<$slave["ava"]>>.jpg"></div>'
  *p '<div id = "slave_short_stat">Энергия <<$stars[slave_energy_plus]>>
 <<$girl_mood[slave_mood_plus]>> 
@@ -49,7 +49,7 @@ IF slave_state = 1:
 </div>'
 END
 
-IF slave_state = 2:
+IF slave_state = CONST_INT['slave_faint']:
  *p '<div id = "slave_short_ava"><img src = "<<$slave["ava_gray"]>>.jpg"></div>'
  *p '<div id = "slave_short_stat">Без сознания
 </div>'

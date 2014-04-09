@@ -1,6 +1,6 @@
 # expert_to_slave
 !Эксперт передаёт найденную рабыню тренеру
-slave_state = 1
+slave_state = CONST_INT['slave_exist']
 search['active'] = 0
 
 slave_type = selected_type

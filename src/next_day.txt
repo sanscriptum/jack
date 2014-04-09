@@ -123,12 +123,12 @@ IF slave_cleans_rule = 1 and house_mess > 1 and slave["energy"] > 0 and slave["o
  slave["energy"] -= 1
 END
 
-IF slave["energy"] > 0 and slave_state = 1:
+IF slave["energy"] > 0 and slave_state = CONST_INT['slave_exist']:
  free_time = slave["energy"]
  slave["energy"] = 0
 END
 
-IF free_time > 0 and slave_state = 1:
+IF free_time > 0 and slave_state = CONST_INT['slave_exist']:
  IF bath > 0 and slave["hygiene"] > 1:
   slave_auto_bathing = 1
   free_time -= 1
@@ -139,7 +139,7 @@ IF free_time > 0 and slave_state = 1:
  END
 END
 
-IF free_time > 0 and slave_state = 1:
+IF free_time > 0 and slave_state = CONST_INT['slave_exist']:
  slave_auto_rest = 1
  slave_well_rested += free_time
  slave_rate["mood"] += free_time
@@ -432,7 +432,7 @@ END
 
 if slave['starvation'] < 0: slave['starvation'] = 0
 if slave['starvation'] > slave['stamina']: slave_rate["stamina"] -= slave['starvation'] & starvation_varning = 1
-if slave_state ! 0: total_food_cost += food_cost
+if slave_state ! CONST_INT['no_slave']: total_food_cost += food_cost
 
 !Лечение и зависимости
 IF slave['koffed'] > 0:
@@ -499,7 +499,7 @@ if slave['fertility'] < 0: slave['pregnant'] = 0
 slave['cycle_day'] += 1
 if slave['cycle_day'] > 28: slave['cycle_day'] = 1
 IF slave['pregnant'] = 0: 
- IF slave["age"] ! CONST_INT['loli_age'] and slave_state ! 0:
+ IF slave["age"] ! CONST_INT['loli_age'] and slave_state ! CONST_INT['no_slave']:
   slave['ovulation'] -= 1
   IF slave['cycle_day'] = 1:
    slave['neg_menstruation'] = 6 - slave['stamina']
@@ -599,7 +599,7 @@ if slave["nymphomania"] < 0: slave['neg_horny'] = 0
 
 !TODO: странный код с else, возможно криво пашет, by Lyazar
 !запоминаем правила у отключившейся рабыни
-IF slave_state ! 1: 
+IF slave_state ! CONST_INT['slave_exist']: 
  if silence_rule = 1: silence_rule = 2
  if master_rule = 1: master_rule = 2
  if shit_prohibited = 1: shit_prohibited = 2

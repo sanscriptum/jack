@@ -123,8 +123,8 @@ IF $враг[1] = 'воспитуемая':
  slave_rate["fear"] += 10
  slave_rate["instinct"] += 5
  
- if выносливость_врага[1] <= 0: slave_state = 2
- if здоровье_врага[1] <= 0: slave_state = 0
+ if выносливость_врага[1] <= 0: slave_state = CONST_INT['slave_faint']
+ if здоровье_врага[1] <= 0: slave_state = CONST_INT['no_slave']
 END
 
 letal_damage_recived = макс_здоровье_игрока - здоровье_игрока
@@ -167,7 +167,7 @@ END
 
 IF get_girl = 1:
  get_girl = 0
- IF slave_state = 0:
+ IF slave_state = CONST_INT['no_slave']:
   msg '   Вы связываете доставшуюся вам в качестве трофея девушку и делаете её своей рабыней.'
   gs 'stock_to_slave'
   else

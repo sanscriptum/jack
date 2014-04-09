@@ -64,7 +64,7 @@ END
 
 IF menu_form = 0:
  $place = 'home_lux' 
- IF slave_state = 1: 
+ IF slave_state = CONST_INT['slave_exist']: 
   $text_display += {<br><div id="under">Заняться воспитуемой <br><div id = "clear"><a href = 'EXEC: menu_form = 1 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Заняться воспитуемой<br></div>}
@@ -79,13 +79,13 @@ IF menu_form = 0:
  IF assistant_state = 1:
   $text_display += {<br><div id="under">Поручения ассистентке <br><div id = "clear"><a href = 'EXEC: menu_form = 4 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
   else
-  IF slave_state = 1 and slave["moral"] => 3:
+  IF slave_state = CONST_INT['slave_exist'] and slave["moral"] => 3:
    $text_display += {<br><div id="under">Назначить ассистентку <br><div id = "clear"><a href = 'EXEC: gt "slave_to_assistant"'><img src = "content\clear.gif"></a></div></div>}
    else
    $text_display += {<br><div id="under_gray">Назначить ассистентку<br></div>}
   END
  END
- IF slave_state = 1: 
+ IF slave_state = CONST_INT['slave_exist']: 
   $text_display += {<br><div id="under">Поручения воспитуемой <br><div id = "clear"><a href = 'EXEC: menu_form = 5 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
   else
   IF assistant_state = 1:
@@ -133,7 +133,7 @@ IF menu_form = 3:
 END
 
 IF menu_form = 4:
- IF slave_state = 1:
+ IF slave_state = CONST_INT['slave_exist']:
   $text_display += {<br><div id="under">- Проведи урок<br><div id = "clear"><a href = 'EXEC: menu_form = 41 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">- Проведи урок<br></div>}
@@ -180,7 +180,7 @@ END
 
 IF menu_form = 6:
  $text_display += {<br><div id="under">Auspex (2 искры)<br><div id = "clear"><a href = 'EXEC: interaction = 61 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
- IF slave_state = 1 and sparks > 5 and master_mage > 0:
+ IF slave_state = CONST_INT['slave_exist'] and sparks > 5 and master_mage > 0:
   IF slave["sin"] > 0: $text_display += {<br><div id="under">Cruciato (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction = 62 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
   IF slave["virtue"] > 0: $text_display += {<br><div id="under">Delikacia (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction = 63 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
   IF slave["virtue"] = 0 and slave["sin"] = 0: $text_display += {<br><div id="under">Sententia veritas (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction = 64 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
@@ -193,7 +193,7 @@ IF menu_form = 6:
   $text_display += {<br><div id="under_gray">Tremendio (5 искр)<br></div>} 
   $text_display += {<br><div id="under_gray">Domini Dictum (5 искр)<br></div>}
  END
- IF master_mage => 4 and slave_state > 0 and sparks => 25 and slave["brand"] = 0:
+ IF master_mage => 4 and slave_state > CONST_INT['no_slave'] and sparks => 25 and slave["brand"] = 0:
   $text_display += {<br><div id="under">Adverto Servili (25 искр)<br><div id = "clear"><a href = 'EXEC: interaction = 68 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Adverto Servili (25 искр)<br></div>} 
@@ -421,11 +421,11 @@ IF menu_form = 31:
   if assistant_state = 1:   $text_display += {<br><div id="under">Ассистентка - счетовод<br><div id = "clear"><a href = 'EXEC: slave_account_rule = 0 & assistant_account_rule = 1 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
   if assistant_state ! 1: $text_display += {<br><div id="under_gray">Ассистентка - счетовод<br></div>}
  END 
- IF slave_state = 1 and slave_account_rule = 1:
+ IF slave_state = CONST_INT['slave_exist'] and slave_account_rule = 1:
   $text_display += {<br><div id="under">Заняться счетами лично<br><div id = "clear"><a href = 'EXEC: slave_account_rule = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
   else
-  if slave_state = 1: $text_display += {<br><div id="under">Воспитуемая - счетовод<br><div id = "clear"><a href = 'EXEC: slave_account_rule = 1 & assistant_account_rule = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
-  if slave_state ! 1: $text_display += {<br><div id="under_gray">Воспитуемая - счетовод<br></div>}
+  if slave_state = CONST_INT['slave_exist']: $text_display += {<br><div id="under">Воспитуемая - счетовод<br><div id = "clear"><a href = 'EXEC: slave_account_rule = 1 & assistant_account_rule = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
+  if slave_state ! CONST_INT['slave_exist']: $text_display += {<br><div id="under_gray">Воспитуемая - счетовод<br></div>}
  END 
  $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = о & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
 END

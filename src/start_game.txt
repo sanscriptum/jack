@@ -7,7 +7,7 @@ $interior = 'slum_house'
 
 gs 'new_estate'
 
-slave_state = 0
+slave_state = CONST_INT['no_slave']
 day = 1
 decade = 1
 ride_count = 1

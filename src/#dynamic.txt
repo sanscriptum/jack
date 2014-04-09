@@ -69,7 +69,7 @@ meat_price = mince_gain + meat_gain*2 + virgin_meat_gain*4
 }
 
 $get_meat = {
-slave_state = 0 
+slave_state = CONST_INT['no_slave'] 
 IF frige_space > 0:
  IF frige_space => virgin_meat_gain:
   frige["virgin_meat"] += virgin_meat_gain
@@ -99,15 +99,15 @@ $get_frige_space = {
 }
 
 $slave_pass_out = {
-IF slave_state ! 0:
- if slave["energy"] = -5: slave_state = 2
+IF slave_state ! CONST_INT['no_slave']:
+ if slave["energy"] = -5: slave_state = CONST_INT['slave_faint']
  IF slave["stamina"] = 0: 
-  slave_state = 2
+  slave_state = CONST_INT['slave_faint']
   else
-  if slave["energy"] > -5: slave_state = 1
+  if slave["energy"] > -5: slave_state = CONST_INT['slave_exist']
  END
  IF slave["stamina"] < 0: 
-  slave_state = 0
+  slave_state = CONST_INT['no_slave']
   msg 'Ваша воспитуемая умерла от истощения. Вы продали ее труп мяснику за 5 искр.'
   sparks += 5
  END
@@ -316,20 +316,23 @@ if sin_potential > 6: sin_potential = 6
 }
 
 $sin_gained_now = {
-IF already_done_today[interaction] = 0:
- sin_gained = sin_potential + res
- if sin_gained <= 0: sin_gained = 1
- if sin_gained > 5: sin_gained = 5
- IF sin_gained => slave["virtue"]:
-  slave["virtue"] = 0
-  IF sin_gained > slave["sin"]: 
-   slave["sin"] = sin_gained
-   master_bad_mood['neg_nice_slave'] = 1
-   gs '$mod_master_drop', 1
-  END 
- END
-END
-if sententia_veritas = 1: slave["virtue"] = 0 & slave["sin"] = 5
+    IF already_done_today[interaction] = 0:
+        sin_gained = sin_potential + res
+        if sin_gained <= 0: sin_gained = 1
+        if sin_gained > 5: sin_gained = 5
+        IF sin_gained => slave["virtue"]:
+            slave["virtue"] = 0
+            IF sin_gained > slave["sin"]: 
+                slave["sin"] = sin_gained
+                !TODO: проверить, правильно ли работает исправление
+                !Из-за фикса, возможно ухудшение на один день состояния мастера (влияние мудов)
+                !master_bad_mood['neg_nice_slave'] = 1
+                master_mood['neg_nice_slave'] = 1
+                gs '$mod_master_drop', 1
+            END 
+        END
+    END
+    if sententia_veritas = 1: slave["virtue"] = 0 & slave["sin"] = 5
 }
 
 $virtue_gained_now = {

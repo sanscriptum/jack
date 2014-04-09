@@ -36,7 +36,7 @@ if master_wealth < 4: club_member = 0
 if chimera_gem_on = 1: master_excitement = 5
 
 !Обнуления при увольнении ассистентки или воспитуемой
-IF slave_state = 0:
+IF slave_state = CONST_INT['no_slave']:
  slave = 0
  slave["nul"] = 0 
  slave_sleep_condition = 0 
@@ -784,7 +784,7 @@ if assistant["deprivation_xp"] > 10 and assistant["deprivation_attitude"] = 0: a
 
 !Нормализация переменных
 if assistant_state < 1: assistant_alchemist_rule = 0
-if assistant_state = 1 and slave_state = 0: assistant_alchemist_rule = 1
+if assistant_state = 1 and slave_state = CONST_INT['no_slave']: assistant_alchemist_rule = 1
 
 if slave["beauty"] < 0: slave["beauty"] = 0
 if slave["sensitivity"] < 0: slave["sensitivity"] = 0
@@ -833,7 +833,7 @@ if slave["voice"] > 0: slave["vocal"] += 1
 if slave["vocal"] > 5: slave["vocal"] = 5
 
 if assistant_state ! 1: assistant_account_rule = 0
-if slave_state = 0: slave_account_rule = 0
+if slave_state = CONST_INT['no_slave']: slave_account_rule = 0
 
 восприятие = master_fighter - 1
 ловкость = master_fighter - 1
@@ -876,8 +876,8 @@ $quest_description[1] = "<<$brand_fame[brand_reputation]>><br>
    <<$korvus_fame[faction_fame['korvus']]>><br>
 
 <a href = 'EXEC: quest_description_mode = 0 & gt curloc'>Назад</a>"
-
-IF slave_state > 0:
+!CHECK: почему мертвым можно?
+IF slave_state > CONST_INT['no_slave']:
  active[$quest[2]] = 1
  else
  active[$quest[2]] = 0

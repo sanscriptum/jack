@@ -1,5 +1,6 @@
 # #slave_base
 !БАЗОВЫЕ ХАРАКТЕРИСТИКИ РАБЫНЬ (ВЕРСИЯ С ПОЛНОЙ ГРАФИКОЙ)
+!'study_genetal_loli' - не фикшено, т.к. файл именно так и называется.
 
 !Нулевой вариант
 $fullimage[0] = 'girls\full\001_blond_long_blue'
@@ -130,7 +131,7 @@ $nurse[] = 'girls\scene\nurse_general'
 $piano[] = 'girls\scene\piano_general_loli'
 $rest[] = 'girls\scene\rest_general_loli'
 $secretary[] = 'girls\scene\secretary_general_loli'  
-$student[] = 'girls\scene\study_genetal'
+$student[] = 'girls\scene\study_general'
 $singing[] = 'girls\full\001_blond_long_blue'
 $violin[] = 'girls\scene\violin_general_loli'
 $washing[] = 'girls\scene\wash_general_loli'
@@ -715,7 +716,7 @@ $nurse[6] = 'girls\scene\nurse_general'
 $piano[6] = 'girls\scene\piano_red_long'
 $rest[6] = 'girls\scene\rest_pink_blueeye'
 $secretary[6] = 'girls\scene\secretary_general_loli'  
-$student[6] = 'girls\scene\study_genetal'
+$student[6] = 'girls\scene\study_general'
 $singing[6] = 'girls\full\006_red_blue'
 $violin[6] = 'girls\scene\violin_general_loli'
 $washing[6] = 'girls\scene\wash_general_loli'

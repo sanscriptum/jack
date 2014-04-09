@@ -12,15 +12,15 @@ END
 if iced_state > 0: *p '<div id = "bg"><img src="content\pic\<<$iced["fullimage"]>>.gif"></div>'
 *p '<div id = "text"><<$text>></div>'
 
-IF iced_state > 0 and slave_state = 0:
+IF iced_state > 0 and slave_state = CONST_INT['no_slave']:
  *p '<div id = "cell"><a href = "EXEC: gt ''slave_to_iced''"><img src="content\pic\release.png"></a></div>'
 END
 
-IF iced_state = 0 and slave_state > 0:
+IF iced_state = 0 and slave_state > CONST_INT['no_slave']:
  *p '<div id = "cell"><a href = "EXEC: gt ''slave_to_iced''"><img src="content\pic\imprison.png"></a></div>'
 END
 
-IF iced_state > 0 and slave_state > 0:
+IF iced_state > 0 and slave_state > CONST_INT['no_slave']:
  *p '<div id = "cell"><a href = "EXEC: gt ''slave_to_iced''"><img src="content\pic\cell_exchange.png"></a></div>'
 END
 

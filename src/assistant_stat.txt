@@ -1,6 +1,6 @@
 # assistant_stat
 !ЭКРАН ПОДРОБНОЙ СТАТИСТИКИ АССИСТЕНТКИ
-IF slave_state > 0:
+IF slave_state > CONST_INT['no_slave']:
  if slave['brand'] = 0:
   $assitant_info_text = '  [<<$assistant_name>>]
   - Вам следует поставить на рабыню клеймо, прежде чем она будет готова к продаже, господин. Я так же замечала, что женщины уже имеющие клеймо более склонны к подчинению, чем те которых ещё не заклеймили.'
@@ -251,7 +251,7 @@ IF assistant_stat_screen = 2:
  
 END 
  
-IF slave_state = 1:
+IF slave_state = CONST_INT['slave_exist']:
  *p '<div id="right_column_a">НАВЫКИ:
 <a href = "EXEC: interaction = 4111 & gt ''interaction''"><<$slave_service[assistant["service"]]>></a> 
 <a href = "EXEC: interaction = 4112 & gt ''interaction''"><<$slave_cook[assistant["cook"]]>></a>

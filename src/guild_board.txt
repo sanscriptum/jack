@@ -37,7 +37,7 @@ IF $interaction_type = 'special':
  *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
 END
 
-IF slave_state = 0 and contract['time'] = 0:
+IF slave_state = CONST_INT['no_slave'] and contract['time'] = 0:
  *p {<div id = "evaluate"><a href = 'EXEC: interaction_city = 900 & gt "interaction_city"'><img src="content\evaluate.png"></a></div>}
  else
  *p {<div id = "evaluate"><img src="content\deny.png"></div>} 

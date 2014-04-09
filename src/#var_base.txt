@@ -1,7 +1,7 @@
 # #var_base
 !РАЗЛИЧНЫЕ ТЕХНИЧЕСКИЕ ПЕРЕМЕННЫЕ И МАССИВЫ
 
-!Замена для копипасты фонтов, by Lyazar
+!Замена для копипасты фонтов
 $_font_col_rep[0] = '<font color="#cd0000">'
 $_font_col_rep[1] = '<font color="#C71585">'
 $_font_col_rep[2] = '<font color="#4B0082">'
@@ -13,7 +13,7 @@ $_font_closer = '</font>'
 $vb_cycle = {
     $result = $_font_col_rep[args[0]] + $args[1] + $_font_closer
 }
-!-----Замена для копипасты фонтов, by Lyazar-----
+!-----Замена для копипасты фонтов-----
 
 !Таблица констант замены магических чисел
 !Замена для возраста рабынь\ассистенток etc.
@@ -21,6 +21,13 @@ $vb_cycle = {
 CONST_INT['young_age'] = 0
 CONST_INT['loli_age']  = 1
 CONST_INT['milf_age']  = 2
+
+!Замена для состояния раба\ассистентки(slave_state)
+!TODO: заменить в коде числа [0-3] на CONST_INT[?]
+CONST_INT['no_slave'] = 0
+CONST_INT['slave_exist'] = 1
+CONST_INT['slave_faint'] = 2
+CONST_INT['slave_dead'] = 3
 
 !ОСНОВНОЙ КОД
 !Оставлена старая замена, пока лень ковырять

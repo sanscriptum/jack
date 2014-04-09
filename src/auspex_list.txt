@@ -31,7 +31,7 @@ IF auspex = 0:
  if master_supermacy > 0 and master_supermacy < 4: $auspex_list += '. <<$aura_supermacy[4]>><BR><BR>'
  if master_supermacy > 3: $auspex_list += ' <<$aura_supermacy[5]>><BR><BR>'
  if master_supermacy > -4 and master_supermacy < 0: $auspex_list += '. <<$aura_supermacy[2]>><BR><BR>'
- if master_supermacy < -3: $auspex_list += ' <<$aura_supermacy[1]>><BR><BR>'  
+ if master_supermacy < -3: $auspex_list += ' <<$aura_supermacy[1]>><BR><BR>'
 
  $auspex_list += '    <<$aura_lust[slave["arousal"]]>><br><BR>' 
  $auspex_list += '    <<$aura_fear[slave["fear"]]>><br><BR>'

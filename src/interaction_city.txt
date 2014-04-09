@@ -651,7 +651,7 @@ IF interaction_city = 115441:
  $return_lock  = 'shop_general' 
  txt_count = 1
  txt = 1
- slave_state = 0 
+ slave_state = CONST_INT['no_slave']
  sparks += meat_price
  $play_sound[1] = $slaughter_sound
  $text[1] = '   Мясник безжалостно хватает девушку за волосы и оттянув её голову назад чиркает ножом ей по горлу. Захлебывающаяся собственной кровью <<$slave_name>> некоторое время бьётся у него в руках, но быстро затихает. Раб подвешивает тушу на крюк, чтобы стекла кровь, а вы получаете свои искры.'
@@ -1115,7 +1115,7 @@ IF interaction_city = 1291:
  $place = 'colloseum_arena'
  $picture_type = 'untyped' 
  $special_bg = 'content\pic\scene\arena_end.jpg' 
- slave_state = 0
+ slave_state = CONST_INT['no_slave']
  sparks += 5
  city_form = 1 
  $return_lock = 'city_menu_form'
@@ -1129,7 +1129,7 @@ IF interaction_city = 1292:
  $place = 'colloseum_arena'
  $picture_type = 'untyped' 
  $special_bg = 'content\pic\scene\arena_end.jpg' 
- slave_state = 0
+ slave_state = CONST_INT['no_slave']
  sparks += 5 
  city_form = 1 
  $return_lock = 'city_menu_form'
@@ -1204,7 +1204,7 @@ IF interaction_city = 1295:
   slave_mood['pos_slave_winner'] = slave['sensivity'] + 1    
   else
   master_mood['pos_master_winner'] = 1
-  slave_state = 0
+  slave_state = CONST_INT['no_slave']
  END
 END
 
@@ -2809,7 +2809,7 @@ IF interaction_city = 142:
  $npc_id = 'госпожа_ангелика' 
  $return_lock  = 'guild'
  gs '$slave_price'
- IF slave_specialisation[$contract['specialisation']] > 0 and rating => contract['level'] and slave_state = 1:
+ IF slave_specialisation[$contract['specialisation']] > 0 and rating => contract['level'] and slave_state = CONST_INT['slave_exist']:
   quality_bonus = 0
   IF rating > contract['level']: 
    if brand_reputation > 0: quality_bonus = 200 * brand_reputation
@@ -2828,7 +2828,7 @@ IF interaction_city = 142:
     - Хорошая работа, <<$master_name>>. Премия за качество <<quality_bonus>> искр. Премия за скорость <<time_bonus>> искр. Итого <<final_bonus>> искр. Если нужна будет ещё халтура, ты знаешь где меня найти."
    sparks += final_bonus
   END
-  slave_state = 0
+  slave_state = CONST_INT['no_slave']
   if quality_bonus > 0: brand_rate += 1 
   killvar 'contract'
   else
@@ -2893,7 +2893,7 @@ IF interaction_city = 1531:
   interaction_city = 15311
   else
   interaction_city = 15312
-  if slave['arena_level'] > 4 and slave_state = 1: interaction_city = 15313  
+  if slave['arena_level'] > 4 and slave_state = CONST_INT['slave_exist']: interaction_city = 15313  
  end
 END
 
@@ -2913,7 +2913,7 @@ IF interaction_city = 15313:
  copyarr '$text', '$aramus_win'
  active[$quest[6]] = 2 
  bull_ring = 1
- slave_state = 0 
+ slave_state = CONST_INT['no_slave']
 END
 
 IF interaction_city = 1532:
@@ -2926,7 +2926,7 @@ IF interaction_city = 1532:
   interaction_city = 15321
   else
   interaction_city = 15322
-  if slave['has_ride_win'] = 1 and slave_state = 1: interaction_city = 15323
+  if slave['has_ride_win'] = 1 and slave_state = CONST_INT['slave_exist']: interaction_city = 15323
  end
 END
 
@@ -2946,7 +2946,7 @@ IF interaction_city = 15323:
  copyarr '$text', '$wujen_win'
  active[$quest[7]] = 2 
  snake_amulet = 1
- slave_state = 0 
+ slave_state = CONST_INT['no_slave']
 END
 
 IF interaction_city = 1533:
@@ -2959,7 +2959,7 @@ IF interaction_city = 1533:
   interaction_city = 15331
   else
   interaction_city = 15332
-  if slave["petting"] = 5 and slave["oral"] = 5 and  slave["penetration"] = 5 and  slave["fetishism"] = 5 and  slave["orgy"] = 5 and  slave["xenophily"] = 5 and slave_state = 1: interaction_city = 15333
+  if slave["petting"] = 5 and slave["oral"] = 5 and  slave["penetration"] = 5 and  slave["fetishism"] = 5 and  slave["orgy"] = 5 and  slave["xenophily"] = 5 and slave_state = CONST_INT['slave_exist']: interaction_city = 15333
  end
 END
 
@@ -2979,7 +2979,7 @@ IF interaction_city = 15333:
  copyarr '$text', '$garsid_win'
  active[$quest[8]] = 2  
  chimera_earring = 1
- slave_state = 0
+ slave_state = CONST_INT['no_slave']
 END
 
 IF interaction_city = 1534:
@@ -3027,7 +3027,7 @@ END
 
 IF interaction_city = 161:
  interaction_city = 1611
- if slave_state = 1 and npc_progress['cardinal_de_mujlon'] = 1 and slave['brand'] > 0: interaction_city = 1612
+ if slave_state = CONST_INT['slave_exist'] and npc_progress['cardinal_de_mujlon'] = 1 and slave['brand'] > 0: interaction_city = 1612
 END
 
 IF interaction_city = 1611:
@@ -3059,7 +3059,7 @@ END
 
 IF interaction_city = 162:
  interaction_city = 1621
- if slave_state = 1 and npc_progress['pope'] = 1 and slave['brand'] > 0: interaction_city = 1622
+ if slave_state = CONST_INT['slave_exist'] and npc_progress['pope'] = 1 and slave['brand'] > 0: interaction_city = 1622
 END
 
 IF interaction_city = 1621:
@@ -3602,7 +3602,7 @@ END
 
 IF interaction_city = 241:
  interaction_city = 2411
- if slave_state = 1 and npc_progress['bishop_molaru'] = 1 and slave['brand'] > 0: interaction_city = 2412
+ if slave_state = CONST_INT['slave_exist'] and npc_progress['bishop_molaru'] = 1 and slave['brand'] > 0: interaction_city = 2412
 END
 
 IF interaction_city = 2411:
@@ -3634,7 +3634,7 @@ END
 
 IF interaction_city = 242:
  interaction_city = 2421
- if slave_state = 1 and npc_progress['general_barabas'] = 1 and slave['brand'] > 0: interaction_city = 2422
+ if slave_state = CONST_INT['slave_exist'] and npc_progress['general_barabas'] = 1 and slave['brand'] > 0: interaction_city = 2422
 END
 
 IF interaction_city = 2421:
@@ -3666,7 +3666,7 @@ END
 
 IF interaction_city = 243:
  interaction_city = 2431
- if slave_state = 1 and npc_progress['pretor_siegfrid'] = 1 and slave['brand'] > 0: interaction_city = 2432
+ if slave_state = CONST_INT['slave_exist'] and npc_progress['pretor_siegfrid'] = 1 and slave['brand'] > 0: interaction_city = 2432
 END
 
 IF interaction_city = 2431:
@@ -3698,7 +3698,7 @@ END
 
 IF interaction_city = 244:
  interaction_city = 2441
- if slave_state = 1 and npc_progress['taurus_king'] = 1 and slave['brand'] > 0: interaction_city = 2442
+ if slave_state = CONST_INT['slave_exist'] and npc_progress['taurus_king'] = 1 and slave['brand'] > 0: interaction_city = 2442
 END
 
 IF interaction_city = 2441:
@@ -4204,7 +4204,7 @@ IF interaction_city = 33126:
  slave["energy"] = 0
  if slave["stamina"] < 2: slave["stamina"] = 2
  if slave['starvation'] > 0: slave['starvation'] = 0
- slave_state = 1
+ slave_state = CONST_INT['slave_exist']
  slave_stimulation = 0
 END
 
@@ -4471,7 +4471,7 @@ END
 
 IF interaction_city = 341:
  interaction_city = 3411
- if slave_state = 1 and npc_progress['bishop_porter'] = 1 and slave['brand'] > 0: interaction_city = 3412
+ if slave_state = CONST_INT['slave_exist'] and npc_progress['bishop_porter'] = 1 and slave['brand'] > 0: interaction_city = 3412
 END
 
 IF interaction_city = 3411:
@@ -4503,7 +4503,7 @@ END
 
 IF interaction_city = 342:
  interaction_city = 3421
- if slave_state = 1 and npc_progress['general_drago'] = 1 and slave['brand'] > 0: interaction_city = 3422
+ if slave_state = CONST_INT['slave_exist'] and npc_progress['general_drago'] = 1 and slave['brand'] > 0: interaction_city = 3422
 END
 
 IF interaction_city = 3421:
@@ -4535,7 +4535,7 @@ END
 
 IF interaction_city = 343:
  interaction_city = 3431
- if slave_state = 1 and npc_progress['pretor_diabaz'] = 1 and slave['brand'] > 0: interaction_city = 3432
+ if slave_state = CONST_INT['slave_exist'] and npc_progress['pretor_diabaz'] = 1 and slave['brand'] > 0: interaction_city = 3432
 END
 
 IF interaction_city = 3431:
@@ -4567,7 +4567,7 @@ END
 
 IF interaction_city = 344:
  interaction_city = 3441
- if slave_state = 1 and npc_progress['serpis_prince_first'] = 1 and slave['brand'] > 0: interaction_city = 3442
+ if slave_state = CONST_INT['slave_exist'] and npc_progress['serpis_prince_first'] = 1 and slave['brand'] > 0: interaction_city = 3442
 END
 
 IF interaction_city = 3441:
@@ -4983,7 +4983,7 @@ END
 
 IF interaction_city = 451:
  interaction_city = 4511
- if slave_state = 1 and npc_progress['bishop_shaitana'] = 1 and slave['brand'] > 0: interaction_city = 4512
+ if slave_state = CONST_INT['slave_exist'] and npc_progress['bishop_shaitana'] = 1 and slave['brand'] > 0: interaction_city = 4512
 END
 
 IF interaction_city = 4511:
@@ -5015,7 +5015,7 @@ END
 
 IF interaction_city = 452:
  interaction_city = 4521
- if slave_state = 1 and npc_progress['general_carnis'] = 1 and slave['brand'] > 0: interaction_city = 4522
+ if slave_state = CONST_INT['slave_exist'] and npc_progress['general_carnis'] = 1 and slave['brand'] > 0: interaction_city = 4522
 END
 
 IF interaction_city = 4521:
@@ -5047,7 +5047,7 @@ END
 
 IF interaction_city = 453:
  interaction_city = 4531
- if slave_state = 1 and npc_progress['pretor_tifaret'] = 1 and slave['brand'] > 0: interaction_city = 4532
+ if slave_state = CONST_INT['slave_exist'] and npc_progress['pretor_tifaret'] = 1 and slave['brand'] > 0: interaction_city = 4532
 END
 
 IF interaction_city = 4531:
@@ -5079,7 +5079,7 @@ END
 
 IF interaction_city = 454:
  interaction_city = 4541
- if slave_state = 1 and npc_progress['tiamath'] = 1 and slave['brand'] > 0: interaction_city = 4542
+ if slave_state = CONST_INT['slave_exist'] and npc_progress['tiamath'] = 1 and slave['brand'] > 0: interaction_city = 4542
 END
 
 IF interaction_city = 4541:
@@ -5558,7 +5558,7 @@ END
 
 IF interaction_city = 541:
  interaction_city = 5411
- if slave_state = 1 and npc_progress['bishop_nerilis'] = 1 and slave['brand'] > 0: interaction_city = 5412
+ if slave_state = CONST_INT['slave_exist'] and npc_progress['bishop_nerilis'] = 1 and slave['brand'] > 0: interaction_city = 5412
 END
 
 IF interaction_city = 5411:
@@ -5590,7 +5590,7 @@ END
 
 IF interaction_city = 542:
  interaction_city = 5421
- if slave_state = 1 and npc_progress['hand_of_the_knyaz'] = 1 and slave['brand'] > 0: interaction_city = 5422
+ if slave_state = CONST_INT['slave_exist'] and npc_progress['hand_of_the_knyaz'] = 1 and slave['brand'] > 0: interaction_city = 5422
 END
 
 IF interaction_city = 5421:
@@ -5622,7 +5622,7 @@ END
 
 IF interaction_city = 543:
  interaction_city = 5431
- if slave_state = 1 and npc_progress['pretor_kamael'] = 1 and slave['brand'] > 0: interaction_city = 5432
+ if slave_state = CONST_INT['slave_exist'] and npc_progress['pretor_kamael'] = 1 and slave['brand'] > 0: interaction_city = 5432
 END
 
 IF interaction_city = 5431:
@@ -5654,7 +5654,7 @@ END
 
 IF interaction_city = 544:
  interaction_city = 5441
- if slave_state = 1 and npc_progress['korvus_knyaz'] = 1 and slave['brand'] > 0: interaction_city = 5442
+ if slave_state = CONST_INT['slave_exist'] and npc_progress['korvus_knyaz'] = 1 and slave['brand'] > 0: interaction_city = 5442
 END
 
 IF interaction_city = 5441:
@@ -6165,7 +6165,7 @@ IF interaction_city = 931:
  gs '$slave_price'
  if brand_rate < rating: brand_rate += rating
  sparks += sparks_get
- slave_state = 0
+ slave_state = CONST_INT['no_slave']
 END
 
 IF interaction_city = 94:
@@ -6182,7 +6182,7 @@ IF interaction_city = 94:
     if brand_rate < rating: brand_rate += rating
     sparks += discount_price[rating]
     if sound_on = 1: play 'content\snd\kkm.mp3'
-    slave_state = 0
+    slave_state = CONST_INT['no_slave']
     gt "guild"
  }
  $no = {gt 'guild'}
@@ -6247,7 +6247,7 @@ IF interaction_city = 953:
  $return_lock  = 'guild' 
  npc = 1
  $npc_id = 'scoops' 
- IF slave_state = 0:
+ IF slave_state = CONST_INT['no_slave']:
   $text[1] = '  [МАСТЕР СКУПЪС]
  - Вот прошу, <<$master_name>>. В лучшем виде, прям как ты заказывал - гарантирую! Забирай и наслаждайся. Уверен ты сможешь отлично её подготовить, удачи!'
   search['active'] = 0

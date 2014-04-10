@@ -19,7 +19,7 @@ IF stock_sold = 0:
  $text = '<<$auction_start>>'
 END
 
-stock_base_price = 5
+!stock_base_price = 5
 
 IF auction_phase = 0:
 

@@ -1,6 +1,6 @@
 # $slave_price
 !БАЗОВАЯ ЦЕНА
-stock["style"] = (stock_expression + stock_callisthenics)/2 + stock["grace"]
+stock["style"] = (stock["expression"] + stock["callisthenics"])/2 + stock["grace"]
 
 stock_base_price = 5
 if stock["stamina"] > 2: stock_base_price += 5

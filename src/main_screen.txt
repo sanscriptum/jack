@@ -96,7 +96,7 @@ END
 
 IF slave["hygiene"] > 1 and slave_state = CONST_INT['slave_exist'] and bath > 0: *p {<div id="fast_wash_slave"><a href = "EXEC: interaction = 52 & gt 'interaction'"><img src="content\fast_button.png"></a></div>}  
 
-IF slave_state = CONST_INT['slave_exist']: 
+IF slave_state = CONST_INT['slave_exist']:
  if slave["sin"] => 0: *p {<div id="fast_redeem"><a href = "EXEC: menu_form = 14 & gt 'menu_form'"><img src="content\fast_button.png"></a></div>} 
  if slave["virtue"] > 0: *p {<div id="fast_redeem"><a href = "EXEC: menu_form = 15 & gt 'menu_form'"><img src="content\fast_button.png"></a></div>} 
 END
@@ -134,7 +134,7 @@ IF stasis_tank > 0:
  END
 END
 
-IF slave_state = CONST_INT['slave_exist']: 
+IF slave_state = CONST_INT['slave_exist']:
  *p '<div id = "teach"><a href = "EXEC: gt ''teach_screen''"><img src="content\teach.png"></a></div>'
 END
 

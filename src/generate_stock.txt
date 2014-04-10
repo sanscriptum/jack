@@ -13,6 +13,7 @@ meta_type = RAND (1,5)
 if meta_type = 4: meta_type = 2
 if meta_type = 5: meta_type = 3
 
+! no_loli & no_milf не существуют
 IF no_loli = 1:
  if meta_type = 1: jump 'loop_meta'
 END
@@ -20,6 +21,7 @@ IF no_milf = 1:
  if meta_type = 3: jump 'loop_meta'
 END
 
+! 1 - loli, 2 - young, 3 - milf ?
 IF meta_type = 1: stock_type = RAND (1,28)
 IF meta_type = 2: stock_type = RAND (201,241)
 IF meta_type = 3: stock_type = RAND (501,542)
@@ -44,16 +46,15 @@ if stock["age"] = CONST_INT['loli_age']: stock['fertility'] = -2
 stat_count = 7
 i = 0
 :loop
-i += 1
-gen = RAND (1,12)
-if gen > 0: atribute = 1
-if gen > 3: atribute = 2
-if gen > 6: atribute = 3
-if gen > 9: atribute = 4
-if gen = 12: atribute = 5 
+    i += 1
+    gen = RAND (1,12)
+    if gen > 0: atribute = 1
+    if gen > 3: atribute = 2
+    if gen > 6: atribute = 3
+    if gen > 9: atribute = 4
+    if gen = 12: atribute = 5 
 
-dynamic '<<$stockatr[i]>> = atribute'
-
+    dynamic '<<$stockatr[i]>> = atribute'
 if i < stat_count: jump 'loop'
 
 stock["fat"] = RAND (0,2)
@@ -1135,15 +1136,19 @@ END
 chance = RAND (1,nm_max)
 dynamic '$stock_name = $<<$namebase>>_name[chance]'
 
-a = RAND (1,3)
-if a = 1: stock['ill'] = 1
-if stock_virginity = 0: stock['ill'] = 0
+!if stock_virginity = 0: stock['ill'] = 0
+if RAND(1, 3) = 1:
+    stock['ill'] = 1
+else
+    stock['ill'] = 0
+end
 
-a = RAND (1,3)
-if a = 1: stock['parasite'] = 1
-if stock_virginity = 0: stock['parasite'] = 0
-if meta_type = 1: stock['parasite'] = 0
-
+!if stock_virginity = 0 or meta_type = 1: stock['parasite'] = 0
+if RAND (1, 3) = 1:
+    stock['parasite'] = 1
+else
+    stock['parasite'] = 0
+end
 
 i = 0
 :loop10
@@ -1403,8 +1408,10 @@ IF stock["beauty"] = 5: $stock_epithet = 'прекрасная как сами �
 IF stock["exotic"] => 2: $stock_epithet = 'экзотическая'
 
 !БАЗОВАЯ ЦЕНА
-stock["style"] = (stock_expression + stock_callisthenics)/2 + stock["grace"]
+stock["style"] = (stock["expression"] + stock["callisthenics"])/2 + stock["grace"]
 
+!TODO: сделать нормальный баланс цены
+!похожий код в $slave_price
 stock_base_price = 5
 if stock["stamina"] > 2: stock_base_price += 5
 if stock["stamina"] > 3: stock_base_price += 10
@@ -1439,7 +1446,7 @@ if stock["temper"] > 3: stock_base_price += 10
 if stock["temper"] > 4: stock_base_price += 20
 if stock_base_price < 5: stock_base_price = 5
 haggling_limit = stock_base_price/3
-stock_base_price = 5
+!stock_base_price = 5
 
 !СНАРЯЖЕНИЕ
 $stock["wpn"] = 'безоружный'

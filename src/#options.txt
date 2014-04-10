@@ -1337,7 +1337,7 @@ $colloseum_options[1] = {
 $colloseum_options[21] = { 
  $text_display = '<br>'
  $text_display += {<br><div id="under">- Устрой мне спарринг<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- IF slave_state = CONST_INT['slave_exist']: 
+ IF slave_state = CONST_INT['slave_exist']:
   $text_display += {<div id="under">- Устрой спарринг для моей воспитуемой<br><div id = "clear"><a href = 'EXEC: sp_txt = 3 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
   else
   $text_display += {<div id="under_gray">- Устрой спарринг для моей воспитуемой<br></div>}   

@@ -64,7 +64,7 @@ END
 
 IF menu_form = 0:
  $place = 'home_lux' 
- IF slave_state = CONST_INT['slave_exist']: 
+ IF slave_state = CONST_INT['slave_exist']:
   $text_display += {<br><div id="under">Заняться воспитуемой <br><div id = "clear"><a href = 'EXEC: menu_form = 1 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Заняться воспитуемой<br></div>}
@@ -85,7 +85,7 @@ IF menu_form = 0:
    $text_display += {<br><div id="under_gray">Назначить ассистентку<br></div>}
   END
  END
- IF slave_state = CONST_INT['slave_exist']: 
+ IF slave_state = CONST_INT['slave_exist']:
   $text_display += {<br><div id="under">Поручения воспитуемой <br><div id = "clear"><a href = 'EXEC: menu_form = 5 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
   else
   IF assistant_state = 1:

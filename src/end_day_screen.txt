@@ -146,7 +146,7 @@ IF end_of_the_day = 1:
  jump 'loop'  
 END
 
-IF slave_state = CONST_INT['no_slave']: 
+IF slave_state = CONST_INT['no_slave']:
  IF active[$quest[3]] = 1 and noble_status = 1:
   active[$quest[3]] = 0
   gt 'epic_win'

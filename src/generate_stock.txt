@@ -52,7 +52,7 @@ i = 0
     if gen > 3: atribute = 2
     if gen > 6: atribute = 3
     if gen > 9: atribute = 4
-    if gen = 12: atribute = 5 
+    if gen = 12: atribute = 5
 
     dynamic '<<$stockatr[i]>> = atribute'
 if i < stat_count: jump 'loop'
@@ -1365,7 +1365,7 @@ if gen = 1: atribute = 1
 if gen > 1: atribute = 2
 if gen > 3: atribute = 3
 if gen > 9: atribute = 4
-if gen = 12: atribute = 5 
+if gen = 12: atribute = 5
 stock["metabolism"] = atribute'
 
 !Определение характера

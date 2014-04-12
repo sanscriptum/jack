@@ -2769,12 +2769,6 @@ IF interaction_city = 141:
  n = arrsize('$specialisation') - 1 
  specialisation = rand(1,n)
  txt = 1
- $rating[0] = '<font color="#cd0000"><b>F-</b></font>'
- $rating[1] = '<font color="#C71585"><b>D</b></font>'
- $rating[2] = '<font color="#4B0082"><b>C</b></font>'
- $rating[3] = '<font color="#0000CD"><b>B</b></font>'
- $rating[4] = '<font color="#008080"><b>A</b></font>'
- $rating[5] = '<font color="#008000"><b>S+</b></font>'
  $text[1] = '[ГОСПОЖА АНГЕЛИКА]
    - Это <<$stock_name>>. Она должна быть подготовлена как <<$slave_type_name[$specialisation[specialisation]]>> ранга <<$rating[contract_level[brand_reputation]]>> или выше. Предоплата по контракту составляет <<prepay[brand_reputation]>> искр. Бонусные выплаты по итогам работы будут зависеть от скорости и качества подготовки рабыни. Берешься?'
  $yes = {

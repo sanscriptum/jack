@@ -37,7 +37,7 @@ if city_random_event = 0: gs '$city_random_event'
  END
  
 Отмена
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = о & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
 '
 
 IF city_form = 0:
@@ -49,7 +49,7 @@ IF city_form = 0:
  $text_display += {<br><div id="under">Квартал отверженных<br><div id = "clear"><a href = 'EXEC: city_form = 4 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Некрополис<br><div id = "clear"><a href = 'EXEC: city_form = 5 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Граница Туманов<br><div id = "clear"><a href = 'EXEC: city_form = 6 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
- !$text_display += {<br><div id="under">Вернуться домой <br><div id = "clear"><a href = 'EXEC: menu_form = о & city_form = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ !$text_display += {<br><div id="under">Вернуться домой <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & city_form = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
 END
 
 IF city_form = 1:
@@ -93,7 +93,7 @@ END
 
 IF city_form = 21:
  $place = 'taurus_district' 
- if $estate = 'taurus_house': $text_display += {<br><div id="under">Ваши апартаменты<br><div id = "clear"><a href = 'EXEC: menu_form = о & city_form = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ if $estate = 'taurus_house': $text_display += {<br><div id="under">Ваши апартаменты<br><div id = "clear"><a href = 'EXEC: menu_form = 0 & city_form = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Апартаменты дона Диего<br><div id = "clear"><a href = 'EXEC: interaction_city = 211 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Лаборатория Гильмерита<br><div id = "clear"><a href = 'EXEC: interaction_city = 212 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Манор Сира Тугбара<br><div id = "clear"><a href = 'EXEC: interaction_city = 213 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
@@ -113,7 +113,7 @@ END
 
 IF city_form = 31:
  $place = 'serpis_district' 
- if $estate = 'serpis_house': $text_display += {<div id="under">Ваши апартаменты<br><div id = "clear"><a href = 'EXEC: menu_form = о & city_form = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ if $estate = 'serpis_house': $text_display += {<div id="under">Ваши апартаменты<br><div id = "clear"><a href = 'EXEC: menu_form = 0 & city_form = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<div id="under">Квартира Питера Виабу<br><div id = "clear"><a href = 'EXEC: interaction_city = 312 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<div id="under">Дом мастера Лао <br><div id = "clear"><a href = 'EXEC: interaction_city = 311 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<div id="under">Квартира Лардбага<br><div id = "clear"><a href = 'EXEC: interaction_city = 313 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
@@ -150,7 +150,7 @@ END
 
 IF city_form = 41:
  $place = 'kamira_district' 
- if $estate = 'kamira_house': $text_display += {<br><div id="under">Ваши апартаменты<br><div id = "clear"><a href = 'EXEC: menu_form = о & city_form = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ if $estate = 'kamira_house': $text_display += {<br><div id="under">Ваши апартаменты<br><div id = "clear"><a href = 'EXEC: menu_form = 0 & city_form = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<div id="under">Святилище Магнаги<br><div id = "clear"><a href = 'EXEC: interaction_city = 411 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<div id="under">Стойло Кратоса<br><div id = "clear"><a href = 'EXEC: interaction_city = 412 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<div id="under">Сторожка Глота<br><div id = "clear"><a href = 'EXEC: interaction_city = 413 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
@@ -177,7 +177,7 @@ END
 
 IF city_form = 51:
  $place = 'korvus_district' 
- if $estate = 'korvus_house': $text_display += {<br><div id="under">Ваши апартаменты<br><div id = "clear"><a href = 'EXEC: menu_form = о & city_form = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ if $estate = 'korvus_house': $text_display += {<br><div id="under">Ваши апартаменты<br><div id = "clear"><a href = 'EXEC: menu_form = 0 & city_form = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<div id="under">Курган Умертвий<br><div id = "clear"><a href = 'EXEC: interaction_city = 511 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<div id="under">Склеп Парал Ича<br><div id = "clear"><a href = 'EXEC: interaction_city = 512 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<div id="under">Особняк Лестора<br><div id = "clear"><a href = 'EXEC: interaction_city = 513 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
@@ -208,7 +208,7 @@ END
 
 IF city_form = 61:
  $place = 'slums' 
- if $estate = 'slum_house': $text_display += {<br><div id="under">Ваша лачуга<br><div id = "clear"><a href = 'EXEC: menu_form = о & city_form = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ if $estate = 'slum_house': $text_display += {<br><div id="under">Ваша лачуга<br><div id = "clear"><a href = 'EXEC: menu_form = 0 & city_form = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under_gray">Незнакомый дом<br></div>} 
  $text_display += {<br><div id="under_gray">Незнакомый дом<br></div>}  
  $text_display += {<br><div id="under_gray">Незнакомый дом<br></div>}

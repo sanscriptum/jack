@@ -7,6 +7,8 @@ $assitant_info_text = '   [<<$assistant_name>>]
   - Новенькие рабыни часто могут попытаться убежать или сделать какую-нибудь ещё глупость. Я буду следить за ними по мере своего разумения и преданности. Но если вы прикажете мне надзирать за ней, то я уделю этому особое внимание, употребив всю свою волю и боевые навыки для того чтобы сохранить ваш товар.'
 
 *p '<div id = "large_image"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+!CHECK: костыль для старых версий, иначе будут глюки с аватаркой раба и прочим
+gs '#var_base'
 
 IF wizard_mode = 1:
  *p '<div id = "upper">День: <<day>> (<<sparks>>$) Кн: <<contract["time"]>> дн. |  Клр: <<slave["calories"]>>  |  Fr: <<slave["fear"]>>/<<slave_rate["fear"]>>  |  Ins: <<slave["instinct"]>>/<<slave_rate["instinct"]>>  |  Rat: <<slave["rational"]>>/<<slave_rate["rational"]>>  |  Cus: <<slave["custom"]>>/<<slave_rate["custom"]>>  |  Mor: <<slave["moral"]>>/<<slave_rate["moral"]>>  |  Spl: <<slave["spoil"]>>/<<slave_rate["spoil"]>>  |  Ang: <<slave["angst"]>>/<<slave_rate["angst"]>></div>' 

@@ -69,6 +69,6 @@ if sbros = 1:
  gt 'city_menu_form'
 END
 
-*p '<div id = "back_home"><a href = "EXEC: menu_form = о & city_form = 0 & gt ''menu_form''"><img src="content\home_button.png"></a></div>'
+*p '<div id = "back_home"><a href = "EXEC: menu_form = 0 & city_form = 0 & gt ''menu_form''"><img src="content\home_button.png"></a></div>'
 --- city_screen ---------------------------------
 

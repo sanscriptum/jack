@@ -627,7 +627,7 @@ if prisoner["obedience"] > 4: $prisoner_psy_status = 'soft'
 
 pmax_motivation = max (prisoner["moral"],prisoner["fear"],prisoner["custom"],prisoner["rational"],prisoner["instinct"],prisoner["mood"],prisoner["spoil"])
 
-pcourage = prisoner["ego"] + prisoner_courage
+pcourage = prisoner["ego"] + prisoner["courage"]
 if prisoner["mood"] > 0: pcourage += prisoner["mood"]
 if prisoner["fear"] = pmax_motivation and prisoner["fear"] > pcourage: $prisoner_psy_status = 'frightened'
 

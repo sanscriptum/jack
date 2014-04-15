@@ -61,9 +61,10 @@ END
 Отмена
  $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
 '
-
+!debug
+!msg '$place = <<$place>>'
 IF menu_form = 0:
- $place = 'home_lux' 
+ $place = 'home_lux'
  IF slave_state = CONST_INT['slave_exist']:
   $text_display += {<br><div id="under">Заняться воспитуемой <br><div id = "clear"><a href = 'EXEC: menu_form = 1 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
   else

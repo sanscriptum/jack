@@ -193,6 +193,9 @@ IF assistant_cleans_rule = 1 and house_mess > 1 and assistant["energy"] > 0:
 END
 
 show_food = 1
+!CHECK: костыль для старых версий, иначе еда будет все время уровня F-
+gs '#food_base'
+
 gs '$food_choice'
 
 !Закупаем продукты

@@ -450,9 +450,9 @@ IF interaction = 1125:
    gs '#txt'
    gs '#txt_2'
    slave_rate['mood'] -= slave['ego'] + slave['pride']
-   $text[1] = '   Вы говорите своей воспитуемой, что теперь её будут звать <<$slave_name>>. В конце-концов она принадлежит вам, так что у вас больше права давать её имя, чем у её родителей.'   
+   $text[1] = '   Вы говорите своей воспитуемой, что теперь её будут звать <<$slave_name>>. В конце концов, она принадлежит вам, так что у вас есть больше права давать ей имя, чем у её родителей.'   
    else
-   $text[1] = '   Вы говорите своей воспитуемой, что думаете над новым именем для неё. В конце-концов вы можете называть её как угодно. Но пока-что у вас нет достойных идей, так что пусть она походит пока со старым.'   
+   $text[1] = '   Вы говорите своей воспитуемой, что думаете над новым именем для неё. В конце концов, вы можете называть её как угодно. Но пока что у вас нет достойных идей, так что пусть она походит пока со старым.'   
   END
   }  
 END
@@ -497,7 +497,7 @@ IF interaction = 22:
   IF $potion_base = 'spirit' and slave['enchanter'] > 1: $get_pot = 'афродизиак'
   IF $potion_base = 'slime' and slave['enchanter'] > 2: $get_pot = 'мощный_афодизиак'  
  END  
- $text[1] = '   Когда все компоненты правильным образом смешаны, настаёт пора самого ответственного процесса. Необходимо перегнать и дистиллировать его при помощи алхимического оборудования, а затем напитать зелье силой Искр чтобы магия обрела силу.' 
+ $text[1] = '   Когда все компоненты правильным образом смешаны, настаёт пора самого ответственного процесса. Необходимо перегнать и дистиллировать его при помощи алхимического оборудования, а затем напитать зелье силой Искр, чтобы магия обрела силу.' 
  $text[2] = $get_pot_description[$get_pot]
  IF $get_pot = 'самогон':
   frige["alcohol"] += 1
@@ -714,7 +714,7 @@ IF interaction = 51:
  repulse = 1
  $interaction_type = 'make_slave_do'
  $special_bg = $cleaning[slave_type]  
- $refuse_txt = '  <<$slave_name>> отказывается убираться в доме. Похоже ей надо преподать урок послушания.'
+ $refuse_txt = '  <<$slave_name>> отказывается убираться в доме. Похоже, ей надо преподать урок послушания.'
  slave_skill = slave["service"] 
  $done_txt = '  <<$home_work_description[slave_skill]>>'
  sin_potential = 4
@@ -736,7 +736,7 @@ IF interaction = 53:
  $interaction_type = 'make_slave_do'
  $special_bg = $cooking[slave_type] 
  repulse = 1
- $refuse_txt = '  <<$slave_name>> отказывается готовить еду. Похоже ей надо преподать урок послушания.'
+ $refuse_txt = '  <<$slave_name>> отказывается готовить еду. Похоже, ей надо преподать урок послушания.'
  slave_skill = slave["cook"]
  $done_txt = '  <<$slave_cook_description[slave_skill]>>'
  sin_potential = 4
@@ -756,7 +756,7 @@ IF interaction = 55:
  repulse = 1
  $interaction_type = 'make_slave_do'
  $special_bg = $gym[slave_type]  
- $refuse_txt = '  <<$slave_name>> отказывается заниматься спортом. Похоже ей надо преподать урок послушания.'
+ $refuse_txt = '  <<$slave_name>> отказывается заниматься спортом. Похоже, ей надо преподать урок послушания.'
  slave_skill = slave["stamina"]
  $done_txt = '  <<$work_out_description[slave_skill]>>'
  sin_potential = 4
@@ -792,7 +792,7 @@ IF interaction = 5411:
  repulse = 2
  $interaction_type = 'make_slave_do'
  $special_bg = $washing[slave_type]  
- $refuse_txt = '<<$slave_name>> отказывается мыть вас. Похоже ей надо преподать урок послушания.'
+ $refuse_txt = '<<$slave_name>> отказывается мыть вас. Похоже, ей надо преподать урок послушания.'
  $done_txt = $washing_description[slave["petting"]]
  sin_potential = 5
  add_house_mess = 3
@@ -821,7 +821,7 @@ IF interaction = 5412:
  repulse = 2
  $interaction_type = 'make_slave_do'
  $special_bg = $pazuri[slave_type]  
- $refuse_txt = '<<$slave_name>> отказывается делать вам массаж. Похоже ей надо преподать урок послушания.'
+ $refuse_txt = '<<$slave_name>> отказывается делать вам массаж. Похоже, ей надо преподать урок послушания.'
  slave_skill = slave["petting"]
  massage_quality = min (diligence, slave_skill)
  $done_txt = $slave_massages_master[massage_quality]
@@ -849,7 +849,7 @@ IF interaction = 54131:
  repulse = 1
  $interaction_type = 'make_slave_do'
  $special_bg = $music[slave_type]  
- $refuse_txt = '<<$slave_name>> отказывается развлекать вас представлением. Похоже ей надо преподать урок послушания.'
+ $refuse_txt = '<<$slave_name>> отказывается развлекать вас представлением. Похоже, ей надо преподать урок послушания.'
  slave_skill = (1 + slave["music"] + slave["vocal"])/2
  concert_quality = min (diligence, slave_skill)
  $done_txt = $slave_concert[concert_quality]
@@ -871,7 +871,7 @@ IF interaction = 54132:
  repulse = 1
  $interaction_type = 'make_slave_do'
  $special_bg = $dance[slave_type]  
- $refuse_txt = '<<$slave_name>> отказывается развлекать вас представлением. Похоже ей надо преподать урок послушания.'
+ $refuse_txt = '<<$slave_name>> отказывается развлекать вас представлением. Похоже, ей надо преподать урок послушания.'
  slave_skill = (1 + slave["stamina"] + slave["callisthenics"])/2
  concert_quality = min (diligence, slave_skill)
  $done_txt = $slave_acrobatic_stunt[concert_quality]
@@ -894,7 +894,7 @@ IF interaction = 54133:
  repulse = 2
  $interaction_type = 'make_slave_do'
  $special_bg = $dance[slave_type]  
- $refuse_txt = '<<$slave_name>> отказывается развлекать вас представлением. Похоже ей надо преподать урок послушания.'
+ $refuse_txt = '<<$slave_name>> отказывается развлекать вас представлением. Похоже, ей надо преподать урок послушания.'
  slave_skill = (1 + slave["roleplay"] + slave["callisthenics"])/2
  concert_quality = min (diligence, slave_skill)
  $done_txt = $slave_strip[concert_quality]
@@ -918,7 +918,7 @@ IF interaction = 54134:
  repulse = 3
  $interaction_type = 'make_slave_do'
  $special_bg = $masturbation[slave_type]  
- $refuse_txt = '<<$slave_name>> отказывается развлекать вас представлением. Похоже ей надо преподать урок послушания.'
+ $refuse_txt = '<<$slave_name>> отказывается развлекать вас представлением. Похоже, ей надо преподать урок послушания.'
  slave_skill = (1 + slave["roleplay"] + slave["expression"])/2
  concert_quality = min (diligence, slave_skill)
  $done_txt = $slave_ero_show[concert_quality]
@@ -942,7 +942,7 @@ IF interaction = 54135:
  repulse = 4
  $interaction_type = 'make_slave_do'
  $special_bg = $masturbation[slave_type]  
- $refuse_txt = '<<$slave_name>> отказывается развлекать вас лесбийским представлением. Похоже ей надо преподать урок послушания.'
+ $refuse_txt = '<<$slave_name>> отказывается развлекать вас лесбийским представлением. Похоже, ей надо преподать урок послушания.'
  slave_skill = (1 + slave["roleplay"] + assistant["roleplay"])/2
  concert_quality = min (diligence, slave_skill)
  $done_txt = $slave_lesbo_show[concert_quality]
@@ -971,7 +971,7 @@ IF interaction = 5414:
  !debug
  !msg 'slave_type = <<slave_type>>, $sex_vaginal[slave_type] = <<$sex_vaginal[slave_type]>>'
  if virginity < 2: $special_bg = $defloration[slave_type]  
- $refuse_txt = '<<$slave_name>> отказывается заниматься с вами любовью. Ну, если она предпочитает насилие - это не сложно устроить...'
+ $refuse_txt = '<<$slave_name>> отказывается заниматься с вами любовью. Ну, если она предпочитает насилие - это несложно устроить...'
  sex_ability = (2 + slave["roleplay"] + slave["oral"] + slave["penetration"])/3
  sex_quality = min (diligence, sex_ability)
  sin_potential = 6
@@ -1032,7 +1032,7 @@ IF interaction = 5416:
  if slave["nymphomania"] < 0: repulse += 1
  $interaction_type = 'make_slave_do'
  $special_bg = $lesbian[slave_type]  
- $refuse_txt = '<<$slave_name>> отказывается заниматься с вами любовью. Ну, если она предпочитает насилие - это не сложно устроить...'
+ $refuse_txt = '<<$slave_name>> отказывается заниматься с вами любовью. Ну, если она предпочитает насилие - это несложно устроить...'
  sex_ability = (2 + slave["roleplay"] + slave["oral"] + slave["penetration"])/3
  sex_quality = min (diligence, sex_ability)
  if sex_quality < 5: sex_quality += 1
@@ -1215,7 +1215,7 @@ END
 !Личный урок по домоводству
 IF interaction = 1211:
  IF house_mess < 1: 
-  $info_text = 'Сейчас в доме чисто и прибрано. Для того чтобы провести эффективное практическое занятие по уборке, нужен хотя бы минимальный бардак. По опыту вы знаете, что он неизбежно появится. Скоро.'
+  $info_text = 'Сейчас в доме чисто и прибрано. Для того чтобы провести эффективное практическое занятие по уборке — нужен хотя бы минимальный бардак. По опыту вы знаете, что он неизбежно появится. Скоро.'
   gt 'slave_stat'
  END
  $interaction_type = 'master_teaches_slave'
@@ -1244,7 +1244,7 @@ END
 !Личный урок по кулинарии
 IF interaction = 1212:
  IF kitchen < 1: 
-  $info_text = 'У вас нету собственной кухни, поэтому вы не можете готовить еду и проводить кулинарные занятия на дому.'
+  $info_text = 'У вас нет собственной кухни, поэтому вы не можете готовить еду и проводить кулинарные занятия на дому.'
   gt 'slave_stat'
  END
  $interaction_type = 'master_teaches_slave'
@@ -4834,7 +4834,7 @@ END
 !Клеймление железом
 IF interaction = 1811:
  IF dungeon = 0: 
-  msg '  Рабыню конечно стоит заклеймить, однако у вас не условий для клеймления железом - нужно арендовать подземелье. Впрочем, можно воспользоваься услугами специалистов в городе.'
+  msg '  Рабыню, конечно, стоит заклеймить, однако у вас нет условий для клеймления железом - нужно арендовать подземелье. Впрочем, можно воспользоваться услугами специалистов в городе.'
   gt 'slave_stat'
  END
  $interaction_type = 'branding' 
@@ -4867,7 +4867,7 @@ IF interaction = 181:
  txt = 1
  npc = 0
  if already_done_curslave[interaction] = 0: slave['abandon_treat'] = 0 
- $text[1] = '   Если вы выгоните рабыню из дома, то уже вряд ли увидите её снова. Вы точно хотите от неё избавиться навсегда?'
+ $text[1] = '   Если вы выгоните рабыню из дома, то уже вряд ли увидите её снова. Вы точно хотите избавиться от неё навсегда?'
  $yes = {
      slave_state = CONST_INT['no_slave']
      gs 'generate_stock'
@@ -5017,7 +5017,7 @@ IF interaction = 374:
  lab_store["meth"] -= 1
  if sound_on = 1: play 'content\snd\bulk.mp3'
  IF master_on_meth = 1:  
-  dynamic $death, 'Вы получили передозировку тяжелых наркотиков и скончались от угнетения дыхательного центра мозга. Никто не смог помочь.'
+  dynamic $death, 'Вы получили передозировку тяжелых наркотиков и скончались от угнетения дыхательного центра мозга. Никто не смог вам помочь.'
  END
  IF master_on_meth = 0:  
   master_energy = 5
@@ -5034,7 +5034,7 @@ IF interaction = 375:
  lab_store["opium"] -= 1
  if sound_on = 1: play 'content\snd\bulk.mp3'
  IF master_on_opium = 1:  
-  dynamic $death, 'Вы получили передозировку тяжелых наркотиков и скончались от угнетения дыхательного центра мозга. Никто не смог помочь.'
+  dynamic $death, 'Вы получили передозировку тяжелых наркотиков и скончались от угнетения дыхательного центра мозга. Никто не смог вам помочь.'
  END
  IF master_on_opium = 0:  
   gs '$mod_master_rise',100
@@ -5516,7 +5516,7 @@ IF interaction = 45:
  $interaction_type = 'make_assistant_do'
  $special_bg = $tentacles[assistant_type]  
  IF assistant["sub_tentacles"] > tentacle_size:
-  $text[1] = '  <<$assistant_name>> берет ведро-непроливайку и входит в загон к исчадию. Тем не менее её усилия подоить тварь ни к чему не приводят. Оплетённая его мощными щупальцами, ваша помощница полностью теряет связь с реальностью и получает оргазм за оргазмом пока исчадие накачивает все её отверстия семенем.'
+  $text[1] = '  <<$assistant_name>> берет ведро-непроливайку и входит в загон к исчадию. Тем не менее, её усилия подоить тварь ни к чему не приводят. Оплетённая его мощными щупальцами, ваша помощница полностью теряет связь с реальностью и получает оргазм за оргазмом, пока исчадие накачивает все её отверстия семенем.'
   else
   $text[1] = '  <<$assistant_name>> берет ведро-непроливайку и входит в загон к исчадию. Благодаря своему предыдущему опыту ей удаётся не потерять контроль. Пока одни ненасытные скользкие щупальца проникают во все её отверстия, она хватает остальные отростки руками и выдаивает их прямо в ведро.'  
  END
@@ -5798,10 +5798,10 @@ IF interaction = 59:
  repulse = 6
  disgusting = 1 
  $special_bg = $tentacles[slave_type]  
- $refuse_txt = '  <<$slave_name>> отказывается даже входить в загон к исчадию. Один только вид этого чудовища наполняет её страхом и омерзением. Но это ещё не значит что можно игнорировать приказы хозяина...'
+ $refuse_txt = '  <<$slave_name>> отказывается даже входить в загон к исчадию. Один только вид этого чудовища наполняет её страхом и омерзением. Но это ещё не значит, что можно игнорировать приказы хозяина...'
  slave_skill = slave["sub_tentacles"]
  IF slave["sub_tentacles"] < tentacle_size:
-  $done_txt = '  <<$slave_name>> берет ведро-непроливайку и входит в загон к исчадию. Тем не менее её усилия подоить тварь ни к чему не приводят. Оплетённая его мощными щупальцами, рабыня полностью теряет связь с реальностью и получает оргазм за оргазмом пока исчадие накачивает все её отверстия семенем.'
+  $done_txt = '  <<$slave_name>> берет ведро-непроливайку и входит в загон к исчадию. Тем не менее, её усилия подоить тварь ни к чему не приводят. Оплетённая его мощными щупальцами, рабыня полностью теряет связь с реальностью и получает оргазм за оргазмом, пока исчадие накачивает все её отверстия семенем.'
   else
   $done_txt = '  <<$slave_name>> берет ведро-непроливайку и входит в загон к исчадию. Благодаря своему предыдущему опыту, ей удаётся не потерять контроль. Пока одни ненасытные скользкие щупальца проникают во все её отверстия, она хватает остальные отростки руками и выдаивает их прямо в ведро.'  
  END

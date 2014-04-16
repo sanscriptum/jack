@@ -231,7 +231,7 @@ END
 IF sp_txt = 13:
  $text_display += {<br><div id="under">Фламберг (200$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 131 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<div id="under">Нагината (200$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 132 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Моргеншерн (150$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 133 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Моргенштерн (150$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 133 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<div id="under">Топор дровосека (100$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 134 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<div id="under">Бейсбольная бита (100$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 135 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<div id="under">Шокер для скота (150$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 136 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}

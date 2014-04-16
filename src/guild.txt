@@ -19,14 +19,14 @@ IF sp_txt = 1:
  $text_display += {<br><div id="under">Поговорить с экспертом<br><div id = "clear"><a href = 'EXEC: interaction_city = 95 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  IF auction_count = 0: 
   IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and rating > 0:
-   $text_display += {<br><div id="under">Аукцион клеймлёных рабынь<br><div id = "clear"><a href = 'EXEC: interaction_city = 93 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+   $text_display += {<br><div id="under">Аукцион клейменых рабынь<br><div id = "clear"><a href = 'EXEC: interaction_city = 93 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
    else
-   $text_display += {<br><div id="under_gray">Аукцион клеймлёных рабынь<br></div>}      
+   $text_display += {<br><div id="under_gray">Аукцион клейменых рабынь<br></div>}      
   END 
   else
   $text_display += '<br><div id="under_gray">Дней до аукциона: <<auction_count>><br></div>'   
  END
- $text_display += {<br><div id="under">Выйти  на улицу<br><div id = "clear"><a href = 'EXEC: city_form = 1 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Выйти на улицу<br><div id = "clear"><a href = 'EXEC: city_form = 1 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
 END
 
 $text[txt] = $guild[sp_txt]

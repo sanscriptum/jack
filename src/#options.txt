@@ -8,7 +8,7 @@ $text_display += {<br><div id="under">Выйти прочь<br><div id = "clear"
 }
 
 $computer_options[1] = {
-$sp_text[1] = '   Обращение к базе данных происходит на уровне устного запроса и так же выдаётся запрошенная информация. Хотя при необходимости данные можно и распечатать..'
+$sp_text[1] = '   Обращение к базе данных происходит на уровне устного запроса и так же выдаётся запрошенная информация. Хотя при необходимости данные можно и распечатать.'
 $text_display = '<br>'
 $text_display += {<br><div id="under">- Запрос. Аура. Общая информация<div id = "clear"><a href = 'EXEC: interaction_city = 3331 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
 $text_display += {<br><div id="under">- Запрос. Аура. Структура паттернов<div id = "clear"><a href = 'EXEC: interaction_city = 3332 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
@@ -112,7 +112,7 @@ $text_display += {<br><div id="under">Не имеет значения<br><div i
 
 $expert_options[2] = {
 $sp_text[2] = '      [МАСТЕР СКУПЪС]
-   - Красота ключевой параметр, который в большинстве случаев определяет максимальный потенциал рабыни на рынке. Но настоящие красавицы встречаются не часто. Насколько привлекательный товар тебе нужен?'
+   - Красота ключевой параметр, который в большинстве случаев определяет максимальный потенциал рабыни на рынке. Но настоящие красавицы встречаются нечасто. Насколько привлекательный товар тебе нужен?'
 $text_display = '<br><br>'
 $text_display += {<br><div id="under">Королева красоты<br><div id = "clear"><a href = 'EXEC: search["beauty"] = 5 & search["cost"] += 4 & sp_txt = 3 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 $text_display += {<br><div id="under">Красавица<br><div id = "clear"><a href = 'EXEC: search["beauty"] = 4 & search["cost"] += 2 & sp_txt = 3 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
@@ -122,7 +122,7 @@ $text_display += {<br><div id="under">Не имеет значения<br><div i
 
 $expert_options[3] = {
 $sp_text[3] = '      [МАСТЕР СКУПЪС]
-   - Растить дохлых рабынь сплошная морока, так что я могу подобрать такую что бы была поздоровее да повыносливее.'
+   - Растить дохлых рабынь - сплошная морока, так что я могу подобрать такую, чтобы была поздоровее, да повыносливее.'
 $text_display = '<br><br>'
 $text_display += {<br><div id="under">Выносливая как лошадь<br><div id = "clear"><a href = 'EXEC: search["stamina"] = 5 & search["cost"] += 4 & sp_txt = 4 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 $text_display += {<br><div id="under">Выносливая<br><div id = "clear"><a href = 'EXEC: search["stamina"] = 4 & search["cost"] += 2 & sp_txt = 4 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
@@ -142,7 +142,7 @@ $text_display += {<br><div id="under">Не имеет значения<br><div i
 
 $expert_options[5] = {
 $sp_text[5] = '      [МАСТЕР СКУПЪС]
-   - Я могу уделить отдельное время до аукциона, чтобы заранее проверить общую сообразительность товара. Много не жди, но если нужна девочка способная сложить два и два, я это устрою.'
+   - Я могу уделить отдельное время до аукциона, чтобы заранее проверить общую сообразительность товара. Многого не жди, но если нужна девочка способная сложить два и два, я это устрою.'
 $text_display = '<br><br>'
 $text_display += {<br><div id="under">Интеллектуальная<br><div id = "clear"><a href = 'EXEC: search["intellect"] = 5 & search["cost"] += 4 & sp_txt = 6 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 $text_display += {<br><div id="under">Умная<br><div id = "clear"><a href = 'EXEC: search["intellect"] = 4 & search["cost"] += 2 & sp_txt = 6 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
@@ -1132,7 +1132,7 @@ $text_display += {<br><div id="under">Покинуть магазинчик<br><
 }
 
 $mistra_options[2] = {
-$sp_text[2] = '   Мистра многое знает об алхимии и полезных микстурах которые можно сделать в домашней лаборатории, используя купленные здесь ингридиенты. Расспросить её кажется хорошей идеей.'
+$sp_text[2] = '   Мистра многое знает об алхимии и полезных микстурах, которые можно сделать в домашней лаборатории, используя купленные здесь ингредиенты. Расспросить её кажется хорошей идеей.'
 $text_display = '<br>'
 $text_display += {<br><div id="under">Расскажи об эликсирах<div id = "clear"><a href = 'EXEC: interaction_city = 4327 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>} 
 $text_display += {<br><div id="under">Вакхический нектар<div id = "clear"><a href = 'EXEC: interaction_city = 4321 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>} 
@@ -1363,7 +1363,7 @@ $colloseum_options[21] = {
 }
 
 $colloseum_options[22] = {
- $sp_text[22] = '   Вы находите конюха - зверолюда с лошадиной головой, который ведает скачками. Он может быть источником ценной информации, особенно когда надо узнать что вас ждёт в следующем заезде.' 
+ $sp_text[22] = '   Вы находите конюха-зверолюда с лошадиной головой, который ведает скачками. Он может быть источником ценной информации, особенно когда надо узнать что вас ждёт в следующем заезде.' 
  $text_display = '<br>'
  $text_display += {<br><div id="under">- Расскажи про следующую трассу<br><div id = "clear"><a href = 'EXEC: interaction_city = 1951 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">- Расскажи про гонки колесниц<br><div id = "clear"><a href = 'EXEC: interaction_city = 1952 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
@@ -1372,7 +1372,7 @@ $colloseum_options[22] = {
 
 
 $colloseum_options[23] = { 
- $sp_text[23] = '   Пока ещё есть время для заезда, вы можете заказать техникам ипподрома различные модификации колесницы. Чем более тяжелые элементы будут использованы, тем меньше будет скорость и манёвренность вашей упряжки, однако тем ниже будет и риск того что она развалится посреди гонки. Пренебрегая собственной защитой вы играете со смертью.'
+ $sp_text[23] = '   Пока ещё есть время для заезда, вы можете заказать техникам ипподрома различные модификации колесницы. Чем более тяжелые элементы будут использованы, тем меньше будет скорость и манёвренность вашей упряжки, однако тем ниже будет и риск того что она развалится посреди гонки. Пренебрегая собственной защитой, вы играете со смертью.'
  IF heavy_frame = 1:
   $text_display += {<br><br><div id="under">Победитовый каркас<br><div id = "clear"><a href = 'EXEC: heavy_frame = 0 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
   else
@@ -1483,7 +1483,7 @@ $colloseum_options[5] = {
  IF sparks => spm_price and $spm_learned['ослепление'] = 0:
   $text_display += {<div id="under">Удар по глазам <br><div id = "clear"><a href = 'EXEC: interaction_city = 1946 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
   else
-  $text_display += {<div id="under_gray">Удар  по глазам <br></div>} 
+  $text_display += {<div id="under_gray">Удар по глазам <br></div>} 
  END   
  $text_display += {<br><div id="under">- Хотя нет, лучше...<br><div id = "clear"><a href = 'EXEC: sp_txt = 21 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 }

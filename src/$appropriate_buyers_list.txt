@@ -14,7 +14,7 @@ END
 
 if i < n: jump 'loop'
 
-if $appropriate_buyers_list = '': $appropriate_buyers_list = '<br>  Вряд ли я найду сейчас подходящего покупателя для моей воспитуемой. Её ещё многому предстоит научиться.'
+if $appropriate_buyers_list = '': $appropriate_buyers_list = '<br>  Вряд ли я найду сейчас подходящего покупателя для моей воспитуемой. Ей ещё многому предстоит научиться.'
 
 $quest_description[2] = '<<$appropriate_buyers_list>>
 

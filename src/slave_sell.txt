@@ -25,7 +25,7 @@ END
 
 IF sl_txt = 2:
  client_statisfaction = 1 + rating - demand_rating[$npc_id]
- $text[1] = '   Честный рейтинг рабыни даже выше ожиданий клиента. К сожалению это не значит что цена будет больше - оплата предлагается исходя из рейтинга <<$rating[demand_rating[$npc_id]]>>, что на рынке составляет примерно <<common_price[demand_rating[$npc_id]]>> искр<<$virgin_price>>. Может удастся набить цену хоть немного.'
+ $text[1] = '   Честный рейтинг рабыни даже выше ожиданий клиента. К сожалению, это не значит, что цена будет больше - оплата предлагается исходя из рейтинга <<$rating[demand_rating[$npc_id]]>>, что на рынке составляет примерно <<common_price[demand_rating[$npc_id]]>> искр<<$virgin_price>>. Может, удастся набить цену хоть немного.'
  $text_display += "<br><br><br><br><br><div id=""under""> Поторговаться<br><div id = ""clear""><a href = 'EXEC: sl_txt = 11 & gt $curloc'><img src = ""content\clear.gif""></a></div></div>"
  $text_display += "<br><div id=""under""> Держать твердую цену<br><div id = ""clear""><a href = 'EXEC: sl_txt = 12 & gt $curloc'><img src = ""content\clear.gif""></a></div></div>"
  $text_display += "<br><div id=""under""> Сделать скидку<br><div id = ""clear""><a href = 'EXEC: sl_txt = 13 & gt $curloc'><img src = ""content\clear.gif""></a></div></div>"
@@ -34,7 +34,7 @@ END
 
 IF sl_txt = 3:
  client_statisfaction = -2
- $text[1] = '   Вы слегка приукрасили умения вашей воспитуемой, чтобы она подошла под требования клиента. Клмент готов приобрести рабыню с рейтингом <<$rating[demand_rating[$npc_id]]>>, что на рынке составляет примерно <<common_price[demand_rating[$npc_id]]>> искр<<$virgin_price>>. Но можно обнаглеть и еще поторговаться.'
+ $text[1] = '   Вы слегка приукрасили умения вашей воспитуемой, чтобы она подошла под требования клиента. Клиент готов приобрести рабыню с рейтингом <<$rating[demand_rating[$npc_id]]>>, что на рынке составляет примерно <<common_price[demand_rating[$npc_id]]>> искр<<$virgin_price>>. Но можно обнаглеть и еще поторговаться.'
  $text_display += "<br><br><br><br><br><div id=""under""> Поторговаться<br><div id = ""clear""><a href = 'EXEC: sl_txt = 11 & gt $curloc'><img src = ""content\clear.gif""></a></div></div>"
  $text_display += "<br><div id=""under""> Держать твердую цену<br><div id = ""clear""><a href = 'EXEC: sl_txt = 12 & gt $curloc'><img src = ""content\clear.gif""></a></div></div>"
  $text_display += "<br><div id=""under""> Сделать скидку<br><div id = ""clear""><a href = 'EXEC: sl_txt = 13 & gt $curloc'><img src = ""content\clear.gif""></a></div></div>"
@@ -64,24 +64,24 @@ IF sl_txt = 13:
 END
 
 IF sl_txt = 100:
- $text[1] = '  Клиент осматривает рабыню и отказывается от неё даже не слушая предложений о цене. Надо быть внимательней к индивидуальным пожеланиям и предпочтениям каждого заказчика.'
+ $text[1] = '  Клиент осматривает рабыню, и отказывается от неё, даже не слушая предложений о цене. Надо быть внимательней к индивидуальным пожеланиям и предпочтениям каждого заказчика.'
  $text_display += {<br><br><br><br><br><br><div id="under">- Значит сделки не будет<br><div id = "clear"><a href = 'EXEC: gt "<<$return_lock>>"'><img src = "content\clear.gif"></a></div></div>}
 END
 
 IF sl_txt = 101:
- $text[1] = '  Клиент осматривает рабыню и отказывается от неё даже не слушая предложений о цене. Для того чтобы заинтересовать такого заказчика, вам придется воспитать рабыню с рейтингом не ниже чем <<$rating[demand_rating[$npc_id]]>>.'
+ $text[1] = '  Клиент осматривает рабыню, и отказывается от неё, даже не слушая предложений о цене. Для того чтобы заинтересовать такого заказчика, вам придется воспитать рабыню с рейтингом не ниже чем <<$rating[demand_rating[$npc_id]]>>.'
  $text_display += {<br><br><br><br><br><br><div id="under">- Значит сделки не будет<br><div id = "clear"><a href = 'EXEC: gt "<<$return_lock>>"'><img src = "content\clear.gif"></a></div></div>}
 END
 
 IF sl_txt = 102:
- $text[1] = '  Клиент подробно выспрашивает вас о способностях вашей воспитуемой, чтобы понять достаточно ли она хороша. Вы то знаете что НЕдостаточно, но ведь можно и приукрасить слегка...'
+ $text[1] = '  Клиент подробно выспрашивает вас о способностях вашей воспитуемой, чтобы понять достаточно ли она хороша. Вы-то знаете, что НЕдостаточно, но ведь можно и приукрасить слегка...'
  $text_display += "<br><br><br><br><br><div id=""under""> Соврать о навыках рабыни<br><div id = ""clear""><a href = 'EXEC: sl_txt = 3 & gt $curloc'><img src = ""content\clear.gif""></a></div></div>"
  $text_display += {<br><div id="under"> Отменить сделку<br><div id = "clear"><a href = 'EXEC: gt "<<$return_lock>>"'><img src = "content\clear.gif"></a></div></div>}
  if wizard_mode = 1: msg 'Недостаток: <<$flaw_msg>>'
 END
 
 IF sl_txt = 103:
- $text[1] = '  Клиент осматривает рабыню и отказывается от неё даже не слушая предложений о цене. Дело тут не в качестве подготовки, просто чем-то она не приглянулась. Ладно, заказчик имеет право быть привередливым.'
+ $text[1] = '  Клиент осматривает рабыню, и отказывается от неё, даже не слушая предложений о цене. Дело тут не в качестве подготовки, просто чем-то она не приглянулась. Ладно, заказчик имеет право быть привередливым.'
  $text_display += {<br><br><br><br><br><br><div id="under">- Значит сделки не будет<br><div id = "clear"><a href = 'EXEC: gt "<<$return_lock>>"'><img src = "content\clear.gif"></a></div></div>}
 END
 

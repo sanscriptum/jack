@@ -17,7 +17,7 @@ $sex_options[0] = {
         $sex_menu += {<br><div id="under">Перейти к сексу<br><div id = "clear"><a href = 'EXEC: sex_num = 1 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
     END
     $sex_menu += {<div id="under">Извращенные игры<br><div id = "clear"><a href = 'EXEC: sex_num = 2 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
-    $sex_menu += {<br><div id="under">Закончтить<br><div id = "clear"><a href = 'EXEC: sex_num = 0 & gt "sex_end"'><img src = "content\clear.gif"></a></div></div>}
+    $sex_menu += {<br><div id="under">Закончить<br><div id = "clear"><a href = 'EXEC: sex_num = 0 & gt "sex_end"'><img src = "content\clear.gif"></a></div></div>}
 }
 
 $sex_options[1] = {

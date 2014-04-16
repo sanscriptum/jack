@@ -75,6 +75,6 @@ if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3'
 Навык: <<skill>>
 Качество: <<quality>>
 Сложность: <<diff>>
-Балланс: <<balance>>" 
+Баланс: <<balance>>" 
 --- sex_screen ---------------------------------
 

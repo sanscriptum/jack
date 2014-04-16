@@ -36,7 +36,7 @@ $info_bar = ''
 Навык: <<skill>>
 Качество: <<quality>>
 Сложность: <<diff>>
-Балланс: <<balance>></div>'  
+Баланс: <<balance>></div>'  
 
 if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3'
 

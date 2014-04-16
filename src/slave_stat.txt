@@ -117,7 +117,7 @@ IF slave_stat_screen = 0:
 Ты меня моешь
 
 V-шарики
-Форсированно
+Форсировано
 </div>'  
  IF slave_sleep_condition = -2:
   *p '<div id="chekbox_1l"><img src="content\sel_button.png"></div>'  

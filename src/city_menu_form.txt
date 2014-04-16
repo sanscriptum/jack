@@ -11,6 +11,9 @@ $text_display = ''
 $return_lock  = 'city_menu_form'
 sp_txt = 0
 get_girl = 0
+!обнуление
+spark_pay_master = 0
+spark_pay_slave = 0
 if city_random_event = 0: gs '$city_random_event'
 
 !'Пункт меню - пустой

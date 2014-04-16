@@ -80,6 +80,7 @@ slave['weight_before'] = slave["fat"]
 if slave["memory_revealed"] = 0: slave["memory_revealed"] = 1
 
 !Самостоятельные действия воспитуемой
+!добавлена проверка на здоровье и безсознательное состояние, если здоровье равно нулю или она валяется без сознания, то рабыня не сможет сбежать либо атаковать - the_vm
 slave_attack = 0
 slave_escape = 0
 slave_suicide = 0
@@ -92,7 +93,7 @@ IF slave["mood"] < 0 and slave['temper'] > slave['obedience']:
  chance = RAND(1,n)
  slave_power = slave["gladiatrix"] + slave["stamina"]
  master_power = master_str + master_fighter
- IF chance = 1:
+ IF chance = 1 and slave['stamina'] > 0 and slave_state = CONST_INT['slave_exist']:
   IF slave['angst'] > 0 and master_power < slave_power:
    slave_attack = 1
    else
@@ -299,7 +300,8 @@ if slave["parfume"] = 1: slave["parfume"] = 0
 if slave["epilation"] > 0: slave["epilation"] -= 1
 if slave["manicure"] > 0: slave["manicure"] -= 1
 if slave["hairstyle"] > 0: slave["hairstyle"] -= 1
-if slave["hairstyle"] > 0: slave["hairstyle_demo"] = 1
+!убирается хардкод состояния волос, волософикс
+!if slave["hairstyle"] > 0: slave["hairstyle_demo"] = 1 
 
 ! пофиксил, была опечатка, by Lyazar
 if slave_inventory["parfume"] > 0: slave["parfume"] = 1

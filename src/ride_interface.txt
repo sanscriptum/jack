@@ -149,10 +149,12 @@ END
 
 $ride_flow += ' <br><br><<$future_ride>><br><br>'
 
-*p '<div id = "fight_bg"><img src = "content\pic\bg\ride.jpg"></div>'
+!новый CSS для пикчи заезда
+*p '<div id = "ride_bg"><img src = "content\pic\bg\ride.jpg"></div>'
 *p '<div id = "fight_txt"><<$ride_flow>></div>'
 
-*p '<div id = "fight_options">СКОРОСТЬ: <<charriot["speed"]>> км/ч
+!новый CSS для параметров заезда
+*p '<div id = "ride_options">СКОРОСТЬ: <<charriot["speed"]>> км/ч
 УПРАВЛЯЕМОСТЬ: <<charriot["maneurability_displayed"]>> (I<<charriot["inertion"]>>)
 ВЫНОСЛИВОСТЬ: <<charriot["pony_health"]>>
 
@@ -162,12 +164,13 @@ $ride_flow += ' <br><br><<$future_ride>><br><br>'
 <<$wheels[wheels]>>
 </div>'
 
+!новые CSS для текста управления колесницей
 IF trace_segment = 1:
- *p '<div id = "fight_subtions">
+ *p '<div id = "ride_subtions">
 <a href = "EXEC: gt ''ride_next'',1">Щёлкнуть плетью</a>
 </div>'
  else
- *p '<div id = "fight_subtions">
+ *p '<div id = "ride_subtions">
 <a href = "EXEC: gt ''ride_next'',1">Хлестать плетью</a>
 
 <a href = "EXEC: gt ''ride_next'',2">Управлять поводьями</a>

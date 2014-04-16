@@ -1593,6 +1593,15 @@ height:597px;
 text-align:center;
 }
 
+#ride_bg {
+position:absolute;
+left:240;
+top:1;
+width:796;
+height:597;
+text-align:center;
+}
+
 #fight_txt {
 position:absolute;
 left:300px;
@@ -1613,12 +1622,30 @@ height:180px;
 text-align:center;
 }
 
+#ride_options {
+position:absolute;
+left:270;
+top:610;
+width:340;
+height:180;
+text-align:center;
+}
+
 #fight_subtions {
 position:absolute;
 left:610px;
 top:610px;
 width:420px;
 height:180px;
+text-align:center;
+}
+
+#ride_subtions {
+position:absolute;
+left:620;
+top:610;
+width:420;
+height:180;
 text-align:center;
 }
 

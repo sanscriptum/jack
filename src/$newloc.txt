@@ -191,7 +191,8 @@ IF slave["age"] = CONST_INT['loli_age']:
  slave["epilation"] = 100
  if slave["makeup"] = 0: slave["makeup"] = 2
 END
-IF slave["hairstyle"] > 0: slave["hairstyle_demo"] = 1
+!убран хардкод состояния волос, волософикс
+!IF slave["hairstyle"] > 0: slave["hairstyle_demo"] = 1
 
 slave["exotic"] = 0
 if slave_rate["exotic"] + slave_rate["exotic_bonus"] => 10: slave["exotic"] = 1

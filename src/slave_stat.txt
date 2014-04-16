@@ -264,6 +264,7 @@ V-шарики
 END
 
 !ЗАКЛАДКА АНАТОМИИ
+!Убран хардкод с hairstyle_demo на hairstyle, волософикс
 If slave_stat_screen = 1:
  *p '<div id = "mark_one"><a href = "EXEC: slave_stat_screen = 0 & gt curloc"><img src = "content\unsel_button.png"></a></div>'
  *p '<div id = "mark_two"><img src = "content\sel_button.png"></div>'
@@ -273,7 +274,7 @@ If slave_stat_screen = 1:
  *p '<div id="upper_image"><img src = "content\pic\girls\body\<<$slave["boobs_img"]>>.jpg"></div>'
  *p '<div id="lower_image"><img src = "content\pic\girls\body\<<$slave["pussy_img"]>>.jpg"></div>' 
  *p '<div id = "upper_text">
-<<$hair_style[slave["hairstyle_demo"]]>>
+<<$hair_style[slave["hairstyle"]]>>
 <<$slave_makeup[slave["makeup"]]>>
 <<$slave_boobs[slave["boobs"]]>>
 <<$niple_piercing[slave["niple_piercing"]]>>

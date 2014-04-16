@@ -1351,12 +1351,17 @@ $cooked_food[0] = $_font_col_rep[0] + 'Еда не готова' + $_font_closer
 $cooked_food[1] = $_font_col_rep[3] + 'На ужин консервы' + $_font_closer
 $cooked_food[2] = $_font_col_rep[5] + 'Кушать подано' + $_font_closer
 
+!костыль для состояния волос, волософикс ~the_vm
+!неделя слишком дохуя, надо дорабатывать
+!для предпоследнего состояния: имеется в виду что от помятой прически останутся лишь простые расчесанные волосы, а далее растрепанные - рабыни слишком заняты, чтобы себя расчесывать. Вообще. Также к состоянию (1) отсылается парик, если прически нет, а парик есть. Вроде подходит.
 $hair_style[0] = $_font_col_rep[0] + 'Растрепанные волосы' + $_font_closer
-$hair_style[1] = $_font_col_rep[1] + 'Помятая прическа' + $_font_closer
+$hair_style[1] = $_font_col_rep[1] + 'Расчесанные волосы' + $_font_closer
 $hair_style[2] = $_font_col_rep[2] + 'Помятая прическа' + $_font_closer
-$hair_style[3] = $_font_col_rep[3] + 'Помятая прическа' + $_font_closer
-$hair_style[4] = $_font_col_rep[4] + 'Стильная прическа' + $_font_closer
-$hair_style[5] = $_font_col_rep[5] + 'Стильная прическа' + $_font_closer
+$hair_style[3] = $_font_col_rep[3] + 'Гладкая прическа' + $_font_closer
+$hair_style[4] = $_font_col_rep[3] + 'Гладкая прическа' + $_font_closer
+$hair_style[5] = $_font_col_rep[4] + 'Аккуратная прическа' + $_font_closer
+$hair_style[6] = $_font_col_rep[4] + 'Аккуратная прическа' + $_font_closer
+$hair_style[7] = $_font_col_rep[5] + 'Стильная прическа' + $_font_closer
 
 $slave_makeup[0] = $_font_col_rep[0] + 'Без косметики' + $_font_closer
 $slave_makeup[1] = $_font_col_rep[3] + 'Стильный макияж' + $_font_closer

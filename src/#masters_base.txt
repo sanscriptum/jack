@@ -654,3 +654,4 @@ trainer_enchanter_rating['sheepherd'] = 0
 trainer_artist_rating['sheepherd'] = 0
 trainer_concubine_rating['sheepherd'] = 2
 --- #masters_base ---------------------------------
+

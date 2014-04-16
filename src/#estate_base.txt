@@ -483,3 +483,4 @@ $interior_dungeon_info['basic'] = '   '
 $interior_lab['basic'] = 'interiors\_lab'
 $interior_lab_info['basic'] = '   ''
 --- #estate_base ---------------------------------
+

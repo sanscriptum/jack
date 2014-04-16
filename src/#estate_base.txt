@@ -132,19 +132,19 @@ estate_cost_lab['white_house'] = 50
 estate_location['white_house'] = 1
 
 $estate_study_name['white_house'] = 'Большая комната'
-$estate_study_location['white_house'] = 'Предместья ватикана'
+$estate_study_location['white_house'] = 'Предместья Ватикана'
 $estate_bed_name['white_house'] = 'Спальня'
-$estate_bed_location['white_house'] = 'Предместья ватикана'
+$estate_bed_location['white_house'] = 'Предместья Ватикана'
 $estate_bath_name['white_house'] = 'Ванная'
-$estate_bath_location['white_house'] = 'Предместья ватикана'
+$estate_bath_location['white_house'] = 'Предместья Ватикана'
 $estate_bouduar_name['white_house'] = 'Будуар'
-$estate_bouduar_location['white_house'] = 'Предместья ватикана'
+$estate_bouduar_location['white_house'] = 'Предместья Ватикана'
 $estate_kitchen_name['white_house'] = 'Кухня'
-$estate_kitchen_location['white_house'] = 'Предместья ватикана'
+$estate_kitchen_location['white_house'] = 'Предместья Ватикана'
 $estate_dungeon_name['white_house'] = 'Темница'
-$estate_dungeon_location['white_house'] = 'Предместья ватикана'
+$estate_dungeon_location['white_house'] = 'Предместья Ватикана'
 $estate_lab_name['white_house'] = 'Лаборатория'
-$estate_lab_location['white_house'] = 'Предместья ватикана'
+$estate_lab_location['white_house'] = 'Предместья Ватикана'
 
 
 
@@ -156,7 +156,7 @@ interior_prestige['slum_house'] = -1
 
 $interior_bg['slum_house'] = 'interiors\slum_large'
 $interior_study['slum_house'] = 'interiors\slum_study'
-$interior_study_info['slum_house'] = '   Вам пришлось поселиться в остатках полусъеденного туманом дома. Для трущоб это место построено весьма основательно, однако жить здесь совсем не комфортно, а главное: очень и очень опасно.'
+$interior_study_info['slum_house'] = '   Вам пришлось поселиться в остатках полусъеденного туманом дома. Для трущоб это место построено весьма основательно, однако жить здесь совсем не комфортно, а главное очень и очень опасно.'
 
 $interior_bed['slum_house'] = 'interiors\slum_bed'
 $interior_bed_info['slum_house'] = '   Вы постарались обустроить своё спальное место с максимальным комфортом. Насколько это возможно в ветхой лачуге на самой границе туманов.'
@@ -483,4 +483,3 @@ $interior_dungeon_info['basic'] = '   '
 $interior_lab['basic'] = 'interiors\_lab'
 $interior_lab_info['basic'] = '   ''
 --- #estate_base ---------------------------------
-

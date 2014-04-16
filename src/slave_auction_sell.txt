@@ -1,8 +1,8 @@
 # slave_auction_sell
 !Продаём рабыню Фариду
 IF farid_potential_debt > 0:
- if slave_state = 0: interaction_city = 1191
- if slave_state ! 0: interaction_city = 1192
+ if slave_state = CONST_INT['no_slave']: interaction_city = 1191
+ if slave_state ! CONST_INT['no_slave']: interaction_city = 1192
  gt 'interaction_city'
 END
 if farid_debt > 0: interaction_city = 1193 & gt 'interaction_city'

@@ -7,6 +7,7 @@
     <Location name="main_menu"/>
     <Location name="controls"/>
     <Location name="credits"/>
+	<Location name="anonfix"/>
     <Location name="exid"/>
     <Folder name="crutches">
       <Location name="new_game"/>

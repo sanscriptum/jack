@@ -11,13 +11,15 @@ MAINDESC_H = 798
 '<div id = "title">
 
 <center><div id = "title_large">Валет плетей</div></center>
-<div id = "title_small">Версия 1.12fix2
+<div id = "title_small">Версия 1.12
+<div id = "title_fix">(установлен фикс)</div>
 </div></div>'
 '<div id = "title_menu">
 <div id="under">{ Режим песочницы }<br><div id = "clear"><a href = ''EXEC: gt "start_game"''><img src = "content\clear.gif"></a></div></div>
 <div id="under">{ Сюжетный режим }<br><div id = "clear"><a href = ''EXEC: gt "hero_customization"''><img src = "content\clear.gif"></a></div></div>
 <div id="under">{ Основы управления }<br><div id = "clear"><a href = ''EXEC: gt "controls"''><img src = "content\clear.gif"></a></div></div>
 <div id="under">{ От автора }<br><div id = "clear"><a href = ''EXEC: gt "credits"''><img src = "content\clear.gif"></a></div></div>
+<div id="under">{ О фиксе }<br><div id = "clear"><a href = ''EXEC: gt "anonfix"''><img src = "content\clear.gif"></a></div></div>
 </div>'
 
 CLOSE ALL

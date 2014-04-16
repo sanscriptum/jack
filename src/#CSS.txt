@@ -196,6 +196,13 @@ font-family:Victoriana;
 text-align:center;
 }
 
+#title_fix {
+color:#ff5700;
+font-size:30%;
+font-family:Victoriana;
+text-align:center;
+}
+
 #title {
 position:absolute;
 left:40px;

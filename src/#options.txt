@@ -112,7 +112,7 @@ $text_display += {<br><div id="under">Не имеет значения<br><div i
 
 $expert_options[2] = {
 $sp_text[2] = '      [МАСТЕР СКУПЪС]
-   - Красота ключевой параметр, который в большинстве случаев определяет максимальный потенциал рабыни на рынке. Но настоящие красавицы встречаются нечасто. Насколько привлекательный товар тебе нужен?'
+   - Красота - ключевой параметр, который в большинстве случаев определяет максимальный потенциал рабыни на рынке. Но настоящие красавицы встречаются нечасто. Насколько привлекательный товар тебе нужен?'
 $text_display = '<br><br>'
 $text_display += {<br><div id="under">Королева красоты<br><div id = "clear"><a href = 'EXEC: search["beauty"] = 5 & search["cost"] += 4 & sp_txt = 3 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 $text_display += {<br><div id="under">Красавица<br><div id = "clear"><a href = 'EXEC: search["beauty"] = 4 & search["cost"] += 2 & sp_txt = 3 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}

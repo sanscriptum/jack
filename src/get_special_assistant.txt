@@ -79,9 +79,9 @@ assistant_virginity = seed_virginity[assistant_type]
 display_psy_status = 1
 
 !ПРЕДЫСТОРИЯ
-$assistant_world_description = $seed_world_description[assistant_type]
-$assistant_family_description = $seed_family_description[assistant_type]
-$assistant_occupation_description = $seed_occupation_description[assistant_type]
+$assistant_world_description = $stock_world_description[assistant_type]
+$assistant_family_description = $stock_family_description[assistant_type]
+$assistant_occupation_description = $stock_occupation_description[assistant_type]
 $assistant_name = $seed_name[assistant_type]
 
 assistant['ill'] = seed_ill[assistant_type]

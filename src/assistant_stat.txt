@@ -253,7 +253,8 @@ IF assistant_stat_screen = 2:
 END 
  
 IF slave_state = CONST_INT['slave_exist']:
- *p '<div id="right_column_a"><u>НАВЫКИ</u>
+ *p '<div id="right_column_a">
+<u>НАВЫКИ</u>
 <a href = "EXEC: interaction = 4111 & gt ''interaction''"><<$slave_service[assistant["service"]]>></a> 
 <a href = "EXEC: interaction = 4112 & gt ''interaction''"><<$slave_cook[assistant["cook"]]>></a>
 <a href = "EXEC: interaction = 4113 & gt ''interaction''"><<$slave_nurse[assistant["nurse"]]>></a>

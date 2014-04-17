@@ -443,7 +443,7 @@ $item_property["plain_earring"] = {
 }
 
 !["incrusted_earrings"]
-dynamic $ib_cycle, 'incrusted_earrings', 'Инкрустированные серьги', 5, '   Цена: 5 искр  <br>   К вашим услугам представлен широчайший ассортимент серег с подвесками из различных драгоценных камней и искусственных кристаллов.', 'scene\item_plain_earring'
+dynamic $ib_cycle, 'incrusted_earrings', 'Инкрустированные серьги', 5, '   Цена: 5 искр  <br>   К вашим услугам представлен широчайший ассортимент серег с подвесками из различных экзотичных драгоценных камней и искусственных кристаллов.', 'scene\item_plain_earring'
 
 $item_property["incrusted_earrings"] = {
     slave_rate["exotic_bonus"] += 5

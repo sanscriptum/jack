@@ -297,7 +297,7 @@ dynamic $ib_cycle, 'bellydance', 'Экзотический наряд', 25, '   
 
 $item_property["bellydance"] = {
     slave_rate["style"] += 2 
-    slave_rate["exotic_bonus"] += 10 
+    slave_rate["exotic_bonus"] += 15 
     learn_bonus["callisthenics"] += 1
 }
 
@@ -446,6 +446,7 @@ $item_property["plain_earring"] = {
 dynamic $ib_cycle, 'incrusted_earrings', 'Инкрустированные серьги', 5, '   Цена: 5 искр  <br>   К вашим услугам представлен широчайший ассортимент серег с подвесками из различных драгоценных камней и искусственных кристаллов.', 'scene\item_plain_earring'
 
 $item_property["incrusted_earrings"] = {
+    slave_rate["exotic_bonus"] += 5
     slave_rate["style"] += 1
 }
 
@@ -497,14 +498,15 @@ $item_property["glasses"] = {
 dynamic $ib_cycle, 'nekomimi', 'Кошачьи ушки', 10, '   Цена: 10 искр  <br>   Крупные меховые уши на гибком ободке безусловно привлекут внимание окружающих и помогут вашей рабыне почувствовать себя настоящим домашним питомцем.', 'scene\item_nekomimi'
 
 $item_property["nekomimi"] = {
-    slave_rate["exotic_bonus"] += 1
+    slave_rate["exotic_bonus"] += 5
     learn_bonus["pet"] += 1
 }
 
 !["golden_collar"]
-dynamic $ib_cycle, 'golden_collar', 'Украшенный ошейник', 20, '   Роскошный широкий ошейник из золота или серебра, украшенный драгоценными камнями и оснащенный кольцами для крепления поводка и кандалов. Каждую секунду этот стильный аксессуар напоминает рабыне о том, кому она принадлежит и каков её статус. В качестве бесплатного дополнения мы оснастим ошейник вашим именным жетоном. (20 искр)', 'scene\item_golden_collar'
+dynamic $ib_cycle, 'golden_collar', 'Украшенный ошейник', 20, '   Цена: 20 искр  <br>   Роскошный широкий ошейник из золота, украшенный экзотичными драгоценными камнями, оснащенный вашим именным жетоном и кольцами для крепления поводка и кандалов. Этот стильный аксессуар будет напоминать рабыне о том, кому она принадлежит и каков её статус.', 'scene\item_golden_collar'
 
 $item_property["golden_collar"] = {
+    slave_rate["exotic_bonus"] += 5
     slave_rate["style"] += 1
     daily_bonus["custom"] += 1
     slave['slave_collar'] = 1
@@ -523,7 +525,7 @@ dynamic $ib_cycle, 'exotic_wig', 'Экзотический парик', 20, '   
 
 $item_property["exotic_wig"] = {
     slave_rate["style"] += 1
-    slave_rate["exotic_bonus"] += 10
+    slave_rate["exotic_bonus"] += 15
     slave['wig'] = 1
 }
 

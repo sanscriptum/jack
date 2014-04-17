@@ -197,9 +197,9 @@ END
 slave["exotic"] = 0
 if slave_rate["exotic"] + slave_rate["exotic_bonus"] => 10: slave["exotic"] = 1
 if slave_rate["exotic"] + slave_rate["exotic_bonus"] => 20: slave["exotic"] = 2
-if slave_rate["exotic"] + slave_rate["exotic_bonus"] => 40: slave["exotic"] = 3
+if slave_rate["exotic"] + slave_rate["exotic_bonus"] => 60: slave["exotic"] = 3
 if slave_rate["exotic"] + slave_rate["exotic_bonus"] => 80: slave["exotic"] = 4
-if slave_rate["exotic"] + slave_rate["exotic_bonus"] => 160: slave["exotic"] = 5
+if slave_rate["exotic"] + slave_rate["exotic_bonus"] => 120: slave["exotic"] = 5
 
 if slave["virtue"] > 0: eval = slave["virtue"]
 if slave["sin"] > 0: eval = 5 + slave["sin"]

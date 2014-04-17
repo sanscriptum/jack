@@ -4764,7 +4764,7 @@ IF interaction_city = 4213:
   slave["tatoo"] = 3
   slave_rate["mood"] -= 10    
   if slave["neg_pain"] < 3: slave["neg_pain"] = 3  
-  slave_rate["exotic"] += 5
+  slave_rate["exotic"] += 8
   dynamic $slave_energy_drop 
   dynamic $slave_energy_drop 
   slave["tatoo_timeup"] = 1  
@@ -4783,7 +4783,7 @@ IF interaction_city = 4214:
   slave["tatoo"] = 4
   slave_rate["mood"] -= 15   
   if slave["neg_pain"] < 4: slave["neg_pain"] = 4     
-  slave_rate["exotic"] += 10
+  slave_rate["exotic"] += 14
   dynamic $slave_energy_drop 
   dynamic $slave_energy_drop 
   dynamic $slave_energy_drop   
@@ -4808,7 +4808,7 @@ IF interaction_city = 4215:
   dynamic $slave_energy_drop 
   dynamic $slave_energy_drop     
   dynamic $slave_energy_drop 
-  slave_rate["exotic"] += 10
+  slave_rate["exotic"] += 13
   slave_rate["hygiene"] += 25  
  }
 END
@@ -5313,7 +5313,7 @@ IF interaction_city = 5216:
   slave_rate["mood"] -= 5  
   if slave["neg_pain"] < 1: slave["neg_pain"] = 1    
   if slave["neg_disgust"] < 1 and blood_attitude < 0: slave["neg_disgust"] = 1 & gs '$mod_slave_drop', 1          
-  slave_rate["exotic"] += 1
+  slave_rate["exotic"] += 3
   slave_rate["hygiene"] += 5      
  }
 END

@@ -140,8 +140,8 @@ END
 IF end_of_the_day = 1:
  $text = 'Больше сегодня не происходит ничего интересного. Все ложатся спать.'
  $place = 'bedroom'
- ! закомментил, чтоб не было битой иконки, by Lyazar
- !$special_bg = ''   
+ ! вернул, битых иконок быть не должно
+ $special_bg = ''   
  end_of_the_day = 0
  jump 'loop'  
 END

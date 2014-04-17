@@ -53,7 +53,8 @@ gs 'stats_layout'
 !*p '<div id = "bookmark_four">Аура</div>'
 *p '<div id = "close"><a href = "EXEC: gt ''menu_form''"><img src = "content\close_button.png"></a></div>'
 
-*p '<div id="left_column">РЕЗЮМЕ:
+*p '<div id="left_column">
+<u>РЕЗЮМЕ</u>
 <<$beauty[assistant["beauty"]]>> 
 <<$stamina[assistant["stamina"]]>> 
 <<$exotic[assistant["exotic"]]>> 
@@ -210,23 +211,23 @@ IF assistant_stat_screen = 2:
  *p '<div id = "mark_three"><img src = "content\sel_button.png"></div>'
 ! *p '<div id = "mark_four"><a href = "EXEC: assistant_stat_screen = 3 & gt curloc"><img src = "content\unsel_button.png"></a></div>' 
  *p '<div id="center_image"><img src = "content\pic\bg\page_blank.gif"></div>'
- 
- *p '<div id = "center_text_column_1"> <center>СНАРЯЖЕНИЕ АССИСТЕНТКИ</center>
- Доспехи: <<$название_предмета[$assistant["armor"]]>>
- За спиной: <<$название_предмета[$assistant["back_wpn"]]>>
- На поясе слева: <<$название_предмета[$assistant["left_wpn"]]>> 
- На поясе справа: <<$название_предмета[$assistant["right_wpn"]]>> 
- Одежда: <<$item_name[$assistant["cloth"]]>>
- На голове:  <<$item_name[$assistant["headband"]]>>
+ *p '<div id = "center_text_column_3"> <center>(Нажмите на стрелку, чтобы экипировать)</center></div>' 
+ *p '<div id = "center_text_column_1"><div style = "text-decoration:underline;"> <center>СНАРЯЖЕНИЕ АССИСТЕНТКИ</center></div>
+ <u>Доспехи:</u> <<$название_предмета[$assistant["armor"]]>>
+ <u>За спиной:</u> <<$название_предмета[$assistant["back_wpn"]]>>
+ <u>На поясе слева:</u> <<$название_предмета[$assistant["left_wpn"]]>> 
+ <u>На поясе справа:</u> <<$название_предмета[$assistant["right_wpn"]]>> 
+ <u>Одежда:</u> <<$item_name[$assistant["cloth"]]>>
+ <u>На голове:</u>  <<$item_name[$assistant["headband"]]>>
 
- В ушах: <<$item_name[$assistant["earrings"]]>>
- На шее: <<$item_name[$assistant["collar"]]>>
- На руках: <<$item_name[$assistant["gloves"]]>>
- В сосках: <<$item_name[$assistant["nipplerings"]]>>
- В клиторе: <<$item_name[$assistant["clitring"]]>>
- На ногах: <<$item_name[$assistant["boots"]]>>
- Левое кольцо: <<$item_name[$assistant["ring_left"]]>>
- Правое кольцо: <<$item_name[$assistant["ring_right"]]>>
+ <u>В ушах:</u> <<$item_name[$assistant["earrings"]]>>
+ <u>На шее:</u> <<$item_name[$assistant["collar"]]>>
+ <u>На руках:</u> <<$item_name[$assistant["gloves"]]>>
+ <u>В сосках:</u> <<$item_name[$assistant["nipplerings"]]>>
+ <u>В клиторе:</u> <<$item_name[$assistant["clitring"]]>>
+ <u>На ногах:</u> <<$item_name[$assistant["boots"]]>>
+ <u>Левое кольцо:</u> <<$item_name[$assistant["ring_left"]]>>
+ <u>Правое кольцо:</u> <<$item_name[$assistant["ring_right"]]>>
 </div>'
 
 *p '<div id = "ch_mark_1"><a href = "EXEC: slot = 40 & dynamic $assistant_armor_list"><img src = "content\next.png"></a></div>'
@@ -245,14 +246,14 @@ IF assistant_stat_screen = 2:
 *p '<div id = "ch_mark_13"><a href = "EXEC: slot = 52 & dynamic $assistant_ring_list"><img src = "content\next.png"></a></div>'
 *p '<div id = "ch_mark_14"><a href = "EXEC: slot = 53 & dynamic $assistant_ring_list_2"><img src = "content\next.png"></a></div>'
 
-*p '<div id = "center_text_column_2"> <center>ДОСТУПНЫЕ ВАРИАНТЫ</center>
+*p '<div id = "center_text_column_2"><div style = "text-decoration:underline;"> <center>ДОСТУПНЫЕ ВАРИАНТЫ</center></div>
 <<$equip_choice>>
 </div>'
  
 END 
  
 IF slave_state = CONST_INT['slave_exist']:
- *p '<div id="right_column_a">НАВЫКИ:
+ *p '<div id="right_column_a"><u>НАВЫКИ</u>
 <a href = "EXEC: interaction = 4111 & gt ''interaction''"><<$slave_service[assistant["service"]]>></a> 
 <a href = "EXEC: interaction = 4112 & gt ''interaction''"><<$slave_cook[assistant["cook"]]>></a>
 <a href = "EXEC: interaction = 4113 & gt ''interaction''"><<$slave_nurse[assistant["nurse"]]>></a>
@@ -267,7 +268,7 @@ IF slave_state = CONST_INT['slave_exist']:
 <a href = "EXEC: menu_form = 4143 & gt ''menu_form''"><<$slave_dressage[assistant["dressage"]]>></a>
 </div>'
 
- *p '<div id="right_column"><br><br><br><br><br><br><br><br><br><br><br><br><br><br>СЕКС-ТЕХНИКИ:
+ *p '<div id="right_column"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><u>СЕКС-ТЕХНИКИ</u>
 <<$slave_petting[assistant["petting"]]>> 
 <<$slave_penetration[assistant["penetration"]]>> 
 <<$slave_oral[assistant["oral"]]>>
@@ -339,7 +340,8 @@ IF slave_state = CONST_INT['slave_exist']:
  END     
   
  else
- *p '<div id="right_column">НАВЫКИ:
+ *p '<div id="right_column">
+<u>НАВЫКИ</u>:
 <<$slave_service[assistant["service"]]>> 
 <<$slave_cook[assistant["cook"]]>> 
 <<$slave_nurse[assistant["nurse"]]>> 
@@ -353,7 +355,7 @@ IF slave_state = CONST_INT['slave_exist']:
 <<$slave_pet[assistant["pet"]]>>
 <<$slave_dressage[assistant["dressage"]]>> 
 
-СЕКС-ТЕХНИКИ:
+<u>СЕКС-ТЕХНИКИ</u>
 <<$slave_petting[assistant["petting"]]>> 
 <<$slave_penetration[assistant["penetration"]]>> 
 <<$slave_oral[assistant["oral"]]>>

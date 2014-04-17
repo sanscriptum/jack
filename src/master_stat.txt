@@ -25,7 +25,7 @@ $left_text_list = ''
 $middle_text_list = '' 
 $right_text_list = '' 
  
- if kitchen > 0: $left_text_list += 'КРИОКАМЕРА [<<frige_items>>/<<estate_size[$estate]>>]:
+ if kitchen > 0: $left_text_list += '<u>КРИОКАМЕРА</u> [<<frige_items>>/<<estate_size[$estate]>>]:
 Овощи х<<frige["vegetables"]>>
 Мука и крупы х<<frige["flower"]>>
 Зелень и специи х<<frige["spice"]>>
@@ -39,7 +39,7 @@ $right_text_list = ''
 Девчатина х<<frige["virgin_meat"]>><br>'
 
 IF lab > 0: 
- $middle_text_list += 'ЛАБОРАТОРИЯ [<<lab_items>>/<<estate_size[$estate]>>]:
+ $middle_text_list += '<u>ЛАБОРАТОРИЯ</u> [<<lab_items>>/<<estate_size[$estate]>>]:
 Слизь исчадия х<<lab_store["slime"]>>
 Элизийский дурман х<<lab_store["kanabis"]>>
 Камровая смола х<<lab_store["koffe"]>>
@@ -55,7 +55,7 @@ IF lab > 0:
 Вода Леты x<<вода_леты>>
 '
  else
- $middle_text_list += 'ВЕЩЕСТВА:
+ $middle_text_list += '<u>ВЕЩЕСТВА:</u>
 Слизь исчадия х<<lab_store["slime"]>>
 Элизийский дурман х<<lab_store["kanabis"]>>
 Камровая смола х<<lab_store["koffe"]>>
@@ -72,7 +72,7 @@ IF lab > 0:
 ' 
 END
 
-$right_text_list = 'ДОМ[<<house_items>>/<<estate_size[$estate]>>]:
+$right_text_list = '<u>ДОМ</u>[<<house_items>>/<<estate_size[$estate]>>]:
 <<$furniture_list>><br>'
 
 !ЗАКЛАДКА СКЛАДА
@@ -88,7 +88,7 @@ If master_stat_screen = 0:
 END
 
 *p '<div id="left_column">
-ХАРАКТЕРИСТИКИ:
+<u>ХАРАКТЕРИСТИКИ</u>
 <<$master_wounds[master_wounds]>>
 <a href="EXEC: msg $сила_справка & $info_text = $сила_совет & gt $curloc"><<$master_str[master_str]>></a>
 <a href="EXEC: msg $харизма_справка & $info_text = $харизма_совет & gt $curloc"><<$master_cha[master_cha]>></a>
@@ -98,11 +98,10 @@ END
 <a href="EXEC: msg $гигиена_справка & $info_text = $гигиена_совет & gt $curloc"><<$boy_hygiene[master_hygiene]>></a>
 <a href="EXEC: msg $настроение_справка & $info_text = $настроение_совет & gt $curloc"><<$boy_mood[master_mood_plus]>></a>
 
-ОСОБЕННОСТИ:
 </div>'
 
 *p '<div id="right_column">
-НАВЫКИ:
+<u>НАВЫКИ</u>
 <a href="EXEC: msg $учитель_справка & $info_text = $учитель_совет & gt $curloc"><<$master_tutor[master_tutor]>></a> 
 <a href="EXEC: msg $дворецкий_справка & $info_text = $дворецкий_совет & gt $curloc"><<$master_butler[master_butler]>></a> 
 <a href="EXEC: msg $артдиректор_справка & $info_text = $артдиректор_совет & gt $curloc"><<$master_artdirector[master_artdirector]>></a> 
@@ -114,7 +113,7 @@ END
 <a href="EXEC: msg $палач_справка & $info_text = $палач_совет & gt $curloc"><<$master_torture[master_torture]>></a> 
 <a href="EXEC: msg $бондаж_справка & $info_text = $бондаж_совет & gt $curloc"><<$master_bondage[master_bondage]>></a>
 
-СЕКС-ТЕХНИКИ
+<u>СЕКС-ТЕХНИКИ</u>
 <<$master_petting[master_petting]>> 
 <<$master_penetration[master_penetration]>> 
 <<$master_oral[master_oral]>> 
@@ -140,19 +139,20 @@ If master_stat_screen = 2:
  *p '<div id = "mark_three"><img src = "content\sel_button.png"></div>'
  *p '<div id = "mark_four"><a href = "EXEC: master_stat_screen = 3 & gt curloc"><img src = "content\unsel_button.png"></a></div>'  
  *p '<div id="center_image"><img src = "content\pic\bg\page_blank.gif"></div>'
- *p '<div id = "center_text_column_1"> <center>МОЁ СНАРЯЖЕНИЕ</center>
- Доспехи: <<$название_предмета[$master_armor]>>
- За спиной: <<$название_предмета[$master_back_wpn]>> 
- На поясе слева: <<$название_предмета[$master_left_wpn]>> 
- На поясе справа: <<$название_предмета[$master_right_wpn]>>
- На предплечье: <<$название_предмета[$master_arm_wpn]>> 
- За сапогом: <<$название_предмета[$master_leg_wpn]>>
+ *p '<div id = "center_text_column_3"> <center>(Нажмите на стрелку, чтобы экипировать)</center></div>'
+ *p '<div id = "center_text_column_1"><div style = "text-decoration:underline;"> <center>МОЁ СНАРЯЖЕНИЕ</center> </div>
+ <u>Доспехи:</u> <<$название_предмета[$master_armor]>>
+ <u>За спиной:</u> <<$название_предмета[$master_back_wpn]>> 
+ <u>На поясе слева:</u> <<$название_предмета[$master_left_wpn]>> 
+ <u>На поясе справа:</u> <<$название_предмета[$master_right_wpn]>>
+ <u>На предплечье:</u> <<$название_предмета[$master_arm_wpn]>> 
+ <u>За сапогом:</u> <<$название_предмета[$master_leg_wpn]>>
 
- Одежда: <<$item_name[$master_cloth]>>
- На голове: <<$item_name[$master_head_gear]>>
- В ухе: <<$item_name[$master_earring]>>
- На шее: <<$item_name[$master_amulet]>>
- Кольцо: <<$item_name[$master_ring]>>
+ <u>Одежда:</u> <<$item_name[$master_cloth]>>
+ <u>На голове:</u> <<$item_name[$master_head_gear]>>
+ <u>В ухе:</u> <<$item_name[$master_earring]>>
+ <u>На шее:</u> <<$item_name[$master_amulet]>>
+ <u>Кольцо:</u> <<$item_name[$master_ring]>>
 </div>'
 
 *p '<div id = "ch_mark_1"><a href = "EXEC: slot = 1 & dynamic $master_armor_list"><img src = "content\next.png"></a></div>'
@@ -168,7 +168,7 @@ If master_stat_screen = 2:
 *p '<div id = "ch_mark_10"><a href = "EXEC: slot = 10 & dynamic $master_neck_list"><img src = "content\next.png"></a></div>'
 *p '<div id = "ch_mark_11"><a href = "EXEC: slot = 11 & dynamic $master_ring_list"><img src = "content\next.png"></a></div>'
 
-*p '<div id = "center_text_column_2"> <center>ДОСТУПНЫЕ ВАРИАНТЫ</center>
+*p '<div id = "center_text_column_2"><div style = "text-decoration:underline;"> <center>ДОСТУПНЫЕ ВАРИАНТЫ</center></div>
 <<$equip_choice>>
 </div>'
 END
@@ -180,7 +180,7 @@ IF master_stat_screen = 3:
  *p '<div id = "mark_four"><img src = "content\sel_button.png"></div>'
  *p '<div id="center_image"><img src = "content\pic\bg\page_blank.gif"></div>' 
 
- *p '<div id = "bg_blue_script_right">День <<day>>:
+ *p '<div id = "bg_blue_script_right"><u>День <<day>>:</u>
 <<$master_mood_list>></div>'
 END
 

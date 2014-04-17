@@ -677,6 +677,15 @@ height:585px;
 font-family:"Segoe Print";
 }
 
+#center_text_column_3{
+position:absolute;
+left:382;
+top:53;
+width:580px;
+height:585px;
+font-family: Segoe Print;
+}
+
 #ch_mark_1 {
 position:absolute;
 left:270px;

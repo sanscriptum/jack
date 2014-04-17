@@ -125,11 +125,11 @@ IF teach_stat_screen = 0:
   else
   $left_text_list += '<font color="#C0C0C0">Алхимия<BR></font>'   
  END
- IF library = 1: 
+!" IF library = 1: 
   $left_text_list += "<a href = 'EXEC: interaction = 1244 & gt ""interaction""'><<$enchant_lesson[slave[""enchanter""]]>><BR></a>"
   else
   $left_text_list += '<font color="#C0C0C0">Зачарование<BR></font>'   
- END
+ END"
  $left_text_list += "<a href = 'EXEC: interaction = 1241 & gt ""interaction""'><<$domestik_lesson[slave[""pet""]]>><BR></a>"
  $left_text_list += "<a href = 'EXEC: interaction = 1242 & gt ""interaction""'><<$dressur_lesson[slave[""pet""]]>><BR></a>"
  IF slave["stamina"] > 1: 
@@ -142,11 +142,11 @@ IF teach_stat_screen = 0:
   else
   $left_text_list += '<font color="#C0C0C0">Упряжка<BR></font>'     
  END
- IF master_tantra > 0:
+!" IF master_tantra > 0:
   $left_text_list += "<a href = 'EXEC: interaction = 1226 & gt ""interaction""'><<$tantra_lesson[slave[""tantra""]]>><BR></a>"
   else
   $left_text_list += '<font color="#C0C0C0">Тантра-йога<BR></font>'    
- END 
+ END "
  
  $middle_text_list += "<a href = 'EXEC: interaction = 1321 & gt ""interaction""'><<$slave_sub_kiss[slave[""sub_kiss""]]>><BR></a>"
  $middle_text_list += "<a href = 'EXEC: interaction = 1322 & gt ""interaction""'><<$slave_sub_thongue[slave[""sub_thongue""]]>><BR></a>"

@@ -1725,12 +1725,12 @@ $alchemy_lesson[3] = dyneval($vb_cycle, 3, 'Алхимия')
 $alchemy_lesson[4] = dyneval($vb_cycle, 4, 'Алхимия')
 $alchemy_lesson[5] = dyneval($vb_cycle, 5, 'Алхимия')
 
-$enchant_lesson[0] = dyneval($vb_cycle, 0, 'Зачарование')
+!"$enchant_lesson[0] = dyneval($vb_cycle, 0, 'Зачарование')
 $enchant_lesson[1] = dyneval($vb_cycle, 1, 'Зачарование')
 $enchant_lesson[2] = dyneval($vb_cycle, 2, 'Зачарование')
 $enchant_lesson[3] = dyneval($vb_cycle, 3, 'Зачарование')
 $enchant_lesson[4] = dyneval($vb_cycle, 4, 'Зачарование')
-$enchant_lesson[5] = dyneval($vb_cycle, 5, 'Зачарование')
+$enchant_lesson[5] = dyneval($vb_cycle, 5, 'Зачарование')"
 
 $domestik_lesson[0] = dyneval($vb_cycle, 0, 'Приручение')
 $domestik_lesson[1] = dyneval($vb_cycle, 1, 'Приручение')
@@ -1760,12 +1760,12 @@ $draft_lesson[3] = dyneval($vb_cycle, 3, 'Упряжка')
 $draft_lesson[4] = dyneval($vb_cycle, 4, 'Упряжка')
 $draft_lesson[5] = dyneval($vb_cycle, 5, 'Упряжка')
 
-$tantra_lesson[0] = dyneval($vb_cycle, 0, 'Тантра-йога')
+!"$tantra_lesson[0] = dyneval($vb_cycle, 0, 'Тантра-йога')
 $tantra_lesson[1] = dyneval($vb_cycle, 1, 'Тантра-йога')
 $tantra_lesson[2] = dyneval($vb_cycle, 2, 'Тантра-йога')
 $tantra_lesson[3] = dyneval($vb_cycle, 3, 'Тантра-йога')
 $tantra_lesson[4] = dyneval($vb_cycle, 4, 'Тантра-йога')
-$tantra_lesson[5] = dyneval($vb_cycle, 5, 'Тантра-йога')
+$tantra_lesson[5] = dyneval($vb_cycle, 5, 'Тантра-йога')"
 
 $_lesson[0] = dyneval($vb_cycle, 0, 'Урок')
 $_lesson[1] = dyneval($vb_cycle, 1, 'Урок')

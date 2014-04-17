@@ -205,7 +205,7 @@ END
 IF menu_form = 11:
  $text_display += {<br><div id="under">Спросить <br><div id = "clear"><a href = 'EXEC: menu_form = 111 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Воздействовать <br><div id = "clear"><a href = 'EXEC: menu_form = 112 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under_gray">Общаться <br></div>}
+! $text_display += {<br><div id="under_gray">Общаться <br></div>}
  if wizard_mode = 1: $text_display += {<br><div id="under">* OBEY *<br><div id = "clear"><a href = 'EXEC: interaction = 1125 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 1 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
 END
@@ -366,7 +366,7 @@ IF menu_form = 18:
  $text_display += {<br><div id="under">Повесить<br><div id = "clear"><a href = 'EXEC: interaction = 182 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Отрубить голову<br><div id = "clear"><a href = 'EXEC: interaction = 183 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Посадить на кол<br><div id = "clear"><a href = 'EXEC: interaction = 184 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
- IF noway > 0:
+!" IF noway > 0:
   $text_display += {<br><div id="under">Утопить<br><div id = "clear"><a href = 'EXEC: interaction = 185 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Утопить<br></div>}
@@ -380,7 +380,7 @@ IF menu_form = 18:
   $text_display += {<br><div id="under">Отдать чудовищу<br><div id = "clear"><a href = 'EXEC: interaction = 185 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Отдать чудовищу<br></div>}
- END
+ END"
  $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 1 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
 END
 
@@ -745,11 +745,11 @@ IF menu_form = 122:
   else
   $text_display += {<br><div id="under_gray">Упряжка<br></div>}
  END
- IF master_tantra > 0:
+!" IF master_tantra > 0:
   $text_display += {<br><div id="under">Тантра-йога<br><div id = "clear"><a href = 'EXEC: interaction = 1226 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Тантра-йога<br></div>}
- END  
+ END"
  $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 12 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
 END
 
@@ -769,11 +769,11 @@ IF menu_form = 124:
   else
   $text_display += {<br><div id="under_gray">Алхимия<br></div>}
  END  
- IF library = 1:
+!" IF library = 1:
   $text_display += {<br><div id="under">Зачарование<br><div id = "clear"><a href = 'EXEC: interaction = 1244 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Зачарование<br></div>}
- END  
+ END  "
  $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 12 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
 END
 

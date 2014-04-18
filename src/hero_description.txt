@@ -36,7 +36,7 @@ $secondary_stt += '<<$master_fetish[master_fetish]>><br>'
 *p '<div id = "hero_diff"><<$hero_difficulty[hero_choice]>></div>'
 *p '<div id = "hero_desc"><<$hero_description[hero_choice]>></div>'
 
-*p '<div id = "ava_choice_1_1"><img src = "<<$master_ava>>"></div>'
+*p '<div id = "ava_choice_1_1_1"><img src = "<<$master_ava>>"></div>'
 *p {<div id = "close_scroll"><a href = 'EXEC: gt "main_menu"'><img src = "content\close_button.png"></a></div>}
 
 *p '<div id = "confirm_box"><a href = ''EXEC: dynamic $name_and_start''><img src = "content\approve_small.png"></a></div>'

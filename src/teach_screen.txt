@@ -89,8 +89,8 @@ IF teach_stat_screen = 0:
 
 !Формируем список на обучение
 
- $left_text_teach = ''
  $left_text_list = ''
+ $left_text_teach = ''
  $middle_text_list = ''
  $middle_text_1 = ''
  $middle_text_2 = ''
@@ -105,7 +105,6 @@ IF teach_stat_screen = 0:
  $right_text_heading = ''
 
  $left_text_heading += '<u>ОБУЧЕНИЕ НАВЫКАМ</u>'
- 
  IF house_mess > 0:
   $left_text_teach += "<a href = 'EXEC: interaction = 1211 & gt ""interaction""'><<$service_lesson[slave[""service""]]>><BR></a>"
   else
@@ -164,7 +163,7 @@ IF teach_stat_screen = 0:
   $left_text_list += '<font color="#C0C0C0">Тантра-йога<BR></font>'    
  END "
 
- $right_text_heading += '<u>ОБУЧЕНИЕ СЕКС-ТЕХНИКАМ</u></div>'
+ $right_text_heading += '<u>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspОБУЧЕНИЕ СЕКС-ТЕХНИКАМ</u>'
  $middle_text_1 += "<a href = 'EXEC: interaction = 1311 & gt ""interaction""'><<$slave_sub_hj[slave[""sub_hj""]]>><BR></a>"
  $middle_text_1 += "<a href = 'EXEC: interaction = 1312 & gt ""interaction""'><<$slave_sub_fj[slave[""sub_fj""]]>><BR></a>"
  $middle_text_1 += "<a href = 'EXEC: interaction = 1313 & gt ""interaction""'><<$slave_sub_hug[slave[""sub_hug""]]>><BR></a>"

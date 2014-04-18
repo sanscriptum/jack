@@ -438,10 +438,11 @@ IF $interaction_type = 'prise_erotic':
 END
 
 !Тип взаимодействия - словесная награда
+!фикс повторного комплимента
 IF $interaction_type = 'compliment':
  $interaction_type = 'talk'
  txt_count = 2
- IF already_done_today[interaction] = 1:
+ IF already_done_today[interaction] >= 1:
   $text[2] = '  <<$compliment_repeat>>'
   if slave["virtue"] < prise_level: slave_rate["spoil"] += 1
   else

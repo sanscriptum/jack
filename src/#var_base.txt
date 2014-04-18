@@ -1592,12 +1592,12 @@ $slave_sub_masturbation[3] = $_font_col_rep[3] + 'Мастурбация' + $_fo
 $slave_sub_masturbation[4] = $_font_col_rep[4] + 'Мастурбация' + $_font_closer
 $slave_sub_masturbation[5] = $_font_col_rep[5] + 'Мастурбация' + $_font_closer
 
-$slave_sub_dildo[0] = $_font_col_rep[0] + 'Фалоиммитаторы' + $_font_closer
-$slave_sub_dildo[1] = $_font_col_rep[1] + 'Фалоиммитаторы' + $_font_closer
-$slave_sub_dildo[2] = $_font_col_rep[2] + 'Фалоиммитаторы' + $_font_closer
-$slave_sub_dildo[3] = $_font_col_rep[3] + 'Фалоиммитаторы' + $_font_closer
-$slave_sub_dildo[4] = $_font_col_rep[4] + 'Фалоиммитаторы' + $_font_closer
-$slave_sub_dildo[5] = $_font_col_rep[5] + 'Фалоиммитаторы' + $_font_closer
+$slave_sub_dildo[0] = $_font_col_rep[0] + 'Дилдо' + $_font_closer
+$slave_sub_dildo[1] = $_font_col_rep[1] + 'Дилдо' + $_font_closer
+$slave_sub_dildo[2] = $_font_col_rep[2] + 'Дилдо' + $_font_closer
+$slave_sub_dildo[3] = $_font_col_rep[3] + 'Дилдо' + $_font_closer
+$slave_sub_dildo[4] = $_font_col_rep[4] + 'Дилдо' + $_font_closer
+$slave_sub_dildo[5] = $_font_col_rep[5] + 'Дилдо' + $_font_closer
 
 $slave_sub_exhibit[0] = $_font_col_rep[0] + 'Эксгибиционизм' + $_font_closer
 $slave_sub_exhibit[1] = $_font_col_rep[1] + 'Эксгибиционизм' + $_font_closer

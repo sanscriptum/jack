@@ -6,10 +6,15 @@ def split_file(filename, to_dir):
     if path.exists(to_dir):
         rmtree(to_dir)
     mkdir(to_dir)
-    f = open(filename, 'r')
+    f = open(filename, 'rb')
+    data = f.read()
+    f.close()
+    if data[:2] == '\xff\xfe':
+        data = data.decode('utf16').encode('utf8')
+    i_lines = (line + '\n' for line in data.splitlines())
     loc_name = 'Start'
     ff = open(to_dir + loc_name + '.txt', 'w')
-    for line in f:
+    for line in i_lines:
         if line[0] == '#' and line[1] == ' ':
             ff.close()
             loc_name = (line[2:-1]).decode('utf-8')
@@ -17,21 +22,27 @@ def split_file(filename, to_dir):
             ff.write(line)
         else:
             ff.write(line)
-    f.close()
 
-def merge_file(dir, filename):
+def merge_file(dir, filename, mode):
     file_list = []
-    f = open(filename, 'w')
+    f = open(filename, 'wb')
+    if mode == 'utf16':
+        f.write('\xff\xfe')
     for file in listdir(dir):
         file_n = path.join(dir, file)
-        ff = open(file_n, 'r')
-        f.write(ff.read())
+        ff = open(file_n, 'rb')
+        data = ff.read()
+        if mode == 'utf16':
+            data = data.decode('utf8').encode(mode)
+            f.write(data[2:])
+        else:
+            f.write(data)
         ff.close()
     f.close()
 
 def main():
     if len(sys.argv) != 3:
-        print 'usage: split_file.py {--split | --merge} file'
+        print 'usage: split_file.py {--split | --merge | --merge2} file'
         sys.exit(1)
 
     dist_dir = 'src/'
@@ -40,7 +51,9 @@ def main():
     if option == '--split':
         split_file(filename, dist_dir)
     elif option == '--merge':
-        merge_file(dist_dir, filename)
+        merge_file(dist_dir, filename, 'utf8')
+    elif option == '--merge2':
+        merge_file(dist_dir, filename, 'utf16')
     else:
         print 'unknown option: ' + option
         sys.exit(1)

@@ -47,6 +47,10 @@ IF $interaction_type = 'make_slave_do':
  *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
 END
 
+IF $interaction_type = 'make_assistant_do':
+ *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+END
+
 IF $interaction_type = 'master_teaches_slave':
  *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
 END

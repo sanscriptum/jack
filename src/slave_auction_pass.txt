@@ -1,19 +1,27 @@
 # slave_auction_pass
 !ПРОПУСКАЕМ ОДИН ХОД АУКЦИОНА (покупка рабыни)
 IF auction_phase = 5:
- GT 'menu_form'
+ haggling_stage = 0
+ auction_phase = 7
+ GT 'city_menu_form'
+END
+
+IF auction_phase = 7:
+ haggling_stage = 0
+ GT 'city_menu_form'
 END
 
 IF auction_phase = 6:
  sparks -= cur_stock_price
  haggling_stage = 0 
- auction_phase = 5
+ auction_phase = 7
  GT 'stock_to_slave'
 END
 
 IF auction_phase = 4:
  IF stock_sold => stock_limit:
   auction_phase = 5
+  haggling_stage = 0
   else
   IF haggling_stage = 1:
    auction_phase = 0

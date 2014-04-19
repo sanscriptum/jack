@@ -3,6 +3,7 @@
 
 IF stock_sold => stock_limit:
   auction_phase = 5
+  haggling_stage = 0
  else
   auction_phase = 0
   haggling_stage = 0

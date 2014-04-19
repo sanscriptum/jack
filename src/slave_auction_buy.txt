@@ -59,11 +59,17 @@ IF auction_phase = 5:
 END
 
 IF auction_phase = 6:
-  $text = '  Вы забираете вновь приобретенную рабыню с собой и отправляетесь домой.'
+  $text = '  Вы забираете вновь приобретенную рабыню с собой и уходите с рынка.'
+END
+
+IF auction_phase = 7:
+  $text = '  [ФАРИД]
+  Аукцион уже закончился, дарагой! Возвращайся завтра!'
 END
 
 *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
 if stock_sold = 0: *p '<div id = "bg"><img src="content\pic\characters\slaver_fharid.gif"></div>'
+if auction_phase = 7: *p '<div id = "bg"><img src="content\pic\characters\slaver_fharid.gif"></div>'
 if stock_sold > 0 and auction_phase < 5: *p '<div id = "bg"><img src="content\pic\<<$stock_fullimage>>.gif"></div>'
 *p '<div id = "text"><<$text>></div>'
 
@@ -80,7 +86,8 @@ END
 addobj '<img src = "content\pic\buttons\auk_fwrd.png">'
 
 IF stock_sold > 0 and auction_phase < 5: 
- *p '<div id = "interaction_stat_bar">ОЦЕНКА:
+ *p '<div id = "interaction_stat_bar">
+<u>РЕЗЮМЕ</u>
 <<$beauty[stock["beauty"]]>> 
 <<$stamina[stock["stamina"]]>> 
 <<$fat[stock["fat"]]>> 
@@ -88,7 +95,7 @@ IF stock_sold > 0 and auction_phase < 5:
 <<$style[stock["style"]]>> 
 <<$temper[stock["temper"]]>> 
 
-ОСОБЕННОСТИ:
+<u>ОСОБЕННОСТИ</u>
 <<$stock_features_list>>
 </div>'
  else

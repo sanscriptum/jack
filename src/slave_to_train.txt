@@ -24,7 +24,8 @@ contractor_demand['max_temper'] = 99
 *p '<div id = "bg"><img src="content\pic\<<$stock_fullimage>>.gif"></div>'
 *p '<div id = "text">    Вместе со своим потенциальным работодателем вы отправляетесь в центр передержки гильдии, чтобы осмотреть предмет контракта. После тщательной оценки рабыни, вы готовы принять решение о том браться ли за контракт или отказаться от него как от бесперспективного.</div>'
 
- *p '<div id = "interaction_stat_bar">ОЦЕНКА:
+ *p '<div id = "interaction_stat_bar">
+<u>РЕЗЮМЕ</u>
 <<$beauty[stock["beauty"]]>> 
 <<$stamina[stock["stamina"]]>> 
 <<$exotic[stock["exotic"]]>> 
@@ -33,7 +34,7 @@ contractor_demand['max_temper'] = 99
 <<$style[stock["style"]]>> 
 <<$temper[stock["temper"]]>> 
 
-ОСОБЕННОСТИ:
+<u>ОСОБЕННОСТИ</u>
 <<$stock_features_list>>
 </div>'
 

@@ -287,7 +287,8 @@ GT 'menu_form'
 *p '<div id = "text"><<$text>></div>'
 *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
   
-$info_bar = 'ОЦЕНКА: <<$rating[rating]>>
+$info_bar = '
+<u>ОЦЕНКА:</u>&nbsp;<<$rating[rating]>>
 <<$beauty[slave["beauty"]]>> 
 <<$stamina[slave["stamina"]]>> 
 <<$exotic[slave["exotic"]]>> 
@@ -299,7 +300,7 @@ $info_bar = 'ОЦЕНКА: <<$rating[rating]>>
 <<$ego[slave["ego"]]>> 
 <<$pride[slave["pride"]]>> 
 
-ОСОБЕННОСТИ:
+<u>ОСОБЕННОСТИ</u>
 <<$features_list>>'
 
 if npc = 0:

@@ -53,7 +53,8 @@ END
 
 jump 'second_point'
 :first_point
-$info_bar = 'ОЦЕНКА:
+$info_bar = '
+<u>РЕЗЮМЕ</u>
 <<$beauty[stock["beauty"]]>> 
 <<$stamina[stock["stamina"]]>> 
 <<$exotic[stock["exotic"]]>> 
@@ -62,7 +63,7 @@ $info_bar = 'ОЦЕНКА:
 <<$style[stock["style"]]>> 
 <<$temper[stock["temper"]]>> 
 
-ОСОБЕННОСТИ:
+<u>ОСОБЕННОСТИ</u>
 <<$stock_features_list>>' 
 $special_image[3] = '<<$stock_fullimage>>.gif' 
 :second_point

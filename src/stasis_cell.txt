@@ -25,7 +25,8 @@ IF iced_state > 0 and slave_state > CONST_INT['no_slave']:
 END
 
 IF iced_state > 0:
- $info_bar = 'ОЦЕНКА:
+ $info_bar = '
+<u>РЕЗЮМЕ</u>
 <<$beauty[iced["beauty"]]>> 
 <<$stamina[iced["stamina"]]>>  
 <<$exotic[iced["exotic"]]>> 

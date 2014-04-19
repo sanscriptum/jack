@@ -42,7 +42,8 @@ IF npc ! 9999 and npc ! 0:
 </div>'
 END
 IF npc = 9999:
-  *p '<div id = "interaction_stat_bar">ОЦЕНКА:
+  *p '<div id = "interaction_stat_bar">
+<u>РЕЗЮМЕ</u>
 <<$beauty[stock["beauty"]]>> 
 <<$stamina[stock["stamina"]]>> 
 <<$exotic[stock["exotic"]]>> 
@@ -51,7 +52,7 @@ IF npc = 9999:
 <<$style[stock["style"]]>> 
 <<$temper[stock["temper"]]>> 
 
-ОСОБЕННОСТИ:
+<u>ОСОБЕННОСТИ</u>
 <<$stock_features_list>>
 </div>'
 END

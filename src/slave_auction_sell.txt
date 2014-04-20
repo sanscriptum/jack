@@ -32,7 +32,7 @@ IF slave['brand'] = 0:
  $text[3] = '[ФАРИД]
   <font color="#660000">- О! Девочка то с клеймом! Не совсем мой профиль, канэшна, но для тебя найдем и ей сбыт, радной. Расскажи-ка, чему ты её научил, что умеет, как с поведением у нее?
 </font>'
- if brand_reputation <= 6: $text[3] = '[ФАРИД]
+ if brand_reputation <= 3: $text[3] = '[ФАРИД]
   <font color="#660000">- Беда-беда... Девочка то с клеймом! Не мой профиль. Не магу её взять, дарагой. Рад бы, да не магу. С меня же гильдия щкуру спустит за такие щтуки.
 </font>' & text_count = 3
 END
@@ -76,6 +76,7 @@ if txt > 1 and txt <= 4: addobj '<img src = "content\back_button.png">'
 
 if txt <= 4: addobj '<img src = "content\forward_button.png">'
 
+if txt = 7: addobj '<img src = "content\forward_button.png">'
 
 --- slave_auction_sell ---------------------------------
 

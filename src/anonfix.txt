@@ -10,7 +10,15 @@
 Репозиторий фикса открыт для всех желающих улучшать и дополнять игру, и находится <a href="http://github.com/klensy/jack">по этому адресу</a>.
 
 Подробное описание фикса можно найти в файле readme.txt, который поставляется в архиве с фиксом.
+<b>ИНТЕРФЕЙС:</b>
+Старый стиль
 </div>'
+
+IF old_menu_style = 1:
+ *p '<div id="chekbox_14l"><a href = "EXEC: old_menu_style = 0 & gt curloc"><img src="content\sel_button.png"></a></div>'  
+ else
+ *p '<div id="chekbox_14l"><a href = "EXEC: old_menu_style = 1 & gt curloc"><img src="content\unsel_button.png"></a></div>'  
+END
 
 {<div id = "close_scroll"><a href = 'EXEC: gt "main_menu"'><img src = "content\close_button.png"></a></div>}
 --- anonfix ---------------------------------

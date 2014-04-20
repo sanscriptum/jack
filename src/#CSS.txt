@@ -1346,6 +1346,14 @@ width:25px;
 height:25px;
 }
 
+#chekbox_14l {
+position:absolute;
+left:265px;
+top:517px;
+width:25px;
+height:25px;
+}
+
 #chekbox_1r {
 position:absolute;
 left:1012px;

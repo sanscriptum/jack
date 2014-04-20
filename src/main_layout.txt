@@ -1,7 +1,11 @@
 # main_layout
 !Разметка основного игрового экрана
 INTEGRATED_ACTIONS = 0
-$backimage = 'content/pic/bg_main.jpg'
+IF old_menu_style = 1:
+ $backimage = 'content/pic/bg_main_old.jpg'
+ else
+ $backimage = 'content/pic/bg_main.jpg'
+END
 
 SHOWOBJS 0
 SHOWSTAT 0

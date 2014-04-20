@@ -1,6 +1,10 @@
 # раскладка_бой
 !РАСКЛАДКА БОЕВОГО ИНТЕРФЕЙСА
-$BACKIMAGE = 'content/pic/bg_fight.jpg'
+IF old_menu_style = 1:
+ $backimage = 'content/pic/bg_fight_old.jpg'
+ else
+ $backimage = 'content/pic/bg_fight.jpg'
+END
 
 MSG_X = 350
 --- раскладка_бой ---------------------------------

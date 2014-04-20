@@ -18,9 +18,13 @@ $current_ride = $trace_description['ride_start']
 killvar 'speed_points'
 trace_segment = 1
 
-$BACKIMAGE = 'content/pic/bg_fight.jpg'
+!$BACKIMAGE = 'content/pic/bg_fight.jpg'
 !новая пикча by XxX_dark-youba-pojeeratyel'-tvoyei-pees'ki-the_vm-\|-_-_-^__^-_-_-|/MLG_PRO_YOLO#2014_RUS99N4giB4T0R_XxX
-$BACKIMAGE = 'content/pic/bg_ride.jpg'
+IF old_menu_style = 1:
+ $backimage = 'content/pic/bg_fight_old.jpg'
+ else
+ $backimage = 'content/pic/bg_ride.jpg'
+END
 MSG_X = 350
 
 $future_ride = $trace_forward_description[$trace[2]]

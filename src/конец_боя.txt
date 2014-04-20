@@ -17,6 +17,10 @@ $информация_о_бое += '<<$действия_врага[5]>><br>'
 
 !меню управления
 if $extra_special_used = '': $extra_special_used = 'content/pic/buttons/shield_used.gif'
+if $extra_special_used = 'content/pic/buttons/dual_used.gif': $extra_special_used = 'content/pic/buttons/shield_used.gif'
+if $extra_special_used = 'content/pic/buttons/net_used.gif': $extra_special_used = 'content/pic/buttons/shield_used.gif'
+if $extra_special_used = 'content/pic/buttons/whip_used.gif': $extra_special_used = 'content/pic/buttons/shield_used.gif'
+if $extra_special_used = 'content/pic/buttons/heavy_used.gif': $extra_special_used = 'content/pic/buttons/shield_used.gif'
 
 IF $итог_боя = 'победа':
  $боевое_меню = "<a href='EXEC: gt ""выход_из_боя""'><img src = 'content/pic/buttons/thumb_up.gif'></a><br>"

@@ -1352,7 +1352,7 @@ $colloseum_options[21] = {
   else
   $text_display += {<div id="under_gray">- Обучи меня особому приёму<br></div>} 
  END
- $text_display += {<br><div id="under_gray">- Расскажи мне про искусство поединка<br></div>} 
+!$text_display += {<br><div id="under_gray">- Расскажи мне про искусство поединка<br></div>} 
  $text_display += {<div id="under">- Какие тебе нужны рабыни?<div id = "clear"><a href = 'EXEC: interaction_city = 191 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
   $text_display += {<div id="under">- Взгляни на мой товар!<br><div id = "clear"><a href = 'EXEC: interaction_city = 192 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
@@ -1427,7 +1427,7 @@ $colloseum_options[2] = {
  $text_display += {<div id="under">- С шиноби<br><div id = "clear"><a href = 'EXEC: colloseum_fight = 3 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<div id="under">- С амазонкой<br><div id = "clear"><a href = 'EXEC: colloseum_fight = 4 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<div id="under">- С латницей<br><div id = "clear"><a href = 'EXEC: colloseum_fight = 5 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under_gray">- С тобой!<br></div>} 
+!$text_display += {<div id="under_gray">- С тобой!<br></div>} 
  $text_display += {<br><div id="under">- Хотя нет, лучше...<br><div id = "clear"><a href = 'EXEC: sp_txt = 21 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 }
 
@@ -1500,7 +1500,7 @@ IF debt <= 0:
   $text_display += {<div id="under_gray">Погасить задолженность<br></div>}   
  END
 END
-$text_display += {<br><div id="under_gray">Поговорить о бизнесе<br></div>}
+!$text_display += {<br><div id="under_gray">Поговорить о бизнесе<br></div>}
 $text_display += {<br><div id="under">Узнать предпочтения<br><div id = "clear"><a href = 'EXEC: interaction_city = 631 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
 IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
  $text_display += {<br><div id="under">Предложить рабыню<br><div id = "clear"><a href = 'EXEC: interaction_city = 632 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}

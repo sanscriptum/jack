@@ -1201,9 +1201,9 @@ IF menu_form = 1547:
   $text_display += {<br><div id="under_gray">Роскошное платье (50 искр)<br></div>}
  END   
  IF sparks => 100:
-  $text_display += {<br><div id="under">Подвенечное платье (20 искр)<br><div id = "clear"><a href = 'EXEC: interaction = 15475 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Подвенечное платье (100 искр)<br><div id = "clear"><a href = 'EXEC: interaction = 15475 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Подвенечное платье (20 искр)<br></div>}
+  $text_display += {<br><div id="under_gray">Подвенечное платье (100 искр)<br></div>}
  END    
  $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 154 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
 END

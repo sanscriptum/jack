@@ -128,7 +128,7 @@ IF city_form = 31:
  $text_display += {<div id="under">Манор Леонида<br><div id = "clear"><a href = 'EXEC: interaction_city = 319 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<div id="under">Апартаменты Люция<br><div id = "clear"><a href = 'EXEC: interaction_city = 3110 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<div id="under">Этаж Сингх-Хана<br><div id = "clear"><a href = 'EXEC: interaction_city = 3111 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Резиденция Фроггера<br><div id = "clear"><a href = 'EXEC: interaction_city = 3112 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Резиденция Фроглера<br><div id = "clear"><a href = 'EXEC: interaction_city = 3112 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<div id="under">Шпиль Наследника Тутти<br><div id = "clear"><a href = 'EXEC: interaction_city = 3113 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">На центральную улицу<br><div id = "clear"><a href = 'EXEC: city_form = 3 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
 END

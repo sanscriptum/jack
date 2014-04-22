@@ -70,7 +70,9 @@ master_penetration = 4
 master_fetish = 4
 
 $master_armor = 'без_брони'
+$master_cloth = 'man_rugs'
 $master_right_wpn = 'кнут'
+sparks = 1000
 
 faction_fame['taurus'] = 1
 } 
@@ -107,6 +109,7 @@ master_fetish = 2
 $master_armor = 'ячуга'
 $master_cloth = 'aketon'
 $master_right_wpn = 'бастард'
+sparks = 1000
 
 faction_fame['taurus'] = 1
 } 
@@ -140,8 +143,10 @@ master_oral = 4
 master_penetration = 5
 master_fetish = 5
 
+$master_armor = 'без_брони'
 $master_cloth = 'fancy_suit'
 $master_right_wpn = 'кастет'
+sparks = 1000
 
 faction_fame['serpis'] = 1
 } 
@@ -175,7 +180,10 @@ master_oral = 1
 master_penetration = 3
 master_fetish = 0
 
+$master_armor = 'без_брони'
 $master_cloth = 'livery'
+$master_right_wpn = ''
+sparks = 1000
 
 faction_fame['taurus'] = 1
 } 
@@ -210,7 +218,10 @@ master_oral = 1
 master_penetration = 3
 master_fetish = 0
 
+$master_armor = 'без_брони'
 $master_cloth = 'formal_suit'
+$master_right_wpn = ''
+sparks = 1000
 
 faction_fame['serpis'] = 1
 } 
@@ -244,7 +255,10 @@ master_oral = 1
 master_penetration = 3
 master_fetish = 0
 
+$master_armor = 'без_брони'
 $master_cloth = 'medic_robes'
+$master_right_wpn = ''
+sparks = 1000
 
 faction_fame['serpis'] = 1
 } 
@@ -278,7 +292,10 @@ master_oral = 2
 master_penetration = 3
 master_fetish = 1
 
+$master_armor = 'без_брони'
 $master_cloth = 'formal_suit'
+$master_right_wpn = ''
+sparks = 1000
 
 faction_fame['taurus'] = 1
 } 
@@ -312,7 +329,10 @@ master_oral = 1
 master_penetration = 2
 master_fetish = 0
 
+$master_armor = 'без_брони'
 $master_cloth = 'comfy_robes'
+$master_right_wpn = ''
+sparks = 1000
 
 faction_fame['serpis'] = 1
 } 
@@ -345,6 +365,9 @@ master_oral = 0
 master_penetration = 0
 master_fetish = 5
 
+$master_armor = 'без_брони'
+$master_cloth = 'man_rugs'
+$master_right_wpn = ''
 sparks = 200
 
 faction_fame['serpis'] = 1

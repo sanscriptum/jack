@@ -84,14 +84,14 @@ IF slave_stat_screen = 0:
  *p '<div id = "mark_four"><a href = "EXEC: slave_stat_screen = 3 & gt curloc"><img src = "content\unsel_button.png"></a></div>' 
  *p '<div id="center_image"><img src = "content\pic\bg\<<$interior_study[$study]>>.jpg"></div>'
  *p '<div id="center_image"><img src="content\pic\<<$slave["fullimage"]>>.gif"></div>' 
- *p '<div id="left_padding">РЕЖИМ СНА: <BR><BR><BR><BR><BR><BR><BR><BR>РЕЖИМ ПИТАНИЯ:</div>'  
+ *p '<div id="left_padding">РЕЖИМ СНА: <BR><BR><BR><BR><BR><BR><BR>РЕЖИМ ПИТАНИЯ:<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>СЧЕТЧИК КАЛОРИЙ:</div>'  
  *p '<div id="left_rules">
 Ночь в карцере
 Холодный пол
 Циновка и плед
 Спи со мной
 Спи в будуаре
-<BR><BR>
+<BR>
 Сухой корм
 Собачьи консервы
 Сперма исчадия
@@ -101,6 +101,8 @@ IF slave_stat_screen = 0:
 Поддержка веса
 Набор веса
 Биодобавки
+
+<<slave["calories"]>> калорий
 </div>'  
  *p '<div id="right_padding">ПРАВИЛА: <BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><<$rules_obedience[rules_broken]>></div>'  
  *p '<div id="right_rules">
@@ -190,6 +192,7 @@ V-шарики
   else
   *p '<div id="chekbox_13l"><a href = "EXEC: vitamin = 1 & $info_text = $slave_vitamin & gt curloc"><img src="content\unsel_button.png"></a></div>'  
  END    
+ *p '<div id="chekbox_133l"><a href="EXEC: $info_text = $калории_совет & gt $curloc"><img src="content\kalkulyator.png"></a></div>'  
 
  IF silence_rule = 1:
   *p '<div id="chekbox_1r"><a href = "EXEC: silence_rule = 0 & $info_text = $silence_rule_abort  & gt curloc"><img src="content\sel_button.png"></a></div>'  

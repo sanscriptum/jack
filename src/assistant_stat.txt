@@ -177,29 +177,29 @@ IF kitchen > 0:
   *p '<div id="chekbox_5l"><a href = "EXEC: assistant_buy_alcohol = 1 & gt curloc"><img src="content\unsel_button.png"></a></div>'  
  END 
  IF assistant_buy_eggs = 1:
-  *p '<div id="chekbox_6l"><a href = "EXEC: assistant_buy_eggs = 0 & gt curloc"><img src="content\sel_button.png"></a></div>'  
+  *p '<div id="chekbox_6l_a"><a href = "EXEC: assistant_buy_eggs = 0 & gt curloc"><img src="content\sel_button.png"></a></div>'  
   else
-  *p '<div id="chekbox_6l"><a href = "EXEC: assistant_buy_eggs = 1 & gt curloc"><img src="content\unsel_button.png"></a></div>'  
+  *p '<div id="chekbox_6l_a"><a href = "EXEC: assistant_buy_eggs = 1 & gt curloc"><img src="content\unsel_button.png"></a></div>'  
  END
  IF assistant_buy_milk = 1:
-  *p '<div id="chekbox_7l"><a href = "EXEC: assistant_buy_milk = 0 & gt curloc"><img src="content\sel_button.png"></a></div>'  
+  *p '<div id="chekbox_7l_a"><a href = "EXEC: assistant_buy_milk = 0 & gt curloc"><img src="content\sel_button.png"></a></div>'  
   else
-  *p '<div id="chekbox_7l"><a href = "EXEC: assistant_buy_milk = 1 & gt curloc"><img src="content\unsel_button.png"></a></div>'  
+  *p '<div id="chekbox_7l_a"><a href = "EXEC: assistant_buy_milk = 1 & gt curloc"><img src="content\unsel_button.png"></a></div>'  
  END
  IF assistant_buy_cream = 1:
-  *p '<div id="chekbox_8l"><a href = "EXEC: assistant_buy_cream = 0 & gt curloc"><img src="content\sel_button.png"></a></div>'  
+  *p '<div id="chekbox_8l_a"><a href = "EXEC: assistant_buy_cream = 0 & gt curloc"><img src="content\sel_button.png"></a></div>'  
   else
-  *p '<div id="chekbox_8l"><a href = "EXEC: assistant_buy_cream = 1 & gt curloc"><img src="content\unsel_button.png"></a></div>'  
+  *p '<div id="chekbox_8l_a"><a href = "EXEC: assistant_buy_cream = 1 & gt curloc"><img src="content\unsel_button.png"></a></div>'  
  END
  IF assistant_buy_mince = 1:
-  *p '<div id="chekbox_10l"><a href = "EXEC: assistant_buy_mince = 0 & gt curloc"><img src="content\sel_button.png"></a></div>'  
+  *p '<div id="chekbox_10l_a"><a href = "EXEC: assistant_buy_mince = 0 & gt curloc"><img src="content\sel_button.png"></a></div>'  
   else
-  *p '<div id="chekbox_10l"><a href = "EXEC: assistant_buy_mince = 1 & gt curloc"><img src="content\unsel_button.png"></a></div>'  
+  *p '<div id="chekbox_10l_a"><a href = "EXEC: assistant_buy_mince = 1 & gt curloc"><img src="content\unsel_button.png"></a></div>'  
  END
  IF assistant_buy_meat = 1:
-  *p '<div id="chekbox_11l"><a href = "EXEC: assistant_buy_meat = 0 & gt curloc"><img src="content\sel_button.png"></a></div>'  
+  *p '<div id="chekbox_11l_a"><a href = "EXEC: assistant_buy_meat = 0 & gt curloc"><img src="content\sel_button.png"></a></div>'  
   else
-  *p '<div id="chekbox_11l"><a href = "EXEC: assistant_buy_meat = 1 & gt curloc"><img src="content\unsel_button.png"></a></div>'  
+  *p '<div id="chekbox_11l_a"><a href = "EXEC: assistant_buy_meat = 1 & gt curloc"><img src="content\unsel_button.png"></a></div>'  
  END
 END
 END

@@ -1285,6 +1285,14 @@ height:25px;
 #chekbox_6l {
 position:absolute;
 left:250px;
+top:287px;
+width:25px;
+height:25px;
+}
+
+#chekbox_6l_a {
+position:absolute;
+left:250px;
 top:320px;
 width:25px;
 height:25px;
@@ -1293,7 +1301,15 @@ height:25px;
 #chekbox_7l {
 position:absolute;
 left:250px;
-top:357px;
+top:319px;
+width:25px;
+height:25px;
+}
+
+#chekbox_7l_a {
+position:absolute;
+left:250px;
+top:350px;
 width:25px;
 height:25px;
 }
@@ -1301,7 +1317,15 @@ height:25px;
 #chekbox_8l {
 position:absolute;
 left:250px;
-top:384px;
+top:351px;
+width:25px;
+height:25px;
+}
+
+#chekbox_8l_a {
+position:absolute;
+left:250px;
+top:381px;
 width:25px;
 height:25px;
 }
@@ -1309,12 +1333,20 @@ height:25px;
 #chekbox_9l {
 position:absolute;
 left:250px;
-top:414px;
+top:381px;
 width:25px;
 height:25px;
 }
 
 #chekbox_10l {
+position:absolute;
+left:250px;
+top:443px;
+width:25px;
+height:25px;
+}
+
+#chekbox_10l_a {
 position:absolute;
 left:250px;
 top:476px;
@@ -1325,6 +1357,14 @@ height:25px;
 #chekbox_11l {
 position:absolute;
 left:250px;
+top:471px;
+width:25px;
+height:25px;
+}
+
+#chekbox_11l_a {
+position:absolute;
+left:250px;
 top:504px;
 width:25px;
 height:25px;
@@ -1333,7 +1373,7 @@ height:25px;
 #chekbox_12l {
 position:absolute;
 left:250px;
-top:538px;
+top:505px;
 width:25px;
 height:25px;
 }
@@ -1341,7 +1381,15 @@ height:25px;
 #chekbox_13l {
 position:absolute;
 left:250px;
-top:569px;
+top:536px;
+width:25px;
+height:25px;
+}
+
+#chekbox_133l {
+position:absolute;
+left:250px;
+top:598px;
 width:25px;
 height:25px;
 }

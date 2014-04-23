@@ -195,33 +195,43 @@ $text_display += {<br><div id="under">Покинуть медицинский ц
 }
 
 $hospital_options[11] = {
-$text_display = '<br><br>'
-if cure_master_wound[1] = 1: $text_display += {<br><div id="under">Лечение ранений (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33111 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-if cure_master_wound[2] = 1: $text_display += {<br><div id="under">Лечение ранений (10 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33111 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-if cure_master_wound[3] = 1: $text_display += {<br><div id="under">Лечение ранений (25 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33111 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-if cure_master_wound[4] = 1: $text_display += {<br><div id="under">Лечение ранений (50 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33111 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-if cure_master_wound[5] = 1: $text_display += {<br><div id="under">Лечение ранений (100 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33111 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-if cure_master_ill = 1: $text_display += {<br><div id="under">Лечение болезней (25 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33112 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<br><div id="under">Отказаться от услуг<br><div id = "clear"><a href = 'EXEC: city_form = 33 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+    $text_display = '<br><br>'
+    if master_wounds ! 0:
+        if master_wounds = 1: $text_display += {<br><div id="under">Лечение ранений (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33111 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+        if master_wounds = 2: $text_display += {<br><div id="under">Лечение ранений (10 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33111 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+        if master_wounds = 3: $text_display += {<br><div id="under">Лечение ранений (25 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33111 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+        if master_wounds = 4: $text_display += {<br><div id="under">Лечение ранений (50 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33111 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+        if master_wounds = 5: $text_display += {<br><div id="under">Лечение ранений (100 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33111 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+        if cure_master_ill = 1: $text_display += {<br><div id="under">Лечение болезней (25 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33112 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+        $text_display += {<br><div id="under">Отказаться от услуг<br><div id = "clear"><a href = 'EXEC: city_form = 33 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+    else:
+        interaction_city = 331
+        gt "interaction_city"
+    end
 }
 
 $hospital_options[12] = {
-$text_display = '<br><br>'
-if cure_slave_wound[1] = 1: $text_display += {<br><div id="under">Лечение ранений (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33121 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-if cure_slave_wound[2] = 1: $text_display += {<br><div id="under">Лечение ранений (10 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33121 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-if cure_slave_wound[3] = 1: $text_display += {<br><div id="under">Лечение ранений (25 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33121 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-if cure_slave_wound[4] = 1: $text_display += {<br><div id="under">Лечение ранений (50 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33121 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-if cure_slave_wound[5] = 1: $text_display += {<br><div id="under">Лечение ранений (100 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33121 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-if slave_stimulation = 1: $text_display += {<br><div id="under">Реанимация (10 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33126 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-if slave_abortion = 1: $text_display += {<br><div id="under">Аборт (10 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33124 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-if slave_insidous_abortion = 1: $text_display += {<br><div id="under">Извлечение ксенопаразита (25 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33125 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-if cure_slave_ill = 1: $text_display += {<br><div id="under">Лечение болезней (25 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33122 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-if cure_slave_scare[1] = 1: $text_display += {<br><div id="under">Удаление шрамов (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33123 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-if cure_slave_scare[2] = 1: $text_display += {<br><div id="under">Удаление шрамов (10 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33123 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-if cure_slave_scare[3] = 1: $text_display += {<br><div id="under">Удаление шрамов (25 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33123 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-if cure_slave_scare[4] = 1: $text_display += {<br><div id="under">Удаление шрамов (50 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33123 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-if cure_slave_scare[5] = 1: $text_display += {<br><div id="under">Удаление шрамов (100 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33123 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<br><div id="under">Отказаться от услуг<br><div id = "clear"><a href = 'EXEC: city_form = 33 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+    $text_display = '<br><br>'
+    if slave_issues ! 0:
+        if slave["wounds"] = 1: $text_display += {<br><div id="under">Лечение ранений (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33121 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+        if slave["wounds"] = 2: $text_display += {<br><div id="under">Лечение ранений (10 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33121 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+        if slave["wounds"] = 3: $text_display += {<br><div id="under">Лечение ранений (25 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33121 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+        if slave["wounds"] = 4: $text_display += {<br><div id="under">Лечение ранений (50 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33121 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+        if slave["wounds"] = 5: $text_display += {<br><div id="under">Лечение ранений (100 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33121 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+        if slave_stimulation = 1: $text_display += {<br><div id="under">Реанимация (10 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33126 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+        if slave_abortion = 1: $text_display += {<br><div id="under">Аборт (10 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33124 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+        if slave_insidous_abortion = 1: $text_display += {<br><div id="under">Извлечение ксенопаразита (25 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33125 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+        if cure_slave_ill = 1: $text_display += {<br><div id="under">Лечение болезней (25 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33122 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+        if slave["scares"] = 1: $text_display += {<br><div id="under">Удаление шрамов (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33123 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+        if slave["scares"] = 2: $text_display += {<br><div id="under">Удаление шрамов (10 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33123 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+        if slave["scares"] = 3: $text_display += {<br><div id="under">Удаление шрамов (25 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33123 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+        if slave["scares"] = 4: $text_display += {<br><div id="under">Удаление шрамов (50 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33123 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+        if slave["scares"] = 5: $text_display += {<br><div id="under">Удаление шрамов (100 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33123 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+        $text_display += {<br><div id="under">Отказаться от услуг<br><div id = "clear"><a href = 'EXEC: city_form = 33 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+    else:
+        interaction_city = 331
+        gt "interaction_city"
+    end
 }
 
 $hospital_options[2] = {

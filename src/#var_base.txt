@@ -1374,6 +1374,7 @@ $slave_boobs[2] = $_font_col_rep[2] + 'Небольшая грудь' + $_font_c
 $slave_boobs[3] = $_font_col_rep[3] + 'Большая грудь' + $_font_closer
 $slave_boobs[4] = $_font_col_rep[4] + 'Огромные сиськи' + $_font_closer
 $slave_boobs[5] = $_font_col_rep[5] + 'Гигантское вымя' + $_font_closer
+$slave_boobs[6] = $_font_col_rep[5] + 'Свисающая до пола грудь' + $_font_closer
 
 $niple_piercing[0] = dyneval($vb_cycle, 0, 'Соски не проколоты')
 $niple_piercing[1] = dyneval($vb_cycle, 5, 'Соски проколоты')

@@ -1265,7 +1265,7 @@ $refuse_level_quote['don_bobrit'] = '   [Дон Бобрит]
 $refuse_charm_quote['don_bobrit'] = '   [Дон Бобрит]
    - Нуууу.... не знаю. Формально вроде подходит, но какая-то она непрезентабельная. Не цепляет.'
 $refuse_again_quote['don_bobrit'] = '   [Дон Бобрит]
-	-  Нет значит нет!' 
+	-  Нет значит нет!'
 
 $npc_image['don_castilio'] = 'don_castilio'
 $npc_name['don_castilio'] = 'Дон Кастиллио'
@@ -1669,7 +1669,7 @@ $refuse_charm_quote['general_drago'] = '   [Генерал Драго]
    - Стукнутая она у тебя какая-то. Как бы мои ребята дебилизм от неё не подцепили. Не нравится. Другую давай, покрасивше.'
 $refuse_special_quote['general_drago'] = '   [Генерал Драго]
    - Я же говорил уже, что эту брать не буду. Или тебе кинжалом на яйцах надо это вырезать, чтобы запомнил?'
-   
+
 $npc_image['archmage_zephiros'] = 'archmage_zephiros'
 $npc_name['archmage_zephiros'] = 'Зефирос'
 $npc_status['archmage_zephiros'] = 'Архимаг

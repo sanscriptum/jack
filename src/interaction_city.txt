@@ -3939,42 +3939,36 @@ IF interaction_city = 3311:
  if spark_pay_master = 0: sparks -= 5 & spark_pay_master = 1
  master_issues = 0 
  txt_count = 0
- killvar 'cure_master_wound'
  killvar 'cure_master_ill' 
  $text[1] = '   [ДОКТОР]
    - Согласно данным нашего обследования вы абсолютно здоровы, <<$master_name>>. По крайней мере ничего такого, что требовало бы медицинского вмешательства. Поздравляю.' 
  IF master_wounds = 1:
   master_issues += 1
-  txt_count += 1  
-  cure_master_wound[1] = 1
+  txt_count += 1
   $text[master_issues] = '   [ДОКТОР]
     Ваше ранение поверхностное и не представляет угрозы для жизни. По большому счёту это просто царапина, само заживёт через несколько дней. Но мы можем вылечить вас мгновенно, всего за пять искр.' 
  END
  IF master_wounds = 2:
   master_issues += 1
-  txt_count += 1  
-  cure_master_wound[2] = 1
+  txt_count += 1
   $text[master_issues] = '   [ДОКТОР]
    - У вас ранение средней степени тяжести. Ничего опасного для жизни, но без дополнительной помощи заживать будет довольно долго. Мы можем провести ускоренную регенерацию, всего за десять искр.' 
  END 
  IF master_wounds = 3:
   master_issues += 1
-  txt_count += 1  
-  cure_master_wound[3] = 1
+  txt_count += 1
   $text[master_issues] = '   [ДОКТОР]
    - У вас серьёзное ранение, я бы не рекомендовала оставлять это без внимания. Либо месяц постельного режима с постоянной сменой повязок и особым питанием, либо... мы можем вылечить вас всего за один час. Это обойдётся в 25 искр.' 
  END 
  IF master_wounds = 4:
   master_issues += 1
-  txt_count += 1  
-  cure_master_wound[4] = 1
+  txt_count += 1
   $text[master_issues] = '   [ДОКТОР]
    - Боюсь что ваши раны серьёзнее чем кажутся, повреждения тяжёлые и я бы не рекомендовала полагаться на естественное лечение. Вам необходима срочная восстановительная хирургия. Это обойдётся в 50 искр.' 
  END 
  IF master_wounds = 5:
   master_issues += 1
-  txt_count += 1  
-  cure_master_wound[5] = 1
+  txt_count += 1
  $text[master_issues] = '      [ДОКТОР]
    - О Господи! Как вы вообще к нам добрались своим ходом?! Это же смертельное ранение. Вам срочно нужна операция, и не дешёвая. Мы возьмём 100 искр, но я не рекомендую вам отказываться. В противном случае есть угроза жизни.' 
  END   
@@ -3985,6 +3979,7 @@ IF interaction_city = 3311:
   $text[master_issues] = '   [ДОКТОР]
    - Мы диагностировали у вас сгнифилис, <<$master_name>>. В некотором роде профессиональное заболевание для представителей вашей профессии. Ничего страшного. Курс лечения будет стоить 25 искр и займёт всего час. Не рекомендую запускать болезнь, это может плохо кончиться.' 
  END
+ !INFO: skip_to = 11 -> прыжок на $hospital_options[11]
  IF master_issues > 0:
   skip_to = 11
   $sp_text[11] = '   [ДОКТОР]
@@ -3993,29 +3988,54 @@ IF interaction_city = 3311:
 END
 
 IF interaction_city = 33111:
- $place = 'hospital'
- $return_lock  = 'shop_general' 
-  $text[1] = '   Вам сразу дают общий наркоз и увозят на процедуры. Неизвестно что там происходило, но в итоге вы чувствуете себя замечательно. Ничего не болит и наркоз отпускает почти без последствий.' 
- if cure_master_wound[1] = 1: sparks -= 5 
- if cure_master_wound[2] = 1: sparks -= 10 
- if cure_master_wound[3] = 1: sparks -= 25 
- if cure_master_wound[4] = 1: sparks -= 50 
- if cure_master_wound[5] = 1: sparks -= 100   
- killvar 'cure_master_wound'
- master_wounds = 0
- master_wounds_rate = 0
+    $place = 'hospital'
+    $return_lock  = 'shop_general' 
+    $text[1] = '   Вам сразу дают общий наркоз и увозят на процедуры. Неизвестно что там происходило, но в итоге вы чувствуете себя замечательно. Ничего не болит и наркоз отпускает почти без последствий.'
+
+    if master_wounds = 1:
+        sparks -= 5 
+    elseif master_wounds = 2:
+        sparks -= 10
+    elseif master_wounds = 3:
+        sparks -= 25
+    elseif master_wounds = 4:
+        sparks -= 50
+    elseif master_wounds = 5:
+        sparks -= 100
+    elseif master_wounds ! 0:
+        msg 'master_wounds = <<master_wounds>>, master_wounds -> [0, 5]!'
+    end
+
+    master_wounds = 0
+    master_wounds_rate = 0
+    
+    !Если еще остались - прыгаем на старое меню. Копипаста из interaction_city = 3311
+    IF master_issues > 0:
+        skip_to = 11
+        $sp_text[11] = '   [ДОКТОР]
+- Итак, <<$master_name>>, вы желаете заказать у нас какие либо медицинские процедуры?'
+        master_issues -= 1
+    END
 END
 
 IF interaction_city = 33112:
- $place = 'hospital'
- $return_lock  = 'shop_general' 
-  $text[1] = '   Вам сразу дают общий наркоз и увозят на процедуры. Неизвестно что там происходило, но в итоге вы чувствуете себя замечательно. Ничего не болит и наркоз отпускает прочти без последствий.' 
- killvar 'cure_master_ill'
- sparks -= 25 
- master_ill = 0
- !TODO: замутить нейтральный список мудлетов персонажей, тогда после лечения надо будет включать статус 'после болезни', с выводом в дневник
- !Вырубаем реакцию мастера на вылеченный сгнифилис
- master_mood['neg_master_ill'] = 0
+    $place = 'hospital'
+    $return_lock  = 'shop_general' 
+    $text[1] = '   Вам сразу дают общий наркоз и увозят на процедуры. Неизвестно что там происходило, но в итоге вы чувствуете себя замечательно. Ничего не болит и наркоз отпускает прочти без последствий.' 
+    killvar 'cure_master_ill'
+    sparks -= 25 
+    master_ill = 0
+    !TODO: замутить нейтральный список мудлетов персонажей, тогда после лечения надо будет включать статус 'после болезни', с выводом в дневник
+    !Вырубаем реакцию мастера на вылеченный сгнифилис
+    master_mood['neg_master_ill'] = 0
+
+    !Если еще остались - прыгаем на старое меню. Копипаста из interaction_city = 3311
+    IF master_issues > 0:
+        skip_to = 11
+        $sp_text[11] = '   [ДОКТОР]
+- Итак, <<$master_name>>, вы желаете заказать у нас какие либо медицинские процедуры?'
+        master_issues -= 1
+    END
 END
 
 IF interaction_city = 3312:
@@ -4027,7 +4047,6 @@ IF interaction_city = 3312:
  if spark_pay_slave = 0: sparks -= 5 & spark_pay_slave = 1
  slave_issues = 0 
  txt_count = 0
- killvar 'cure_slave_wound'
  killvar 'cure_slave_ill' 
  $text[1] = '   [ДОКТОР]
    - <<$slave_name>> абсолютно здорова, <<$master_name>>. По крайней мере ничего такого, что требовало бы медицинского вмешательства. Если хотите, я выпишу вам справку о её состоянии, для предъявления возможным покупателям.' 
@@ -4055,70 +4074,60 @@ IF interaction_city = 3312:
  IF slave["scares"] = 1:
   slave_issues += 1
   txt_count += 1  
-  cure_slave_scare[1] = 1  
  $text[slave_issues] = '   [ДОКТОР]
    - У вашей рабыни есть небольшой шрам который слегка портит внешность. Мы могли бы провести небольшую пластическую операцию, чтобы убрать его. Всего за пять искр.'   
  END 
  IF slave["scares"] = 2:
   slave_issues += 1
   txt_count += 1  
-  cure_slave_scare[2] = 1  
  $text[slave_issues] = '   [ДОКТОР]
    - У вашей рабыни есть несколько старых шрамов, которые не лучшим способом сказываются на её... товарном виде. Мы можем убрать их и вернуть коже мягкость и гладкость. Операция будет стоить 10 искр.'   
  END 
  IF slave["scares"] = 3:
   slave_issues += 1
   txt_count += 1  
-  cure_slave_scare[3] = 1  
  $text[slave_issues] = '   [ДОКТОР]
    - Как вы сами можете видеть, у вашей рабыни довольно внушительные шрамы. Но ничего такого с чем не справится старая добрая пластическая операция. Двадцать пять искр, час времени и она будет как новенькая!'   
  END 
  IF slave["scares"] = 4:
   slave_issues += 1
   txt_count += 1  
-  cure_slave_scare[4] = 1  
  $text[slave_issues] = '   [ДОКТОР]
    - Похоже у вашей рабыни была тяжелая судьба, <<$master_name>>. Эти шрамы выглядят весьма внушительно, но отнюдь не украшают её. Нужно серьёзное вмешательство чтобы избавиться от этого ужаса. Процедура будет стоить пятьдесят искр.'   
  END 
  IF slave["scares"] = 5:
   slave_issues += 1
   txt_count += 1  
-  cure_slave_scare[5] = 1  
  $text[slave_issues] = '   [ДОКТОР]
    - Господи. У женщины редко увидишь такие жуткие шрамы. Они бы подошли скорее старому викингу... Она что, гладиатор? Не важно, мы можем их убрать. Правда работа очень тонкая, операция обойдётся вам в сто искр.'   
  END   
  IF slave["wounds"] = 1:
   slave_issues += 1
   txt_count += 1  
-  cure_slave_wound[1] = 1
   $text[slave_issues] = '   [ДОКТОР]
    - Хорошо что вы к нам обратились, <<$master_name>>. Ранение у неё лёгкое, почти царапина, но кто знает, какие могут быть осложнения. Восстановительное лечение будет стоить всего пять искр.   ' 
  END
  IF slave["wounds"] = 2:
   slave_issues += 1
   txt_count += 1  
-  cure_slave_wound[2] = 1
   $text[slave_issues] = '   [ДОКТОР]
    - Не беспокойтесь, рана не слишком тяжёлая и угрозы для жизни не представляет. В принципе и сама затянется за неделю-другую, но надёжнее и быстрее будет пройти лечение у нас. Всего десять искр и она как новенькая. Шрамов не останется, гарантирую.   ' 
  END 
  IF slave["wounds"] = 3:
   slave_issues += 1
   txt_count += 1  
-  cure_slave_wound[3] = 1
   $text[slave_issues] = '   [ДОКТОР]
    - Ранение довольно серьёзное, я не рекомендую вам заниматься самолечением. Процесс будет долгим и в любом случае останутся шрамы. Но мы можем закрыть рану быстро и без последствий, всего за двадцать пять искр.   ' 
  END 
  IF slave["wounds"] = 4:
   slave_issues += 1
   txt_count += 1  
-  cure_slave_wound[4] = 1
   $text[slave_issues] = '   [ДОКТОР]
    - Боюсь, что ранения вашей рабыни весьма тяжелые, <<$master_name>>. Лечение обойдётся в пятьдесят искр, но я всё же рекомендую вам его оплатить. Если оставить всё как есть, последствия такой травмы могут быть очень серьёзными.' 
  END 
  IF slave["wounds"] => 5:
   slave_issues += 1
   txt_count += 1  
-  cure_slave_wound[5] = 1
   $text[slave_issues] = '   [ДОКТОР]
    - Срочно на носилки её! Такие ранения как правило не совместимы с жизнью. Если вы хотите спасти девушку, <<$master_name>>, то необходима срочная операция. Она обойдётся вам в 100 искр, но учтите что это скорее всего вопрос жизни и смерти!   ' 
  END   
@@ -4137,17 +4146,33 @@ IF interaction_city = 3312:
 END
 
 IF interaction_city = 33121:
- $place = 'hospital'
- $return_lock  = 'shop_general' 
-  $text[1] = '   Вашу рабыню забирают примерно на час, после чего возвращают обратно. Она выглядит вполне здоровой. От ран даже следов не осталось.' 
- if cure_slave_wound[1] = 1: sparks -= 5 
- if cure_slave_wound[2] = 1: sparks -= 10 
- if cure_slave_wound[3] = 1: sparks -= 25 
- if cure_slave_wound[4] = 1: sparks -= 50 
- if cure_slave_wound[5] = 1: sparks -= 100   
- killvar 'cure_slave_wound'
- slave["wounds"] = 0
- slave_rate["wounds"] = 0
+    $place = 'hospital'
+    $return_lock  = 'shop_general' 
+    $text[1] = '   Вашу рабыню забирают примерно на час, после чего возвращают обратно. Она выглядит вполне здоровой. От ран даже следов не осталось.' 
+    if slave["wounds"] = 1:
+        sparks -= 5
+    elseif slave["wounds"] = 2:
+        sparks -= 10
+    elseif slave["wounds"] = 3:
+        sparks -= 25
+    elseif slave["wounds"] = 4:
+        sparks -= 50
+    elseif slave["wounds"] = 5:
+        sparks -= 100
+    elseif slave["wounds"] ! 0:
+        msg 'slave["wounds"] = <<slave["wounds"]>>, slave["wounds"] -> [0, 5]!'
+    end
+
+    slave["wounds"] = 0
+    slave_rate["wounds"] = 0
+
+    !Если еще остались - прыгаем на старое меню. Копипаста из interaction_city = 3312
+    IF slave_issues > 0:
+        skip_to = 12
+        $sp_text[12] = '   [ДОКТОР]
+- Итак, <<$master_name>>, вы желаете заказать у нас какие либо медицинские процедуры?'
+        slave_issues -= 1
+    END
 END
 
 IF interaction_city = 33122:
@@ -4157,20 +4182,45 @@ IF interaction_city = 33122:
  sparks -= 25 
  killvar 'cure_slave_ill'
  slave["ill"] = 0
+ 
+ !Если еще остались - прыгаем на старое меню. Копипаста из interaction_city = 3312
+ IF slave_issues > 0:
+     skip_to = 12
+     $sp_text[12] = '   [ДОКТОР]
+- Итак, <<$master_name>>, вы желаете заказать у нас какие либо медицинские процедуры?'
+     slave_issues -= 1
+ END
 END
 
 IF interaction_city = 33123:
  $place = 'hospital'
  $return_lock  = 'shop_general' 
   $text[1] = '   Вашу рабыню забирают примерно на час, после чего возвращают обратно. Шрамы исчезли как по волшебству.' 
- if cure_slave_scare[1] = 1: sparks -= 5 
- if cure_slave_scare[2] = 1: sparks -= 10 
- if cure_slave_scare[3] = 1: sparks -= 25 
- if cure_slave_scare[4] = 1: sparks -= 50 
- if cure_slave_scare[5] = 1: sparks -= 100   
- killvar 'cure_slave_scare'
+ 
+ if slave["scares"] = 1:
+    sparks -= 5
+ elseif slave["scares"] = 2:
+    sparks -= 10
+ elseif slave["scares"] = 3:
+    sparks -= 25
+ elseif slave["scares"] = 4:
+    sparks -= 50
+ elseif slave["scares"] = 5:
+    sparks -= 100
+ elseif slave["scares"] ! 0:
+    msg 'slave["scares"] = <<slave["scares"]>>, slave["scares"] -> [0, 5]!'
+ end
+ 
  slave["scares"] = 0
  slave_rate["scares"] = 0
+ 
+ !Если еще остались - прыгаем на старое меню. Копипаста из interaction_city = 3312
+ IF slave_issues > 0:
+     skip_to = 12
+     $sp_text[12] = '   [ДОКТОР]
+- Итак, <<$master_name>>, вы желаете заказать у нас какие либо медицинские процедуры?'
+     slave_issues -= 1
+ END
 END
 
 IF interaction_city = 33124:
@@ -4180,6 +4230,14 @@ IF interaction_city = 33124:
  sparks -= 10
  killvar 'slave_abortion'
  slave["pregnant"] = 0
+ 
+ !Если еще остались - прыгаем на старое меню. Копипаста из interaction_city = 3312
+ IF slave_issues > 0:
+     skip_to = 12
+     $sp_text[12] = '   [ДОКТОР]
+- Итак, <<$master_name>>, вы желаете заказать у нас какие либо медицинские процедуры?'
+     slave_issues -= 1
+ END
 END
 
 IF interaction_city = 33125:
@@ -4190,6 +4248,14 @@ IF interaction_city = 33125:
  killvar 'slave_insidous_abortion'
  slave_insidous_abortion = 0
  slave["parasite"] = 0
+ 
+ !Если еще остались - прыгаем на старое меню. Копипаста из interaction_city = 3312
+ IF slave_issues > 0:
+     skip_to = 12
+     $sp_text[12] = '   [ДОКТОР]
+- Итак, <<$master_name>>, вы желаете заказать у нас какие либо медицинские процедуры?'
+     slave_issues -= 1
+ END
 END
 
 IF interaction_city = 33126:
@@ -4203,6 +4269,14 @@ IF interaction_city = 33126:
  if slave['starvation'] > 0: slave['starvation'] = 0
  slave_state = CONST_INT['slave_exist']
  slave_stimulation = 0
+ 
+ !Если еще остались - прыгаем на старое меню. Копипаста из interaction_city = 3312
+ IF slave_issues > 0:
+     skip_to = 12
+     $sp_text[12] = '   [ДОКТОР]
+- Итак, <<$master_name>>, вы желаете заказать у нас какие либо медицинские процедуры?'
+     slave_issues -= 1
+ END
 END
 
 IF interaction_city = 3321:

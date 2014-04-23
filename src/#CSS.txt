@@ -1792,10 +1792,10 @@ text-align:center;
 
 #ride_bg {
 position:absolute;
-left:240;
-top:1;
-width:796;
-height:597;
+left:240px;
+top:1px;
+width:796px;
+height:597px;
 text-align:center;
 }
 
@@ -1821,10 +1821,10 @@ text-align:center;
 
 #ride_options {
 position:absolute;
-left:270;
-top:610;
-width:340;
-height:180;
+left:270px;
+top:610px;
+width:340px;
+height:180px;
 text-align:center;
 }
 
@@ -1839,10 +1839,10 @@ text-align:center;
 
 #ride_subtions {
 position:absolute;
-left:620;
-top:610;
-width:420;
-height:180;
+left:620px;
+top:610px;
+width:420px;
+height:180px;
 text-align:center;
 }
 

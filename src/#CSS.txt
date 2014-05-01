@@ -676,15 +676,6 @@ height:585px;
 font-family:"Segoe Print";
 }
 
-#center_text_column_heading {
-position:absolute;
-left:243px;
-top:83px;
-width:400px;
-height:585px;
-font-family: Segoe Print;
-}
-
 #center_text_column_2 {
 position:absolute;
 left:700px;
@@ -694,15 +685,6 @@ height:585px;
 font-family:"Segoe Print";
 }
 
-#center_text_column_3 {
-position:absolute;
-left:362px;
-top:53px;
-width:580px;
-height:585px;
-font-family: Segoe Print;
-}
-
 #center_text_column_4 {
 position:absolute;
 left:362px;
@@ -710,118 +692,6 @@ top:95px;
 width:580px;
 height:585px;
 font-family: Segoe Print;
-}
-
-#ch_mark_1 {
-position:absolute;
-left:270px;
-top:150px;
-width:24px;
-height:24px;
-}
-
-#ch_mark_2 {
-position:absolute;
-left:270px;
-top:180px;
-width:24px;
-height:24px;
-}
-
-#ch_mark_3 {
-position:absolute;
-left:270px;
-top:210px;
-width:24px;
-height:24px;
-}
-
-#ch_mark_4 {
-position:absolute;
-left:270px;
-top:240px;
-width:24px;
-height:24px;
-}
-
-#ch_mark_5 {
-position:absolute;
-left:270px;
-top:273px;
-width:24px;
-height:24px;
-}
-
-#ch_mark_6 {
-position:absolute;
-left:270px;
-top:305px;
-width:24px;
-height:24px;
-}
-
-#ch_mark_7 {
-position:absolute;
-left:270px;
-top:370px;
-width:24px;
-height:24px;
-}
-
-#ch_mark_8 {
-position:absolute;
-left:270px;
-top:400px;
-width:24px;
-height:24px;
-}
-
-#ch_mark_9 {
-position:absolute;
-left:270px;
-top:430px;
-width:24px;
-height:24px;
-}
-
-#ch_mark_10 {
-position:absolute;
-left:270px;
-top:460px;
-width:24px;
-height:24px;
-}
-
-#ch_mark_11 {
-position:absolute;
-left:270px;
-top:490px;
-width:24px;
-height:24px;
-}
-
-#ch_mark_12 {
-position:absolute;
-left:270px;
-top:520px;
-width:24px;
-height:24px;
-}
-
-#ch_mark_13 {
-position:absolute;
-left:270px;
-top:553px;
-width:24px;
-height:24px;
-}
-
-#ch_mark_14 {
-position:absolute;
-left:270px;
-top:585px;
-width:24px;
-height:24px;
 }
 
 #left_padding {
@@ -2238,6 +2108,11 @@ width:1000px;
 height:200px;
 text-align:center;
 background-color:#FFFF00;
+}
+
+.inventory_item {
+text-align:left;
+margin:0;
 }
 '
 --- #CSS ---------------------------------

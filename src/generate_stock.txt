@@ -68,19 +68,18 @@ display_psy_status = 1
 
 !СОЗДАНИЕ СЛУЧАЙНОЙ ПРЕДЫСТОРИИ
 IF $seed_world[stock_type] = '':
- chance = RAND (1,18)
- $stock_world = $origin_world[chance]
- else
- $stock_world = $seed_world[stock_type]
+    ! -1, т.к. нет нулевого элемента в списке, далее та же фигня
+    chance = RAND (1, arrsize('$origin_world') - 1)
+    $stock_world = $origin_world[chance]
+else
+    $stock_world = $seed_world[stock_type]
 END
 
 chance = RAND (1,3)
 dynamic '$stock_world_description = $<<$stock_world>>_description[chance]'
 
 IF $stock_world = 'prehistoric': 
- cf_max = 2
  $namebase = 'prehistoric'
- nm_max = 20
  $stock_world_auk = 'доисторического мира' 
  stock_rate["exotic"] += 10
  if stock["stamina"] < 5: stock["stamina"] += 1
@@ -89,9 +88,7 @@ IF $stock_world = 'prehistoric':
  if stock["intellect"] > 1: stock["intellect"] -= 1 
 END
 IF $stock_world = 'barbarian': 
- cf_max = 7
  $namebase = 'barbarian' 
- nm_max = 61
  $stock_world_auk = 'варварского мира' 
  if stock["stamina"] < 5: stock["stamina"] += 1
  if stock["temper"] < 5: stock["temper"] += 1
@@ -99,18 +96,14 @@ IF $stock_world = 'barbarian':
  if stock["intellect"] > 1: stock["intellect"] -= 1  
 END
 IF $stock_world = 'sns': 
- cf_max = 7
  $namebase = 'barbarian'  
- nm_max = 61
  $stock_world_auk = 'мира меча и магии' 
  if stock["stamina"] < 5: stock["stamina"] += 1 
  if stock["ego"] > 1: stock["ego"] -= 1
  if stock["intellect"] > 1: stock["intellect"] -= 1  
 END
 IF $stock_world = 'medieval': 
- cf_max = 9
  $namebase = 'medieval'  
- nm_max = 35
  $stock_world_auk = 'традиционно-аграрного мира' 
  if stock["temper"] < 5: stock["temper"] -= 1
  if stock["ego"] > 1: stock["ego"] -= 1
@@ -118,14 +111,11 @@ IF $stock_world = 'medieval':
  if stock["custom"] < 5: stock["custom"] += 1  
 END
 IF $stock_world = 'highfantasy': 
- cf_max = 9
  nc = RAND (1,2)
  IF nc = 1:
-  nm_max = 35
   $namebase = 'medieval'  
  END
  IF nc = 2:
-  nm_max = 25
   $namebase = 'fantasy'  
  END 
  $stock_world_auk = 'магического мира' 
@@ -133,14 +123,11 @@ IF $stock_world = 'highfantasy':
  stock_rate["exotic"] += 10
 END
 IF $stock_world = 'darkfantasy': 
- cf_max = 9
  nc = RAND (1,2)
  IF nc = 1:
-  nm_max = 35
   $namebase = 'medieval'  
  END
  IF nc = 2:
-  nm_max = 61
   $namebase = 'barbarian'  
  END 
  $stock_world_auk = 'мира темной магии' 
@@ -154,35 +141,27 @@ IF $stock_world = 'darkfantasy':
  if stock["custom"] < 5: stock["custom"] += 2  
 END
 IF $stock_world = 'steampunk': 
- cf_max = 12
  $namebase = 'oldscool'   
- nm_max = 40
  $stock_world_auk = 'мира паровых технологий' 
  if stock["custom"] < 5: stock["custom"] += 1
 END
 IF $stock_world = 'industrial': 
- cf_max = 12
  nc = RAND (1,2)
  IF nc = 1:
-  nm_max = 40
   $namebase = 'oldscool'  
  END
  IF nc = 2:
-  nm_max = 40
   $namebase = 'euro'  
  END 
  $stock_world_auk = 'индустриально развитого мира' 
  if stock["custom"] < 5: stock["custom"] += 1
 END
 IF $stock_world = 'modern': 
- cf_max = 10
  nc = RAND (1,2)
  IF nc = 1:
-  nm_max = 30
   $namebase = 'russian'  
  END
  IF nc = 2:
-  nm_max = 40
   $namebase = 'euro'  
  END 
  $stock_world_auk = 'экономически развитого мира' 
@@ -192,14 +171,11 @@ IF $stock_world = 'modern':
  if stock["stamina"] > 1: stock["stamina"] -= 1
 END
 IF $stock_world = 'cyberpunk': 
- cf_max = 11
  nc = RAND (1,2)
  IF nc = 1:
-  nm_max = 30
   $namebase = 'russian'  
  END
  IF nc = 2:
-  nm_max = 40
   $namebase = 'euro'  
  END 
  $stock_world_auk = 'мира высоких технологий' 
@@ -209,8 +185,6 @@ IF $stock_world = 'cyberpunk':
  if stock["stamina"] > 1: stock["stamina"] -= 1
 END
 IF $stock_world = 'utopia': 
- cf_max = 4
- nm_max = 20
  $namebase = 'utopia'   
  $stock_world_auk = 'идиллической утопии' 
  if stock["spoil"] < 5: stock["spoil"] += 1
@@ -222,8 +196,6 @@ IF $stock_world = 'utopia':
 END
 
 IF $stock_world = 'darkfuture': 
- cf_max = 4
- nm_max = 40
  $namebase = 'euro'    
  $stock_world_auk = 'тоталитарной страны' 
  if stock["stamina"] > 1: stock["stamina"] -= 1 
@@ -240,14 +212,11 @@ IF $stock_world = 'darkfuture':
 END
 
 IF $stock_world = 'space': 
- cf_max = 7
  nc = RAND (1,2)
  IF nc = 1:
-  nm_max = 20
   $namebase = 'utopia'  
  END
  IF nc = 2:
-  nm_max = 40
   $namebase = 'euro'  
  END   
  $stock_world_auk = 'высокоразвитой космической цивилизации' 
@@ -258,16 +227,14 @@ IF $stock_world = 'space':
  if stock["pride"] < 5: stock["pride"] += 1 
 END
 
-chance = RAND (1,cf_max)
+chance = RAND (1, arrsize("$<<$stock_world>>_family") - 1)
 dynamic '$stock_family = $<<$stock_world>>_family[chance]'
 
 IF $stock_family = 'tribe': 
- co_max = 2
  $stock_family_auk = 'выросшая в племени дикарей' 
  if stock["stamina"] < 5: stock["stamina"] += 1 
 END
 IF $stock_family = 'amazon': 
- co_max = 3
  $stock_family_auk = 'воспитанная отважными амазонками' 
  if stock["temper"] < 5: stock["temper"] += 1
  if stock["ego"] < 5: stock["ego"] += 1 
@@ -275,11 +242,9 @@ IF $stock_family = 'amazon':
  if stock["sensitivity"] > 1: stock["sensitivity"] -= 1
 END
 IF $stock_family = 'nomad': 
- co_max = 3
  $stock_family_auk = 'воспитанная кочевниками' 
 END
 IF $stock_family = 'pesant': 
- co_max = 4
  $stock_family_auk = 'дочь крестьянина' 
  if stock["stamina"] < 5: stock["stamina"] += 1 
  if stock["temper"] > 1: stock["temper"] -= 1
@@ -290,19 +255,16 @@ IF $stock_family = 'pesant':
  if stock["sensitivity"] > 1: stock["sensitivity"] -= 1  
 END
 IF $stock_family = 'hunter': 
- co_max = 5
  if stock["temper"] < 5: stock["temper"] += 1 
  if stock["stamina"] < 5: stock["stamina"] += 1  
  $stock_family_auk = 'дочь охотника' 
 END
 IF $stock_family = 'fisher': 
- co_max = 3
  if stock["temper"] > 1: stock["temper"] -= 1 
  if stock["custom"] < 5: stock["custom"] += 1  
  $stock_family_auk = 'дочь рыбака' 
 END
 IF $stock_family = 'viking': 
- co_max = 3
  $stock_family_auk = 'дочь морского разбойника'  
  if stock["temper"] < 5: stock["temper"] += 1 
  if stock["pride"] < 5: stock["pride"] += 1 
@@ -310,7 +272,6 @@ IF $stock_family = 'viking':
  if stock["sensitivity"] > 1: stock["sensitivity"] -= 1 
 END
 IF $stock_family = 'barbarian_king': 
- co_max = 1
  $stock_family_auk = 'принцесса варваров'  
  if stock["temper"] < 5: stock["temper"] += 1 
  if stock["ego"] < 5: stock["ego"] += 1   
@@ -325,7 +286,6 @@ IF $stock_family = 'orphan':
  if stock["temper"] < 5: stock["temper"] += 1  
  if stock["pride"] > 1: stock["pride"] -= 1 
  if stock["intellect"] > 1: stock["intellect"] -= 1  
- co_max = 8
  $stock_family_auk = 'беспризорница' 
 END
 IF $stock_family = 'bondman': 
@@ -335,13 +295,11 @@ IF $stock_family = 'bondman':
  if stock["custom"] < 5: stock["custom"] += 1 
  if stock["intellect"] > 1: stock["intellect"] -= 1 
  if stock["sensitivity"] > 1: stock["sensitivity"] -= 1  
- co_max = 7
  $stock_family_auk = 'дочь крепостных крестьян' 
 END
 IF $stock_family = 'gypsy': 
  stock_rate["exotic"] += 10 
  if stock["temper"] < 5: stock["temper"] += 1  
- co_max = 8
  $stock_family_auk = 'воспитаная в цыганском таборе' 
 END
 IF $stock_family = 'church': 
@@ -349,15 +307,12 @@ IF $stock_family = 'church':
  if stock["ego"] > 1: stock["ego"] -= 1  
  if stock["intellect"] < 5: stock["intellect"] += 1 
  if stock["custom"] < 5: stock["custom"] += 1  
- co_max = 5
  $stock_family_auk = 'воспитанница церковного приюта' 
 END
 IF $stock_family = 'craftsman': 
- co_max = 8
  $stock_family_auk = 'дочь ремесленника' 
 END
 IF $stock_family = 'merchant': 
- co_max = 5
  if stock["spoi"] < 5: stock["spoi"] += 1   
  $stock_family_auk = 'купеческая дочь' 
 END
@@ -365,7 +320,6 @@ IF $stock_family = 'valetry':
  if stock["custom"] < 4: stock["custom"] += 2  
  if stock["temper"] > 1: stock["temper"] -= 1
  if stock["ego"] > 1: stock["ego"] -= 1   
- co_max = 8
  $stock_family_auk = 'дочь служанки' 
 END
 IF $stock_family = 'knight': 
@@ -373,7 +327,6 @@ IF $stock_family = 'knight':
  if stock["ego"] < 5: stock["ego"] += 1    
  if stock["pride"] < 5: stock["pride"] += 1     
  if stock["sensitivity"] < 5: stock["sensitivity"] += 1    
- co_max = 6
  $stock_family_auk = 'дочь поместного феодала' 
 END
 IF $stock_family = 'mprincess': 
@@ -382,7 +335,6 @@ IF $stock_family = 'mprincess':
  if stock["pride"] < 5: stock["pride"] += 1
  if stock["spoi"] < 4: stock["spoi"] += 2  
  if stock["custom"] > 0: stock["custom"] = 0  
- co_max = 1
  $stock_family_auk = 'принцесса' 
 END
 
@@ -391,7 +343,6 @@ IF $stock_family = 'farmers':
  if stock["intellect"] > 1: stock["intellect"] -= 1   
  if stock["pride"] > 1: stock["pride"] -= 1    
  if stock["custom"] < 5: stock["custom"] += 1   
- co_max = 4
  $stock_family_auk = 'фермерская дочка' 
 END
 IF $stock_family = 'workhouse': 
@@ -401,41 +352,34 @@ IF $stock_family = 'workhouse':
  if stock["pride"] > 2: stock["pride"] -= 2    
  if stock["custom"] < 4: stock["custom"] += 2   
  if stock["sensitivity"] > 1: stock["sensitivity"] -= 1  
- co_max = 9
  $stock_family_auk = 'воспитанница в сиротского приюта' 
 END
 IF $stock_family = 'proletarian': 
  if stock["stamina"] > 1: stock["stamina"] -= 1 
  if stock["pride"] > 1: stock["pride"] -= 1     
- co_max = 10
  $stock_family_auk = 'дочь заводского работника' 
 END
 IF $stock_family = 'clerk': 
  if stock["intellect"] < 5: stock["intellect"] += 1 
- co_max = 8
  $stock_family_auk = 'дочь конторского работника' 
 END
 IF $stock_family = 'naturalist': 
  if stock["intellect"] < 5: stock["intellect"] += 1 
- co_max = 4
  $stock_family_auk = 'дочь ученого-естествоиспытателя' 
 END
 IF $stock_family = 'ingeneer': 
  if stock["intellect"] < 5: stock["intellect"] += 1 
- co_max = 6
  $stock_family_auk = 'дочь инженера' 
 END
 IF $stock_family = 'doctor': 
  if stock["stamina"] < 5: stock["stamina"] += 1 
  if stock["intellect"] < 5: stock["intellect"] += 1 
- co_max = 6
  $stock_family_auk = 'дочь известного врача' 
 END
 IF $stock_family = 'servant': 
  if stock["custom"] < 4: stock["custom"] += 2  
  if stock["temper"] > 1: stock["temper"] -= 1
  if stock["ego"] > 1: stock["ego"] -= 1   
- co_max = 9
  $stock_family_auk = 'дочь слуг при богатом доме' 
 END
 IF $stock_family = 'magnat': 
@@ -443,7 +387,6 @@ IF $stock_family = 'magnat':
  if stock["ego"] < 5: stock["ego"] += 1    
  if stock["pride"] < 5: stock["pride"] += 1     
  if stock["sensitivity"] < 5: stock["sensitivity"] += 1   
- co_max = 4
  $stock_family_auk = 'выросшая в семье промышленного магната' 
 END
 IF $stock_family = 'bankeer': 
@@ -451,7 +394,6 @@ IF $stock_family = 'bankeer':
  if stock["ego"] < 5: stock["ego"] += 1    
  if stock["pride"] < 5: stock["pride"] += 1     
  if stock["sensitivity"] < 5: stock["sensitivity"] += 1
- co_max = 4
  $stock_family_auk = 'дочь богатого банкира' 
 END
 IF $stock_family = 'mayor': 
@@ -459,7 +401,6 @@ IF $stock_family = 'mayor':
  if stock["ego"] < 5: stock["ego"] += 1    
  if stock["pride"] < 5: stock["pride"] += 1     
  if stock["sensitivity"] < 5: stock["sensitivity"] += 1
- co_max = 4
  $stock_family_auk = 'дочь влиятельного политика' 
 END
 IF $stock_family = 'mafiosi': 
@@ -467,7 +408,6 @@ IF $stock_family = 'mafiosi':
  if stock["temper"] < 5: stock["temper"] += 1    
  if stock["pride"] < 5: stock["pride"] += 1     
  if stock["sensitivity"] > 1: stock["sensitivity"] -= 1
- co_max = 4
  $stock_family_auk = 'выросшая в мафиозной семье' 
 END
 
@@ -476,127 +416,102 @@ IF $stock_family = 'orpnange':
  if stock["pride"] > 1: stock["pride"] -= 1    
  if stock["custom"] < 5: stock["custom"] += 1   
  if stock["sensitivity"] > 1: stock["sensitivity"] -= 1  
- co_max = 13
  $stock_family_auk = 'воспитанница детского дома' 
 END
 IF $stock_family = 'worker': 
- co_max = 11
  $stock_family_auk = 'выросшая в семье простого работяги' 
 END
 IF $stock_family = 'policeman': 
- co_max = 10
  $stock_family_auk = 'дочь полицейского' 
 END
 IF $stock_family = 'manager': 
- co_max = 13
  $stock_family_auk = 'дочь офисного работника' 
 END
 IF $stock_family = 'biologist': 
  if stock["intellect"] < 5: stock["intellect"] += 1 
- co_max = 11
  $stock_family_auk = 'воспитанная в интеллигентной семье' 
 END
 IF $stock_family = 'programmer': 
- co_max = 13
  $stock_family_auk = 'воспитанная в семье среднего класса' 
 END
 IF $stock_family = 'surgeon': 
  if stock["stamina"] < 5: stock["stamina"] += 1 
  if stock["beauty"] < 5: stock["beauty"] += 1  
- co_max = 11
  $stock_family_auk = 'дочь преуспевающего пластического хирурга' 
 END
 IF $stock_family = 'buissinesman': 
  if stock["spoi"] < 5: stock["spoi"] += 1  
  if stock["pride"] < 5: stock["pride"] += 1  
- co_max = 4
  $stock_family_auk = 'дочь преуспевающего бизнесмена' 
 END
 IF $stock_family = 'finance': 
  if stock["spoi"] < 5: stock["spoi"] += 1  
  if stock["pride"] < 5: stock["pride"] += 1  
- co_max = 4
  $stock_family_auk = 'дочь преуспевающего финансиста' 
 END
 IF $stock_family = 'general': 
  if stock["custom"] < 5: stock["custom"] += 1   
  if stock["pride"] < 5: stock["pride"] += 1     
- co_max = 4
  $stock_family_auk = 'генеральская дочка' 
 END
 
 IF $stock_family = 'poet': 
  if stock["sensitivity"] < 5: stock["sensitivity"] += 1
- co_max = 4
  $stock_family_auk = 'воспитанная в семье поэтов' 
 END
 IF $stock_family = 'operator': 
- co_max = 4
  $stock_family_auk = 'дочь оператора производственной базы' 
 END
 IF $stock_family = 'artist': 
  if stock["sensitivity"] < 5: stock["sensitivity"] += 1
- co_max = 4
  $stock_family_auk = 'воспитанная в творческой семье' 
 END
 IF $stock_family = 'architect': 
  if stock["intellect"] < 5: stock["intellect"] += 1 
- co_max = 4
  $stock_family_auk = 'воспитанная в семье архитекторов' 
 END
 
 IF $stock_family = 'jailer': 
  if stock["sensitivity"] > 1: stock["sensitivity"] -= 1  
- co_max = 4
  $stock_family_auk = 'дочь тюремщика' 
 END
 IF $stock_family = 'bioreactor': 
  if stock["sensitivity"] > 1: stock["sensitivity"] -= 1  
- co_max = 4
  $stock_family_auk = 'дочь оператора биореактора' 
 END
 IF $stock_family = 'minitruth': 
  if stock["intellect"] < 5: stock["intellect"] += 1 
- co_max = 4
  $stock_family_auk = 'дочь функционера министерства правды' 
 END
 IF $stock_family = 'anter': 
  if stock["custom"] < 5: stock["custom"] += 1   
- co_max = 4
  $stock_family_auk = 'выросшая в промышленном муравейнике' 
 END
 IF $stock_family = 'freetrader': 
- co_max = 3
  $stock_family_auk = 'выросшая на торговом транспорте' 
 END
 IF $stock_family = 'asteroid': 
- co_max = 6
  $stock_family_auk = 'выросшая на астероидной буровой базе' 
 END
 IF $stock_family = 'astrofarm': 
- co_max = 6
  $stock_family_auk = 'выросшая на орбитальной станции' 
 END
 IF $stock_family = 'astrogator': 
  if stock["intellect"] < 5: stock["intellect"] += 1 
- co_max = 4
  $stock_family_auk = 'воспитаная на развитой планете' 
 END
 IF $stock_family = 'admiral': 
  if stock["custom"] < 5: stock["custom"] += 1   
  if stock["pride"] < 5: stock["pride"] += 1   
- co_max = 3
  $stock_family_auk = 'адмиральская дочка' 
 END
 IF $stock_family = 'nanofarmacist': 
  if stock["intellect"] < 5: stock["intellect"] += 1 
- co_max = 3
  $stock_family_auk = 'выросшая на промышленной станции' 
 END
 IF $stock_family = 'gendesigner': 
  if stock["beauty"] < 5: stock["beauty"] += 1 
  if stock["intellect"] < 5: stock["intellect"] += 1 
- co_max = 4
  $stock_family_auk = 'дочь знаменитого генетического дизайнера' 
 END
 
@@ -656,7 +571,7 @@ if meta_type = 3:
 END
 
 !РОД ДЕЯТЕЛЬНОСТИ
-chance = RAND (1,co_max)
+chance = RAND (1, arrsize("$<<$stock_family>>_occupation") - 1)
 if stock['age'] = CONST_INT['loli_age']: chance = 0
 dynamic '$stock_occupation = $<<$stock_family>>_occupation[chance]'
 $stock_occupation_description = $occupation_description[$stock_occupation]
@@ -1133,7 +1048,7 @@ IF $stock_occupation = 'installer':
  $stock_occupation_auk = 'орбитальная монтажница'
 END
 
-chance = RAND (1,nm_max)
+chance = RAND (1, arrsize("$<<$namebase>>_name") - 1)
 dynamic '$stock_name = $<<$namebase>>_name[chance]'
 
 !if stock_virginity = 0: stock['ill'] = 0

@@ -196,7 +196,7 @@ $text_display += {<br><div id="under">Покинуть медицинский ц
 
 $hospital_options[11] = {
     $text_display = '<br><br>'
-    if master_wounds ! 0:
+    if master_issues ! 0:
         if master_wounds = 1: $text_display += {<br><div id="under">Лечение ранений (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33111 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
         if master_wounds = 2: $text_display += {<br><div id="under">Лечение ранений (10 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33111 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
         if master_wounds = 3: $text_display += {<br><div id="under">Лечение ранений (25 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33111 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}

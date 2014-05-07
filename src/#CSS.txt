@@ -433,11 +433,11 @@ font-family:Victoriana;
 
 #text {
 position:absolute;
-left:5px;
+left:30px;
 top:610px;
-width:790px;
+width:740px;
 height:185px;
-font-size:25%;
+font-size:20%;
 }
 
 #bg_blue_script {
@@ -623,11 +623,12 @@ text-align:center;
 
 #info {
 position:absolute;
-left:255px;
+left:265px;
 top:640px;
-width:790px;
+width:740px;
 height:150px;
 text-align:left;
+font-size:18%;
 }
 
 #center_image {

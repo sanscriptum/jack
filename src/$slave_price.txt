@@ -117,57 +117,57 @@ if slave["fame"] > rating: rating = slave["fame"]
 if slave["stamina"] <= 0: rating = 0
 if rating < 0: rating = 0
 
-$rating_help = 'Для увеличения ранга:<br>'
+$rating_help = '<center>Для увеличения ранга:</center><br>'
 
 IF rating = 0:
- if skill_sum < 5: $rating_help += ' Недостаточно общих навыков.'  
- if atribute_sum < 8: $rating_help += ' Слабые <a href="EXEC: msg $атрибуты_справка">базовые атрибуты</a>.'  
- if slave["beauty"] < 1: $rating_help += ' Рабыня недостаточно красива.'  
- if slave_relative_obedience < 1: $rating_help += ' Не подчиняется приказам.'   
+ if skill_sum < 5: $rating_help += ' Недостаточно общих навыков<br>'  
+ if atribute_sum < 8: $rating_help += ' Слабые <a href="EXEC: msg $атрибуты_справка">базовые атрибуты</a><br>'  
+ if slave["beauty"] < 1: $rating_help += ' Рабыня недостаточно красива<br>'  
+ if slave_relative_obedience < 1: $rating_help += ' Не подчиняется приказам<br>'   
 END
 
 IF rating = 1:
- if sex_sum < 5: $rating_help += ' Недостаточно сексуальных навыков.' 
- if skill_sum < 10: $rating_help += ' Недостаточно общих навыков.'  
- if atribute_sum < 12: $rating_help += ' Слабые <a href="EXEC: msg $атрибуты_справка">базовые атрибуты</a>.'  
- if slave["beauty"] < 2: $rating_help += ' Рабыня недостаточно красива.'  
- if slave_relative_obedience < 5: $rating_help += ' Недостаточно покорна.'    
+ if sex_sum < 5: $rating_help += ' Недостаточно сексуальных навыков<br>' 
+ if skill_sum < 10: $rating_help += ' Недостаточно общих навыков<br>'  
+ if atribute_sum < 12: $rating_help += ' Слабые <a href="EXEC: msg $атрибуты_справка">базовые атрибуты</a><br>'  
+ if slave["beauty"] < 2: $rating_help += ' Рабыня недостаточно красива<br>'  
+ if slave_relative_obedience < 5: $rating_help += ' Недостаточно покорна<br>'    
 END
 
 IF rating = 2:
- if sex_sum < 12: $rating_help += ' Недостаточно сексуальных навыков.' 
- if skill_sum < 15: $rating_help += ' Недостаточно общих навыков.'  
- if atribute_sum < 14: $rating_help += ' Слабые <a href="EXEC: msg $атрибуты_справка">базовые атрибуты</a>.'  
- if slave["beauty"] < 3: $rating_help += ' Рабыня недостаточно красива.'  
- if maxsum < 1: $rating_help += ' Нужен любой максимальный навык.'  
+ if sex_sum < 12: $rating_help += ' Недостаточно сексуальных навыков<br>' 
+ if skill_sum < 15: $rating_help += ' Недостаточно общих навыков<br>'  
+ if atribute_sum < 14: $rating_help += ' Слабые <a href="EXEC: msg $атрибуты_справка">базовые атрибуты</a><br>'  
+ if slave["beauty"] < 3: $rating_help += ' Рабыня недостаточно красива<br>'  
+ if maxsum < 1: $rating_help += ' Нужен любой максимальный навык<br>'  
 END
 
 IF rating = 3:
- if sex_sum < 15: $rating_help += ' Недостаточно сексуальных навыков.' 
- if skill_sum < 20: $rating_help += ' Недостаточно общих навыков.'  
- if atribute_sum < 16: $rating_help += ' Слабые <a href="EXEC: msg $атрибуты_справка">базовые атрибуты</a>.'  
- if slave["beauty"] < 4: $rating_help += ' Рабыня недостаточно красива.'  
- if max_skill < 1: $rating_help += ' Нужен общий навык высшего уровня.' 
- if max_sex < 1: $rating_help += ' Нужен секс-навык высшего уровня.' 
- if slave["moral"] < 1: $rating_help += ' Слишком низкая преданность.'    
+ if sex_sum < 15: $rating_help += '<div style="font-size: 90%;"> Недостаточно сексуальных навыков</div>' 
+ if skill_sum < 20: $rating_help += '<div style="font-size: 90%;"> Недостаточно общих навыков</div>'  
+ if atribute_sum < 16: $rating_help += '<div style="font-size: 90%;"> Слабые базовые атрибуты</div>'  
+ if slave["beauty"] < 4: $rating_help += '<div style="font-size: 90%;"> Рабыня недостаточно красива</div>'  
+ if max_skill < 1: $rating_help += '<div style="font-size: 90%;"> Нужен общий навык высшего уровня</div>' 
+ if max_sex < 1: $rating_help += '<div style="font-size: 90%;"> Нужен секс-навык высшего уровня</div>' 
+ if slave["moral"] < 1: $rating_help += '<div style="font-size: 90%;"> Слишком низкая преданность</div>'    
 END
 
 IF rating = 4:
- if sex_sum < 25: $rating_help += ' Недостаточно сексуальных навыков.' 
- if skill_sum < 30: $rating_help += ' Недостаточно общих навыков.'  
- if atribute_sum < 18: $rating_help += ' Слабые <a href="EXEC: msg $атрибуты_справка">базовые атрибуты</a>.'  
- if slave["beauty"] < 5: $rating_help += ' Рабыня недостаточно красива.'  
- if max_skill < 1: $rating_help += ' Нужен общий навык высшего уровня.' 
- if max_sex < 1: $rating_help += ' Нужен секс-навык высшего уровня.' 
- if slave["moral"] < 4: $rating_help += ' Слишком низкая преданность.' 
- if maxsum < 3: $rating_help += ' Нужно больше максимальных навыков.'     
+ if sex_sum < 25: $rating_help += '<div style="font-size: 90%;"> Недостаточно сексуальных навыков</div>' 
+ if skill_sum < 30: $rating_help += '<div style="font-size: 90%;"> Недостаточно общих навыков</div>'  
+ if atribute_sum < 18: $rating_help += '<div style="font-size: 90%;"> Слабые базовые атрибуты</div>'  
+ if slave["beauty"] < 5: $rating_help += '<div style="font-size: 90%;"> Рабыня недостаточно красива</div>'  
+ if max_skill < 1: $rating_help += '<div style="font-size: 90%;"> Нужен общий навык высшего уровня</div>' 
+ if max_sex < 1: $rating_help += '<div style="font-size: 90%;"> Нужен секс-навык высшего уровня</div>' 
+ if slave["moral"] < 4: $rating_help += '<div style="font-size: 90%;"> Слишком низкая преданность</div>' 
+ if maxsum < 3: $rating_help += '<div style="font-size: 90%;"> Нужно больше максимальных навыков</div>'     
 END
 
 IF rating = 5:
- $rating_help += '- Лучше не будет.'
+ $rating_help += ' Лучше не будет'
 END
 
-if $slave_psy_status = 'broken': $rating_help += '- У рабыни сломлен дух.'
+if $slave_psy_status = 'broken': $rating_help += ' У рабыни сломлен дух'
 
 !Специализация
 slave_specialisation['none'] = 1

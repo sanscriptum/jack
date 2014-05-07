@@ -8,7 +8,7 @@ $text_display += {<br><div id="under">Выйти прочь<br><div id = "clear"
 }
 
 $computer_options[1] = {
-$sp_text[1] = '   Обращение к базе данных происходит на уровне устного запроса и так же выдаётся запрошенная информация. Хотя при необходимости данные можно и распечатать.'
+$sp_text[1] = '   Обращение к базе данных происходит на уровне устного запроса и также выдаётся запрошенная информация. Хотя при необходимости данные можно и распечатать.'
 $text_display = '<br>'
 $text_display += {<br><div id="under">- Запрос. Аура. Общая информация<div id = "clear"><a href = 'EXEC: interaction_city = 3331 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
 $text_display += {<br><div id="under">- Запрос. Аура. Структура паттернов<div id = "clear"><a href = 'EXEC: interaction_city = 3332 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
@@ -1447,7 +1447,7 @@ $colloseum_options[3] = {
  $text_display += {<div id="under">- С шиноби<br><div id = "clear"><a href = 'EXEC: colloseum_fight = 13 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<div id="under">- С амазонкой<br><div id = "clear"><a href = 'EXEC: colloseum_fight = 14 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<div id="under">- С латницей<br><div id = "clear"><a href = 'EXEC: colloseum_fight = 15 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under_gray">- С тобой!<br></div>} 
+!$text_display += {<div id="under_gray">- С тобой!<br></div>} 
  $text_display += {<br><div id="under">- Хотя нет, лучше...<br><div id = "clear"><a href = 'EXEC: sp_txt = 21 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 }
 
@@ -1457,7 +1457,7 @@ $colloseum_options[4] = {
  $text_display += {<div id="under">- С шиноби<br><div id = "clear"><a href = 'EXEC: colloseum_fight = 33 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<div id="under">- С амазонкой<br><div id = "clear"><a href = 'EXEC: colloseum_fight = 34 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<div id="under">- С латницей<br><div id = "clear"><a href = 'EXEC: colloseum_fight = 35 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under_gray">- С тобой!<br></div>} 
+!$text_display += {<div id="under_gray">- С тобой!<br></div>} 
  $text_display += {<br><div id="under">- Хотя нет, лучше...<br><div id = "clear"><a href = 'EXEC: sp_txt = 21 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 }
 

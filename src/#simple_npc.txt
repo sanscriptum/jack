@@ -44,7 +44,6 @@ dynamic $sn_cycle, 'mikkey', 'Весельчак Микки', 0, 2, 'pet', 0, 10
 dynamic $sn_cycle, 'pretor_tifaret', 'Претор Тифарет', 0, 4, 'maid', 0, 1000
 dynamic $sn_cycle, 'prince_charming', 'Прекрасный Принц', 0, 3, 'artist', 0, 1000
 dynamic $sn_cycle, 'sfinga', 'Сфинга', 0, 2, 'enchanter', 0, 1000
-dynamic $sn_cycle, 'shooliba', 'Шулиба', 0, 2, 'nurse', 50, 1000
 dynamic $sn_cycle, 'baron_imladis', 'Барон Имладис', 0, 3, 'maid', 200, 1000
 dynamic $sn_cycle, 'bishop_nerilis', 'Епископ Нирелис', 0, 4, 'nurse', 200, 1000
 dynamic $sn_cycle, 'blackwing', 'Вранокрыл', 0, 3, 'enchanter', 200, 1000

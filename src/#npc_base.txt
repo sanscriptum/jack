@@ -37,7 +37,7 @@ $auction_buyer[16] = 'mikkey'
 $auction_buyer[17] = 'pretor_tifaret'
 $auction_buyer[18] = 'prince_charming'
 $auction_buyer[19] = 'sfinga'
-$auction_buyer[20] = 'shooliba'
+$auction_buyer[20] = 'poison'
 $auction_buyer[21] = 'baron_imladis'
 $auction_buyer[22] = 'bishop_nerilis'
 $auction_buyer[23] = 'blackwing'
@@ -102,7 +102,6 @@ $auction_buyer[81] = 'servilia_quinta'
 $auction_buyer[82] = 'estelindel'
 $auction_buyer[83] = 'madame_jofre'
 $auction_buyer[84] = 'лао_ван'
-$auction_buyer[85] = 'poison'
 
 !Общий список конечных покупателей
 $basic_buyer[0] = 'sample'
@@ -147,8 +146,7 @@ $basic_buyer[38] = 'sir_toughbar'
 $basic_buyer[39] = 'lao_van'
 $basic_buyer[40] = 'scarlet'
 $basic_buyer[41] = 'earl_gray'
-$basic_buyer[42] = 'shooliba'
-$basic_buyer[43] = 'green_mamba'
+$basic_buyer[42] = 'green_mamba'
 
 
 !Не клиентские NPC
@@ -2563,28 +2561,6 @@ $refuse_charm_quote['sfinga'] = '   [СФИНГА]
 $refuse_again_quote['sfinga'] = '   [СФИНГА]
    - Нет значит нет!'
 
-$npc_image['shooliba'] = 'shooliba'
-$npc_name['shooliba'] = 'Шулиба'
-$npc_status['shooliba'] = 'Должность
-Дом Камира (Отверженные)'
-$npc_alignment['shooliba'] = 'kamira'
-$npc_info['shooliba'] = '   '
-demand_rating['shooliba'] = 1
-$interesting_specialisation['shooliba'] = 'none'
-$diary_mark['shooliba'] = "   <<$npc_name['shooliba']>>. Пока не очень понятно, где же её искать..."
-$shooliba_pref[1] = "  [ШУЛИБА]
-   - Мне требуется <<$slave_type_name[$interesting_specialisation['shooliba']]>> ранга <<$rating[demand_rating['shooliba']]>> или выше. Я заплачу за неё <<common_price[demand_rating['shooliba']]>> искр."
-$buy_quote['shooliba'] = '   [ШУЛИБА]
-   - Хорошо, я беру её. Вот искры и спасибо. Надеюсь, она меня порадует!'
-$refuse_skill_quote['shooliba'] = '   [ШУЛИБА]
-   - И зачем она мне если она не обучена делать то, что требуется? Мне такой товар неинтересен.'
-$refuse_level_quote['shooliba'] = '   [ШУЛИБА]
-   - А товара получше не найдётся? Эта не достаточно хороша за такие деньги.'
-$refuse_charm_quote['shooliba'] = '   [ШУЛИБА]
-   - Нуууу.... не знаю. Формально вроде подходит, но какая-то она непрезентабельная. Не цепляет.'
-$refuse_again_quote['shooliba'] = '   [ШУЛИБА]
-   - Нет значит нет!'
-
 $npc_image['sample'] = 'sample'
 $npc_name['sample'] = ''
 $npc_status['sample'] = 'Должность
@@ -2861,7 +2837,7 @@ $npc_status['donna_venturi'] = 'Граф
 Дом Корвус (Проклятые)'
 $npc_alignment['donna_venturi'] = 'korvus'
 $npc_info['donna_venturi'] = '   '
-demand_rating['donna_venturi'] = 2
+demand_rating['donna_venturi'] = 3
 $interesting_specialisation['donna_venturi'] = 'maid'
 $diary_mark['donna_venturi'] = "   <<$npc_name['donna_venturi']>>. У неё своё поместье в зоне резиденций Некрополиса."
 $donna_venturi_pref[1] = "  [Донна Вентури]

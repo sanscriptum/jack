@@ -37,6 +37,7 @@ $master_right_wpn = 'шпага'
 sparks = 2000
 
 faction_fame['taurus'] = 1
+faction_fame['serpis'] = 0
 } 
 
 
@@ -75,6 +76,7 @@ $master_right_wpn = 'кнут'
 sparks = 1000
 
 faction_fame['taurus'] = 1
+faction_fame['serpis'] = 0
 } 
 
 $sepia_ava_path[3] = 'content\pic\master\master_fighter_sepia.jpg'
@@ -112,6 +114,7 @@ $master_right_wpn = 'бастард'
 sparks = 1000
 
 faction_fame['taurus'] = 1
+faction_fame['serpis'] = 0
 } 
 
 $sepia_ava_path[4] = 'content\pic\master\master_pimp_sepia.jpg'
@@ -149,6 +152,7 @@ $master_right_wpn = 'кастет'
 sparks = 1000
 
 faction_fame['serpis'] = 1
+faction_fame['taurus'] = 0
 } 
 
 $sepia_ava_path[5] = 'content\pic\master\master_butler_sepia.jpg'
@@ -186,6 +190,7 @@ $master_right_wpn = ''
 sparks = 1000
 
 faction_fame['taurus'] = 1
+faction_fame['serpis'] = 0
 } 
 
 $sepia_ava_path[6] = 'content\pic\master\master_teacher_sepia.jpg'
@@ -224,6 +229,7 @@ $master_right_wpn = ''
 sparks = 1000
 
 faction_fame['serpis'] = 1
+faction_fame['taurus'] = 0
 } 
 
 $sepia_ava_path[7] = 'content\pic\master\master_doctor_sepia.jpg'
@@ -261,6 +267,7 @@ $master_right_wpn = ''
 sparks = 1000
 
 faction_fame['serpis'] = 1
+faction_fame['taurus'] = 0
 } 
 
 $sepia_ava_path[8] = 'content\pic\master\master_impressario_sepia.jpg'
@@ -298,6 +305,7 @@ $master_right_wpn = ''
 sparks = 1000
 
 faction_fame['taurus'] = 1
+faction_fame['serpis'] = 0
 } 
 
 $sepia_ava_path[9] = 'content\pic\master\master_granpa_sepia.jpg'
@@ -335,6 +343,7 @@ $master_right_wpn = ''
 sparks = 1000
 
 faction_fame['serpis'] = 1
+faction_fame['taurus'] = 0
 } 
 
 $sepia_ava_path[10] = 'content\pic\master\master_nerd_sepia.jpg'
@@ -371,6 +380,7 @@ $master_right_wpn = ''
 sparks = 200
 
 faction_fame['serpis'] = 1
+faction_fame['taurus'] = 0
 } 
 
 $sepia_ava_path[11] = 'content\pic\master\master_blank.jpg'

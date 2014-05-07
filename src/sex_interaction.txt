@@ -48,7 +48,7 @@ IF sex_interaction = 101:
  END
  skill = (1 + sex["girl_roleplay"] + sex["girl_callisthenics"])/2
  quality = min (diligence, skill)
- $text[1] = '  <<$slave_strip[quality]>>' 
+ $text[1] = '  <<$active_strip[quality]>>' 
  $special_bg = $dance[sex['girl_type']]   
  IF sex['girl_style'] > sex['girl_exotic']:
    multiplier = sex['girl_style']

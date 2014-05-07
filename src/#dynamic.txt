@@ -1003,29 +1003,29 @@ gt curloc
 
 $master_head_list = {
 $equip_choice = ''
-$equip_choice += '<a href = "EXEC: $new_item = ''none'' & dynamic $slot_8_change">Снять головной убор</a>'
-if raven_crown > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''raven_crown'' & dynamic $slot_8_change">Вороний венец</a>'
+$equip_choice += '<a href = "EXEC: $new_item = ''none'' & $info_text = '''' & dynamic $slot_8_change">Снять головной убор</a>'
+if raven_crown > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''raven_crown'' & $info_text = $raven_help & dynamic $slot_8_change">Вороний венец</a>'
 gt curloc
 }
 
 $master_ears_list = {
 $equip_choice = ''
-$equip_choice += '<a href = "EXEC: $new_item = ''none'' & dynamic $slot_9_change">Вынуть серьгу</a>'
-if chimera_earring > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''chimera_earring'' & dynamic $slot_9_change">Самоцвет химеры</a>'
+$equip_choice += '<a href = "EXEC: $new_item = ''none'' & $info_text = '''' & dynamic $slot_9_change">Вынуть серьгу</a>'
+if chimera_earring > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''chimera_earring'' & $info_text = $chimera_help & dynamic $slot_9_change">Самоцвет химеры</a>'
 gt curloc
 }
 
 $master_neck_list = {
 $equip_choice = ''
-$equip_choice += '<a href = "EXEC: $new_item = ''none'' & dynamic $slot_10_change">Снять амулет</a>'
-if snake_amulet > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''snake_amulet'' & dynamic $slot_10_change">Змеиный талисман</a>'
+$equip_choice += '<a href = "EXEC: $new_item = ''none'' & $info_text = '''' & dynamic $slot_10_change">Снять амулет</a>'
+if snake_amulet > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''snake_amulet'' & $info_text = $snake_help & dynamic $slot_10_change">Змеиный талисман</a>'
 gt curloc
 }
 
 $master_ring_list = {
 $equip_choice = ''
-$equip_choice += '<a href = "EXEC: $new_item = ''none'' & dynamic $slot_11_change">Снять кольцо</a>'
-if bull_ring > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''bull_ring'' & dynamic $slot_11_change">Кольцо быка</a>'
+$equip_choice += '<a href = "EXEC: $new_item = ''none'' & $info_text = '''' & dynamic $slot_11_change">Снять кольцо</a>'
+if bull_ring > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''bull_ring'' & $info_text = $bull_help & dynamic $slot_11_change">Кольцо быка</a>'
 gt curloc
 }
 

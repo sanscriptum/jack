@@ -30,11 +30,6 @@ IF slot = 6:
  $master_leg_wpn = $new_item
 END
 
-IF slot = 8:
- if $master_leg_wpn ! '': dynamic '<<$master_leg_wpn>> += 1'
- $master_leg_wpn = $new_item
-END
-
 IF slot = 7:
  dynamic '<<$master_cloth>> += 1'
  $master_cloth = $new_item

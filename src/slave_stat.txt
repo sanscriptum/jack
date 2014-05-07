@@ -102,7 +102,7 @@ IF slave_stat_screen = 0:
 Набор веса
 Биодобавки
 
-<<slave["calories"]>> калорий
+<<slave["calories"]>> калорий / <<slave_rate["fat"]>> ж
 </div>'  
  *p '<div id="right_padding">ПРАВИЛА: <BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><<$rules_obedience[rules_broken]>></div>'  
  *p '<div id="right_rules">

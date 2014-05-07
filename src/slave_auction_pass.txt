@@ -21,7 +21,6 @@ END
 IF auction_phase = 4:
  IF stock_sold => stock_limit:
   auction_phase = 5
-  haggling_stage = 0
   else
   IF haggling_stage = 1:
    auction_phase = 0

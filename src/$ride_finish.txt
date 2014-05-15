@@ -56,7 +56,7 @@ IF args = 4:
   slave_rate['fame'] += 11
   brand_rate += 5
   master_mood['pos_master_winner'] = 1
-  slave_mood['pos_slave_winner'] = slave['sensivity']  
+  slave['pos_slave_winner'] = slave['sensitivity']  
   slave_rate['temper'] += 5
   slave_rate['instinct'] += 5   
   if slave['mood'] > 0: slave_rate['moral'] += 1 
@@ -68,7 +68,7 @@ IF args = 4:
   brand_rate -= 1
   master_mood['neg_master_loser'] = 1
   slave_rate['temper'] += 5
-  slave_mood['neg_slave_looser'] = slave['sensivity']  
+  slave['neg_slave_looser'] = slave['sensitivity']  
   slave_rate['pride'] -= 5  
   slave_rate['instinct'] += 2 
  END 

@@ -77,7 +77,7 @@ IF slave['weight_before'] ! slave["fat"]:
  if slave["metabolism_revealed"] = 0: slave["metabolism_revealed"] = 1
 END
 slave['weight_before'] = slave["fat"]
-if slave["memory_revealed"] = 0: slave["memory_revealed"] = 1
+!if slave["memory_revealed"] = 0: slave["memory_revealed"] = 1
 
 !Самостоятельные действия воспитуемой
 !добавлена проверка на здоровье и безсознательное состояние, если здоровье равно нулю или она валяется без сознания, то рабыня не сможет сбежать либо атаковать - the_vm
@@ -357,7 +357,7 @@ IF slave["calories"] > 0 and slave_rate["fat"] => 1:
 END
 
 if slave["calories"] = 0: slave['starvation'] -= 1
-if slave["calories"] <= 0: slave['neg_hungry'] = 1 
+if slave["calories"] < 0: slave['neg_hungry'] = 1 
 
 IF slave["calories"] > 0:
  slave_rate["fat"] += slave["calories"]
@@ -443,13 +443,14 @@ if slave_state ! CONST_INT['no_slave']: total_food_cost += food_cost
 IF slave['koffed'] > 0:
  slave['koffed'] = 0
  a = slave['stamina']*10
- if slave['koffe_addiction'] > a: slave['energy'] -= 1 & slave_mood['neg_slave_koffe'] = 1
+ if slave['koffe_addiction'] > a: slave['energy'] -= 1 & slave['neg_slave_koffe'] = 1
  slave['koffe_addiction'] += 1
 END
-IF slave_mood['pos_slave_alco'] > 0:
+IF slave['on_alco'] > 0:
+ slave['on_alco'] = 0
  slave['dipsomania'] += 1
- slave_mood['pos_slave_alco'] = 0
- slave_mood['neg_slave_alco'] = slave['dipsomania']
+ slave['pos_slave_alco'] = 0
+ slave['neg_slave_alco'] = slave['dipsomania']
  else
  if slave['dipsomania'] > 0: slave['dipsomania'] -= 1
 END
@@ -457,7 +458,7 @@ if slave['dipsomania'] => slave['stamina']: slave_rate['stamina'] -= slave['dips
 
 IF slave['on_meth'] > 0:
  slave['on_meth'] = 0
- if slave['meth_addiction'] > slave['stamina']: slave_mood['neg_slave_meth'] = slave['meth_addiction']
+ if slave['meth_addiction'] > slave['stamina']: slave['neg_slave_meth'] = slave['meth_addiction']
  slave['meth_addiction'] += 1
  slave_rate['stamina'] -= 1
  else
@@ -466,9 +467,10 @@ IF slave['on_meth'] > 0:
  slave_rate['stamina'] -= slave['meth_addiction']
 END
 
-IF slave_mood['pos_slave_opium'] > 0:
- slave_mood['pos_slave_opium'] = 0
- if slave['opium_addiction'] > slave['stamina']: slave_mood['neg_slave_opium'] = slave['meth_addiction']
+IF slave['on_opium'] > 0:
+ slave['on_opium'] = 0
+ slave['pos_slave_opium'] = 0
+ if slave['opium_addiction'] > slave['stamina']: slave['neg_slave_opium'] = slave['opium_addiction']
  slave['opium_addiction'] += 1
  slave_rate['stamina'] -= 1
  else
@@ -489,7 +491,7 @@ IF slave_rate["wounds"] < 0: slave_rate["wounds"] = 0
 IF slave['ill'] > 0:
  slave['ill'] += 1
  if slave['ill'] > slave['stamina']: slave_rate['stamina'] -= 1
- if slave['ill'] > 6: slave_mood['neg_slave_ill'] = slave['ill']  
+ if slave['ill'] > 6: slave['neg_slave_ill'] = slave['ill']  
 END
 
 IF slave['parasite'] > 0:
@@ -690,9 +692,13 @@ IF toilet_rule = 1:
  else
  toilet_rule_res = 0
 END
+IF v_balls_rule = 1:
+ v_balls_rule_res = slave["obedience"] - slave["temper"]
+ else
+ v_balls_rule_res = 0 
+END
 
-
-rules_res = min (silence_rule_res, master_rule_res, shit_prohibited_res, pet_rule_res, blowjob_rule_res, pissuar_rule_res, toilet_rule_res)
+rules_res = min (silence_rule_res, master_rule_res, shit_prohibited_res, pet_rule_res, blowjob_rule_res, pissuar_rule_res, toilet_rule_res, v_balls_rule_res)
 rules_broken = iif(rules_res < 0, 1, 0)
 
 IF rules_broken = 1:
@@ -739,6 +745,11 @@ IF rules_broken = 1:
   slave_rate["pride"] += 1 
   slave_rate["ego"] += 1
   slave_rate["custom"] -= 1    
+ END
+ IF v_balls_rule = 1:
+  slave_rate["temper"] += 1
+  slave_rate["ego"] += 1  
+  slave_rate["custom"] -= 1
  END
 
  ELSE
@@ -822,6 +833,10 @@ IF rules_broken = 1:
   if master_supermacy <= 0: slave_rate["pride"] -= slave["pride"] * 2   
   slave_rate["hygiene"] += 40 
   slave_rate['stamina'] -= 6 - slave['stamina']
+ END
+ IF v_balls_rule = 1:
+  slave_rate["arousal"] += 3
+  slave_rate["sensitivity"] += 1
  END
 END
 
@@ -1341,7 +1356,7 @@ if prisoner_inventory['pony'] > 0: total_food_cost += 1
 cooked_food = -1
 
 !Определяем действия на конец дня
-IF slave["arousal"] > slave["pride"] and slave["arousal"] > 1:
+IF slave["arousal"] > slave["pride"] and slave["arousal"] > 1 and slave_state = CONST_INT['slave_exist']:
  slave_will_masturbate = 1
 END
 

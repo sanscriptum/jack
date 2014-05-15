@@ -1,6 +1,7 @@
 # конец_боя
 !СЮДА ПРИХОДИМ КОГДА ЗАВЕРШАЕТСЯ БОЙ
 arena_mode = 0
+if master_fighter > 2: killvar 'суперудар_сделан'
 
 !Информация о последних действиях игрока и противников
 $информация_о_бое = ''
@@ -12,7 +13,11 @@ $информация_о_бое += '<<$действия_врага[3]>><br>'
 $информация_о_бое += '<<$действия_врага[4]>><br>'
 $информация_о_бое += '<<$действия_врага[5]>><br>'
 
-*p '<div id = "fight_bg"><img src = "content\pic\bg\fight.jpg"></div>'
+IF ui_style = 2: 
+ *p '<div id = "fight_bg"><img src = "content\pic\ui\grimdark\bg\fight.jpg"></div>'
+ else
+ *p '<div id = "fight_bg"><img src = "content\pic\bg\fight.jpg"></div>'
+END
 *p '<div id = "fight_txt"><<$информация_о_бое>></div>'
 
 !меню управления

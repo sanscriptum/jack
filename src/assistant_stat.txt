@@ -1,24 +1,27 @@
 # assistant_stat
-!ЭКРАН ПОДРОБНОЙ СТАТИСТИКИ АССИСТЕНТКИ
-IF slave_state > CONST_INT['no_slave']:
- if slave['brand'] = 0:
-  $assitant_info_text = '  [<<$assistant_name>>]
-  - Вам следует поставить на рабыню клеймо, прежде чем она будет готова к продаже, господин. Я также замечала, что женщины уже имеющие клеймо более склонны к подчинению, чем те, которых ещё не заклеймили.'
-  else
-  gs '$slave_price'
-  $spec_list = 'чернорабочая'
-  if slave_specialisation['concubine'] = 1: $spec_list += ', наложница'
-  if slave_specialisation['pet'] = 1: $spec_list += ', питомец'
-  if slave_specialisation['nurse'] = 1: $spec_list += ', медсестра'
-  if slave_specialisation['maid'] = 1: $spec_list += ', служанка'
-  if slave_specialisation['gladiatrix'] = 1: $spec_list += ', гладиаторша'
-  if slave_specialisation['enchanter'] = 1: $spec_list += ', чародейка'
-  if slave_specialisation['artist'] = 1: $spec_list += ', артистка'
-  if slave_specialisation['refferent'] = 1: $spec_list += ', ассистентка'
-  $assitant_info_text = '  [<<$assistant_name>>]
+IF $assitant_info_text = '':
+	$assitant_info_text = '   [<<$assistant_name>>]
+  - Новенькие рабыни часто могут попытаться убежать или сделать ещё какую-нибудь глупость. Я буду следить за ними по мере своего разумения и преданности. Но если вы прикажете мне надзирать за ней, то я уделю этому особое внимание, употребив всю свою волю и боевые навыки для того, чтобы сохранить ваш товар.'
+	IF slave_state > CONST_INT['no_slave']:
+		gs '$slave_price'
+		$spec_list = 'чернорабочая'
+		if slave_specialisation['concubine'] = 1: $spec_list += ', наложница'
+		if slave_specialisation['pet'] = 1: $spec_list += ', питомец'
+		if slave_specialisation['nurse'] = 1: $spec_list += ', медсестра'
+		if slave_specialisation['maid'] = 1: $spec_list += ', служанка'
+		if slave_specialisation['gladiatrix'] = 1: $spec_list += ', гладиаторша'
+		if slave_specialisation['enchanter'] = 1: $spec_list += ', чародейка'
+		if slave_specialisation['artist'] = 1: $spec_list += ', артистка'
+		if slave_specialisation['refferent'] = 1: $spec_list += ', ассистентка'
+		$assitant_info_text = '  [<<$assistant_name>>]
   - Я проверила подготовку вашей воспитуемой, господин. На данный момент она соответствует требованиям для следующих ролей: <<$spec_list>>. Для соответствия той или иной профессии, рабыня должна иметь любой подходящий навык развитый как минимум до уровня <<$rating[3]>> и к тому же не ниже чем её собственный ранг.'  
- end
+		IF slave['brand'] = 0:
+			$assitant_info_text = '  [<<$assistant_name>>]
+  - Вам следует поставить на рабыню клеймо, прежде чем она будет готова к продаже, господин. Я также замечала, что женщины уже имеющие клеймо более склонны к подчинению, чем те, которых ещё не заклеймили.'
+		END
+	END
 END
+
 
  IF assistant['image_mode'] = 0:
   assistant['nude'] = 0
@@ -76,7 +79,7 @@ gs 'stats_layout'
 IF assistant_stat_screen = 0:
  *p '<div id = "mark_one"><img src = "content\sel_button.png"></div>'
 ! *p '<div id = "mark_two"><a href = "EXEC: assistant_stat_screen = 1 & gt curloc"><img src = "content\unsel_button.png"></a></div>'
- *p '<div id = "mark_three"><a href = "EXEC: assistant_stat_screen = 2 & gt curloc"><img src = "content\unsel_button.png"></a></div>'
+ *p '<div id = "mark_three"><a href = "EXEC: assistant_stat_screen = 2 & $assitant_info_text = ''&nbsp'' & gt curloc"><img src = "content\unsel_button.png"></a></div>'
 ! *p '<div id = "mark_four"><a href = "EXEC: assistant_stat_screen = 3 & gt curloc"><img src = "content\unsel_button.png"></a></div>' 
  *p '<div id="center_image"><img src = "content\pic\bg\<<$interior_study[$study]>>.jpg"></div>'
  if assistant['nude'] = 0: *p '<div id="center_image"><img src="content\pic\<<$assistant["fullimage"]>>.gif"></div>' 
@@ -206,11 +209,15 @@ END
  
 !Закладка снаряжения
 IF assistant_stat_screen = 2:
-    *p '<div id = "mark_one"><a href = "EXEC: assistant_stat_screen = 0 & gt curloc"><img src = "content\unsel_button.png"></a></div>'
+    *p '<div id = "mark_one"><a href = "EXEC: assistant_stat_screen = 0 & $assitant_info_text = '''' & gt curloc"><img src = "content\unsel_button.png"></a></div>'
     !*p '<div id = "mark_two"><a href = "EXEC: assistant_stat_screen = 1 & gt curloc"><img src = "content\unsel_button.png"></a></div>'
     *p '<div id = "mark_three"><img src = "content\sel_button.png"></div>'
     !*p '<div id = "mark_four"><a href = "EXEC: assistant_stat_screen = 3 & gt curloc"><img src = "content\unsel_button.png"></a></div>' 
-    *p '<div id="center_image"><img src = "content\pic\bg\page_blank.gif"></div>'
+	IF ui_style = 2: 
+		*p '<div id="center_image"><img src = "content\pic\ui\grimdark\bg\page_blank.gif"></div>'
+		else
+		*p '<div id="center_image"><img src = "content\pic\bg\page_blank.gif"></div>' 
+	END
     *p '<div id = "center_text_column_1">'
         *p '<div style = "text-align: center;"><u>СНАРЯЖЕНИЕ АССИСТЕНТКИ</u></div>'
         *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 40 & dynamic $assistant_armor_list"><u>Доспехи:</u> <<$название_предмета[$assistant["armor"]]>></a></div>'

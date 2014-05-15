@@ -106,7 +106,7 @@ IF $interaction_type = 'master_teaches_slave':
    if talent_bonus > 0 and $slave['pos_job'] < 1: $slave['pos_job'] = 1
    if skill_rise < 1: skill_rise = 1
    if skill_rise > 16: skill_rise = 16
-   if teacher_potential = 1: master_tutor_rate += 1
+   if teacher_potential > 0 and diligence > 2: master_tutor_rate += 1
    $text[2] = '  <<$lesson_diligence[diligence]>>'  
    IF diligence = 0: 
     skill_rise = 1 

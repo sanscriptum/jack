@@ -5,19 +5,31 @@
 '<div id = "title_scroll"><img src = "content\pic\bg\scroll_large.gif"></div>'
 '<div id = "title_scroll_text">Данная версия использует неофициальный патч-фикс, который исправляет незначительные баги, ошибки и недоработки оригинальной версии.
 
-Свежую стабильную версию фикса всегда можно скачать <a href="http://www.dropbox.com/s/fhjotc3dih420ds/jack.7z">здесь</a>. Версия фикса:07.05.14
+Свежую стабильную версию фикса всегда можно скачать <a href="http://www.dropbox.com/s/fhjotc3dih420ds/jack.7z">здесь</a>. Версия фикса:16.05.14
 
 Репозиторий фикса открыт для всех желающих улучшать и дополнять игру, и находится <a href="http://github.com/klensy/jack">по этому адресу</a>.
 
 Подробное описание фикса можно найти в файле readme.txt, который поставляется в архиве с фиксом.
 <b>ИНТЕРФЕЙС:</b>
 Старый стиль
+Классический стиль
+Гримдарк
 </div>'
 
-IF old_menu_style = 1:
- *p '<div id="chekbox_14l"><a href = "EXEC: old_menu_style = 0 & gt curloc"><img src="content\sel_button.png"></a></div>'  
+IF ui_style = 1:
+ *p '<div id="chekbox_14l"><img src="content\sel_button.png"></div>'  
  else
- *p '<div id="chekbox_14l"><a href = "EXEC: old_menu_style = 1 & gt curloc"><img src="content\unsel_button.png"></a></div>'  
+ *p '<div id="chekbox_14l"><a href = "EXEC: ui_style = 1 & gt curloc"><img src="content\unsel_button.png"></a></div>'  
+END
+IF ui_style = 0:
+ *p '<div id="chekbox_15l"><img src="content\sel_button.png"></div>'  
+ else
+ *p '<div id="chekbox_15l"><a href = "EXEC: ui_style = 0 & gt curloc"><img src="content\unsel_button.png"></a></div>'  
+END
+IF ui_style = 2:
+ *p '<div id="chekbox_16l"><img src="content\sel_button.png"></div>'  
+ else
+ *p '<div id="chekbox_16l"><a href = "EXEC: ui_style = 2 & gt curloc"><img src="content\unsel_button.png"></a></div>'  
 END
 
 {<div id = "close_scroll"><a href = 'EXEC: gt "main_menu"'><img src = "content\close_button.png"></a></div>}

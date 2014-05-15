@@ -35,6 +35,14 @@ IF $place = 'gastronom':
 Девчатина х<<frige["virgin_meat"]>><br> '
 END
 
+IF $place = 'slaughter':
+ dynamic $get_frige_space
+ $place_info['slaughter'] = 'ЗАПАСЫ ДОМА [<<frige_items>>/<<estate_size[$estate]>>]:
+Мясной фарш х<<frige["mince"]>>
+Вырезка х<<frige["meat"]>>
+Девчатина х<<frige["virgin_meat"]>><br> '
+END
+
 if npc = 0:
  $info_bar = ''
  *p '<div id = "side_panel_main"><center><font size = 50%><<$place_name[$place]>></font>

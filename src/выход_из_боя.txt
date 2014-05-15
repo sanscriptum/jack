@@ -1,6 +1,8 @@
 # выход_из_боя
 !ПОДСЧЕТ РЕЗУЛЬТАТОВ БОЯ
 
+CLOSE ALL
+
 !Для гладиаторского боя
 IF $fight_return = 'Start':
  $fight_return = ''

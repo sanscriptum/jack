@@ -67,7 +67,11 @@ $информация_о_бое += '<<$действия_врага[5]>>'
 
 
 !*p '<div id = "fight_bg"><img src = "content\pic\bg\<<$bg[$place]>>.jpg"></div>'
-*p '<div id = "fight_bg"><img src = "content\pic\bg\fight.jpg"></div>'
+IF ui_style = 2: 
+ *p '<div id = "fight_bg"><img src = "content\pic\ui\grimdark\bg\fight.jpg"></div>'
+ else
+ *p '<div id = "fight_bg"><img src = "content\pic\bg\fight.jpg"></div>'
+END
 *p '<div id = "fight_txt"><<$информация_о_бое>></div>'
 
 IF arena_mode = 0:
@@ -97,25 +101,18 @@ if количество_врагов > 1: *p '<div id = "prev_enemy"><a href="EX
 *p '<div id = "next_def"><a href="EXEC: dynamic $сменить_защиту"><img src = "content/loop.png"></a></div>'
 *p '<div id = "enemy_def"><<$защита_врага_описание[$защита[текущий]]>></div>'
 
-*p '<div id = "ally_health"><a href="EXEC: msg $живучесть_справка"><img src = "content/clear_small.gif"></a></div>'
-*p '<div id = "ally_stamina"><a href="EXEC: msg $выносливость_справка"><img src = "content/clear_small.gif"></a></div>'
-*p '<div id = "ally_will"><a href="EXEC: msg $боевой_дух_справка"><img src = "content/clear_small.gif"></a></div>'
-*p '<div id = "enemy_health"><a href="EXEC: msg $живучесть_справка"><img src = "content/clear_small.gif"></a></div>'
-*p '<div id = "enemy_stamina"><a href="EXEC: msg $выносливость_справка"><img src = "content/clear_small.gif"></a></div>'
-*p '<div id = "enemy_will"><a href="EXEC: msg $боевой_дух_справка"><img src = "content/clear_small.gif"></a></div>'
-
-*p '<div id = "ally_health"><<здоровье_игрока>></div>'
-*p '<div id = "ally_stamina"><<выносливость_игрока>></div>'
-*p '<div id = "ally_will"><<дух_игрока>></div>'
+*p '<div id = "ally_health"><a style = "color: black;" href="EXEC: msg $живучесть_справка"><<здоровье_игрока>></a></div>'
+*p '<div id = "ally_stamina"><a style = "color: black;" href="EXEC: msg $выносливость_справка"><<выносливость_игрока>></a></div>'
+*p '<div id = "ally_will"><a style = "color: black;" href="EXEC: msg $боевой_дух_справка"><<дух_игрока>></a></div>'
 *p '<div id = "enemy_health"><center><<здоровье_врага[текущий]>></center></div>'
 *p '<div id = "enemy_stamina"><center><<выносливость_врага[текущий]>></center></div>'
 *p '<div id = "enemy_will"><center><<дух_врага[текущий]>></center></div>'
 
 
-*p '<div id = "ally_conditions"><a href="EXEC: msg $хиты_справка">СОСТОЯНИЕ</a><br>
+*p '<div id = "ally_conditions"><a href="EXEC: msg $хиты_справка">СОСТОЯНИЕ</a>
 <<$эффекты_игрока>>
 </div>'
-*p '<div id = "enemy_conditions"><a href="EXEC: msg $хиты_справка">СОСТОЯНИЕ</a><br>
+*p '<div id = "enemy_conditions"><a href="EXEC: msg $хиты_справка">СОСТОЯНИЕ</a>
 <<$эффекты_противника>>
 </div>'
 

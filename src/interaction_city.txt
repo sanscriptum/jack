@@ -1149,7 +1149,7 @@ IF interaction_city = 1293:
  slave_rate["gladiatrix"] += 5
  slave_rate['pride'] -= 5
  master_mood['neg_master_loser'] = 1 
- slave_mood['neg_slave_looser'] = slave['sensivity']  
+ slave['neg_slave_looser'] = slave['sensitivity']  
  slave['virtue'] = 0
  slave['sin'] = 5 
  brand_rate -= 1 
@@ -1169,7 +1169,7 @@ IF interaction_city = 1294:
  slave['virtue'] = 5
  slave['sin'] = 0
  master_mood['pos_master_winner'] = 1
- slave_mood['pos_slave_winner'] = slave['sensivity']  
+ slave['pos_slave_winner'] = slave['sensitivity']  
  fgn = 1 + slave['winning_series'] * slave['winning_series']
  slave_rate['fame'] += fgn 
  brand_rate += 1
@@ -1202,7 +1202,7 @@ IF interaction_city = 1295:
   slave_rate["ego"] += 10 
   slave_rate['moral'] += 5
   master_mood['pos_master_winner'] = 5
-  slave_mood['pos_slave_winner'] = slave['sensivity'] + 1    
+  slave['pos_slave_winner'] = slave['sensitivity'] + 1    
   else
   master_mood['pos_master_winner'] = 1
   slave_state = CONST_INT['no_slave']
@@ -1342,7 +1342,8 @@ IF interaction_city = 1331:
  $yes = {dungeon = 1
 sparks -= estate_cost_dungeon[$estate]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 3
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1357,7 +1358,8 @@ IF interaction_city = 1332:
    - Я могу анулировать аренду прямо сейчас, <<$master_name>>. Вы сэкономите <<estate_cost_dungeon[$estate]>> в декаду.'
  $yes = {dungeon = 0
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 3
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1373,7 +1375,8 @@ IF interaction_city = 1333:
  $yes = {bouduar = 1
 sparks -= estate_cost_bouduar[$estate]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 3
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1388,7 +1391,8 @@ IF interaction_city = 1334:
    - Я могу анулировать аренду прямо сейчас, <<$master_name>>. Вы сэкономите <<estate_cost_bouduar[$estate]>> в декаду.'
  $yes = {bouduar = 0
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 3
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1404,7 +1408,8 @@ IF interaction_city = 1335:
  $yes = {lab = 1
 sparks -= estate_cost_lab[$estate]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 3
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1419,7 +1424,8 @@ IF interaction_city = 1336:
    - Я могу анулировать аренду прямо сейчас, <<$master_name>>. Вы сэкономите <<estate_cost_lab[$estate]>> в декаду.'
  $yes = {lab = 0
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 3
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1435,7 +1441,8 @@ IF interaction_city = 1337:
  $yes = {pen = 1
 sparks -= 10
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 3
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1450,7 +1457,8 @@ IF interaction_city = 1338:
    - Я могу анулировать аренду прямо сейчас, <<$master_name>>. Только учтите, если у вас там сейчас есть живое исчадие, нам придётся его уничтожить.'
  $yes = {pen = 0
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 3
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1469,7 +1477,8 @@ $bg['study'] = $interior_study[$study]
 $bg['home_lux'] = $interior_bg[$study]
 $place_info['study'] = $interior_study_info[$study]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 41
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1489,7 +1498,8 @@ $bg['study'] = $interior_study[$study]
 $bg['home_lux'] = $interior_bg[$study]
 $place_info['study'] = $interior_study_info[$study]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 41
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1509,7 +1519,8 @@ $bg['study'] = $interior_study[$study]
 $bg['home_lux'] = $interior_bg[$study]
 $place_info['study'] = $interior_study_info[$study]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 41
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1529,7 +1540,8 @@ $bg['study'] = $interior_study[$study]
 $bg['home_lux'] = $interior_bg[$study]
 $place_info['study'] = $interior_study_info[$study]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 41
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1549,7 +1561,8 @@ $bg['study'] = $interior_study[$study]
 $bg['home_lux'] = $interior_bg[$study]
 $place_info['study'] = $interior_study_info[$study]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 41
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1569,7 +1582,8 @@ $bg['study'] = $interior_study[$study]
 $bg['home_lux'] = $interior_bg[$study]
 $place_info['study'] = $interior_study_info[$study]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 41
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1589,7 +1603,8 @@ $bg['study'] = $interior_study[$study]
 $bg['home_lux'] = $interior_bg[$study]
 $place_info['study'] = $interior_study_info[$study]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 41
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1609,7 +1624,8 @@ $bg['study'] = $interior_study[$study]
 $bg['home_lux'] = $interior_bg[$study]
 $place_info['study'] = $interior_study_info[$study]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 41
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1629,7 +1645,8 @@ $bg['study'] = $interior_study[$study]
 $bg['home_lux'] = $interior_bg[$study]
 $place_info['study'] = $interior_study_info[$study]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 41
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1649,7 +1666,8 @@ $bg['study'] = $interior_study[$study]
 $bg['home_lux'] = $interior_bg[$study]
 $place_info['study'] = $interior_study_info[$study]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 41
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1669,7 +1687,8 @@ $bg['study'] = $interior_study[$study]
 $bg['home_lux'] = $interior_bg[$study]
 $place_info['study'] = $interior_study_info[$study]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 41
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1689,7 +1708,8 @@ $bg['study'] = $interior_study[$study]
 $bg['home_lux'] = $interior_bg[$study]
 $place_info['study'] = $interior_study_info[$study]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 41
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1708,7 +1728,8 @@ $bed = 'basic'
 $bg['bedroom'] = $interior_bed[$bed]
 $place_info['bedroom'] = $interior_bed_info[$bed]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 42
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1727,7 +1748,8 @@ sparks -= 15
 $bg['bedroom'] = $interior_bed[$bed]
 $place_info['bedroom'] = $interior_bed_info[$bed]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 42
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1746,7 +1768,8 @@ sparks -= 25
 $bg['bedroom'] = $interior_bed[$bed]
 $place_info['bedroom'] = $interior_bed_info[$bed]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 42
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1765,7 +1788,8 @@ sparks -= 25
 $bg['bedroom'] = $interior_bed[$bed]
 $place_info['bedroom'] = $interior_bed_info[$bed]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 42
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1784,7 +1808,8 @@ sparks -= 30
 $bg['bedroom'] = $interior_bed[$bed]
 $place_info['bedroom'] = $interior_bed_info[$bed]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 42
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1803,7 +1828,8 @@ sparks -= 50
 $bg['bedroom'] = $interior_bed[$bed]
 $place_info['bedroom'] = $interior_bed_info[$bed]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 42
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1822,7 +1848,8 @@ sparks -= 100
 $bg['bedroom'] = $interior_bed[$bed]
 $place_info['bedroom'] = $interior_bed_info[$bed]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 42
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1841,7 +1868,8 @@ sparks -= 100
 $bg['bedroom'] = $interior_bed[$bed]
 $place_info['bedroom'] = $interior_bed_info[$bed]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 42
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1860,7 +1888,8 @@ sparks -= 150
 $bg['bedroom'] = $interior_bed[$bed]
 $place_info['bedroom'] = $interior_bed_info[$bed]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 42
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1879,7 +1908,8 @@ sparks -= 150
 $bg['bedroom'] = $interior_bed[$bed]
 $place_info['bathroom'] = $interior_bed_info[$bed]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 42
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1898,7 +1928,8 @@ sparks -= 150
 $bg['bedroom'] = $interior_bed[$bed]
 $place_info['bedroom'] = $interior_bed_info[$bed]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 42
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1917,7 +1948,8 @@ sparks -= 200
 $bg['bedroom'] = $interior_bed[$bed]
 $place_info['bedroom'] = $interior_bed_info[$bed]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 42
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1937,7 +1969,8 @@ sparks -= 20
 $bg['kitchen'] = $interior_kitchen[$kitchen]
 $place_info['kitchen'] = $interior_kitchen_info[$kitchen]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 43
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1956,7 +1989,8 @@ sparks -= 20
 $bg['kitchen'] = $interior_kitchen[$kitchen]
 $place_info['kitchen'] = $interior_kitchen_info[$kitchen]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 43
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1975,7 +2009,8 @@ sparks -= 20
 $bg['kitchen'] = $interior_kitchen[$kitchen]
 $place_info['kitchen'] = $interior_kitchen_info[$kitchen]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 43
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -1995,7 +2030,8 @@ sparks -= 50
 $bg['kitchen'] = $interior_kitchen[$kitchen]
 $place_info['kitchen'] = $interior_kitchen_info[$kitchen]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 43
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2014,7 +2050,8 @@ sparks -= 50
 $bg['kitchen'] = $interior_kitchen[$kitchen]
 $place_info['kitchen'] = $interior_kitchen_info[$kitchen]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 43
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2033,7 +2070,8 @@ sparks -= 20
 $bg['bathroom'] = $interior_bath[$bath]
 $place_info['bathroom'] = $interior_bath_info[$bath]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 44
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2052,7 +2090,8 @@ sparks -= 20
 $bg['bathroom'] = $interior_bath[$bath]
 $place_info['bathroom'] = $interior_bath_info[$bath]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 44
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2071,7 +2110,8 @@ sparks -= 50
 $bg['bathroom'] = $interior_bath[$bath]
 $place_info['bathroom'] = $interior_bath_info[$bath]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 44
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2090,7 +2130,8 @@ sparks -= 50
 $bg['bathroom'] = $interior_bath[$bath]
 $place_info['bathroom'] = $interior_bath_info[$bath]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 44
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2109,7 +2150,8 @@ sparks -= 50
 $bg['bathroom'] = $interior_bath[$bath]
 $place_info['bathroom'] = $interior_bath_info[$bath]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 44
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2128,7 +2170,8 @@ sparks -= 50
 $bg['bathroom'] = $interior_bath[$bath]
 $place_info['bathroom'] = $interior_bath_info[$bath]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 44
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2147,7 +2190,8 @@ sparks -= 100
 $bg['bathroom'] = $interior_bath[$bath]
 $place_info['bathroom'] = $interior_bath_info[$bath]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 44
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2184,7 +2228,8 @@ sparks -= 0
 $bg['dungeon'] = $interior_dungeon[$dungeon]
 $place_info['dungeon'] = $interior_dungeon_info[$dungeon]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 45
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2203,7 +2248,8 @@ sparks -= 20
 $bg['dungeon'] = $interior_dungeon[$dungeon]
 $place_info['dungeon'] = $interior_dungeon_info[$dungeon]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 45
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2222,7 +2268,8 @@ sparks -= 10
 $bg['dungeon'] = $interior_dungeon[$dungeon]
 $place_info['dungeon'] = $interior_dungeon_info[$dungeon]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 45
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2241,7 +2288,8 @@ sparks -= 10
 $bg['dungeon'] = $interior_dungeon[$dungeon]
 $place_info['dungeon'] = $interior_dungeon_info[$dungeon]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 45
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2260,7 +2308,8 @@ sparks -= 20
 $bg['dungeon'] = $interior_dungeon[$dungeon]
 $place_info['dungeon'] = $interior_dungeon_info[$dungeon]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 45
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2279,7 +2328,8 @@ sparks -= 20
 $bg['dungeon'] = $interior_dungeon[$dungeon]
 $place_info['dungeon'] = $interior_dungeon_info[$dungeon]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 45
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2298,7 +2348,8 @@ sparks -= 20
 $bg['dungeon'] = $interior_dungeon[$dungeon]
 $place_info['dungeon'] = $interior_dungeon_info[$dungeon]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 45
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2317,7 +2368,8 @@ sparks -= 25
 $bg['dungeon'] = $interior_dungeon[$dungeon]
 $place_info['dungeon'] = $interior_dungeon_info[$dungeon]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 45
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2336,7 +2388,8 @@ sparks -= 25
 $bg['dungeon'] = $interior_dungeon[$dungeon]
 $place_info['dungeon'] = $interior_dungeon_info[$dungeon]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 45
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2355,7 +2408,8 @@ sparks -= 50
 $bg['dungeon'] = $interior_dungeon[$dungeon]
 $place_info['dungeon'] = $interior_dungeon_info[$dungeon]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 45
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2374,7 +2428,8 @@ sparks -= 50
 $bg['dungeon'] = $interior_dungeon[$dungeon]
 $place_info['dungeon'] = $interior_dungeon_info[$dungeon]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 45
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2393,7 +2448,8 @@ sparks -= 50
 $bg['dungeon'] = $interior_dungeon[$dungeon]
 $place_info['dungeon'] = $interior_dungeon_info[$dungeon]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 45
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2413,7 +2469,8 @@ sparks -= 0
 $bg['bouduar'] = $interior_bouduar[$bouduar]
 $place_info['bouduar'] = $interior_bouduar_info[$bouduar]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 46
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2432,7 +2489,8 @@ sparks -= 10
 $bg['bouduar'] = $interior_bouduar[$bouduar]
 $place_info['bouduar'] = $interior_bouduar_info[$bouduar]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 46
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2451,7 +2509,8 @@ sparks -= 20
 $bg['bouduar'] = $interior_bouduar[$bouduar]
 $place_info['bouduar'] = $interior_bouduar_info[$bouduar]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 46
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2470,7 +2529,8 @@ sparks -= 20
 $bg['bouduar'] = $interior_bouduar[$bouduar]
 $place_info['bouduar'] = $interior_bouduar_info[$bouduar]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 46
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2489,7 +2549,8 @@ sparks -= 50
 $bg['bouduar'] = $interior_bouduar[$bouduar]
 $place_info['bouduar'] = $interior_bouduar_info[$bouduar]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 46
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2508,7 +2569,8 @@ sparks -= 50
 $bg['bouduar'] = $interior_bouduar[$bouduar]
 $place_info['bouduar'] = $interior_bouduar_info[$bouduar]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 46
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2527,7 +2589,8 @@ sparks -= 50
 $bg['bouduar'] = $interior_bouduar[$bouduar]
 $place_info['bouduar'] = $interior_bouduar_info[$bouduar]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 46
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2546,7 +2609,8 @@ sparks -= 100
 $bg['bouduar'] = $interior_bouduar[$bouduar]
 $place_info['bouduar'] = $interior_bouduar_info[$bouduar]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 46
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2565,7 +2629,8 @@ sparks -= 150
 $bg['bouduar'] = $interior_bouduar[$bouduar]
 $place_info['bouduar'] = $interior_bouduar_info[$bouduar]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 46
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2584,7 +2649,8 @@ sparks -= 200
 $bg['bouduar'] = $interior_bouduar[$bouduar]
 $place_info['bouduar'] = $interior_bouduar_info[$bouduar]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 46
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2603,7 +2669,8 @@ sparks -= 250
 $bg['bouduar'] = $interior_bouduar[$bouduar]
 $place_info['bouduar'] = $interior_bouduar_info[$bouduar]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 46
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2622,7 +2689,8 @@ sparks -= 20
 $bg['lab'] = $interior_lab[$lab]
 $place_info['lab'] = $interior_lab_info[$lab]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 47
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2641,7 +2709,8 @@ sparks -= 20
 $bg['lab'] = $interior_lab[$lab]
 $place_info['lab'] = $interior_lab_info[$lab]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 47
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2660,7 +2729,8 @@ sparks -= 50
 $bg['lab'] = $interior_lab[$lab]
 $place_info['lab'] = $interior_lab_info[$lab]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 47
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2679,7 +2749,8 @@ sparks -= 100
 $bg['lab'] = $interior_lab[$lab]
 $place_info['lab'] = $interior_lab_info[$lab]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 47
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2698,7 +2769,8 @@ sparks -= 100
 $bg['lab'] = $interior_lab[$lab]
 $place_info['lab'] = $interior_lab_info[$lab]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 47
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2717,7 +2789,8 @@ sparks -= 100
 $bg['lab'] = $interior_lab[$lab]
 $place_info['lab'] = $interior_lab_info[$lab]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 47
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2736,7 +2809,8 @@ sparks -= 100
 $bg['lab'] = $interior_lab[$lab]
 $place_info['lab'] = $interior_lab_info[$lab]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 47
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -2785,6 +2859,7 @@ npc = 0
 gt 'guild'}
  $no = {contract['active'] = 2
 npc = 0
+gs 'generate_stock'
 gt 'guild'}  
  gt 'choice_screen'
 END
@@ -3140,7 +3215,8 @@ sparks -= spm_price
 master_energy -= 5
 interaction_city = 19410
 gt 'interaction_city'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 5
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -3159,7 +3235,8 @@ sparks -= spm_price
 master_energy -= 5
 interaction_city = 19410
 gt 'interaction_city'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 5
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -3178,7 +3255,8 @@ sparks -= spm_price
 master_energy -= 5
 interaction_city = 19410
 gt 'interaction_city'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 5
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -3197,7 +3275,8 @@ sparks -= spm_price
 master_energy -= 5
 interaction_city = 19410
 gt 'interaction_city'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 5
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -3216,7 +3295,8 @@ sparks -= spm_price
 master_energy -= 5
 interaction_city = 19410
 gt 'interaction_city'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 5
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -3235,7 +3315,8 @@ sparks -= spm_price
 master_energy -= 5
 interaction_city = 19410
 gt 'interaction_city'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 5
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -4297,7 +4378,8 @@ slave_rate['stamina'] -= 5
 slave['reabilitation'] = 2
 slave['fertility'] = -1
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 2
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -4318,7 +4400,8 @@ slave_rate['stamina'] -= 10
 slave['reabilitation'] = 5
 dynamic $enlarge_breast
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 2
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -4339,7 +4422,8 @@ dynamic $slave_energy_drop
 slave_rate['stamina'] -= 3
 slave['reabilitation'] = 1
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 2
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -4361,7 +4445,8 @@ slave['beauty_enchanced'] = 1
 slave_rate['beauty'] += 80
 interaction_city = 33241
 gt 'interaction_city'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 2
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -4376,7 +4461,8 @@ IF interaction_city = 33241:
    - Если пожелаете, мы можем не просто убрать недостатки, но и полностью изменить внешность вашей рабыни. Работать с костной структурой всё равно придется, так почему бы не подогнать её под ваши личные вкусы?'
  $yes = {txt = 0
 gt 'plastics'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 2
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -4397,7 +4483,8 @@ slave_rate['stamina'] -= 15
 slave['reabilitation'] = 10
 slave['lactation'] = 1
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 2
+gt 'shop_general'}
  gt 'choice_screen'
 END
 
@@ -4418,7 +4505,8 @@ slave['reabilitation'] = 20
 slave['fertility'] = 1
 slave['vaginal_modification'] = 4
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 2
+gt 'shop_general'}
  gt 'choice_screen'
 END
 

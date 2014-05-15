@@ -453,11 +453,11 @@ color:#191970;
 
 #bg_blue_script_right {
 position:absolute;
-left:255px;
+left:260px;
 top:28px;
-width:770px;
+width:765px;
 height:570px;
-font-size:17%;
+font-size:16%;
 font-family:"Segoe Print";
 color:#191970;
 }
@@ -974,9 +974,9 @@ height:30px;
 
 #close_far {
 position:absolute;
-left:1235px;
-top:15px;
-width:40px;
+left:750px;
+top:550px;
+width:30px;
 height:30px;
 }
 
@@ -1273,6 +1273,22 @@ width:25px;
 height:25px;
 }
 
+#chekbox_15l {
+position:absolute;
+left:265px;
+top:549px;
+width:25px;
+height:25px;
+}
+
+#chekbox_16l {
+position:absolute;
+left:265px;
+top:578px;
+width:25px;
+height:25px;
+}
+
 #chekbox_1r {
 position:absolute;
 left:1012px;
@@ -1547,16 +1563,16 @@ height:48px;
 
 #auction_rise_up {
 position:absolute;
-left:25px;
-top:15px;
+left:530px;
+top:535px;
 width:50px;
 height:50px;
 }
 
 #auction_price {
 position:absolute;
-left:80px;
-top:15px;
+left:580px;
+top:540px;
 width:250px;
 height:100px;
 font-size:35%;
@@ -1567,7 +1583,7 @@ font-family:Victoriana;
 #auction_next {
 position:absolute;
 left:725px;
-top:525px;
+top:15px;
 width:50px;
 height:50px;
 }
@@ -1909,7 +1925,7 @@ background-image:content/a.jpg;
 position:absolute;
 left:1090px;
 top:15px;
-width:150px;
+width:180px;
 height:30px;
 text-align:center;
 }
@@ -2044,6 +2060,7 @@ top:300px;
 width:220px;
 height:450px;
 text-align:center;
+font-size:17%;
 }
 
 #enemy_conditions {

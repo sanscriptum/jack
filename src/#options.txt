@@ -1320,6 +1320,7 @@ $text_display += {<br><div id="under">Другие услуги<br><div id = "cl
 !Колизей
 
 $colloseum_options[1] = { 
+ $sp_text[1] = '   Вы заходите в служебные помешения под амфитеатром. Стражники пропускают вас без проблем - у гильдии работорговцев всегда есть дела в школе гладиаторов и в стойлах. Осталось только найти нужного человека.' 
  $text_display = '<br>'
  $text_display += {<br><div id="under">Ланиста<br><div id = "clear"><a href = 'EXEC: sp_txt = 21 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Конюх<br><div id = "clear"><a href = 'EXEC: sp_txt = 22 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
@@ -1432,6 +1433,7 @@ $colloseum_options[24] = {
 }
 
 $colloseum_options[2] = { 
+ $sp_text[2] = ''
  $text_display += {<br><br><div id="under">- С безоружной рабыней<br><div id = "clear"><a href = 'EXEC: colloseum_fight = 1 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<div id="under">- С надзирательницей<br><div id = "clear"><a href = 'EXEC: colloseum_fight = 2 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<div id="under">- С шиноби<br><div id = "clear"><a href = 'EXEC: colloseum_fight = 3 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}

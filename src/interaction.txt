@@ -1293,7 +1293,8 @@ IF interaction = 1213:
  $place = 'bedroom'   
  $special_part = {
   master_medic_rate += 1
- if slave["nurse_affinity_revealed"] = 0: slave["nurse_affinity_revealed"] = 1     
+  if diligence > 2 and slave["nurse"] < 5: slave_rate["intellect"] += 1
+  if slave["nurse_affinity_revealed"] = 0: slave["nurse_affinity_revealed"] = 1     
  }  
 END
 
@@ -1318,6 +1319,7 @@ IF interaction = 1214:
  add_house_mess = 2
  $special_part = {
  master_butler_rate += 1 
+ if diligence > 2 and slave["secretary"] < 5: slave_rate["intellect"] += 1
  if slave["secretary_affinity_revealed"] = 0: slave["secretary_affinity_revealed"] = 1     
  }   
 END
@@ -1401,6 +1403,7 @@ IF interaction = 1223:
   if slave["gladiatrix_affinity_revealed"] = 0: slave["gladiatrix_affinity_revealed"] = 1     
   slave["calories"] -= 2
   slave_rate["stamina"] += 1
+  if diligence > 2 and slave["gladiatrix"] < 5: slave_rate["ego"] += 1
   master_fighter_rate += 1  
   master_str_rate += 1
   }
@@ -1607,6 +1610,7 @@ IF interaction = 1243:
  add_slave_hygiene += 10
  add_house_mess += 20
  $special_part = {  
+  if diligence > 2 and slave["enchanter"] < 5: slave_rate["intellect"] += 1
   if slave["enchanter_affinity_revealed"] = 0:  slave["enchanter_affinity_revealed"] = 1
   master_mage_rate += 1  
   }
@@ -4591,6 +4595,7 @@ IF interaction = 1713:
  add_house_mess += 3 
  $special_part = {  
   sparks -= couch_price[slave["nurse"]]   
+  if diligence > 2 and slave["nurse"] < 5: slave_rate["intellect"] += 1 
   if slave["nurse_affinity_revealed"] = 0:  slave["nurse_affinity_revealed"] = 1 
   }
 END
@@ -4614,6 +4619,7 @@ IF interaction = 1714:
  add_house_mess += 2
  $special_part = {  
   sparks -= couch_price[slave["secretary"]]    
+  if diligence > 2 and slave["secretary"] < 5: slave_rate["intellect"] += 1 
   if slave["secretary_affinity_revealed"] = 0:  slave["secretary_affinity_revealed"] = 1 
   }
 END
@@ -4688,6 +4694,7 @@ IF interaction = 1723:
  $special_part = {  
   sparks -= couch_price[slave["gladiatrix"]]    
   slave["calories"] -= 2
+  if diligence > 2 and slave["gladiatrix"] < 5: slave_rate["ego"] += 1
   slave_rate["stamina"] += 1   
   if slave["gladiatrix_affinity_revealed"] = 0:  slave["gladiatrix_affinity_revealed"] = 1 
   }
@@ -4827,6 +4834,7 @@ IF interaction = 1734:
  add_house_mess += 5
  $special_part = {  
   sparks -= couch_price[slave["enchanter"]]     
+  if diligence > 2 and slave["enchanter"] < 5: slave_rate["intellect"] += 1 
   if slave["enchanter_affinity_revealed"] = 0:  slave["enchanter_affinity_revealed"] = 1 
   }
 END
@@ -5123,7 +5131,7 @@ IF interaction = 571:
  repulse = -2
  $special_part = {
  lab_store["koffe"] -= 1
- slave_mood['neg_slave_koffe'] = 0
+ slave['neg_slave_koffe'] = 0
  IF slave['koffed'] = 0:  
   if slave['energy'] < 5: slave['energy'] += 1
   slave['koffed'] = 1
@@ -5136,7 +5144,7 @@ IF interaction = 572:
  repulse = -1
  $special_part = {
  lab_store["kanabis"] -= 1
- slave_mood['pos_slave_kannabis'] = 1
+ slave['pos_slave_kannabis'] = 1
  a = RAND (1,100)
  if slave['kannabis_pressure'] > a: slave_rate["intellect"] -= 1
  slave['kannabis_pressure'] += 1
@@ -5148,10 +5156,12 @@ IF interaction = 573:
  repulse = -1
  $special_part = {
  frige["alcohol"] -= 1
- slave_mood['neg_slave_alco'] = 0
- IF slave_mood['pos_slave_alco'] = 0:  
-  slave_mood['pos_slave_alco'] = 100
+ slave['neg_slave_alco'] = 0
+ IF slave['on_alco'] = 0:  
+  slave['on_alco'] = 1
+  slave['pos_slave_alco'] = 1
   else
+  msg "Изрядно напившись, ваша воспитуемая падает на пол без сознания."
   slave['energy'] = -4
   dynamic $slave_energy_drop
  END 
@@ -5163,12 +5173,14 @@ IF interaction = 574:
  repulse = 1
  $special_part = {
  lab_store["meth"] -= 1
- slave_mood['neg_slave_meth'] = 0
+ slave['neg_slave_meth'] = 0
  IF slave['on_meth'] = 0:  
   slave['energy'] = 5
   slave['on_meth'] = 1
   else
-  slave_rate["stamina"] = 0
+  msg "Вы решаете дать воспитуемой еще одну дозу в тот же день. Вдохнув пыль, ваша воспитуемая внезапно начинает трястись в припадке и падает на пол без сознания. Кажется у неё из носа идет кровь."
+  slave_rate['stamina'] = 4
+  slave['stamina'] = 0
  END 
  }
 END
@@ -5178,13 +5190,15 @@ IF interaction = 575:
  repulse = 3
  $special_part = {
  lab_store["opium"] -= 1
- slave_mood['neg_slave_opium'] = 0
- IF slave_mood['pos_slave_opium'] = 0:  
-  slave['energy'] = 5
-  slave_mood['pos_slave_opium'] = 100
-  gs '$mod_slave_rise', 1
+ slave['neg_slave_opium'] = 0
+ IF slave['on_opium'] = 0:  
+  slave['on_opium'] = 1
+  slave['pos_slave_opium'] = 1
+  gs '$mod_slave_rise', 3
   else
-  slave_rate["stamina"] = 0
+  msg "Вы решаете дать воспитуемой еще одну дозу в тот же день. После применения ваша воспитумая закатила глаза и стоит на месте с глупой улыбкой на лице некоторое время, игнорируя ваши команды. Затем она падает на пол, изо рта идет пена вперемешку с кровью."
+  slave_rate['stamina'] = 4
+  slave['stamina'] = 0
  END 
  }
 END
@@ -5195,7 +5209,7 @@ IF interaction = 581:
  $special_part = {
  вакхический_нектар -= 1
  slave_rate['arousal'] += 5
- if slave_mood['pos_slave_alco'] < 1: slave_mood['pos_slave_alco'] = 1
+ if slave['pos_slave_alco'] < 1: slave['pos_slave_alco'] = 1
  }
 END
 
@@ -5242,14 +5256,14 @@ IF interaction = 586:
  $interaction_type = 'get_grug'
  repulse = 1
  $special_part = {
-     приворотное_зелье -= 1
-     !TODO: че за 'pos_slave_love', и почему не используется нигде в коде?
-     !Хз что будет, если долбануть несколько раз подряд. Короче впилил костыль
-     ! slave_rate["moral"] += 100 выглядит очень большим числом
-     !if slave_mood['pos_slave_love'] = 0: slave_rate["moral"] += 100
-     !slave_mood['pos_slave_love'] = 100
-     slave_mood['pos_slave_love'] = 100
-     slave_rate["moral"] += 100
+ приворотное_зелье -= 1
+ IF slave['on_love_drug'] = 0:
+  slave['on_love_drug'] = 1
+  slave['pos_slave_love'] = 100
+  slave_rate["moral"] += 100
+  else
+  msg "Вы даете воспитуемой приворотное зелье, но кажется оно не сработает во второй раз. По крайней мере вы не видите никакого эффекта."
+ END
  }
 END
 
@@ -5335,6 +5349,9 @@ IF interaction = 4113:
  add_slave_hygiene = 1 + slave["nurse"]
  add_house_mess = 1 + slave["nurse"]
  $place = 'bedroom'   
+ $special_part = {   
+ if diligence > 2 and slave["nurse"] < 5: slave_rate["intellect"] += 1 
+ }
 END
 
 !Урок по делопроизводству (ассистент)
@@ -5353,6 +5370,9 @@ IF interaction = 4114:
  add_master_hygiene = 1 
  add_slave_hygiene = 1 
  add_house_mess = 2
+ $special_part = {   
+ if diligence > 2 and slave["secretary"] < 5: slave_rate["intellect"] += 1 
+ }
 END
 
 !Урок гимнастики (ассистент)
@@ -5416,6 +5436,7 @@ IF interaction = 4123:
  $special_part = {  
   slave["calories"] -= 2
   slave_rate["stamina"] += 1
+  if diligence > 2 and slave["gladiatrix"] < 5: slave_rate["ego"] += 1
   assistant_rate["stamina"] += 1
   }
   if hall = 1:  $place = 'hall'    
@@ -5496,6 +5517,9 @@ IF interaction = 4142:
  add_slave_hygiene += 1
  add_house_mess += 3
  $place = 'lab'    
+ $special_part = {   
+ if diligence > 2 and slave["enchanter"] < 5: slave_rate["intellect"] += 1 
+ }
 END
 
 !Урок музыки (ассистент) 
@@ -5591,6 +5615,7 @@ IF interaction = 563:
  add_slave_hygiene += 2
  $special_part = {  
   sparks -= school_price[slave["nurse"]]    
+  if diligence > 2 and slave["nurse"] < 5: slave_rate["intellect"] += 1  
   if slave["nurse_affinity_revealed"] = 0:  slave["nurse_affinity_revealed"] = 1 
   }
 END
@@ -5610,6 +5635,7 @@ IF interaction = 564:
  add_slave_hygiene += 2
  $special_part = {  
   sparks -= school_price[slave["secretary"]]    
+  if diligence > 2 and slave["secretary"] < 5: slave_rate["intellect"] += 1 
   if slave["secretary_affinity_revealed"] = 0:  slave["secretary_affinity_revealed"] = 1 
   }
 END
@@ -5672,6 +5698,7 @@ IF interaction = 567:
   slave["calories"] -= 1
   slave_rate["stamina"] += 1  
   sparks -= school_price[slave["gladiatrix"]]    
+  if diligence > 2 and slave["gladiatrix"] < 5: slave_rate["ego"] += 1
   if slave["gladiatrix_affinity_revealed"] = 0:  slave["gladiatrix_affinity_revealed"] = 1 
   }
 END
@@ -5790,6 +5817,7 @@ IF interaction = 5613:
  add_slave_hygiene += 5
  $special_part = {  
   sparks -= school_price[slave["enchanter"]]    
+  if diligence > 2 and slave["enchanter"] < 5: slave_rate["intellect"] += 1
   if slave["enchanter_affinity_revealed"] = 0:  slave["enchanter_affinity_revealed"] = 1 
   }
 END

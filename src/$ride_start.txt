@@ -20,11 +20,10 @@ trace_segment = 1
 
 !$BACKIMAGE = 'content/pic/bg_fight.jpg'
 !новая пикча by XxX_dark-youba-pojeeratyel'-tvoyei-pees'ki-the_vm-\|-_-_-^__^-_-_-|/MLG_PRO_YOLO#2014_RUS99N4giB4T0R_XxX
-IF old_menu_style = 1:
- $backimage = 'content/pic/bg_fight_old.jpg'
- else
- $backimage = 'content/pic/bg_ride.jpg'
-END
+if ui_style = 1:$backimage = 'content/pic/ui/old/bg_fight_old.jpg'
+if ui_style = 2:$backimage = 'content/pic/ui/grimdark/bg_ride.jpg'
+if ui_style = 0:$backimage = 'content/pic/ui/classic/bg_ride.jpg'
+
 MSG_X = 350
 
 $future_ride = $trace_forward_description[$trace[2]]

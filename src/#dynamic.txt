@@ -61,7 +61,7 @@ IF slave['age'] = CONST_INT['loli_age']:
  virgin_meat_gain = meat_gain
  meat_gain = 0
 END
-IF slave['age'] = CONST_INT['young_age'] and virginity = 1:
+IF slave['age'] = CONST_INT['young_age'] and virginity = 0:
  virgin_meat_gain = meat_gain
  meat_gain = 0
 END
@@ -989,15 +989,15 @@ gt curloc
 
 $master_cloth_list = {
 $equip_choice = ''
-$equip_choice += '<a href = "EXEC: $new_item = ''man_rugs'' & dynamic $slot_7_change">Поношенная одежда</a>'
-if comfy_robes > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''comfy_robes'' & dynamic $slot_7_change">Домашний халат</a>'
-if fancy_suit > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''fancy_suit'' & dynamic $slot_7_change">Красивая одежда</a>'
-if regal_suit > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''regal_suit'' & dynamic $slot_7_change">Пафосный наряд</a>'
-if formal_suit > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''formal_suit'' & dynamic $slot_7_change">Формальный костюм</a>'
-if aketon > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''aketon'' & dynamic $slot_7_change">Акетон</a>'
-if livery > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''livery'' & dynamic $slot_7_change">Ливрея</a>'
-if medic_robes > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''medic_robes'' & dynamic $slot_7_change">Медицинский халат</a>'
-if wizard_robes > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''wizard_robes'' & dynamic $slot_7_change">Роба волшебника</a>'
+$equip_choice += '<a href = "EXEC: $new_item = ''man_rugs'' & $info_text = $man_rugs_help & dynamic $slot_7_change">Поношенная одежда</a>'
+if comfy_robes > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''comfy_robes'' & $info_text = $comfy_robes_help & dynamic $slot_7_change">Домашний халат</a>'
+if fancy_suit > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''fancy_suit'' & $info_text = $fancy_suit_help & dynamic $slot_7_change">Красивая одежда</a>'
+if regal_suit > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''regal_suit'' & $info_text = $regal_suit_help & dynamic $slot_7_change">Пафосный наряд</a>'
+if formal_suit > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''formal_suit'' & $info_text = $formal_suit_help & dynamic $slot_7_change">Формальный костюм</a>'
+if aketon > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''aketon'' & $info_text = $aketon_help & dynamic $slot_7_change">Акетон</a>'
+if livery > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''livery'' & $info_text = $livery_help & dynamic $slot_7_change">Ливрея</a>'
+if medic_robes > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''medic_robes'' & $info_text = $medic_robes_help & dynamic $slot_7_change">Медицинский халат</a>'
+if wizard_robes > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''wizard_robes'' & $info_text = $wizard_robes_help & dynamic $slot_7_change">Роба волшебника</a>'
 gt curloc
 }
 
@@ -1114,7 +1114,8 @@ gt curloc
 
 $slave_cloth_list = {
 $equip_choice = ''
-$equip_choice += '<a href = "EXEC: $new_item = ''голая'' & dynamic $slot_24_change">Раздеть догола</a>'
+$info_text = '&nbsp'
+$equip_choice += '<a href = "EXEC: $new_item = ''голая'' & $info_text = $naked_help & dynamic $slot_24_change">Раздеть догола</a>'
 if slave_inventory['apron'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''apron'' & dynamic $slot_24_change">Фартук с оборками</a>'
 if slave_inventory['maid_dress'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''maid_dress'' & dynamic $slot_24_change">Униформа горничной</a>'
 if slave_inventory['nurse_dress'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''nurse_dress'' & dynamic $slot_24_change">Униформа медсестры</a>'

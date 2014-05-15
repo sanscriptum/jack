@@ -79,9 +79,9 @@ daily_cost = food_cost
 
 IF slave_stat_screen = 0:
  *p '<div id = "mark_one"><img src = "content\sel_button.png"></div>'
- *p '<div id = "mark_two"><a href = "EXEC: slave_stat_screen = 1 & gt curloc"><img src = "content\unsel_button.png"></a></div>'
- *p '<div id = "mark_three"><a href = "EXEC: slave_stat_screen = 2 & gt curloc"><img src = "content\unsel_button.png"></a></div>'
- *p '<div id = "mark_four"><a href = "EXEC: slave_stat_screen = 3 & gt curloc"><img src = "content\unsel_button.png"></a></div>' 
+ *p '<div id = "mark_two"><a href = "EXEC: slave_stat_screen = 1 & $info_text = ''&nbsp'' & gt curloc"><img src = "content\unsel_button.png"></a></div>'
+ *p '<div id = "mark_three"><a href = "EXEC: slave_stat_screen = 2 & $info_text = ''&nbsp'' & gt curloc"><img src = "content\unsel_button.png"></a></div>'
+ *p '<div id = "mark_four"><a href = "EXEC: slave_stat_screen = 3 & $info_text = '''' & gt curloc"><img src = "content\unsel_button.png"></a></div>' 
  *p '<div id="center_image"><img src = "content\pic\bg\<<$interior_study[$study]>>.jpg"></div>'
  *p '<div id="center_image"><img src="content\pic\<<$slave["fullimage"]>>.gif"></div>' 
  *p '<div id="left_padding">РЕЖИМ СНА: <BR><BR><BR><BR><BR><BR><BR>РЕЖИМ ПИТАНИЯ:<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>СЧЕТЧИК КАЛОРИЙ:</div>'  
@@ -270,11 +270,15 @@ END
 !ЗАКЛАДКА АНАТОМИИ
 !Убран хардкод с hairstyle_demo на hairstyle, волософикс
 If slave_stat_screen = 1:
- *p '<div id = "mark_one"><a href = "EXEC: slave_stat_screen = 0 & gt curloc"><img src = "content\unsel_button.png"></a></div>'
+ *p '<div id = "mark_one"><a href = "EXEC: slave_stat_screen = 0 & $info_text = '''' & gt curloc"><img src = "content\unsel_button.png"></a></div>'
  *p '<div id = "mark_two"><img src = "content\sel_button.png"></div>'
- *p '<div id = "mark_three"><a href = "EXEC: slave_stat_screen = 2 & gt curloc"><img src = "content\unsel_button.png"></a></div>'
- *p '<div id = "mark_four"><a href = "EXEC: slave_stat_screen = 3 & gt curloc"><img src = "content\unsel_button.png"></a></div>'  
- *p '<div id="center_image"><img src = "content\pic\bg\page_blank.gif"></div>'
+ *p '<div id = "mark_three"><a href = "EXEC: slave_stat_screen = 2 & $info_text = ''&nbsp'' & gt curloc"><img src = "content\unsel_button.png"></a></div>'
+ *p '<div id = "mark_four"><a href = "EXEC: slave_stat_screen = 3 & $info_text = '''' & gt curloc"><img src = "content\unsel_button.png"></a></div>'  
+ IF ui_style = 2: 
+  *p '<div id="center_image"><img src = "content\pic\ui\grimdark\bg\page_blank.gif"></div>'
+  else
+  *p '<div id="center_image"><img src = "content\pic\bg\page_blank.gif"></div>' 
+ END
  *p '<div id="upper_image"><img src = "content\pic\girls\body\<<$slave["boobs_img"]>>.jpg"></div>'
  *p '<div id="lower_image"><img src = "content\pic\girls\body\<<$slave["pussy_img"]>>.jpg"></div>' 
  *p '<div id = "upper_text">
@@ -297,11 +301,15 @@ END
 
 !Закладка снаряжения
 If slave_stat_screen = 2:
-    *p '<div id = "mark_one"><a href = "EXEC: slave_stat_screen = 0 & gt curloc"><img src = "content\unsel_button.png"></a></div>'
-    *p '<div id = "mark_two"><a href = "EXEC: slave_stat_screen = 1 & gt curloc"><img src = "content\unsel_button.png"></a></div>'
+    *p '<div id = "mark_one"><a href = "EXEC: slave_stat_screen = 0 & $info_text = '''' & gt curloc"><img src = "content\unsel_button.png"></a></div>'
+    *p '<div id = "mark_two"><a href = "EXEC: slave_stat_screen = 1 & $info_text = ''&nbsp'' & gt curloc"><img src = "content\unsel_button.png"></a></div>'
     *p '<div id = "mark_three"><img src = "content\sel_button.png"></div>'
-    *p '<div id = "mark_four"><a href = "EXEC: slave_stat_screen = 3 & gt curloc"><img src = "content\unsel_button.png"></a></div>'  
-    *p '<div id="center_image"><img src = "content\pic\bg\page_blank.gif"></div>'
+    *p '<div id = "mark_four"><a href = "EXEC: slave_stat_screen = 3 & $info_text = '''' & gt curloc"><img src = "content\unsel_button.png"></a></div>'  
+	IF ui_style = 2: 
+		*p '<div id="center_image"><img src = "content\pic\ui\grimdark\bg\page_blank.gif"></div>'
+		else
+		*p '<div id="center_image"><img src = "content\pic\bg\page_blank.gif"></div>' 
+	END
     *p '<div id = "center_text_column_1">'
         *p '<div style = "text-align: center;"><u>СНАРЯЖЕНИЕ ВОСПИТУЕМОЙ</u></div>'
         *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 20 & dynamic $slave_armor_list"><u>Доспехи:</u> <<$название_предмета[$slave["armor"]]>></a></div>'
@@ -328,9 +336,9 @@ If slave_stat_screen = 2:
 END
 
 If slave_stat_screen = 3:
- *p '<div id = "mark_one"><a href = "EXEC: slave_stat_screen = 0 & gt curloc"><img src = "content\unsel_button.png"></a></div>'
- *p '<div id = "mark_two"><a href = "EXEC: slave_stat_screen = 1 & gt curloc"><img src = "content\unsel_button.png"></a></div>'
- *p '<div id = "mark_three"><a href = "EXEC: slave_stat_screen = 2 & gt curloc"><img src = "content\unsel_button.png"></a></div>'
+ *p '<div id = "mark_one"><a href = "EXEC: slave_stat_screen = 0 & $info_text = '''' & gt curloc"><img src = "content\unsel_button.png"></a></div>'
+ *p '<div id = "mark_two"><a href = "EXEC: slave_stat_screen = 1 & $info_text = ''&nbsp'' & gt curloc"><img src = "content\unsel_button.png"></a></div>'
+ *p '<div id = "mark_three"><a href = "EXEC: slave_stat_screen = 2 & $info_text = ''&nbsp'' & gt curloc"><img src = "content\unsel_button.png"></a></div>'
  *p '<div id = "mark_four"><img src = "content\sel_button.png"></div>' 
  *p '<div id="center_image"><img src = "content\pic\bg\page_aura.gif"></div>'
  gs 'auspex_list'

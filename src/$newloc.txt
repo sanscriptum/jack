@@ -61,6 +61,7 @@ IF slave_state = CONST_INT['no_slave']:
  slave["pain_treat"] = 0
  abandon_treat = 0
  death_treat = 0
+ slave['on_love_drug'] = 0
  killvar 'slave' 
  killvar 'slave_rate' 
  killvar 'already_done_curslave'
@@ -590,12 +591,12 @@ END
 IF slave["secretary_affinity"] > 0: 
  if slave["secretary_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $секретарша">Талант: секретарша</a><BR>'    
 END
-IF slave["memory"] = 1:
+!"IF slave["memory"] = 1:
  if slave["memory_revealed"] > 0: $features_list += '<a href="EXEC: msg $Эйдетическая_память">Эйдетическая память</a><BR>' 
 END
 IF slave["memory"] = -1:
  if slave["memory_revealed"] > 0: $features_list += '<a href="EXEC: msg $Забывчивая">Забывчивая</a><BR>' 
-END
+END"
 IF slave["meekness"] > 0:
  if slave["meekness_revealed"] > 0: $features_list += '<a href="EXEC: msg $Дисциплинированная">Дисциплинированная</a><BR>' 
 END
@@ -766,7 +767,7 @@ assistant["fetishism"] = (assistant["sub_enema"] + assistant["sub_mazo"] + assis
 
 assistant["orgy"] = (assistant["sub_threesome"] + assistant["sub_dp"] + assistant["sub_tp"] + assistant["sub_gangbang"] + assistant["sub_bukake"])/5
 
-assistant["xenophily"] = (assistant["sub_zoosex"] + assistant["sub_bestiality"] + assistant["sub_insectsex"] + assistant["sub_tentacles"])/4
+assistant["xenophily"] = (assistant["sub_zoosex"] + assistant["sub_bestiality"] + assistant["sub_tentacles"])/3
 
 !Стиль
 assistant["style"] = (assistant["expression"] + assistant["callisthenics"] + assistant["makeup"] + assistant_dressup + assistant_jewelry)/4 - assistant["hygiene"] 

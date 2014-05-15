@@ -1,11 +1,9 @@
 # main_layout
 !Разметка основного игрового экрана
 INTEGRATED_ACTIONS = 0
-IF old_menu_style = 1:
- $backimage = 'content/pic/bg_main_old.jpg'
- else
- $backimage = 'content/pic/bg_main.jpg'
-END
+if ui_style = 1:$backimage = 'content/pic/ui/old/bg_main_old.jpg'
+if ui_style = 2:$backimage = 'content/pic/ui/grimdark/bg_main.jpg'
+if ui_style = 0:$backimage = 'content/pic/ui/classic/bg_main.jpg'
 
 SHOWOBJS 0
 SHOWSTAT 0

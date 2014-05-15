@@ -1,11 +1,9 @@
 # stats_layout
 !Разметка экрана статистики персонажа
 INTEGRATED_ACTIONS = 0
-IF old_menu_style = 1:
- $backimage = 'content/pic/bg_stat_old.jpg'
- else
- $backimage = 'content/pic/bg_stat.jpg'
-END
+if ui_style = 1:$backimage = 'content/pic/ui/old/bg_stat_old.jpg'
+if ui_style = 2:$backimage = 'content/pic/ui/grimdark/bg_stat.jpg'
+if ui_style = 0:$backimage = 'content/pic/ui/classic/bg_stat.jpg'
 
 SHOWOBJS 0
 SHOWSTAT 0

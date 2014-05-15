@@ -1,10 +1,8 @@
 # раскладка_бой
 !РАСКЛАДКА БОЕВОГО ИНТЕРФЕЙСА
-IF old_menu_style = 1:
- $backimage = 'content/pic/bg_fight_old.jpg'
- else
- $backimage = 'content/pic/bg_fight.jpg'
-END
+if ui_style = 1:$backimage = 'content/pic/ui/old/bg_fight_old.jpg'
+if ui_style = 2:$backimage = 'content/pic/ui/grimdark/bg_fight.jpg'
+if ui_style = 0:$backimage = 'content/pic/ui/classic/bg_fight.jpg'
 
 MSG_X = 350
 --- раскладка_бой ---------------------------------

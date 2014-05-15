@@ -180,11 +180,11 @@ IF slave["secretary_affinity_revealed"] = 1:
  slave["secretary_affinity_revealed"] = 2
 END
 
-IF slave["memory_revealed"] = 1:
+!"IF slave["memory_revealed"] = 1:
  IF slave["memory"] = 1: msg '<<$Эйдетическая_память>>'
  IF slave["memory"] = -1: msg '<<$Забывчивая>>'
  slave["memory_revealed"] = 2
-END
+END"
 
 IF slave["meekness_revealed"] = 1:
  IF slave["meekness"] > 0: msg '<<$Дисциплинированная>>'

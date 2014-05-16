@@ -2,8 +2,8 @@
 !ЭКРАН ПОДРОБНОЙ СТАТИСТИКИ ВОСПИТУЕМОЙ
 IF $info_text = '':
  $info_text = $psy_status[$slave_psy_status]
- if slave_state = CONST_INT['slave_faint']: $info_text = '<<$slave_name>> лежит без сил и тихо стонет. Она явно находится в очень плохом состоянии. Надо дать ей отдохнуть или даже оказать медицинскую помощь.'
- if slave_state = CONST_INT['slave_dead']: $info_text = '<<$slave_name>> мертва. Её бездыханный труп лежит на полу.'
+ if slave_state = CONST_INT['slave_faint']: $info_text = '   <<$slave_name>> лежит без сил и тихо стонет. Она явно находится в очень плохом состоянии. Надо дать ей отдохнуть или даже оказать медицинскую помощь.'
+ if slave_state = CONST_INT['slave_dead']: $info_text = '   <<$slave_name>> мертва. Её бездыханный труп лежит на полу.'
 END
 
 stat_importance['stamina'] = 1
@@ -77,6 +77,7 @@ IF vitamin = 1: food_cost += 1
 
 daily_cost = food_cost
 
+!$info_text = ''&nbsp'' - текст обнуляется если его нет, $info_text = '''' - показывается текст привязанный к вкладке
 IF slave_stat_screen = 0:
  *p '<div id = "mark_one"><img src = "content\sel_button.png"></div>'
  *p '<div id = "mark_two"><a href = "EXEC: slave_stat_screen = 1 & $info_text = ''&nbsp'' & gt curloc"><img src = "content\unsel_button.png"></a></div>'

@@ -357,6 +357,7 @@ IF slave["calories"] > 0 and slave_rate["fat"] => 1:
 END
 
 if slave["calories"] = 0: slave['starvation'] -= 1
+!убрано получение голодного мудлета если калории равны нулю
 if slave["calories"] < 0: slave['neg_hungry'] = 1 
 
 IF slave["calories"] > 0:
@@ -692,6 +693,7 @@ IF toilet_rule = 1:
  else
  toilet_rule_res = 0
 END
+!v_balls_rule = 1 - добавлен эффект для правила v-шарики
 IF v_balls_rule = 1:
  v_balls_rule_res = slave["obedience"] - slave["temper"]
  else
@@ -1356,6 +1358,7 @@ if prisoner_inventory['pony'] > 0: total_food_cost += 1
 cooked_food = -1
 
 !Определяем действия на конец дня
+!добавлена проверка на статус рабыни
 IF slave["arousal"] > slave["pride"] and slave["arousal"] > 1 and slave_state = CONST_INT['slave_exist']:
  slave_will_masturbate = 1
 END

@@ -39,6 +39,7 @@ IF $interaction_type = 'sell_slave_simple':
   sparks += common_price[demand_rating[$npc_id]]
   slave_state = CONST_INT['no_slave']
   IF fixed_brand_rise = 0:
+  !было brand_rate, что ломало прокачку рейта клейма мастера совсем и не давало прокачки
    if brand_reputation <= demand_rating[$npc_id]: brand_rate += demand_rating[$npc_id]
    !if faction_fame[$npc_alignment[$npc_id]] < demand_rating[$npc_id]: dynamic $rise_faction_fame
    IF faction_fame[$npc_alignment[$npc_id]] < demand_rating[$npc_id]: 
@@ -70,10 +71,11 @@ IF $interaction_type = 'sell_slave_complex':
   $text[1] = $buy_quote[$npc_id]
   if  noprice = 0: sparks += common_price[demand_rating[$npc_id]]
   slave_state = CONST_INT['no_slave']
+  !фиксированный код для королей
   IF demand_rating[$npc_id] = 5:
    brand_rate += 20
    else
-   brand_rate += demand_rating[$npc_id]*2
+   brand_rate += demand_rating[$npc_id]
   END
   
   !faction_fame[$npc_alignment[$npc_id]] < demand_rating[$npc_id]: dynamic $rise_faction_fame

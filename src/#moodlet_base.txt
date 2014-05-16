@@ -284,7 +284,7 @@ $mood_description['neg_slave_drunk'] = '   [<<$slave_name>>]
 $mood_description['neg_slave_ill'] = '   [<<$slave_name>>]
 - Мне в туалет больно ходить и выделения какие-то странные. Наверное, я заразилась...'
 $mood_description['neg_slave_looser'] = '   [<<$slave_name>>]
-- Я не виновата в этом проигрыше! Враги были слишком сильные... '
+- Я не виновата в этом проигрыше! Противники были слишком сильные... '
 $mood_description['neg_'] = '   [<<$slave_name>>]
 - '
 $mood_description['neg_'] = '   [<<$slave_name>>]

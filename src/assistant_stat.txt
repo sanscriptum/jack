@@ -1,4 +1,6 @@
 # assistant_stat
+!переписан кусок кода с инфотекстом ассистентки, теперь он весь в одном файле, убрана часть из main_screen
+
 IF $assitant_info_text = '':
 	$assitant_info_text = '   [<<$assistant_name>>]
   - Новенькие рабыни часто могут попытаться убежать или сделать ещё какую-нибудь глупость. Я буду следить за ними по мере своего разумения и преданности. Но если вы прикажете мне надзирать за ней, то я уделю этому особое внимание, употребив всю свою волю и боевые навыки для того, чтобы сохранить ваш товар.'
@@ -76,6 +78,7 @@ gs 'stats_layout'
 "
 
 !Основная закладка
+!$assitant_info_text = ''&nbsp'' - окошко корректно обнуляется при переключении
 IF assistant_stat_screen = 0:
  *p '<div id = "mark_one"><img src = "content\sel_button.png"></div>'
 ! *p '<div id = "mark_two"><a href = "EXEC: assistant_stat_screen = 1 & gt curloc"><img src = "content\unsel_button.png"></a></div>'
@@ -208,6 +211,7 @@ END
 END
  
 !Закладка снаряжения
+!$assitant_info_text = '''' - окошко корректно показывает реплику ассистентки при переключении
 IF assistant_stat_screen = 2:
     *p '<div id = "mark_one"><a href = "EXEC: assistant_stat_screen = 0 & $assitant_info_text = '''' & gt curloc"><img src = "content\unsel_button.png"></a></div>'
     !*p '<div id = "mark_two"><a href = "EXEC: assistant_stat_screen = 1 & gt curloc"><img src = "content\unsel_button.png"></a></div>'

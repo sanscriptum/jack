@@ -60,7 +60,7 @@ $race_drahonthees['crushed'] = {}
 $race_russian['crushed'] = {}
 $race_finishline['crushed'] = {}
 
-$rider_description['master'] = 'Ваша колесница пока что держится - надо продолжать гонку'
+$rider_description['master'] = 'Ваша колесница пока что держится - надо продолжать гонку.'
 $race_startline['master'] = {}
 $race_straight['master'] = {}
 $race_curve['master'] = {}
@@ -147,7 +147,7 @@ speed_points['ride_avgia'] += RAND(17,20)
 $rider_name['ride_geralt'] = 'Джеральд'
 $rider_ava['ride_geralt'] = 'content/pic/mob/ride_geralt.jpg'
 rider_structure['ride_geralt'] = 5
-$rider_description['ride_geralt'] = 'Джеральд скорее боец, чем гонщик. В качестве скакуньи он использует орчиху, не слишком быструю, но невероятно сильную. Колесница предельно забронирована и утяжелена'
+$rider_description['ride_geralt'] = 'Джеральд скорее боец, чем гонщик. В качестве скакуньи он использует орчиху, не слишком быструю, но невероятно сильную. Колесница предельно забронирована и утяжелена.'
 $race_startline['ride_geralt'] = {
 speed_points['ride_geralt'] += RAND(11,13)
 }

@@ -61,6 +61,7 @@ IF slave['age'] = CONST_INT['loli_age']:
  virgin_meat_gain = meat_gain
  meat_gain = 0
 END
+!было virginity = 1, ошибка когда мясник давал девственное мясо при восстановленной плеве
 IF slave['age'] = CONST_INT['young_age'] and virginity = 0:
  virgin_meat_gain = meat_gain
  meat_gain = 0
@@ -987,6 +988,7 @@ if щит > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''щит'' & d
 gt curloc
 }
 
+!$info_text - выводится подсказка при экипировке
 $master_cloth_list = {
 $equip_choice = ''
 $equip_choice += '<a href = "EXEC: $new_item = ''man_rugs'' & $info_text = $man_rugs_help & dynamic $slot_7_change">Поношенная одежда</a>'

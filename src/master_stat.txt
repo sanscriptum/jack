@@ -141,6 +141,7 @@ IF master_stat_screen = 1:
 END
 
 !Закладка снаряжения
+!& $info_text = '''' - окошко корректно очищается при переключении вкладки чтобы не залипал текст при экипировке одежды
 If master_stat_screen = 2:
    *p '<div id = "mark_one"><a href = "EXEC: master_stat_screen = 0 & $info_text = '''' & gt curloc"><img src = "content\unsel_button.png"></a></div>'
     *p '<div id = "mark_two"><a href = "EXEC: master_stat_screen = 1 & $info_text = '''' & gt curloc"><img src = "content\unsel_button.png"></a></div>'

@@ -35,6 +35,7 @@ IF $place = 'gastronom':
 Девчатина х<<frige["virgin_meat"]>><br> '
 END
 
+!счетчик мяса будет отображаться когда спускаешься к мяснику
 IF $place = 'slaughter':
  dynamic $get_frige_space
  $place_info['slaughter'] = 'ЗАПАСЫ ДОМА [<<frige_items>>/<<estate_size[$estate]>>]:

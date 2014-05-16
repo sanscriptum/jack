@@ -1273,6 +1273,7 @@ IF interaction = 1212:
 END
 
 !Личный урок по медицине
+!добавлен код прокачки интеллекта для медицины, делопроизводства и алхимии, if diligence > 2 - старание выше двух, т.е. как минимум на троечку, slave["nurse"] < 5 - добавлена для всего на всякий случай, для школы обязательно, т.к. была возможность послать еще раз и получить рейт интеллекта на халяву.
 IF interaction = 1213:
  $interaction_type = 'master_teaches_slave'
  $special_bg = $nurse[slave_type] 
@@ -4978,6 +4979,7 @@ IF interaction = 1840:
 END
 
 !ВЕЩЕСТВА
+!было slave_mood для мудлетов, что работает не правильно для рабыни
 IF interaction = 371:
  lab_store["koffe"] -= 1
  if sound_on = 1: play 'content\snd\bulk.mp3'

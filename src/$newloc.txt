@@ -767,6 +767,7 @@ assistant["fetishism"] = (assistant["sub_enema"] + assistant["sub_mazo"] + assis
 
 assistant["orgy"] = (assistant["sub_threesome"] + assistant["sub_dp"] + assistant["sub_tp"] + assistant["sub_gangbang"] + assistant["sub_bukake"])/5
 
+!исправлена формула рассчета
 assistant["xenophily"] = (assistant["sub_zoosex"] + assistant["sub_bestiality"] + assistant["sub_tentacles"])/3
 
 !Стиль

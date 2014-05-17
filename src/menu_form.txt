@@ -1,6 +1,5 @@
 # menu_form
 $toplay = 'girl'
-CLOSE ALL
 
 dynamic $slave_pass_out
 dynamic $prisoner_pass_out

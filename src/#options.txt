@@ -174,8 +174,12 @@ $text_display += {<br><div id="under">Не имеет значения<br><div i
 !Госпиталь
 $hospital_options[1] = {
 $text_display = '<br><br>'
-$text_display += {<div id="under">Пройти диагностику (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 3311 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-IF slave_state > CONST_INT['no_slave']:
+IF sparks => 5:
+ $text_display += {<div id="under">Пройти диагностику (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 3311 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Пройти диагностику (5 искр)<br></div>}  
+END
+IF slave_state > CONST_INT['no_slave'] and sparks => 5:
  $text_display += {<div id="under">Обследовать воспитуемую (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 3312 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  else
  $text_display += {<div id="under_gray">Обследовать воспитуемую (5 искр)<br></div>}  
@@ -272,10 +276,16 @@ $text_display += {<br><div id="under">Другие услуги<br><div id = "cl
 !Криостатический банк
 $stasis_options[1] = {
 $text_display = '<br>'
-IF stasis_tank = 0:
- $text_display += {<br><div id="under">Арендовать домашнюю капсулу<br><div id = "clear"><a href = 'EXEC: interaction_city = 33201 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+!дополнительная проверка чтобы выходил правильный пункт в меню
+IF sparks => 20:
+ IF stasis_tank = 0:
+  $text_display += {<br><div id="under">Арендовать домашнюю капсулу<br><div id = "clear"><a href = 'EXEC: interaction_city = 33201 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+  else
+  $text_display += {<br><div id="under">Вернуть домашнюю капсулу<br><div id = "clear"><a href = 'EXEC: interaction_city = 332011 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ END
+ elseif stasis_tank = 1: $text_display += {<br><div id="under">Вернуть домашнюю капсулу<br><div id = "clear"><a href = 'EXEC: interaction_city = 332011 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  else
- $text_display += {<br><div id="under">Вернуть домашнюю капсулу<br><div id = "clear"><a href = 'EXEC: interaction_city = 332011 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under_gray">Арендовать домашнюю капсулу (20 искр)<br></div>} 
 END
 IF iced_1_state = 0:
  $text_display += {<br><div id="under">Ячейка №1: арендовать (1/день)<br><div id = "clear"><a href = 'EXEC: interaction_city = 332012 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
@@ -720,9 +730,21 @@ $text_display += {<br><div id="under">Она слишком опасна<br><div
 !Салон мадам Жофрэ
 $brothel_options[1] = {
 $text_display = '<br>'
-$text_display += {<br><div id="under">Быстрый сервис (1 искра)<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<br><div id="under">Стандартный сервис (5 искр)<br><div id = "clear"><a href = 'EXEC: sp_txt = 3 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<br><div id="under">Элитный сервис (15 искр)<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
+IF sparks => 1:
+ $text_display += {<br><div id="under">Быстрый сервис (1 искра)<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Быстрый сервис (1 искра)<br></div>}  
+END
+IF sparks => 5:
+ $text_display += {<br><div id="under">Стандартный сервис (5 искр)<br><div id = "clear"><a href = 'EXEC: sp_txt = 3 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Стандартный сервис (5 искр)<br></div>}  
+END
+IF sparks => 15:
+ $text_display += {<br><div id="under">Элитный сервис (15 искр)<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Элитный сервис (15 искр)<br></div>}  
+END
 $text_display += {<br><div id="under">Узнать предпочтения хозяйки<div id = "clear"><a href = 'EXEC: interaction_city = 2251 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
 IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
  $text_display += {<div id="under">Предложить рабыню<br><div id = "clear"><a href = 'EXEC: interaction_city = 2252 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
@@ -1132,10 +1154,26 @@ $text_display += {<br><div id="under">Покинуть мастерскую<br><
 $mistra_options[1] = {
 $sp_text[1] = '   <<$mystra_spd[mystra_spd]>>'
 $text_display = '<br><br>'
-$text_display += {<div id="under">Элизийский дурман x5 (10 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 4311 & mystra_spd = 1 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>} 
-$text_display += {<div id="under">Камровая смола x5 (10 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 4312 & mystra_spd = 2 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>} 
-$text_display += {<div id="under">Пыльца фей x5 (10 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 4313 & mystra_spd = 3 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>} 
-$text_display += {<div id="under">Эссенция забвения x5 (10 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 4314 & mystra_spd = 4 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>} 
+IF sparks => 10:
+ $text_display += {<div id="under">Элизийский дурман x5 (10 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 4311 & mystra_spd = 1 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<div id="under_gray">Элизийский дурман x5 (10 искр)<br></div>} 
+END
+IF sparks => 10:
+ $text_display += {<div id="under">Камровая смола x5 (10 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 4312 & mystra_spd = 2 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<div id="under_gray">Камровая смола x5 (10 искр)<br></div>} 
+END
+IF sparks => 10:
+ $text_display += {<div id="under">Пыльца фей x5 (10 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 4313 & mystra_spd = 3 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<div id="under_gray">Пыльца фей x5 (10 искр)<br></div>} 
+END
+IF sparks => 10:
+ $text_display += {<div id="under">Эссенция забвения x5 (10 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 4314 & mystra_spd = 4 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<div id="under_gray">Эссенция забвения x5 (10 искр)<br></div>} 
+END
 $text_display += {<br><div id="under">Поговорить с хозяйкой<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 $text_display += {<div id="under">Предложить работницу<br><div id = "clear"><a href = 'EXEC: interaction_city = 4113 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
 $text_display += {<br><div id="under">Покинуть магазинчик<br><div id = "clear"><a href = 'EXEC: city_form = 4 & mystra_spd = 0 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}

@@ -202,53 +202,54 @@ gs '$food_choice'
 !Закупаем продукты
 food_buy_volume = 5
 dynamic $get_frige_space
-IF assistant_buy_vegetables = 1 and frige["vegetables"] = 0 and frige_space => 5:
+!and sparks > 50 - ассистентка не будет тратить зря деньги на продукты если их меньше 50, даже если правило включено
+IF assistant_buy_vegetables = 1 and frige["vegetables"] = 0 and frige_space => 5 and sparks > 50:
  frige["vegetables"] += 5
  autobuy_cost += 5
  dynamic $get_frige_space
 END
-IF assistant_buy_flower = 1 and frige["flower"] = 0 and frige_space => 5:
+IF assistant_buy_flower = 1 and frige["flower"] = 0 and frige_space => 5 and sparks > 50:
  frige["flower"] += 5
  autobuy_cost += 5
  dynamic $get_frige_space
 END
-IF assistant_buy_spice = 1 and frige["spice"] = 0 and frige_space => 5:
+IF assistant_buy_spice = 1 and frige["spice"] = 0 and frige_space => 5 and sparks > 50:
  frige["spice"] += 5
  autobuy_cost += 5
  dynamic $get_frige_space
 END
-IF assistant_buy_milk = 1 and frige["milk"] = 0 and frige_space => 5:
+IF assistant_buy_milk = 1 and frige["milk"] = 0 and frige_space => 5 and sparks > 50:
  frige["milk"] += 5
  autobuy_cost += 10
  dynamic $get_frige_space
 END
-IF assistant_buy_cheese = 1 and frige["cheese"] = 0 and frige_space => 5:
+IF assistant_buy_cheese = 1 and frige["cheese"] = 0 and frige_space => 5 and sparks > 50:
  frige["cheese"] += 5
  autobuy_cost += 5
  dynamic $get_frige_space
 END
 dynamic $get_frige_space
-IF assistant_buy_alcohol = 1 and frige["alcohol"] = 0 and frige_space => 5:
+IF assistant_buy_alcohol = 1 and frige["alcohol"] = 0 and frige_space => 5 and sparks > 50:
  frige["alcohol"] += 5
  autobuy_cost += 10
  dynamic $get_frige_space
 END
-IF assistant_buy_eggs = 1 and frige["eggs"] = 0 and frige_space => 5:
+IF assistant_buy_eggs = 1 and frige["eggs"] = 0 and frige_space => 5 and sparks > 50:
  frige["eggs"] += 5
  autobuy_cost += 10
  dynamic $get_frige_space
 END
-IF assistant_buy_cream = 1 and frige["cream"] = 0 and frige_space => 5:
+IF assistant_buy_cream = 1 and frige["cream"] = 0 and frige_space => 5 and sparks > 50:
  frige["cream"] += 5
  autobuy_cost += 20
  dynamic $get_frige_space
 END
-IF assistant_buy_mince = 1 and frige["mince"] = 0 and frige_space => 5:
+IF assistant_buy_mince = 1 and frige["mince"] = 0 and frige_space => 5 and sparks > 50:
  frige["mince"] += 5
  autobuy_cost += 7
  dynamic $get_frige_space
 END
-IF assistant_buy_meat = 1 and frige["meat"] = 0 and frige_space => 5:
+IF assistant_buy_meat = 1 and frige["meat"] = 0 and frige_space => 5 and sparks > 50:
  frige["meat"] += 5
  autobuy_cost += 20
  dynamic $get_frige_space

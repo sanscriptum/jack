@@ -136,7 +136,11 @@ END
 IF city_form = 33:
  $place = 'technodrom' 
  $text_display += {<br><br><br><br><br><div id="under">Медицинский центр <br><div id = "clear"><a href = 'EXEC: interaction_city = 331 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Криостатическое хранилище <br><div id = "clear"><a href = 'EXEC: interaction_city = 332 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ IF sparks > 0:
+  $text_display += {<br><div id="under">Криостатическое хранилище <br><div id = "clear"><a href = 'EXEC: interaction_city = 332 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+  else
+  $text_display += {<br><div id="under_gray">Криостатическое хранилище <br></div>}  
+ END
  $text_display += {<br><div id="under">Библиотечный терминал <br><div id = "clear"><a href = 'EXEC: interaction_city = 333 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Покинуть техносферу<br><div id = "clear"><a href = 'EXEC: city_form = 3 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
 END

@@ -97,7 +97,7 @@ IF assistant_stat_screen = 0:
 Ты доярка
 </div>'  
 
- *p '<div id="left_padding">БАКАЛЕЯ: <BR><BR><BR><BR><BR><BR><BR><BR>ПРОИЗВОДНЫЕ:<BR><BR><BR><BR><BR>МЯСО:<BR><BR><BR><BR><BR></div>'  
+ if sparks > 50: *p '<div id="left_padding">БАКАЛЕЯ: <BR><BR><BR><BR><BR><BR><BR><BR>ПРОИЗВОДНЫЕ:<BR><BR><BR><BR><BR>МЯСО:<BR><BR><BR><BR><BR></div>'  
  IF assistant_cleans_rule = 1:
   slave_cleans_rule = 0
   *p '<div id="chekbox_1r"><a href = "EXEC: assistant_cleans_rule = 0 & $assitant_info_text = $assistant_cleans_rule_abort & gt curloc"><img src="content\sel_button.png"></a></div>'  
@@ -138,7 +138,7 @@ IF assistant_stat_screen = 0:
   *p '<div id="chekbox_7r"><a href = "EXEC: assistant_tentacle_rule = 1 & $assitant_info_text = $assistant_tentacle_rule & gt curloc"><img src="content\unsel_button.png"></a></div>'  
  END   
 
- if kitchen => 0: *p '<div id="left_rules">
+ if kitchen => 0 and sparks > 50: *p '<div id="left_rules">
 Овощи
 Мука и крупа
 Зелень и специи
@@ -156,7 +156,7 @@ IF assistant_stat_screen = 0:
 Вырезка
 </div>'  
 
-IF kitchen > 0:
+IF kitchen > 0 and sparks > 50:
  IF assistant_buy_vegetables = 1:
   *p '<div id="chekbox_1l"><a href = "EXEC: assistant_buy_vegetables = 0 & gt curloc"><img src="content\sel_button.png"></a></div>'  
   else

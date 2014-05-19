@@ -5,7 +5,7 @@ $auspex_list = ''
 
 IF auspex = 0:
  $auspex_list = '' 
- $info_text = 'Без заклинаний усиливающих ауспекс, аура воспитуемой видится вам бледной и нечеткой тенью. Вы не можете определить цвета, силу и направления потоков её духовного поля.'
+ $info_text = '   Без заклинаний усиливающих ауспекс, аура воспитуемой видится вам бледной и нечеткой тенью. Вы не можете определить цвета, силу и направления потоков её духовного поля.'
  else
  $auspex_list = '' 
  IF slave["obedience"] => 0:
@@ -42,8 +42,54 @@ IF auspex = 0:
  $auspex_list += '<<$aura_spoil[slave["spoil"]]>><br><BR>'
  $auspex_list += '<<$aura_moral[slave["moral"]]>>'
  
- $info_text = 'Заклинание ауспекса позволяет вам различить цвета, направления и силу потоков духовного поля воспитуемой. Проанализировав их, вы получаете детальную информацию.'
+ $info_text = '   Заклинание ауспекса позволяет вам различить цвета, направления и силу потоков духовного поля воспитуемой. Проанализировав их, вы получаете детальную информацию.'
  $auspex_list += ''
+END
+
+IF assistant_aura = 1:
+ $auspex_list = ''
+ IF auspex = 0:
+  $auspex_list = '' 
+  $assitant_info_text = '   Без заклинаний усиливающих ауспекс, аура ассистентки видится вам бледной и нечеткой тенью. Вы не можете определить цвета, силу и направления потоков её духовного поля.'
+  else
+  $auspex_list = '' 
+  IF assistant["obedience"] => 0:
+   IF assistant["obedience"] < 10:
+    $auspex_list += $aura_assistant_obedience[assistant["obedience"]]  
+    else
+    $auspex_list += $aura_assistant_obedience[10]  
+   END
+   else
+   if assistant["obedience"] = -1:$auspex_list += $aura_assistant_obedience[11]  
+   if assistant["obedience"] = -2:$auspex_list += $aura_assistant_obedience[12]  
+   if assistant["obedience"] = -3:$auspex_list += $aura_assistant_obedience[13]  
+   if assistant["obedience"] = -4:$auspex_list += $aura_assistant_obedience[15]  
+   if assistant["obedience"] = -5:$auspex_list += $aura_assistant_obedience[14]  
+   if assistant["obedience"] = -6:$auspex_list += $aura_assistant_obedience[16]  
+   if assistant["obedience"] = -7:$auspex_list += $aura_assistant_obedience[17]  
+   if assistant["obedience"] = -8:$auspex_list += $aura_assistant_obedience[18]  
+   if assistant["obedience"] = -9:$auspex_list += $aura_assistant_obedience[19]  
+   if assistant["obedience"] < -9:$auspex_list += $aura_assistant_obedience[20]    
+  END
+
+  if master_supermacy = 0: $auspex_list += ' <<$aura_assistant_supermacy[3]>><BR><BR>'
+  if master_supermacy > 0 and master_supermacy < 4: $auspex_list += ' <<$aura_assistant_supermacy[4]>><BR><BR>'
+  if master_supermacy > 3: $auspex_list += ' <<$aura_assistant_supermacy[5]>><BR><BR>'
+  if master_supermacy > -4 and master_supermacy < 0: $auspex_list += ' <<$aura_assistant_supermacy[2]>><BR><BR>'
+  if master_supermacy < -3: $auspex_list += ' <<$aura_assistant_supermacy[1]>><BR><BR>'
+
+  $auspex_list += '<<$aura_assistant_lust[assistant["arousal"]]>><br><BR>' 
+  $auspex_list += '<<$aura_assistant_fear[assistant["fear"]]>><br><BR>'
+  $auspex_list += '<<$aura_assistant_angst[assistant["angst"]]>><br><BR>'
+  $auspex_list += '<<$aura_assistant_rational[assistant["rational"]]>><br><BR>'   
+  $auspex_list += '<<$aura_assistant_instinct[assistant["instinct"]]>><br><BR>'
+  $auspex_list += '<<$aura_assistant_custom[assistant["custom"]]>><br><BR>'
+  $auspex_list += '<<$aura_assistant_spoil[assistant["spoil"]]>><br><BR>'
+  $auspex_list += '<<$aura_assistant_moral[assistant["moral"]]>>'
+ 
+  $assitant_info_text = '   Заклинание ауспекса позволяет вам различить цвета, направления и силу потоков духовного поля ассистентки. Проанализировав их, вы получаете детальную информацию.'
+  $auspex_list += ''
+ END
 END
 
 !"IF wizard_mode = 1:

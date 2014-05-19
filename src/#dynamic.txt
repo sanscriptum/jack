@@ -1790,5 +1790,25 @@ $death = {
     killvar '$_d_answer'
     gt 'exid'
 }
+
+!обнуление правил ассистентки
+$assistant_purge_rules = {
+	assistant_cleans_rule = 0
+	assistant_cooks_rule = 0
+	assistant_washes_rule = 0
+	assistant_account_rule = 0
+	assistant_supervise_rule = 0
+	assistant_tentacle_rule = 0
+	assistant_buy_vegetables = 0
+	assistant_buy_flower = 0
+	assistant_buy_spice = 0
+	assistant_buy_cheese = 0
+	assistant_buy_alcohol = 0
+	assistant_buy_eggs = 0
+	assistant_buy_milk = 0
+	assistant_buy_cream = 0
+	assistant_buy_mince = 0
+	assistant_buy_meat = 0
+}
 --- #dynamic ---------------------------------
 

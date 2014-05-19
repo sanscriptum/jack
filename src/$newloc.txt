@@ -67,7 +67,7 @@ IF slave_state = CONST_INT['no_slave']:
  killvar 'already_done_curslave'
 END
 
-IF assistant_state = 0:
+!"IF assistant_state = 0:
  assistant_cleans_rule = 0
  assistant_cooks_rule = 0
  assistant_washes_rule = 0
@@ -83,6 +83,41 @@ IF assistant_state = 0:
  assistant_buy_cream = 0
  assistant_buy_mince = 0
  assistant_buy_meat = 0
+END"
+
+!сохраняем правила последней ассистентки
+IF assistant_state ! 1:
+ if assistant_cleans_rule = 1: assistant_cleans_rule = 2
+ if assistant_cooks_rule = 1: assistant_cooks_rule = 2
+ if assistant_washes_rule = 1: assistant_washes_rule = 2
+ if assistant_account_rule = 1: assistant_account_rule = 2  
+ if assistant_supervise_rule = 1: assistant_supervise_rule = 2
+ if assistant_buy_vegetables = 1: assistant_buy_vegetables = 2
+ if assistant_buy_flower = 1: assistant_buy_flower = 2  
+ if assistant_buy_spice = 1: assistant_buy_spice = 2
+ if assistant_buy_cheese = 1: assistant_buy_cheese = 2
+ if assistant_buy_alcohol = 1: assistant_buy_alcohol = 2
+ if assistant_buy_eggs = 1: assistant_buy_eggs = 2
+ if assistant_buy_milk = 1: assistant_buy_milk = 2
+ if assistant_buy_cream = 1: assistant_buy_cream = 2
+ if assistant_buy_mince = 1: assistant_buy_mince = 2
+ if assistant_buy_meat = 1: assistant_buy_meat = 2
+ else
+ if assistant_cleans_rule = 2: assistant_cleans_rule = 1
+ if assistant_cooks_rule = 2: assistant_cooks_rule = 1
+ if assistant_washes_rule = 2: assistant_washes_rule = 1
+ if assistant_account_rule = 2: assistant_account_rule = 1  
+ if assistant_supervise_rule = 2: assistant_supervise_rule = 1
+ if assistant_buy_vegetables = 2: assistant_buy_vegetables = 1
+ if assistant_buy_flower = 2: assistant_buy_flower = 1  
+ if assistant_buy_spice = 2: assistant_buy_spice = 1
+ if assistant_buy_cheese = 2: assistant_buy_cheese = 1
+ if assistant_buy_alcohol = 2: assistant_buy_alcohol = 1
+ if assistant_buy_eggs = 2: assistant_buy_eggs = 1
+ if assistant_buy_milk = 2: assistant_buy_milk = 1
+ if assistant_buy_cream = 2: assistant_buy_cream = 1
+ if assistant_buy_mince = 2: assistant_buy_mince = 1
+ if assistant_buy_meat = 2: assistant_buy_meat = 1
 END
 
 !Обнуления
@@ -673,12 +708,14 @@ $assistant_features_list = ''
 IF assistant["wounds"] > 0: $assistant_features_list += '<<$slave_wounds[assistant["wounds"]]>><BR>'
 IF assistant["scares"] > 0: $assistant_features_list += '<<$slave_scares[assistant["scares"]]>><BR>'
 IF assistant["bruises"] > 0: $assistant_features_list += '<<$slave_bruises[assistant["bruises"]]>><BR>'
-IF assistant['arena_level'] > 4: $assistant_features_list += 'Чемпионка арены<BR>'
+IF assistant['reabilitation'] > 0: $assistant_features_list += 'После операции [<<assistant["reabilitation"]>>]<BR>'
+IF assistant_virginity < 2: $assistant_features_list += 'Девственница<BR>' 
 if assistant['fertility'] = -2: $assistant_features_list += 'Незрелая<BR>' 
 IF assistant["fertility"] = -1: $assistant_features_list += 'Бесплодная<BR>' 
 IF assistant["fertility"] = 1: $assistant_features_list += 'Яйцекладущая<BR>' 
 IF assistant["pregnant"] = 1 and assistant['pregnant_revealed'] > 0: $assistant_features_list += 'Беременная<BR>' 
-IF assistant["nymphomania"] > 0: $assistant_features_list += 'Нимфоманка<BR>' 
+IF assistant['arena_level'] > 4: $assistant_features_list += 'Чемпионка арены<BR>'
+!"IF assistant["nymphomania"] > 0: $assistant_features_list += 'Нимфоманка<BR>' 
 IF assistant["nymphomania"] < 0: $assistant_features_list += 'Фригидная<BR>' 
 IF assistant["masohism"] = 2: $assistant_features_list += 'Мазохистка<BR>'
 IF assistant["masohism"] = 1: $assistant_features_list += 'Привычна к боли<BR>'
@@ -744,7 +781,7 @@ IF assistant["selfesteem"] < 0: $assistant_features_list += 'Комплекс в
 IF assistant["voice"] > 0: $assistant_features_list += 'Чарующий голос<BR>'
 IF assistant["voice"] < 0: $assistant_features_list += 'Хриплый голос<BR>'
 IF assistant["compassion"] > 0: $assistant_features_list += 'Милосердная<BR>'
-IF assistant["compassion"] < 0: $assistant_features_list += 'Садистка<BR>'
+IF assistant["compassion"] < 0: $assistant_features_list += 'Садистка<BR>'"
 
 !Определяем секс-навыки асситентки
 if assistant["sub_hj"] < assistant["petting"]: assistant["sub_hj"] = assistant["petting"]
@@ -838,7 +875,6 @@ if house_mess < 0: house_mess = 0
 if slave["voice"] > 0: slave["vocal"] += 1
 if slave["vocal"] > 5: slave["vocal"] = 5
 
-if assistant_state ! 1: assistant_account_rule = 0
 if slave_state = CONST_INT['no_slave']: slave_account_rule = 0
 
 восприятие = master_fighter - 1

@@ -50,6 +50,7 @@ $master_bad_mood[22] = 'neg_master_ill'
 $master_bad_mood[23] = 'neg_master_loser'
 $master_bad_mood[24] = 'neg_master_cloth'
 $master_bad_mood[25] = 'neg_escape'
+$master_bad_mood[26] = 'neg_slave_killed'
 
 $slave_good_mod[1] = 'pos_sleep'
 $slave_good_mod[2] = 'pos_prise'
@@ -164,6 +165,8 @@ $mood_description['neg_master_loser'] = 'Ненавижу проигрывать
 $mood_description['neg_master_cloth'] = 'Моя одежда никуда не годится! Сколько можно стирать и штопать? Надо обновить гардероб.'
 !новый мудлет для сбежавших рабынь
 $mood_description['neg_escape'] = 'Проклятье! Воспитуемая сбежала, пока я спал! Теперь её не найти, деньги и время были потрачены впустую. Придется покупать новую рабыню.'
+!мудлет после убийства рабыни в бою
+$mood_description['neg_slave_killed'] = 'Я убил собственную рабыню своими руками... Нужно было быть поосторожнее.'
 
 !Позитивные мудлеты воспитуемой
 $mood_description['pos_prise'] = '   [<<$slave_name>>]

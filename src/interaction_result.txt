@@ -507,7 +507,7 @@ IF $interaction_type = 'torture':
  IF slave["beaten"] = 0 and will_to_resist > 0:
   slave_power = slave["gladiatrix"] + slave["stamina"]
   master_power = master_str + master_fighter
-  IF master_power > slave_power:
+  IF master_power <= slave_power:
    txt = 1
    $text[1] = 'Воспитуемая оказывает вам отчаянное сопротивление. Завязывается драка и вам приходится изрядно побить её, прежде чем сопротивление воспитуемой оказывается наконец сломленным.' 
    dynamic $slave_fights_back
@@ -651,7 +651,7 @@ IF $interaction_type = 'rape':
  IF slave["beaten"] = 0 and will_to_resist > 0:
   slave_power = slave["gladiatrix"] + slave["stamina"]
   master_power = master_str + master_fighter
-  IF master_power > slave_power:
+  IF master_power <= slave_power:
    txt = 1
    dynamic $slave_fights_back
    dynamic $slave_damaged 
@@ -697,7 +697,7 @@ IF $interaction_type = 'branding':
  IF slave["beaten"] = 0 and will_to_resist > 0:
   slave_power = slave["gladiatrix"] + slave["stamina"]
   master_power = master_str + master_fighter
-  IF master_power > slave_power:
+  IF master_power <= slave_power:
    txt = 1
    $text[1] = 'Воспитуемая оказывает вам отчаянное сопротивление. Завязывается драка и вам приходится изрядно побить её, прежде чем сопротивление воспитуемой оказывается наконец сломленным.' 
    dynamic $slave_fights_back
@@ -735,7 +735,7 @@ IF $interaction_type = 'execution':
  IF slave["beaten"] = 0 and will_to_resist > 0:
   slave_power = slave["gladiatrix"] + slave["stamina"]
   master_power = master_str + master_fighter
-  IF master_power > slave_power:
+  IF master_power <= slave_power:
    txt = 1
    $text[1] = 'Воспитуемая оказывает вам отчаянное сопротивление. Завязывается драка и вам приходится изрядно побить её, прежде чем сопротивление воспитуемой оказывается наконец сломленным.' 
    dynamic $slave_fights_back

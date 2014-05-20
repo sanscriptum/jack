@@ -1100,6 +1100,7 @@ IF interaction_city = 1252:
 END
 
 IF interaction_city = 12801:
+ $toplay = 'arena'
  $place = 'colloseum_arena'
  $return_lock  = '$gladiator_fight_start' 
  $special_image[1] = 'characters\games_superviser.gif' 
@@ -3191,6 +3192,7 @@ IF interaction_city = 193:
 END
 
 IF interaction_city = 199:
+ $toplay = 'arena'
  $place = 'colloseum'
  $return_lock  = 'shop_general'  
  $picture_type = 'untyped'

@@ -477,7 +477,7 @@ IF sex_interaction = 12:
  sex['pc_energy'] -= intensity
   
  IF $insertion = 'vaginal':   
-  $text[1] = '  <<$sex_vaginal[intensity]>>'
+  $text[1] = '  <<$sexy_vaginal[intensity]>>'
   else
   $text[1] = '  <<$sex_insert_vaginal>>'
   $insertion = 'vaginal'  

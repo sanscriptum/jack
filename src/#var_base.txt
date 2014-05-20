@@ -166,6 +166,7 @@ $finger_gripe = 'girls\torture\fingergrip'
 !2 - MILF
 
 
+$cane_sound = 'cane'
 $spank_sound = 'cane'
 $slap_sound = 'cane'
 $whip_sound = 'cane'
@@ -189,7 +190,7 @@ $bj_sound[2] = 'blowjob_calm'
 
 $throatfuck_sound[0] = 'throat_fuck2'
 $throatfuck_sound[1] = 'blowjob04'
-$throatfuck_sound[2] = 'throat_fuck1'
+$throatfuck_sound[2] = 'throat_fuck'
 
 $fuck_sound[0] = 'fuck_moan_painfull'
 $fuck_sound[1] = 'fuck_moan2'
@@ -199,7 +200,7 @@ $assfuck_sound[0] = 'girl_suffering'
 $assfuck_sound[1] = 'girl_pain26'
 $assfuck_sound[2] = 'woman_pain10'
 
-$fisting_sound[0] = 'girl_pain18'
+$fisting_sound[0] = 'girl_pain17'
 $fisting_sound[1] = 'girl_pain16'
 $fisting_sound[2] = 'woman_pain17'
 
@@ -216,11 +217,11 @@ $severe_pain[1] = 'girl_pain41'
 $severe_pain[2] = 'woman_pain01'
 
 $urine[0] = 'gulps01'
-$urine[1] = 'gulps'
+$urine[1] = 'gulps01'
 $urine[2] = 'gulps02'
 
 $kopro_sound[0] = 'gulps01'
-$kopro_sound[1] = 'gulps'
+$kopro_sound[1] = 'gulps01'
 $kopro_sound[2] = 'gulps02'
 
 $seduce_sound[0] = 'girl_laugh03'

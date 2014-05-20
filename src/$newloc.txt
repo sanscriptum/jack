@@ -444,7 +444,7 @@ IF slave["voice"] < 0: $features_list += 'Хриплый голос<BR>'
 IF slave['arena_level'] > 4: $features_list += 'Чемпионка арены<BR>'
 if slave['fertility'] = -2: $features_list += 'Незрелая<BR>' 
 IF slave["fertility"] = -1: 
- if slave["fertility_revealed"] = 0: $features_list += 'Бесплодная<BR>' 
+ if slave["fertility_revealed"] > 0: $features_list += 'Бесплодная<BR>' 
 END
 IF slave["fertility"] = 1: 
  if slave["fertility_revealed"] > 0: $features_list += 'Яйцекладущая<BR>' 

@@ -192,11 +192,23 @@ IF teach_stat_screen = 0:
  $middle_text_5 += "<a href = 'EXEC: interaction = 1373 & gt ""interaction""'><<$slave_sub_dildo[slave[""sub_dildo""]]>><BR></a>"
  $middle_text_5 += "<a href = 'EXEC: interaction = 1374 & gt ""interaction""'><<$slave_sub_exhibit[slave[""sub_exhibit""]]>><BR></a>"
  $middle_text_5 += "<a href = 'EXEC: interaction = 1375 & gt ""interaction""'><<$slave_sub_humiliation[slave[""sub_humiliation""]]>><BR></a>" 
- $middle_text_6 += "<a href = 'EXEC: interaction = 1365 & gt ""interaction""'><<$slave_sub_enema[slave[""sub_enema""]]>><BR></a>"
+ IF bath > 0:
+  $middle_text_6 += "<a href = 'EXEC: interaction = 1365 & gt ""interaction""'><<$slave_sub_enema[slave[""sub_enema""]]>><BR></a>"
+  else
+  $middle_text_6 += '<font color="#C0C0C0">Клизмы<BR></font>' 
+ END
  $middle_text_6 += "<a href = 'EXEC: interaction = 1361 & gt ""interaction""'><<$slave_sub_mazo[slave[""sub_mazo""]]>><BR></a>"
  $middle_text_6 += "<a href = 'EXEC: interaction = 1362 & gt ""interaction""'><<$slave_sub_selfpain[slave[""sub_selfpain""]]>><BR></a>"
- $middle_text_6 += "<a href = 'EXEC: interaction = 1363 & gt ""interaction""'><<$slave_sub_piss[slave[""sub_piss""]]>><BR></a>"
- $middle_text_6 += "<a href = 'EXEC: interaction = 1364 & gt ""interaction""'><<$slave_sub_kopro[slave[""sub_kopro""]]>><BR><BR></a>"
+ IF bath > 0:
+  $middle_text_6 += "<a href = 'EXEC: interaction = 1363 & gt ""interaction""'><<$slave_sub_piss[slave[""sub_piss""]]>><BR></a>"
+  else
+  $middle_text_6 += '<font color="#C0C0C0">Золотой дождь<BR></font>' 
+ END
+ IF bath > 0:
+  $middle_text_6 += "<a href = 'EXEC: interaction = 1364 & gt ""interaction""'><<$slave_sub_kopro[slave[""sub_kopro""]]>><BR><BR></a>"
+  else
+  $middle_text_6 += '<font color="#C0C0C0">Копрофилия<BR></font>' 
+ END
  IF dog > 0:   
   $middle_text_7 += "<a href = 'EXEC: interaction = 1351 & gt ""interaction""'><<$slave_sub_zoosex[slave[""sub_zoosex""]]>><BR></a>"   
   else

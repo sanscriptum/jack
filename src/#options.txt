@@ -335,7 +335,7 @@ $text_display += {<br><div id="under">Выйти в город<br><div id = "cle
 
 $realtor_options[2] = {
 $text_display = '<br>'
- IF sparks => 250:
+ IF sparks => 250 and brand_reputation > 2:
  $text_display += {<br><div id="under">Белый город<br><div id = "clear"><a href = 'EXEC: interaction_city = 1321 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Белый город<br></div>}  
@@ -426,7 +426,7 @@ if $study ! 'gothic' and sparks => 100: $text_display += {<div id="under">Нек
 if $study ! 'elite' and sparks => 100: $text_display += {<div id="under">Элитная<br><div id = "clear"><a href = 'EXEC: interaction_city = 134110 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
 if $study ! 'slaver' and sparks => 150: $text_display += {<div id="under">Работорговец<br><div id = "clear"><a href = 'EXEC: interaction_city = 134111 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
 if $study ! 'lux' and sparks => 200: $text_display += {<div id="under">Люкс<br><div id = "clear"><a href = 'EXEC: interaction_city = 134112 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<br><div id="under">Назад<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Назад<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 }
 
 $realtor_options[42] = {
@@ -443,7 +443,7 @@ if $bed ! 'stylish' and sparks => 150: $text_display += {<div id="under">Сти�
 if $bed ! 'gothic' and sparks => 150: $text_display += {<div id="under">Некро-готическая<br><div id = "clear"><a href = 'EXEC: interaction_city = 134210 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
 if $bed ! 'elite' and sparks => 150: $text_display += {<div id="under">Элитная<br><div id = "clear"><a href = 'EXEC: interaction_city = 134211 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
 if $bed ! 'lux' and sparks => 200: $text_display += {<div id="under">Люкс<br><div id = "clear"><a href = 'EXEC: interaction_city = 134212 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<br><div id="under">Назад<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Назад<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 }
 
 $realtor_options[43] = {
@@ -453,7 +453,7 @@ if $kitchen ! 'econom' and sparks => 20: $text_display += {<br><div id="under">�
 if $kitchen ! 'fort' and sparks => 20: $text_display += {<br><div id="under">Нео-средневековье<br><div id = "clear"><a href = 'EXEC: interaction_city = 13433 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
 if $kitchen ! 'gothic' and sparks => 50:$text_display += {<br><div id="under">Некро-готика<br><div id = "clear"><a href = 'EXEC: interaction_city = 13434 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
 if $kitchen ! 'elite' and sparks => 50:$text_display += {<br><div id="under">Элитная<br><div id = "clear"><a href = 'EXEC: interaction_city = 13435 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<br><br><div id="under">Назад<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<br><br><div id="under">Назад<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 }
 
 $realtor_options[44] = {
@@ -466,7 +466,7 @@ if $bath ! 'japan' and sparks => 50:$text_display += {<div id="under">Японс
 if $bath ! 'gothic' and sparks => 50:$text_display += {<div id="under">Некро-готика<br><div id = "clear"><a href = 'EXEC: interaction_city = 13445 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
 if $bath ! 'elite' and sparks => 50:$text_display += {<div id="under">Элитная<br><div id = "clear"><a href = 'EXEC: interaction_city = 13446 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
 if $bath ! 'lux' and sparks => 100:$text_display += {<div id="under">Люкс<br><div id = "clear"><a href = 'EXEC: interaction_city = 13448 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<br><div id="under">Назад<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Назад<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 }
 
 $realtor_options[45] = {
@@ -483,7 +483,7 @@ if $dungeon ! 'slaver' and sparks => 25: $text_display += {<div id="under">Ра�
 if $dungeon ! 'victorian' and sparks => 50: $text_display += {<div id="under">Викторианская<br><div id = "clear"><a href = 'EXEC: interaction_city = 134510 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
 if $dungeon ! 'elite' and sparks => 50: $text_display += {<div id="under">Элитная<br><div id = "clear"><a href = 'EXEC: interaction_city = 134511 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
 if $dungeon ! 'lux' and sparks => 50: $text_display += {<div id="under">Люкс<br><div id = "clear"><a href = 'EXEC: interaction_city = 134512 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<br><div id="under">Назад<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Назад<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 }
 
 $realtor_options[46] = {
@@ -499,7 +499,7 @@ if $bouduar ! 'fort' and sparks => 100: $text_display += {<div id="under">Нео
 if $bouduar ! 'elite' and sparks => 150: $text_display += {<div id="under">Элитный<br><div id = "clear"><a href = 'EXEC: interaction_city = 13469 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
 if $bouduar ! 'gothic' and sparks => 200: $text_display += {<div id="under">Некро-готика<br><div id = "clear"><a href = 'EXEC: interaction_city = 134610 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
 if $bouduar ! 'lux' and sparks => 250: $text_display += {<div id="under">Люкс<br><div id = "clear"><a href = 'EXEC: interaction_city = 134611 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<br><div id="under">Назад<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Назад<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 }
 
 $realtor_options[47] = {
@@ -511,7 +511,7 @@ if $lab ! 'gothic' and sparks => 100: $text_display += {<div id="under">Некр
 if $lab ! 'slaver' and sparks => 100: $text_display += {<div id="under">Работорговец<br><div id = "clear"><a href = 'EXEC: interaction_city = 13475 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
 if $lab ! 'victorian' and sparks => 100: $text_display += {<div id="under">Викторианская<br><div id = "clear"><a href = 'EXEC: interaction_city = 13476 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
 if $lab ! 'elite' and sparks => 100: $text_display += {<div id="under">Элитная<br><div id = "clear"><a href = 'EXEC: interaction_city = 13477 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<br><div id="under">Назад<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Назад<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 }
 
 
@@ -1211,7 +1211,7 @@ IF lab_store["slime"] > 0:
  else
  $text_display += {<br><div id="under_gray">Слизь исчадия<br></div>} 
 END
-$text_display += {<br><div id="under">Прервать процесс<br><div id = "clear"><a href = 'EXEC: gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Прервать процесс<br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
 }
 
 $lab_options[1] = {
@@ -1236,7 +1236,7 @@ IF lab_store["opium"] > 0 and put_opium = 0:
  else
  $text_display += {<br><div id="under_gray">Эссенция забвения<br></div>} 
 END
-$text_display += {<br><div id="under">Прервать процесс<br><div id = "clear"><a href = 'EXEC: gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Прервать процесс<br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
 }
 
 $lab_options[2] = {
@@ -1261,7 +1261,7 @@ IF lab_store["opium"] > 0 and put_opium = 0:
  else
  $text_display += {<br><div id="under_gray">Эссенция забвения<br></div>} 
 END
-$text_display += {<br><div id="under">Прервать процесс<br><div id = "clear"><a href = 'EXEC: gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Прервать процесс<br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
 }
 
 $lab_options[3] = {
@@ -1286,7 +1286,7 @@ IF lab_store["opium"] > 0 and put_opium = 0:
  else
  $text_display += {<br><div id="under_gray">Эссенция забвения<br></div>} 
 END
-$text_display += {<br><div id="under">Прервать процесс<br><div id = "clear"><a href = 'EXEC: gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Прервать процесс<br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
 }
 
 
@@ -1295,10 +1295,14 @@ $piercing_options[1] = {
 $text_display = '<br>'
 IF slave_state = CONST_INT['slave_exist']:
  $text_display += {<br><div id="under">Телесные модификации<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under">BDSM-атрибутика<br><div id = "clear"><a href = 'EXEC: sp_txt = 3 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Животная атрибутика<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">BDSM-атрибутика<br><div id = "clear"><a href = 'EXEC: sp_txt = 3 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Животная атрибутика<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Телесные модификации<br></div>} 
+ $text_display += {<br><div id="under_gray">BDSM-атрибутика<br></div>} 
+ $text_display += {<br><div id="under_gray">Животная атрибутика<br></div>} 
 END
-$text_display += {<div id="under">Фетиш-атрибутика<br><div id = "clear"><a href = 'EXEC: sp_txt = 5 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Фетиш-атрибутика<br><div id = "clear"><a href = 'EXEC: sp_txt = 5 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 $text_display += {<br><div id="under">Узнать предпочтения<div id = "clear"><a href = 'EXEC: interaction_city = 521 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
 IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
  $text_display += {<div id="under">Предложить рабыню<br><div id = "clear"><a href = 'EXEC: interaction_city = 522 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
@@ -1324,34 +1328,34 @@ $text_display += {<br><div id="under">Другие услуги<br><div id = "cl
 
 $piercing_options[3] = {
 $text_display = '<br>'
-$text_display += {<br><div id="under">Кожаный ошейник<div id = "clear"><a href = 'EXEC: interaction_city = 5221 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<div id="under">Стальной ошейник<div id = "clear"><a href = 'EXEC: interaction_city = 5222 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<div id="under">Шипастый ошейник<div id = "clear"><a href = 'EXEC: interaction_city = 5223 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<div id="under">Кожаные оковы<div id = "clear"><a href = 'EXEC: interaction_city = 5224 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<div id="under">Цепь для сосков<div id = "clear"><a href = 'EXEC: interaction_city = 5225 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<div id="under">Терновый венец<div id = "clear"><a href = 'EXEC: interaction_city = 5226 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Кожаный ошейник (3 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5221 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Стальной ошейник (10 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5222 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Шипастый ошейник (10 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5223 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Кожаные оковы (5 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5224 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Цепь для сосков (10 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5225 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Терновый венец (5 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5226 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
 $text_display += {<br><div id="under">Другие услуги<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 }
 
 $piercing_options[4] = {
 $text_display = '<br>'
-$text_display += {<br><div id="under">Ошейник с поводком<div id = "clear"><a href = 'EXEC: interaction_city = 5231 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<div id="under">Анальный хвост<div id = "clear"><a href = 'EXEC: interaction_city = 5232 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<div id="under">Уздечка с плюмажем<div id = "clear"><a href = 'EXEC: interaction_city = 5233 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<div id="under">Копытные сапоги<div id = "clear"><a href = 'EXEC: interaction_city = 5234 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<div id="under">Сбруя для понидевки<div id = "clear"><a href = 'EXEC: interaction_city = 5235 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<div id="under">Петсьют<div id = "clear"><a href = 'EXEC: interaction_city = 5236 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Ошейник с поводком (5 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5231 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Анальный хвост (10 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5232 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Уздечка с плюмажем (10 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5233 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Копытные сапоги (25 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5234 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Сбруя для понидевки (10 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5235 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Петсьют (25 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5236 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
 $text_display += {<br><div id="under">Другие услуги<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 }
 
 $piercing_options[5] = {
 $text_display = '<br>'
-$text_display += {<br><div id="under">Вагинальные шарики<div id = "clear"><a href = 'EXEC: interaction_city = 5261 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<div id="under">Анальная груша<div id = "clear"><a href = 'EXEC: interaction_city = 5262 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<div id="under">Надежный кляп<div id = "clear"><a href = 'EXEC: interaction_city = 5263 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<div id="under">Депривационный костюм<div id = "clear"><a href = 'EXEC: interaction_city = 5264 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<div id="under">Писсуарная стойка<div id = "clear"><a href = 'EXEC: interaction_city = 5265 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<div id="under">Унитазное кресло<div id = "clear"><a href = 'EXEC: interaction_city = 5266 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Вагинальные шарики (5 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5261 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Анальная груша (20 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5262 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Надежный кляп (20 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5263 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Депривационный костюм (50 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5264 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Писсуарная стойка (100 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5265 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Унитазное кресло (250 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5266 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
 $text_display += {<br><div id="under">Другие услуги<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 }
 

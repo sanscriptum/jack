@@ -1,5 +1,6 @@
 # menu_form
 $toplay = 'girl'
+CLOSE ALL
 
 dynamic $slave_pass_out
 dynamic $prisoner_pass_out
@@ -880,11 +881,23 @@ IF menu_form = 135:
 END
 
 IF menu_form = 136:
- $text_display += {<br><div id="under">Клизмы<br><div id = "clear"><a href = 'EXEC: interaction = 1365 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+ IF bath > 0:
+  $text_display += {<br><div id="under">Клизмы<br><div id = "clear"><a href = 'EXEC: interaction = 1365 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+  else
+  $text_display += {<br><div id="under_gray">Клизмы<br></div>}
+ END
  $text_display += {<br><div id="under">Мазохизм<br><div id = "clear"><a href = 'EXEC: interaction = 1361 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Самоистязание<br><div id = "clear"><a href = 'EXEC: interaction = 1362 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Золотой дождь<br><div id = "clear"><a href = 'EXEC: interaction = 1363 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Копрофилия<br><div id = "clear"><a href = 'EXEC: interaction = 1364 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+ IF bath > 0:
+  $text_display += {<br><div id="under">Золотой дождь<br><div id = "clear"><a href = 'EXEC: interaction = 1363 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+  else
+  $text_display += {<br><div id="under_gray">Золотой дождь<br></div>}
+ END
+ IF bath > 0:
+  $text_display += {<br><div id="under">Копрофилия<br><div id = "clear"><a href = 'EXEC: interaction = 1364 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+  else
+  $text_display += {<br><div id="under_gray">Копрофилия<br></div>}
+ END
  $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 13 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
 END
 

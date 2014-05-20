@@ -55,6 +55,6 @@ IF prisoner_state > 0:
 END
 
 *p '<div id = "interaction_stat_bar"><<$info_bar>></div>'
-*p '<div id = "close_far"><a href = "EXEC: gt ''menu_form''"><img src = "content\close_button.png"></a></div>'
+*p '<div id = "close_far"><a href = "EXEC: menu_form = 0 & gt ''menu_form''"><img src = "content\close_button.png"></a></div>'
 --- prison_cell ---------------------------------
 

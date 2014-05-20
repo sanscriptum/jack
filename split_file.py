@@ -11,17 +11,15 @@ def split_file(filename, to_dir):
     f.close()
     if data[:2] == '\xff\xfe':
         data = data.decode('utf16').encode('utf8')
-    i_lines = (line + '\n' for line in data.splitlines())
-    loc_name = 'Start'
+    i_lines = [line + '\n' for line in data.splitlines()]
+    loc_name = (i_lines[0][2:-1]).decode('utf-8')
     ff = open(to_dir + loc_name + '.txt', 'w')
     for line in i_lines:
         if line[0] == '#' and line[1] == ' ':
             ff.close()
             loc_name = (line[2:-1]).decode('utf-8')
             ff = open(to_dir + loc_name + '.txt', 'w')
-            ff.write(line)
-        else:
-            ff.write(line)
+        ff.write(line)
 
 def merge_file(dir, filename, mode):
     file_list = []

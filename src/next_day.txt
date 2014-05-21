@@ -631,7 +631,7 @@ $force_msg  = ''
 IF silence_rule = 1: 
  silence_rule_res = slave["obedience"] - slave["temper"]
  IF force_rules = 1 and inventory['secure_gag'] = 1: 
-  if silence_rule_res > 0: slave['neg_rules'] = 1
+  if silence_rule_res < 0: slave['neg_rules'] = 1
   silence_rule_res = 0
   slave_rate["mood"] -= slave["temper"] - slave["moral"] 
   $force_msg += 'Кляп работает <br>'
@@ -647,7 +647,7 @@ END
 IF shit_prohibited = 1:
  shit_prohibited_res = slave["obedience"] - slave["ego"] - 1 - slave["preversion"]
  IF force_rules = 1 and inventory['anal_plug'] > 0: 
-  if shit_prohibited_res > 0: slave['neg_rules'] = 1 
+  if shit_prohibited_res < 0: slave['neg_rules'] = 1 
   shit_prohibited_res = 0
   slave_rate["mood"] -= slave["ego"] - slave["moral"]
  END
@@ -657,7 +657,7 @@ END
 IF pet_rule = 1:
  pet_rule_res = slave["obedience"] - slave["ego"] - slave["pride"] - slave["pet_affinity"]*3
  IF force_rules = 1 and inventory['petsuit'] > 0: 
-  if pet_rule_res > 0: slave['neg_rules'] = 1  
+  if pet_rule_res < 0: slave['neg_rules'] = 1  
   pet_rule_res = 0
   slave_rate["mood"] -= slave["ego"] + slave["pride"] - slave["moral"]
  END
@@ -667,7 +667,7 @@ END
 IF blowjob_rule = 1:
  blowjob_rule_res = slave["obedience"] + slave["sub_bj"] + slave["arousal"] - slave["pride"] - 4 
  IF force_rules = 1 and assistant_state = 1: 
-  if blowjob_rule_res > 0: slave['neg_rules'] = 1   
+  if blowjob_rule_res < 0: slave['neg_rules'] = 1   
   blowjob_rule_res = 0
   slave_rate["mood"] -= 5 + slave["temper"] + slave["pride"] - slave["moral"] - slave["sub_bj"] 
  END
@@ -677,7 +677,7 @@ END
 IF pissuar_rule = 1:
  pissuar_rule_res = slave["obedience"] + slave["sub_piss"] - slave["pride"] - slave["ego"] - 3 - slave["preversion"]
  IF force_rules = 1 and inventory['pissuar_stable'] = 1: 
-  if pissuar_rule_res > 0: slave['neg_rules'] = 1    
+  if pissuar_rule_res < 0: slave['neg_rules'] = 1    
   pissuar_rule_res = 0
   slave_rate["mood"] -= 3 + slave["ego"] + slave["pride"] - slave["moral"] - slave["sub_piss"]
  END
@@ -687,7 +687,7 @@ END
 IF toilet_rule = 1:
  toilet_rule_res = slave["obedience"] + slave["sub_kopro"] - slave["pride"] - slave["ego"] - 6 - slave["preversion"]
  IF force_rules = 1 and inventory['toilet_stable'] = 1: 
-  if toilet_rule_res > 0: slave['neg_rules'] = 1     
+  if toilet_rule_res < 0: slave['neg_rules'] = 1     
   toilet_rule_res = 0
   slave_rate["mood"] -= 6 + slave["ego"] + slave["pride"] - slave["moral"] - slave["sub_kopro"]
  END
@@ -696,9 +696,14 @@ IF toilet_rule = 1:
 END
 !v_balls_rule = 1 - добавлен эффект для правила v-шарики
 IF v_balls_rule = 1:
- v_balls_rule_res = slave["obedience"] - slave["temper"]
+ v_balls_rule_res = slave["obedience"] + slave["sub_vaginal"] - slave["pride"]*2 - slave["ego"] - 4
+ IF force_rules = 1 and assistant_state = 1:
+  if v_balls_rule_res < 0: slave['neg_rules'] = 1
+  v_balls_rule_res = 0
+  slave_rate["mood"] -= 4 + slave["pride"] + slave["ego"] - slave["moral"] - slave["sub_vaginal"]
+ END
  else
- v_balls_rule_res = 0 
+ v_balls_rule_res = 0
 END
 
 rules_res = min (silence_rule_res, master_rule_res, shit_prohibited_res, pet_rule_res, blowjob_rule_res, pissuar_rule_res, toilet_rule_res, v_balls_rule_res)
@@ -750,7 +755,7 @@ IF rules_broken = 1:
   slave_rate["custom"] -= 1    
  END
  IF v_balls_rule = 1:
-  slave_rate["temper"] += 1
+  slave_rate["pride"] += 1
   slave_rate["ego"] += 1  
   slave_rate["custom"] -= 1
  END
@@ -838,9 +843,12 @@ IF rules_broken = 1:
   slave_rate['stamina'] -= 6 - slave['stamina']
  END
  IF v_balls_rule = 1:
+  slave["sub_vaginal_xp"] += 1
   slave_rate["arousal"] += 3
   slave_rate["sensitivity"] += 1
- END
+  slave_rate["pride"] -= 1 
+  slave_rate["hygiene"] += 5 
+ END 
 END
 
 !Отдых

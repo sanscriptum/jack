@@ -1,5 +1,4 @@
 # $furniture_list
-!Создаем список мебели в доме
 $furniture_list = ''
 house_items = 0
 
@@ -28,13 +27,35 @@ IF piano > 0:
  house_items += 20
 END
 
+$furniture_list += '<br>'
+
+IF inventory['vaginal_balls'] = 1:
+ $furniture_list += 'В-шарики x1 [0]<br>'
+ house_items += 0
+END
+
+IF inventory['anal_plug'] = 1:
+ $furniture_list += 'Анал. груша x1 [0]<br>'
+ house_items += 0
+END
+
+IF inventory['secure_gag'] = 1:
+ $furniture_list += 'Надежный кляп x1 [0]<br>'
+ house_items += 0
+END
+
+IF inventory['deprivation_suit'] = 1:
+ $furniture_list += 'Депривационный костюм x1 [2]<br>'
+ house_items += 2
+END
+
 IF inventory['pissuar_stable'] = 1:
- $furniture_list += 'Пи-стойка [5]<br>'
+ $furniture_list += 'Пи-стойка x1 [5]<br>'
  house_items += 5
 END
 
 IF inventory['toilet_stable'] = 1:
- $furniture_list += 'Кресло-унитаз[10]<br>'
+ $furniture_list += 'Кресло-унитаз x1 [10]<br>'
  house_items += 10
 END
 

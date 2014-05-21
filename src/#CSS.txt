@@ -904,7 +904,7 @@ font-family: Segoe Print;
 position:absolute;
 left:800px;
 top:40px;
-width:210px;
+width:230px;
 height:580px;
 text-align:left;
 color:#0000CD;

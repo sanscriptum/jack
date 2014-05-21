@@ -1350,12 +1350,36 @@ $text_display += {<br><div id="under">Другие услуги<br><div id = "cl
 
 $piercing_options[5] = {
 $text_display = '<br>'
-$text_display += {<br><div id="under">Вагинальные шарики (5 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5261 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<div id="under">Анальная груша (20 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5262 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<div id="under">Надежный кляп (20 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5263 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<div id="under">Депривационный костюм (50 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5264 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<div id="under">Писсуарная стойка (100 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5265 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<div id="under">Унитазное кресло (250 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5266 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+IF inventory['vaginal_balls'] = 0:
+ $text_display += {<br><div id="under">Вагинальные шарики (5 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5261 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Вагинальные шарики</div>}
+END
+IF inventory['anal_plug'] = 0:
+ $text_display += {<div id="under">Анальная груша (20 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5262 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Анальная груша</div>}
+END
+IF inventory['secure_gag'] = 0:
+ $text_display += {<div id="under">Надежный кляп (20 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5263 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Надежный кляп</div>}
+END
+IF inventory['deprivation_suit'] = 0:
+ $text_display += {<div id="under">Депривационный костюм (50 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5264 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Депривационный костюм</div>}
+END
+IF inventory['pissuar_stable'] = 0:
+ $text_display += {<div id="under">Писсуарная стойка (100 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5265 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Писсуарная стойка</div>}
+END
+IF inventory['toilet_stable'] = 0:
+ $text_display += {<div id="under">Унитазное кресло (250 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5266 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Унитазное кресло</div>}
+END
 $text_display += {<br><div id="under">Другие услуги<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 }
 

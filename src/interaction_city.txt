@@ -2847,13 +2847,14 @@ IF interaction_city = 141:
  specialisation = rand(1,n)
  txt = 1
  $text[1] = '[ГОСПОЖА АНГЕЛИКА]
-   - Это <<$stock_name>>. Она должна быть подготовлена как <<$slave_type_name[$specialisation[specialisation]]>> ранга <<$rating[contract_level[brand_reputation]]>> или выше. Предоплата по контракту составляет <<prepay[brand_reputation]>> искр. Бонусные выплаты по итогам работы будут зависеть от скорости и качества подготовки рабыни. Берешься?'
+   - Это <font color="#0000CD"><<$stock_name>></font>. Она должна быть подготовлена как <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>> ранга </font>  <<$rating[contract_level[brand_reputation]]>> <font color="#0000CD"> или выше</font>. Предоплата по контракту составляет <font color="#0000CD"><<prepay[brand_reputation]>> искр</font>. Бонусные выплаты по итогам работы будут зависеть от скорости и качества подготовки рабыни. Берешься?'
  $yes = {
 gs 'stock_to_slave_nogt' 
 slave["parasite"] = 0
 slave['brand'] = 4
 killvar 'contract'
 contract['active'] = 1
+active[$quest[10]] = 1
 sparks += prepay[brand_reputation]
 contract['level'] = contract_level[brand_reputation]
 $contract['specialisation'] = $specialisation[specialisation]
@@ -2872,7 +2873,7 @@ IF interaction_city = 1411:
  $place = 'guild_hall'
  $return_lock  = 'guild'
  $text[1] = '[ГОСПОЖА АНГЕЛИКА]
-    - Ты же знаешь, <<$master_name>> что я всегда готова подкинуть тебе работу. Но сначала разберись с той воспитуемой которой занимаешься сейчас. Нам тут многостаночники не нужны.' 
+    - Ты же знаешь, <font color="#0000CD"><<$master_name>></font>, что я всегда готова подкинуть тебе работу. Но сначала разберись с той воспитуемой которой занимаешься сейчас. Нам тут многостаночники не нужны.' 
 END
 
 IF interaction_city = 142:
@@ -2897,8 +2898,9 @@ IF interaction_city = 142:
     - Почему так долго? Работу я принимаю, но на бонусы даже не надейся. В следующий раз поторопись, если хочешь получить награду."
    else
    $text[1] = "[ГОСПОЖА АНГЕЛИКА]
-    - Хорошая работа, <<$master_name>>. Премия за качество <<quality_bonus>> искр. Премия за скорость <<time_bonus>> искр. Итого <<final_bonus>> искр. Если нужна будет ещё халтура, ты знаешь где меня найти."
+    - Хорошая работа, <font color='#0000CD'><<$master_name>></font>. Премия за качество <font color='#0000CD'><<quality_bonus>> искр</font>. Премия за скорость <font color='#0000CD'><<time_bonus>> искр</font>. Итого <font color='#0000CD'><<final_bonus>> искр</font>. Если нужна будет ещё халтура, ты знаешь где меня найти."
    sparks += final_bonus
+   active[$quest[10]] = 0
   END
   slave_state = CONST_INT['no_slave']
   if quality_bonus > 0: brand_rate += 1 
@@ -2906,7 +2908,7 @@ IF interaction_city = 142:
   else
   !TODO: <<$rating[contract['level']]>> не выводится
   $text[1] = "[ГОСПОЖА АНГЕЛИКА]
-    - И что? Мне нужна <<$slave_type_name[$contract['specialisation']]>> ранга <<$rating[contract['level']]>> или выше. Живая и здоровая. Не обязательно та, что я тебе дала, но пока ты не сдашь мне готовую работу, контракт остаётся на тебе. Иди работай."
+    - И что? Мне нужна <font color='#0000CD'><<$slave_type_name[$contract['specialisation']]>> ранга </font>  <<$rating[contract['level']]>> или выше. Живая и здоровая. Не обязательно та, что я тебе дала, но пока ты не сдашь мне готовую работу, контракт остаётся на тебе. Иди работай."
  END
 END
 

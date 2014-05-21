@@ -245,6 +245,9 @@ IF sparks => 5 and slave['pregnant'] = 0 and slave['fertility'] = 0:
  else
  $text_display += {<div id="under_gray">Стерилизация<br></div>}
 END
+IF sparks => 50 and slave['fertility'] = -1:
+ $text_display += {<div id="under">Восстановление фертильности<div id = "clear"><a href = 'EXEC: interaction_city = 33211 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>} 
+END
 IF sparks => 25 and slave['breast_enchanced'] = 0:
  $text_display += {<div id="under">Увеличение груди<div id = "clear"><a href = 'EXEC: interaction_city = 3322 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>} 
  else

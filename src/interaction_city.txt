@@ -4399,6 +4399,29 @@ gt 'shop_general'}
  gt 'choice_screen'
 END
 
+IF interaction_city = 33211:
+ $place = 'hospital'
+ $return_lock  = 'shop_general' 
+ txt_count = 1
+ txt = 1
+ npc = 1
+ $npc_id = 'doctor'
+ $text[1] = '   [Доктор]
+   - Восстановить способность женского организма к деторождению сложнее чем стерилизация. Последствия для здоровья средние. <BR> Стоимость процедуры <b>50 искр</b>. Время реабилитации <b>7 дней</b>. '
+ $yes = {
+sparks -= 50
+slave['energy'] -= 3
+dynamic $slave_energy_drop
+slave["fertility_revealed"] = 1
+slave_rate['stamina'] -= 10
+slave['reabilitation'] = 7
+slave['fertility'] = 0
+gt 'shop_general'}
+ $no = {sp_txt = 2
+gt 'shop_general'}
+ gt 'choice_screen'
+END
+
 IF interaction_city = 3322:
  $place = 'hospital'
  $return_lock  = 'shop_general' 

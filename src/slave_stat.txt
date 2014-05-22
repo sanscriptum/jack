@@ -6,6 +6,10 @@ IF $info_text = '':
  if slave_state = CONST_INT['slave_dead']: $info_text = '   <<$slave_name>> мертва. Её бездыханный труп лежит на полу.'
 END
 
+!очищение менюшки выбора экипировки при переключении вкладки
+if slot = 0: $equip_choice = ''
+slot = 0
+
 stat_importance['stamina'] = 1
 stat_importance['sensitivity'] = 1
 stat_importance['temper'] = 1
@@ -46,7 +50,7 @@ gs 'stats_layout'
 *p '<div id = "bookmark_two">Анатомия</div>'
 *p '<div id = "bookmark_three">Снаряжение</div>'
 *p '<div id = "bookmark_four">Аура</div>'
-*p '<div id = "close"><a href = "EXEC: gt ''menu_form''"><img src = "content\close_button.png"></a></div>'
+*p '<div id = "close"><a href = "EXEC: $equip_choice = '''' & gt ''menu_form''"><img src = "content\close_button.png"></a></div>'
 
 *p '<div id="left_column">
 <u>ОЦЕНКА:</u>&nbsp;<a href="EXEC: msg $rating_help"><<$rating[rating]>></a>

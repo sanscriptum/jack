@@ -9,7 +9,7 @@ IF skip_to > 0:
  sp_txt = skip_to
  skip_to = 0
 END
-
+npc = 0
 $text_display = ''
 dynamic $display_options[sp_txt]
 

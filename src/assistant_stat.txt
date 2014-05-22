@@ -25,6 +25,9 @@ IF $assitant_info_text = '':
 	END
 END
 
+!очищение менюшки выбора экипировки при переключении вкладки
+if slot = 0: $equip_choice = ''
+slot = 0
 
  IF assistant['image_mode'] = 0:
   assistant['nude'] = 0
@@ -57,7 +60,7 @@ gs 'stats_layout'
 !*p '<div id = "bookmark_two">Анатомия</div>'
 *p '<div id = "bookmark_three">Снаряжение</div>'
 *p '<div id = "bookmark_four">Аура</div>'
-*p '<div id = "close"><a href = "EXEC: $assitant_info_text = '''' & gt ''menu_form''"><img src = "content\close_button.png"></a></div>'
+*p '<div id = "close"><a href = "EXEC: $equip_choice = '''' & $assitant_info_text = '''' & gt ''menu_form''"><img src = "content\close_button.png"></a></div>'
 
 *p '<div id="left_column">
 <u>РЕЗЮМЕ</u>

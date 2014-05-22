@@ -10,7 +10,7 @@ slot = 0
 *p '<div id = "bookmark_two">Задачи</div>'
 *p '<div id = "bookmark_three">Снаряжение</div>'
 *p '<div id = "bookmark_four">Дневник</div>'
-*p '<div id = "close"><a href = "EXEC: gt ''menu_form''"><img src = "content\close_button.png"></a></div>'
+*p '<div id = "close"><a href = "EXEC: $equip_choice = '''' & gt ''menu_form''"><img src = "content\close_button.png"></a></div>'
 
 !'
  IF slave["stamina"] > 1:

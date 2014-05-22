@@ -2,6 +2,7 @@
 !ЗДАНИЕ ГИЛЬДИИ РАБОТОРГОВЦЕВ
 GS '_layout'
 gs '$slave_price'
+npc = 0
 $place = 'guild_hall'
 $text_display = '<br>'
 

@@ -408,15 +408,28 @@ IF $interaction_type = 'special':
  *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
 END
 
-$info_bar = ''
-*p '<div id = "side_panel_main"><center><font size = 50%><<$place_name[$place]>></font>
+if npc = 0:
+ $info_bar = ''
+ *p '<div id = "side_panel_main"><center><font size = 50%><<$place_name[$place]>></font>
 <<$place_location[$place]>>
+
+ Информация к размышлению:
+ </center></div>'
+ *p '<div id = "side_panel_text">  <<$place_info[$place]>>
+</div>'  
+ else
+ $info_bar = '' 
+ *p '<div id = "bg"><img src="content\pic\characters\<<$npc_image[$npc_id]>>.gif"></div>' 
+ *p '<div id = "side_panel_main"><center><font size = 50%><<$npc_name[$npc_id]>></font>
+<<$npc_status[$npc_id]>>
 
 Информация к размышлению:
 </center></div>'
-*p '<div id = "side_panel_text">  <<$place_info[$place]>>
-</div>'  
-*p '<div id = "interaction_stat_bar"><<$info_bar>></div>'
+ *p '<div id = "side_panel_text">  <<$npc_attitude[npc_attitude[$npc_id]]>>
+
+ <<$npc_info[$npc_id]>>
+</div>'
+END
 
 if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3'
 --- shop_wpn ---------------------------------

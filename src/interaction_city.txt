@@ -40,6 +40,7 @@ IF interaction_city = 111:
 END
 
 IF interaction_city = 1111:
+ npc = 1
  $place = 'shop_wpn'
  $return_lock  = 'shop_wpn' 
  txt_count = 7

@@ -11,7 +11,7 @@ $place = 'slave_stage'
 GS '_layout'
 GS '$slave_price'
 
-sell_price = price/2
+sell_price = slaveprice/2
 if sell_price < 1: sell_price = 1
 
 $npc_id = 'фарид_аукционщик'

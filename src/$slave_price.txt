@@ -39,6 +39,45 @@ price = (stock_base_price*3)/2
 if price < 1: price = 1
 halfprice = price/2
 
+!цена за рабыню
+slave["style"] = (slave["expression"] + slave["callisthenics"])/2 + slave["grace"]
+
+slave_base_price = 5
+if slave["stamina"] > 2: slave_base_price += 5
+if slave["stamina"] > 3: slave_base_price += 10
+if slave["stamina"] > 4: slave_base_price += 20
+if slave["beauty"] > 1: slave_base_price += 5
+if slave["beauty"] > 2: slave_base_price += 10
+if slave["beauty"] > 3: slave_base_price += 20
+if slave["beauty"] > 4: slave_base_price += 40
+if slave["fat"] = 1: slave_base_price += 5
+if slave["fat"] > 2: slave_base_price -= 5
+if slave["fat"] > 3: slave_base_price -= 10
+if slave["fat"] > 4: slave_base_price -= 20
+if slave["scares"] > 0: slave_base_price -= 5
+if slave["scares"] > 1: slave_base_price -= 10
+if slave["scares"] > 2: slave_base_price -= 20
+if slave["scares"] > 3: slave_base_price -= 40
+if slave["scares"] > 4: slave_base_price -= 80
+if slave["bruises"] > 1: slave_base_price -= 5
+if slave["bruises"] > 2: slave_base_price -= 10
+if slave["bruises"] > 3: slave_base_price -= 20
+if slave["bruises"] > 4: slave_base_price -= 40
+if slave["style"] > 0: slave_base_price += 5
+if slave["style"] > 1: slave_base_price += 10
+if slave["style"] > 2: slave_base_price += 20
+if slave["style"] > 3: slave_base_price += 40
+if slave["style"] > 4: slave_base_price += 80
+if slave["sensitivity"] > 2: slave_base_price += 5
+if slave["sensitivity"] > 3: slave_base_price += 10
+if slave["sensitivity"] > 4: slave_base_price += 20
+if slave["temper"] > 2: slave_base_price += 5
+if slave["temper"] > 3: slave_base_price += 10
+if slave["temper"] > 4: slave_base_price += 20
+slaveprice = (slave_base_price*3)/2
+
+if slaveprice < 1: slaveprice = 1
+
 !РЕЙТИНГ
 killvar 'slave_specialisation'
 

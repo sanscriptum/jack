@@ -6976,8 +6976,8 @@ $seed_ava_clear[241] = 'content\pic\girls\face\241'
 seed_age[241] = 0
 
 
-seed_boobs[241] = 1
-$seed_boobs_img[241] = 'boobs_B'
+seed_boobs[241] = 3
+$seed_boobs_img[241] = 'boobs_DD'
 $seed_pussy_img[241] = 'pussy_g1'
 $seed_psy_basic[241] = ''
 $seed_world[241] = ''
@@ -7372,7 +7372,7 @@ $seed_pussy_img[503] = 'pussy_m3'
 $seed_psy_basic[503] = ''
 $seed_world[503] = ''
 
-$bathing_alone[503] = 'girls\scene\bath_black_goldeneye_milf'
+$bathing_alone[503] = 'girls\scene\bath_black_goldeye_milf'
 $cello[503] = 'girls\scene\cello_general_milf'
 $cleaning[503] = 'girls\scene\clean_general_milf'  
 $cooking[503] = 'girls\scene\cook_dark_redeye_milf' 
@@ -7969,7 +7969,7 @@ $desertag[509] = 'girls\scene\dessertag_general'
 $enchanting[509] = 'girls\scene\enchanting_general'
 $fighting[509] = 'girls\scene\fight_black_darkeye' 
 $flyte[509] = 'girls\scene\flute_general' 
-$guitar[509] = 'girls\scene\brown_browneye_milf'
+$guitar[509] = 'girls\scene\guitar_brown_browneye_milf_2'
 $gymnastics[509] = 'girls\scene\gym_general_milf'
 $lesbo_bath[509] = 'girls\scene\lesbath_purple_brown_gm'
 $nurse[509] = 'girls\scene\nurse_general' 

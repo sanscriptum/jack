@@ -2,7 +2,7 @@
 !База квестов для персонажа
 $quest[0] = '<a href = "EXEC: quest_description_mode = 1 & choosen_quest = 0 & gt curloc">Образец</a>'
 $quest[1] = '<a href = "EXEC: quest_description_mode = 1 & choosen_quest = 1 & gt curloc">Мне необходимо непрерывно работать над своей репутацией</a> <br>'
-$quest[2] = '<a href = "EXEC: quest_description_mode = 1 & choosen_quest = 2 & gt curloc">Я думаю как бы мне выгоднее продать воспитуемую.</a> <br>'
+$quest[2] = '<a href = "EXEC: quest_description_mode = 1 & choosen_quest = 2 & gt curloc">Я думаю как бы мне выгоднее продать воспитуемую</a> <br>'
 $quest[3] = '<a href = "EXEC: quest_description_mode = 1 & choosen_quest = 3 & gt curloc">Весьма неплохо было бы добиться статуса патриция</a> <br>'
 $quest[4] = '<a href = "EXEC: quest_description_mode = 1 & choosen_quest = 4 & gt curloc">Я мечу на пост цехового мастера в Гильдии, мне кажется я достоин его</a> <br>'
 $quest[5] = '<a href = "EXEC: quest_description_mode = 1 & choosen_quest = 5 & gt curloc">У меня есть очень важный клиент с особыми требованиями</a> <br>'
@@ -55,6 +55,17 @@ $quest_description[9] = '  Магистр Валиос, некромант, из
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Назад</a>'
 
 $quest_description[10] = '  Мне выдали контракт в гильдии по тренировке рабыни как <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font>, она должна быть как минимум <<$rating[contract_level[brand_reputation]]>> <font color="#0000CD"> ранга</font> или выше.
+
+<u>Памятка, чтобы не забыть!</u>
+
+Чтобы подготовить рабыню по специальности, мне нужно натренировать её профильный навык как минимум до <font color="#0000CD">среднего уровня</font>. Для наложниц же требуется сумма секс-техник больше девяти. Если у меня есть ассистентка, она подскажет когда рабыня будет соответствовать специализации.
+
+Лимит времени по контракту обычно такой:
+При заказе <<$rating[1]>>-ранга: 25 дней, 
+При заказе <<$rating[2]>>-ранга: 50 дней,
+При заказе <<$rating[3]>>-ранга: 120 дней,
+При заказе <<$rating[4]>>-ранга: 250 дней,
+При заказе <<$rating[5]>>-ранга: 500 дней.
 
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Назад</a>'
 

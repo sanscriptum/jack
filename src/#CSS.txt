@@ -326,15 +326,15 @@ height:30px;
 
 #sparks_display {
 position:absolute;
-left:5px;
-top:5px;
+left:10px;
+top:10px;
 color:#FFD700;
 font-size:30%;
-width:180px;
-height:40px;
+width:90px;
+height:30px;
+padding:3px 3px 0px 5px;
 font-family:Victoriana;
-/* ugly
-background-image: content/menu_button.png;*/
+background-image: content/money_counter.png;
 }
 
 #clear {
@@ -819,9 +819,9 @@ font-family: Segoe Print;
 
 #middle_text {
 position:absolute;
-left:570px;
+left:545px;
 top:40px;
-width:220px;
+width:260px;
 height:580px;
 text-align:left;
 color:#0000CD;
@@ -902,7 +902,7 @@ font-family: Segoe Print;
 
 #right_text {
 position:absolute;
-left:800px;
+left:810px;
 top:40px;
 width:230px;
 height:580px;
@@ -930,9 +930,9 @@ font-family:"Segoe Print";
 
 #right_column {
 position:absolute;
-left:1060px;
+left:1055px;
 top:5px;
-width:210px;
+width:220px;
 height:790px;
 text-align:right;
 font-family:"Segoe Print";

@@ -1841,7 +1841,7 @@ IF interaction_city = 13427:
  txt_count = 1
  txt = 1
  $picture_type = 'pic_jpg'
- $special_bg = 'bg\interiors\classic_bed'
+ $special_bg = 'bg\bedroom'
  $text[1] = '   [Глория]
    - Этот комплект оформления премиум-класса доступен за единовременную плату в 100 искр. Наши рабочие установят его в течение суток. Оформляем?'
  $yes = {

@@ -205,11 +205,11 @@ IF egg_time = 1:
 END
 
 IF milking_time = 1:
- $text += ''
- if slave['milk_gain'] > 0: $text += '<<$slave_name>> даёт <<slave["milk_gain"]>>00 грамм молока и <<slave["cream_gain"]>>00 грамм сливок.'
- if assistant['milk_gain'] > 0: $text += '<<$assistant_name>> даёт <<assistant["milk_gain"]>>00 грамм молока и <<assistant["cream_gain"]>>00 грамм сливок.'
- if prisoner['milk_gain'] > 0: $text += '<<$prisoner_name>> даёт <<prisoner["milk_gain"]>>00 грамм молока и <<prisoner["cream_gain"]>>00 грамм сливок.' 
- $text += 'Общий результат утренней дойки: <<milk_bottle_plus>> бут. молока и <<cream_bottle_plus>> бут. сливок'
+ $text = ''
+ if slave['milk_gain'] > 0: $text += '<<$slave_name>> даёт <<slave["milk_gain"]>>00 грамм молока и <<slave["cream_gain"]>>00 грамм сливок. <br>'
+ if assistant['milk_gain'] > 0: $text += '<<$assistant_name>> даёт <<assistant["milk_gain"]>>00 грамм молока и <<assistant["cream_gain"]>>00 грамм сливок. <br>'
+ if prisoner['milk_gain'] > 0: $text += '<<$prisoner_name>> даёт <<prisoner["milk_gain"]>>00 грамм молока и <<prisoner["cream_gain"]>>00 грамм сливок. <br>' 
+ $text += '<br>Общий результат утренней дойки: <<milk_bottle_plus>> бут. молока и <<cream_bottle_plus>> бут. сливок.'
  $place = 'bedroom'
  if kitchen > 0: $place = 'kitchen'
  $special_bg = 'scene\milking'     
@@ -316,11 +316,6 @@ END
 
 *p '<div id = "interaction_stat_bar"><<$info_bar>></div>'
 
-if txt > 1: 
- addobj '<img src = "content\back_button.png">'
- else
- addobj '<img src = "content\noback_button.png">' 
-END 
 addobj '<img src = "content\forward_button.png">'
 --- end_day_screen ---------------------------------
 

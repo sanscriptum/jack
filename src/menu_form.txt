@@ -303,7 +303,7 @@ IF menu_form = 16:
   else
   $text_display += {<br><div id="under_gray">Изнасиловать анально<br></div>}
  END
- $text_display += {<br><div id="under_gray">Изнасиловать комплексно<br></div>} 
+! $text_display += {<br><div id="under_gray">Изнасиловать комплексно<br></div>} 
  $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 1 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
 END

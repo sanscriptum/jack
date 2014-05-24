@@ -22,9 +22,9 @@ IF no_milf = 1:
 END
 
 ! 1 - loli, 2 - young, 3 - milf ?
-IF meta_type = 1: stock_type = RAND (1,28)
-IF meta_type = 2: stock_type = RAND (201,241)
-IF meta_type = 3: stock_type = RAND (501,542)
+IF meta_type = 1: stock_type = RAND (1,27)
+IF meta_type = 2: stock_type = RAND (201,240)
+IF meta_type = 3: stock_type = RAND (501,541)
 
 !Берем специфическую рабыню
 IF special_stock > 0: 

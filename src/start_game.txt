@@ -10,6 +10,7 @@ gs 'new_estate'
 slave_state = CONST_INT['no_slave']
 day = 1
 decade = 1
+decadecount = 1
 ride_count = 1
 auction_count = 9
 gladi_count = 4

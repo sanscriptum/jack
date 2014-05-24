@@ -11,11 +11,32 @@ gs '#var_base'
 IF wizard_mode = 1:
  *p '<div id = "upper">День: <<day>> (<<sparks>>$) Кн: <<contract["time"]>> дн. |  Клр: <<slave["calories"]>>  |  Fr: <<slave["fear"]>>/<<slave_rate["fear"]>>  |  Ins: <<slave["instinct"]>>/<<slave_rate["instinct"]>>  |  Rat: <<slave["rational"]>>/<<slave_rate["rational"]>>  |  Cus: <<slave["custom"]>>/<<slave_rate["custom"]>>  |  Mor: <<slave["moral"]>>/<<slave_rate["moral"]>>  |  Spl: <<slave["spoil"]>>/<<slave_rate["spoil"]>>  |  Ang: <<slave["angst"]>>/<<slave_rate["angst"]>></div>' 
  else
- $upper_info_bar = 'День: <<day>> (<<sparks>>$) '
+ $upper_info_bar = '<a style = "color: black;" href="EXEC: msg $shedule">День: <<day>></a>  |  Декада: <<decade>>  |  (<<sparks>>$) '
  if contract["time"] > 0: $upper_info_bar += ' |  Контракт: <<contract["time"]>> дн. ' 
  if debt > 0: $upper_info_bar += ' |  Задолженность: <<debt>>$ (<<debt_count>> дн.) ' 
  *p '<div id = "upper"><<$upper_info_bar>></div>'
 END
+
+!расписание
+$rideday = "дней"
+$auctionday = "дней"
+$gladiday = "дней"
+$okonchanie = "ось"
+if ride_count < 5: $rideday = "дня"
+if ride_count = 1: $rideday = "день" & $okonchanie = "ся"
+if ride_count = 0: $rideday =  "дней <br>- сегодня!"
+if auction_count < 5: $auctionday = 'дня'
+if auction_count = 1: $auctionday = 'день'
+if auction_count = 0: $auctionday =  "дней <br>- сегодня!"
+if gladi_count < 5: $gladiday = 'дня'
+if gladi_count = 1: $gladiday = 'день'
+if gladi_count = 0: $gladiday =  "дней - сегодня!"
+
+$shedule = '<center><u>Расписание событий</u></center>
+
+- До гонок остал<<$okonchanie>> <<ride_count>> <<$rideday>>
+- Аукцион начнется через <<auction_count>> <<$auctionday>>
+- Бои в Колизее будут через <<gladi_count>> <<$gladiday>>'
 
 *p '<div id = "master_short_stat">Энергия <<$stars[master_energy_plus]>>
 <<$boy_mood[master_mood_plus]>> 
@@ -152,15 +173,18 @@ END
 
 gs 'revelations'
 
-IF decade => 10:
+!для правильного отображения счетчика декады
+IF decadecount => 10:
  gs 'billing'
  msg '<<$bill_message>>'
- decade = 0
+ decadecount = 0
+ decade += 1
  IF final_payment > sparks:
    dynamic $death, 'Вы не смогли заплатить по счетам и были изгнаны из гильдии работорговцев за неспособность решать собственные финансовые проблемы.'
   else
    sparks -= final_payment
  END
+ gt curloc
 END
 
 IF search['active'] = 2:

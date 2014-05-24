@@ -285,7 +285,7 @@ master_spaed = 0
 master_erected = 0
 master_styled = 0
 day += 1
-decade += 1
+decadecount += 1
 
 gs '$mod_master_drop', 1
 gs '$mod_master_rise', 1

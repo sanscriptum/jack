@@ -37,6 +37,7 @@ $right_text_list = ''
 Мясной фарш х<<frige["mince"]>>
 Вырезка х<<frige["meat"]>>
 Девчатина х<<frige["virgin_meat"]>><br>'
+if spawn_semen > 0: $left_text_list += 'Сперма исчадия x<<spawn_semen>>'
 
 IF lab > 0: 
  $middle_text_list += '<u>ЛАБОРАТОРИЯ</u> [<<lab_items>>/<<estate_size[$estate]>>]:
@@ -78,9 +79,9 @@ $right_text_list += '<u>ДОМ</u>[<<house_items>>/<<estate_size[$estate]>>]:
 !ЗАКЛАДКА СКЛАДА
 If master_stat_screen = 0:
  *p '<div id = "mark_one"><img src = "content\sel_button.png"></div>'
- *p '<div id = "mark_two"><a href = "EXEC: master_stat_screen = 1 & gt curloc"><img src = "content\unsel_button.png"></a></div>' 
- *p '<div id = "mark_three"><a href = "EXEC: master_stat_screen = 2 & gt curloc"><img src = "content\unsel_button.png"></a></div>' 
- *p '<div id = "mark_four"><a href = "EXEC: master_stat_screen = 3 & gt curloc"><img src = "content\unsel_button.png"></a></div>' 
+ *p '<div id = "mark_two"><a href = "EXEC: master_stat_screen = 1 & $info_text = '''' & gt curloc"><img src = "content\unsel_button.png"></a></div>' 
+ *p '<div id = "mark_three"><a href = "EXEC: master_stat_screen = 2 & $info_text = '''' & gt curloc"><img src = "content\unsel_button.png"></a></div>' 
+ *p '<div id = "mark_four"><a href = "EXEC: master_stat_screen = 3 & $info_text = '''' & gt curloc"><img src = "content\unsel_button.png"></a></div>' 
  IF ui_style = 2: 
   *p '<div id="center_image"><img src = "content\pic\ui\grimdark\bg\page_blank.gif"></div>'
   else

@@ -1612,6 +1612,46 @@ width:100px;
 height:100px;
 }
 
+#teach_r {
+position:absolute;
+left:857px;
+top:183px;
+width:26px;
+height:30px;
+}
+
+#teach_s {
+position:absolute;
+left:887px;
+top:183px;
+width:26px;
+height:30px;
+}
+
+#teach_a {
+position:absolute;
+left:917px;
+top:183px;
+width:26px;
+height:30px;
+}
+
+#teach_r_noa {
+position:absolute;
+left:857px;
+top:183px;
+width:26px;
+height:30px;
+}
+
+#teach_s_noa {
+position:absolute;
+left:917px;
+top:183px;
+width:26px;
+height:30px;
+}
+
 #lab {
 position:absolute;
 left:850px;

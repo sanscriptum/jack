@@ -136,6 +136,14 @@ END
 
 IF slave_state = CONST_INT['slave_exist']:
  *p '<div id = "teach"><a href = "EXEC: gt ''teach_screen''"><img src="content\teach.png"></a></div>'
+ IF assistant_state = 1:
+  if sparks => 25: *p '<div id = "teach_r"><a href = "EXEC: teach_stat_screen = 1 & gt ''teach_screen''"><img src="content\teach_r.png"></a></div>'
+  if sparks => 16: *p '<div id = "teach_s"><a href = "EXEC: teach_stat_screen = 2 & gt ''teach_screen''"><img src="content\teach_s.png"></a></div>'
+  *p '<div id = "teach_a"><a href = "EXEC: teach_stat_screen = 3 & gt ''teach_screen''"><img src="content\teach_a.png"></a></div>'
+  else
+  if sparks => 25: *p '<div id = "teach_r_noa"><a href = "EXEC: teach_stat_screen = 1 & gt ''teach_screen''"><img src="content\teach_r.png"></a></div>'
+  if sparks => 16: *p '<div id = "teach_s_noa"><a href = "EXEC: teach_stat_screen = 2 & gt ''teach_screen''"><img src="content\teach_s.png"></a></div>'
+ END
 END
 
 IF lab > 0:

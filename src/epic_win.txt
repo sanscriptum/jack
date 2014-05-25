@@ -13,7 +13,7 @@ MAINDESC_W = 1278
 MAINDESC_H = 798
 
 $yes = {gt 'menu_form'}
-$no = {gt 'main_menu'}
+$no = {gt 'Start'}
 
 '<div id = "title_scroll"><img src = "content\pic\bg\scroll_large.gif"></div>'
 '<div id = "title_scroll_text"><center><h2><font face="Victoriana" size="+20">Поздравляем!</font></h2><br>

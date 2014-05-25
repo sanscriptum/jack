@@ -608,86 +608,135 @@ $text_display += {<br><div id="under">Передумать<br><div id = "clear">
 !Белый дворец
 $palace_options[1] = {
 npc = 0
-$place = 'palace_gate'
-$sp_text[1] = '   У входа в Белый Дворец дежурит бдительная стража. Кого попало они сюда не пустят.'
+$place = 'palace'
 $text_display = '<br><br><br>'
 IF faction_fame['taurus'] => 3:
- if npc_progress['general_barabas'] < 2: $text_display += {<br><div id="under">Аудиенция с архиепископом<br><div id = "clear"><a href = 'EXEC: interaction_city = 241 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ $sp_text[1] = '   Мне разрешили войти в Белый Дворец. Осталось только выбрать, кому предложить свои услуги.'
+ if npc_progress['bishop_molaru'] < 2: $text_display += {<br><div id="under">Аудиенция с архиепископом<br><div id = "clear"><a href = 'EXEC: interaction_city = 241 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  if npc_progress['general_barabas'] < 2: $text_display += {<br><div id="under">Аудиенция с генералом<br><div id = "clear"><a href = 'EXEC: interaction_city = 242 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
- if npc_progress['general_barabas'] < 2: $text_display += {<br><div id="under">Аудиенция с претором<br><div id = "clear"><a href = 'EXEC: interaction_city = 243 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ if npc_progress['pretor_siegfrid'] < 2: $text_display += {<br><div id="under">Аудиенция с претором<br><div id = "clear"><a href = 'EXEC: interaction_city = 243 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  else
+ $place = 'palace_gate'
  $text_display += '<br><br><br><br>' 
+ $sp_text[1] = '   У входа в Белый Дворец дежурит бдительная стража. Кого попало они сюда не пустят.'
 END
 IF faction_fame['taurus'] => 4:
- $text_display += {<br><div id="under">Аудиенция с Королём<br><div id = "clear"><a href = 'EXEC: interaction_city = 244 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ $sp_text[1] = '   Мне разрешили увидиться с Королем. Нужно быстрее встретиться с ним и постараться выполнить его поручение.'
+ if npc_progress['taurus_king'] < 2: $text_display += {<br><div id="under">Аудиенция с Королём<br><div id = "clear"><a href = 'EXEC: interaction_city = 244 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+END
+IF npc_progress['taurus_king'] = 2 and faction_fame['taurus'] = 4:
+ $sp_text[1] = '   Король доволен своим заказом. Тем не менее я не могу стать патрицием дома Таурус, так как уже являюсь патрицием.'
+END
+IF faction_fame['taurus'] = 5 and npc_progress['taurus_king'] = 2 and noble_status = 1:
+ $sp_text[1] = '   Теперь я патриций и знать дома Тауруса. Если мне нужна будет помощь, я могу всегда положиться на Короля.'
 END
 $text_display += {<br><div id="under">Уйти прочь<br><div id = "clear"><a href = 'EXEC: city_form = 2 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
 }
 
 !Административные шпили
 $spire_options[1] = {
-$sp_text[1] = '   У входа в Административные Шпили дежурит бдительная стража. Кого попало они сюда не пустят.'
+$place = 'spire'
 $text_display = '<br><br><br>'
 IF faction_fame['serpis'] => 3:
- $text_display += {<br><div id="under">Аудиенция с архиепископом<br><div id = "clear"><a href = 'EXEC: interaction_city = 341 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Аудиенция с генералом<br><div id = "clear"><a href = 'EXEC: interaction_city = 342 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Аудиенция с претором<br><div id = "clear"><a href = 'EXEC: interaction_city = 343 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ $sp_text[1] = '   Итак, я внутри. Осталось только выбрать, кому предложить свои услуги.'
+ if npc_progress['bishop_porter'] < 2: $text_display += {<br><div id="under">Аудиенция с архиепископом<br><div id = "clear"><a href = 'EXEC: interaction_city = 341 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ if npc_progress['general_drago'] < 2: $text_display += {<br><div id="under">Аудиенция с генералом<br><div id = "clear"><a href = 'EXEC: interaction_city = 342 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ if npc_progress['pretor_diabaz'] < 2: $text_display += {<br><div id="under">Аудиенция с претором<br><div id = "clear"><a href = 'EXEC: interaction_city = 343 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  else
+ $place = 'spire_gate'
  $text_display += '<br><br><br><br>' 
+ $sp_text[1] = '   У входа в Административные Шпили дежурит бдительная стража. Кого попало они сюда не пустят.'
 END
 IF faction_fame['serpis'] => 4:
- $text_display += {<br><div id="under">Аудиенция с Президентом<br><div id = "clear"><a href = 'EXEC: interaction_city = 344 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ $sp_text[1] = '   Мне разрешили увидиться с Президентом. Нужно быстрее встретиться с ним и постараться выполнить его поручение.'
+ if npc_progress['serpis_prince_first'] < 2: $text_display += {<br><div id="under">Аудиенция с Президентом<br><div id = "clear"><a href = 'EXEC: interaction_city = 344 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+END
+IF npc_progress['serpis_prince_first'] = 2 and faction_fame['taurus'] = 4:
+ $sp_text[1] = '   Президент доволен своим заказом. Тем не менее я не могу стать патрицием дома Серпис, так как уже являюсь патрицием.'
+END
+IF faction_fame['serpis'] = 5 and npc_progress['serpis_prince_first'] = 2 and noble_status = 1:
+ $sp_text[1] = '   Теперь я патриций и знать дома Серпис. Если мне нужна будет помощь, Президент поможет мне.'
 END
 $text_display += {<br><div id="under">Уйти прочь<br><div id = "clear"><a href = 'EXEC: city_form = 3 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
 }
 
 !Огненная цитадель
 $citadel_options[1] = {
-$sp_text[1] = '   У входа в Огненную Цитадель дежурит бдительная стража. Кого попало сюда не пустят.'
+$place = 'citadel'
 $text_display = '<br><br><br>'
 IF faction_fame['kamira'] => 3:
- $text_display += {<br><div id="under">Аудиенция с архиепископом<br><div id = "clear"><a href = 'EXEC: interaction_city = 451 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Аудиенция с генералом<br><div id = "clear"><a href = 'EXEC: interaction_city = 452 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Аудиенция с претором<br><div id = "clear"><a href = 'EXEC: interaction_city = 453 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ $sp_text[1] = '   Зверолюды разрешили мне войти в Огненную Цитадель. Осталось только выбрать, кому предложить свои услуги.'
+ if npc_progress['bishop_shaitana'] < 2: $text_display += {<br><div id="under">Аудиенция с архиепископом<br><div id = "clear"><a href = 'EXEC: interaction_city = 451 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ if npc_progress['general_carnis'] < 2: $text_display += {<br><div id="under">Аудиенция с генералом<br><div id = "clear"><a href = 'EXEC: interaction_city = 452 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ if npc_progress['pretor_tifaret'] < 2: $text_display += {<br><div id="under">Аудиенция с претором<br><div id = "clear"><a href = 'EXEC: interaction_city = 453 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  else
+ $place = 'citadel_gate'
  $text_display += '<br><br><br><br>' 
+ $sp_text[1] = '   У входа в Огненную Цитадель дежурит бдительная стража. Кого попало сюда не пустят.'
 END
 IF faction_fame['kamira'] => 4:
- $text_display += {<br><div id="under">Аудиенция с Владычицей<br><div id = "clear"><a href = 'EXEC: interaction_city = 454 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ $sp_text[1] = '   Мне разрешили увидиться с Владычицей. Нужно быстрее встретиться с ней и постараться выполнить её поручение.'
+ if npc_progress['tiamath'] < 2: $text_display += {<br><div id="under">Аудиенция с Владычицей<br><div id = "clear"><a href = 'EXEC: interaction_city = 454 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+END
+IF npc_progress['tiamath'] = 2 and faction_fame['kamira'] = 4:
+ $sp_text[1] = '   Тиамат довольна своим заказом. Тем не менее я не могу стать патрицием дома Камира, так как уже являюсь патрицием.'
+END
+IF faction_fame['kamira'] = 5 and npc_progress['tiamath'] = 2 and noble_status = 1:
+ $sp_text[1] = '   Теперь я патриций и знать дома Камира. Если мне нужна будет помощь, Владычица не подведет меня.'
 END
 $text_display += {<br><div id="under">Уйти прочь<br><div id = "clear"><a href = 'EXEC: city_form = 4 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
 }
 
 !Воронья башня
 $tower_options[1] = {
-$sp_text[1] = '   Немертвый рыцарь бессменно стоит на страже Вороньей Башни. Попробовать пройти мимо него без приглашения равносильно самоубийству.'
+$place = 'tower'
 $text_display = '<br><br><br>'
 IF faction_fame['korvus'] => 3:
- $text_display += {<br><div id="under">Аудиенция с архиепископом<br><div id = "clear"><a href = 'EXEC: interaction_city = 541 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Аудиенция с десницей<br><div id = "clear"><a href = 'EXEC: interaction_city = 542 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Аудиенция с претором<br><div id = "clear"><a href = 'EXEC: interaction_city = 543 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ $sp_text[1] = '   Мертвяки доверяют мне. Теперь я могу пройти в Воронью Башню. Осталось только выбрать, кому предложить свои услуги.'
+ if npc_progress['bishop_nerilis'] < 2: $text_display += {<br><div id="under">Аудиенция с архиепископом<br><div id = "clear"><a href = 'EXEC: interaction_city = 541 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ if npc_progress['hand_of_the_knyaz'] < 2: $text_display += {<br><div id="under">Аудиенция с десницей<br><div id = "clear"><a href = 'EXEC: interaction_city = 542 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ if npc_progress['pretor_kamael'] < 2: $text_display += {<br><div id="under">Аудиенция с претором<br><div id = "clear"><a href = 'EXEC: interaction_city = 543 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  else
+ $place = 'tower_gate'
+ $sp_text[1] = '   Немертвый рыцарь бессменно стоит на страже Вороньей Башни. Попробовать пройти мимо него без приглашения равносильно самоубийству.'
  $text_display += '<br><br><br><br>' 
 END
 IF faction_fame['korvus'] => 4:
- $text_display += {<br><div id="under">Аудиенция с Князем<br><div id = "clear"><a href = 'EXEC: interaction_city = 544 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ $sp_text[1] = '   Мне разрешили встретиться с Князем. Нужно быстрее встретиться с ним и постараться выполнить его поручение.'
+ if npc_progress['korvus_knyaz'] < 2: $text_display += {<br><div id="under">Аудиенция с Князем<br><div id = "clear"><a href = 'EXEC: interaction_city = 544 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+END
+IF npc_progress['korvus_knyaz'] = 2 and faction_fame['korvus'] = 4:
+ $sp_text[1] = '   Князь доволен своим заказом. Тем не менее я не могу стать патрицием дома Корвус, так как уже являюсь патрицием.'
+END
+IF faction_fame['korvus'] = 5 and npc_progress['korvus_knyaz'] = 2 and noble_status = 1:
+ $sp_text[1] = '   Теперь я патриций и знать дома Корвус. Если мне нужна будет помощь, Князь поддержит меня.'
 END
 $text_display += {<br><div id="under">Уйти прочь<br><div id = "clear"><a href = 'EXEC: city_form = 5 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
 }
 
 !Ватикан
 $vatican_options[1] = {
-$sp_text[1] = '   Врата ватикана охраняются очень бдительно. Чтобы пройти сюда нужно особое приглашение.'
+$place = 'vatican'
 $text_display = '<br><br><br>'
-IF brand_reputation => 5 and npc_progress['cardinal_de_mujlon'] < 2: 
- $text_display += {<br><div id="under">Аудиенция с кардиналом<br><div id = "clear"><a href = 'EXEC: interaction_city = 161 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+IF brand_reputation => 5:
+ IF npc_progress['cardinal_de_mujlon'] < 2: 
+  $sp_text[1] = '   Чтобы попасть к Папе Римскому, сначала мне нужно выполнить услугу для кардинала.'
+  $text_display += {<br><div id="under">Аудиенция с кардиналом<br><div id = "clear"><a href = 'EXEC: interaction_city = 161 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+  else
+  $text_display += '<br><br>' 
+ END
+ IF npc_progress['cardinal_de_mujlon'] = 2 and npc_progress['pope'] < 2:
+  $sp_text[1] = '   Теперь я могу встретиться с Папой Римским. Нужно быстрее встретиться с ним и постараться выполнить его поручение.'
+  $text_display += {<br><div id="under">Аудиенция с Папой Римским<br><div id = "clear"><a href = 'EXEC: interaction_city = 162 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+  else
+  $text_display += '<br><br>' 
+ END
+ IF npc_progress['pope'] = 2 and noble_status = 1:
+  $sp_text[1] = '   Теперь я патриций и знать Белого Города. Если мне нужна будет помощь, Папа поможет мне.'
+ END
  else
- $text_display += '<br><br>' 
-END
-IF npc_progress['cardinal_de_mujlon'] = 2:
- $text_display += {<br><div id="under">Аудиенция с Папой Римским<br><div id = "clear"><a href = 'EXEC: interaction_city = 162 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
- else
- $text_display += '<br><br>' 
+ $place = 'vatican_gate'
+ $sp_text[1] = '   Врата ватикана охраняются очень бдительно. Чтобы пройти сюда нужно особое приглашение.'
 END
 $text_display += {<br><div id="under">Уйти прочь<br><div id = "clear"><a href = 'EXEC: city_form = 1 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
 }

@@ -3109,8 +3109,18 @@ IF interaction_city = 16:
  $return_lock  = 'shop_general' 
  copyarr '$display_options', '$vatican_options'
  txt_count = 1
- $text[1] = "   [КАПИТАН ДОРВАРД]
+ IF brand_reputation => 5 and vatican_met = 0:
+  vatican_met = 1
+  $text[1] = "   [КАПИТАН ДОРВАРД]
+   - Смертный, ты стал достаточно известным чтобы попасть сюда и доказал свою исключительную преданность Риму. Проходи."
+  elseif brand_reputation => 5 and vatican_met = 1: 
+		$text[1] = "   [КАПИТАН ДОРВАРД]
+   - Проходи, смертный."
+  END
+ IF brand_reputation < 5:
+  $text[1] = "   [КАПИТАН ДОРВАРД]
    - Сия обитель не для простых смертных. Какое дело привело тебя в Ватикан?"
+ END
 END
 
 IF interaction_city = 161:
@@ -3691,8 +3701,18 @@ IF interaction_city = 24:
  $return_lock  = 'shop_general' 
  copyarr '$display_options', '$palace_options'
  txt_count = 1
- $text[1] = "   [РЫЦАРИ-ГВАРДЕЙЦЫ]
+ IF faction_fame['taurus'] => 3 and taurus_met = 0:
+  taurus_met = 1
+  $text[1] = "   [РЫЦАРИ-ГВАРДЕЙЦЫ]
+   - Мы слышали о вас, <<$master_name>>. Вы можете пройти."
+  elseif faction_fame['taurus'] => 3 and taurus_met = 1: 
+		$text[1] = "   [РЫЦАРИ-ГВАРДЕЙЦЫ]
+   - Проходите, <<$master_name>>."
+  END
+ IF faction_fame['taurus'] < 3:
+  $text[1] = "   [РЫЦАРИ-ГВАРДЕЙЦЫ]
    - Стоять! Объявите цель своего визита."
+ END
 END
 
 IF interaction_city = 241:
@@ -4670,8 +4690,18 @@ IF interaction_city = 34:
  $return_lock  = 'shop_general' 
  copyarr '$display_options', '$spire_options'
  txt_count = 1
- $text[1] = "   [ТЕХНО-ЯНЫЧАРЫ]
+ IF faction_fame['serpis'] => 3 and serpis_met = 0:
+  serpis_met = 1
+  $text[1] = "   [ТЕХНО-ЯНЫЧАРЫ]
+   - Кажется, мы где-то видели вас, <<$master_name>>. Покажите пропуск. Ага... Хорошо, можете пройти."
+  elseif faction_fame['serpis'] => 3 and serpis_met = 1: 
+		$text[1] = "   [ТЕХНО-ЯНЫЧАРЫ]
+   - Вы можете пройти, <<$master_name>>."
+  END
+ IF faction_fame['serpis'] < 3:
+  $text[1] = "   [ТЕХНО-ЯНЫЧАРЫ]
    - Доступ в административные шпили строго ограничен, гражданин. У вас есть пропуск?"
+ END
 END
 
 IF interaction_city = 341:
@@ -5182,8 +5212,18 @@ IF interaction_city = 45:
  $return_lock  = 'shop_general' 
  copyarr '$display_options', '$citadel_options'
  txt_count = 1
- $text[1] = "   [СТРАЖ ЦИТАДЕЛИ]
+ IF faction_fame['kamira'] => 3 and kamira_met = 0:
+  kamira_met = 1
+  $text[1] = "   [СТРАЖ ЦИТАДЕЛИ]
+   - Ты доказал, что тебе можно доверять, <<$master_name>>. Заходи."
+  elseif faction_fame['kamira'] => 3 and kamira_met = 1: 
+		$text[1] = "   [СТРАЖ ЦИТАДЕЛИ]
+   - Проходи, <<$master_name>>."
+  END
+ IF faction_fame['kamira'] < 3:
+  $text[1] = "   [СТРАЖ ЦИТАДЕЛИ]
    - Назови мне хотя бы одну причину пустить тебя внутрь, человек."
+ END
 END
 
 IF interaction_city = 451:
@@ -5757,8 +5797,18 @@ IF interaction_city = 54:
  $return_lock  = 'shop_general' 
  copyarr '$display_options', '$tower_options'
  txt_count = 1
- $text[1] = "   [РЫЦАРЬ СМЕРТИ]
+ IF faction_fame['korvus'] => 3 and korvus_met = 0:
+  korvus_met = 1
+  $text[1] = "   [РЫЦАРЬ СМЕРТИ]
+   - Грргххх... Человек... Послушный человек... Славный человек... <<$master_name>>? Прроходиии..."
+  elseif faction_fame['korvus'] => 3 and korvus_met = 1: 
+		$text[1] = "   [РЫЦАРЬ СМЕРТИ]
+   - <<$master_name>> хочет войти? Послушный человек войдет. Пррроходи..."
+  END
+ IF faction_fame['korvus'] < 3:
+  $text[1] = "   [РЫЦАРЬ СМЕРТИ]
    - Аррргххх... Мозгиииии..."
+ END
 END
 
 IF interaction_city = 541:

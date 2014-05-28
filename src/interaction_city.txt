@@ -4170,6 +4170,7 @@ IF interaction_city = 3312:
  killvar 'cure_slave_ill' 
  killvar 'slave_abortion'
  killvar 'slave_insidous_abortion'
+ killvar 'slave_stimulation'
  $text[1] = '   [ДОКТОР]
    - <<$slave_name>> абсолютно здорова, <<$master_name>>. По крайней мере ничего такого, что требовало бы медицинского вмешательства. Если хотите, я выпишу вам справку о её состоянии, для предъявления возможным покупателям.' 
  IF slave['stamina'] < 1 or slave['energy'] = -5:
@@ -5579,7 +5580,6 @@ IF interaction_city = 5217:
   slave_rate["mood"] -= 10  
   if slave["neg_pain"] < 2: slave["neg_pain"] = 2    
   if slave["neg_disgust"] < 1 and blood_attitude < 0: slave["neg_disgust"] = 1 & gs '$mod_slave_drop', 1          
-  slave_rate["beauty"] -= 5
   slave_rate["hygiene"] += 5      
  }
 END

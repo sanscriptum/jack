@@ -434,7 +434,7 @@ font-family:Victoriana;
 #text {
 position:absolute;
 left:30px;
-top:610px;
+top:615px;
 width:740px;
 height:185px;
 font-size:20%;
@@ -1068,7 +1068,7 @@ font-family:"Segoe Print";
 #sound_icon {
 position:absolute;
 left:960px;
-top:3px;
+top:0px;
 width:30px;
 height:30px;
 }

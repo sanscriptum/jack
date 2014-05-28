@@ -1,6 +1,6 @@
 # sex_end
 $return_lock = $return_lock_prev
-$sex_partner = ''
+!$sex_partner = ''
 
 gs 'main_layout'
 menu_form = 0
@@ -13,7 +13,7 @@ if master_excitement > sex['pc_boner']: a = master_excitement - sex['pc_boner']
 if a > master_mood['pos_statisfied']: master_mood['pos_statisfied'] = a
 master_excitement = sex['pc_boner']
 
-IF $sex['partner'] = '':
+IF $sex_partner = '':
  if slave["nymphomania_revealed"] = 0:  slave["nymphomania_revealed"] = 1  
 
  killvar 'already_sex_curslave'
@@ -22,9 +22,9 @@ IF $sex['partner'] = '':
  copyarr 'today_sex_curslave','sex_done_today'
  
  IF deflorated = 1:
-  virginity = 2
-  slave['neg_defloration'] = slave["sensitivity"] + slave['pride'] - slave["moral"] - slave["arousal"] - master_penetration
-  if slave['neg_defloration'] > 0: gs '$mod_slave_drop', slave['neg_defloration']    
+   virginity = 2
+   slave['neg_defloration'] = slave["sensitivity"] + slave['pride'] - slave["moral"] - slave["arousal"] - master_penetration
+   if slave['neg_defloration'] > 0: gs '$mod_slave_drop', slave['neg_defloration']   
  END
  IF sex["climax_count"] > 0:
   if orgasm_prohibited > 0: sin_gained = max (1, slave["moral"])
@@ -35,6 +35,26 @@ IF $sex['partner'] = '':
  dynamic $slave_energy_drop
  slave['newness'] = sex['girl_newness'] 
  if sex['girl_get_pregnant'] = 1 and slave['pregnant'] < 1: slave['pregnant'] = 1
+END
+
+IF $sex_partner = 'assistant':
+
+ killvar 'already_assistant'
+ copyarr 'already_assistant','sex_done_thisperson'
+ killvar 'today_sex_assistant'
+ copyarr 'today_sex_assistant','sex_done_today'
+ 
+ IF deflorated = 1:
+   assistant_virginity = 2
+   assistant['neg_defloration'] = assistant["sensitivity"] + assistant['pride'] - assistant["moral"] - assistant["arousal"] - master_penetration 
+ END
+ IF sex["climax_count"] > 0:
+  assistant_rate["arousal"] -= sex["climax_count"] * assistant["arousal"] * sex["climax_top"]
+ END
+ if sex["climax_top"] > assistant['pos_orgasm']: assistant['pos_orgasm'] = sex["climax_top"]
+ assistant['orgasm_type'] = sex['girl_orgasm_type_change']
+ assistant['newness'] = sex['girl_newness'] 
+ if sex['girl_get_pregnant'] = 1 and assistant['pregnant'] < 1: assistant['pregnant'] = 1
 END
 
 killvar 'sex'

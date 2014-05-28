@@ -64,10 +64,11 @@ master_mood['neg_master_cloth'] = 0
 $item_name['regal_suit'] = 'Пафосный наряд'
 item_price['regal_suit'] = 20
 item_size['regal_suit'] = 0
-$item_description['regal_suit'] = '   Эта тяжелая одежда богато украшена драгоценными вставками и декоративными элементами, заставляющими вас выглядеть больше и величественнее. Красиво и внушительно конечно, однако совсем непрактично.'
+$item_description['regal_suit'] = '   Эта тяжелая одежда богато украшена драгоценными вставками и декоративными элементами, заставляющими вас выглядеть больше и величественнее. Красиво и внушительно, конечно, однако совсем непрактично.'
 style_modifer['regal_suit'] = 1
 comfort_modifer['regal_suit'] = -1
 $item_property['regal_suit'] = {
+master_mood['pos_master_cloth'] = 0
 }
 
 !["fancy_suit"]

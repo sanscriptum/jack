@@ -1380,7 +1380,7 @@ height:25px;
 #chekbox_12r {
 position:absolute;
 left:1012px;
-top:475px;
+top:444px;
 width:25px;
 height:25px;
 }
@@ -1389,6 +1389,14 @@ height:25px;
 position:absolute;
 left:1012px;
 top:506px;
+width:25px;
+height:25px;
+}
+
+#chekbox_14r {
+position:absolute;
+left:1012px;
+top:537px;
 width:25px;
 height:25px;
 }
@@ -1533,6 +1541,14 @@ height:21px;
 position:absolute;
 left:1230px;
 top:712px;
+width:21px;
+height:21px;
+}
+
+#fast_tentacle {
+position:absolute;
+left:1230px;
+top:758px;
 width:21px;
 height:21px;
 }

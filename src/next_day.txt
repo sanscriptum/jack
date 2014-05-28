@@ -152,6 +152,18 @@ slave["energy"] += slave_well_rested
 if slave["energy"] > 5: slave["energy"] = 5
 slave_well_rested = 0
 
+IF slave_tentacle_rule = 1 and spawn_milked = 0 and pet_tentacle > 0  and slave["energy"] > 0 and slave_state = CONST_INT['slave_exist']:
+ slave_auto_tentacle = 1
+ slave["energy"] -= 1 
+ slave_rate["hygiene"] += 20
+ tentacle_hp += 1
+ IF slave["sub_tentacles"] > tentacle_size: 
+  spawn_milked = 1
+  tentacle_hp += 1
+  spawn_semen += semen_gain[tentacle_size]
+ END 
+END
+
 !Самостоятельные действия ассистентки
 IF assistant_cooks_rule = 1 and cooked_food <= 0 and kitchen > 0 and assistant["energy"] > 0:
  assistant_auto_cook = 1

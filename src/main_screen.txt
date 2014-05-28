@@ -76,6 +76,15 @@ IF cooked_food < 1 and kitchen > 0:
  END
 END
 
+!быстрые действия для исчадия
+IF tentacle_state = 1: 
+ IF slave_state = CONST_INT['slave_exist'] and slave_tentacle_rule = 1:
+  *p {<div id="fast_tentacle"><a href = "EXEC: interaction = 59 & gt 'interaction'"><img src="content\fast_button.png"></a></div>}  
+  else
+  IF assistant_state = 1: *p {<div id="fast_tentacle"><a href = "EXEC: interaction = 45 & gt 'interaction'"><img src="content\fast_button.png"></a></div>}    
+ END
+END
+
 IF house_mess > 1: 
  IF slave_state = CONST_INT['slave_exist'] and slave_cleans_rule = 1:
   *p {<div id="fast_clean"><a href = "EXEC: interaction = 51 & gt 'interaction'"><img src="content\fast_button.png"></a></div>}  
@@ -133,6 +142,9 @@ END
 IF master_excitement > 0: 
  IF slave_state = CONST_INT['slave_exist']:
   *p {<div id="fast_sex"><a href = "EXEC: menu_form = 16 & gt 'menu_form'"><img src="content\fast_button.png"></a></div>}  
+ END
+ IF slave_state ! CONST_INT['slave_exist'] and assistant_state = 1:
+  *p {<div id="fast_sex"><a href = "EXEC: menu_form = 4 & gt 'menu_form'"><img src="content\fast_button.png"></a></div>}  
  END
 END
 

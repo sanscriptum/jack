@@ -142,6 +142,7 @@ IF assistant_stat_screen = 0:
   *p '<div id="chekbox_6r"><a href = "EXEC: assistant_alchemist_rule = 1 & $assitant_info_text = $assistant_alchemist_rule & gt curloc"><img src="content\unsel_button.png"></a></div>'  
  END   
  IF assistant_tentacle_rule = 1:
+  slave_tentacle_rule = 0
   *p '<div id="chekbox_7r"><a href = "EXEC: assistant_tentacle_rule = 0 & $assitant_info_text = $assistant_tentacle_rule_abort & gt curloc"><img src="content\sel_button.png"></a></div>'  
   else
   *p '<div id="chekbox_7r"><a href = "EXEC: assistant_tentacle_rule = 1 & $assitant_info_text = $assistant_tentacle_rule & gt curloc"><img src="content\unsel_button.png"></a></div>'  

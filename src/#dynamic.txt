@@ -107,8 +107,9 @@ IF slave_state ! CONST_INT['no_slave']:
   else
   if slave["energy"] > -5: slave_state = CONST_INT['slave_exist']
  END
- IF slave["stamina"] < 0: 
+ IF slave["stamina"] = 0 and slave_rate["stamina"] < 0 and slave['starvation'] > 50: 
   slave_state = CONST_INT['no_slave']
+  master_mood['neg_slave_starved'] = 1
   msg 'Ваша воспитуемая умерла от истощения. Вы продали ее труп мяснику за 5 искр.'
   sparks += 5
  END

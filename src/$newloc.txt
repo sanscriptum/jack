@@ -56,6 +56,7 @@ IF slave_state = CONST_INT['no_slave']:
  slave_cleans_rule = 0
  slave_cooks_rule = 0
  slave_washes_rule = 0 
+ slave_tentacle_rule = 0
  prise_promised = 0
  gift_promised = 0
  slave["pain_treat"] = 0

@@ -108,7 +108,7 @@ IF slave['angst'] > a:
  if chance < slave['angst']: slave_suicide = 1
 END
 
-IF slave_cooks_rule = 1 and cooked_food <= 0 and kitchen > 0 and slave["energy"] > 0 and slave["obedience"] > slave["pride"]:
+IF slave_cooks_rule = 1 and cooked_food <= 0 and kitchen > 0 and slave["energy"] > 0 and slave["obedience"] > slave["pride"] and slave_state = CONST_INT['slave_exist']:
  slave_auto_cook = 1
  cooked_food = slave["cook"]
  slave_rate["cook"] += 1
@@ -116,7 +116,7 @@ IF slave_cooks_rule = 1 and cooked_food <= 0 and kitchen > 0 and slave["energy"]
  slave["energy"] -= 1
 END
 
-IF slave_cleans_rule = 1 and house_mess > 1 and slave["energy"] > 0 and slave["obedience"] > slave["pride"]:
+IF slave_cleans_rule = 1 and house_mess > 1 and slave["energy"] > 0 and slave["obedience"] > slave["pride"] and slave_state = CONST_INT['slave_exist']:
  slave_auto_clean = 1
  slave_rate["service"] += 1
  house_mess_rate = 0  

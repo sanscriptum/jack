@@ -256,7 +256,28 @@ $hospital_options[12] = {
 			$text_display += {<br><div id="under">Лечение ранений (100 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33121 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
 			elseif slave["wounds"] = 5 and sparks < 100: $text_display += {<br><div id="under_gray">Лечение ранений (100 искр)<br></div>} 
 			end
-        if slave_stimulation = 1: $text_display += {<br><div id="under">Реанимация (10 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33126 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+        IF slave_stimulation = 1: 
+			if slave["res"] = 0 and sparks => 100: 
+				$text_display += {<br><div id="under">Реанимация (100 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33126 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+				elseif slave["res"] = 0 and sparks < 100: $text_display += {<br><div id="under_gray">Реанимация (100 искр)<br></div>} 
+				end
+			if slave["res"] = 1 and sparks => 500: 
+				$text_display += {<br><div id="under">Реанимация (500 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33126 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+				elseif slave["res"] = 1 and sparks < 500: $text_display += {<br><div id="under_gray">Реанимация (500 искр)<br></div>} 
+				end
+			if slave["res"] = 2 and sparks => 1000: 
+				$text_display += {<br><div id="under">Реанимация (1000 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33126 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+				elseif slave["res"] = 2 and sparks < 1000: $text_display += {<br><div id="under_gray">Реанимация (1000 искр)<br></div>} 
+				end
+			if slave["res"] = 3 and sparks => 2500: 
+				$text_display += {<br><div id="under">Реанимация (2500 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33126 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+				elseif slave["res"] = 3 and sparks < 2500: $text_display += {<br><div id="under_gray">Реанимация (2500 искр)<br></div>} 
+				end
+			if slave["res"] => 4 and sparks => 5000: 
+				$text_display += {<br><div id="under">Реанимация (5000 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33126 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+				elseif slave["res"] => 4 and sparks < 5000: $text_display += {<br><div id="under_gray">Реанимация (5000 искр)<br></div>} 
+				end
+		END
         if slave_abortion = 1 and sparks => 10: 
 			$text_display += {<br><div id="under">Аборт (10 искр)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33124 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
 			elseif slave_abortion = 1 and sparks < 10: $text_display += {<br><div id="under_gray">Аборт (10 искр)<br></div>} 

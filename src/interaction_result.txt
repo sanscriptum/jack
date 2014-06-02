@@ -41,7 +41,8 @@ IF $interaction_type = 'spell_cast':
  if master_mage = 2: spell_effectiveness = 4
  if master_mage = 3: spell_effectiveness = 6
  if master_mage = 4: spell_effectiveness = 8
- if master_mage = 5: spell_effectiveness = 10  
+ if master_mage = 5: spell_effectiveness = 10 
+ if master_mage = 6: spell_effectiveness = 10   
  spell_effectiveness -= slave['ego']
  $text[2] = '$spell_fail'
  dynamic $special_part   
@@ -81,6 +82,7 @@ END
 !Тип взаимодействия - личный урок
 IF $interaction_type = 'master_teaches_slave':
  diligence = complex_diligence
+ if couch_skill = 6: couch_skill = 5
  teacher_potential = couch_skill - slave_skill
  IF teacher_potential < 1:
   $interaction_type = 'talk'

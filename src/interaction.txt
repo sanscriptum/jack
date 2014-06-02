@@ -110,7 +110,8 @@ IF interaction = 62:
  if master_mage = 2: spell_effectiveness = 4
  if master_mage = 3: spell_effectiveness = 6
  if master_mage = 4: spell_effectiveness = 8
- if master_mage = 5: spell_effectiveness = 10  
+ if master_mage = 5: spell_effectiveness = 10 
+ if master_mage = 6: spell_effectiveness = 10  
  spell_effectiveness -= slave['ego']
  torture_intensity = min (slave['sin'], spell_effectiveness)
  $special_part = {
@@ -197,6 +198,7 @@ IF interaction = 65:
  $text[1] = '<<$cast_spell[interaction]>>'
  sparks -= 5
  magna_magnifika = master_mage * 2
+ if master_mage = 6: magna_magnifika = 10
  if master_mage < 1 and already_done_today[interaction] = 0: master_mage_rate += 1
 END
 
@@ -639,6 +641,7 @@ END
 IF interaction = 35:
  $interaction_type = 'special' 
  if cooked_food < master_butler: cooked_food = master_butler
+ if master_butler = 6: cooked_food = 5
  master_butler_rate += 1
  house_mess_rate += 5
  master_hygiene_rate += 5 

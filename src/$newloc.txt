@@ -172,7 +172,6 @@ if master_style < 0: master_style = 0
 if master_style > 5: master_style = 5
 
 !Обсчет характеристик персонажей
-gs '$calculate_atributes'
 
 killvar 'boost_up'
 dynamic $item_property[$master_cloth]
@@ -221,6 +220,7 @@ IF master_mage_rised = 1 and boost_up['master_mage'] = 0:
   master_mage -= 1
 END
 
+gs '$calculate_atributes'
 
 if slave['fear'] > 5: slave['fear'] = 5
 if slave['fear'] < 0: slave['fear'] = 0

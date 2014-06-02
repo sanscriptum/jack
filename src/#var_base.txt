@@ -8,11 +8,37 @@ $_font_col_rep[2] = '<font color="#4B0082">'
 $_font_col_rep[3] = '<font color="#0000CD">'
 $_font_col_rep[4] = '<font color="#008080">'
 $_font_col_rep[5] = '<font color="#008000">'
+! Серый цвет
+$_font_col_rep[6] = '<font color="#C0C0C0">'
 $_font_closer = '</font>'
 !TODO: добить замены во всем файле
 $vb_cycle = {
     $result = $_font_col_rep[args[0]] + $args[1] + $_font_closer
 }
+
+! Замены для подряд идущих цветов с одинаковыми названиями
+$vb_full_cycle = {
+    $_arr_name = $args[0]
+    _max_iter = args[1]
+    $_caption = $args[2]
+    $_tmp = ''
+
+    _counter = 0
+    :_vb_full_cycle_loop
+        !dynamic "<<$_arr_name>>[<<_counter>>] = dyneval($vb_cycle, <<_counter>>, <<$_caption>>)"
+        $_tmp = dyneval($vb_cycle, _counter, $_caption)
+        dynamic "<<$_arr_name>>[<<_counter>>] = $_tmp"
+        _counter += 1
+    if _counter <= _max_iter: jump '_vb_full_cycle_loop'
+    
+    killvar '$_arr_name'
+    killvar '_max_iter'
+    killvar '$_caption'
+    killvar '_counter'
+    killvar '$_tmp'
+}
+! dynamic $vb_full_cycle, '$slave_petting', 5, 'Петтинг'
+
 !-----Замена для копипасты фонтов-----
 
 !Таблица констант замены магических чисел
@@ -805,7 +831,7 @@ $kamira_fame[3] = $_font_col_rep[3] + 'У меня достаточно друз
 $kamira_fame[4] = $_font_col_rep[4] + 'Благодаря моей дружбе с высшими иерархами Дома Камира, я могу добиться аудиенции с Владычицей Тиамат, лидером Дома Камира.' + $_font_closer
 $kamira_fame[5] = $_font_col_rep[5] + 'Лично Тиамат признала меня "одним из своей стаи". Это значит, что Дом Камира вступится за меня в любой сложной ситуации!' + $_font_closer
 
-$korvus_fame[0] = $_font_col_rep[0] + 'Нежить меня не замечает, так, словно меня и вовсе нету. Если я хочу сделать имя в Доме Корвус, надо сделать кого то из мертвяков своим клиентом.' + $_font_closer
+$korvus_fame[0] = $_font_col_rep[0] + 'Нежить меня не замечает, так, словно меня и вовсе нету. Если я хочу сделать имя в Доме Корвус, надо сделать кого-то из мертвяков своим клиентом.' + $_font_closer
 $korvus_fame[1] = $_font_col_rep[1] + 'Обычно нежить не позволяет селиться таким как я в Некрополисе, но мне удалось добиться исключительного статуса. Впрочем, в доме Корвус меня всё ещё мало кто знает.' + $_font_closer
 $korvus_fame[2] = $_font_col_rep[2] + 'У меня есть кое-какие знакомства в Доме Корвус, но их пока недостаточно для доступа в Воронью Башню. Нужно сделать своим клиентом кого-то из аристократов.' + $_font_closer
 $korvus_fame[3] = $_font_col_rep[3] + 'Моя слава поставщика лучших рабов дошла до Вороньей Башни и теперь у меня есть возможность встретиться с самой высокопоставленной нежитью Дома Корвус.' + $_font_closer
@@ -1118,54 +1144,13 @@ $slave_dressage[3] = $_font_col_rep[3] + 'Лошадка' + $_font_closer
 $slave_dressage[4] = $_font_col_rep[4] + 'Лошадка' + $_font_closer
 $slave_dressage[5] = $_font_col_rep[5] + 'Лошадка' + $_font_closer
 
-$slave_petting[0] = dyneval($vb_cycle, 0, 'Петтинг')
-$slave_petting[1] = dyneval($vb_cycle, 1, 'Петтинг')
-$slave_petting[2] = dyneval($vb_cycle, 2, 'Петтинг')
-$slave_petting[3] = dyneval($vb_cycle, 3, 'Петтинг')
-$slave_petting[4] = dyneval($vb_cycle, 4, 'Петтинг')
-$slave_petting[5] = dyneval($vb_cycle, 5, 'Петтинг')
-
-$slave_penetration[0] = dyneval($vb_cycle, 0, 'Пенетрация')
-$slave_penetration[1] = dyneval($vb_cycle, 1, 'Пенетрация')
-$slave_penetration[2] = dyneval($vb_cycle, 2, 'Пенетрация')
-$slave_penetration[3] = dyneval($vb_cycle, 3, 'Пенетрация')
-$slave_penetration[4] = dyneval($vb_cycle, 4, 'Пенетрация')
-$slave_penetration[5] = dyneval($vb_cycle, 5, 'Пенетрация')
-
-$slave_oral[0] = dyneval($vb_cycle, 0, 'Оральные ласки')
-$slave_oral[1] = dyneval($vb_cycle, 1, 'Оральные ласки')
-$slave_oral[2] = dyneval($vb_cycle, 2, 'Оральные ласки')
-$slave_oral[3] = dyneval($vb_cycle, 3, 'Оральные ласки')
-$slave_oral[4] = dyneval($vb_cycle, 4, 'Оральные ласки')
-$slave_oral[5] = dyneval($vb_cycle, 5, 'Оральные ласки')
-
-$slave_orgy[0] = dyneval($vb_cycle, 0, 'Групповой секс')
-$slave_orgy[1] = dyneval($vb_cycle, 1, 'Групповой секс')
-$slave_orgy[2] = dyneval($vb_cycle, 2, 'Групповой секс')
-$slave_orgy[3] = dyneval($vb_cycle, 3, 'Групповой секс')
-$slave_orgy[4] = dyneval($vb_cycle, 4, 'Групповой секс')
-$slave_orgy[5] = dyneval($vb_cycle, 5, 'Групповой секс')
-
-$slave_xenophily[0] = dyneval($vb_cycle, 0, 'Ксенофилия')
-$slave_xenophily[1] = dyneval($vb_cycle, 1, 'Ксенофилия')
-$slave_xenophily[2] = dyneval($vb_cycle, 2, 'Ксенофилия')
-$slave_xenophily[3] = dyneval($vb_cycle, 3, 'Ксенофилия')
-$slave_xenophily[4] = dyneval($vb_cycle, 4, 'Ксенофилия')
-$slave_xenophily[5] = dyneval($vb_cycle, 5, 'Ксенофилия')
-
-$slave_fetishism[0] = dyneval($vb_cycle, 0, 'Фетишизм')
-$slave_fetishism[1] = dyneval($vb_cycle, 1, 'Фетишизм')
-$slave_fetishism[2] = dyneval($vb_cycle, 2, 'Фетишизм')
-$slave_fetishism[3] = dyneval($vb_cycle, 3, 'Фетишизм')
-$slave_fetishism[4] = dyneval($vb_cycle, 4, 'Фетишизм')
-$slave_fetishism[5] = dyneval($vb_cycle, 5, 'Фетишизм')
-
-$slave_roleplay[0] = dyneval($vb_cycle, 0, 'Демонстрация')
-$slave_roleplay[1] = dyneval($vb_cycle, 1, 'Демонстрация')
-$slave_roleplay[2] = dyneval($vb_cycle, 2, 'Демонстрация')
-$slave_roleplay[3] = dyneval($vb_cycle, 3, 'Демонстрация')
-$slave_roleplay[4] = dyneval($vb_cycle, 4, 'Демонстрация')
-$slave_roleplay[5] = dyneval($vb_cycle, 5, 'Демонстрация')
+dynamic $vb_full_cycle, '$slave_petting', 5, 'Петтинг'
+dynamic $vb_full_cycle, '$slave_penetration', 5, 'Пенетрация'
+dynamic $vb_full_cycle, '$slave_oral', 5, 'Оральные ласки'
+dynamic $vb_full_cycle, '$slave_orgy', 5, 'Групповой секс'
+dynamic $vb_full_cycle, '$slave_xenophily', 5, 'Ксенофилия'
+dynamic $vb_full_cycle, '$slave_fetishism', 5, 'Фетишизм'
+dynamic $vb_full_cycle, '$slave_roleplay', 5, 'Демонстрация'
 
 $slave_wounds[1] = $_font_col_rep[2] + 'Легко ранена' + $_font_closer
 $slave_wounds[2] = $_font_col_rep[1] + 'Ранена' + $_font_closer
@@ -1426,306 +1411,53 @@ $vaginal_modification[2] = 'Лубрикационные железы+'
 $vaginal_modification[3] = 'Влагалищный язычок'
 $vaginal_modification[4] = 'Яйцерождение'
 
-$service_lesson[0] = dyneval($vb_cycle, 0, 'Урок домоводства')
-$service_lesson[1] = dyneval($vb_cycle, 1, 'Урок домоводства')
-$service_lesson[2] = dyneval($vb_cycle, 2, 'Урок домоводства')
-$service_lesson[3] = dyneval($vb_cycle, 3, 'Урок домоводства')
-$service_lesson[4] = dyneval($vb_cycle, 4, 'Урок домоводства')
-$service_lesson[5] = dyneval($vb_cycle, 5, 'Урок домоводства')
+dynamic $vb_full_cycle, '$service_lesson', 6, 'Урок домоводства'
+dynamic $vb_full_cycle, '$cook_lesson', 6, 'Урок кулинарии'
+dynamic $vb_full_cycle, '$nurse_lesson', 6, 'Урок медицины'
+dynamic $vb_full_cycle, '$dance_lesson', 6, 'Урок танцев'
+dynamic $vb_full_cycle, '$vocal_lesson', 6, 'Урок вокала'
+dynamic $vb_full_cycle, '$secretary_lesson', 6, 'Делопроизводство'
+dynamic $vb_full_cycle, '$exprtession_lesson', 6, 'Этикет и риторика'
+dynamic $vb_full_cycle, '$fight_lesson', 6, 'Боевая подготовка'
+dynamic $vb_full_cycle, '$gym_lesson', 6, 'Гимнастика'
 
-$cook_lesson[0] = dyneval($vb_cycle, 0, 'Урок кулинарии')
-$cook_lesson[1] = dyneval($vb_cycle, 1, 'Урок кулинарии')
-$cook_lesson[2] = dyneval($vb_cycle, 2, 'Урок кулинарии')
-$cook_lesson[3] = dyneval($vb_cycle, 3, 'Урок кулинарии')
-$cook_lesson[4] = dyneval($vb_cycle, 4, 'Урок кулинарии')
-$cook_lesson[5] = dyneval($vb_cycle, 5, 'Урок кулинарии')
+dynamic $vb_full_cycle, '$slave_sub_kiss', 5, 'Поцелуи'
+dynamic $vb_full_cycle, '$slave_sub_thongue', 5, 'Вылизывание'
+dynamic $vb_full_cycle, '$slave_sub_bj', 5, 'Минет'
+dynamic $vb_full_cycle, '$slave_sub_dt', 5, 'Иррумация'
+dynamic $vb_full_cycle, '$slave_sub_asslik', 5, 'Римминг'
+dynamic $vb_full_cycle, '$slave_sub_hj', 5, 'Работа руками'
+dynamic $vb_full_cycle, '$slave_sub_fj', 5, 'Работа ногами'
+dynamic $vb_full_cycle, '$slave_sub_hug', 5, 'Обжимание'
+dynamic $vb_full_cycle, '$slave_sub_pazuri', 5, 'Пазури'
+dynamic $vb_full_cycle, '$slave_sub_vaginal', 5, 'Секс'
+dynamic $vb_full_cycle, '$slave_sub_anal', 5, 'Анальный секс'
+dynamic $vb_full_cycle, '$slave_sub_fisting', 5, 'Фистинг'
+dynamic $vb_full_cycle, '$slave_anal_stretch', 5, 'Анальный фистинг'
+dynamic $vb_full_cycle, '$slave_sub_seduce', 5, 'Соблазнение'
+dynamic $vb_full_cycle, '$slave_sub_masturbation', 5, 'Мастурбация'
+dynamic $vb_full_cycle, '$slave_sub_dildo', 5, 'Фалоиммитаторы'
+dynamic $vb_full_cycle, '$slave_sub_exhibit', 5, 'Эксгибиционизм'
+dynamic $vb_full_cycle, '$slave_sub_humiliation', 5, 'Унижение'
+dynamic $vb_full_cycle, '$slave_sub_enema', 5, 'Клизмы'
+dynamic $vb_full_cycle, '$slave_sub_mazo', 5, 'Мазохизм'
+dynamic $vb_full_cycle, '$slave_sub_selfpain', 5, 'Самоистязание'
+dynamic $vb_full_cycle, '$slave_sub_piss', 5, 'Золотой дождь'
+dynamic $vb_full_cycle, '$slave_sub_kopro', 5, 'Копрофилия'
 
-$nurse_lesson[0] = dyneval($vb_cycle, 0, 'Урок медицины')
-$nurse_lesson[1] = dyneval($vb_cycle, 1, 'Урок медицины')
-$nurse_lesson[2] = dyneval($vb_cycle, 2, 'Урок медицины')
-$nurse_lesson[3] = dyneval($vb_cycle, 3, 'Урок медицины')
-$nurse_lesson[4] = dyneval($vb_cycle, 4, 'Урок медицины')
-$nurse_lesson[5] = dyneval($vb_cycle, 5, 'Урок медицины')
+dynamic $vb_full_cycle, '$slave_sub_threesome', 6, 'М+Ж+Ж'
 
-$dance_lesson[0] = dyneval($vb_cycle, 0, 'Урок танцев')
-$dance_lesson[1] = dyneval($vb_cycle, 1, 'Урок танцев')
-$dance_lesson[2] = dyneval($vb_cycle, 2, 'Урок танцев')
-$dance_lesson[3] = dyneval($vb_cycle, 3, 'Урок танцев')
-$dance_lesson[4] = dyneval($vb_cycle, 4, 'Урок танцев')
-$dance_lesson[5] = dyneval($vb_cycle, 5, 'Урок танцев')
+dynamic $vb_full_cycle, '$slave_sub_dp', 5, 'Два ствола'
+dynamic $vb_full_cycle, '$slave_sub_tp', 5, 'Три ствола'
+dynamic $vb_full_cycle, '$slave_sub_gangbang', 5, 'Пятёрка'
+dynamic $vb_full_cycle, '$slave_sub_bukake', 5, 'Букакэ'
 
-$vocal_lesson[0] = dyneval($vb_cycle, 0, 'Урок вокала')
-$vocal_lesson[1] = dyneval($vb_cycle, 1, 'Урок вокала')
-$vocal_lesson[2] = dyneval($vb_cycle, 2, 'Урок вокала')
-$vocal_lesson[3] = dyneval($vb_cycle, 3, 'Урок вокала')
-$vocal_lesson[4] = dyneval($vb_cycle, 4, 'Урок вокала')
-$vocal_lesson[5] = dyneval($vb_cycle, 5, 'Урок вокала')
-
-$secretary_lesson[0] = dyneval($vb_cycle, 0, 'Делопроизводство')
-$secretary_lesson[1] = dyneval($vb_cycle, 1, 'Делопроизводство')
-$secretary_lesson[2] = dyneval($vb_cycle, 2, 'Делопроизводство')
-$secretary_lesson[3] = dyneval($vb_cycle, 3, 'Делопроизводство')
-$secretary_lesson[4] = dyneval($vb_cycle, 4, 'Делопроизводство')
-$secretary_lesson[5] = dyneval($vb_cycle, 5, 'Делопроизводство')
-
-$exprtession_lesson[0] = dyneval($vb_cycle, 0, 'Этикет и риторика')
-$exprtession_lesson[1] = dyneval($vb_cycle, 1, 'Этикет и риторика')
-$exprtession_lesson[2] = dyneval($vb_cycle, 2, 'Этикет и риторика')
-$exprtession_lesson[3] = dyneval($vb_cycle, 3, 'Этикет и риторика')
-$exprtession_lesson[4] = dyneval($vb_cycle, 4, 'Этикет и риторика')
-$exprtession_lesson[5] = dyneval($vb_cycle, 5, 'Этикет и риторика')
-
-$fight_lesson[0] = dyneval($vb_cycle, 0, 'Боевая подготовка')
-$fight_lesson[1] = dyneval($vb_cycle, 1, 'Боевая подготовка')
-$fight_lesson[2] = dyneval($vb_cycle, 2, 'Боевая подготовка')
-$fight_lesson[3] = dyneval($vb_cycle, 3, 'Боевая подготовка')
-$fight_lesson[4] = dyneval($vb_cycle, 4, 'Боевая подготовка')
-$fight_lesson[5] = dyneval($vb_cycle, 5, 'Боевая подготовка')
-
-$gym_lesson[0] = $_font_col_rep[0] + 'Гимнастика' + $_font_closer
-$gym_lesson[1] = $_font_col_rep[1] + 'Гимнастика' + $_font_closer
-$gym_lesson[2] = $_font_col_rep[2] + 'Гимнастика' + $_font_closer
-$gym_lesson[3] = $_font_col_rep[3] + 'Гимнастика' + $_font_closer
-$gym_lesson[4] = $_font_col_rep[4] + 'Гимнастика' + $_font_closer
-$gym_lesson[5] = $_font_col_rep[5] + 'Гимнастика' + $_font_closer
-
-$slave_sub_kiss[0] = $_font_col_rep[0] + 'Поцелуи' + $_font_closer
-$slave_sub_kiss[1] = $_font_col_rep[1] + 'Поцелуи' + $_font_closer
-$slave_sub_kiss[2] = $_font_col_rep[2] + 'Поцелуи' + $_font_closer
-$slave_sub_kiss[3] = $_font_col_rep[3] + 'Поцелуи' + $_font_closer
-$slave_sub_kiss[4] = $_font_col_rep[4] + 'Поцелуи' + $_font_closer
-$slave_sub_kiss[5] = $_font_col_rep[5] + 'Поцелуи' + $_font_closer
-
-$slave_sub_thongue[0] = $_font_col_rep[0] + 'Вылизывание' + $_font_closer
-$slave_sub_thongue[1] = $_font_col_rep[1] + 'Вылизывание' + $_font_closer
-$slave_sub_thongue[2] = $_font_col_rep[2] + 'Вылизывание' + $_font_closer
-$slave_sub_thongue[3] = $_font_col_rep[3] + 'Вылизывание' + $_font_closer
-$slave_sub_thongue[4] = $_font_col_rep[4] + 'Вылизывание' + $_font_closer
-$slave_sub_thongue[5] = $_font_col_rep[5] + 'Вылизывание' + $_font_closer
-
-$slave_sub_bj[0] = $_font_col_rep[0] + 'Минет' + $_font_closer
-$slave_sub_bj[1] = $_font_col_rep[1] + 'Минет' + $_font_closer
-$slave_sub_bj[2] = $_font_col_rep[2] + 'Минет' + $_font_closer
-$slave_sub_bj[3] = $_font_col_rep[3] + 'Минет' + $_font_closer
-$slave_sub_bj[4] = $_font_col_rep[4] + 'Минет' + $_font_closer
-$slave_sub_bj[5] = $_font_col_rep[5] + 'Минет' + $_font_closer
-
-$slave_sub_dt[0] = $_font_col_rep[0] + 'Иррумация' + $_font_closer
-$slave_sub_dt[1] = $_font_col_rep[1] + 'Иррумация' + $_font_closer
-$slave_sub_dt[2] = $_font_col_rep[2] + 'Иррумация' + $_font_closer
-$slave_sub_dt[3] = $_font_col_rep[3] + 'Иррумация' + $_font_closer
-$slave_sub_dt[4] = $_font_col_rep[4] + 'Иррумация' + $_font_closer
-$slave_sub_dt[5] = $_font_col_rep[5] + 'Иррумация' + $_font_closer
-
-$slave_sub_asslik[0] = $_font_col_rep[0] + 'Римминг' + $_font_closer
-$slave_sub_asslik[1] = $_font_col_rep[1] + 'Римминг' + $_font_closer
-$slave_sub_asslik[2] = $_font_col_rep[2] + 'Римминг' + $_font_closer
-$slave_sub_asslik[3] = $_font_col_rep[3] + 'Римминг' + $_font_closer
-$slave_sub_asslik[4] = $_font_col_rep[4] + 'Римминг' + $_font_closer
-$slave_sub_asslik[5] = $_font_col_rep[5] + 'Римминг' + $_font_closer
-
-$slave_sub_hj[0] = $_font_col_rep[0] + 'Работа руками' + $_font_closer
-$slave_sub_hj[1] = $_font_col_rep[1] + 'Работа руками' + $_font_closer
-$slave_sub_hj[2] = $_font_col_rep[2] + 'Работа руками' + $_font_closer
-$slave_sub_hj[3] = $_font_col_rep[3] + 'Работа руками' + $_font_closer
-$slave_sub_hj[4] = $_font_col_rep[4] + 'Работа руками' + $_font_closer
-$slave_sub_hj[5] = $_font_col_rep[5] + 'Работа руками' + $_font_closer
-
-$slave_sub_fj[0] = $_font_col_rep[0] + 'Работа ногами' + $_font_closer
-$slave_sub_fj[1] = $_font_col_rep[1] + 'Работа ногами' + $_font_closer
-$slave_sub_fj[2] = $_font_col_rep[2] + 'Работа ногами' + $_font_closer
-$slave_sub_fj[3] = $_font_col_rep[3] + 'Работа ногами' + $_font_closer
-$slave_sub_fj[4] = $_font_col_rep[4] + 'Работа ногами' + $_font_closer
-$slave_sub_fj[5] = $_font_col_rep[5] + 'Работа ногами' + $_font_closer
-
-$slave_sub_hug[0] = $_font_col_rep[0] + 'Обжимание' + $_font_closer
-$slave_sub_hug[1] = $_font_col_rep[1] + 'Обжимание' + $_font_closer
-$slave_sub_hug[2] = $_font_col_rep[2] + 'Обжимание' + $_font_closer
-$slave_sub_hug[3] = $_font_col_rep[3] + 'Обжимание' + $_font_closer
-$slave_sub_hug[4] = $_font_col_rep[4] + 'Обжимание' + $_font_closer
-$slave_sub_hug[5] = $_font_col_rep[5] + 'Обжимание' + $_font_closer
-
-$slave_sub_pazuri[0] = $_font_col_rep[0] + 'Пазури' + $_font_closer
-$slave_sub_pazuri[1] = $_font_col_rep[1] + 'Пазури' + $_font_closer
-$slave_sub_pazuri[2] = $_font_col_rep[2] + 'Пазури' + $_font_closer
-$slave_sub_pazuri[3] = $_font_col_rep[3] + 'Пазури' + $_font_closer
-$slave_sub_pazuri[4] = $_font_col_rep[4] + 'Пазури' + $_font_closer
-$slave_sub_pazuri[5] = $_font_col_rep[5] + 'Пазури' + $_font_closer
-
-$slave_sub_vaginal[0] = $_font_col_rep[0] + 'Секс' + $_font_closer
-$slave_sub_vaginal[1] = $_font_col_rep[1] + 'Секс' + $_font_closer
-$slave_sub_vaginal[2] = $_font_col_rep[2] + 'Секс' + $_font_closer
-$slave_sub_vaginal[3] = $_font_col_rep[3] + 'Секс' + $_font_closer
-$slave_sub_vaginal[4] = $_font_col_rep[4] + 'Секс' + $_font_closer
-$slave_sub_vaginal[5] = $_font_col_rep[5] + 'Секс' + $_font_closer
-
-$slave_sub_anal[0] = $_font_col_rep[0] + 'Анальный секс' + $_font_closer
-$slave_sub_anal[1] = $_font_col_rep[1] + 'Анальный секс' + $_font_closer
-$slave_sub_anal[2] = $_font_col_rep[2] + 'Анальный секс' + $_font_closer
-$slave_sub_anal[3] = $_font_col_rep[3] + 'Анальный секс' + $_font_closer
-$slave_sub_anal[4] = $_font_col_rep[4] + 'Анальный секс' + $_font_closer
-$slave_sub_anal[5] = $_font_col_rep[5] + 'Анальный секс' + $_font_closer
-
-$slave_sub_fisting[0] = $_font_col_rep[0] + 'Фистинг' + $_font_closer
-$slave_sub_fisting[1] = $_font_col_rep[1] + 'Фистинг' + $_font_closer
-$slave_sub_fisting[2] = $_font_col_rep[2] + 'Фистинг' + $_font_closer
-$slave_sub_fisting[3] = $_font_col_rep[3] + 'Фистинг' + $_font_closer
-$slave_sub_fisting[4] = $_font_col_rep[4] + 'Фистинг' + $_font_closer
-$slave_sub_fisting[5] = $_font_col_rep[5] + 'Фистинг' + $_font_closer
-
-$slave_anal_stretch[0] = $_font_col_rep[0] + 'Анальный фистинг' + $_font_closer
-$slave_anal_stretch[1] = $_font_col_rep[1] + 'Анальный фистинг' + $_font_closer
-$slave_anal_stretch[2] = $_font_col_rep[2] + 'Анальный фистинг' + $_font_closer
-$slave_anal_stretch[3] = $_font_col_rep[3] + 'Анальный фистинг' + $_font_closer
-$slave_anal_stretch[4] = $_font_col_rep[4] + 'Анальный фистинг' + $_font_closer
-$slave_anal_stretch[5] = $_font_col_rep[5] + 'Анальный фистинг' + $_font_closer
-
-$slave_sub_seduce[0] = $_font_col_rep[0] + 'Соблазнение' + $_font_closer
-$slave_sub_seduce[1] = $_font_col_rep[1] + 'Соблазнение' + $_font_closer
-$slave_sub_seduce[2] = $_font_col_rep[2] + 'Соблазнение' + $_font_closer
-$slave_sub_seduce[3] = $_font_col_rep[3] + 'Соблазнение' + $_font_closer
-$slave_sub_seduce[4] = $_font_col_rep[4] + 'Соблазнение' + $_font_closer
-$slave_sub_seduce[5] = $_font_col_rep[5] + 'Соблазнение' + $_font_closer
-
-$slave_sub_masturbation[0] = $_font_col_rep[0] + 'Мастурбация' + $_font_closer
-$slave_sub_masturbation[1] = $_font_col_rep[1] + 'Мастурбация' + $_font_closer
-$slave_sub_masturbation[2] = $_font_col_rep[2] + 'Мастурбация' + $_font_closer
-$slave_sub_masturbation[3] = $_font_col_rep[3] + 'Мастурбация' + $_font_closer
-$slave_sub_masturbation[4] = $_font_col_rep[4] + 'Мастурбация' + $_font_closer
-$slave_sub_masturbation[5] = $_font_col_rep[5] + 'Мастурбация' + $_font_closer
-
-$slave_sub_dildo[0] = $_font_col_rep[0] + 'Дилдо' + $_font_closer
-$slave_sub_dildo[1] = $_font_col_rep[1] + 'Дилдо' + $_font_closer
-$slave_sub_dildo[2] = $_font_col_rep[2] + 'Дилдо' + $_font_closer
-$slave_sub_dildo[3] = $_font_col_rep[3] + 'Дилдо' + $_font_closer
-$slave_sub_dildo[4] = $_font_col_rep[4] + 'Дилдо' + $_font_closer
-$slave_sub_dildo[5] = $_font_col_rep[5] + 'Дилдо' + $_font_closer
-
-$slave_sub_exhibit[0] = $_font_col_rep[0] + 'Эксгибиционизм' + $_font_closer
-$slave_sub_exhibit[1] = $_font_col_rep[1] + 'Эксгибиционизм' + $_font_closer
-$slave_sub_exhibit[2] = $_font_col_rep[2] + 'Эксгибиционизм' + $_font_closer
-$slave_sub_exhibit[3] = $_font_col_rep[3] + 'Эксгибиционизм' + $_font_closer
-$slave_sub_exhibit[4] = $_font_col_rep[4] + 'Эксгибиционизм' + $_font_closer
-$slave_sub_exhibit[5] = $_font_col_rep[5] + 'Эксгибиционизм' + $_font_closer
-
-$slave_sub_humiliation[0] = $_font_col_rep[0] + 'Унижение' + $_font_closer
-$slave_sub_humiliation[1] = $_font_col_rep[1] + 'Унижение' + $_font_closer
-$slave_sub_humiliation[2] = $_font_col_rep[2] + 'Унижение' + $_font_closer
-$slave_sub_humiliation[3] = $_font_col_rep[3] + 'Унижение' + $_font_closer
-$slave_sub_humiliation[4] = $_font_col_rep[4] + 'Унижение' + $_font_closer
-$slave_sub_humiliation[5] = $_font_col_rep[5] + 'Унижение' + $_font_closer
-
-$slave_sub_enema[0] = $_font_col_rep[0] + 'Клизмы' + $_font_closer
-$slave_sub_enema[1] = $_font_col_rep[1] + 'Клизмы' + $_font_closer
-$slave_sub_enema[2] = $_font_col_rep[2] + 'Клизмы' + $_font_closer
-$slave_sub_enema[3] = $_font_col_rep[3] + 'Клизмы' + $_font_closer
-$slave_sub_enema[4] = $_font_col_rep[4] + 'Клизмы' + $_font_closer
-$slave_sub_enema[5] = $_font_col_rep[5] + 'Клизмы' + $_font_closer
-
-$slave_sub_mazo[0] = $_font_col_rep[0] + 'Мазохизм' + $_font_closer
-$slave_sub_mazo[1] = $_font_col_rep[1] + 'Мазохизм' + $_font_closer
-$slave_sub_mazo[2] = $_font_col_rep[2] + 'Мазохизм' + $_font_closer
-$slave_sub_mazo[3] = $_font_col_rep[3] + 'Мазохизм' + $_font_closer
-$slave_sub_mazo[4] = $_font_col_rep[4] + 'Мазохизм' + $_font_closer
-$slave_sub_mazo[5] = $_font_col_rep[5] + 'Мазохизм' + $_font_closer
-
-$slave_sub_selfpain[0] = $_font_col_rep[0] + 'Самоистязание' + $_font_closer
-$slave_sub_selfpain[1] = $_font_col_rep[1] + 'Самоистязание' + $_font_closer
-$slave_sub_selfpain[2] = $_font_col_rep[2] + 'Самоистязание' + $_font_closer
-$slave_sub_selfpain[3] = $_font_col_rep[3] + 'Самоистязание' + $_font_closer
-$slave_sub_selfpain[4] = $_font_col_rep[4] + 'Самоистязание' + $_font_closer
-$slave_sub_selfpain[5] = $_font_col_rep[5] + 'Самоистязание' + $_font_closer
-
-$slave_sub_piss[0] = $_font_col_rep[0] + 'Золотой дождь' + $_font_closer
-$slave_sub_piss[1] = $_font_col_rep[1] + 'Золотой дождь' + $_font_closer
-$slave_sub_piss[2] = $_font_col_rep[2] + 'Золотой дождь' + $_font_closer
-$slave_sub_piss[3] = $_font_col_rep[3] + 'Золотой дождь' + $_font_closer
-$slave_sub_piss[4] = $_font_col_rep[4] + 'Золотой дождь' + $_font_closer
-$slave_sub_piss[5] = $_font_col_rep[5] + 'Золотой дождь' + $_font_closer
-
-$slave_sub_kopro[0] = $_font_col_rep[0] + 'Копрофилия' + $_font_closer
-$slave_sub_kopro[1] = $_font_col_rep[1] + 'Копрофилия' + $_font_closer
-$slave_sub_kopro[2] = $_font_col_rep[2] + 'Копрофилия' + $_font_closer
-$slave_sub_kopro[3] = $_font_col_rep[3] + 'Копрофилия' + $_font_closer
-$slave_sub_kopro[4] = $_font_col_rep[4] + 'Копрофилия' + $_font_closer
-$slave_sub_kopro[5] = $_font_col_rep[5] + 'Копрофилия' + $_font_closer
-
-$slave_sub_threesome[0] = $_font_col_rep[0] + 'М+Ж+Ж' + $_font_closer
-$slave_sub_threesome[1] = $_font_col_rep[1] + 'М+Ж+Ж' + $_font_closer
-$slave_sub_threesome[2] = $_font_col_rep[2] + 'М+Ж+Ж' + $_font_closer
-$slave_sub_threesome[3] = $_font_col_rep[3] + 'М+Ж+Ж' + $_font_closer
-$slave_sub_threesome[4] = $_font_col_rep[4] + 'М+Ж+Ж' + $_font_closer
-$slave_sub_threesome[5] = $_font_col_rep[5] + 'М+Ж+Ж' + $_font_closer
-
-$slave_sub_dp[0] = $_font_col_rep[0] + 'Два ствола' + $_font_closer
-$slave_sub_dp[1] = $_font_col_rep[1] + 'Два ствола' + $_font_closer
-$slave_sub_dp[2] = $_font_col_rep[2] + 'Два ствола' + $_font_closer
-$slave_sub_dp[3] = $_font_col_rep[3] + 'Два ствола' + $_font_closer
-$slave_sub_dp[4] = $_font_col_rep[4] + 'Два ствола' + $_font_closer
-$slave_sub_dp[5] = $_font_col_rep[5] + 'Два ствола' + $_font_closer
-
-$slave_sub_tp[0] = $_font_col_rep[0] + 'Три ствола' + $_font_closer
-$slave_sub_tp[1] = $_font_col_rep[1] + 'Три ствола' + $_font_closer
-$slave_sub_tp[2] = $_font_col_rep[2] + 'Три ствола' + $_font_closer
-$slave_sub_tp[3] = $_font_col_rep[3] + 'Три ствола' + $_font_closer
-$slave_sub_tp[4] = $_font_col_rep[4] + 'Три ствола' + $_font_closer
-$slave_sub_tp[5] = $_font_col_rep[5] + 'Три ствола' + $_font_closer
-
-$slave_sub_gangbang[0] = dyneval($vb_cycle, 0, 'Пятёрка')
-$slave_sub_gangbang[1] = dyneval($vb_cycle, 1, 'Пятёрка')
-$slave_sub_gangbang[2] = dyneval($vb_cycle, 2, 'Пятёрка')
-$slave_sub_gangbang[3] = dyneval($vb_cycle, 3, 'Пятёрка')
-$slave_sub_gangbang[4] = dyneval($vb_cycle, 4, 'Пятёрка')
-$slave_sub_gangbang[5] = dyneval($vb_cycle, 5, 'Пятёрка')
-
-$slave_sub_bukake[0] = dyneval($vb_cycle, 0, 'Букакэ')
-$slave_sub_bukake[1] = dyneval($vb_cycle, 1, 'Букакэ')
-$slave_sub_bukake[2] = dyneval($vb_cycle, 2, 'Букакэ')
-$slave_sub_bukake[3] = dyneval($vb_cycle, 3, 'Букакэ')
-$slave_sub_bukake[4] = dyneval($vb_cycle, 4, 'Букакэ')
-$slave_sub_bukake[5] = dyneval($vb_cycle, 5, 'Букакэ')
-
-$slave_sub_zoosex[0] = dyneval($vb_cycle, 0, 'Кобель')
-$slave_sub_zoosex[1] = dyneval($vb_cycle, 1, 'Кобель')
-$slave_sub_zoosex[2] = dyneval($vb_cycle, 2, 'Кобель')
-$slave_sub_zoosex[3] = dyneval($vb_cycle, 3, 'Кобель')
-$slave_sub_zoosex[4] = dyneval($vb_cycle, 4, 'Кобель')
-$slave_sub_zoosex[5] = dyneval($vb_cycle, 5, 'Кобель')
-
-$slave_svinesex[0] = dyneval($vb_cycle, 0, 'Хряк')
-$slave_svinesex[1] = dyneval($vb_cycle, 1, 'Хряк')
-$slave_svinesex[2] = dyneval($vb_cycle, 2, 'Хряк')
-$slave_svinesex[3] = dyneval($vb_cycle, 3, 'Хряк')
-$slave_svinesex[4] = dyneval($vb_cycle, 4, 'Хряк')
-$slave_svinesex[5] = dyneval($vb_cycle, 5, 'Хряк')
-
-$slave_horsesex[0] = dyneval($vb_cycle, 0, 'Жеребец')
-$slave_horsesex[1] = dyneval($vb_cycle, 1, 'Жеребец')
-$slave_horsesex[2] = dyneval($vb_cycle, 2, 'Жеребец')
-$slave_horsesex[3] = dyneval($vb_cycle, 3, 'Жеребец')
-$slave_horsesex[4] = dyneval($vb_cycle, 4, 'Жеребец')
-$slave_horsesex[5] = dyneval($vb_cycle, 5, 'Жеребец')
-
-$slave_tentacle[0] = dyneval($vb_cycle, 0, 'Исчадие')
-$slave_tentacle[1] = dyneval($vb_cycle, 1, 'Исчадие')
-$slave_tentacle[2] = dyneval($vb_cycle, 2, 'Исчадие')
-$slave_tentacle[3] = dyneval($vb_cycle, 3, 'Исчадие')
-$slave_tentacle[4] = dyneval($vb_cycle, 4, 'Исчадие')
-$slave_tentacle[5] = dyneval($vb_cycle, 5, 'Исчадие')
-
-$music_lesson[0] = dyneval($vb_cycle, 0, 'Музыка')
-$music_lesson[1] = dyneval($vb_cycle, 1, 'Музыка')
-$music_lesson[2] = dyneval($vb_cycle, 2, 'Музыка')
-$music_lesson[3] = dyneval($vb_cycle, 3, 'Музыка')
-$music_lesson[4] = dyneval($vb_cycle, 4, 'Музыка')
-$music_lesson[5] = dyneval($vb_cycle, 5, 'Музыка')
-
-$alchemy_lesson[0] = dyneval($vb_cycle, 0, 'Алхимия')
-$alchemy_lesson[1] = dyneval($vb_cycle, 1, 'Алхимия')
-$alchemy_lesson[2] = dyneval($vb_cycle, 2, 'Алхимия')
-$alchemy_lesson[3] = dyneval($vb_cycle, 3, 'Алхимия')
-$alchemy_lesson[4] = dyneval($vb_cycle, 4, 'Алхимия')
-$alchemy_lesson[5] = dyneval($vb_cycle, 5, 'Алхимия')
+dynamic $vb_full_cycle, '$slave_sub_zoosex', 6, 'Кобель'
+dynamic $vb_full_cycle, '$slave_svinesex', 6, 'Хряк'
+dynamic $vb_full_cycle, '$slave_horsesex', 6, 'Жеребец'
+dynamic $vb_full_cycle, '$slave_tentacle', 6, 'Исчадие'
+dynamic $vb_full_cycle, '$music_lesson', 6, 'Музыка'
+dynamic $vb_full_cycle, '$alchemy_lesson', 6, 'Алхимия'
 
 !"$enchant_lesson[0] = dyneval($vb_cycle, 0, 'Зачарование')
 $enchant_lesson[1] = dyneval($vb_cycle, 1, 'Зачарование')
@@ -1734,33 +1466,10 @@ $enchant_lesson[3] = dyneval($vb_cycle, 3, 'Зачарование')
 $enchant_lesson[4] = dyneval($vb_cycle, 4, 'Зачарование')
 $enchant_lesson[5] = dyneval($vb_cycle, 5, 'Зачарование')"
 
-$domestik_lesson[0] = dyneval($vb_cycle, 0, 'Приручение')
-$domestik_lesson[1] = dyneval($vb_cycle, 1, 'Приручение')
-$domestik_lesson[2] = dyneval($vb_cycle, 2, 'Приручение')
-$domestik_lesson[3] = dyneval($vb_cycle, 3, 'Приручение')
-$domestik_lesson[4] = dyneval($vb_cycle, 4, 'Приручение')
-$domestik_lesson[5] = dyneval($vb_cycle, 5, 'Приручение')
-
-$dressur_lesson[0] = dyneval($vb_cycle, 0, 'Дрессировка')
-$dressur_lesson[1] = dyneval($vb_cycle, 1, 'Дрессировка')
-$dressur_lesson[2] = dyneval($vb_cycle, 2, 'Дрессировка')
-$dressur_lesson[3] = dyneval($vb_cycle, 3, 'Дрессировка')
-$dressur_lesson[4] = dyneval($vb_cycle, 4, 'Дрессировка')
-$dressur_lesson[5] = dyneval($vb_cycle, 5, 'Дрессировка')
-
-$dressage_lesson[0] = dyneval($vb_cycle, 0, 'Выездка')
-$dressage_lesson[1] = dyneval($vb_cycle, 1, 'Выездка')
-$dressage_lesson[2] = dyneval($vb_cycle, 2, 'Выездка')
-$dressage_lesson[3] = dyneval($vb_cycle, 3, 'Выездка')
-$dressage_lesson[4] = dyneval($vb_cycle, 4, 'Выездка')
-$dressage_lesson[5] = dyneval($vb_cycle, 5, 'Выездка')
-
-$draft_lesson[0] = dyneval($vb_cycle, 0, 'Упряжка')
-$draft_lesson[1] = dyneval($vb_cycle, 1, 'Упряжка')
-$draft_lesson[2] = dyneval($vb_cycle, 2, 'Упряжка')
-$draft_lesson[3] = dyneval($vb_cycle, 3, 'Упряжка')
-$draft_lesson[4] = dyneval($vb_cycle, 4, 'Упряжка')
-$draft_lesson[5] = dyneval($vb_cycle, 5, 'Упряжка')
+dynamic $vb_full_cycle, '$domestik_lesson', 6, 'Приручение'
+dynamic $vb_full_cycle, '$dressur_lesson', 6, 'Дрессировка'
+dynamic $vb_full_cycle, '$dressage_lesson', 6, 'Выездка'
+dynamic $vb_full_cycle, '$draft_lesson', 6, 'Упряжка'
 
 !"$tantra_lesson[0] = dyneval($vb_cycle, 0, 'Тантра-йога')
 $tantra_lesson[1] = dyneval($vb_cycle, 1, 'Тантра-йога')
@@ -1769,12 +1478,7 @@ $tantra_lesson[3] = dyneval($vb_cycle, 3, 'Тантра-йога')
 $tantra_lesson[4] = dyneval($vb_cycle, 4, 'Тантра-йога')
 $tantra_lesson[5] = dyneval($vb_cycle, 5, 'Тантра-йога')"
 
-$_lesson[0] = dyneval($vb_cycle, 0, 'Урок')
-$_lesson[1] = dyneval($vb_cycle, 1, 'Урок')
-$_lesson[2] = dyneval($vb_cycle, 2, 'Урок')
-$_lesson[3] = dyneval($vb_cycle, 3, 'Урок')
-$_lesson[4] = dyneval($vb_cycle, 4, 'Урок')
-$_lesson[5] = dyneval($vb_cycle, 5, 'Урок')
+dynamic $vb_full_cycle, '$_lesson', 5, 'Урок'
 
 $fff[0] = ''
 $fff[1] = ''

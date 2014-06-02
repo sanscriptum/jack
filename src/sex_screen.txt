@@ -31,8 +31,8 @@ $sex_info += 'Оргазмометр:      <<sex["climax_buildup"]>> / <<sex["cl
 *p '<div id = "bg"><<$sex_menu>></div>'
 
 $info_bar = ''
-*p '<div id = "side_panel_main"><center><font size = 50%><<$master_name>></font></center></div>'
-*p '<div id = "side_panel_down"><center><font size = 50%><<$sex["girl_name"]>></font></center></div>'
+*p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$master_name>></div></center></div>'
+*p '<div id = "side_panel_down"><center><div style="font-size: 50px;"><<$sex["girl_name"]>></div></center></div>'
 *p '<div id = "side_stats_up"><<$sex_master_stat>></div>'  
 *p '<div id = "side_stats_down"><<$sex_info>></div>'  
 

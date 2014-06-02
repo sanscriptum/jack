@@ -28,7 +28,7 @@ $text[txt] = '   [Доктор]
 *p '<div id = "text"><<$text[txt]>></div>'
 
 $info_bar = ''
-*p '<div id = "side_panel_main"><center><font size = 50%><<$place_name[$place]>></font>
+*p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$place_name[$place]>></div>
 <<$place_location[$place]>>
 
  Информация к размышлению:

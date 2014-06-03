@@ -10,6 +10,8 @@ $_font_col_rep[4] = '<font color="#008080">'
 $_font_col_rep[5] = '<font color="#008000">'
 ! Серый цвет
 $_font_col_rep[6] = '<font color="#C0C0C0">'
+!для статов выше 5
+$_font_col_rep[7] = '<font color="#556832">'
 $_font_closer = '</font>'
 !TODO: добить замены во всем файле
 $vb_cycle = {
@@ -1211,7 +1213,7 @@ $master_wealth[2] = dyneval($vb_cycle, 2, 'Малоимущий')
 $master_wealth[3] = dyneval($vb_cycle, 3, 'Обеспеченный')
 $master_wealth[4] = dyneval($vb_cycle, 4, 'Респектабельный')
 $master_wealth[5] = dyneval($vb_cycle, 5, 'Патриций')
-$master_wealth[6] = dyneval($vb_cycle, 5, 'Негоциант')
+$master_wealth[6] = dyneval($vb_cycle, 7, 'Негоциант')
 
 base_expense[0] = 0
 base_expense[1] = 25
@@ -1357,7 +1359,7 @@ $hair_style[7] = $_font_col_rep[5] + 'Стильная прическа' + $_fon
 $slave_makeup[0] = $_font_col_rep[0] + 'Без косметики' + $_font_closer
 $slave_makeup[1] = $_font_col_rep[3] + 'Стильный макияж' + $_font_closer
 $slave_makeup[2] = $_font_col_rep[5] + 'Естественная красота' + $_font_closer
-$slave_makeup[3] = $_font_col_rep[5] + 'Татуаж' + $_font_closer
+$slave_makeup[3] = $_font_col_rep[7] + 'Татуаж' + $_font_closer
 
 $slave_boobs[0] = $_font_col_rep[0] + 'Плоская грудь' + $_font_closer
 $slave_boobs[1] = $_font_col_rep[1] + 'Маленькие сисечки' + $_font_closer
@@ -1365,7 +1367,7 @@ $slave_boobs[2] = $_font_col_rep[2] + 'Небольшая грудь' + $_font_c
 $slave_boobs[3] = $_font_col_rep[3] + 'Большая грудь' + $_font_closer
 $slave_boobs[4] = $_font_col_rep[4] + 'Огромные сиськи' + $_font_closer
 $slave_boobs[5] = $_font_col_rep[5] + 'Гигантское вымя' + $_font_closer
-$slave_boobs[6] = $_font_col_rep[5] + 'Свисающая до пола грудь' + $_font_closer
+$slave_boobs[6] = $_font_col_rep[7] + 'Свисающая до пола грудь' + $_font_closer
 
 $niple_piercing[0] = dyneval($vb_cycle, 0, 'Соски не проколоты')
 $niple_piercing[1] = dyneval($vb_cycle, 5, 'Соски проколоты')

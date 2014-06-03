@@ -234,7 +234,7 @@ END
 !убран хардкод состояния волос, волософикс
 !IF slave["hairstyle"] > 0: slave["hairstyle_demo"] = 1
 
-slave["exotic"] = 0
+!slave["exotic"] = 0
 if slave_rate["exotic"] + slave_rate["exotic_bonus"] => 10: slave["exotic"] = 1
 if slave_rate["exotic"] + slave_rate["exotic_bonus"] => 20: slave["exotic"] = 2
 if slave_rate["exotic"] + slave_rate["exotic_bonus"] => 60: slave["exotic"] = 3

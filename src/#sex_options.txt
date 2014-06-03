@@ -114,7 +114,7 @@ $sex_options[2] = {
     else
         $sex_menu += {<br><div id="under">Развязать глаза<br><div id = "clear"><a href = 'EXEC: sex_interaction = 211 & gt "sex_interaction"'><img src = "content\clear.gif"></a></div></div>}
     END 
-    IF sex["girl_bound"] = 0: 
+    IF sex['bondage'] = 0: 
         $sex_menu += {<div id="under">Связать<br><div id = "clear"><a href = 'EXEC: sex_interaction = 22 & gt "sex_interaction"'><img src = "content\clear.gif"></a></div></div>}
     else
         $sex_menu += {<div id="under">Развязать<br><div id = "clear"><a href = 'EXEC: sex_interaction = 221 & gt "sex_interaction"'><img src = "content\clear.gif"></a></div></div>}

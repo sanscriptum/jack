@@ -90,6 +90,7 @@ IF stock_sold > 0 and auction_phase < 5:
 <u>РЕЗЮМЕ</u>
 <<$beauty[stock["beauty"]]>> 
 <<$stamina[stock["stamina"]]>> 
+<<$exotic[stock["exotic"]]>> 
 <<$fat[stock["fat"]]>> 
 <<$sensitivity[stock["sensitivity"]]>> 
 <<$style[stock["style"]]>> 

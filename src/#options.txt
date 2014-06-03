@@ -1194,12 +1194,12 @@ IF sparks => 20 and frige_space => 5:
  $text_display += {<br><div id="under_gray">Нежная вырезка х5 (20 искр)<br></div>}
 END
 !$text_display += {<br><div id="under_gray">Расспросить о мясе<br></div>}
-IF slave_state = CONST_INT['slave_exist']:
+IF slave_state = CONST_INT['slave_exist'] or slave_state = CONST_INT['slave_faint']:
  $text_display += {<br><div id="under">Сдать воспитуемую на мясо<div id = "clear"><a href = 'EXEC: interaction_city = 11544 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>} 
  else
  $text_display += {<br><div id="under_gray">Сдать воспитуемую на мясо<br></div>}
 END
-IF sparks => 5 and slave_state = CONST_INT['slave_exist']:
+IF sparks => 5 and slave_state ! CONST_INT['no_slave']:
  $text_display += {<br><div id="under">Попросить разделать воспитуемую<div id = "clear"><a href = 'EXEC: interaction_city = 11545 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>} 
  else
  $text_display += {<br><div id="under_gray">Попросить разделать воспитуемую<br></div>}

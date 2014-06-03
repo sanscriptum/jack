@@ -12,31 +12,34 @@ IF wizard_mode = 1:
  *p '<div id = "upper">День: <<day>> (<<sparks>>$) Кн: <<contract["time"]>> дн. |  Клр: <<slave["calories"]>>  |  Fr: <<slave["fear"]>>/<<slave_rate["fear"]>>  |  Ins: <<slave["instinct"]>>/<<slave_rate["instinct"]>>  |  Rat: <<slave["rational"]>>/<<slave_rate["rational"]>>  |  Cus: <<slave["custom"]>>/<<slave_rate["custom"]>>  |  Mor: <<slave["moral"]>>/<<slave_rate["moral"]>>  |  Spl: <<slave["spoil"]>>/<<slave_rate["spoil"]>>  |  Ang: <<slave["angst"]>>/<<slave_rate["angst"]>></div>' 
  else
  $upper_info_bar = '<a style = "color: black;" href="EXEC: msg $shedule">День: <<day>></a>  |  Декада: <<decade>>  |  (<<sparks>>$) '
+ $shedule_warn = ''
  if contract["time"] > 0: $upper_info_bar += ' |  Контракт: <<contract["time"]>> дн. ' 
- if debt > 0: $upper_info_bar += ' |  Задолженность: <<debt>>$ (<<debt_count>> дн.) ' 
- *p '<div id = "upper"><<$upper_info_bar>></div>'
+ if debt > 0: $upper_info_bar += ' |  Задолженность: <<debt>>$ (<<debt_count>> дн.) '
+ if ride_count = 0: $shedule_warn += '<font color="#ff5700"><b>!</b></font>'
+ if auction_count = 0: $shedule_warn += '<font color="#ff5700"><b>!</b></font>'
+ if gladi_count = 0: $shedule_warn += '<font color="#ff5700"><b>!</b></font>'
+ *p '<div id = "upper"><<$shedule_warn>>&nbsp<<$upper_info_bar>></div>'
 END
 
 !расписание
-$rideday = "дней"
-$auctionday = "дней"
-$gladiday = "дней"
-$okonchanie = "ось"
-if ride_count < 5: $rideday = "дня"
-if ride_count = 1: $rideday = "день" & $okonchanie = "ся"
-if ride_count = 0: $rideday =  "дней <br>- сегодня!"
-if auction_count < 5: $auctionday = 'дня'
-if auction_count = 1: $auctionday = 'день'
-if auction_count = 0: $auctionday =  "дней <br>- сегодня!"
-if gladi_count < 5: $gladiday = 'дня'
-if gladi_count = 1: $gladiday = 'день'
-if gladi_count = 0: $gladiday =  "дней - сегодня!"
+if ride_count > 4: $rideday = "До гонок осталось <<ride_count>> дней"
+if ride_count < 5: $rideday = "До гонок осталось <<ride_count>> дня"
+if ride_count = 1: $rideday = "До гонок остался <<ride_count>> день"
+if ride_count = 0: $rideday =  "Гонки проводятся сегодня!"
+if auction_count > 4: $auctionday = 'через <<auction_count>> дней'
+if auction_count < 5: $auctionday = 'через <<auction_count>> дня'
+if auction_count = 1: $auctionday = 'через <<auction_count>> день'
+if auction_count = 0: $auctionday =  "сегодня!"
+if gladi_count > 4: $gladiday = 'через <<gladi_count>> дней'
+if gladi_count < 5: $gladiday = 'через <<gladi_count>> дня'
+if gladi_count = 1: $gladiday = 'через <<gladi_count>> день'
+if gladi_count = 0: $gladiday =  "сегодня!"
 
 $shedule = '<center><u>Расписание событий</u></center>
 
-- До гонок остал<<$okonchanie>> <<ride_count>> <<$rideday>>
-- Аукцион начнется через <<auction_count>> <<$auctionday>>
-- Бои в Колизее будут через <<gladi_count>> <<$gladiday>>'
+- <<$rideday>>
+- Аукцион начнется <<$auctionday>>
+- Бои в Колизее будут <<$gladiday>>'
 
 *p '<div id = "master_short_stat">Энергия <<$stars[master_energy_plus]>>
 <<$boy_mood[master_mood_plus]>> 

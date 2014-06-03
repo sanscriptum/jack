@@ -65,6 +65,7 @@ assistant["sub_gangbang"] = seed_sub_gangbang[assistant_type]
 assistant["sub_bukake"] = seed_sub_bukake[assistant_type]
 assistant["sub_zoosex"] = seed_sub_zoosex[assistant_type]
 assistant["sub_bestiality"] = seed_sub_bestiality[assistant_type]
+assistant["sub_horse"] = seed_sub_horse[assistant_type]
 assistant["sub_tentacles"] = seed_sub_tentacles[assistant_type]
 
 assistant["fat"] = seed_fat[assistant_type]

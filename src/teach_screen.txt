@@ -220,7 +220,7 @@ IF teach_stat_screen = 0:
   $middle_text_7 += '<font color="#C0C0C0">Хряк<BR></font>' 
  END
  IF horse > 0:  
-  $middle_text_8 += "<a href = 'EXEC: interaction = 1353 & gt ""interaction""'><<$slave_horsesex[slave[""sub_bestiality""]]>><BR></a>"   
+  $middle_text_8 += "<a href = 'EXEC: interaction = 1353 & gt ""interaction""'><<$slave_horsesex[slave[""sub_horse""]]>><BR></a>"   
   else
   $middle_text_8 += '<font color="#C0C0C0">Жеребец<BR></font>' 
  END

@@ -331,7 +331,7 @@ sperm_shwallow = slave["sub_bj"] - 2
 if slave["sub_bukake"] < sperm_shwallow: slave["sub_bukake"] = sperm_shwallow
 slave["orgy"] = (slave["sub_threesome"] + slave["sub_dp"] + slave["sub_tp"] + slave["sub_gangbang"] + slave["sub_bukake"])/5
 
-slave["xenophily"] = (slave["sub_zoosex"] + slave["sub_bestiality"] + slave["sub_tentacles"])/3
+slave["xenophily"] = (slave["sub_zoosex"] + slave["sub_bestiality"] + slave["sub_horse"] + slave["sub_tentacles"])/4
 
 if slave["mood"] > 0: slave_mood_bonus = slave["mood"]
 
@@ -806,7 +806,7 @@ assistant["fetishism"] = (assistant["sub_enema"] + assistant["sub_mazo"] + assis
 assistant["orgy"] = (assistant["sub_threesome"] + assistant["sub_dp"] + assistant["sub_tp"] + assistant["sub_gangbang"] + assistant["sub_bukake"])/5
 
 !исправлена формула рассчета
-assistant["xenophily"] = (assistant["sub_zoosex"] + assistant["sub_bestiality"] + assistant["sub_tentacles"])/3
+assistant["xenophily"] = (assistant["sub_zoosex"] + assistant["sub_bestiality"] + assistant["sub_horse"] + assistant["sub_tentacles"])/4
 
 !Стиль
 assistant["style"] = (assistant["expression"] + assistant["callisthenics"] + assistant["makeup"] + assistant_dressup + assistant_jewelry)/4 - assistant["hygiene"] 

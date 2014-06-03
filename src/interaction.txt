@@ -2401,31 +2401,30 @@ END
 !Личный урок удовлетворения жеребца
 IF interaction = 1353:
  $interaction_type = 'self_sex_lesson'
- $subskill = 'slave["sub_bestiality"]'
- $subskill_xp = 'slave["sub_bestiality_xp"]'  
+ $subskill = 'slave["sub_horse"]'
+ $subskill_xp = 'slave["sub_horse_xp"]'  
  disgusting = 1
  painful = 1  
  repulse = 5 + slave["sensitivity"]
  if slave["preversion"] > 0: repulse -= 5 & rise_modifer = -2    
  if slave["preversion"] < 0: repulse += 2 & rise_modifer = 2 
- rise_difficulty = 8 + slave["sub_bestiality"]
- $text[1] = '  <<$horsesex_lesson_description[slave["sub_bestiality"]]>>'
+ rise_difficulty = 8 + slave["sub_horse"]
+ $text[1] = '  <<$horsesex_lesson_description[slave["sub_horse"]]>>'
  $play_sound[2] = '<<$assfuck_sound[slave["age"]]>>'
  $special_bg = $horse_sex[slave_type]   
  couch_skill = master_fetish
  add_master_hygiene = 1 
  add_slave_hygiene = 15 
  add_house_mess = 0
- erotic_stimulation = slave["sub_zoosex"]
- if slave["sub_bestiality"] > 0: orgastic = 1
- if slave["sub_bestiality"] => 5: $interaction_type = 'completed' 
- if slave["sub_bestiality"] > 0: damage = 10 - slave["sub_bestiality"]
+ erotic_stimulation = slave["sub_horse"]
+ if slave["sub_horse"] > 0: orgastic = 1
+ if slave["sub_horse"] => 5: $interaction_type = 'completed' 
+ if slave["sub_horse"] > 0: damage = 10 - slave["sub_horse"]
  $special_part = {   
  if slave["preversion_revealed"] = 0:  slave["preversion_revealed"] = 1     
- if slave["sub_bestiality"] < 4 : slave["sub_bestiality"] += 1
  slave_rate["sensitivity"] -= damage
  master_domination_rate += 1
- IF virginity < 2 and slave["sub_bestiality"] > 0:
+ IF virginity < 2 and slave["sub_horse"] > 0:
   virginity = 2
   slave['neg_defloration'] = slave["sensitivity"] + 2 + slave['pride'] - slave["moral"] - slave["arousal"]
   if slave['neg_defloration'] > 0: gs '$mod_slave_drop', slave['neg_defloration']   

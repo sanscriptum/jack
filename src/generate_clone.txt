@@ -70,6 +70,7 @@ stock["sub_gangbang"] = 3
 stock["sub_bukake"] = 3
 stock["sub_zoosex"] = 3
 stock["sub_bestiality"] = 3
+stock["sub_horse"] = 3
 stock["sub_tentacles"] = 3
 
 stock["fat"] = 1

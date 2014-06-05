@@ -1979,7 +1979,7 @@ background-image:url(content/a.jpg);
 
 #ally_name {
 position:absolute;
-left:1090px;
+left:1075px;
 top:15px;
 width:180px;
 height:30px;

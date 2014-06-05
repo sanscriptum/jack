@@ -169,8 +169,7 @@ If master_stat_screen = 2:
         *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 11 & dynamic $master_ring_list"><u>Кольцо:</u> <<$item_name[$master_ring]>></a></div>'
     *p '</div>'
 
-*p '<div id = "center_text_column_2"><div style = "text-decoration:underline;"> <center><u>ДОСТУПНЫЕ ВАРИАНТЫ</u></center></div>
-<<$equip_choice>>
+*p '<div id = "center_text_column_2"><center><u>ДОСТУПНЫЕ ВАРИАНТЫ</u></center><<$equip_choice>>
 </div>'
 END
 

@@ -251,8 +251,7 @@ IF assistant_stat_screen = 2:
         *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 53 & dynamic $assistant_ring_list_2"><u>Правое кольцо:</u> <<$item_name[$assistant["ring_right"]]>></a></div>'
         *p '</div>'
 
-    *p '<div id = "center_text_column_2"> <center><u>ДОСТУПНЫЕ ВАРИАНТЫ</u></center>
-    <<$equip_choice>>
+    *p '<div id = "center_text_column_2"> <center><u>ДОСТУПНЫЕ ВАРИАНТЫ</u></center><<$equip_choice>>
     </div>'
  
 END 

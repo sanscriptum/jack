@@ -97,6 +97,7 @@ END
 IF city_form = 21:
  $place = 'taurus_district' 
  if $estate = 'taurus_house': $text_display += {<br><div id="under">Ваши апартаменты<br><div id = "clear"><a href = 'EXEC: menu_form = 0 & city_form = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Жилище дона Кастиллио<br><div id = "clear"><a href = 'EXEC: interaction_city = 210 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Апартаменты дона Диего<br><div id = "clear"><a href = 'EXEC: interaction_city = 211 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Лаборатория Гильмерита<br><div id = "clear"><a href = 'EXEC: interaction_city = 212 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Манор Сира Тугбара<br><div id = "clear"><a href = 'EXEC: interaction_city = 213 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}

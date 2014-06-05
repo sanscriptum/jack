@@ -1273,7 +1273,7 @@ $npc_alignment['don_castilio'] = 'taurus'
 $npc_info['don_castilio'] = '   '
 demand_rating['don_castilio'] = 1
 $interesting_specialisation['don_castilio'] = 'refferent'
-$diary_mark['don_castilio'] = "   <<$npc_name['don_castilio']>>. Он часто посещает центральный форум в поисках клиентов."
+$diary_mark['don_castilio'] = "   <<$npc_name['don_castilio']>>. Живёт в квартале Быка."
 $don_castilio_pref[1] = "  [Дон Кастиллио]
    - Мне требуется <<$slave_type_name[$interesting_specialisation['don_castilio']]>> ранга <<$rating[demand_rating['don_castilio']]>> или выше. Я заплачу за неё <<common_price[demand_rating['don_castilio']]>> искр."
 $buy_quote['don_castilio'] = '   [Дон Кастиллио]
@@ -1293,7 +1293,7 @@ $npc_status['don_diego'] = 'Буканьер
 Дом Таурус (Верные)'
 $npc_alignment['don_diego'] = 'taurus'
 $npc_info['don_diego'] = '   '
-demand_rating['don_diego'] = 1
+demand_rating['don_diego'] = 2
 $interesting_specialisation['don_diego'] = 'concubine'
 $diary_mark['don_diego'] = "   <<$npc_name['don_diego']>>. Живёт в квартале Быка."
 $don_diego_pref[1] = "  [Дон Диего]
@@ -1425,7 +1425,7 @@ $npc_status['lady_edna'] = 'Вдова
 Дом Таурус (Верные)'
 $npc_alignment['lady_edna'] = 'taurus'
 $npc_info['lady_edna'] = '   '
-demand_rating['lady_edna'] = 2
+demand_rating['lady_edna'] = 3
 $interesting_specialisation['lady_edna'] = 'maid'
 $diary_mark['lady_edna'] = "   <<$npc_name['lady_edna']>>. Её особняк расположен в квартале Быка."
 $lady_edna_pref[1] = "  [Леди Эдна]
@@ -1469,7 +1469,7 @@ $npc_status['magister_gilmeritus'] = 'Архимаг
 Дом Таурус (Верные)'
 $npc_alignment['magister_gilmeritus'] = 'taurus'
 $npc_info['magister_gilmeritus'] = '   '
-demand_rating['magister_gilmeritus'] = 1
+demand_rating['magister_gilmeritus'] = 2
 $interesting_specialisation['magister_gilmeritus'] = 'enchanter'
 $diary_mark['magister_gilmeritus'] = "   <<$npc_name['magister_gilmeritus']>>. Его лаборатория расположена в квартале Быка."
 $magister_gilmeritus_pref[1] = "  [Магистр Гильмеритус]
@@ -1491,7 +1491,7 @@ $npc_status['sir_toughbar'] = 'Офицер
 Дом Таурус (Верные)'
 $npc_alignment['sir_toughbar'] = 'taurus'
 $npc_info['sir_toughbar'] = '   '
-demand_rating['sir_toughbar'] = 1
+demand_rating['sir_toughbar'] = 3
 $interesting_specialisation['sir_toughbar'] = 'concubine'
 $diary_mark['sir_toughbar'] = "   <<$npc_name['sir_toughbar']>>. Он живёт в квартале Быка."
 $sir_toughbar_pref[1] = "  [Сир Тугбар]

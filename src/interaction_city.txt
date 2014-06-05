@@ -3372,6 +3372,12 @@ IF interaction_city = 1952:
 END
 
 !Жилые дома Таурус
+IF interaction_city = 210:
+ $interaction_type = 'byer_invitation'
+ city_form = 21
+ $npc_id = 'don_castilio'
+END
+
 IF interaction_city = 211:
  $interaction_type = 'byer_invitation'
  city_form = 21
@@ -6023,7 +6029,7 @@ IF interaction_city = 6203:
  $sp_text[6203] = '   Вы замечаете огромное, матёрое исчадие Туманов, забредшее в своих поисках жертвы на самую границу. Поиски были не напрасными, в щупальцах твари отчаянно бьётся женщина, но существо её не отпустит, пока не оплодотворит. Разве что кто-то придет ей на помощь.'
  количество_врагов = 1
  $враг[1] = 'чудовщиное_исчадие' 
- fighting_expirience = 5
+ fighting_expirience = 15
  get_girl = 1
  copyarr '$display_options', '$edge_of_mists'  
  if stock['fertility'] => 0: stock['parasite'] = 1
@@ -6041,7 +6047,7 @@ IF interaction_city = 6204:
  $враг[2] = 'подручный' 
  $враг[3] = 'подручный' 
  $враг[4] = 'подручный'   
- fighting_expirience = 10
+ fighting_expirience = 5
  get_girl = 1 
  copyarr '$display_options', '$edge_of_mists'  
  GT 'shop_general'
@@ -6096,7 +6102,7 @@ IF interaction_city = 6207:
  $sp_text[6207] = '   Словно серая молния проносится мимо и прыгает на едва замеченную вами девушку, сбивая её с ног. Это оборотень, и он похоже считает что добыча принадлежит ему. Косясь на вас краем глаза, вервольф сдирает с жертвы одежду, готовясь изнасиловать и затем сожрать её заживо.'
  количество_врагов = 1
  $враг[1] = 'вервольф' 
- fighting_expirience = 10
+ fighting_expirience = 15
  get_girl = 1 
  copyarr '$display_options', '$edge_of_mists'  
  GT 'shop_general'

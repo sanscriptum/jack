@@ -657,6 +657,11 @@ IF silence_rule = 1:
 END
 if master_rule = 1:
  master_rule_res = slave["obedience"] - slave["pride"] - 1
+ IF force_rules = 1 and assistant_state = 1: 
+  if master_rule_res < 0: slave['neg_rules'] = 1   
+  master_rule_res = 0
+  slave_rate["mood"] -= slave["ego"] + slave["pride"] - slave["moral"]
+ END
  else
  master_rule_res = 0 
 END

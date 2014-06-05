@@ -80,7 +80,6 @@ IF arena_mode = 0:
 <a href = "EXEC: gt ''инвентарь''">Использовать зелье</a>
 <a href = "EXEC: gt ''сменить_оружие''">Сменить оружие</a>
 <a href="EXEC: gt ''передышка''">Глухая оборона</a>
-Отступление
 </div>'
  else
  if суперудар_сделан[1] = 0: *p "<div id = 'fight_options'><a href = 'EXEC: dynamic $суперудар_1'><img src = '<<$extra_special_active>>'></a></div>"

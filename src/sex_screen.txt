@@ -3,24 +3,49 @@
 GS '_layout'
 gs 'sex_addup'
 
+killvar '$play_sound'  
+$play_sound[1] = ''
+CLOSE ALL
+
 $sex_menu = ''
 dynamic $sex_options[sex_num]
 gs "#sex_texts"
 gs 'sex_addup'
 
-$sex_master_stat = ''
-$sex_master_stat = 'Возбуждение:  <<$sex_pc_excitement[sex["pc_excitement_state"]]>><br>'
-$sex_master_stat += 'Энергия:       <<$sex_pc_energy[sex["pc_energy_state"]]>><br>'
-$sex_master_stat += 'Интерес:       <<$sex_pc_interest[sex["pc_interest_state"]]>><br>'
-$sex_master_stat += 'Запас семени:<<$sex_pc_boner[sex["pc_boner"]]>><br>'
-$sex_master_stat += 'Порог:              <<sex["cum_treshold"]>><br>'
+pc_boner_plus = sex['pc_boner']
+if pc_boner_plus < 0: pc_boner_plus = 5 - sex['pc_boner']
+if pc_boner_plus > 10: pc_boner_plus = 10
 
-$sex_info = '<BR>Выносливость: <<$sex_girl_stamina[sex["girl_energy_state"]]>><br>'
-$sex_info += '<<$sex_girl_arousal[sex["girl_excitement"]]>>              <<sex["girl_excitement"]>><br>'
-$sex_info += '<<$sex_girl_concentration[sex["girl_attention"]]>>     <<sex["girl_attention"]>><br>'
-$sex_info += '<<$sex_girl_openmind[sex["girl_openmind"]]>>          <<sex["girl_openmind"]>><br>'
-$sex_info += 'Оргазмометр:      <<sex["climax_buildup"]>> / <<sex["climax_treshold"]>><br>'
-!$sex_info += '<<$sex_girl_pain[sex["girl_pain"]]>><br>'
+$sex_master_stat = ''
+$sex_master_stat = 'Возбуждение:<br>'
+$sex_master_stat += 'Энергия:<br>'
+$sex_master_stat += 'Интерес:<br>'
+$sex_master_stat += 'Запас семени:<br>'
+$sex_master_stat += 'Порог:<br>'
+
+$sex_info = '<BR>Выносливость:<br>'
+$sex_info += '<<$sex_girl_arousal[sex["girl_excitement"]]>><br>'
+$sex_info += '<<$sex_girl_concentration[sex["girl_attention"]]>><br>'
+$sex_info += '<<$sex_girl_openmind[sex["girl_openmind"]]>><br>'
+$sex_info += 'Оргазмометр:<br>'
+!$sex_info += ' <<$sex_girl_pain[sex["girl_pain"]]>><br>'
+
+$sex_master_var = ''
+$sex_master_var = '<<$sex_pc_excitement[sex["pc_excitement_state"]]>><br>'
+$sex_master_var += '<<$sex_pc_energy[sex["pc_energy_state"]]>><br>'
+$sex_master_var += '<<$sex_pc_interest[sex["pc_interest_state"]]>><br>'
+$sex_master_var += '<<$sex_pc_boner[pc_boner_plus]>><br>'
+$sex_master_var += '<<sex["cum_treshold"]>><br>'
+
+$sex_slave_var = '<BR><<$sex_girl_stamina[sex["girl_energy_state"]]>><br>'
+$sex_slave_var += '<<sex["girl_excitement"]>><br>'
+IF sex["girl_attention"] > 4 or sex["girl_attention"] < 3: 
+	$sex_slave_var += '      <<sex["girl_attention"]>><br>'
+	else
+	$sex_slave_var += '<<sex["girl_attention"]>><br>'
+END
+$sex_slave_var += '<<sex["girl_openmind"]>><br>'
+$sex_slave_var += '<<sex["climax_buildup"]>> / <<sex["climax_treshold"]>><br>'
 
 *p '<div id = "side_ava_up"><img src = "<<$master_ava>>"></div>'
 *p '<div id = "side_ava_down"><img src = "<<$sex["girl_ava"]>>.jpg"></div>'
@@ -30,12 +55,19 @@ $sex_info += 'Оргазмометр:      <<sex["climax_buildup"]>> / <<sex["cl
 *p '<div id = "intensity_knobs"><<$intensity_knobs>></div>'
 *p '<div id = "bg"><<$sex_menu>></div>'
 
+IF sound_on = 1:
+ *p '<div id="side_sound_icon"><a href = "EXEC: sound_on = 0 & close all & gt curloc"><img src="content\sound_on.png"></a></div>'  
+ else
+ *p '<div id="side_sound_icon"><a href = "EXEC: sound_on = 1 & gt curloc"><img src="content\sound_off.png"></a></div>'  
+END
+
 $info_bar = ''
 *p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$master_name>></div></center></div>'
 *p '<div id = "side_panel_down"><center><div style="font-size: 50px;"><<$sex["girl_name"]>></div></center></div>'
 *p '<div id = "side_stats_up"><<$sex_master_stat>></div>'  
 *p '<div id = "side_stats_down"><<$sex_info>></div>'  
-
+*p '<div id = "side_stats_master_var"><<$sex_master_var>></div>'  
+*p '<div id = "side_stats_slave_var"><<$sex_slave_var>></div>'  
 
 !Кнопки интенсивности
 IF sex_num => 0:

@@ -1,6 +1,9 @@
 # #sex_options
 !ОПЦИИ ВЫБОРА ДЛЯ СЕКС-ДВИЖКА
 
+killvar '$play_sound'  
+$play_sound[1] = ''
+
 !Обычные опции
 $sex_options[0] = {
     $sex_menu = '<br>'

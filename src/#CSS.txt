@@ -2130,8 +2130,8 @@ text-align:center;
 
 #side_stats_up {
 position:absolute;
-left:1000px;
-top:90px;
+left:1020px;
+top:70px;
 width:250px;
 height:400px;
 font-size:30px;
@@ -2140,7 +2140,7 @@ font-family:Victoriana;
 
 #side_ava_up {
 position:absolute;
-left:830px;
+left:850px;
 top:80px;
 width:150px;
 height:150px;
@@ -2148,8 +2148,8 @@ height:150px;
 
 #side_stats_down {
 position:absolute;
-left:1000px;
-top:340px;
+left:1020px;
+top:320px;
 width:250px;
 height:400px;
 font-size:30px;
@@ -2158,7 +2158,7 @@ font-family:Victoriana;
 
 #side_ava_down {
 position:absolute;
-left:830px;
+left:850px;
 top:360px;
 width:150px;
 height:150px;
@@ -2172,6 +2172,30 @@ width:450px;
 height:790px;
 font-size:30px;
 font-family:Victoriana;
+}
+
+#side_stats_master_var {
+position:absolute;
+left:1180px;
+top:72px;
+font-size:30px;
+font-family:Victoriana;
+}
+
+#side_stats_slave_var {
+position:absolute;
+left:1180px;
+top:322px;
+font-size:30px;
+font-family:Victoriana;
+}
+
+#side_sound_icon {
+position:absolute;
+left:760px;
+top:5px;
+width:30px;
+height:30px;
 }
 
 #a {

@@ -9,7 +9,7 @@ intensity = 1
 lube = 0
 deflorated = 0
 sex["climax_buildup"] = 0 
-$rise_skill = ''
+$rise_skill = 'dump'
 
 
 $return_lock_prev = $return_lock
@@ -338,7 +338,7 @@ if sex['girl_exotic'] => 3: sex['pc_interest'] += 10
 if sex['girl_exotic'] => 4: sex['pc_interest'] += 10
 if sex['girl_exotic'] => 5: sex['pc_interest'] += 15
 
-if sex['girl_fat'] = 1: sex['pc_interest'] += 5
+if sex['girl_fat'] = 1: sex['pc_interest'] += 10
 if sex['girl_fat'] => 3: sex['pc_interest'] -= 5
 if sex['girl_fat'] => 4: sex['pc_interest'] -= 10
 if sex['girl_fat'] => 5: sex['pc_interest'] -= 25

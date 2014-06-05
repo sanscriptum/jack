@@ -292,6 +292,11 @@ $gag_sound[0] = 'gaged01'
 $gag_sound[1] = 'gaged01'
 $gag_sound[2] = 'woman_gaged01'
 
+$clamps[1] = 'girl_pain22'
+$clamps[2] = 'moans03'
+
+$bite = 'moan01'
+
 $slaughter_sound = 'slaughter'
 
 !БУНТАРСТВО ПО СОСТОЯНИЯМ

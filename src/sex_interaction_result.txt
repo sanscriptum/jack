@@ -11,24 +11,29 @@ END
 IF $interaction_type = 'foreplay':
  if sex_done_thisperson['sex_interaction'] = 0: sex['girl_newness'] -= 1
  txt_count = 1
+ dynamic '<<$rise_skill>> += 1' 
 END
 
 IF $interaction_type = 'penetration':
  if sex_done_thisperson['sex_interaction'] = 0: sex['girl_newness'] -= 1
  txt_count = 1
+ dynamic '<<$rise_skill>> += 1'
 END
 
 IF $interaction_type = 'ejaculate':
- sex['pc_boner'] -= 1
+ pc_pleasure = max (1,quality)
+ sex['pc_boner'] -= pc_pleasure
  lube = 0
  $insertion = '' 
  sex["pc_excitement"] = 0
  master_mood_rate += sex["cum_pleasure"] 
  sex["cum_pleasure"] = 0
+ dynamic '<<$rise_skill>> += 1'
 END
 
 IF $interaction_type = 'extras':
  txt_count = 1
+ dynamic '<<$rise_skill>> += 1'
 END
 
 IF sex["climax_force"] > 0:
@@ -54,7 +59,7 @@ END
 sex_done_today[sex_interaction] += 1
 sex_done_thisperson[sex_interaction] += 1
 
-IF sex["pc_interest"] <= 0:
+IF sex["pc_interest"] <= 0 and $interaction_type ! 'ejaculate':
  txt_count += 1
  $text[txt_count] = '  В какой-то момент вы понимаете, что всё это безумно вам надоело. Зачем церемониться с ней и пытаться доставить какое-то удовольствие? Надо было просто кончить по-быстрому, но теперь у вас и на это уже нет настроения.'  
  $return_lock = 'sex_end' 

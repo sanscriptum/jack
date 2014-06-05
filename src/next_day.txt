@@ -330,6 +330,10 @@ slave_rate["instinct"] += daily_bonus["instinct"]
 slave_rate["rational"] += daily_bonus["rational"]
 slave_rate["custom"] += daily_bonus["custom"]
 
+!Повышаем интерес к рабыне
+if slave_state = CONST_INT['slave_exist']: slave['newness'] += 1
+if assistant_state > 0: assistant['newness'] += 1
+
 !Лактация
 slave['milk_gain'] = 0
 IF slave['lactation'] > 0:

@@ -39,7 +39,7 @@ IF assistant_auto_cook = 1:
 END
 
 IF show_food = 1:
- $special_bg = $cooking[assistant_type] 
+ $special_bg = ''
  $place = 'study' 
  if kitchen > 0: $place = 'kitchen'  
  $text = '  Сегодняшний ужин:<BR> <center><<$meal_name[$cooked_meal]>></center>'

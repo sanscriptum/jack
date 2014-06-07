@@ -722,6 +722,7 @@ IF interaction = 441:
  add_master_hygiene = 15 
  $special_part = {
  if assistant["sub_vaginal"] < 2: assistant["sub_vaginal"] += 1
+ assistant["sub_vaginal_xp"] += sex_quality
  erotic_stimulation = master_penetration
  orgastic = 1
  ejaculation_intensity = sex_quality
@@ -1025,6 +1026,7 @@ IF interaction = 5414:
  if slave["nymphomania_revealed"] = 0: slave["nymphomania_revealed"] = 1  
  slave["calories"] -= 1
  if slave["sub_vaginal"] < 2: slave["sub_vaginal"] += 1
+ slave["sub_vaginal_xp"] += sex_quality
  erotic_stimulation = master_penetration
  orgastic = 1
  ejaculation_intensity = sex_quality
@@ -1083,7 +1085,11 @@ IF interaction = 5416:
  add_master_hygiene = 15 
  add_slave_hygiene = 15
  $special_part = {
- if slave["nymphomania_revealed"] = 0: slave["nymphomania_revealed"] = 1  
+ if slave["nymphomania_revealed"] = 0: slave["nymphomania_revealed"] = 1 
+ if slave["sub_threesome"] < 1: assistant["sub_threesome"] += 1 
+ if assistant["sub_threesome"] < 1: assistant["sub_threesome"] += 1 
+ slave["sub_threesome_xp"] += sex_quality
+ assistant["sub_threesome_xp"] += sex_quality
  slave["calories"] -= 1
  erotic_stimulation = master_fetish
  orgastic = 1

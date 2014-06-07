@@ -43,7 +43,7 @@ if get_initial_slave = 1:
  slave["sub_vaginal"] = 3
  slave["brand"] = 1
  
- IF slave_virginity = 0 or meta_type = 1: 
+ IF virginity = 0 or meta_type = 1: 
   slave['parasite'] = 0
   slave['ill'] = 0
   slave["sub_vaginal"] = 0

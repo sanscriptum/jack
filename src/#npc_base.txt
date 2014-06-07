@@ -1806,7 +1806,7 @@ $npc_status['krull'] = 'Боец
 Дом Серпис (Отступники)'
 $npc_alignment['krull'] = 'serpis'
 $npc_info['krull'] = '   '
-demand_rating['krull'] = 1
+demand_rating['krull'] = 2
 $interesting_specialisation['krull'] = 'concubine'
 $diary_mark['krull'] = "   <<$npc_name['krull']>>. Его можно найти в одной из казарм стражи Муравейника в квартале Змеи."
 $krull_pref[1] = "  [КРУЛЛ]
@@ -1894,7 +1894,7 @@ $npc_status['piter_viabu'] = 'Оптовик
 Дом Серпис (Отступники)'
 $npc_alignment['piter_viabu'] = 'serpis'
 $npc_info['piter_viabu'] = '   '
-demand_rating['piter_viabu'] = 1
+demand_rating['piter_viabu'] = 2
 $interesting_specialisation['piter_viabu'] = 'concubine'
 $diary_mark['piter_viabu'] = "   <<$npc_name['piter_viabu']>>. У него небольшая квартирка в самой глубине Муравейника в квартале Змеи."
 $piter_viabu_pref[1] = "  [Питер Виабу]
@@ -1938,7 +1938,7 @@ $npc_status['mister_lardbag'] = 'Оптовик
 Дом Серпис (Отступники)'
 $npc_alignment['mister_lardbag'] = 'serpis'
 $npc_info['mister_lardbag'] = '   '
-demand_rating['mister_lardbag'] = 1
+demand_rating['mister_lardbag'] = 2
 $interesting_specialisation['mister_lardbag'] = 'concubine'
 $diary_mark['mister_lardbag'] = "   <<$npc_name['mister_lardbag']>>. Его квартира расположена в Муравейнике квартала Змеи."
 $mister_lardbag_pref[1] = "  [Мистер Лардбаг]
@@ -2391,7 +2391,7 @@ $npc_status['kratos'] = 'Гвардеец
 Дом Камира (Отверженные)'
 $npc_alignment['kratos'] = 'kamira'
 $npc_info['kratos'] = '   '
-demand_rating['kratos'] = 1
+demand_rating['kratos'] = 2
 $interesting_specialisation['kratos'] = 'concubine'
 $diary_mark['kratos'] = "   <<$npc_name['kratos']>>. Его стойло находится в квартале отверженных."
 $kratos_pref[1] = "  [КРАТОС]
@@ -2479,7 +2479,7 @@ $npc_status['magnaga'] = 'Жрица Фаллоса
 Дом Камира (Отверженные)'
 $npc_alignment['magnaga'] = 'kamira'
 $npc_info['magnaga'] = '   '
-demand_rating['magnaga'] = 1
+demand_rating['magnaga'] = 2
 $interesting_specialisation['magnaga'] = 'concubine'
 $diary_mark['magnaga'] = "   <<$npc_name['magnaga']>>. Она содержит святилище экзотического культа в квартале отверженных."
 $magnaga_pref[1] = "  [МАГНАГА]
@@ -2925,7 +2925,7 @@ $npc_status['paral_itch'] = 'Убийца
 Дом Корвус (Проклятые)'
 $npc_alignment['paral_itch'] = 'korvus'
 $npc_info['paral_itch'] = '   '
-demand_rating['paral_itch'] = 1
+demand_rating['paral_itch'] = 2
 $interesting_specialisation['paral_itch'] = 'concubine'
 $diary_mark['paral_itch'] = "   <<$npc_name['paral_itch']>>. Его надо искать в одном из склепов Некрополиса."
 $paral_itch_pref[1] = "  [Парал Ич]
@@ -2969,7 +2969,7 @@ $npc_status['draugr'] = 'Рыцарь Тлена
 Дом Корвус (Проклятые)'
 $npc_alignment['draugr'] = 'korvus'
 $npc_info['draugr'] = '   '
-demand_rating['draugr'] = 1
+demand_rating['draugr'] = 2
 $interesting_specialisation['draugr'] = 'concubine'
 $diary_mark['draugr'] = "   <<$npc_name['draugr']>>. Чтобы найти его придется посетить старые руины в Некрополисе."
 $draugr_pref[1] = "  [ДРАУГР]

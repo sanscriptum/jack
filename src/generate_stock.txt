@@ -1336,31 +1336,33 @@ IF stock["beauty"] = 5: $stock_epithet = 'прекрасная как сами �
 IF stock["exotic"] => 2: $stock_epithet = 'экзотическая'
 
 !БАЗОВАЯ ЦЕНА
-stock["style"] = (stock["expression"] + stock["callisthenics"])/2 + stock["grace"]
+!stock["style"] = (stock["expression"] + stock["callisthenics"])/2 + stock["grace"]
 
 !TODO: сделать нормальный баланс цены
 !похожий код в $slave_price
 stock_base_price = 5
-if stock["stamina"] > 2: stock_base_price += 5
-if stock["stamina"] > 3: stock_base_price += 10
-if stock["stamina"] > 4: stock_base_price += 20
-if stock["beauty"] > 1: stock_base_price += 5
-if stock["beauty"] > 2: stock_base_price += 10
-if stock["beauty"] > 3: stock_base_price += 20
-if stock["beauty"] > 4: stock_base_price += 40
-if stock["fat"] = 1: stock_base_price += 5
+if stock["stamina"] < 3: stock_base_price -= 15
+if stock["stamina"] > 2: stock_base_price += 10
+if stock["stamina"] > 3: stock_base_price += 20
+if stock["stamina"] > 4: stock_base_price += 40
+if stock["beauty"] < 2: stock_base_price -= 10
+if stock["beauty"] > 1: stock_base_price += 10
+if stock["beauty"] > 2: stock_base_price += 20
+if stock["beauty"] > 3: stock_base_price += 30
+if stock["beauty"] > 4: stock_base_price += 60
+if stock["fat"] = 1: stock_base_price += 30
 if stock["fat"] > 2: stock_base_price -= 5
 if stock["fat"] > 3: stock_base_price -= 10
 if stock["fat"] > 4: stock_base_price -= 20
 if stock["scares"] > 0: stock_base_price -= 5
 if stock["scares"] > 1: stock_base_price -= 10
 if stock["scares"] > 2: stock_base_price -= 20
-if stock["scares"] > 3: stock_base_price -= 40
-if stock["scares"] > 4: stock_base_price -= 80
+if stock["scares"] > 3: stock_base_price -= 30
+if stock["scares"] > 4: stock_base_price -= 60
 if stock["bruises"] > 1: stock_base_price -= 5
-if stock["bruises"] > 2: stock_base_price -= 10
-if stock["bruises"] > 3: stock_base_price -= 20
-if stock["bruises"] > 4: stock_base_price -= 40
+if stock["bruises"] > 2: stock_base_price -= 15
+if stock["bruises"] > 3: stock_base_price -= 30
+if stock["bruises"] > 4: stock_base_price -= 60
 if stock["style"] > 0: stock_base_price += 5
 if stock["style"] > 1: stock_base_price += 10
 if stock["style"] > 2: stock_base_price += 20
@@ -1371,12 +1373,26 @@ if stock["exotic"] > 1: stock_base_price += 10
 if stock["exotic"] > 2: stock_base_price += 20
 if stock["exotic"] > 3: stock_base_price += 40
 if stock["exotic"] > 4: stock_base_price += 80
+if stock["sensitivity"] < 3: stock_base_price -= 10
 if stock["sensitivity"] > 2: stock_base_price += 5
-if stock["sensitivity"] > 3: stock_base_price += 10
-if stock["sensitivity"] > 4: stock_base_price += 20
+if stock["sensitivity"] > 3: stock_base_price += 15
+if stock["sensitivity"] > 4: stock_base_price += 30
+if stock["intellect"] < 3: stock_base_price -= 10
+if stock["intellect"] > 3: stock_base_price += 15
+if stock["intellect"] > 4: stock_base_price += 30
 if stock["temper"] > 2: stock_base_price += 5
-if stock["temper"] > 3: stock_base_price += 10
-if stock["temper"] > 4: stock_base_price += 20
+if stock["temper"] > 3: stock_base_price += 15
+if stock["temper"] > 4: stock_base_price += 30
+if stock["ego"] < 2: stock_base_price -= 10
+if stock["ego"] > 3: stock_base_price += 15
+if stock["pride"] < 2: stock_base_price += 15
+if stock["pride"] > 3: stock_base_price -= 20
+if stock["pride"] > 4: stock_base_price -= 30
+if stock_virginity < 2: stock_base_price += 10
+if stock["grace"] = 1: stock_base_price += 10
+if stock["grace"] = -1: stock_base_price -= 10
+if stock["voice"] > 0: stock_base_price += 10
+if stock["voice"] < 0: stock_base_price -= 10
 if stock_base_price < 5: stock_base_price = 5
 haggling_limit = stock_base_price/3
 !stock_base_price = 5

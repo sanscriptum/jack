@@ -1,7 +1,12 @@
 # menu_form
 $toplay = 'girl'
 
-CLOSE ALL
+!идет проверка на звук использования веществ, все остальные звуки отключаются при попадании сюда, кроме булька
+IF bulk ! 1:
+ CLOSE ALL
+ else
+ bulk = 0
+END
 
 dynamic $slave_pass_out
 dynamic $prisoner_pass_out

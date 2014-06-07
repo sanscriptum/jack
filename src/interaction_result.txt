@@ -29,6 +29,8 @@ IF $interaction_type = 'get_grug':
   if sound_on = 1: play 'content\snd\bulk.mp3'
   dynamic $special_part   
   menu_form = 0
+  bulk = 1
+  gs '$newloc'
   GT 'menu_form'
  END
 END

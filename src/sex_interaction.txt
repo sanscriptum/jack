@@ -639,6 +639,7 @@ IF sex_interaction = 11:
  $play_sound[1] = '<<$soft_pain[sex["girl_age"]]>>'
  $special_bg = $defloration[sex['girl_type']]  
  deflorated = 1
+ sex['girl_virgin'] = 2
 END
 
 

@@ -30,19 +30,35 @@ if $extra_special_used = 'content/pic/buttons/heavy_used.gif': $extra_special_us
 
 IF $итог_боя = 'победа':
  $боевое_меню = "<a href='EXEC: gt ""выход_из_боя""'><img src = 'content/pic/buttons/thumb_up.gif'></a><br>"
- *p "<div id = 'fight_options'><img src = '<<$extra_special_used>>'></div>" 
+ IF ui_style = 2:
+  *p "<div id = 'fight_options_ui2'><img src = '<<$extra_special_used>>'></div>" 
+  else
+  *p "<div id = 'fight_options'><img src = '<<$extra_special_used>>'></div>" 
+ END
 END
 IF $итог_боя = 'бегство':
  $боевое_меню = "<a href='EXEC: gt ""выход_из_боя""'><img src = 'content/pic/buttons/thumb_down.gif'></a><br>"
- *p "<div id = 'fight_options'><img src = '<<$extra_special_used>>'></div>" 
+ IF ui_style = 2:
+  *p "<div id = 'fight_options_ui2'><img src = '<<$extra_special_used>>'></div>" 
+  else
+  *p "<div id = 'fight_options'><img src = '<<$extra_special_used>>'></div>" 
+ END
 END
 IF $итог_боя = 'вырубился':
  $боевое_меню = "<a href='EXEC: gt ""выход_из_боя""'><img src = 'content/pic/buttons/thumb_down.gif'></a><br>"
- *p "<div id = 'fight_options'><img src = '<<$extra_special_used>>'></div>" 
+ IF ui_style = 2:
+  *p "<div id = 'fight_options_ui2'><img src = '<<$extra_special_used>>'></div>" 
+  else
+  *p "<div id = 'fight_options'><img src = '<<$extra_special_used>>'></div>" 
+ END
 END
 IF $итог_боя = 'убит':
  $боевое_меню = "<a href='EXEC: gt ""выход_из_боя""'><img src = 'content/pic/buttons/thumb_down.gif'></a><br>"
- *p "<div id = 'fight_options'><img src = '<<$extra_special_used>>'></div>" 
+ IF ui_style = 2:
+  *p "<div id = 'fight_options_ui2'><img src = '<<$extra_special_used>>'></div>" 
+  else
+  *p "<div id = 'fight_options'><img src = '<<$extra_special_used>>'></div>" 
+ END
 END
 
  

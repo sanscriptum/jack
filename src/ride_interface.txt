@@ -154,7 +154,8 @@ $ride_flow += ' <br><br><<$future_ride>><br><br>'
 *p '<div id = "fight_txt"><<$ride_flow>></div>'
 
 !новый CSS для параметров заезда
-*p '<div id = "ride_options">СКОРОСТЬ: <<charriot["speed"]>> км/ч
+IF ui_style = 2:
+  *p '<div id = "ride_options_ui2">СКОРОСТЬ: <<charriot["speed"]>> км/ч
 УПРАВЛЯЕМОСТЬ: <<charriot["maneurability_displayed"]>> (I<<charriot["inertion"]>>)
 ВЫНОСЛИВОСТЬ: <<charriot["pony_health"]>>
 
@@ -163,20 +164,47 @@ $ride_flow += ' <br><br><<$future_ride>><br><br>'
 <<$chasis[chasis]>>
 <<$wheels[wheels]>>
 </div>'
+  else
+  *p '<div id = "ride_options">СКОРОСТЬ: <<charriot["speed"]>> км/ч
+УПРАВЛЯЕМОСТЬ: <<charriot["maneurability_displayed"]>> (I<<charriot["inertion"]>>)
+ВЫНОСЛИВОСТЬ: <<charriot["pony_health"]>>
+
+<<$frame[frame]>>
+<<$boards[boards]>>
+<<$chasis[chasis]>>
+<<$wheels[wheels]>>
+</div>'
+END
 
 !новые CSS для текста управления колесницей
 IF trace_segment = 1:
- *p '<div id = "ride_subtions">
+ IF ui_style = 2:
+  *p '<div id = "ride_subtions_ui2">
 <a href = "EXEC: gt ''ride_next'',1">Щёлкнуть плетью</a>
 </div>'
+  else
+  *p '<div id = "ride_subtions">
+<a href = "EXEC: gt ''ride_next'',1">Щёлкнуть плетью</a>
+</div>'
+ END
  else
- *p '<div id = "ride_subtions">
+ IF ui_style = 2:
+  *p '<div id = "ride_subtions_ui2">
 <a href = "EXEC: gt ''ride_next'',1">Хлестать плетью</a>
 
 <a href = "EXEC: gt ''ride_next'',2">Управлять поводьями</a>
 
 <a href = "EXEC: gt ''ride_next'',3">Натянуть поводья</a>
 </div>'
+  else
+  *p '<div id = "ride_subtions">
+<a href = "EXEC: gt ''ride_next'',1">Хлестать плетью</a>
+
+<a href = "EXEC: gt ''ride_next'',2">Управлять поводьями</a>
+
+<a href = "EXEC: gt ''ride_next'',3">Натянуть поводья</a>
+</div>'
+ END
 END
 
 *p '<div id = "rider1_pic"><a href = "EXEC: msg $rider_description[$participant[1]]"><img src = "<<$rider_ava[$participant[1]]>>"></a></div>'

@@ -624,8 +624,8 @@ text-align:center;
 #info {
 position:absolute;
 left:265px;
-top:640px;
-width:740px;
+top:643px;
+width:760px;
 height:150px;
 text-align:left;
 font-size:18px;
@@ -1762,6 +1762,15 @@ height:180px;
 text-align:center;
 }
 
+#fight_options_ui2 {
+position:absolute;
+left:240px;
+top:610px;
+width:340px;
+height:180px;
+text-align:center;
+}
+
 #ride_options {
 position:absolute;
 left:270px;
@@ -1769,6 +1778,16 @@ top:610px;
 width:340px;
 height:180px;
 text-align:center;
+}
+
+#ride_options_ui2 {
+position:absolute;
+left:270px;
+top:610px;
+width:340px;
+height:180px;
+text-align:center;
+font-size:17px;
 }
 
 #fight_subtions {
@@ -1783,6 +1802,15 @@ text-align:center;
 #ride_subtions {
 position:absolute;
 left:620px;
+top:610px;
+width:420px;
+height:180px;
+text-align:center;
+}
+
+#ride_subtions_ui2 {
+position:absolute;
+left:645px;
 top:610px;
 width:420px;
 height:180px;

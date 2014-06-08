@@ -2828,7 +2828,7 @@ END
 !Поход в театр
 IF interaction = 1514:
  $interaction_type = 'prise_date'
- prise_level = 3 
+ prise_level = 4 
  prise_potence = 5 + (slave["moral"]*2 + slave["rational"] + slave["instinct"] + slave["spoil"])*3  - slave["fear"] - already_done_curslave[interaction]
  if slave["passion_fame"] = -1:  prise_potence = prise_potence/2
  if prise_potence <= 0: prise_potence = 1

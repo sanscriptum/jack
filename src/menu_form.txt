@@ -1096,22 +1096,22 @@ END
 
 IF menu_form = 151:
  $text_display = ''
- $text_display += {<br><div id="under">Прогулка на крыше<br><div id = "clear"><a href = 'EXEC: interaction = 1511 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Прогулка по городу<br><div id = "clear"><a href = 'EXEC: interaction = 1512 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Прогулка на крыше (=1)<br><div id = "clear"><a href = 'EXEC: interaction = 1511 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Прогулка по городу (=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1512 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
  IF sparks => 2 and already_done_today[1513] = 0: 
-  $text_display += {<br><div id="under">Сходить на пляж (2 ис)<br><div id = "clear"><a href = 'EXEC: interaction = 1513 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Сходить на пляж (2 ис) (=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1513 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Сходить на пляж (2 ис)<br></div>}   
+  $text_display += {<br><div id="under_gray">Сходить на пляж (2 ис) (=3)<br></div>}   
  END
  IF sparks => 4 and already_done_today[1514] = 0: 
-  $text_display += {<br><div id="under">Сходить в театр (4 ис)<br><div id = "clear"><a href = 'EXEC: interaction = 1514 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Сходить в театр (4 ис) (=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1514 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Сходить в театр (4 ис)<br></div>} 
+  $text_display += {<br><div id="under_gray">Сходить в театр (4 ис) (=4)<br></div>} 
  end 
  IF sparks => 8 and already_done_today[1515] = 0: 
-  $text_display += {<br><div id="under">Сходить в ресторан (8 ис)<br><div id = "clear"><a href = 'EXEC: interaction = 1515 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Сходить в ресторан (8 ис) (=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1515 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Сходить в ресторан (8 ис)<br></div>} 
+  $text_display += {<br><div id="under_gray">Сходить в ресторан (8 ис) (=5)<br></div>} 
  end 
  $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 15 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
@@ -1122,39 +1122,39 @@ if full_day < 1: full_day = 1
 
 IF menu_form = 152:
  IF slave["energy"] => 1:
-  $text_display += {<br><div id="under">Час отдыха<br><div id = "clear"><a href = 'EXEC: interaction = 1521 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Час отдыха (=1)<br><div id = "clear"><a href = 'EXEC: interaction = 1521 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Час отдыха<br></div>}
+  $text_display += {<br><div id="under_gray">Час отдыха (=1)<br></div>}
  END  
  IF slave["energy"] => 1 and boardgames => 0:
-  $text_display += {<br><div id="under">Час развлечений<br><div id = "clear"><a href = 'EXEC: interaction = 1522 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Час развлечений (=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1522 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Час развлечений<br></div>}
+  $text_display += {<br><div id="under_gray">Час развлечений (=2)<br></div>}
  END  
  IF slave["energy"] => full_day:
-  $text_display += {<br><div id="under">Отдых до вечера<br><div id = "clear"><a href = 'EXEC: interaction = 1523 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Отдых до вечера (=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1523 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Отдых до вечера<br></div>}
+  $text_display += {<br><div id="under_gray">Отдых до вечера (=3)<br></div>}
  END  
  IF slave["energy"] => full_day and boardgames => 0:
-  $text_display += {<br><div id="under">Развлечения до вечера<br><div id = "clear"><a href = 'EXEC: interaction = 1524 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Развлечения до вечера (=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1524 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Развлечения до вечера<br></div>}
+  $text_display += {<br><div id="under_gray">Развлечения до вечера (=4)<br></div>}
  END  
  IF slave["energy"] => full_day: 
-  $text_display += {<br><div id="under">Гефсиманский сад<br><div id = "clear"><a href = 'EXEC: interaction = 1525 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Гефсиманский сад (=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1525 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Гефсиманский сад<br></div>}
+  $text_display += {<br><div id="under_gray">Гефсиманский сад (=5)<br></div>}
  END   
  IF slave["energy"] => 1 and sparks => 2:
-  $text_display += {<br><div id="under">Горячие источники (2 ис)<br><div id = "clear"><a href = 'EXEC: interaction = 1526 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Горячие источники (2 ис) (=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1526 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Горячие источники (2 ис)<br></div>}
+  $text_display += {<br><div id="under_gray">Горячие источники (2 ис) (=2)<br></div>}
  END 
  IF slave["energy"] => full_day and sparks => 5:  
-  $text_display += {<br><div id="under">"Золотая клетка" (5 ис)<br><div id = "clear"><a href = 'EXEC: interaction = 1527 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">"Золотая клетка" (5 ис) (=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1527 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">"Золотая клетка" (5 ис)<br></div>}  
+  $text_display += {<br><div id="under_gray">"Золотая клетка" (5 ис) (=5)<br></div>}  
  END
  $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 15 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
@@ -1162,29 +1162,29 @@ END
 
 IF menu_form = 153:
  IF slave["obedience"] > 0:
-  $text_display += {<br><div id="under">Нежные объятья<br><div id = "clear"><a href = 'EXEC: interaction = 1531 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Нежные объятья (=1)<br><div id = "clear"><a href = 'EXEC: interaction = 1531 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Нежные объятья<br></div>}
+  $text_display += {<br><div id="under_gray">Нежные объятья (=1)<br></div>}
  END  
  IF slave["obedience"] > 1:
-  $text_display += {<br><div id="under">Чувственный массаж<br><div id = "clear"><a href = 'EXEC: interaction = 1532 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Чувственный массаж (=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1532 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Чувственный массаж<br></div>}
+  $text_display += {<br><div id="under_gray">Чувственный массаж (=2)<br></div>}
  END  
  IF slave["obedience"] > 2 and slave["arousal"] > 2:
-  $text_display += {<br><div id="under">Петтинг<br><div id = "clear"><a href = 'EXEC: interaction = 1533 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Петтинг (=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1533 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Петтинг<br></div>}
+  $text_display += {<br><div id="under_gray">Петтинг (=3)<br></div>}
  END  
  IF slave["obedience"] > 2 and slave["arousal"] > 1:
-  $text_display += {<br><div id="under">Вибраторы<br><div id = "clear"><a href = 'EXEC: interaction = 1534 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Вибраторы (=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1534 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Вибраторы<br></div>}
+  $text_display += {<br><div id="under_gray">Вибраторы (=4)<br></div>}
  END  
  IF slave["obedience"] > 1 and slave["arousal"] > 0:
-  $text_display += {<br><div id="under">Кунилингус<br><div id = "clear"><a href = 'EXEC: interaction = 1535 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Кунилингус (=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1535 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Кунилингус<br></div>}
+  $text_display += {<br><div id="under_gray">Кунилингус (=5)<br></div>}
  END  
  $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 15 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}

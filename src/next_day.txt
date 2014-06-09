@@ -435,7 +435,8 @@ IF slave_ration = 100: slave["pos_cookie"] = 2
 slave_ration = 0
 
 slave["calories"] = eaten_food
-if slave_food_type = 0: slave_demand_rating = eaten_food
+slave_food_cost = 0 
+if slave_food_type = 0: slave_food_cost = eaten_food
 if slave_food_type = 1: slave_food_cost = eaten_food*2
 IF slave_food_type = 2: 
  IF spawn_semen > eaten_food:

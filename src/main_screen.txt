@@ -22,17 +22,17 @@ IF wizard_mode = 1:
 END
 
 !расписание
-if ride_count > 4: $rideday = "До гонок осталось <<ride_count>> дней"
-if ride_count < 5: $rideday = "До гонок осталось <<ride_count>> дня"
-if ride_count = 1: $rideday = "До гонок остался <<ride_count>> день"
+if ride_count > 4: $rideday = "До гонок осталось <<ride_count>> дней."
+if ride_count < 5: $rideday = "До гонок осталось <<ride_count>> дня."
+if ride_count = 1: $rideday = "До гонок остался <<ride_count>> день."
 if ride_count = 0: $rideday =  "Гонки проводятся сегодня!"
-if auction_count > 4: $auctionday = 'через <<auction_count>> дней'
-if auction_count < 5: $auctionday = 'через <<auction_count>> дня'
-if auction_count = 1: $auctionday = 'через <<auction_count>> день'
+if auction_count > 5: $auctionday = 'через <<auction_count - 1>> дней.'
+if auction_count < 6: $auctionday = 'через <<auction_count - 1>> дня.'
+if auction_count = 1: $auctionday = 'завтра.'
 if auction_count = 0: $auctionday =  "сегодня!"
-if gladi_count > 4: $gladiday = 'через <<gladi_count>> дней'
-if gladi_count < 5: $gladiday = 'через <<gladi_count>> дня'
-if gladi_count = 1: $gladiday = 'через <<gladi_count>> день'
+if gladi_count > 5: $gladiday = 'через <<gladi_count - 1>> дней.'
+if gladi_count < 6: $gladiday = 'через <<gladi_count - 1>> дня.'
+if gladi_count = 1: $gladiday = 'завтра.'
 if gladi_count = 0: $gladiday =  "сегодня!"
 
 $shedule = '<center><u>Расписание событий</u></center>

@@ -9,7 +9,7 @@ IF $interaction_type = 'talk':
  *p '<div id = "bg"><img src="content\pic\<<$slave["fullimage"]>>.gif"></div>'
 END
 
-IF $interaction_type = 'talk_assitant':
+IF $interaction_type = 'talk_assistant':
  npc = 1
  $npc_id = 'ваша_ассистентка'
  if assistant['image_mode'] = 0: *p '<div id = "bg"><img src="content\pic\<<$fullimage[assistant_type]>>.gif"></div>'

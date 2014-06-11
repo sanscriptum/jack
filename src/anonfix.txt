@@ -35,4 +35,3 @@ END
 {<div id = "close_scroll"><a href = 'EXEC: gt "main_menu"'><img src = "content\close_button.png"></a></div>}
 --- anonfix ---------------------------------
 
-

@@ -141,7 +141,7 @@ END
 
 !Тип взаимодействия - урок ассистентки
 IF $interaction_type = 'assistant_teaches_slave':
- $interaction_type = 'talk_assitant' 
+ $interaction_type = 'talk_assistant' 
  diligence = complex_diligence 
  txt_count = 2
  $text[1] = '  Вы поручаете своей помощнице провести занятие с воспитуемой. <<$assistant_name>> с поклоном принимает приказ и удаляется. Через некоторое время она возвращается с подробным отчетом о проделанной работе.'

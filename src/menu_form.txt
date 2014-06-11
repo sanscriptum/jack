@@ -132,7 +132,9 @@ IF menu_form = 3:
   else
   $text_display += {<br><div id="under_gray">Помыться <br></div>}
  END 
- IF kitchen > 0:
+
+! IF kitchen > 0:
+ IF kitchen > 0 and cooked_food < 1:
   $text_display += {<br><div id="under">Приготовить еду<br><div id = "clear"><a href = 'EXEC: interaction = 35 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Приготовить еду<br></div>}
@@ -160,7 +162,8 @@ IF menu_form = 4:
   else
   $text_display += {<br><div id="under_gray">- Приберись в доме<br></div>}
  END
- IF kitchen > 0 and assistant["cook"] > 0:
+! IF kitchen > 0 and assistant["cook"] > 0:
+ IF kitchen > 0 and assistant["cook"] > 0 and cooked_food < 1:
   $text_display += {<br><div id="under">- Приготовь ужин<br><div id = "clear"><a href = 'EXEC: interaction = 43 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">- Приготовь ужин<br></div>}

@@ -168,12 +168,15 @@ $specialisation[8] = 'concubine'
 !ОБЩИЕ КАРТИНКИ
 $fullimage[0] = ''
 
+!' Эта фигня перезаписывается в дальнейшем, да и картинок таких нет.
+
 $cooked_food = 'scene/food'   
 $cooked_food[1] = 'scene/food1' 
 $cooked_food[2] = 'scene/food2' 
 $cooked_food[3] = 'scene/food3' 
 $cooked_food[4] = 'scene/food4' 
 $cooked_food[5] = 'scene/food5' 
+'!
 
 $chokolate = 'scene/chokolate'
 $cake = 'scene/cake'
@@ -1346,8 +1349,11 @@ $house_mess[4] = $_font_col_rep[1] + 'Бардак и грязь' + $_font_close
 $house_mess[5] = $_font_col_rep[0] + 'Дом как свинарник' + $_font_closer
 
 $cooked_food[0] = $_font_col_rep[0] + 'Еда не готова' + $_font_closer
-$cooked_food[1] = $_font_col_rep[3] + 'На ужин консервы' + $_font_closer
-$cooked_food[2] = $_font_col_rep[5] + 'Кушать подано' + $_font_closer
+$cooked_food[1] = $_font_col_rep[1] + 'На ужин консервы' + $_font_closer
+$cooked_food[2] = $_font_col_rep[2] + 'Кушать подано' + $_font_closer
+$cooked_food[3] = $_font_col_rep[3] + 'Кушать подано' + $_font_closer
+$cooked_food[4] = $_font_col_rep[4] + 'Кушать подано' + $_font_closer
+$cooked_food[5] = $_font_col_rep[5] + 'Кушать подано' + $_font_closer
 
 !костыль для состояния волос, волософикс ~the_vm
 !неделя слишком дохуя, надо дорабатывать

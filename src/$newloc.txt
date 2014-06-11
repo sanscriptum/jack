@@ -903,8 +903,8 @@ assistant_energy_plus = assistant["energy"]
 if assistant_energy_plus < 0: assistant_energy_plus = 5 - assistant["energy"]
 
 IF cooked_food < 0: cooked_food_plus = 0
-IF cooked_food = 0: cooked_food_plus = 1
-IF cooked_food > 0: cooked_food_plus = 2
+!IF cooked_food = 0: cooked_food_plus = 1
+IF cooked_food > 0: cooked_food_plus = cooked_food
 
 !Подсчёт запасов
 !TODO: заменить на вызов $get_frige_space ?

@@ -1,0 +1,57 @@
+# choose_the_girl
+!Экран выбора воспитуемой для демо-игры
+exam_in_progress = 1
+txt_count = 1
+ui_style = 1
+killobj
+addobj '<img src = "content\demo_forward_button.png">'
+
+*p '<div id = "bg"><img src="content\pic\bg\dungeon.jpg"></div>'
+*p '<div id = "bg"><center>Выберите воспитуемую</center></div>'
+
+IF choice = 0:
+ *p '<div id = "bg"><img src="content\pic\demo\choose_slave.gif"></div>'
+ $text[1] = 'Бывшая домохозяйка проданная банком в рабство, за долги мужа. Она служила «специалистом по развлечению» для менеджеров корпорации, поэтому имеет некоторый нужный опыт. Но специально её не обучали.
+ <font color="#008000">Сложность обучения: минимальная</font>'
+ slave_type = 902
+END
+
+IF choice = 1:
+ *p '<div id = "bg"><img src="content\pic\demo\choose_amazon.gif"></div>'
+ $text[1] = 'Амазонка-лесбиянка из варварского космического племени. У нее отличные задатки, но не стоит забывать, что эта девушка обладает большой физической силой, боевыми навыками и презирает мужчин. 
+ <font color="#cd0000">Сложность обучения: высокая</font>'
+ slave_type = 903
+END
+
+IF choice = 2:
+ *p '<div id = "bg"><img src="content\pic\demo\choose_princess.gif"></div>'
+ $text[1] = 'Маленькая принцесса из небольшого королевства в высоко-магическом мире. Сочетание слабого здоровья, ранимости и запредельной непокорности сделает её обучение трудным. Но её красота того стоит.
+ <font color="#4B0082">Сложность обучения: обычная</font>'
+ slave_type = 904
+END
+GS 'get_demo_slave'
+GS '$newloc'
+
+*p {<div id="choose_left"><a href = 'EXEC: choice = 2 & gt curloc'><img src = "content\pic\demo\click_field.gif"></a></div>}
+*p {<div id="choose_center"><a href = 'EXEC: choice = 1 & gt curloc'><img src = "content\pic\demo\click_field.gif"></a></div>}
+*p {<div id="choose_right"><a href = 'EXEC: choice = 0 & gt curloc'><img src = "content\pic\demo\click_field.gif"></a></div>}
+
+*p '<div id = "text"><<$text[txt]>></div>'
+
+*p '<div id = "interaction_stat_bar">
+<u>РЕЗЮМЕ:</u>
+<<$beauty[seed_beauty[slave_type]]>> 
+<<$stamina[seed_stamina[slave_type]]>> 
+<<$exotic[seed_exotic[slave_type]]>> 
+<<$fat[seed_fat[slave_type]]>> 
+<<$sensitivity[seed_sensitivity[slave_type]]>> 
+<<$style[seed_style[slave_type]]>> 
+<<$intellect[seed_intellect[slave_type]]>> 
+<<$temper[seed_temper[slave_type]]>> 
+<<$ego[seed_ego[slave_type]]>> 
+<<$pride[seed_pride[slave_type]]>> 
+
+<u>ОСОБЕННОСТИ:</u>
+<<$features_list>>
+</div>'
+--- choose_the_girl ---------------------------------

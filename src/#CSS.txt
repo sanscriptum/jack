@@ -222,7 +222,7 @@ height:300px;
 #title_menu {
 position:absolute;
 left:820px;
-top:450px;
+top:420px;
 width:450px;
 height:350px;
 text-align:center;

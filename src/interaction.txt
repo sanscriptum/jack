@@ -5075,7 +5075,11 @@ IF interaction = 373:
  menu_form = 0
  gs 'main_layout'
  gs '$newloc'
- GT 'menu_form'
+ IF exam_in_progress = 1:
+  GT 'demo_menu_form'
+  else
+  GT 'menu_form'
+ END
 END
 
 IF interaction = 374:

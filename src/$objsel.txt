@@ -45,6 +45,29 @@ IF selobj = '<img src = "content\back_button.png">':
  GT curloc
 END
 
+IF selobj = '<img src = "content\demo_forward_button.png">':
+ IF txt < txt_count:
+  txt += 1
+  killobj 
+  else
+  killobj 
+  if $msg_txt ! '' and txt_count = txt:
+   msg '<<$msg_txt>>'
+   $msg_txt = ''
+  END
+  GT 'demo_menu_form'
+ END
+ unsel
+ GT curloc
+END
+
+IF selobj = '<img src = "content\demo_back_button.png">':
+ txt -= 1
+ killobj 
+ unsel
+ GT curloc
+END
+
 IF selobj = '<img src = "content\demo_forward.png">':
  IF txt < txt_count:
   txt += 1
@@ -57,7 +80,6 @@ IF selobj = '<img src = "content\demo_forward.png">':
  unsel
  GT curloc
 END
-
 
 IF selobj = '<img src = "content\pic\buttons\auk_fwrd.png">':
  killobj 

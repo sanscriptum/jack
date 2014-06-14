@@ -102,6 +102,11 @@ IF slave["mood"] < 0 and slave['temper'] > slave['obedience']:
  END 
 END
 
+!не позволяем сбежать рабыне из туториала
+IF exam_in_progress = 1:
+ slave_escape = 0
+END
+
 a = slave['ego'] + slave['custom']
 IF slave['angst'] > a:
  chance = RAND(0,10)
@@ -1449,6 +1454,16 @@ txt = 1
 menu_form = 0
 !debug
 !msg 'master_ill = <<master_ill>>'
+
+!условие проигрыша туториала если рабыня больна
+IF exam_in_progress = 1:
+ IF slave["stamina"] = 0:
+  txt = 1
+  lecture = 12
+  GT 'demo_intro'
+ END
+END
+
 GT 'end_day_screen'
 --- next_day ---------------------------------
 

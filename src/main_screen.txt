@@ -117,8 +117,13 @@ IF slave_state = CONST_INT['slave_exist']:
 <<$girl_hygiene[slave["hygiene"]]>>
 </div>'
  !*p '<div id="fast_chat"><img src="content\chat.png"></div>' 
- *p  {<div id="fast_influence"><a href = "EXEC: menu_form = 112 & gt 'menu_form'"><img src="content\influence.png"></a></div>}   
- *p  {<div id="fast_question"><a href = "EXEC: menu_form = 111 & gt 'menu_form'"><img src="content\question.png"></a></div>}  
+ IF exam_in_progress = 1:
+  *p  {<div id="fast_influence"><a href = "EXEC: menu_form = 112 & gt 'demo_menu_form'"><img src="content\influence.png"></a></div>}   
+  *p  {<div id="fast_question"><a href = "EXEC: menu_form = 111 & gt 'demo_menu_form'"><img src="content\question.png"></a></div>}  
+  else
+  *p  {<div id="fast_influence"><a href = "EXEC: menu_form = 112 & gt 'menu_form'"><img src="content\influence.png"></a></div>}   
+  *p  {<div id="fast_question"><a href = "EXEC: menu_form = 111 & gt 'menu_form'"><img src="content\question.png"></a></div>}  
+ END
 END
 
 IF slave_state = CONST_INT['slave_faint']:
@@ -130,8 +135,13 @@ END
 IF slave["hygiene"] > 1 and slave_state = CONST_INT['slave_exist'] and bath > 0: *p {<div id="fast_wash_slave"><a href = "EXEC: interaction = 52 & gt 'interaction'"><img src="content\fast_button.png"></a></div>}  
 
 IF slave_state = CONST_INT['slave_exist']:
- if slave["sin"] => 0: *p {<div id="fast_redeem"><a href = "EXEC: menu_form = 14 & gt 'menu_form'"><img src="content\fast_button.png"></a></div>} 
- if slave["virtue"] > 0: *p {<div id="fast_redeem"><a href = "EXEC: menu_form = 15 & gt 'menu_form'"><img src="content\fast_button.png"></a></div>} 
+ IF exam_in_progress = 1:
+  if slave["sin"] => 0: *p {<div id="fast_redeem"><a href = "EXEC: menu_form = 14 & gt 'demo_menu_form'"><img src="content\fast_button.png"></a></div>} 
+  if slave["virtue"] > 0: *p {<div id="fast_redeem"><a href = "EXEC: menu_form = 15 & gt 'demo_menu_form'"><img src="content\fast_button.png"></a></div>} 
+  else
+  if slave["sin"] => 0: *p {<div id="fast_redeem"><a href = "EXEC: menu_form = 14 & gt 'menu_form'"><img src="content\fast_button.png"></a></div>} 
+  if slave["virtue"] > 0: *p {<div id="fast_redeem"><a href = "EXEC: menu_form = 15 & gt 'menu_form'"><img src="content\fast_button.png"></a></div>} 
+ END
 END
 
 *p '<div id = "master_short_ava"><a href = "EXEC: gt ''master_stat''"><img src = "<<$master_ava>>"></a></div>'
@@ -144,7 +154,11 @@ END
 
 IF master_excitement > 0: 
  IF slave_state = CONST_INT['slave_exist']:
-  *p {<div id="fast_sex"><a href = "EXEC: menu_form = 16 & gt 'menu_form'"><img src="content\fast_button.png"></a></div>}  
+  IF exam_in_progress = 1:
+   *p {<div id="fast_sex"><a href = "EXEC: menu_form = 16 & gt 'demo_menu_form'"><img src="content\fast_button.png"></a></div>}  
+   else
+   *p {<div id="fast_sex"><a href = "EXEC: menu_form = 16 & gt 'menu_form'"><img src="content\fast_button.png"></a></div>}  
+  END
  END
  IF slave_state ! CONST_INT['slave_exist'] and assistant_state = 1:
   *p {<div id="fast_sex"><a href = "EXEC: menu_form = 4 & gt 'menu_form'"><img src="content\fast_button.png"></a></div>}  
@@ -178,7 +192,7 @@ IF slave_state = CONST_INT['slave_exist']:
   *p '<div id = "teach_a"><a href = "EXEC: teach_stat_screen = 3 & gt ''teach_screen''"><img src="content\teach_a.png"></a></div>'
   else
   if sparks => 25: *p '<div id = "teach_r_noa"><a href = "EXEC: teach_stat_screen = 1 & gt ''teach_screen''"><img src="content\teach_r.png"></a></div>'
-  if sparks => 16: *p '<div id = "teach_s_noa"><a href = "EXEC: teach_stat_screen = 2 & gt ''teach_screen''"><img src="content\teach_s.png"></a></div>'
+  if sparks => 16 and exam_in_progress ! 1: *p '<div id = "teach_s_noa"><a href = "EXEC: teach_stat_screen = 2 & gt ''teach_screen''"><img src="content\teach_s.png"></a></div>'
  END
 END
 
@@ -194,7 +208,7 @@ IF decadecount => 10:
  msg '<<$bill_message>>'
  decadecount = 0
  decade += 1
- IF final_payment > sparks:
+ IF final_payment > sparks and exam_in_progress ! 1:
    dynamic $death, 'Вы не смогли заплатить по счетам и были изгнаны из гильдии работорговцев за неспособность решать собственные финансовые проблемы.'
   else
    sparks -= final_payment
@@ -212,7 +226,11 @@ END
 
 if sbros = 1:
  sbros = 0
- gt 'menu_form'
+ IF exam_in_progress = 1:
+  gt 'demo_menu_form'
+  else
+  gt 'menu_form'
+ END
 END
 
 IF slave['pregnant'] => 150: 

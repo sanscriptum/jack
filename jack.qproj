@@ -7,7 +7,7 @@
     <Location name="main_menu"/>
     <Location name="controls"/>
     <Location name="credits"/>
-	<Location name="anonfix"/>
+    <Location name="anonfix"/>
     <Location name="exid"/>
     <Folder name="crutches">
       <Location name="new_game"/>
@@ -170,6 +170,15 @@
       <Location name="#sex_options"/>
       <Location name="$sex_newloc"/>
       <Location name="sex_addup"/>
+    </Folder>
+    <Folder name="demo">
+      <Location name="demo_intro"/>
+      <Location name="demo_layout"/>
+      <Location name="init_demo_game"/>
+      <Location name="start_demo_game"/>
+      <Location name="choose_the_girl"/>
+      <Location name="get_demo_slave"/>
+      <Location name="demo_menu_form"/>
     </Folder>
   </Structure>
 </QGen-project>

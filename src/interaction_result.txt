@@ -31,7 +31,11 @@ IF $interaction_type = 'get_grug':
   menu_form = 0
   bulk = 1
   gs '$newloc'
-  GT 'menu_form'
+  IF exam_in_progress = 1:
+   GT 'demo_menu_form'
+   else
+   GT 'menu_form'
+  END
  END
 END
 

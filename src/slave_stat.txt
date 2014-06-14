@@ -50,7 +50,11 @@ gs 'stats_layout'
 *p '<div id = "bookmark_two">Анатомия</div>'
 *p '<div id = "bookmark_three">Снаряжение</div>'
 *p '<div id = "bookmark_four">Аура</div>'
-*p '<div id = "close"><a href = "EXEC: $equip_choice = '''' & gt ''menu_form''"><img src = "content\close_button.png"></a></div>'
+IF exam_in_progress = 1:
+ *p '<div id = "close"><a href = "EXEC: $equip_choice = '''' & gt ''demo_menu_form''"><img src = "content\close_button.png"></a></div>'
+ else
+ *p '<div id = "close"><a href = "EXEC: $equip_choice = '''' & gt ''menu_form''"><img src = "content\close_button.png"></a></div>'
+END
 
 *p '<div id="left_column">
 <u>ОЦЕНКА:</u>&nbsp;<a href="EXEC: msg $rating_help"><<$rating[rating]>></a>
@@ -87,7 +91,11 @@ IF slave_stat_screen = 0:
  *p '<div id = "mark_two"><a href = "EXEC: slave_stat_screen = 1 & $info_text = ''&nbsp'' & gt curloc"><img src = "content\unsel_button.png"></a></div>'
  *p '<div id = "mark_three"><a href = "EXEC: slave_stat_screen = 2 & $info_text = ''&nbsp'' & gt curloc"><img src = "content\unsel_button.png"></a></div>'
  *p '<div id = "mark_four"><a href = "EXEC: slave_stat_screen = 3 & $info_text = '''' & gt curloc"><img src = "content\unsel_button.png"></a></div>' 
- *p '<div id="center_image"><img src = "content\pic\bg\<<$interior_study[$study]>>.jpg"></div>'
+ IF exam_in_progress = 1:
+  *p '<div id="center_image"><img src = "content\pic\bg\study.jpg"></div>'
+  else
+  *p '<div id="center_image"><img src = "content\pic\bg\<<$interior_study[$study]>>.jpg"></div>'
+ END
  *p '<div id="center_image"><img src="content\pic\<<$slave["fullimage"]>>.gif"></div>' 
  *p '<div id="left_padding">РЕЖИМ СНА: <BR><BR><BR><BR><BR><BR><BR>РЕЖИМ ПИТАНИЯ:<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>СЧЕТЧИК КАЛОРИЙ:</div>'  
  *p '<div id="left_rules">

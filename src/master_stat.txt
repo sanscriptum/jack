@@ -10,7 +10,11 @@ slot = 0
 *p '<div id = "bookmark_two">Задачи</div>'
 *p '<div id = "bookmark_three">Снаряжение</div>'
 *p '<div id = "bookmark_four">Дневник</div>'
-*p '<div id = "close"><a href = "EXEC: $equip_choice = '''' & gt ''menu_form''"><img src = "content\close_button.png"></a></div>'
+IF exam_in_progress = 1:
+ *p '<div id = "close"><a href = "EXEC: $equip_choice = '''' & gt ''demo_menu_form''"><img src = "content\close_button.png"></a></div>'
+ else
+ *p '<div id = "close"><a href = "EXEC: $equip_choice = '''' & gt ''menu_form''"><img src = "content\close_button.png"></a></div>'
+END
 
 !'
  IF slave["stamina"] > 1:

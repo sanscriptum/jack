@@ -292,7 +292,11 @@ IF active[$quest[3]] = 1 and noble_status = 1:
  gt 'epic_win'
 END
 
-GT 'menu_form'
+IF exam_in_progress = 1:
+ GT 'demo_menu_form'
+ else
+ GT 'menu_form'
+END
 :loop
 
 *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'

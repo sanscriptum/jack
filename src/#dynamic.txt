@@ -110,7 +110,7 @@ IF slave_state ! CONST_INT['no_slave']:
  IF slave["stamina"] = 0 and slave_rate["stamina"] < 0 and slave['starvation'] > 50: 
   slave_state = CONST_INT['no_slave']
   master_mood['neg_slave_starved'] = 1
-  msg 'Ваша воспитуемая умерла от истощения. Вы продали ее труп мяснику за 5 искр.'
+  if exam_in_progress ! 1: msg 'Ваша воспитуемая умерла от истощения. Вы продали ее труп мяснику за 5 искр.'
   sparks += 5
  END
 END
@@ -120,7 +120,7 @@ END
 $slave_killed = {
 slave_state = CONST_INT['no_slave']
 master_mood['neg_slave_killed'] = 1
-msg 'Вы убили свою воспитуемую в бою. Вы продали ее труп мяснику за 5 искр.'
+if exam_in_progress ! 1: msg 'Вы убили свою воспитуемую в бою. Вы продали ее труп мяснику за 5 искр.'
 sparks += 5
 }
 

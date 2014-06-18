@@ -2000,7 +2000,7 @@ IF interaction = 1325:
  if slave["preversion"] < 0: repulse += 2 & rise_modifer = 2  
  rise_difficulty = 3 + slave["sub_asslik"]
  $text[1] = '  <<$rimming_lesson_description[slave["sub_asslik"]]>>'
- $play_sound[2] = '<<$licking_sound[slave["age"]]>>'
+ $play_sound[2] = '<<$kiss_sound[slave["age"]]>>'
  $special_bg = $rimming[slave_type]   
  couch_skill = master_oral
  add_master_hygiene = -5 

@@ -28,10 +28,12 @@ if ride_count = 1: $rideday = "До гонок остался <<ride_count>> д�
 if ride_count = 0: $rideday =  "Гонки проводятся сегодня!"
 if auction_count > 4: $auctionday = 'через <<auction_count>> дней.'
 if auction_count < 5: $auctionday = 'через <<auction_count>> дня.'
+if auction_count = 2: $auctionday = 'послезавтра.'
 if auction_count = 1: $auctionday = 'завтра.'
 if auction_count = 0: $auctionday =  "сегодня!"
 if gladi_count > 4: $gladiday = 'через <<gladi_count>> дней.'
 if gladi_count < 5: $gladiday = 'через <<gladi_count>> дня.'
+if gladi_count = 2: $gladiday = 'послезавтра.'
 if gladi_count = 1: $gladiday = 'завтра.'
 if gladi_count = 0: $gladiday =  "сегодня!"
 

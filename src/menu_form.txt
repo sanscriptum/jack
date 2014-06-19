@@ -1502,6 +1502,39 @@ IF menu_form = 1000:
   $text_display = {<BR><div id="under">Проснуться <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
 END
 
+IF menu_form = 2000: 
+  $text_display += {<div id="under_gray">{ { { ИНТЕРФЕЙС } } }<br></div>}
+  IF ui_style ! 1:
+   $text_display += {<br><div id="under">Старый<br><div id = "clear"><a href = 'EXEC: ui_style = 1 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
+   else
+   $text_display += {<br><div id="under_gray">Старый<br></div>}
+  END
+  IF ui_style ! 0:
+   $text_display += {<br><div id="under">Классический<br><div id = "clear"><a href = 'EXEC: ui_style = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
+   else
+   $text_display += {<br><div id="under_gray">Классический<br></div>}
+  END
+  IF ui_style ! 2:
+   $text_display += {<br><div id="under">Гримдарк<br><div id = "clear"><a href = 'EXEC: ui_style = 2 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
+   else
+   $text_display += {<br><div id="under_gray">Гримдарк<br></div>}
+  END
+  $text_display += {<br><div id="under_gray">{ { { АВТОСОХРАНЕНИЕ } } }<br></div>}
+  $text_display += {<br><div id="under_gray">{ В начале дня }<br></div>}
+  IF autosave_day ! 1:
+   $text_display += {<br><div id="under">Вкл<br><div id = "clear"><a href = 'EXEC: autosave_day = 1 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
+   else
+   $text_display += {<br><div id="under">Выкл<br><div id = "clear"><a href = 'EXEC: autosave_day = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>} 
+  END
+  $text_display += {<br><div id="under_gray">{ Каждую декаду }<br></div>}
+  IF autosave_decade ! 1:
+   $text_display += {<br><div id="under">Вкл<br><div id = "clear"><a href = 'EXEC: autosave_decade = 1 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
+   else
+   $text_display += {<br><div id="under">Выкл<br><div id = "clear"><a href = 'EXEC: autosave_decade = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>} 
+  END
+  $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
+END
+
 GT 'main_screen'
 --- menu_form ---------------------------------
 

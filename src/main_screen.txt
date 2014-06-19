@@ -49,6 +49,8 @@ $shedule = '<center><u>Расписание событий</u></center>
 <<$boy_hygiene[master_hygiene]>>
 </div>'
 
+!иконка для настроек
+*p {<div id="options_icon"><a href = "EXEC: menu_form = 2000 & gt 'menu_form'"><img src="content\gear.png"></a></div>}
 
 IF sound_on = 1:
  *p '<div id="sound_icon"><a href = "EXEC: sound_on = 0 & close all & gt curloc"><img src="content\sound_on.png"></a></div>'  
@@ -210,6 +212,7 @@ IF decadecount => 10:
  msg '<<$bill_message>>'
  decadecount = 0
  decade += 1
+ decadesave = 1
  IF final_payment > sparks and exam_in_progress ! 1:
    dynamic $death, 'Вы не смогли заплатить по счетам и были изгнаны из гильдии работорговцев за неспособность решать собственные финансовые проблемы.'
   else
@@ -251,6 +254,20 @@ IF prisoner['pregnant'] => 150:
  interaction = 9913
  prisoner['pregnant'] = 0 
  gt 'interaction'
+END
+
+!автосейв
+IF autosave = 1:
+ IF autosave_day = 1:
+   autosave = 0
+   SAVEGAME 'save/auto_day.sav'
+ END
+END
+IF autosave_decade = 1:
+ IF decadesave = 1:
+  decadesave = 0
+  SAVEGAME 'save/auto_decade.sav'
+ END
 END
 --- main_screen ---------------------------------
 

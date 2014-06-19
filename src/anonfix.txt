@@ -10,27 +10,6 @@
 Репозиторий фикса открыт для всех желающих улучшать и дополнять игру, и находится <a href="https://github.com/thevm/jack">по этому адресу</a>.
 
 Подробное описание фикса можно найти в файле readme.txt, который поставляется в архиве с фиксом.
-<b>ИНТЕРФЕЙС:</b>
-Старый стиль
-Классический стиль
-Гримдарк
-</div>'
-
-IF ui_style = 1:
- *p '<div id="chekbox_14l"><img src="content\sel_button.png"></div>'  
- else
- *p '<div id="chekbox_14l"><a href = "EXEC: ui_style = 1 & gt curloc"><img src="content\unsel_button.png"></a></div>'  
-END
-IF ui_style = 0:
- *p '<div id="chekbox_15l"><img src="content\sel_button.png"></div>'  
- else
- *p '<div id="chekbox_15l"><a href = "EXEC: ui_style = 0 & gt curloc"><img src="content\unsel_button.png"></a></div>'  
-END
-IF ui_style = 2:
- *p '<div id="chekbox_16l"><img src="content\sel_button.png"></div>'  
- else
- *p '<div id="chekbox_16l"><a href = "EXEC: ui_style = 2 & gt curloc"><img src="content\unsel_button.png"></a></div>'  
-END
 
 {<div id = "close_scroll"><a href = 'EXEC: gt "main_menu"'><img src = "content\close_button.png"></a></div>}
 --- anonfix ---------------------------------

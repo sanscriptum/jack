@@ -1464,6 +1464,11 @@ IF exam_in_progress = 1:
  END
 END
 
+!условие для автосейва
+IF autosave_day = 1:
+ autosave = 1
+END
+
 GT 'end_day_screen'
 --- next_day ---------------------------------
 

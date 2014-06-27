@@ -30,7 +30,7 @@ IF interaction = 5416:
 END
 
 IF $interaction_type = 'chestbuster':
- if txt = 1 and sound_on = 1: play 'content\snd\girl_suffering.mp3'
+ if txt = 1 and sound_on = 1: play 'content\snd\girl_suffering.mp3', sound_volume
  if txt = 2: *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
  if txt > 2: *p '<div id = "bg"><img src="content\pic\scene\event_chestbuster.jpg"></div>' 
 END
@@ -98,7 +98,7 @@ END
 
 *p '<div id = "interaction_stat_bar"><<$info_bar>></div>'
 
-if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3'
+if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3', sound_volume
 
 if txt > 1: 
  addobj '<img src = "content\back_button.png">'

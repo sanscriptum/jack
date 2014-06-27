@@ -5029,7 +5029,7 @@ END
 !было slave_mood для мудлетов, что работает не правильно для рабыни
 IF interaction = 371:
  lab_store["koffe"] -= 1
- if sound_on = 1: play 'content\snd\bulk.mp3'
+ if sound_on = 1: play 'content\snd\bulk.mp3', sound_volume
  bulk = 1
  IF master_koffed = 0:  
   if master_energy < 5: master_energy += 1
@@ -5044,7 +5044,7 @@ END
 
 IF interaction = 372:
  lab_store["kanabis"] -= 1
- if sound_on = 1: play 'content\snd\bulk.mp3'
+ if sound_on = 1: play 'content\snd\bulk.mp3', sound_volume
  bulk = 1
  master_mood['pos_kannabis'] = 1
  kannabis_pressure += 1
@@ -5056,7 +5056,7 @@ END
 
 IF interaction = 373:
  frige["alcohol"] -= 1
- if sound_on = 1: play 'content\snd\bulk.mp3'
+ if sound_on = 1: play 'content\snd\bulk.mp3', sound_volume
  bulk = 1
  IF master_drunk = 2:  
   master_drunk = 3
@@ -5084,7 +5084,7 @@ END
 
 IF interaction = 374:
  lab_store["meth"] -= 1
- if sound_on = 1: play 'content\snd\bulk.mp3'
+ if sound_on = 1: play 'content\snd\bulk.mp3', sound_volume
  bulk = 1
  IF master_on_meth = 1:  
   dynamic $death, 'Вы получили передозировку тяжелых наркотиков и скончались от угнетения дыхательного центра мозга. Никто не смог вам помочь.'
@@ -5103,7 +5103,7 @@ END
 
 IF interaction = 375:
  lab_store["opium"] -= 1
- if sound_on = 1: play 'content\snd\bulk.mp3'
+ if sound_on = 1: play 'content\snd\bulk.mp3', sound_volume
  bulk = 1
  IF master_on_opium = 1:  
   dynamic $death, 'Вы получили передозировку тяжелых наркотиков и скончались от угнетения дыхательного центра мозга. Никто не смог вам помочь.'
@@ -5123,7 +5123,7 @@ END
 
 IF interaction = 381:
  вакхический_нектар -= 1
- if sound_on = 1: play 'content\snd\bulk.mp3'
+ if sound_on = 1: play 'content\snd\bulk.mp3', sound_volume
  bulk = 1
  master_mood['pos_bahus'] = 1
  menu_form = 0
@@ -5134,7 +5134,7 @@ END
 
 IF interaction = 382:
  тонизируюзщий_эликсир -= 1
- if sound_on = 1: play 'content\snd\bulk.mp3'
+ if sound_on = 1: play 'content\snd\bulk.mp3', sound_volume
  bulk = 1
  master_energy += 1
  master_str_rate -= master_energised
@@ -5147,7 +5147,7 @@ END
 
 IF interaction = 383:
  целительный_бальзам -= 1
- if sound_on = 1: play 'content\snd\bulk.mp3'
+ if sound_on = 1: play 'content\snd\bulk.mp3', sound_volume
  bulk = 1
  msg 'Целительный бальзам лучше наносить в тот же момент, когда рана получена, иначе его эффективность намного ниже. Тем не менее, вы чувствуете себя немного лучше.'
  master_wounds_rate -= 10
@@ -5160,7 +5160,7 @@ END
 
 IF interaction = 384:
  афродизиак -= 1
- if sound_on = 1: play 'content\snd\bulk.mp3'
+ if sound_on = 1: play 'content\snd\bulk.mp3', sound_volume
  bulk = 1
  if master_excitement < 5: master_excitement += 1
  menu_form = 0
@@ -5171,7 +5171,7 @@ END
 
 IF interaction = 385:
  мощный_афодизиак -= 1
- if sound_on = 1: play 'content\snd\bulk.mp3'
+ if sound_on = 1: play 'content\snd\bulk.mp3', sound_volume
  bulk = 1
  master_excitement = 5
  menu_form = 0
@@ -5182,7 +5182,7 @@ END
 
 IF interaction = 386:
  приворотное_зелье -= 1
- if sound_on = 1: play 'content\snd\bulk.mp3'
+ if sound_on = 1: play 'content\snd\bulk.mp3', sound_volume
  bulk = 1
  master_excitement = 5
  menu_form = 0
@@ -5193,7 +5193,7 @@ END
 
 IF interaction = 387:
  вода_леты -= 1
- if sound_on = 1: play 'content\snd\bulk.mp3'
+ if sound_on = 1: play 'content\snd\bulk.mp3', sound_volume
  bulk = 1
  gs '$mod_master_rise',100
  gs '$mod_master_drop',100

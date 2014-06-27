@@ -429,6 +429,6 @@ if npc = 0:
 </div>'
 END
 
-if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3'
+if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3', sound_volume
 --- shop_wpn ---------------------------------
 

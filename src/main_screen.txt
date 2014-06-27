@@ -62,6 +62,42 @@ IF sound_on = 1:
  *p '<div id="sound_icon"><a href = "EXEC: sound_on = 1 & gt curloc"><img src="content\sound_off.png"></a></div>'  
 END
 
+!настройки звука
+IF menu_form = 2000:
+ *p '<div style="position:absolute;top:224px;left:640px;height:400px;width:500px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">МУЗЫКА:</font></TD><TD><a href = 1><img src="content/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/Plus.png"></a></TD><TD><a href = 3><img src="content/close_button.png"></a></TD></TR>
+<TR><TD style="width:130px"><font color="#FFD700" size="5">ЗВУК:</font></TD><TD><a href = 4><img src="content/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/Plus.png"></a></TD><TD><a href = 6><img src="content/close_button.png"></a></TD></TR></table></div>'
+END
+
+ACT '1':
+ music_volume -= 10
+ if music_volume < 0: music_volume = 0
+ gt curloc
+END
+ACT '2':
+ music_volume += 10
+ if music_volume > 100: music_volume = 100
+ gt curloc
+END
+ACT '3':
+ music_volume = 0
+ gt curloc
+END
+
+ACT '4':
+ sound_volume  -= 10
+ if sound_volume < 0: sound_volume = 0 
+ gt curloc
+END
+ACT '5':
+ sound_volume += 10
+ if sound_volume > 100: sound_volume = 100
+ gt curloc
+END
+ACT '6':
+ sound_volume = 0
+ gt curloc
+END
+
 IF assistant_state = 1:
  *p '<div id = "assistant_short_ava"><a href = "EXEC: gt ''assistant_stat''"><img src = "<<$assistant[''ava'']>>.jpg"></a></div>'
  *p '<div id = "assistant_short_stat"><<$house_mess[house_mess]>>

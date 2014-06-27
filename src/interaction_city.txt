@@ -532,7 +532,7 @@ IF interaction_city = 11521:
  sparks -= 10
  frige["eggs"] += 5
  skip_to = 2
- if sound_on = 1: play 'content\snd\kkm.mp3'
+ if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
  GT 'shop_general'
 END
 
@@ -542,7 +542,7 @@ IF interaction_city = 11522:
  sparks -= 10
  frige["milk"] += 5
  skip_to = 2
- if sound_on = 1: play 'content\snd\kkm.mp3'
+ if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
  GT 'shop_general'
 END
 
@@ -552,7 +552,7 @@ IF interaction_city = 11523:
  sparks -= 20
  frige["cream"] += 5
  skip_to = 2
- if sound_on = 1: play 'content\snd\kkm.mp3'
+ if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
  GT 'shop_general'
 END
 
@@ -562,7 +562,7 @@ IF interaction_city = 11524:
  sparks -= 5
  frige["cheese"] += 5
  skip_to = 2
- if sound_on = 1: play 'content\snd\kkm.mp3'
+ if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
  GT 'shop_general'
 END
 
@@ -573,7 +573,7 @@ IF interaction_city = 11531:
  sparks -= 5
  frige["vegetables"] += 5
  skip_to = 3
- if sound_on = 1: play 'content\snd\kkm.mp3'
+ if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
  GT 'shop_general'
 END
 
@@ -583,7 +583,7 @@ IF interaction_city = 11532:
  sparks -= 5
  frige["flower"] += 5
  skip_to = 3
- if sound_on = 1: play 'content\snd\kkm.mp3'
+ if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
  GT 'shop_general'
 END
 
@@ -593,7 +593,7 @@ IF interaction_city = 11533:
  sparks -= 5
  frige["spice"] += 5
  skip_to = 3
- if sound_on = 1: play 'content\snd\kkm.mp3'
+ if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
  GT 'shop_general'
 END
 
@@ -603,7 +603,7 @@ IF interaction_city = 11534:
  sparks -= 10
  frige["alcohol"] += 5
  skip_to = 3
- if sound_on = 1: play 'content\snd\kkm.mp3'
+ if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
  GT 'shop_general'
 END
 
@@ -613,7 +613,7 @@ IF interaction_city = 11541:
  sparks -= 7
  frige["mince"] += 5
  skip_to = 4
- if sound_on = 1: play 'content\snd\kkm.mp3'
+ if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
  GT 'shop_general'
 END
 
@@ -623,7 +623,7 @@ IF interaction_city = 11542:
  sparks -= 20
  frige["meat"] += 5
  skip_to = 4
- if sound_on = 1: play 'content\snd\kkm.mp3'
+ if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
  GT 'shop_general'
 END
 
@@ -4653,7 +4653,7 @@ END
 IF interaction_city = 332012:
  $place = 'stasis_bank'
  $return_lock  = 'shop_general' 
- if sound_on = 1: play 'content\snd\kkm.mp3'
+ if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
  copyarr '$display_options', '$stasis_options'   
  GT 'slave_to_iced_1'
 END
@@ -4661,7 +4661,7 @@ END
 IF interaction_city = 332013:
  $place = 'stasis_bank'
  $return_lock  = 'shop_general' 
- if sound_on = 1: play 'content\snd\kkm.mp3'
+ if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
  copyarr '$display_options', '$stasis_options'   
  GT 'slave_to_iced_2'
 END
@@ -4669,7 +4669,7 @@ END
 IF interaction_city = 332014:
  $place = 'stasis_bank'
  $return_lock  = 'shop_general' 
- if sound_on = 1: play 'content\snd\kkm.mp3'
+ if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
  copyarr '$display_options', '$stasis_options'   
  GT 'slave_to_iced_3'
 END
@@ -5107,7 +5107,7 @@ IF interaction_city = 4311:
  $return_lock  = 'shop_general'
  sparks -= 10
  lab_store["kanabis"] += 5
- if sound_on = 1: play 'content\snd\kkm.mp3'
+ if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
  GT 'shop_general'
 END
 
@@ -5116,7 +5116,7 @@ IF interaction_city = 4312:
  $return_lock  = 'shop_general'
  sparks -= 10
  lab_store["koffe"] += 5
- if sound_on = 1: play 'content\snd\kkm.mp3'
+ if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
  GT 'shop_general'
 END
 
@@ -5125,7 +5125,7 @@ IF interaction_city = 4313:
  $return_lock  = 'shop_general'
  sparks -= 10
  lab_store["meth"] += 5
- if sound_on = 1: play 'content\snd\kkm.mp3'
+ if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
  GT 'shop_general'
 END
 
@@ -5134,7 +5134,7 @@ IF interaction_city = 4314:
  $return_lock  = 'shop_general'
  sparks -= 10
  lab_store["opium"] += 5
- if sound_on = 1: play 'content\snd\kkm.mp3'
+ if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
  GT 'shop_general'
 END
 
@@ -6448,7 +6448,7 @@ IF interaction_city = 94:
     gs '$slave_price'
     if brand_rate < rating: brand_rate += rating
     sparks += discount_price[rating]
-    if sound_on = 1: play 'content\snd\kkm.mp3'
+    if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
     slave_state = CONST_INT['no_slave']
     gt "guild"
  }

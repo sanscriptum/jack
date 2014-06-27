@@ -29,7 +29,7 @@ END
 
 *p '<div id = "interaction_stat_bar"><<$info_bar>></div>'
 
-if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3'
+if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3', sound_volume
 
 *p {<div id = "approve"><a href = 'EXEC: dynamic $do_buy & gt $return_lock'><img src="content\approve.png"></a></div>}
 *p {<div id = "deny"><a href = 'EXEC: gt $return_lock'><img src="content\deny.png"></a></div>}

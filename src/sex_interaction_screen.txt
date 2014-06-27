@@ -39,7 +39,7 @@ $info_bar = ''
         Сложность: <<diff>>
         Баланс: <<balance>></div>'  
 
-if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3'
+if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3', sound_volume
 
 if txt > 1: 
  addobj '<img src = "content\back_button.png">'

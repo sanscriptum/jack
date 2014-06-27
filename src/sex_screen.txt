@@ -98,7 +98,7 @@ IF sex_num => 0:
  END
 END
 
-if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3'
+if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3', sound_volume
 
 
  if wizard_mode = 1: $msg_txt = "<center>Итог</center>

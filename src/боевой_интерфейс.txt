@@ -141,7 +141,7 @@ IF $music_now ! $music[$toplay]:
   close $music_now
   $music_now = $music[$toplay]
 END
-if sound_on = 1: play $music_now
+if sound_on = 1: play $music_now, music_volume
 
 IF sound_on = 1:
  *p '<div id="sound_icon"><a href = "EXEC: sound_on = 0 & close all & gt curloc"><img src="content\sound_on.png"></a></div>'  

@@ -299,7 +299,7 @@ IF $interaction_type = 'buy_item_home':
 END
 
 IF $interaction_type = 'buy_item_personal':
- if sound_on = 1: play 'content\snd\kkm.mp3' 
+ if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
  $return_lock  = 'shop_general'  
  sparks -= item_price[$item_id]
  dynamic '<<$item_id>> += multiple' 

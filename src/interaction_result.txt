@@ -26,7 +26,7 @@ IF $interaction_type = 'get_grug':
   $text[1] = '  <<$slave_name>> отказывается принимать от вас подозрительные вещества. Похоже кому-то надо преподать урок послушания!'
   if already_done_today[interaction] = 0 and slave["sin"] < 1: slave["sin"] = 1
   else
-  if sound_on = 1: play 'content\snd\bulk.mp3'
+  if sound_on = 1: play 'content\snd\bulk.mp3', sound_volume
   dynamic $special_part   
   menu_form = 0
   bulk = 1

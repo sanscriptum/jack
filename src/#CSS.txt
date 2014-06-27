@@ -621,6 +621,34 @@ height:768px;
 text-align:center;
 }
 
+#settings {
+position:absolute;
+left:30px;
+top:80px;
+text-align:center;
+}
+
+#settings_2r {
+position:absolute;
+left:570px;
+top:80px;
+text-align:center;
+}
+
+#settings_ex {
+position:absolute;
+left:100px;
+top:720px;
+text-align:center;
+}
+
+#settings_ex2 {
+position:absolute;
+left:505px;
+top:720px;
+text-align:center;
+}
+
 #info {
 position:absolute;
 left:265px;

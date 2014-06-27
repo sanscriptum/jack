@@ -174,7 +174,14 @@ IF master_excitement > 0:
 END
 
 *p '<div id = "main_screen"><<$text_display>></div>'
+!для настроек
+*p '<div id = "settings"><<$setting_display>></div>'
+*p '<div id = "settings_ex"><<$setting_display_c>></div>'
+*p '<div id = "settings_ex2"><<$setting_display_c2>></div>'
+*p '<div id = "settings_2r"><<$setting_display_r>></div>'
 
+!иконки пропадают в настройках
+IF menu_form ! 2000:
 IF dungeon > 0:
  IF prisoner_state > 0:
   *p '<div id = "cage"><img src = "<<$prisoner["ava"]>>.jpg"></div>'
@@ -206,6 +213,7 @@ END
 
 IF lab > 0:
  if slave_state = CONST_INT['slave_exist'] or assistant_state = 1: *p '<div id = "lab"><a href = "EXEC: interaction = 21 & gt ''interaction''"><img src="content\lab.png"></a></div>'
+END
 END
 
 gs 'revelations'

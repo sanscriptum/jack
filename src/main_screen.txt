@@ -50,7 +50,11 @@ $shedule = '<center><u>Расписание событий</u></center>
 </div>'
 
 !иконка для настроек
-*p {<div id="options_icon"><a href = "EXEC: menu_form = 2000 & gt 'menu_form'"><img src="content\gear.png"></a></div>}
+IF exam_in_progress = 1:
+ *p {<div id="options_icon"><a href = "EXEC: menu_form = 2000 & gt 'demo_menu_form'"><img src="content\gear.png"></a></div>} 
+ else
+ *p {<div id="options_icon"><a href = "EXEC: menu_form = 2000 & gt 'menu_form'"><img src="content\gear.png"></a></div>} 
+END 
 
 IF sound_on = 1:
  *p '<div id="sound_icon"><a href = "EXEC: sound_on = 0 & close all & gt curloc"><img src="content\sound_on.png"></a></div>'  

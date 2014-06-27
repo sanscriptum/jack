@@ -880,5 +880,22 @@ IF menu_form = 1000:
   $text_display = {<BR><div id="under">Проснуться <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "demo_menu_form"'><img src = "content\clear.gif"></a></div></div>}
 END
 
+IF menu_form = 2000: 
+  $text_display += {<div id="under_gray">{ { { АВТОСОХРАНЕНИЕ } } }<br></div>}
+  $text_display += {<br><div id="under_gray">{ В начале дня }<br></div>}
+  IF autosave_day ! 1:
+   $text_display += {<br><div id="under">Вкл<br><div id = "clear"><a href = 'EXEC: autosave_day = 1 & gt "demo_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+   else
+   $text_display += {<br><div id="under">Выкл<br><div id = "clear"><a href = 'EXEC: autosave_day = 0 & gt "demo_menu_form"'><img src = "content\clear.gif"></a></div></div>} 
+  END
+  $text_display += {<br><div id="under_gray">{ Каждую декаду }<br></div>}
+  IF autosave_decade ! 1:
+   $text_display += {<br><div id="under">Вкл<br><div id = "clear"><a href = 'EXEC: autosave_decade = 1 & gt "demo_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+   else
+   $text_display += {<br><div id="under">Выкл<br><div id = "clear"><a href = 'EXEC: autosave_decade = 0 & gt "demo_menu_form"'><img src = "content\clear.gif"></a></div></div>} 
+  END
+  $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "demo_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+END
+
 GT 'main_screen'
 --- demo_menu_form ---------------------------------

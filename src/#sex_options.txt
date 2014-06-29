@@ -153,5 +153,35 @@ $sex_options[9] = {
     END
     $sex_menu += {<br><div id="under">Спустить на пол<br><div id = "clear"><a href = 'EXEC: sex_num = 0 & sex_interaction = 95 & gt "sex_interaction"'><img src = "content\clear.gif"></a></div></div>}
 }
+
+!настройки
+$sex_options[100] = {
+  $sex_menu = '<br>'
+  $sex_menu += {<div id="under_gray">{ { { ИНТЕРФЕЙС } } }<br></div>}
+  IF ui_style ! 1:
+   $sex_menu += {<br><div id="under">Старый<br><div id = "clear"><a href = 'EXEC: ui_style = 1 & gt curloc'><img src = "content\clear.gif"></a></div></div>}
+   else
+   $sex_menu += {<br><div id="under_gray">Старый<br></div>}
+  END
+  IF ui_style ! 0:
+   $sex_menu += {<div id="under">Классический<br><div id = "clear"><a href = 'EXEC: ui_style = 0 & gt curloc'><img src = "content\clear.gif"></a></div></div>}
+   else
+   $sex_menu += {<div id="under_gray">Классический<br></div>}
+  END
+  IF ui_style ! 2:
+   $sex_menu += {<div id="under">Гримдарк<br><div id = "clear"><a href = 'EXEC: ui_style = 2 & gt curloc'><img src = "content\clear.gif"></a></div></div>}
+   else
+   $sex_menu += {<div id="under_gray">Гримдарк<br></div>}
+  END
+  
+  $sex_menu += {<br><div id="under_gray">{ { { NSFW } } }<br></div>}
+  IF nsfw ! 1:
+   $sex_menu += {<div id="under">Вкл<br><div id = "clear"><a href = 'EXEC: nsfw = 1 & gt curloc'><img src = "content\clear.gif"></a></div></div>}
+   else
+   $sex_menu += {<div id="under">Выкл<br><div id = "clear"><a href = 'EXEC: nsfw = 0 & gt curloc'><img src = "content\clear.gif"></a></div></div>} 
+  END
+  
+  $sex_menu += {<br><br><br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: sex_num = 0 & gt curloc'><img src = "content\clear.gif"></a></div></div>}
+}
 --- #sex_options ---------------------------------
 

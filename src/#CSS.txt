@@ -2238,6 +2238,14 @@ width:30px;
 height:30px;
 }
 
+#side_options_icon {
+position:absolute;
+left:720px;
+top:5px;
+width:30px;
+height:30px;
+}
+
 #a {
 position:absolute;
 left:100px;

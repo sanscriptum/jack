@@ -61,6 +61,49 @@ IF sound_on = 1:
  *p '<div id="sound_icon"><a href = "EXEC: sound_on = 1 & gt curloc"><img src="content\sound_off.png"></a></div>'  
 END
 
+!настройки
+*p {<div id="options_icon"><a href = "EXEC: $prev_city_form = city_form & city_form = 1000 & gt 'city_menu_form'"><img src="content\gear.png"></a></div>}
+
+IF city_form = 1000:
+ *p '<div style="position:absolute;top:224px;left:640px;height:400px;width:500px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">МУЗЫКА:</font></TD><TD><a href = 1><img src="content/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/Plus.png"></a></TD><TD><a href = 3><img src="content/close_button.png"></a></TD></TR>
+<TR><TD style="width:130px"><font color="#FFD700" size="5">ЗВУК:</font></TD><TD><a href = 4><img src="content/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/Plus.png"></a></TD><TD><a href = 6><img src="content/close_button.png"></a></TD></TR></table></div>'
+END
+
+ACT '1':
+ music_volume -= 10
+ if music_volume < 0: music_volume = 0
+ gt curloc
+END
+ACT '2':
+ music_volume += 10
+ if music_volume > 100: music_volume = 100
+ gt curloc
+END
+ACT '3':
+ music_volume = 0
+ gt curloc
+END
+
+ACT '4':
+ sound_volume  -= 10
+ if sound_volume < 0: sound_volume = 0 
+ gt curloc
+END
+ACT '5':
+ sound_volume += 10
+ if sound_volume > 100: sound_volume = 100
+ gt curloc
+END
+ACT '6':
+ sound_volume = 0
+ gt curloc
+END
+
+*p '<div id = "settings"><<$setting_display>></div>'
+*p '<div id = "settings_ex"><<$setting_display_c>></div>'
+*p '<div id = "settings_ex2"><<$setting_display_c2>></div>'
+*p '<div id = "settings_2r"><<$setting_display_r>></div>'
+
 *p '<div id = "master_short_ava"><img src = "<<$master_ava>>"></div>'
 *p '<div id = "main_screen"><<$text_display>></div>'
 
@@ -69,6 +112,6 @@ if sbros = 1:
  gt 'city_menu_form'
 END
 
-*p '<div id = "back_home"><a href = "EXEC: menu_form = 0 & city_form = 0 & gt ''menu_form''"><img src="content\home_button.png"></a></div>'
+if city_form ! 1000:*p '<div id = "back_home"><a href = "EXEC: menu_form = 0 & city_form = 0 & gt ''menu_form''"><img src="content\home_button.png"></a></div>'
 --- city_screen ---------------------------------
 

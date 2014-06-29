@@ -8,6 +8,10 @@ dynamic $assistant_pass_out
 dynamic $master_pass_out
 
 $text_display = ''
+$setting_display = ''
+$setting_display_c = ''
+$setting_display_c2 = ''
+$setting_display_r = ''
 $return_lock  = 'city_menu_form'
 sp_txt = 0
 get_girl = 0
@@ -223,6 +227,50 @@ IF city_form = 61:
  $text_display += {<br><div id="under_gray">Незнакомый дом<br></div>} 
  $text_display += {<br><div id="under_gray">Незнакомый дом<br></div>}  
  $text_display += {<br><div id="under">К городским воротам<br><div id = "clear"><a href = 'EXEC: city_form = 6 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+END
+
+IF city_form = 1000: 
+  $setting_display += {<div id="under_gray">{ { { ИНТЕРФЕЙС } } }<br></div>}
+  IF ui_style ! 1:
+   $setting_display += {<br><div id="under">Старый<br><div id = "clear"><a href = 'EXEC: ui_style = 1 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+   else
+   $setting_display += {<br><div id="under_gray">Старый<br></div>}
+  END
+  IF ui_style ! 0:
+   $setting_display += {<br><div id="under">Классический<br><div id = "clear"><a href = 'EXEC: ui_style = 0 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+   else
+   $setting_display += {<br><div id="under_gray">Классический<br></div>}
+  END
+  IF ui_style ! 2:
+   $setting_display += {<br><div id="under">Гримдарк<br><div id = "clear"><a href = 'EXEC: ui_style = 2 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+   else
+   $setting_display += {<br><div id="under_gray">Гримдарк<br></div>}
+  END
+  $setting_display += {<br><br><div id="under_gray">{ { { АВТОСОХРАНЕНИЕ } } }<br></div>}
+  $setting_display += {<br><div id="under_gray">{ В начале дня }<br></div>}
+  IF autosave_day ! 1:
+   $setting_display += {<br><div id="under">Вкл<br><div id = "clear"><a href = 'EXEC: autosave_day = 1 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+   else
+   $setting_display += {<br><div id="under">Выкл<br><div id = "clear"><a href = 'EXEC: autosave_day = 0 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>} 
+  END
+  $setting_display += {<br><div id="under_gray">{ Каждую декаду }<br></div>}
+  IF autosave_decade ! 1:
+   $setting_display += {<br><div id="under">Вкл<br><div id = "clear"><a href = 'EXEC: autosave_decade = 1 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+   else
+   $setting_display += {<br><div id="under">Выкл<br><div id = "clear"><a href = 'EXEC: autosave_decade = 0 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>} 
+  END
+  
+  $setting_display_r += {<div id="under_gray">{ { { NSFW } } }<br></div>}
+  IF nsfw ! 1:
+   $setting_display_r += {<br><div id="under">Вкл<br><div id = "clear"><a href = 'EXEC: nsfw = 1 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+   else
+   $setting_display_r += {<br><div id="under">Выкл<br><div id = "clear"><a href = 'EXEC: nsfw = 0 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>} 
+  END
+  
+  $setting_display_r += {<br><div id="under_gray">{ { { НАСТРОЙКИ ЗВУКА } } }<br></div>}
+
+  $setting_display_c += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: city_form = $prev_city_form & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+  $setting_display_c2 += {<br><div id="under_gray"> Вперед <br></div>}
 END
 
 GT 'city_screen'

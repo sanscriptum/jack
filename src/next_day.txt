@@ -1078,38 +1078,22 @@ IF prisoner['lactation'] > 0:
  prisoner['cream_gain'] = prisoner['milk_gain']/3
  prisoner_rate['custom'] += 1 
 END
-  
+
+if prisoner["makeup"] = 1: prisoner["makeup"] = 0
+if prisoner["parfume"] = 1: slave["parfume"] = 0
+if prisoner["epilation"] > 0: slave["epilation"] -= 1
+if prisoner["manicure"] > 0: slave["manicure"] -= 1
+if prisoner["hairstyle"] > 0: slave["hairstyle"] -= 1
+
+prisoner_rate["hygiene"] += 7
+prisoner_rate["hygiene"] += slave["wounds"]
+
 !Учет калорий
-prisoner["calories"] -= 2
-prisoner["makeup"] = 0
-prisoner_rate["hygiene"] += 10
-
-IF prisoner["calories"] > 0 and prisoner["fat"] => 1:
- rise_cap = 5 - prisoner["stamina"]
- food_health_rise = min (rise_cap, prisoner["calories"], prisoner["metabolism"])
- prisoner_rate["stamina"] += food_health_rise
- prisoner["calories"] -= prisoner["metabolism"]
- if prisoner["calories"] < 0: prisoner["calories"] = 0
-END
-
-IF prisoner["calories"] > 0:
- prisoner_rate["fat"] += prisoner["calories"]
- prisoner["calories"] = 0
-END
-
-IF prisoner["calories"] < 0 and prisoner["fat"] > 0:
- IF prisoner["fat"] => 1:
-  prisoner["calories"] += prisoner["metabolism"]
-  prisoner_rate["fat"] -= prisoner["metabolism"]
- END
-END
-
-IF prisoner["calories"] < 0:
- prisoner_rate["stamina"] += prisoner["calories"]
-END
+prisoner["calories"] = 0
 
 IF prisoner_ration = -1:
- prisoner["calories"] += 0
+ prisoner['starvation'] += 3
+ prisoner_rate["fat"] -= 3
  prisoner_rate["fear"] += 5
  prisoner_rate["angst"] += 5    
  prisoner_rate["mood"] -= 5
@@ -1117,11 +1101,8 @@ IF prisoner_ration = -1:
 END
 
 IF prisoner_ration = 1:
- IF prisoner["calories"] < -5: 
-  prisoner["calories"] += 6
-  else
-  prisoner["calories"] += 2
- END
+ prisoner['starvation'] += 1
+ prisoner_rate["fat"] -= 1
  prisoner_rate["fear"] += 2  
  prisoner_rate["angst"] += 2  
  prisoner_rate["mood"] -= 2
@@ -1129,13 +1110,30 @@ IF prisoner_ration = 1:
 END
 
 IF prisoner_ration = 0:
- IF prisoner["calories"] < -9: 
-  prisoner["calories"] += 1
-  else
-  prisoner["calories"] += 4
- END
- prisoner_food_cost = 2
+ prisoner['starvation'] -= 1
+ prisoner_food_cost = 3
 END
+
+IF prisoner_ration = 2: 
+ prisoner['starvation'] -= 1
+ prisoner["neg_slave_food"] = 1 
+ prisoner["neg_disgust"] = 1 + prisoner["pride"] - prisoner["preversion"]
+ if prisoner["preversion"] = 2: prisoner["pos_cookie"] = 1 & prisoner["neg_slave_food"] = 0
+ prisoner["preversion_xp"] += 1 
+ IF spawn_semen > 5:
+  spawn_semen -= 5
+  else
+  prisoner_food_cost += spawn_semen
+  spawn_semen = 0
+ END
+END
+
+prisoner_rate["rational"] += prisoner['starvation']
+prisoner['neg_hungry'] = prisoner['starvation']
+if prisoner['starvation'] < 0: prisoner['starvation'] = 0
+!if prisoner['starvation'] > prisoner['stamina']: prisoner_rate["stamina"] -= prisoner['starvation'] & pstarvation_varning = 1
+if prisoner['starvation'] > prisoner['stamina']: prisoner_rate["stamina"] -= prisoner['starvation']
+!TODO: Отображение предупреждения при истощении, однако этот показ глючит и показывается даже когда заключенной нет
 
 if prisoner_state ! 0: total_food_cost += prisoner_food_cost
 
@@ -1268,7 +1266,7 @@ if prisoner["deprivation_attitude"] = 2:
  prisoner_rate["mood"] += 2  
 end
 prisoner["energy"] -= 2  
-prisoner_rate["stamina"] -= 3
+prisoner_rate["stamina"] -= 1
 prisoner["deprivation_xp"] += 1 
 
 prisoner["energy"] += prisoner["stamina"] - 1 - prisoner["wounds"]

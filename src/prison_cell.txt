@@ -2,18 +2,19 @@
 $place = "dungeon"
 gs '_layout'
 
-if prisoner_state = 0: 
- $text = '<<$cage_empty>>'
- else
- $text = '<<$prisoner_info_text>>'
+IF $prisoner_info_text = '':
+ if prisoner_state = 0: $prisoner_info_text = '<<$cage_empty>>'
+ if prisoner_state = 1: $prisoner_info_text = '<<$ppsy_status[$prisoner_psy_status]>>'
+ if prisoner_state = 2: $prisoner_info_text = '   <<$prisoner_name>> лежит без сил и тихо стонет. Она явно находится в очень плохом состоянии. Надо дать ей отдохнуть или даже оказать медицинскую помощь.'
+ if prisoner_state = 3: $prisoner_info_text = '   <<$prisoner_name>> мертва. Её бездыханный труп лежит на полу.'
 END
 
 *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
 if prisoner_state > 0: if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$prisoner["fullimage"]>>.gif"></div>'
-*p '<div id = "text"><<$text>></div>'
+!*p '<div id = "text"><<$text>></div>'
 
 IF prisoner_state ! 0 and slave_state = CONST_INT['no_slave']:
- *p '<div id = "cell"><a href = "EXEC: gt ''slave_to_cage''"><img src="content\pic\release.png"></a></div>'
+ *p '<div id = "cell"><a href = "EXEC: $prisoner_info_text = '''' & gt ''slave_to_cage''"><img src="content\pic\release.png"></a></div>'
 END
 
 IF prisoner_state = 0 and slave_state ! CONST_INT['no_slave']:
@@ -41,6 +42,7 @@ IF prisoner_state > 0:
  *p '<div id="solo_rules">
 Сухой корм
 Собачьи консервы
+Сперма исчадия
 </div>'
  IF prisoner_ration = 1:
   *p '<div id="chekbox_1s"><a href = "EXEC: prisoner_ration = -1 & $prisoner_info_text = $prisoner_ration[1] & gt curloc"><img src="content\sel_button.png"></a></div>'  
@@ -52,9 +54,39 @@ IF prisoner_state > 0:
   else
   *p '<div id="chekbox_2s"><a href = "EXEC: prisoner_ration = 0 & $prisoner_info_text = $prisoner_ration[3] & gt curloc"><img src="content\unsel_button.png"></a></div>'  
  END  
+ IF prisoner_ration = 2:
+  *p '<div id="chekbox_3s"><a href = "EXEC: prisoner_ration = -1 & $prisoner_info_text = $prisoner_ration[1] & gt curloc"><img src="content\sel_button.png"></a></div>'  
+  else
+  *p '<div id="chekbox_3s"><a href = "EXEC: prisoner_ration = 2 & $prisoner_info_text = $prisoner_ration[4] & gt curloc"><img src="content\unsel_button.png"></a></div>'  
+ END
 END
 
-*p '<div id = "interaction_stat_bar"><<$info_bar>></div>'
+IF prisoner_state = 1:
+ *p '<div id = "prison_ava"><img src = "<<$prisoner[''ava'']>>.jpg"></div>'
+ *p '<div id = "prison_short_stat">Энергия <<$stars[prisoner_energy_plus]>>
+<<$girl_mood[prisoner_mood_plus]>>
+<<$girl_hygiene[prisoner["hygiene"]]>>
+<img src="content\kalkulyator.png"> <<prisoner["calories"]>> калорий / <<prisoner_rate["fat"]>> ж
+</div>'
+END
+
+IF prisoner_state = 2:
+ *p '<div id = "prison_ava"><img src = "<<$prisoner[''ava_gray'']>>.jpg"></div>'
+ *p '<div id = "prison_short_stat">Без сознания
+</div>'
+END
+
+if prisoner_state ! 0: *p '<div id = "prison_stat_bar"><<$info_bar>></div>'
+*p '<div id = "close_far"><a href = "EXEC: $prisoner_info_text = '''' & menu_form = 0 & gt ''menu_form''"><img src = "content\close_button.png"></a></div>'
+
+*p '<div id="text"><<$prisoner_info_text>></div>'
+
+!не работает
+!"IF pstarvation_varning = 1:
+ msg '    Вы замечаете у заключенной признаки истощения. Похоже, пища которую вы ей даете недостаточна для неё. Возможно даже придется вытащить рабыню из темницы чтобы откормить как следует.'
+ pstarvation_varning = 0
+END"
+
 *p '<div id = "close_far"><a href = "EXEC: menu_form = 0 & gt ''menu_form''"><img src = "content\close_button.png"></a></div>'
 --- prison_cell ---------------------------------
 

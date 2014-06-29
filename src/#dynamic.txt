@@ -132,7 +132,7 @@ IF prisoner_state ! 0:
   else
   if prisoner["energy"] > -5: prisoner_state = 1
  END
- IF prisoner["stamina"] < 0: 
+ IF prisoner["stamina"] = 0 and prisoner_rate["stamina"] < 0 and prisoner['starvation'] > 50:
   prisoner_state = 0
   msg 'Ваша заключенная умерла от истощения, забытая в своей клетке. Вы продали ее труп мяснику за 5 искр.'
   sparks += 5

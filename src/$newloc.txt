@@ -902,6 +902,11 @@ if slave_arousal_plus < 0: slave_arousal_plus = 5 - slave["arousal"]
 assistant_energy_plus = assistant["energy"]
 if assistant_energy_plus < 0: assistant_energy_plus = 5 - assistant["energy"]
 
+prisoner_energy_plus = prisoner["energy"]
+if prisoner_energy_plus < 0: prisoner_energy_plus = 5 - prisoner["energy"]
+prisoner_mood_plus = prisoner["mood"]
+if prisoner_mood_plus < 0: prisoner_mood_plus = 5 - prisoner["mood"]
+
 IF cooked_food < 0: cooked_food_plus = 0
 !IF cooked_food = 0: cooked_food_plus = 1
 IF cooked_food > 0: cooked_food_plus = cooked_food

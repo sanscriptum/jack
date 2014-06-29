@@ -1149,6 +1149,14 @@ width:25px;
 height:25px;
 }
 
+#chekbox_3s {
+position:absolute;
+left:762px;
+top:115px;
+width:25px;
+height:25px;
+}
+
 #chekbox_1l {
 position:absolute;
 left:250px;
@@ -2244,6 +2252,32 @@ left:720px;
 top:5px;
 width:30px;
 height:30px;
+}
+
+#prison_stat_bar {
+position:absolute;
+left:850px;
+top:170px;
+width:400px;
+height:780px;
+font-family:"Segoe Print";
+}
+
+#prison_ava {
+position:absolute;
+left:850px;
+top:40px;
+width:150px;
+height:150px;
+}
+
+#prison_short_stat {
+position:absolute;
+left:1010px;
+top:50px;
+width:240px;
+height:80px;
+font-family:"Segoe Print";
 }
 
 #a {

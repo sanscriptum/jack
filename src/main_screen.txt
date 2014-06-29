@@ -2,7 +2,7 @@
 gs 'main_layout'
 homerun = 0
 $info_text = ''
-$prisoner_info_text = $ppsy_status[$prisoner_psy_status]
+$prisoner_info_text = ''
 
 *p '<div id = "large_image"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
 !CHECK: костыль для старых версий, иначе будут глюки с аватаркой раба и прочим

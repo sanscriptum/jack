@@ -4,8 +4,8 @@ npc = 0
 
 *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
 *p '<div id = "text"><<$text[txt]>></div>'
-*p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
- 
+if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+
 !'
 $sex_master_stat = ''
 $sex_master_stat = 'Возбуждение:  <<$sex_pc_excitement[sex["pc_excitement_state"]]>><br>'

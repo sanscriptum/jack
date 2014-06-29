@@ -6,57 +6,59 @@ npc = 0
 *p '<div id = "text"><<$text[txt]>></div>'
 
 IF $interaction_type = 'talk':
- *p '<div id = "bg"><img src="content\pic\<<$slave["fullimage"]>>.gif"></div>'
+ if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$slave["fullimage"]>>.gif"></div>'
 END
 
 IF $interaction_type = 'talk_assistant':
  npc = 1
  $npc_id = 'ваша_ассистентка'
- if assistant['image_mode'] = 0: *p '<div id = "bg"><img src="content\pic\<<$fullimage[assistant_type]>>.gif"></div>'
- if assistant['image_mode'] = 1: *p '<div id = "bg"><img src="content\pic\<<$fullmistress[assistant_type]>>.gif"></div>'
- if assistant['image_mode'] = 2: *p '<div id = "bg"><img src="content\pic\<<$fullmade[assistant_type]>>.gif"></div>'
- if assistant['image_mode'] = 3: *p '<div id = "bg"><img src="content\pic\<<$fullsecretary[assistant_type]>>.gif"></div>'  
+ IF nsfw = 0:
+  if assistant['image_mode'] = 0: *p '<div id = "bg"><img src="content\pic\<<$fullimage[assistant_type]>>.gif"></div>'
+  if assistant['image_mode'] = 1: *p '<div id = "bg"><img src="content\pic\<<$fullmistress[assistant_type]>>.gif"></div>'
+  if assistant['image_mode'] = 2: *p '<div id = "bg"><img src="content\pic\<<$fullmade[assistant_type]>>.gif"></div>'
+  if assistant['image_mode'] = 3: *p '<div id = "bg"><img src="content\pic\<<$fullsecretary[assistant_type]>>.gif"></div>'  
+ END
 END
 
 
 IF $interaction_type = 'special':
- *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+ if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
 END
 IF $interaction_type = 'special_talk':
  npc = 1
 END
 IF interaction = 5416:
- *p '<div id = "bg"><img src="content\pic\<<$lesbian[slave_type]>>.gif"></div>'
+ if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$lesbian[slave_type]>>.gif"></div>'
 END
 
 IF $interaction_type = 'chestbuster':
  if txt = 1 and sound_on = 1: play 'content\snd\girl_suffering.mp3', sound_volume
  if txt = 2: *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
- if txt > 2: *p '<div id = "bg"><img src="content\pic\scene\event_chestbuster.jpg"></div>' 
+ if nsfw = 0:if txt > 2: *p '<div id = "bg"><img src="content\pic\scene\event_chestbuster.jpg"></div>' 
 END
 
 IF $interaction_type = 'special_png':
- *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.png"></div>'
+ if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.png"></div>'
 END
 
 IF $interaction_type = 'special_jpg':
- *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.jpg"></div>'
+ if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.jpg"></div>'
 END
 
 IF $interaction_type = 'make_slave_do':
- *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+ if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
 END
 
 IF $interaction_type = 'make_assistant_do':
- *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+ if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
 END
 
 IF $interaction_type = 'master_teaches_slave':
- *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+ if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
 END
 
 IF $interaction_type = 'couch_teaches_slave':
- *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+ if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
 END
 
 IF $interaction_type = 'prise_sweets':
@@ -64,14 +66,16 @@ IF $interaction_type = 'prise_sweets':
 END
 
 IF $interaction_type = 'torture':
- *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+ if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
 END
  
 IF $interaction_type = 'self_sex_lesson': 
- IF txt = 1:
-  *p '<div id = "bg"><img src="content\pic\<<$fullimage[slave_type]>>.gif"></div>'
-  else
-  *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+ IF nsfw = 0:
+  IF txt = 1:
+   *p '<div id = "bg"><img src="content\pic\<<$fullimage[slave_type]>>.gif"></div>'
+   else
+   *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+  END
  END
 END
 
@@ -85,7 +89,7 @@ if npc = 0:
 </div>'  
  else
  $info_bar = '' 
- *p '<div id = "bg"><img src="content\pic\characters\<<$npc_image[$npc_id]>>.gif"></div>'
+ if nsfw = 0:*p '<div id = "bg"><img src="content\pic\characters\<<$npc_image[$npc_id]>>.gif"></div>'
  *p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$npc_name[$npc_id]>></div><<$npc_status[$npc_id]>>
 
 Информация к размышлению:

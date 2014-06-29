@@ -255,6 +255,7 @@ END
 !Тип взаимодействия - деньги в долг
 IF $interaction_type = 'moneylender':
  $return_lock  = 'shop_general'  
+ if nsfw = 1: not_safe = 1
  $place = 'moneylander' 
  $npc_id = 'moneylender'
  npc = 1
@@ -269,7 +270,7 @@ IF $interaction_type = 'buy_item':
  txt_count = 1
  $return_lock  = 'shop_general'  
  $picture_type = 'pic_jpg'
- $special_bg  = "<<$item_demo[$item_id]>>"  
+ if nsfw = 0: $special_bg  = "<<$item_demo[$item_id]>>"  
  $text[1] = $item_description[$item_id]
  IF sparks => item_price[$item_id]: 
   $do_buy = {
@@ -286,7 +287,7 @@ IF $interaction_type = 'buy_item_home':
  txt_count = 1
  $return_lock  = 'shop_general'  
  $picture_type = 'pic_jpg'
- $special_bg  = "<<$item_demo[$item_id]>>"  
+ if nsfw = 0: $special_bg  = "<<$item_demo[$item_id]>>"  
  $text[1] = $item_description[$item_id]
  IF sparks => item_price[$item_id]: 
   $do_buy = {
@@ -299,7 +300,7 @@ IF $interaction_type = 'buy_item_home':
 END
 
 IF $interaction_type = 'buy_item_personal':
- if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
+ if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume 
  $return_lock  = 'shop_general'  
  sparks -= item_price[$item_id]
  dynamic '<<$item_id>> += multiple' 

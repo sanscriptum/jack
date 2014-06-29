@@ -902,7 +902,11 @@ IF menu_form = 2000:
   END
   
   $setting_display_r += {<div id="under_gray">{ { { NSFW } } }<br></div>}
-  $setting_display_r += {<br><div id="under_gray">Вкл<br></div>}
+  IF nsfw ! 1:
+   $setting_display_r += {<br><div id="under">Вкл<br><div id = "clear"><a href = 'EXEC: nsfw = 1 & gt "demo_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+   else
+   $setting_display_r += {<br><div id="under">Выкл<br><div id = "clear"><a href = 'EXEC: nsfw = 0 & gt "demo_menu_form"'><img src = "content\clear.gif"></a></div></div>} 
+  END
   
   $setting_display_r += {<br><div id="under_gray">{ { { НАСТРОЙКИ ЗВУКА } } }<br></div>}
 

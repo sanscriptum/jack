@@ -301,8 +301,8 @@ END
 
 *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
 *p '<div id = "text"><<$text>></div>'
-*p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
-  
+if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+
 $info_bar = '
 <u>ОЦЕНКА:</u>&nbsp;<<$rating[rating]>>
 <<$beauty[slave["beauty"]]>> 

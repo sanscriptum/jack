@@ -91,7 +91,12 @@ IF assistant_stat_screen = 0:
  *p '<div id = "mark_three"><a href = "EXEC: assistant_stat_screen = 2 & $assistant_info_text = ''&nbsp'' & gt curloc"><img src = "content\unsel_button.png"></a></div>'
  *p '<div id = "mark_four"><a href = "EXEC: assistant_stat_screen = 3 & $assistant_info_text = '''' & gt curloc"><img src = "content\unsel_button.png"></a></div>' 
  *p '<div id="center_image"><img src = "content\pic\bg\<<$interior_study[$study]>>.jpg"></div>'
- if assistant['nude'] = 0: *p '<div id="center_image"><img src="content\pic\<<$assistant["fullimage"]>>.gif"></div>' 
+ IF nsfw = 0:
+  if assistant['nude'] = 0: *p '<div id="center_image"><img src="content\pic\<<$fullimage[assistant_type]>>.gif"></div>' 
+  if assistant['domina'] = 1: *p '<div id="center_image"><img src="content\pic\<<$fullmade[assistant_type]>>.gif"></div>' 
+  if assistant['maido'] = 1: *p '<div id="center_image"><img src="content\pic\<<$fullmistress[assistant_type]>>.gif"></div>' 
+  if assistant['executive'] = 1: *p '<div id="center_image"><img src="content\pic\<<$fullsecretary[assistant_type]>>.gif"></div>' 
+ END
  *p '<div id="right_padding">ПРАВИЛА: <BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR></div>'  
  *p '<div id="right_rules">
 Ты горничная

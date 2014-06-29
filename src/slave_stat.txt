@@ -96,7 +96,7 @@ IF slave_stat_screen = 0:
   else
   *p '<div id="center_image"><img src = "content\pic\bg\<<$interior_study[$study]>>.jpg"></div>'
  END
- *p '<div id="center_image"><img src="content\pic\<<$slave["fullimage"]>>.gif"></div>' 
+ if nsfw = 0: *p '<div id="center_image"><img src="content\pic\<<$slave["fullimage"]>>.gif"></div>' 
  *p '<div id="left_padding">РЕЖИМ СНА: <BR><BR><BR><BR><BR><BR><BR>РЕЖИМ ПИТАНИЯ:<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>СЧЕТЧИК КАЛОРИЙ:</div>'  
  *p '<div id="left_rules">
 Ночь в карцере

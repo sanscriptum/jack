@@ -8,8 +8,12 @@ if iced_state = 0:
  $text = '   <<$iced_name>> покоится в состоянии стазиса. Она может пробыть так без изменений неограниченно долгое время. Точнее, пока вы тратите искры на поддержание работы аппарата.'
 END
 
-*p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
-if iced_state > 0: *p '<div id = "bg"><img src="content\pic\<<$iced["fullimage"]>>.gif"></div>'
+IF nsfw = 1:
+ *p '<div id = "bg"><img src="content\pic\bg\empty.jpg"></div>'
+ else
+ *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+END
+if iced_state > 0: if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$iced["fullimage"]>>.gif"></div>'
 *p '<div id = "text"><<$text>></div>'
 
 IF iced_state > 0 and slave_state = CONST_INT['no_slave']:

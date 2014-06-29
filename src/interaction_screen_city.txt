@@ -4,11 +4,17 @@ IF $special_action[txt] ! '':
  dynamic $special_action[txt]
 END
 
-*p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+IF not_safe = 1:
+ not_safe = 0
+ *p '<div id = "bg"><img src="content\pic\bg\empty.jpg"></div>'
+ else
+ *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+END
+if $place = 'computer' and nsfw = 1: *p '<div id = "bg"><img src="content\pic\bg\empty.jpg"></div>'
 *p '<div id = "text"><<$text[txt]>></div>'
 
 IF $picture_type = 'pic_jpg':
- *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.jpg"></div>'
+ if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$special_bg>>.jpg"></div>'
 END
 
 IF $picture_type = 'pic_gif':
@@ -20,7 +26,7 @@ IF $picture_type = 'pic_png':
 END
 
 IF $picture_type = 'untyped':
- *p '<div id = "bg"><img src="<<$special_bg>>"></div>'
+ if nsfw = 0:*p '<div id = "bg"><img src="<<$special_bg>>"></div>'
 END
 
 IF $interaction_type = 'drop_to_farid' and txt = 3:
@@ -38,7 +44,11 @@ if npc = 0:
 </div>'  
  else
  $info_bar = '' 
- *p '<div id = "bg"><img src="content\pic\characters\<<$npc_image[$npc_id]>>.gif"></div>'
+ IF nsfw = 1:
+  *p '<div id = "bg"><img src="content\pic\bg\empty.jpg"></div>'
+  else
+  *p '<div id = "bg"><img src="content\pic\characters\<<$npc_image[$npc_id]>>.gif"></div>'
+ END
  *p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$npc_name[$npc_id]>></div><<$npc_status[$npc_id]>>
 
 Информация к размышлению:
@@ -68,10 +78,10 @@ $special_image[3] = '<<$stock_fullimage>>.gif'
 
 *p '<div id = "interaction_stat_bar"><<$info_bar>></div>'
 IF $special_image[txt] ! '':
- *p '<div id = "bg"><img src="content\pic\<<$special_image[txt]>>"></div>'
+ if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$special_image[txt]>>"></div>'
 END
 IF $special_image_full[txt] ! '':
- *p '<div id = "bg"><img src="<<$special_image_full[txt]>>"></div>'
+ if nsfw = 0:*p '<div id = "bg"><img src="<<$special_image_full[txt]>>"></div>'
 END
 
 if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3', sound_volume

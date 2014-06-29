@@ -10,6 +10,7 @@ $text_display += {<br><div id="under">Выйти прочь<br><div id = "clear"
 $computer_options[1] = {
 $sp_text[1] = '   Обращение к базе данных происходит на уровне устного запроса и также выдаётся запрошенная информация. Хотя при необходимости данные можно и распечатать.'
 $text_display = '<br>'
+if nsfw = 1: not_safe = 1
 $text_display += {<br><div id="under">- Запрос. Аура. Общая информация<div id = "clear"><a href = 'EXEC: interaction_city = 3331 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
 $text_display += {<br><div id="under">- Запрос. Аура. Структура паттернов<div id = "clear"><a href = 'EXEC: interaction_city = 3332 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
 $text_display += {<br><div id="under">Отойти от терминала<br><div id = "clear"><a href = 'EXEC: city_form = 33 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
@@ -723,6 +724,7 @@ IF faction_fame['serpis'] => 3:
  if npc_progress['pretor_diabaz'] < 2: $text_display += {<br><div id="under">Аудиенция с претором<br><div id = "clear"><a href = 'EXEC: interaction_city = 343 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
  else
  $place = 'spire_gate'
+ if nsfw = 1: not_safe = 1
  $text_display += '<br><br><br><br>' 
  $sp_text[1] = '   У входа в Административные Шпили дежурит бдительная стража. Кого попало они сюда не пустят.'
 END
@@ -1181,6 +1183,7 @@ $text_display += {<br><div id="under">Другие товары<br><div id = "cl
 $gastronom_options[4] = {
 !Вкорячил для борьбы с 105\100, by Lyazar
 dynamic $get_frige_space
+if nsfw = 1: not_safe = 1
 $place = 'slaughter'
 $text_display = '<br>'
 IF sparks => 7 and frige_space => 5:
@@ -1700,6 +1703,7 @@ $colloseum_options[5] = {
 !Ростовщик
 $moneylander_options[1] = {
 $text_display = '<br><br>'
+if nsfw = 1: not_safe = 1
 IF debt <= 0:
  $text_display += {<br><div id="under">Взять искры в долг<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
  else
@@ -1721,6 +1725,7 @@ $text_display += {<br><div id="under">Закончить разговор<br><di
 
 $moneylander_options[2] = {
 $text_display = '<br><br>'
+if nsfw = 1: not_safe = 1
 $text_display += {<br><div id="under">500$, вернуть 600$, 20 дней<br><div id = "clear"><a href = 'EXEC: interaction_city = 6321 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
 IF debt_history > 0:
  $text_display += {<br><div id="under">1000$, вернуть 1250$, 30 дней<br><div id = "clear"><a href = 'EXEC: interaction_city = 6322 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}

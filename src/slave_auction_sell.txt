@@ -50,7 +50,7 @@ $text[5] = '  <a href = ''EXEC: gt "slave_auction_sell_end"''><font color="#228B
 *p '<div id = "text"><<$text[txt]>></div>'
 
 IF npc = 1:
- *p '<div id = "bg"><img src="content\pic\characters\<<$npc_image[$npc_id]>>.gif"></div>'
+ if nsfw = 0:*p '<div id = "bg"><img src="content\pic\characters\<<$npc_image[$npc_id]>>.gif"></div>'
  *p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$npc_name[$npc_id]>></div><<$npc_status[$npc_id]>>
 
 Информация к размышлению:

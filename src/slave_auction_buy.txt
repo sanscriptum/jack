@@ -68,9 +68,9 @@ IF auction_phase = 7:
 END
 
 *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
-if stock_sold = 0: *p '<div id = "bg"><img src="content\pic\characters\slaver_fharid.gif"></div>'
-if auction_phase = 7: *p '<div id = "bg"><img src="content\pic\characters\slaver_fharid.gif"></div>'
-if stock_sold > 0 and auction_phase < 5: *p '<div id = "bg"><img src="content\pic\<<$stock_fullimage>>.gif"></div>'
+if stock_sold = 0: if nsfw = 0:*p '<div id = "bg"><img src="content\pic\characters\slaver_fharid.gif"></div>'
+if auction_phase = 7: if nsfw = 0:*p '<div id = "bg"><img src="content\pic\characters\slaver_fharid.gif"></div>'
+if stock_sold > 0 and auction_phase < 5: if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$stock_fullimage>>.gif"></div>'
 *p '<div id = "text"><<$text>></div>'
 
 IF haggling_stage = 1:

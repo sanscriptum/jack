@@ -14,7 +14,7 @@ $text_display = ''
 dynamic $display_options[sp_txt]
 
 IF $interaction_type = 'special':
- *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+ if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
 END
 
 IF $place = 'gastronom':
@@ -65,7 +65,12 @@ if npc = 0:
 </div>'
 END
 
-*p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+IF not_safe = 1:
+ not_safe = 0
+ *p '<div id = "bg"><img src="content\pic\bg\empty.jpg"></div>'
+ else
+ *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+END
 *p '<div id = "text"><<$sp_text[sp_txt]>></div>'
 *p '<div id = "bg"><<$text_display>></div>'
 *p '<div id = "sparks_display"><<sparks>>$</div>'

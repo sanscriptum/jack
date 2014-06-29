@@ -630,6 +630,7 @@ END
 IF interaction_city = 11544:
  npc = 1
  $npc_id = 'butcher'
+ if nsfw = 1: not_safe = 1
  $place = 'slaughter'
  $return_lock  = 'shop_general' 
  txt_count = 1
@@ -648,6 +649,7 @@ END
 IF interaction_city = 115441:
  npc = 1
  $npc_id = 'butcher'
+ if nsfw = 1: not_safe = 1
  $place = 'slaughter'
  $return_lock  = 'shop_general' 
  txt_count = 1
@@ -662,6 +664,7 @@ END
 IF interaction_city = 11545:
  npc = 1
  $npc_id = 'butcher'
+ if nsfw = 1: not_safe = 1
  $place = 'slaughter'
  $return_lock  = 'shop_general' 
  txt_count = 1
@@ -684,6 +687,7 @@ END
 IF interaction_city = 115451:
  npc = 1
  $npc_id = 'butcher'
+ if nsfw = 1: not_safe = 1
  $place = 'slaughter'
  $return_lock  = 'shop_general' 
  txt_count = 3
@@ -4611,6 +4615,7 @@ END
 !Криостатическое хранилище
 IF interaction_city = 332:
  $place = 'stasis_bank'
+ if nsfw = 1: not_safe = 1
  $return_lock  = 'shop_general'
  $sp_text[1] = '  В огромном криохранилище тихо, как в склепе. Вдоль стен на высоту во много этажей тянутся бесконечные ячейки с плавающими в них телами людей и других живых существ.'
  copyarr '$display_options', '$stasis_options'  
@@ -4619,6 +4624,7 @@ END
 
 IF interaction_city = 33201:
  $place = 'stasis_bank'
+ if nsfw = 1: not_safe = 1
  $return_lock  = 'shop_general' 
  txt_count = 1
  txt = 1
@@ -4636,6 +4642,7 @@ END
 
 IF interaction_city = 332011:
  $place = 'stasis_bank'
+ if nsfw = 1: not_safe = 1
  $return_lock  = 'shop_general' 
  txt_count = 1
  txt = 1
@@ -4652,6 +4659,7 @@ END
 
 IF interaction_city = 332012:
  $place = 'stasis_bank'
+ if nsfw = 1: not_safe = 1
  $return_lock  = 'shop_general' 
  if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
  copyarr '$display_options', '$stasis_options'   
@@ -4660,6 +4668,7 @@ END
 
 IF interaction_city = 332013:
  $place = 'stasis_bank'
+ if nsfw = 1: not_safe = 1
  $return_lock  = 'shop_general' 
  if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
  copyarr '$display_options', '$stasis_options'   
@@ -4668,6 +4677,7 @@ END
 
 IF interaction_city = 332014:
  $place = 'stasis_bank'
+ if nsfw = 1: not_safe = 1
  $return_lock  = 'shop_general' 
  if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
  copyarr '$display_options', '$stasis_options'   
@@ -4677,6 +4687,7 @@ END
 !Терминал соулнет
 IF interaction_city = 333:
  $place = 'computer'
+ if nsfw = 1: not_safe = 1
  $return_lock  = 'shop_general'
  copyarr '$display_options', '$computer_options'  
  GT 'shop_general'
@@ -4684,6 +4695,7 @@ END
 
 IF interaction_city = 3331:
  $place = 'computer'
+ if nsfw = 1: not_safe = 1
  $return_lock  = 'shop_general' 
  txt_count = arrsize('$infodata_aura') - 1
  copyarr '$text', '$infodata_aura'
@@ -4691,6 +4703,7 @@ END
 
 IF interaction_city = 3332:
  $place = 'computer'
+ if nsfw = 1: not_safe = 1
  $return_lock  = 'shop_general' 
  txt_count = arrsize('$infodata_aura_color') - 1
  copyarr '$text', '$infodata_aura_color'
@@ -4700,6 +4713,7 @@ END
 !Административные шпили
 IF interaction_city = 34:
  $place = 'spire_gate'
+ if nsfw = 1: not_safe = 1
  $return_lock  = 'shop_general' 
  copyarr '$display_options', '$spire_options'
  txt_count = 1
@@ -6167,6 +6181,7 @@ END
 
 !ТРУЩОБЫ
 IF interaction_city = 63:
+ if nsfw = 1: not_safe = 1
  $place = 'moneylander'
  $return_lock  = 'shop_general'
  $sp_text[1] = ''
@@ -6177,6 +6192,7 @@ END
 IF interaction_city = 631:
  npc = 1
  $npc_id = 'moneylender'
+ if nsfw = 1: not_safe = 1
  $place = 'moneylander'
  $return_lock  = 'shop_general' 
  txt_count = 5
@@ -6186,6 +6202,7 @@ END
 IF interaction_city = 632:
  npc = 1
  $npc_id = 'moneylender' 
+ if nsfw = 1: not_safe = 1
  $place = 'moneylander'
  $return_lock  = 'shop_general' 
  IF no_slave_count['moneylender'] < 1:
@@ -6198,6 +6215,7 @@ END
 IF interaction_city = 633:
  npc = 1
  $npc_id = 'moneylender' 
+ if nsfw = 1: not_safe = 1
  $place = 'moneylander'
  $return_lock  = 'shop_general' 
  txt_count = 1
@@ -6237,6 +6255,7 @@ END
 IF interaction_city = 6331:
  npc = 1 
  $npc_id = 'moneylender' 
+ if nsfw = 1: not_safe = 1
  $place = 'moneylander'
  $return_lock  = 'shop_general' 
  if debt = 600 and debt_history <= 0: debt_history = 1

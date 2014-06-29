@@ -150,7 +150,7 @@ END
 $ride_flow += ' <br><br><<$future_ride>><br><br>'
 
 !новый CSS для пикчи заезда
-*p '<div id = "ride_bg"><img src = "content\pic\bg\ride.jpg"></div>'
+if nsfw = 0:*p '<div id = "ride_bg"><img src = "content\pic\bg\ride.jpg"></div>'
 *p '<div id = "fight_txt"><<$ride_flow>></div>'
 
 !новый CSS для параметров заезда

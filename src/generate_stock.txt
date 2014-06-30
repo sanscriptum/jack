@@ -13,7 +13,6 @@ meta_type = RAND (1,5)
 if meta_type = 4: meta_type = 2
 if meta_type = 5: meta_type = 3
 
-! no_loli & no_milf не существуют
 IF no_loli = 1:
  if meta_type = 1: jump 'loop_meta'
 END

@@ -64,9 +64,15 @@ END
 
 !настройки звука
 IF menu_form = 2000:
- *p '<div style="position:absolute;top:245px;left:619px;font-family:Victoriana;"><img src = "content/sound_setting.png"></div>'
- *p '<div style="position:absolute;top:224px;left:640px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">МУЗЫКА:</font></TD><TD><a href = 1><img src="content/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/Plus.png"></a></TD><TD><a href = 3><img src="content/close_button.png"></a></TD></TR>
+ IF exam_in_progress = 1:
+  *p '<div style="position:absolute;top:255px;left:619px;font-family:Victoriana;"><img src = "content/sound_setting.png"></div>'
+  *p '<div style="position:absolute;top:234px;left:640px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">МУЗЫКА:</font></TD><TD><a href = 1><img src="content/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/Plus.png"></a></TD><TD><a href = 3><img src="content/close_button.png"></a></TD></TR>
 <TR><TD style="width:130px"><font color="#FFD700" size="5">ЗВУК:</font></TD><TD><a href = 4><img src="content/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/Plus.png"></a></TD><TD><a href = 6><img src="content/close_button.png"></a></TD></TR></table></div>'
+  else
+  *p '<div style="position:absolute;top:525px;left:619px;font-family:Victoriana;"><img src = "content/sound_setting.png"></div>'
+  *p '<div style="position:absolute;top:504px;left:640px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">МУЗЫКА:</font></TD><TD><a href = 1><img src="content/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/Plus.png"></a></TD><TD><a href = 3><img src="content/close_button.png"></a></TD></TR>
+<TR><TD style="width:130px"><font color="#FFD700" size="5">ЗВУК:</font></TD><TD><a href = 4><img src="content/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/Plus.png"></a></TD><TD><a href = 6><img src="content/close_button.png"></a></TD></TR></table></div>'
+ END
 END
 
 ACT '1':

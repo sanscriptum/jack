@@ -1545,8 +1545,22 @@ IF menu_form = 2000:
    $setting_display_r += {<br><div id="under">Выкл<br><div id = "clear"><a href = 'EXEC: nsfw = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>} 
   END
   
-  $setting_display_r += {<br><div id="under_gray">{ { { НАСТРОЙКИ ЗВУКА } } }<br></div>}
-
+  $setting_display_r += {<br><div id="under_gray">{ { { No Loli } } }<br></div>}
+  IF no_loli ! 1:
+   $setting_display_r += {<br><div id="under">Вкл<br><div id = "clear"><a href = 'EXEC: no_loli = 1 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
+   else
+   $setting_display_r += {<br><div id="under">Выкл<br><div id = "clear"><a href = 'EXEC: no_loli = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>} 
+  END
+  
+  $setting_display_r += {<br><div id="under_gray">{ { { No MILF } } }<br></div>}
+  IF no_milf ! 1:
+   $setting_display_r += {<br><div id="under">Вкл<br><div id = "clear"><a href = 'EXEC: no_milf = 1 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
+   else
+   $setting_display_r += {<br><div id="under">Выкл<br><div id = "clear"><a href = 'EXEC: no_milf = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>} 
+  END
+  
+  $setting_display_r += {<br><br><div id="under_gray">{ { { НАСТРОЙКИ ЗВУКА } } }<br></div>}
+  
   $setting_display_c += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
   $setting_display_c2 += {<br><div id="under_gray"> Вперед <br></div>}
 END

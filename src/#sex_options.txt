@@ -157,6 +157,7 @@ $sex_options[9] = {
 !настройки
 $sex_options[100] = {
   $sex_menu = '<br>'
+ IF exam_in_progress ! 1:
   $sex_menu += {<div id="under_gray">{ { { ИНТЕРФЕЙС } } }<br></div>}
   IF ui_style ! 1:
    $sex_menu += {<br><div id="under">Старый<br><div id = "clear"><a href = 'EXEC: ui_style = 1 & gt curloc'><img src = "content\clear.gif"></a></div></div>}
@@ -173,6 +174,7 @@ $sex_options[100] = {
    else
    $sex_menu += {<div id="under_gray">Гримдарк<br></div>}
   END
+ END
   
   $sex_menu += {<br><div id="under_gray">{ { { NSFW } } }<br></div>}
   IF nsfw ! 1:

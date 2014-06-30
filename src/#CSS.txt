@@ -767,6 +767,17 @@ font-family:"Segoe Print";
 text-align:right;
 }
 
+#a_apperiance {
+position:absolute;
+left:780px;
+top:315px;
+width:230px;
+height:200px;
+color:#FFD700;
+font-family:"Segoe Print";
+text-align:right;
+}
+
 #solo_rules {
 position:absolute;
 left:530px;

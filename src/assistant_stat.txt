@@ -93,11 +93,11 @@ IF assistant_stat_screen = 0:
  *p '<div id="center_image"><img src = "content\pic\bg\<<$interior_study[$study]>>.jpg"></div>'
  IF nsfw = 0:
   if assistant['nude'] = 0: *p '<div id="center_image"><img src="content\pic\<<$fullimage[assistant_type]>>.gif"></div>' 
-  if assistant['domina'] = 1: *p '<div id="center_image"><img src="content\pic\<<$fullmade[assistant_type]>>.gif"></div>' 
-  if assistant['maido'] = 1: *p '<div id="center_image"><img src="content\pic\<<$fullmistress[assistant_type]>>.gif"></div>' 
+  if assistant['maido'] = 1: *p '<div id="center_image"><img src="content\pic\<<$fullmade[assistant_type]>>.gif"></div>' 
+  if assistant['domina'] = 1: *p '<div id="center_image"><img src="content\pic\<<$fullmistress[assistant_type]>>.gif"></div>' 
   if assistant['executive'] = 1: *p '<div id="center_image"><img src="content\pic\<<$fullsecretary[assistant_type]>>.gif"></div>' 
  END
- *p '<div id="right_padding">ПРАВИЛА: <BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR></div>'  
+ *p '<div id="right_padding">ПРАВИЛА: <BR><BR><BR><BR><BR><BR><BR><BR><BR>ВНЕШНОСТЬ:</div>'  
  *p '<div id="right_rules">
 Ты горничная
 Ты кухарка
@@ -222,6 +222,57 @@ IF kitchen > 0 and sparks > 50:
   *p '<div id="chekbox_11l_a"><a href = "EXEC: assistant_buy_meat = 1 & gt curloc"><img src="content\unsel_button.png"></a></div>'  
  END
 END
+
+!Внешность
+$assistant_apperiance = 'Рабыня<br>'
+if $fullmade[assistant_type] ! '': 
+ $assistant_apperiance += 'Служанка<br>'
+ else
+ $assistant_apperiance += '<br>'
+end
+if $fullmistress[assistant_type] ! '': 
+ $assistant_apperiance += 'Домина<br>'
+ else
+ $assistant_apperiance += '<br>'
+end
+ IF assistant["age"] ! 1:
+  if $fullsecretary[assistant_type] ! '': $assistant_apperiance += 'Секретарь'
+  else
+  if $fullsecretary[assistant_type] ! '': $assistant_apperiance += 'Школьница'
+ END
+ 
+*p '<div id="a_apperiance">
+<<$assistant_apperiance>></div>'
+ 
+ IF assistant['nude'] = 0:
+  *p '<div id="chekbox_9r"><img src="content\sel_button.png"></div>'  
+  else
+  *p '<div id="chekbox_9r"><a href = "EXEC: assistant[''image_mode''] = 0 & gt curloc"><img src="content\unsel_button.png"></a></div>'  
+ END
+ 
+ IF $fullmistress[assistant_type] ! '':
+  IF assistant['domina'] = 1:
+   *p '<div id="chekbox_11r"><img src="content\sel_button.png"></div>'  
+   else
+   *p '<div id="chekbox_11r"><a href = "EXEC: assistant[''image_mode''] = 1 & gt curloc"><img src="content\unsel_button.png"></a></div>'  
+  END
+ END
+
+ IF $fullmade[assistant_type] ! '':
+  IF assistant['maido'] = 1:
+   *p '<div id="chekbox_10r"><img src="content\sel_button.png"></div>'  
+   else
+   *p '<div id="chekbox_10r"><a href = "EXEC: assistant[''image_mode''] = 2 & gt curloc"><img src="content\unsel_button.png"></a></div>'  
+  END
+ END
+
+ IF $fullsecretary[assistant_type] ! '':
+  IF assistant['executive'] = 1:
+   *p '<div id="chekbox_12r"><img src="content\sel_button.png"></div>'  
+   else
+   *p '<div id="chekbox_12r"><a href = "EXEC: assistant[''image_mode''] = 3 & gt curloc"><img src="content\unsel_button.png"></a></div>'  
+  END
+ END
 END
  
 !Закладка снаряжения

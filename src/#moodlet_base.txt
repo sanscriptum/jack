@@ -53,6 +53,7 @@ $master_bad_mood[24] = 'neg_master_cloth'
 $master_bad_mood[25] = 'neg_escape'
 $master_bad_mood[26] = 'neg_slave_killed'
 $master_bad_mood[27] = 'neg_slave_starved'
+$master_bad_mood[28] = 'neg_slave_died'
 
 $slave_good_mod[1] = 'pos_sleep'
 $slave_good_mod[2] = 'pos_prise'
@@ -172,6 +173,8 @@ $mood_description['neg_escape'] = 'Проклятье! Воспитуемая с
 $mood_description['neg_slave_killed'] = 'Я убил собственную рабыню своими руками... Нужно было быть поосторожнее.'
 !мудлет после смерти рабыни от истощения
 $mood_description['neg_slave_starved'] = 'Следовало кормить рабыню как следует. Теперь придется брать новую...'
+!мудлет после смерти рабыни от низкого здоровья
+$mood_description['neg_slave_died'] = 'Я не успел спасти рабыню. Может всё-таки надо было сводить её в больницу...'
 
 !Позитивные мудлеты воспитуемой
 $mood_description['pos_prise'] = '   [<<$slave_name>>]

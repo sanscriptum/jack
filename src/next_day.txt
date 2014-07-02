@@ -964,6 +964,20 @@ IF slave["angst"] > 0:
  if slave["angst"] > slave["temper"]: slave["neg_angst"] = slave["angst"]
 END
 
+!шанс смерти при нулевом значении здоровья
+!базовый шанс - 14% - минимальный 6% максимальный 20%
+IF slave_state = CONST_INT['slave_faint'] and slave["stamina"] = 0:
+ dprob_max = 7
+! пси-статусы влияют на шанс
+ if $slave_psy_status = 'servile' or $slave_psy_status = 'obedient': dprob_max = 16 
+ if $slave_psy_status = 'soft' or $slave_psy_status = 'optimistic': dprob_max = 9 
+ if $slave_psy_status = 'broken': dprob_max = 5
+ death_prob = RAND (1,dprob_max)
+ IF death_prob = 1:
+  slave_died = 1
+ END
+END
+
 !ЧАСТЬ ТРЕНЕРА
 estate_quality = estate_prestige[$estate] + interior_prestige[$study] + interior_prestige[$bath] + interior_prestige[$bed] - house_mess
 estate_quality_modifier = estate_quality - brand_reputation 

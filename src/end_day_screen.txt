@@ -270,6 +270,14 @@ IF slave_suicide = 1:
  jump 'loop'  
 END
 
+IF slave_died = 1:
+ $text = '   Ваша воспитуемая так и не проснулась. Её плачевное состояние наконец дало о себе знать. Теперь придётся покупать новую...'
+ slave_died = 0
+ slave_state = CONST_INT['no_slave']
+ master_mood['neg_slave_died'] = 1
+ $special_bg = $fullimage[slave_type] 
+ jump 'loop'  
+END
 
 a = RAND (2,15)
 IF slave["parasite"] > a:

@@ -16,10 +16,11 @@ $yes = {gt 'menu_form'}
 $no = {gt 'Start'}
 
 '<div id = "title_scroll"><img src = "content\pic\bg\scroll_large.gif"></div>'
-'<div id = "title_scroll_text"><center><h2><font face="Victoriana" size="+20">Поздравляем!</font></h2><br>
+'<div id = "title_scroll_text"><center><h2><font face="Victoriana" size="+20">Поздравляем!</font></h2>
 Вы добились статуса патриция, получили самых лучших клиентов и тем самым завершили сюжетную часть игры с рейтингом<br>
 <h1><font face="Victoriana" size="+20"><<$rating[score]>></font></h1>
-<font face="Victoriana" size="+10">Затрачено дней: <<day>></font><br><br>
+<font face="Victoriana" size="+10">Затрачено дней: <<day>></font><br>
+<font face="Victoriana" size="+10">Используемый персонаж: <<$master_base_name[hero_choice]>></font><br>
 Желаете продолжить в свободном режиме?</center>
 </div>'
 

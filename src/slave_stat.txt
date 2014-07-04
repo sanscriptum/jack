@@ -98,7 +98,8 @@ IF slave_stat_screen = 0:
  END
  if nsfw = 0: *p '<div id="center_image"><img src="content\pic\<<$slave["fullimage"]>>.gif"></div>' 
  *p '<div id="left_padding">РЕЖИМ СНА: <BR><BR><BR><BR><BR><BR><BR>РЕЖИМ ПИТАНИЯ:<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>СЧЕТЧИК КАЛОРИЙ:</div>'  
- *p '<div id="left_rules">
+ IF master_medic => 2:
+  *p '<div id="left_rules">
 Ночь в карцере
 Холодный пол
 Циновка и плед
@@ -117,6 +118,27 @@ IF slave_stat_screen = 0:
 
 <<slave["calories"]>> калорий / <<slave_rate["fat"]>> ж
 </div>'  
+  else
+  *p '<div id="left_rules">
+Ночь в карцере
+Холодный пол
+Циновка и плед
+Спи со мной
+Спи в будуаре
+<BR>
+Сухой корм
+Собачьи консервы
+Сперма исчадия
+Объедки со стола
+
+Похудание
+Поддержка веса
+Набор веса
+Биодобавки
+
+<<slave["calories"]>> калорий
+</div>'
+ END
  *p '<div id="right_padding">ПРАВИЛА: <BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><<$rules_obedience[rules_broken]>></div>'  
  *p '<div id="right_rules">
 Ты молчишь

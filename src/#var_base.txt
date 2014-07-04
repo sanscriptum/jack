@@ -1187,6 +1187,13 @@ $slave_bruises[3] = $_font_col_rep[0] + 'Следы побоев' + $_font_close
 $slave_bruises[4] = $_font_col_rep[0] + 'Следы побоев+' + $_font_closer
 $slave_bruises[5] = $_font_col_rep[0] + 'Следы побоев++' + $_font_closer
 
+!истощение
+if slave["starvation"] => 5: $slave_starvation = $_font_col_rep[2] + 'Легкое истощение' + $_font_closer
+if slave["starvation"] => 15: $slave_starvation = $_font_col_rep[1] + 'Умеренное истощение' + $_font_closer
+if slave["starvation"] => 25: $slave_starvation = $_font_col_rep[0] + 'Сильное истощение' + $_font_closer
+if slave["starvation"] => 35: $slave_starvation = $_font_col_rep[0] + 'Тяжелое истощение' + $_font_closer
+if slave["starvation"] => 50: $slave_starvation = $_font_col_rep[0] + 'Смертельное истощение' + $_font_closer
+
 $master_str[0] = dyneval($vb_cycle, 0, 'Беспомощен')
 $master_str[1] = dyneval($vb_cycle, 1, 'Задохлик')
 $master_str[2] = dyneval($vb_cycle, 2, 'Слабак')

@@ -436,6 +436,7 @@ if slave["metabolism"] < 1: slave["metabolism"] = 1
 IF slave["wounds"] > 0: $features_list += '<<$slave_wounds[slave["wounds"]]>><BR>'
 IF slave["scares"] > 0: $features_list += '<<$slave_scares[slave["scares"]]>><BR>'
 IF slave["bruises"] > 0: $features_list += '<<$slave_bruises[slave["bruises"]]>><BR>'
+IF master_medic => 4: if slave["starvation"] => 5: $features_list += '<<$slave_starvation>><BR>'
 IF slave['reabilitation'] > 0: $features_list += 'После операции [<<slave["reabilitation"]>>]<BR>'
 IF virginity < 2: $features_list += 'Девственница<BR>' 
 IF slave["grace"] = 1: $features_list += 'Грациозная<BR>'

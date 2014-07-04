@@ -63,11 +63,19 @@ END
 
 IF prisoner_state = 1:
  *p '<div id = "prison_ava"><img src = "<<$prisoner[''ava'']>>.jpg"></div>'
- *p '<div id = "prison_short_stat">Энергия <<$stars[prisoner_energy_plus]>>
+ IF master_medic => 2:
+  *p '<div id = "prison_short_stat">Энергия <<$stars[prisoner_energy_plus]>>
 <<$girl_mood[prisoner_mood_plus]>>
 <<$girl_hygiene[prisoner["hygiene"]]>>
 <img src="content\kalkulyator.png"> <<prisoner["calories"]>> калорий / <<prisoner_rate["fat"]>> ж
 </div>'
+  else
+  *p '<div id = "prison_short_stat">Энергия <<$stars[prisoner_energy_plus]>>
+<<$girl_mood[prisoner_mood_plus]>>
+<<$girl_hygiene[prisoner["hygiene"]]>>
+<img src="content\kalkulyator.png"> <<prisoner["calories"]>> калорий
+</div>'
+  END
 END
 
 IF prisoner_state = 2:

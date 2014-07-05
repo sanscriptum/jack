@@ -781,6 +781,13 @@ if prisoner_rate["beauty"] - prisoner["bsum"] => 160: prisoner["beauty"] = 5
 if prisoner["beauty"] = 0: prisoner["neg_ugly"] = 100
 if prisoner["beauty"] > 0: prisoner["neg_ugly"] = 0
 
+!Особенности
+$prisoner_features_list = ''
+IF prisoner["wounds"] > 0: $prisoner_features_list += '<<$slave_wounds[prisoner["wounds"]]>><BR>'
+IF prisoner["scares"] > 0: $prisoner_features_list += '<<$slave_scares[prisoner["scares"]]>><BR>'
+IF prisoner["bruises"] > 0: $prisoner_features_list += '<<$slave_bruises[prisoner["bruises"]]>><BR>'
+IF master_medic => 4: if prisoner["starvation"] => 5: $prisoner_features_list += '<<$prisoner_starvation>><BR>'
+
 !АССИСТЕНТКА
 !Особенности
 $assistant_features_list = ''

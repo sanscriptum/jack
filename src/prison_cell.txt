@@ -37,6 +37,9 @@ IF prisoner_state > 0:
 <<$exotic[prisoner["exotic"]]>>
 <<$fat[prisoner["fat"]]>>
 <<$style[prisoner["style"]]>> 
+
+<u>ОСОБЕННОСТИ</u>
+<<$prisoner_features_list>>
 '
 
  *p '<div id="solo_rules">

@@ -34,7 +34,6 @@ $indep_atr[10] = 'angst'
 $indep_atr[11] = 'spoil'
 $indep_atr[12] = 'instinct'
 $indep_atr[13] = 'rational'
-$indep_atr[14] = 'beauty'
 
 !Дискретные, полезависимые (навыки)
 $dep_atr[0] = 'none'

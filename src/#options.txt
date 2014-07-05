@@ -338,7 +338,7 @@ IF sparks => 25 and virginity = 2:
  else
  $text_display += {<div id="under_gray">Восстановление девственности<br></div>}
 END
-IF sparks => 250 and slave['beauty_enchanced'] = 0 and slave['beauty'] < 5:
+IF sparks => 250 and slave['beauty_enchanced'] = 0 and slave_rate['beauty'] < 160:
  $text_display += {<div id="under">Пластическая операция<div id = "clear"><a href = 'EXEC: interaction_city = 3324 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>} 
  else
  $text_display += {<div id="under_gray">Пластическая операция<br></div>}

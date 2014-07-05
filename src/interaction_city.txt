@@ -4525,7 +4525,10 @@ slave['energy'] = -4
 slave_rate['stamina'] -= 20
 slave['reabilitation'] = 20
 slave['beauty_enchanced'] = 1
-slave_rate['beauty'] += 80
+if slave_rate["beauty"] = 10: slave_rate["beauty"] = 21
+if slave_rate["beauty"] = 20: slave_rate["beauty"] = 41
+if slave_rate["beauty"] = 40: slave_rate["beauty"] = 81
+if slave_rate["beauty"] = 80: slave_rate["beauty"] = 161
 interaction_city = 33241
 gt 'interaction_city'}
  $no = {sp_txt = 2

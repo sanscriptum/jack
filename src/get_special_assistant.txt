@@ -95,6 +95,7 @@ assistant['brand'] = 1
 assistant["energy"] = 3
 assistant["hygiene"] = 1
 assistant["exotic"] = seed_exotic[assistant_type]
+assistant["bcheck"] = 0
 
 assistant["neg_slave"] = 0
 assistant['cycle_day'] = RAND (1,28)

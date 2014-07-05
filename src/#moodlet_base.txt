@@ -113,7 +113,7 @@ $slave_bad_mod[30] = 'neg_slave_opium'
 $slave_bad_mod[31] = 'neg_slave_drunk'
 $slave_bad_mod[32] = 'neg_slave_ill'
 $slave_bad_mod[33] = 'neg_slave_looser'
-
+$slave_bad_mod[34] = 'neg_ugly'
 
 !Позитивные моды героя
 $mood_description['pos_housing'] = 'Надо признать, что у меня весьма достойное жилище.'
@@ -296,8 +296,8 @@ $mood_description['neg_slave_ill'] = '   [<<$slave_name>>]
 - Мне в туалет больно ходить и выделения какие-то странные. Наверное, я заразилась...'
 $mood_description['neg_slave_looser'] = '   [<<$slave_name>>]
 - Я не виновата в этом проигрыше! Противники были слишком сильные... '
-$mood_description['neg_'] = '   [<<$slave_name>>]
-- '
+$mood_description['neg_ugly'] = '   [<<$slave_name>>]
+- Все эти синяки и царапины... Они изуродовали меня. Мне страшно смотреть на саму себя в зеркало.'
 $mood_description['neg_'] = '   [<<$slave_name>>]
 - '
 $mood_description['neg_'] = '   [<<$slave_name>>]

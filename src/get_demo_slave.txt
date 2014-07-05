@@ -122,6 +122,7 @@ slave['brand'] = 4
 slave["energy"] = slave["metabolism"]
 slave["hygiene"] = 2
 slave["exotic"] = seed_exotic[slave_type]
+slave["bcheck"] = 0
 
 slave["neg_slave"] = 1 + slave["pride"] + slave["temper"] + slave["ego"] - slave["custom"]
 slave['cycle_day'] = RAND (1,28)

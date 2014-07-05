@@ -245,6 +245,44 @@ if slave["virtue"] > 0: eval = slave["virtue"]
 if slave["sin"] > 0: eval = 5 + slave["sin"]
 if slave["sin"] = 0 and slave["virtue"] = 0: eval = 0
 
+!влияние шрамов и синяков на красоту
+!определение влияния
+if slave["scares"] = 0: slave["bscares"] = 0
+if slave["scares"] = 1: slave["bscares"] = 5
+if slave["scares"] = 2: slave["bscares"] = 10
+if slave["scares"] = 3: slave["bscares"] = 30
+if slave["scares"] = 4: slave["bscares"] = 60
+if slave["scares"] = 5: slave["bscares"] = 80
+
+if slave["bruises"] = 0: slave["bbruises"] = 0
+if slave["bruises"] = 1: slave["bbruises"] = 5
+if slave["bruises"] = 2: slave["bbruises"] = 10
+if slave["bruises"] = 3: slave["bbruises"] = 20
+if slave["bruises"] = 4: slave["bbruises"] = 40
+if slave["bruises"] = 5: slave["bbruises"] = 60
+
+slave["bsum"] = slave["bscares"] + slave["bbruises"]
+
+!стартовое значения рейта
+IF slave["bcheck"] = 0:
+ slave["bcheck"] = 1
+ if slave["beauty"] = 1: slave_rate["beauty"] = 10
+ if slave["beauty"] = 2: slave_rate["beauty"] = 20
+ if slave["beauty"] = 3: slave_rate["beauty"] = 40
+ if slave["beauty"] = 4: slave_rate["beauty"] = 80
+ if slave["beauty"] = 5: slave_rate["beauty"] = 160
+END
+
+!рассчет влияния
+if slave_rate["beauty"] - slave["bsum"] < 5: slave["beauty"] = 0
+if slave_rate["beauty"] - slave["bsum"] => 5: slave["beauty"] = 1
+if slave_rate["beauty"] - slave["bsum"] => 20: slave["beauty"] = 2
+if slave_rate["beauty"] - slave["bsum"] => 40: slave["beauty"] = 3
+if slave_rate["beauty"] - slave["bsum"] => 80: slave["beauty"] = 4
+if slave_rate["beauty"] - slave["bsum"] => 160: slave["beauty"] = 5
+
+if slave["beauty"] = 0: slave["neg_ugly"] = 100
+if slave["beauty"] > 0: slave["neg_ugly"] = 0
 
 !Врубаем постоянные мудлеты хозяина
 master_mood['a'] = 0
@@ -704,6 +742,45 @@ IF psanity < 2:
  prisoner["instinct"] = 0 
 END
 
+!влияние шрамов и синяков на красоту
+!определение влияния
+if prisoner["scares"] = 0: prisoner["bscares"] = 0
+if prisoner["scares"] = 1: prisoner["bscares"] = 5
+if prisoner["scares"] = 2: prisoner["bscares"] = 10
+if prisoner["scares"] = 3: prisoner["bscares"] = 30
+if prisoner["scares"] = 4: prisoner["bscares"] = 60
+if prisoner["scares"] = 5: prisoner["bscares"] = 80
+
+if prisoner["bruises"] = 0: prisoner["bbruises"] = 0
+if prisoner["bruises"] = 1: prisoner["bbruises"] = 5
+if prisoner["bruises"] = 2: prisoner["bbruises"] = 10
+if prisoner["bruises"] = 3: prisoner["bbruises"] = 20
+if prisoner["bruises"] = 4: prisoner["bbruises"] = 40
+if prisoner["bruises"] = 5: prisoner["bbruises"] = 60
+
+prisoner["bsum"] = prisoner["bscares"] + prisoner["bbruises"]
+
+!стартовое значения рейта
+IF prisoner["bcheck"] = 0:
+ prisoner["bcheck"] = 1
+ if prisoner["beauty"] = 1: prisoner_rate["beauty"] = 10
+ if prisoner["beauty"] = 2: prisoner_rate["beauty"] = 20
+ if prisoner["beauty"] = 3: prisoner_rate["beauty"] = 40
+ if prisoner["beauty"] = 4: prisoner_rate["beauty"] = 80
+ if prisoner["beauty"] = 5: prisoner_rate["beauty"] = 160
+END
+
+!рассчет влияния
+if prisoner_rate["beauty"] - prisoner["bsum"] < 5: prisoner["beauty"] = 0
+if prisoner_rate["beauty"] - prisoner["bsum"] => 5: prisoner["beauty"] = 1
+if prisoner_rate["beauty"] - prisoner["bsum"] => 20: prisoner["beauty"] = 2
+if prisoner_rate["beauty"] - prisoner["bsum"] => 40: prisoner["beauty"] = 3
+if prisoner_rate["beauty"] - prisoner["bsum"] => 80: prisoner["beauty"] = 4
+if prisoner_rate["beauty"] - prisoner["bsum"] => 160: prisoner["beauty"] = 5
+
+if prisoner["beauty"] = 0: prisoner["neg_ugly"] = 100
+if prisoner["beauty"] > 0: prisoner["neg_ugly"] = 0
+
 !АССИСТЕНТКА
 !Особенности
 $assistant_features_list = ''
@@ -813,6 +890,45 @@ assistant["xenophily"] = (assistant["sub_zoosex"] + assistant["sub_bestiality"] 
 assistant["style"] = (assistant["expression"] + assistant["callisthenics"] + assistant["makeup"] + assistant_dressup + assistant_jewelry)/4 - assistant["hygiene"] 
 if assistant["style"] > 5: assistant["style"] = 5
 if assistant["style"] < 0: assistant["style"] = 0
+
+!влияние шрамов и синяков на красоту
+!определение влияния
+if assistant["scares"] = 0: assistant["bscares"] = 0
+if assistant["scares"] = 1: assistant["bscares"] = 5
+if assistant["scares"] = 2: assistant["bscares"] = 10
+if assistant["scares"] = 3: assistant["bscares"] = 30
+if assistant["scares"] = 4: assistant["bscares"] = 60
+if assistant["scares"] = 5: assistant["bscares"] = 80
+
+if assistant["bruises"] = 0: assistant["bbruises"] = 0
+if assistant["bruises"] = 1: assistant["bbruises"] = 5
+if assistant["bruises"] = 2: assistant["bbruises"] = 10
+if assistant["bruises"] = 3: assistant["bbruises"] = 20
+if assistant["bruises"] = 4: assistant["bbruises"] = 40
+if assistant["bruises"] = 5: assistant["bbruises"] = 60
+
+assistant["bsum"] = assistant["bscares"] + assistant["bbruises"]
+
+!стартовое значения рейта
+IF assistant["bcheck"] = 0:
+ assistant["bcheck"] = 1
+ if assistant["beauty"] = 1: assistant_rate["beauty"] = 10
+ if assistant["beauty"] = 2: assistant_rate["beauty"] = 20
+ if assistant["beauty"] = 3: assistant_rate["beauty"] = 40
+ if assistant["beauty"] = 4: assistant_rate["beauty"] = 80
+ if assistant["beauty"] = 5: assistant_rate["beauty"] = 160
+END
+
+!рассчет влияния
+if assistant_rate["beauty"] - assistant["bsum"] < 5: assistant["beauty"] = 0
+if assistant_rate["beauty"] - assistant["bsum"] => 5: assistant["beauty"] = 1
+if assistant_rate["beauty"] - assistant["bsum"] => 20: assistant["beauty"] = 2
+if assistant_rate["beauty"] - assistant["bsum"] => 40: assistant["beauty"] = 3
+if assistant_rate["beauty"] - assistant["bsum"] => 80: assistant["beauty"] = 4
+if assistant_rate["beauty"] - assistant["bsum"] => 160: assistant["beauty"] = 5
+
+if assistant["beauty"] = 0: assistant["neg_ugly"] = 100
+if assistant["beauty"] > 0: assistant["neg_ugly"] = 0
 
 !Проверка на привычку
 if assistant["exhibitionism_xp"] > 10 and assistant["exhibitionism"] = 0: assistant["exhibitionism"] = 1

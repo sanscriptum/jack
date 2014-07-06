@@ -55,3 +55,4 @@ GS '$newloc'
 <<$features_list>>
 </div>'
 --- choose_the_girl ---------------------------------
+

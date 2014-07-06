@@ -111,3 +111,4 @@ brand_rate = 0
 active[$quest[1]] = 0
 active[$quest[3]] = 0
 --- init_demo_game ---------------------------------
+

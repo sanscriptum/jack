@@ -170,3 +170,4 @@ if slave["hygiene"] = 5: slave_rate["hygiene"] = 160
 gs '#txt'
 gs '#txt_2'
 --- get_demo_slave ---------------------------------
+

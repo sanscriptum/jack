@@ -23,3 +23,4 @@ OBJECTS_Y = 660
 OBJECTS_W = 50	
 OBJECTS_H = 100
 --- demo_layout ---------------------------------
+

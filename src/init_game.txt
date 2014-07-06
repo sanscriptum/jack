@@ -3,6 +3,7 @@
 $master_ava = 'content\pic\master\master_noble_sepia.jpg'
 $master_ava_color = 'content\pic\master\master_noble.jpg'
 $master_name = 'Джек'
+hero_choice = 1
 
 master_str = 4
 master_cha = 3

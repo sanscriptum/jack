@@ -264,19 +264,20 @@ font-family:"Segoe Print";
 
 #title_scroll_text_left {
 position:absolute;
-left:90px;
+left:290px;
 top:110px;
 width:350px;
 height:580px;
 color:#191970;
+font-size:16px;
 font-family:"Segoe Print";
 }
 
 #title_scroll_text_right {
 position:absolute;
-left:460px;
+left:660px;
 top:110px;
-width:280px;
+width:330px;
 height:280px;
 font-size:45px;
 font-family:Victoriana;
@@ -284,7 +285,7 @@ font-family:Victoriana;
 
 #title_scroll_text_rightmid {
 position:absolute;
-left:480px;
+left:746px;
 top:290px;
 width:280px;
 height:280px;
@@ -309,8 +310,8 @@ height:25px;
 
 #title_scroll_text_rightlow {
 position:absolute;
-left:450px;
-top:410px;
+left:680px;
+top:440px;
 width:300px;
 height:280px;
 font-family:"Segoe Print";

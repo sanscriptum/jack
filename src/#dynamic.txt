@@ -17,10 +17,34 @@ $scroll_heroes_back = {
     gt $curloc
 }
 
+$scroll_ava = {
+    IF hero_choice < 12: 
+        hero_choice += 1
+    else
+        hero_choice = 1
+    END
+    gt $curloc
+}
+
+$scroll_ava_back = {
+    IF hero_choice > 1: 
+        hero_choice -= 1
+    else
+        hero_choice = 12
+    END
+    gt $curloc
+}
+
 $name_and_start = {
     $a = input ('Напишите имя своего персонажа. По возможности не делайте его длиннее четырнадцати знаков.')
     if $a !'': $master_name = $a
     gt 'start_game'
+}
+
+$name_type = {
+    $a = input ('Напишите имя своего персонажа. По возможности не делайте его длиннее четырнадцати знаков.')
+    if $a !'': $master_name = $a
+    gt curloc
 }
 
 $go_forward = {
@@ -1818,6 +1842,1163 @@ $assistant_purge_rules = {
 	assistant_buy_cream = 0
 	assistant_buy_mince = 0
 	assistant_buy_meat = 0
+}
+
+!для генерации мастера
+!TODO: заменить эту громадину на что-то более компактное
+!нужен ЦИКОЛ или магия
+
+$rise_str = {
+if master_str => 5: msg "Этот показатель сейчас на максимуме."
+IF master_str = 4:
+ IF hero_points => 80:
+  master_str = 5
+  hero_points -= 80
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 80 очков чтобы поднять уровень показателя до пятого уровня."
+ END
+END
+IF master_str = 3:
+ IF hero_points => 40:
+  master_str = 4
+  hero_points -= 40
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 40 очков чтобы поднять уровень показателя до четвертого уровня."
+ END
+END
+IF master_str = 2:
+ IF hero_points => 20:
+  master_str = 3
+  hero_points -= 20
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 20 очков чтобы поднять уровень показателя до третьего уровня."
+ END
+END
+IF master_str = 1:
+ IF hero_points => 10:
+  master_str = 2
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до второго уровня."
+ END
+END
+IF master_str = 0:
+ IF hero_points => 10:
+  master_str = 1
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до первого уровня."
+ END
+END
+}
+
+$lower_str = {
+if master_str <= 1: msg "Этот показатель сейчас на минимуме."
+IF master_str = 2:
+ master_str = 1
+ hero_points += 10
+END
+IF master_str = 3:
+ master_str = 2
+ hero_points += 20
+END
+IF master_str = 4:
+ master_str = 3
+ hero_points += 40
+END
+IF master_str = 5:
+ master_str = 4
+ hero_points += 80
+END
+}
+
+$rise_cha = {
+if master_cha => 5: msg "Этот показатель сейчас на максимуме."
+IF master_cha = 4:
+ IF hero_points => 80:
+  master_cha = 5
+  hero_points -= 80
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 80 очков чтобы поднять уровень показателя до пятого уровня."
+ END
+END
+IF master_cha = 3:
+ IF hero_points => 40:
+  master_cha = 4
+  hero_points -= 40
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 40 очков чтобы поднять уровень показателя до четвертого уровня."
+ END
+END
+IF master_cha = 2:
+ IF hero_points => 20:
+  master_cha = 3
+  hero_points -= 20
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 20 очков чтобы поднять уровень показателя до третьего уровня."
+ END
+END
+IF master_cha = 1:
+ IF hero_points => 10:
+  master_cha = 2
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до второго уровня."
+ END
+END
+IF master_cha = 0:
+ IF hero_points => 10:
+  master_cha = 1
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до первого уровня."
+ END
+END
+}
+
+$lower_cha = {
+if master_cha <= 0: msg "Этот показатель сейчас на минимуме."
+IF master_cha = 1:
+ master_cha = 0
+ hero_points += 10
+END
+IF master_cha = 2:
+ master_cha = 1
+ hero_points += 10
+END
+IF master_cha = 3:
+ master_cha = 2
+ hero_points += 20
+END
+IF master_cha = 4:
+ master_cha = 3
+ hero_points += 40
+END
+IF master_cha = 5:
+ master_cha = 4
+ hero_points += 80
+END
+}
+
+
+$rise_libido = {
+if master_libido => 5: msg "Этот показатель сейчас на максимуме."
+IF master_libido = 4:
+ IF hero_points => 80:
+  master_libido = 5
+  hero_points -= 80
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 80 очков чтобы поднять уровень показателя до пятого уровня."
+ END
+END
+IF master_libido = 3:
+ IF hero_points => 40:
+  master_libido = 4
+  hero_points -= 40
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 40 очков чтобы поднять уровень показателя до четвертого уровня."
+ END
+END
+IF master_libido = 2:
+ IF hero_points => 20:
+  master_libido = 3
+  hero_points -= 20
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 20 очков чтобы поднять уровень показателя до третьего уровня."
+ END
+END
+IF master_libido = 1:
+ IF hero_points => 10:
+  master_libido = 2
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до второго уровня."
+ END
+END
+IF master_libido = 0:
+ IF hero_points => 10:
+  master_libido = 1
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до первого уровня."
+ END
+END
+}
+
+$lower_libido = {
+if master_libido <= 0: msg "Этот показатель сейчас на минимуме."
+IF master_libido = 1:
+ master_libido = 0
+ hero_points += 10
+END
+IF master_libido = 2:
+ master_libido = 1
+ hero_points += 10
+END
+IF master_libido = 3:
+ master_libido = 2
+ hero_points += 20
+END
+IF master_libido = 4:
+ master_libido = 3
+ hero_points += 40
+END
+IF master_libido = 5:
+ master_libido = 4
+ hero_points += 80
+END
+}
+
+$rise_tutor = {
+if master_tutor => 5: msg "Этот показатель сейчас на максимуме."
+IF master_tutor = 4:
+ IF hero_points => 80:
+  master_tutor = 5
+  hero_points -= 80
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 80 очков чтобы поднять уровень показателя до пятого уровня."
+ END
+END
+IF master_tutor = 3:
+ IF hero_points => 40:
+  master_tutor = 4
+  hero_points -= 40
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 40 очков чтобы поднять уровень показателя до четвертого уровня."
+ END
+END
+IF master_tutor = 2:
+ IF hero_points => 20:
+  master_tutor = 3
+  hero_points -= 20
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 20 очков чтобы поднять уровень показателя до третьего уровня."
+ END
+END
+IF master_tutor = 1:
+ IF hero_points => 10:
+  master_tutor = 2
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до второго уровня."
+ END
+END
+IF master_tutor = 0:
+ IF hero_points => 10:
+  master_tutor = 1
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до первого уровня."
+ END
+END
+}
+
+$lower_tutor = {
+if master_tutor <= 0: msg "Этот показатель сейчас на минимуме."
+IF master_tutor = 1:
+ master_tutor = 0
+ hero_points += 10
+END
+IF master_tutor = 2:
+ master_tutor = 1
+ hero_points += 10
+END
+IF master_tutor = 3:
+ master_tutor = 2
+ hero_points += 20
+END
+IF master_tutor = 4:
+ master_tutor = 3
+ hero_points += 40
+END
+IF master_tutor = 5:
+ master_tutor = 4
+ hero_points += 80
+END
+}
+
+$rise_butler = {
+if master_butler => 5: msg "Этот показатель сейчас на максимуме."
+IF master_butler = 4:
+ IF hero_points => 80:
+  master_butler = 5
+  hero_points -= 80
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 80 очков чтобы поднять уровень показателя до пятого уровня."
+ END
+END
+IF master_butler = 3:
+ IF hero_points => 40:
+  master_butler = 4
+  hero_points -= 40
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 40 очков чтобы поднять уровень показателя до четвертого уровня."
+ END
+END
+IF master_butler = 2:
+ IF hero_points => 20:
+  master_butler = 3
+  hero_points -= 20
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 20 очков чтобы поднять уровень показателя до третьего уровня."
+ END
+END
+IF master_butler = 1:
+ IF hero_points => 10:
+  master_butler = 2
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до второго уровня."
+ END
+END
+IF master_butler = 0:
+ IF hero_points => 10:
+  master_butler = 1
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до первого уровня."
+ END
+END
+}
+
+$lower_butler = {
+if master_butler <= 0: msg "Этот показатель сейчас на минимуме."
+IF master_butler = 1:
+ master_butler = 0
+ hero_points += 10
+END
+IF master_butler = 2:
+ master_butler = 1
+ hero_points += 10
+END
+IF master_butler = 3:
+ master_butler = 2
+ hero_points += 20
+END
+IF master_butler = 4:
+ master_butler = 3
+ hero_points += 40
+END
+IF master_butler = 5:
+ master_butler = 4
+ hero_points += 80
+END
+}
+
+$rise_medic = {
+if master_medic => 5: msg "Этот показатель сейчас на максимуме."
+IF master_medic = 4:
+ IF hero_points => 80:
+  master_medic = 5
+  hero_points -= 80
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 80 очков чтобы поднять уровень показателя до пятого уровня."
+ END
+END
+IF master_medic = 3:
+ IF hero_points => 40:
+  master_medic = 4
+  hero_points -= 40
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 40 очков чтобы поднять уровень показателя до четвертого уровня."
+ END
+END
+IF master_medic = 2:
+ IF hero_points => 20:
+  master_medic = 3
+  hero_points -= 20
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 20 очков чтобы поднять уровень показателя до третьего уровня."
+ END
+END
+IF master_medic = 1:
+ IF hero_points => 10:
+  master_medic = 2
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до второго уровня."
+ END
+END
+IF master_medic = 0:
+ IF hero_points => 10:
+  master_medic = 1
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до первого уровня."
+ END
+END
+}
+
+$lower_medic = {
+if master_medic <= 0: msg "Этот показатель сейчас на минимуме."
+IF master_medic = 1:
+ master_medic = 0
+ hero_points += 10
+END
+IF master_medic = 2:
+ master_medic = 1
+ hero_points += 10
+END
+IF master_medic = 3:
+ master_medic = 2
+ hero_points += 20
+END
+IF master_medic = 4:
+ master_medic = 3
+ hero_points += 40
+END
+IF master_medic = 5:
+ master_medic = 4
+ hero_points += 80
+END
+}
+
+$rise_artdirector = {
+if master_artdirector => 5: msg "Этот показатель сейчас на максимуме."
+IF master_artdirector = 4:
+ IF hero_points => 80:
+  master_artdirector = 5
+  hero_points -= 80
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 80 очков чтобы поднять уровень показателя до пятого уровня."
+ END
+END
+IF master_artdirector = 3:
+ IF hero_points => 40:
+  master_artdirector = 4
+  hero_points -= 40
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 40 очков чтобы поднять уровень показателя до четвертого уровня."
+ END
+END
+IF master_artdirector = 2:
+ IF hero_points => 20:
+  master_artdirector = 3
+  hero_points -= 20
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 20 очков чтобы поднять уровень показателя до третьего уровня."
+ END
+END
+IF master_artdirector = 1:
+ IF hero_points => 10:
+  master_artdirector = 2
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до второго уровня."
+ END
+END
+IF master_artdirector = 0:
+ IF hero_points => 10:
+  master_artdirector = 1
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до первого уровня."
+ END
+END
+}
+
+$lower_artdirector = {
+if master_artdirector <= 0: msg "Этот показатель сейчас на минимуме."
+IF master_artdirector = 1:
+ master_artdirector = 0
+ hero_points += 10
+END
+IF master_artdirector = 2:
+ master_artdirector = 1
+ hero_points += 10
+END
+IF master_artdirector = 3:
+ master_artdirector = 2
+ hero_points += 20
+END
+IF master_artdirector = 4:
+ master_artdirector = 3
+ hero_points += 40
+END
+IF master_artdirector = 5:
+ master_artdirector = 4
+ hero_points += 80
+END
+}
+
+$rise_fighter = {
+if master_fighter => 5: msg "Этот показатель сейчас на максимуме."
+IF master_fighter = 4:
+ IF hero_points => 80:
+  master_fighter = 5
+  hero_points -= 80
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 80 очков чтобы поднять уровень показателя до пятого уровня."
+ END
+END
+IF master_fighter = 3:
+ IF hero_points => 40:
+  master_fighter = 4
+  hero_points -= 40
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 40 очков чтобы поднять уровень показателя до четвертого уровня."
+ END
+END
+IF master_fighter = 2:
+ IF hero_points => 20:
+  master_fighter = 3
+  hero_points -= 20
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 20 очков чтобы поднять уровень показателя до третьего уровня."
+ END
+END
+IF master_fighter = 1:
+ IF hero_points => 10:
+  master_fighter = 2
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до второго уровня."
+ END
+END
+IF master_fighter = 0:
+ IF hero_points => 10:
+  master_fighter = 1
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до первого уровня."
+ END
+END
+}
+
+$lower_fighter = {
+if master_fighter <= 0: msg "Этот показатель сейчас на минимуме."
+IF master_fighter = 1:
+ master_fighter = 0
+ hero_points += 10
+END
+IF master_fighter = 2:
+ master_fighter = 1
+ hero_points += 10
+END
+IF master_fighter = 3:
+ master_fighter = 2
+ hero_points += 20
+END
+IF master_fighter = 4:
+ master_fighter = 3
+ hero_points += 40
+END
+IF master_fighter = 5:
+ master_fighter = 4
+ hero_points += 80
+END
+}
+
+$rise_mage = {
+if master_mage => 5: msg "Этот показатель сейчас на максимуме."
+IF master_mage = 4:
+ IF hero_points => 80:
+  master_mage = 5
+  hero_points -= 80
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 80 очков чтобы поднять уровень показателя до пятого уровня."
+ END
+END
+IF master_mage = 3:
+ IF hero_points => 40:
+  master_mage = 4
+  hero_points -= 40
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 40 очков чтобы поднять уровень показателя до четвертого уровня."
+ END
+END
+IF master_mage = 2:
+ IF hero_points => 20:
+  master_mage = 3
+  hero_points -= 20
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 20 очков чтобы поднять уровень показателя до третьего уровня."
+ END
+END
+IF master_mage = 1:
+ IF hero_points => 10:
+  master_mage = 2
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до второго уровня."
+ END
+END
+IF master_mage = 0:
+ IF hero_points => 10:
+  master_mage = 1
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до первого уровня."
+ END
+END
+}
+
+$lower_mage = {
+if master_mage <= 0: msg "Этот показатель сейчас на минимуме."
+IF master_mage = 1:
+ master_mage = 0
+ hero_points += 10
+END
+IF master_mage = 2:
+ master_mage = 1
+ hero_points += 10
+END
+IF master_mage = 3:
+ master_mage = 2
+ hero_points += 20
+END
+IF master_mage = 4:
+ master_mage = 3
+ hero_points += 40
+END
+IF master_mage = 5:
+ master_mage = 4
+ hero_points += 80
+END
+}
+
+$rise_domination = {
+if master_domination => 5: msg "Этот показатель сейчас на максимуме."
+IF master_domination = 4:
+ IF hero_points => 80:
+  master_domination = 5
+  hero_points -= 80
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 80 очков чтобы поднять уровень показателя до пятого уровня."
+ END
+END
+IF master_domination = 3:
+ IF hero_points => 40:
+  master_domination = 4
+  hero_points -= 40
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 40 очков чтобы поднять уровень показателя до четвертого уровня."
+ END
+END
+IF master_domination = 2:
+ IF hero_points => 20:
+  master_domination = 3
+  hero_points -= 20
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 20 очков чтобы поднять уровень показателя до третьего уровня."
+ END
+END
+IF master_domination = 1:
+ IF hero_points => 10:
+  master_domination = 2
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до второго уровня."
+ END
+END
+IF master_domination = 0:
+ IF hero_points => 10:
+  master_domination = 1
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до первого уровня."
+ END
+END
+}
+
+$lower_domination = {
+if master_domination <= 0: msg "Этот показатель сейчас на минимуме."
+IF master_domination = 1:
+ master_domination = 0
+ hero_points += 10
+END
+IF master_domination = 2:
+ master_domination = 1
+ hero_points += 10
+END
+IF master_domination = 3:
+ master_domination = 2
+ hero_points += 20
+END
+IF master_domination = 4:
+ master_domination = 3
+ hero_points += 40
+END
+IF master_domination = 5:
+ master_domination = 4
+ hero_points += 80
+END
+}
+
+$rise_flagelation = {
+if master_flagelation => 5: msg "Этот показатель сейчас на максимуме."
+IF master_flagelation = 4:
+ IF hero_points => 80:
+  master_flagelation = 5
+  hero_points -= 80
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 80 очков чтобы поднять уровень показателя до пятого уровня."
+ END
+END
+IF master_flagelation = 3:
+ IF hero_points => 40:
+  master_flagelation = 4
+  hero_points -= 40
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 40 очков чтобы поднять уровень показателя до четвертого уровня."
+ END
+END
+IF master_flagelation = 2:
+ IF hero_points => 20:
+  master_flagelation = 3
+  hero_points -= 20
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 20 очков чтобы поднять уровень показателя до третьего уровня."
+ END
+END
+IF master_flagelation = 1:
+ IF hero_points => 10:
+  master_flagelation = 2
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до второго уровня."
+ END
+END
+IF master_flagelation = 0:
+ IF hero_points => 10:
+  master_flagelation = 1
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до первого уровня."
+ END
+END
+}
+
+$lower_flagelation = {
+if master_flagelation <= 0: msg "Этот показатель сейчас на минимуме."
+IF master_flagelation = 1:
+ master_flagelation = 0
+ hero_points += 10
+END
+IF master_flagelation = 2:
+ master_flagelation = 1
+ hero_points += 10
+END
+IF master_flagelation = 3:
+ master_flagelation = 2
+ hero_points += 20
+END
+IF master_flagelation = 4:
+ master_flagelation = 3
+ hero_points += 40
+END
+IF master_flagelation = 5:
+ master_flagelation = 4
+ hero_points += 80
+END
+}
+
+$rise_torture = {
+if master_torture => 5: msg "Этот показатель сейчас на максимуме."
+IF master_torture = 4:
+ IF hero_points => 80:
+  master_torture = 5
+  hero_points -= 80
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 80 очков чтобы поднять уровень показателя до пятого уровня."
+ END
+END
+IF master_torture = 3:
+ IF hero_points => 40:
+  master_torture = 4
+  hero_points -= 40
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 40 очков чтобы поднять уровень показателя до четвертого уровня."
+ END
+END
+IF master_torture = 2:
+ IF hero_points => 20:
+  master_torture = 3
+  hero_points -= 20
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 20 очков чтобы поднять уровень показателя до третьего уровня."
+ END
+END
+IF master_torture = 1:
+ IF hero_points => 10:
+  master_torture = 2
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до второго уровня."
+ END
+END
+IF master_torture = 0:
+ IF hero_points => 10:
+  master_torture = 1
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до первого уровня."
+ END
+END
+}
+
+$lower_torture = {
+if master_torture <= 0: msg "Этот показатель сейчас на минимуме."
+IF master_torture = 1:
+ master_torture = 0
+ hero_points += 10
+END
+IF master_torture = 2:
+ master_torture = 1
+ hero_points += 10
+END
+IF master_torture = 3:
+ master_torture = 2
+ hero_points += 20
+END
+IF master_torture = 4:
+ master_torture = 3
+ hero_points += 40
+END
+IF master_torture = 5:
+ master_torture = 4
+ hero_points += 80
+END
+}
+
+$rise_bondage = {
+if master_bondage => 5: msg "Этот показатель сейчас на максимуме."
+IF master_bondage = 4:
+ IF hero_points => 80:
+  master_bondage = 5
+  hero_points -= 80
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 80 очков чтобы поднять уровень показателя до пятого уровня."
+ END
+END
+IF master_bondage = 3:
+ IF hero_points => 40:
+  master_bondage = 4
+  hero_points -= 40
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 40 очков чтобы поднять уровень показателя до четвертого уровня."
+ END
+END
+IF master_bondage = 2:
+ IF hero_points => 20:
+  master_bondage = 3
+  hero_points -= 20
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 20 очков чтобы поднять уровень показателя до третьего уровня."
+ END
+END
+IF master_bondage = 1:
+ IF hero_points => 10:
+  master_bondage = 2
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до второго уровня."
+ END
+END
+IF master_bondage = 0:
+ IF hero_points => 10:
+  master_bondage = 1
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до первого уровня."
+ END
+END
+}
+
+$lower_bondage = {
+if master_bondage <= 0: msg "Этот показатель сейчас на минимуме."
+IF master_bondage = 1:
+ master_bondage = 0
+ hero_points += 10
+END
+IF master_bondage = 2:
+ master_bondage = 1
+ hero_points += 10
+END
+IF master_bondage = 3:
+ master_bondage = 2
+ hero_points += 20
+END
+IF master_bondage = 4:
+ master_bondage = 3
+ hero_points += 40
+END
+IF master_bondage = 5:
+ master_bondage = 4
+ hero_points += 80
+END
+}
+
+$rise_petting = {
+if master_petting => 5: msg "Этот показатель сейчас на максимуме."
+IF master_petting = 4:
+ IF hero_points => 80:
+  master_petting = 5
+  hero_points -= 80
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 80 очков чтобы поднять уровень показателя до пятого уровня."
+ END
+END
+IF master_petting = 3:
+ IF hero_points => 40:
+  master_petting = 4
+  hero_points -= 40
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 40 очков чтобы поднять уровень показателя до четвертого уровня."
+ END
+END
+IF master_petting = 2:
+ IF hero_points => 20:
+  master_petting = 3
+  hero_points -= 20
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 20 очков чтобы поднять уровень показателя до третьего уровня."
+ END
+END
+IF master_petting = 1:
+ IF hero_points => 10:
+  master_petting = 2
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до второго уровня."
+ END
+END
+IF master_petting = 0:
+ IF hero_points => 10:
+  master_petting = 1
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до первого уровня."
+ END
+END
+}
+
+$lower_petting = {
+if master_petting <= 0: msg "Этот показатель сейчас на минимуме."
+IF master_petting = 1:
+ master_petting = 0
+ hero_points += 10
+END
+IF master_petting = 2:
+ master_petting = 1
+ hero_points += 10
+END
+IF master_petting = 3:
+ master_petting = 2
+ hero_points += 20
+END
+IF master_petting = 4:
+ master_petting = 3
+ hero_points += 40
+END
+IF master_petting = 5:
+ master_petting = 4
+ hero_points += 80
+END
+}
+
+$rise_penetration = {
+if master_penetration => 5: msg "Этот показатель сейчас на максимуме."
+IF master_penetration = 4:
+ IF hero_points => 80:
+  master_penetration = 5
+  hero_points -= 80
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 80 очков чтобы поднять уровень показателя до пятого уровня."
+ END
+END
+IF master_penetration = 3:
+ IF hero_points => 40:
+  master_penetration = 4
+  hero_points -= 40
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 40 очков чтобы поднять уровень показателя до четвертого уровня."
+ END
+END
+IF master_penetration = 2:
+ IF hero_points => 20:
+  master_penetration = 3
+  hero_points -= 20
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 20 очков чтобы поднять уровень показателя до третьего уровня."
+ END
+END
+IF master_penetration = 1:
+ IF hero_points => 10:
+  master_penetration = 2
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до второго уровня."
+ END
+END
+IF master_penetration = 0:
+ IF hero_points => 10:
+  master_penetration = 1
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до первого уровня."
+ END
+END
+}
+
+$lower_penetration = {
+if master_penetration <= 0: msg "Этот показатель сейчас на минимуме."
+IF master_penetration = 1:
+ master_penetration = 0
+ hero_points += 10
+END
+IF master_penetration = 2:
+ master_penetration = 1
+ hero_points += 10
+END
+IF master_penetration = 3:
+ master_penetration = 2
+ hero_points += 20
+END
+IF master_penetration = 4:
+ master_penetration = 3
+ hero_points += 40
+END
+IF master_penetration = 5:
+ master_penetration = 4
+ hero_points += 80
+END
+}
+
+$rise_oral = {
+if master_oral => 5: msg "Этот показатель сейчас на максимуме."
+IF master_oral = 4:
+ IF hero_points => 80:
+  master_oral = 5
+  hero_points -= 80
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 80 очков чтобы поднять уровень показателя до пятого уровня."
+ END
+END
+IF master_oral = 3:
+ IF hero_points => 40:
+  master_oral = 4
+  hero_points -= 40
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 40 очков чтобы поднять уровень показателя до четвертого уровня."
+ END
+END
+IF master_oral = 2:
+ IF hero_points => 20:
+  master_oral = 3
+  hero_points -= 20
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 20 очков чтобы поднять уровень показателя до третьего уровня."
+ END
+END
+IF master_oral = 1:
+ IF hero_points => 10:
+  master_oral = 2
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до второго уровня."
+ END
+END
+IF master_oral = 0:
+ IF hero_points => 10:
+  master_oral = 1
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до первого уровня."
+ END
+END
+}
+
+$lower_oral = {
+if master_oral <= 0: msg "Этот показатель сейчас на минимуме."
+IF master_oral = 1:
+ master_oral = 0
+ hero_points += 10
+END
+IF master_oral = 2:
+ master_oral = 1
+ hero_points += 10
+END
+IF master_oral = 3:
+ master_oral = 2
+ hero_points += 20
+END
+IF master_oral = 4:
+ master_oral = 3
+ hero_points += 40
+END
+IF master_oral = 5:
+ master_oral = 4
+ hero_points += 80
+END
+}
+
+$rise_fetish = {
+if master_fetish => 5: msg "Этот показатель сейчас на максимуме."
+IF master_fetish = 4:
+ IF hero_points => 80:
+  master_fetish = 5
+  hero_points -= 80
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 80 очков чтобы поднять уровень показателя до пятого уровня."
+ END
+END
+IF master_fetish = 3:
+ IF hero_points => 40:
+  master_fetish = 4
+  hero_points -= 40
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 40 очков чтобы поднять уровень показателя до четвертого уровня."
+ END
+END
+IF master_fetish = 2:
+ IF hero_points => 20:
+  master_fetish = 3
+  hero_points -= 20
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 20 очков чтобы поднять уровень показателя до третьего уровня."
+ END
+END
+IF master_fetish = 1:
+ IF hero_points => 10:
+  master_fetish = 2
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до второго уровня."
+ END
+END
+IF master_fetish = 0:
+ IF hero_points => 10:
+  master_fetish = 1
+  hero_points -= 10
+  else
+  msg "Недостаточно очков персонажа. Вам нужно 10 очков чтобы поднять уровень показателя до первого уровня."
+ END
+END
+}
+
+$lower_fetish = {
+if master_fetish <= 0: msg "Этот показатель сейчас на минимуме."
+IF master_fetish = 1:
+ master_fetish = 0
+ hero_points += 10
+END
+IF master_fetish = 2:
+ master_fetish = 1
+ hero_points += 10
+END
+IF master_fetish = 3:
+ master_fetish = 2
+ hero_points += 20
+END
+IF master_fetish = 4:
+ master_fetish = 3
+ hero_points += 40
+END
+IF master_fetish = 5:
+ master_fetish = 4
+ hero_points += 80
+END
 }
 --- #dynamic ---------------------------------
 

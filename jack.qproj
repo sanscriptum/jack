@@ -75,6 +75,7 @@
       <Location name="torture_result"/>
     </Folder>
     <Folder name="interface">
+      <Location name="hero_creation"/>
       <Location name="hero_customization"/>
       <Location name="hero_description"/>
       <Location name="menu_form"/>

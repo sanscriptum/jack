@@ -63,6 +63,8 @@ if get_initial_slave = 1:
  $interior = 'gothic'
  gs 'new_estate' 
  gs 'generate_stock' 
+ !иначе не тратится энергия при быстром переходе на рынок в первый день в свободном режиме
+ stock_pending = 0
  gs 'slave_to_assistant'
 END
 

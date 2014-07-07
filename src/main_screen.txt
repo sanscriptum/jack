@@ -155,7 +155,7 @@ IF slave_state = CONST_INT['slave_dead']:
 END
 
 IF slave_state = CONST_INT['no_slave']:
- *p '<div id = "slave_short_ava"><img src = "content/pic/blank_ava.jpg"></div>'
+ *p '<div id = "slave_short_ava"><a href = "EXEC: menu_form = 3000 & gt ''menu_form''"><img src = "content/pic/blank_ava.jpg"></a></div>'
  *p '<div id = "slave_short_stat">Нет воспитуемой
 </div>'
 END

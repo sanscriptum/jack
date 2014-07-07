@@ -1565,6 +1565,18 @@ IF menu_form = 2000:
   $setting_display_c2 += {<br><div id="under_gray"> Вперед <br></div>}
 END
 
+!переход на рынок при нажатии на слот рабыни если её нет
+IF menu_form = 3000:
+  $text_display += {<br><div id="under_gray">У вас сейчас нет воспитуемой.</div>}
+  $text_display += {<div id="under_gray">Отправиться на рынок рабынь?<br></div>}
+  IF auction_phase = 7:
+   $text_display += {<BR><div id="under">Да<div id = "clear"><a href = 'EXEC: dynamic $master_energy_drop & homerun = 1 & menu_form = 0 & city_form = 11 & txt = 1 & gt "slave_auction_buy"'><img src = "content\clear.gif"></a></div></div>}
+   else
+   $text_display += {<BR><div id="under">Да<div id = "clear"><a href = 'EXEC: homerun = 1 & menu_form = 0 & city_form = 11 & txt = 1 & gt "slave_auction_buy"'><img src = "content\clear.gif"></a></div></div>}
+  END
+  $text_display += {<BR><div id="under">Нет<div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
+END
+
 GT 'main_screen'
 --- menu_form ---------------------------------
 

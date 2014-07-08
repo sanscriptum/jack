@@ -24,6 +24,7 @@ IF $interaction_type = 'ejaculate':
  pc_pleasure = max (1,quality)
  sex['pc_boner'] -= pc_pleasure
  lube = 0
+ txt_count = 1
  $insertion = '' 
  sex["pc_excitement"] = 0
  master_mood_rate += sex["cum_pleasure"] 

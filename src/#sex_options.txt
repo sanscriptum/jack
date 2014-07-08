@@ -135,7 +135,7 @@ $sex_options[2] = {
         $sex_menu += {<div id="under">Позволить выпустить воду<br><div id = "clear"><a href = 'EXEC: sex_interaction = 261 & gt "sex_interaction"'><img src = "content\clear.gif"></a></div></div>}
     END
     $sex_menu += {<div id="under">Золотой дождь<br><div id = "clear"><a href = 'EXEC: sex_interaction = 27 & gt "sex_interaction"'><img src = "content\clear.gif"></a></div></div>}
-    !$sex_menu += {<div id="under">Фистинг<br><div id = "clear"><a href = 'EXEC: sex_interaction = 28 & gt "sex_interaction"'><img src = "content\clear.gif"></a></div></div>}
+    $sex_menu += {<div id="under">Фистинг<br><div id = "clear"><a href = 'EXEC: sex_interaction = 28 & gt "sex_interaction"'><img src = "content\clear.gif"></a></div></div>}
     $sex_menu += {<br><div id="under">Прелюдия<br><div id = "clear"><a href = 'EXEC: sex_num = 0 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 }
 

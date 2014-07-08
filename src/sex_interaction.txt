@@ -672,6 +672,7 @@ IF sex_interaction = 12:
   if $sex['partner'] = '' and sex_done_today[sex_interaction] = 0: slave["masohism_xp"] += 1  
   if $sex['partner'] = 'assistant' and sex_done_today[sex_interaction] = 0: assistant["masohism_xp"] += 1
   diff -= balance
+  sex["masohism_revealed"] = 1
  END
  IF balance > 0:
   if $sex['partner'] = '' and sex_done_today[sex_interaction] = 0: slave_rate['sensitivity'] += 1
@@ -700,6 +701,8 @@ IF sex_interaction = 12:
  pc_stimulation = sex['girl_sub_vaginal'] + sex['pc_boner'] + sex['girl_tightness'] + intensity - friction * intensity  
  sex["pc_excitement"] += pc_stimulation
  if sex_done_today[sex_interaction] = master_penetration: master_penetration_rate += 1
+ 
+ sex["nymphomania_revealed"] = 1
 
  sex["pc_interest"] -= 3
  sex["girl_energy"] -= intensity/2
@@ -745,6 +748,7 @@ IF sex_interaction = 13:
   if $sex['partner'] = '' and sex_done_today[sex_interaction] = 0: slave_rate['sensitivity'] -= 1 & slave["masohism_xp"] += 1
   if $sex['partner'] = 'assistant' and sex_done_today[sex_interaction] = 0: assistant["masohism_xp"] += 1
   diff -= balance
+  sex["masohism_revealed"] = 1
  END
  IF balance > 0:
   if $sex['partner'] = '' and sex_done_today[sex_interaction] = 0: slave_rate['sensitivity'] += 1
@@ -773,6 +777,8 @@ IF sex_interaction = 13:
  pc_stimulation = sex['girl_sub_anal'] + sex['pc_boner'] + 1 + intensity*2 - friction * intensity * 2 
  sex["pc_excitement"] += pc_stimulation
  if sex_done_today[sex_interaction] = master_penetration: master_penetration_rate += 1
+ 
+ sex["nymphomania_revealed"] = 1
 
  sex["pc_interest"] -= 2
  sex["girl_energy"] -= intensity
@@ -834,6 +840,8 @@ IF sex_interaction = 141:
   girl_excitement_theshold = min (sex['girl_sensitivity'],sex["girl_openmind"]) - sex["girl_attention"] - sex['girl_angst'] + sex['girl_temper'] - 3
   if sex['girl_excitement'] < girl_excitement_theshold: sex['girl_excitement'] += 1 
  END
+ 
+ sex["nymphomania_revealed"] = 1
 
  sex["pc_interest"] -= 1
  sex["girl_energy"] -= intensity*2
@@ -886,6 +894,8 @@ IF sex_interaction = 142:
   girl_excitement_theshold = min (sex['girl_sensitivity'],sex["girl_openmind"]) - sex["girl_attention"] - sex['girl_angst'] + sex['girl_temper'] - 3
   if sex['girl_excitement'] < girl_excitement_theshold: sex['girl_excitement'] += 1 
  END
+ 
+ sex["nymphomania_revealed"] = 1
 
  sex["pc_interest"] -= 2
  sex["girl_energy"] -= intensity
@@ -925,6 +935,8 @@ IF sex_interaction = 151:
   if assistant['sub_hug'] = 0: $rise_skill = 'assistant["sub_hug"]'
   if intensity = assistant['sensitivity']: assistant_rate['sensitivity'] += 1  
  END
+ 
+ sex["nymphomania_revealed"] = 1
 
  sex["pc_interest"] -= 2
  sex["girl_energy"] -= intensity
@@ -961,6 +973,8 @@ IF sex_interaction = 152:
   if assistant['sub_hj'] = 0: $rise_skill = 'assistant["sub_hj"]'
   if intensity = assistant['sensitivity']: assistant_rate['sensitivity'] += 1  
  END
+ 
+ sex["nymphomania_revealed"] = 1
 
  sex["pc_interest"] -= 2
  sex["girl_energy"] -= intensity+1
@@ -997,6 +1011,8 @@ IF sex_interaction = 153:
   if assistant['sub_pazuri'] = 0: $rise_skill = 'assistant["sub_pazuri"]'
   if intensity = assistant['sensitivity']: assistant_rate['sensitivity'] += 1  
  END
+ 
+ sex["nymphomania_revealed"] = 1
 
  sex["pc_interest"] -= 2
  sex["girl_energy"] -= intensity + sex['girl_boobs']
@@ -1033,6 +1049,8 @@ IF sex_interaction = 154:
   if assistant['sub_fj'] = 0: $rise_skill = 'assistant["sub_fj"]'
   if intensity = assistant['sensitivity']: assistant_rate['sensitivity'] += 1  
  END
+ 
+ sex["nymphomania_revealed"] = 1
 
  sex["pc_interest"] -= 2
  sex["girl_energy"] -= intensity + 1
@@ -1060,6 +1078,8 @@ IF sex_interaction = 155:
   if assistant['sub_hug'] = 0: $rise_skill = 'assistant["sub_hug"]'
   assistant_rate['sensitivity'] += 1  
  END
+ 
+ sex["nymphomania_revealed"] = 1
 
  sex["pc_interest"] -= 2
  sex["girl_energy"] -= intensity - 1
@@ -1220,6 +1240,8 @@ IF sex_interaction = 164:
   a = intensity + assistant['pride']
   if a > 5 and sex_done_today[sex_interaction] = 0: assistant_rate['pride'] -= a - 5
  END
+ 
+ sex["masohism_revealed"] = 1
 
  sex["pc_interest"] += intensity * slave['temper'] - sex_done_today[sex_interaction] * sex_done_today[sex_interaction]
  sex["girl_energy"] -= intensity 
@@ -1260,6 +1282,8 @@ IF sex_interaction = 165:
   END
  END
  
+ sex["masohism_revealed"] = 1
+ 
  sex["pc_interest"] += intensity * slave['temper'] - sex_done_today[sex_interaction] * sex_done_today[sex_interaction]
  sex["girl_energy"] -= 1
  sex['pc_energy'] -= 1
@@ -1290,6 +1314,8 @@ IF sex_interaction = 21:
  IF $sex['partner'] = '' and sex_done_today[sex_interaction] = 0: slave_rate["instinct"] += 1 & slave_rate['temper'] -= 1
  
  IF $sex['partner'] = 'assistant' and sex_done_today[sex_interaction] = 0: assistant_rate["instinct"] += 1 & assistant_rate['temper'] -= 1
+ 
+ sex["darkness_attitude_revealed"] = 1
 
  $text[1] = '  Вы крепко завязываете девушке глаза. Это должно помочь ей лучше сконцентрироваться на собственных ощущениях и отвлечься от внешних раздражителей.' 
  $special_bg = 'scene\blindfold'  
@@ -1312,7 +1338,6 @@ IF sex_interaction = 211:
  sex["climax_buildup"] -= sex["girl_attention"] 
 END
 
-!TODO: возможно не пашет нормально, все время связывание
 !Связать
 IF sex_interaction = 22:
  $interaction_type = 'foreplay'
@@ -1331,6 +1356,8 @@ IF sex_interaction = 22:
  IF $sex['partner'] = '' and sex_done_today[sex_interaction] = 0: slave_rate["rational"] += 1 & slave_rate['ego'] -= 1
  
  IF $sex['partner'] = 'assistant' and sex_done_today[sex_interaction] = 0: assistant_rate["rational"] += 1 & assistant_rate['ego'] -= 1
+ 
+ sex["deprivation_attitude_revealed"] = 1
 
  $text[1] = '  Вы крепко связываете девушку, так, чтобы она чувствовала себя беспомощной.' 
  $special_bg = $bondage[sex['girl_type']]   
@@ -1369,6 +1396,8 @@ IF sex_interaction = 23:
  IF $sex['partner'] = '' and sex_done_today[sex_interaction] = 0: slave_rate["rational"] += 1 & slave_rate['pride'] -= 1
  
  IF $sex['partner'] = 'assistant' and sex_done_today[sex_interaction] = 0: assistant_rate["rational"] += 1 & assistant_rate['pride'] -= 1
+ 
+ sex["masohism_revealed"] = 1
 
  $text[1] = '  Вы берете металлические зажимы соединённые цепью и прикрепляете их на соски девушки. Ощущения будут довольно болезненными, но при верном настрое возбуждение вырастет.' 
  $special_bg = $pins[sex['girl_type']]   
@@ -1444,6 +1473,8 @@ IF sex_interaction = 25:
   assistant_rate['custom'] += 1
  END 
  
+ sex["masohism_revealed"] = 1
+ 
  if sex_done_today[sex_interaction] = 0: master_torture_rate += 1
  sex["pc_interest"] += sex['girl_sensitivity']
 
@@ -1517,14 +1548,20 @@ IF sex_interaction = 27:
   if sex['girl_preversion'] > 0 and sex["girl_excitement"] < master_fetish: sex["girl_excitement"] += 1 
  END
  IF $sex['partner'] = '' and sex_done_today[sex_interaction] = 0: 
+  if slave['sub_piss'] > 0: slave['sub_piss_xp'] += sex["girl_attention"] - 2
+  if slave['sub_piss'] = 0: $rise_skill = 'slave["sub_piss"]'
   slave_rate['custom'] += 1
   slave_rate['pride'] -= master_fetish
  END 
  
  IF $sex['partner'] = 'assistant' and sex_done_today[sex_interaction] = 0:
+  if assistant['sub_piss'] > 0: assistant['sub_piss_xp'] += sex["girl_attention"] - 2
+  if assistant['sub_piss'] = 0: $rise_skill = 'slave["sub_piss"]'
   assistant_rate['custom'] += 1
   assistant_rate['pride'] -= master_fetish
  END
+ 
+ sex["preversion_revealed"] = 1
  
  if sex_done_today[sex_interaction] = 0: master_fetish_rate += 1
  sex["pc_interest"] += 1 + sex['girl_sub_piss'] + master_fetish
@@ -1537,7 +1574,49 @@ IF sex_interaction = 27:
  sex["cum_buildup"] = 0  
 END
 
-
+!Фистинг
+IF sex_interaction = 28:
+ $interaction_type = 'foreplay'
+ if sex['girl_anal_stretch'] <= 3: painful = 1
+ res = 3
+ stimulating = 1
+ dynamic $sex_diligence
+ IF diligence < 0:
+  $interaction_type = 'deny' & gt 'sex_interaction_result'
+ END 
+ 
+ IF sex['girl_anal_stretch'] < 3 or sex['girl_masohism'] = -1:
+  sex["climax_buildup"] = 0
+  sex["girl_openmind"] -= 1
+  sex["girl_excitement"] -= 1
+  sex["girl_attention"] += 1
+  if $sex['partner'] = '' and sex_done_today[sex_interaction] = 0: slave_rate['sensitivity'] -= 1 & slave["masohism_xp"] += 1
+  if $sex['partner'] = 'assistant' and sex_done_today[sex_interaction] = 0: assistant_rate['sensitivity'] -= 1 &assistant["masohism_xp"] += 1
+  else
+  if sex["girl_excitement"] < sex['girl_sensitivity']: sex["girl_excitement"] += 1 & sex["climax_buildup"] += sex['girl_sensitivity']
+  if sex['girl_masohism'] > 0 and sex["girl_excitement"] < master_penetration: sex["girl_excitement"] += 1   
+  if $sex['partner'] = '' and sex_done_today[sex_interaction] = 0: slave_rate['sensitivity'] += 1
+  if $sex['partner'] = 'assistant' and sex_done_today[sex_interaction] = 0: assistant_rate['sensitivity'] += 1
+ END
+ 
+ IF $sex['partner'] = '' and sex_done_today[sex_interaction] = 0: 
+  if slave['anal_stretch'] > 0: slave['anal_stretch_xp'] += sex["girl_attention"] - 2
+  if slave['anal_stretch'] = 0: $rise_skill = 'slave["anal_stretch"]'
+ END
+ IF $sex['partner'] = 'assistant':
+  if assistant['anal_stretch'] > 0: assistant['anal_stretch_xp'] += sex["girl_attention"] - 2
+  if assistant['anal_stretch'] = 0: $rise_skill = 'assistant["anal_stretch"]'
+ END
+ 
+ sex["masohism_revealed"] = 1
+ 
+ $text[1] = '  <<$sex_analfisting[sex["girl_anal_stretch"]]>>'
+ $play_sound[1] = '<<$fisting_sound[sex["girl_age"]]>>'
+ $special_bg = $analfisting[sex['girl_type']] 
+ sex['pc_energy'] -= 5
+ sex["pc_interest"] += sex['girl_anal_stretch'] + master_penetration
+ sex["girl_energy"] -= 10
+END
 
 !КОНЧАНИЯ
 !Внутрь
@@ -1625,6 +1704,8 @@ IF sex_interaction = 93:
   if assistant['sub_bukake'] > 0: assistant['sub_bukake_xp'] += sex["girl_attention"] - 2
   if assistant['sub_bukake'] = 0: $rise_skill = 'assistant["sub_bukake"]'
  END
+ 
+ sex["preversion_revealed"] = 1
 
  sex["cum_pleasure"] = sex['pc_boner'] + sex["pc_excitement_state"] + quality*2
  sex["pc_interest"] -= 3
@@ -1662,6 +1743,8 @@ IF sex_interaction = 94:
   if assistant['sub_bukake'] > 0: assistant['sub_bukake_xp'] += sex["girl_attention"] - 2
   if assistant['sub_bukake'] = 0: $rise_skill = 'assistant["sub_bukake"]'
  END
+ 
+ sex["preversion_revealed"] = 1
 
  sex["cum_pleasure"] = sex['pc_boner'] + sex["pc_excitement_state"] + quality
   

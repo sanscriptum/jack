@@ -11,6 +11,7 @@ if get_initial_slave = 1:
  slave['moral'] = 5 
  slave["pride"] = 0
  slave["ego"] = 3
+ slave["neg_slave"] = 0
  sparks = 10000
  npc_reveal['realtor'] = 1
  noble_status = 1

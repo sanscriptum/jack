@@ -1,5 +1,9 @@
 # #CSS
 $STYLESHEET = '
+a:hover {
+text-decoration: underline;
+}
+
 #cell {
 position:absolute;
 }

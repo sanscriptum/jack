@@ -60,6 +60,13 @@ $master_ava_color = $clear_ava_path[hero_choice]
 <font color="#cd0000">Никак</font>
 </div>'
 
+*p '<div style="position:absolute;top:440px;left:910px;font-family:Segoe Print;"><br>
+<font color="#008000">80 оч</font>
+<font color="#008080">40 оч</font>
+<font color="#0000CD">20 оч</font>
+<font color="#4B0082">10 оч</font>
+<font color="#C71585">10 оч</font></div>'
+
 
 *p '<div style="position:absolute;top:715px;left:540px;font-family:Victoriana;font-size:36px;"><a style = "color: black;" href = ''EXEC: gt "start_game"''>{ Начать игру }</a></div>'
 

@@ -2215,7 +2215,8 @@ $bath = 'basic'
 $bg['bathroom'] = $interior_bath[$bath]
 $place_info['bathroom'] = $interior_bath_info[$bath]
 gt 'shop_general'}
- $no = {gt 'shop_general'}
+ $no = {sp_txt = 44
+ gt 'shop_general'}
  gt 'choice_screen'
 END
 

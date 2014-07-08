@@ -32,6 +32,17 @@ sp_txt = 0
 gs '$moodlets_account'
 quest_description_mode = 0
 
+!проверка на кнут и нагайку
+whipequiped = 0
+knoutequiped = 0
+if $master_back_wpn = 'кнут': knoutequiped = 1
+if $master_left_wpn = 'нагайка': whipequiped = 1
+if $master_left_wpn = 'кнут': knoutequiped = 1
+if $master_right_wpn = 'нагайка': whipequiped = 1
+if $master_right_wpn = 'кнут': knoutequiped = 1
+if $master_arm_wpn = 'нагайка': whipequiped = 1
+if $master_leg_wpn = 'нагайка': whipequiped = 1
+
 !Тестовые значения
 IF get_initial_slave = 1:
  $special_age = 'young'
@@ -1016,12 +1027,12 @@ IF menu_form = 143:
  $text_display += {<br><div id="under">Выпороть ремнем(=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1432 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
  IF dungeon > 0:
   $text_display += {<br><div id="under">Высечь розгой(=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1433 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
-  IF нагайка > 0:
+  IF whipequiped > 0 or нагайка > 0:
    $text_display += {<br><div id="under">Высечь плетью(=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1434 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
    else
    $text_display += {<br><div id="under_gray">Высечь плетью<br></div>}
   END 
-  IF кнут > 0:
+  IF knoutequiped > 0 or кнут > 0:
    $text_display += {<br><div id="under">Высечь кнутом(=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1435 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
    else
    $text_display += {<br><div id="under_gray">Высечь кнутом<br></div>}

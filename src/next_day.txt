@@ -1084,7 +1084,7 @@ prisoner['milk_gain'] = 0
 IF prisoner['lactation'] > 0:
  prisoner['milk_gain'] = prisoner["boobs"] + prisoner["stamina"] - 3 + prisoner['mood'] - prisoner['angst']
  if prisoner['age'] = CONST_INT['milf_age']: prisoner['milk_gain'] += 2
- if prisoner['fat'] = 0: prisoner['milk_gain'] = slave['milk_gain']/2
+ if prisoner['fat'] = 0: prisoner['milk_gain'] = prisoner['milk_gain']/2
  if prisoner['fat'] > 1: prisoner['milk_gain'] += 1
  if prisoner['fat'] > 2: prisoner['milk_gain'] += 2
  if prisoner['fat'] > 3: prisoner['milk_gain'] += 4
@@ -1094,13 +1094,13 @@ IF prisoner['lactation'] > 0:
 END
 
 if prisoner["makeup"] = 1: prisoner["makeup"] = 0
-if prisoner["parfume"] = 1: slave["parfume"] = 0
-if prisoner["epilation"] > 0: slave["epilation"] -= 1
-if prisoner["manicure"] > 0: slave["manicure"] -= 1
-if prisoner["hairstyle"] > 0: slave["hairstyle"] -= 1
+if prisoner["parfume"] = 1: prisoner["parfume"] = 0
+if prisoner["epilation"] > 0: prisoner["epilation"] -= 1
+if prisoner["manicure"] > 0: prisoner["manicure"] -= 1
+if prisoner["hairstyle"] > 0: prisoner["hairstyle"] -= 1
 
 prisoner_rate["hygiene"] += 7
-prisoner_rate["hygiene"] += slave["wounds"]
+prisoner_rate["hygiene"] += prisoner["wounds"]
 
 !Учет калорий
 prisoner["calories"] = 0
@@ -1145,9 +1145,8 @@ END
 prisoner_rate["rational"] += prisoner['starvation']
 prisoner['neg_hungry'] = prisoner['starvation']
 if prisoner['starvation'] < 0: prisoner['starvation'] = 0
-!if prisoner['starvation'] > prisoner['stamina']: prisoner_rate["stamina"] -= prisoner['starvation'] & pstarvation_varning = 1
 if prisoner['starvation'] > prisoner['stamina']: prisoner_rate["stamina"] -= prisoner['starvation']
-!TODO: Отображение предупреждения при истощении, однако этот показ глючит и показывается даже когда заключенной нет
+if prisoner['starvation'] > prisoner['stamina'] and prisoner_state > 0: pstarvation_varning = 1
 
 if prisoner_state ! 0: total_food_cost += prisoner_food_cost
 

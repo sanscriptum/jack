@@ -383,8 +383,8 @@ faction_fame['serpis'] = 1
 faction_fame['taurus'] = 0
 } 
 
-$sepia_ava_path[11] = 'content\pic\master\master_blank.jpg'
-$clear_ava_path[11] = 'content\pic\master\master_blank.jpg'
+$sepia_ava_path[11] = 'content\pic\master\master_vampire_sepia.jpg'
+$clear_ava_path[11] = 'content\pic\master\master_vampire.jpg'
 $master_base_name[11] = '???'
 $master_version_stats[11] = {
 master_str = 4
@@ -412,8 +412,8 @@ master_fetish = 3
 faction_fame['korvus'] = 1
 } 
 
-$sepia_ava_path[12] = 'content\pic\master\master_blank.jpg'
-$clear_ava_path[12] = 'content\pic\master\master_blank.jpg'
+$sepia_ava_path[12] = 'content\pic\master\master_werwolf_sepia.jpg'
+$clear_ava_path[12] = 'content\pic\master\master_werwolf.jpg'
 $master_base_name[12] = '???'
 $master_version_stats[12] = {
 master_str = 4

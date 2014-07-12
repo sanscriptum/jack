@@ -79,6 +79,7 @@ $slave_good_mod[21] = 'pos_slave_opium'
 $slave_good_mod[22] = 'pos_slave_drunk'
 $slave_good_mod[23] = 'pos_slave_love'
 $slave_good_mod[24] = 'pos_slave_winner'
+$slave_good_mod[25] = 'pos_multiple_orgasm'
 
 $slave_bad_mod[1] = 'neg_artifact'
 $slave_bad_mod[2] = 'neg_pain'
@@ -223,6 +224,8 @@ $mood_description['pos_slave_drunk'] = '   [<<$slave_name>>]
 - Я... ик... такаааая пьяная. Зачем вы меня напоили, а? Хотите воспользоваться моим беспомощным... ик... положением?'
 $mood_description['pos_slave_love'] = '   [<<$slave_name>>]
 - Какая-то неодолимая сила манит меня к вам. Я всё время о вас думаю. Хочу быть рядом... всегда.'
+$mood_description['pos_multiple_orgasm'] = '   [<<$slave_name>>]
+- Охх, это был великолепный секс! Такое внеземное удовольствие... Я бы хотела еще раз испытать подобное.'
 
 $mood_description['pos_slave_winner'] = '   [<<$slave_name>>]
 - Ура, мы победили! Это было потрясающе. Я чувствую себя намного увереннее.'

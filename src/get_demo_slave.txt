@@ -146,7 +146,7 @@ $slave["leg_wpn"] = 'кинжал'
 
 $slave["cloth"] = 'leather_corset'"
 
-slave['newness'] = 1
+slave['newness'] = 10
 
 if slave["bruises"] = 1: slave_rate["bruises"] = 10
 if slave["bruises"] = 2: slave_rate["bruises"] = 20

@@ -298,6 +298,7 @@ IF sex['pc_energy'] < 1: sex['pc_energy'] = 1
 
 !ЗАПАС СЕМЕНИ
 sex['pc_boner'] = master_excitement
+sex['base_boner'] = master_excitement
 if sex['pc_boner'] < 0: sex['pc_boner'] = 1
 
 !ВОЗБУЖДЕНИЕ

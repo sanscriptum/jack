@@ -1066,7 +1066,16 @@ END
 !Активный секс с воспитуемой
 IF interaction = 5415:
  $place = 'bedroom'
- gt 'sex_initiate'
+ $interaction_type = 'make_slave_do'
+ repulse = 4
+ dynamic $sex_acceptance 
+ res = slave["obedience"] - repulse + sex_acceptance
+ IF res < 0: 
+  $refuse_txt = '<<$slave_name>> отказывается заниматься с вами любовью. Ну, если она предпочитает насилие - это несложно устроить...'
+  dynamic $sin_gained_now 
+  else 
+  gt 'sex_initiate'
+ END
 END
 
 !Любовь втроём

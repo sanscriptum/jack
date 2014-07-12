@@ -458,42 +458,52 @@ $sex_diligence = {
  IF shameful > 0: 
   phobia += sex["girl_exhibitionism"] - shameful
   if $sex['partner'] = '': slave["exhibitionism_xp"] += 1
+  if $sex['partner'] = 'assistant': assistant["exhibitionism_xp"] += 1
  END
  IF painful > 0: 
   phobia += sex["girl_masohism"] - painful
   if $sex['partner'] = '': slave["masohism_xp"] += 1   
+  if $sex['partner'] = 'assistant': assistant["masohism_xp"] += 1
  END
  IF abuse > 0: 
   phobia += sex["girl_abuse_attitude"] - abuse
   if $sex['partner'] = '': slave["abuse_xp"] += 1   
+  if $sex['partner'] = 'assistant': assistant["abuse_xp"] += 1
  END
  IF disgusting > 0:  
   phobia += sex["girl_preversion"] - disgusting
   if $sex['partner'] = '': slave["preversion_xp"] += 1 
+  if $sex['partner'] = 'assistant': assistant["preversion_xp"] += 1
  END
  IF darkness > 0: 
   phobia += sex["girl_darkness_attitude"] - darkness
   if $sex['partner'] = '': slave["darkness_xp"] += 1 
+  if $sex['partner'] = 'assistant': assistant["darkness_xp"] += 1
  END
  IF bloody > 0: 
   phobia += sex["girl_blood_attitude"] - bloody
   if $sex['partner'] = '': slave["blood_xp"] += 1
+  if $sex['partner'] = 'assistant': assistant["blood_xp"] += 1
  END
  IF fire_based > 0: 
   phobia += sex["girl_fire_attitude"] - fire_based
   if $sex['partner'] = '': slave["fire_xp"] += 1
+  if $sex['partner'] = 'assistant': assistant["fire_xp"] += 1
  END
  IF water_based > 0: 
   phobia += sex["girl_water_attitude"] - water_based
   if $sex['partner'] = '': slave["water_xp"] += 1
+  if $sex['partner'] = 'assistant': assistant["water_xp"] += 1
  END
  IF vermin_based > 0: 
   phobia += sex["girl_vermin_attitude"] - vermin_based 
   if $sex['partner'] = '': slave["vermin_xp"] += 1
+  if $sex['partner'] = 'assistant': assistant["vermin_xp"] += 1
  END
  IF deprivation > 0: 
   phobia += sex["girl_deprivation_attitude"] - deprivation
   if $sex['partner'] = '': slave["deprivation_xp"] += 1
+  if $sex['partner'] = 'assistant': assistant["deprivation_xp"] += 1
  END
 
  diligence = 0
@@ -521,6 +531,14 @@ $sex_diligence = {
    slave_rate["custom"] += repulse
    else
    slave_rate["custom"] -= repulse
+  end
+ END
+ 
+ IF $sex['partner'] = 'assistant' and diligence > 0:
+  if repulse > 0:
+   assistant_rate["custom"] += repulse
+   else
+   assistant_rate["custom"] -= repulse
   end
  END
 }

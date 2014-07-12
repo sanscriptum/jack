@@ -37,7 +37,8 @@ IF $sex_partner = '':
  if sex["climax_top"] > slave['pos_orgasm']: slave['pos_orgasm'] = sex["climax_top"]
  slave['orgasm_type'] = sex['girl_orgasm_type_change']
  dynamic $slave_energy_drop
- slave['newness'] = sex['girl_newness'] 
+ slave["virtue"] = sex['base_boner'] - sex['pc_boner']
+ slave['newness'] = sex['girl_newness']
  if sex['girl_get_pregnant'] = 1 and slave['pregnant'] < 1: slave['pregnant'] = 1
 END
 
@@ -63,7 +64,8 @@ IF $sex_partner = 'assistant':
  END
  if sex["climax_top"] > assistant['pos_orgasm']: assistant['pos_orgasm'] = sex["climax_top"]
  assistant['orgasm_type'] = sex['girl_orgasm_type_change']
- assistant['newness'] = sex['girl_newness'] 
+ dynamic $assistant_energy_drop
+ assistant['newness'] = sex['girl_newness']
  if sex['girl_get_pregnant'] = 1 and assistant['pregnant'] < 1: assistant['pregnant'] = 1
 END
 

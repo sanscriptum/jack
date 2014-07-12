@@ -47,10 +47,14 @@ IF sex["climax_force"] > 0:
  IF sex["climax_force"] = 2:
   $text[txt_count] = '   <<$sex_orgasm_deep>>'  
   sex["climax_buildup"] = sex["climax_treshold"]/2 
+  if $sex['partner'] = '': slave['pos_multiple_orgasm'] = 2
+  if $sex['partner'] = 'assistant': assistant['pos_multiple_orgasm'] = 2
  END
  IF sex["climax_force"] = 3:
   $text[txt_count] = '   <<$sex_orgasm_squirt>>'  
   sex["climax_buildup"] = sex["climax_treshold"] - 10
+  if $sex['partner'] = '': slave['pos_multiple_orgasm'] = 3
+  if $sex['partner'] = 'assistant': assistant['pos_multiple_orgasm'] = 3
  END
  if sex["climax_force"] > 1: sex["climax_count"] += 1
  if sex["climax_top"] < sex["climax_force"]: sex["climax_top"] = sex["climax_force"] 
@@ -63,6 +67,12 @@ sex_done_thisperson[sex_interaction] += 1
 IF sex["pc_interest"] <= 0 and $interaction_type ! 'ejaculate':
  txt_count += 1
  $text[txt_count] = '  В какой-то момент вы понимаете, что всё это безумно вам надоело. Зачем церемониться с ней и пытаться доставить какое-то удовольствие? Надо было просто кончить по-быстрому, но теперь у вас и на это уже нет настроения.'  
+ $return_lock = 'sex_end' 
+END
+
+IF sex["pc_energy"] <= 0:
+ txt_count += 1
+ $text[txt_count] = '  Вы так устали и запыхались, что у вас больше нет сил и настроения продолжать.'  
  $return_lock = 'sex_end' 
 END
 

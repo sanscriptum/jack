@@ -91,7 +91,7 @@ vibrator = 1
 get_initial_slave = 0
 
 estate_size[''] = 150
-estate_cost_main[''] = 100
+estate_cost_main[''] = 80
 estate_prestige[''] = 4
 frige["vegetables"] = 15
 frige["flower"] = 15

@@ -323,8 +323,8 @@ If slave_stat_screen = 1:
   else
   *p '<div id="center_image"><img src = "content\pic\bg\page_blank.gif"></div>' 
  END
- *p '<div id="upper_image"><img src = "content\pic\girls\body\<<$slave["boobs_img"]>>.jpg"></div>'
- *p '<div id="lower_image"><img src = "content\pic\girls\body\<<$slave["pussy_img"]>>.jpg"></div>' 
+ if nsfw = 0: *p '<div id="upper_image"><img src = "content\pic\girls\body\<<$slave["boobs_img"]>>.jpg"></div>'
+ if nsfw = 0: *p '<div id="lower_image"><img src = "content\pic\girls\body\<<$slave["pussy_img"]>>.jpg"></div>' 
  *p '<div id = "upper_text">
 <<$hair_style[slave["hairstyle"]]>>
 <<$slave_makeup[slave["makeup"]]>>

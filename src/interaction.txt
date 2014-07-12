@@ -2702,7 +2702,7 @@ IF interaction = 1373:
  $place = 'bedroom'  
  $special_part = {   
  if slave["exhibitionism_revealed"] = 0:  slave["exhibitionism_revealed"] = 1    
- if virginity < 2 and slave["sub_dildo"] > 0: virginity = 2
+ if virginity < 2 and slave["sub_dildo"] > 2: virginity = 2
  }     
 END
 

@@ -231,6 +231,7 @@ dynamic $ib_cycle, 'apron', 'Фартук с оборками', 5, '   Цена:
 $item_property["apron"] = {
     slave_rate["style"] += 1
     learn_bonus["cook"] += 1
+    slave["st_plus"] += 1
 }
 
 !Платье горничной ["maid_dress"]
@@ -239,6 +240,7 @@ dynamic $ib_cycle, 'maid_dress', 'Униформа горничной', 5, '   �
 $item_property["maid_dress"] = {
     slave_rate["style"] += 1
     learn_bonus["service"] += 1
+    slave["st_plus"] += 1
 }
 
 !Платье медсестры ["nurse_dress"]
@@ -247,6 +249,7 @@ dynamic $ib_cycle, 'nurse_dress', 'Униформа медсестры', 5, '   
 $item_property["nurse_dress"] = {
     learn_bonus["nurse"] += 1
     slave_rate["style"] += 1
+    slave["st_plus"] += 1
 }
 
 !["sailor_foku"]
@@ -256,6 +259,7 @@ $item_property["sailor_foku"] = {
     slave_rate["style"] += 1
     learn_bonus["secretary"] += 1
     learn_bonus["academy"] += 1
+    slave["st_plus"] += 1
 }
 
 !["enchanter_robe"]
@@ -280,6 +284,7 @@ dynamic $ib_cycle, 'chainmail_bikini', 'Кольчужное бикини', 5, '
 $item_property["chainmail_bikini"] = {
     slave_rate["style"] += 1
     learn_bonus["gladiatrix"] += 1
+    slave["st_plus"] += 1
 }
 
 !["sun_dress"]
@@ -289,6 +294,7 @@ $item_property["sun_dress"] = {
     slave_rate["style"] += 1
     daily_bonus["mood"] += 1
     if slave["pos_clothes"] < 2: slave["pos_clothes"] += 1
+    slave["st_plus"] += 1
 }
 
 !["laced_underwear"]
@@ -297,6 +303,7 @@ dynamic $ib_cycle, 'laced_underwear', 'Кружевное бельё', 5, '   Ц
 $item_property["laced_underwear"] = {
     slave_rate["style"] += 1
     learn_bonus["sex"] += 1
+    slave["st_plus"] += 1
 }
 
 !["cocktail_dress"]
@@ -304,6 +311,7 @@ dynamic $ib_cycle, 'cocktail_dress', 'Вечернее платье', 10, '   Ц
 
 $item_property["cocktail_dress"] = {
     slave_rate["style"] += 2
+    slave["st_plus"] += 2
 }
 
 !["rubber_dress"]
@@ -312,6 +320,7 @@ dynamic $ib_cycle, 'rubber_dress', 'Платье из латекса', 20, '   �
 $item_property["rubber_dress"] = {
     slave_rate["style"] += 2 
     learn_bonus["sex"] += 1
+    slave["st_plus"] += 2
 }
 
 !["bellydance"]
@@ -321,6 +330,8 @@ $item_property["bellydance"] = {
     slave_rate["style"] += 2 
     slave_rate["exotic_bonus"] += 15 
     learn_bonus["callisthenics"] += 1
+    slave["ex_plus"] += 2
+    slave["st_plus"] += 2
 }
 
 !["ukata"]
@@ -329,6 +340,7 @@ dynamic $ib_cycle, 'ukata', 'Кимоно-юката', 20, '   Цена: 20 ис
 $item_property["ukata"] = {
     slave_rate["style"] += 2
     learn_bonus["expression"] += 1
+    slave["st_plus"] += 2
 }
 
 !["leather_corset"]
@@ -337,6 +349,7 @@ dynamic $ib_cycle, 'leather_corset', 'Кожаный корсет', 50, '   Це
 $item_property["leather_corset"] = {
     slave_rate["style"] += 2
     learn_bonus["sex"] += 2
+    slave["st_plus"] += 2
 }
 
 !["rich_dress"]
@@ -344,6 +357,7 @@ dynamic $ib_cycle, 'rich_dress', 'Роскошное платье', 50, '   Це
 
 $item_property["rich_dress"] = {
     slave_rate["style"] += 3
+    slave["st_plus"] += 3
 }
 
 !["wedding_dress"]
@@ -353,6 +367,7 @@ $item_property["wedding_dress"] = {
     slave_rate["style"] += 3
     daily_bonus["mood"] += 2
     if slave["pos_clothes"] < 3: slave["pos_clothes"] += 2
+    slave["st_plus"] += 3
 }
 
 
@@ -371,6 +386,7 @@ dynamic $ib_cycle, 'laced_gloves', 'Кружевные перчатки', 5, '  
 
 $item_property["laced_gloves"] = {
     slave_rate["style"] += 1
+    slave["st_plus"] += 1
 }
 
 !["plastic_bracers"]
@@ -379,6 +395,7 @@ dynamic $ib_cycle, 'plastic_bracers', 'Углепластиковые наруч
 $item_property["plastic_bracers"] = {
     slave_rate["style"] -= 1
     learn_bonus["gladiatrix"] += 2
+    slave["st_plus"] -= 1
 }
 
 !["fluffy_gloves"]
@@ -387,6 +404,7 @@ dynamic $ib_cycle, 'fluffy_gloves', 'Пушистые лапки', 5, '   Цен
 $item_property["fluffy_gloves"] = {
     slave_rate["style"] += 1
     learn_bonus["pet"] += 1
+    slave["st_plus"] += 1
 }
 
 !["leather_gloves"]
@@ -395,6 +413,7 @@ dynamic $ib_cycle, 'leather_gloves', 'Кожаные перчатки', 10, '   
 $item_property["leather_gloves"] = {
     slave_rate["style"] += 1
     learn_bonus["gladiatrix"] += 1
+    slave["st_plus"] += 1
 }
 
 !["tabi"]
@@ -431,6 +450,7 @@ dynamic $ib_cycle, 'high_heels', 'Туфли на шпильке', 5, '   Цен
 
 $item_property["high_heels"] = {
     slave_rate["style"] += 1
+    slave["st_plus"] += 1
 }
 
 !["high_boots"]
@@ -440,6 +460,7 @@ $item_property["high_boots"] = {
     slave_rate["style"] += 1
     learn_bonus["sex"] += 1
     daily_bonus["temper"] += 1
+    slave["st_plus"] += 1
 }
 
 !ЮВЕЛИРКА И АКСЕССУАРЫ
@@ -448,6 +469,7 @@ dynamic $ib_cycle, 'plain_ring', 'Изящное колечко', 3, '   Цен�
 
 $item_property["plain_ring"] = {
     slave_rate["style"] += 1
+    slave["st_plus"] += 1
 }
 
 !["incrusted_ring"]
@@ -455,6 +477,7 @@ dynamic $ib_cycle, 'incrusted_ring', 'Перстень с самоцветом',
 
 $item_property["incrusted_ring"] = {
     slave_rate["style"] += 1
+    slave["st_plus"] += 1
 }
 
 !["plain_earring"]
@@ -462,6 +485,7 @@ dynamic $ib_cycle, 'plain_earring', 'Блестящие серёжки', 3, '   
 
 $item_property["plain_earring"] = {
     slave_rate["style"] += 1
+    slave["st_plus"] += 1
 }
 
 !["incrusted_earrings"]
@@ -470,6 +494,8 @@ dynamic $ib_cycle, 'incrusted_earrings', 'Инкрустированные се�
 $item_property["incrusted_earrings"] = {
     slave_rate["exotic_bonus"] += 5
     slave_rate["style"] += 1
+    slave["ex_plus"] += 1
+    slave["st_plus"] += 1
 }
 
 !["plain_pendant"]
@@ -477,6 +503,7 @@ dynamic $ib_cycle, 'plain_pendant', 'Цепочка с кулоном', 5, '   �
 
 $item_property["plain_pendant"] = {
     slave_rate["style"] += 1
+    slave["st_plus"] += 1
 }
 
 !["incrusted_necklace"]
@@ -484,6 +511,7 @@ dynamic $ib_cycle, 'incrusted_necklace', 'Сверкающее ожерелье'
 
 $item_property["incrusted_necklace"] = {
     slave_rate["style"] += 1
+    slave["st_plus"] += 1
 }
 
 !["plain_tiara"]
@@ -491,6 +519,7 @@ dynamic $ib_cycle, 'plain_tiara', 'Фигурная диадема', 10, '   Ц�
 
 $item_property["plain_tiara"] = {
     slave_rate["style"] += 1
+    slave["st_plus"] += 1
 }
 
 !["incrusted_tiara"]
@@ -498,6 +527,7 @@ dynamic $ib_cycle, 'incrusted_tiara', 'Драгоценная тиара', 20, '
 
 $item_property["incrusted_tiara"] = {
     slave_rate["style"] += 1
+    slave["st_plus"] += 1
 }
 
 !["plain_headband"]
@@ -514,6 +544,7 @@ dynamic $ib_cycle, 'glasses', 'Изящные очки', 10, '   Цена: 10 и
 $item_property["glasses"] = {
     slave_rate["style"] += 1
     learn_bonus["secretary"] += 1
+    slave["st_plus"] += 1
 }
 
 !["nekomimi"]
@@ -522,6 +553,8 @@ dynamic $ib_cycle, 'nekomimi', 'Кошачьи ушки', 10, '   Цена: 10 �
 $item_property["nekomimi"] = {
     slave_rate["exotic_bonus"] += 5
     learn_bonus["pet"] += 1
+    slave["ex_plus"] += 1
+    slave["st_plus"] += 1
 }
 
 !["golden_collar"]
@@ -532,6 +565,8 @@ $item_property["golden_collar"] = {
     slave_rate["style"] += 1
     daily_bonus["custom"] += 1
     slave['slave_collar'] = 1
+    slave["ex_plus"] += 1
+    slave["st_plus"] += 1
 }
 
 !["hairnet"]
@@ -540,6 +575,7 @@ dynamic $ib_cycle, 'hairnet', 'Сетка для волос', 10, '   Цена: 
 $item_property["hairnet"] = {
     slave_rate["style"] += 1
     slave['wig'] = 1
+    slave["st_plus"] += 1
 }
 
 !["exotic_wig"]
@@ -549,6 +585,8 @@ $item_property["exotic_wig"] = {
     slave_rate["style"] += 1
     slave_rate["exotic_bonus"] += 15
     slave['wig'] = 1
+    slave["ex_plus"] += 1
+    slave["st_plus"] += 1
 }
 
 !["hijab"]
@@ -617,6 +655,7 @@ $item_property["nipple_chain"] = {
     slave_rate["style"] += 1
     daily_bonus["arousal"] += 2
     daily_bonus["rational"] += 1
+    slave["st_plus"] += 1
 }
 
 !["crown_of_thorns"]
@@ -651,6 +690,7 @@ $item_property["pony_plume"] = {
     daily_bonus["ego"] -= 2
     daily_bonus["pride"] -= 3
     learn_bonus["dressage"] += 2
+    slave["st_plus"] += 1
 }
 
 !["hoofed_boots"]
@@ -661,6 +701,7 @@ $item_property["hoofed_boots"] = {
     daily_bonus["mood"] -= 1
     daily_bonus["temper"] += 1
     learn_bonus["dressage"] += 1
+    slave["st_plus"] += 1
 }
 
 !["ponygirl_harness"]

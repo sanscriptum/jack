@@ -5507,7 +5507,8 @@ IF interaction_city = 5211:
   if slave["neg_pain"] < 3: slave["neg_pain"] = 3   
   if slave["neg_disgust"] < 1 and blood_attitude < 0: slave["neg_disgust"] = 1 & gs '$mod_slave_drop', 1      
   slave_rate["exotic"] += 5
-  slave_rate["hygiene"] += 5    
+  slave_rate["hygiene"] += 5   
+  slave["piercings"] += 1 
  }
 END
 
@@ -5525,7 +5526,8 @@ IF interaction_city = 5212:
   if slave["neg_pain"] < 5: slave["neg_pain"] = 5    
   if slave["neg_disgust"] < 1 and blood_attitude < 0: slave["neg_disgust"] = 1 & gs '$mod_slave_drop', 1        
   slave_rate["exotic"] += 5
-  slave_rate["hygiene"] += 5    
+  slave_rate["hygiene"] += 5   
+  slave["piercings"] += 1  
  }
 END
 
@@ -5543,6 +5545,7 @@ IF interaction_city = 5213:
   if slave["neg_disgust"] < 1 and blood_attitude < 0: slave["neg_disgust"] = 1 & gs '$mod_slave_drop', 1          
   slave_rate["exotic"] += 2
   slave_rate["hygiene"] += 5      
+  slave["piercings"] += 1 
  }
 END
 
@@ -5560,6 +5563,7 @@ IF interaction_city = 5214:
   slave_rate["mood"] -= 10    
   slave_rate["exotic"] += 2
   slave_rate["hygiene"] += 5      
+  slave["piercings"] += 1 
  }
 END
 
@@ -5576,7 +5580,8 @@ IF interaction_city = 5215:
   if slave["neg_pain"] < 2: slave["neg_pain"] = 2  
   if slave["neg_disgust"] < 1 and blood_attitude < 0: slave["neg_disgust"] = 1 & gs '$mod_slave_drop', 1          
   slave_rate["exotic"] += 3
-  slave_rate["hygiene"] += 5      
+  slave_rate["hygiene"] += 5     
+  slave["piercings"] += 1  
  }
 END
 
@@ -5593,7 +5598,8 @@ IF interaction_city = 5216:
   if slave["neg_pain"] < 1: slave["neg_pain"] = 1    
   if slave["neg_disgust"] < 1 and blood_attitude < 0: slave["neg_disgust"] = 1 & gs '$mod_slave_drop', 1          
   slave_rate["exotic"] += 3
-  slave_rate["hygiene"] += 5      
+  slave_rate["hygiene"] += 5     
+  slave["piercings"] += 1  
  }
 END
 
@@ -5610,7 +5616,8 @@ IF interaction_city = 5217:
   slave_rate["mood"] -= 10  
   if slave["neg_pain"] < 2: slave["neg_pain"] = 2    
   if slave["neg_disgust"] < 1 and blood_attitude < 0: slave["neg_disgust"] = 1 & gs '$mod_slave_drop', 1          
-  slave_rate["hygiene"] += 5      
+  slave_rate["hygiene"] += 5     
+  slave["piercings"] += 1  
  }
 END
 
@@ -5630,6 +5637,7 @@ IF interaction_city = 5218:
   slave_rate["exotic"] += 5
   slave_rate["hygiene"] += 20    
   slave["tatoo_timeup"] = 1   
+  slave["piercings"] += 1 
   dynamic $slave_energy_drop 
   dynamic $slave_energy_drop 
   dynamic $slave_energy_drop 
@@ -5655,6 +5663,7 @@ IF interaction_city = 5219:
   slave["sub_asslik"] = 0
   slave["sub_thongue"] = 0  
   slave["sub_bj"] = 0  
+  slave["piercings"] += 1 
   dynamic $slave_energy_drop 
   dynamic $slave_energy_drop 
   dynamic $slave_energy_drop 

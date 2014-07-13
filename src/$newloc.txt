@@ -142,6 +142,8 @@ if brand_rate => 80: brand_reputation = 5
 !Считаем бонусы экипировки рабыни
 slave_rate["style"] = 0
 slave_rate["exotic_bonus"] = 0 
+slave["ex_plus"] = 0
+slave["st_plus"] = 0
 killvar 'learn_bonus'
 killvar 'daily_bonus'
 dynamic $item_property[$slave["armor"]]
@@ -235,6 +237,15 @@ END
 !IF slave["hairstyle"] > 0: slave["hairstyle_demo"] = 1
 
 !slave["exotic"] = 0
+IF slave["echeck"] = 0:
+ slave["echeck"] = 1
+ if slave["exotic"] = 1: slave["base_exotic"] = 1
+ if slave["exotic"] = 2: slave["base_exotic"] = 2
+ if slave["exotic"] = 3: slave["base_exotic"] = 3
+ if slave["exotic"] = 4: slave["base_exotic"] = 4
+ if slave["exotic"] = 5: slave["base_exotic"] = 5
+END
+
 if slave_rate["exotic"] + slave_rate["exotic_bonus"] => 10: slave["exotic"] = 1
 if slave_rate["exotic"] + slave_rate["exotic_bonus"] => 20: slave["exotic"] = 2
 if slave_rate["exotic"] + slave_rate["exotic_bonus"] => 60: slave["exotic"] = 3
@@ -271,6 +282,11 @@ IF slave["bcheck"] = 0:
  if slave["beauty"] = 3: slave_rate["beauty"] = 40
  if slave["beauty"] = 4: slave_rate["beauty"] = 80
  if slave["beauty"] = 5: slave_rate["beauty"] = 160
+ if slave_rate["beauty"] => 10: slave["base_beauty"] = 1
+ if slave_rate["beauty"] => 20: slave["base_beauty"] = 2
+ if slave_rate["beauty"] => 40: slave["base_beauty"] = 3
+ if slave_rate["beauty"] => 80: slave["base_beauty"] = 4
+ if slave_rate["beauty"] => 160: slave["base_beauty"] = 5
 END
 
 !рассчет влияния
@@ -404,6 +420,37 @@ if slave_rate["style"] > 9: slave["style"] += 1
 if slave_rate["style"] > 13: slave["style"] += 1
 if slave["style"] > 5: slave["style"] = 5
 if slave["style"] < 0: slave["style"] = 0
+
+!счетчики для формул
+slave["grace_count"] = 0
+if slave["grace"] = 1: slave["grace_count"] = 1
+if slave["grace"] = -1: slave["grace_count"] = 2
+
+slave["makeup_count"] = 0
+if slave["parfume"] > 0: slave["makeup_count"] += 1
+if slave["epilation"] > 0: slave["makeup_count"] += 1
+if slave["manicure"] > 0: slave["makeup_count"] += 1
+
+slave["piercing_count"] = 0 
+if slave["piercings"] => 1: slave["piercing_count"] = 1 
+if slave["piercings"] => 3: slave["piercing_count"] = 2 
+if slave["piercings"] => 5: slave["piercing_count"] = 3 
+if slave["piercings"] => 7: slave["piercing_count"] = 4 
+if slave["piercings"] => 9: slave["piercing_count"] = 5 
+
+slave["ex_count"] = 0
+if slave["ex_plus"] = 1: slave["ex_count"] = 1
+if slave["ex_plus"] = 2: slave["ex_count"] = 2
+if slave["ex_plus"] = 3: slave["ex_count"] = 3
+if slave["ex_plus"] => 4: slave["ex_count"] = 4
+if slave["ex_plus"] => 7: slave["ex_count"] = 5
+
+slave["st_count"] = 0
+if slave["st_plus"] => 1: slave["st_count"] = 1
+if slave["st_plus"] => 3: slave["st_count"] = 2
+if slave["st_plus"] => 6: slave["st_count"] = 3
+if slave["st_plus"] => 9: slave["st_count"] = 4
+if slave["st_plus"] => 12: slave["st_count"] = 5
 
 !ПСИХОЛОГИЧЕСКИЙ СТАТУС РАБЫНИ
 $prev_status = $slave_psy_status

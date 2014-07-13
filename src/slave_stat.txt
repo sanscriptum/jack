@@ -323,23 +323,25 @@ If slave_stat_screen = 1:
   else
   *p '<div id="center_image"><img src = "content\pic\bg\page_blank.gif"></div>' 
  END
- if nsfw = 0: *p '<div id="upper_image"><img src = "content\pic\girls\body\<<$slave["boobs_img"]>>.jpg"></div>'
- if nsfw = 0: *p '<div id="lower_image"><img src = "content\pic\girls\body\<<$slave["pussy_img"]>>.jpg"></div>' 
+ if nsfw = 0: *p '<div id="upper_image"><img width = "370px" src = "content\pic\girls\body\<<$slave["boobs_img"]>>.jpg"></div>'
+ if nsfw = 0: *p '<div id="lower_image"><img width = "370px" src = "content\pic\girls\body\<<$slave["pussy_img"]>>.jpg"></div>' 
+ *p '<div id = "stat_text">
+ <<$красота[slave["beauty"]]>> = <<$природная_красота[slave["base_beauty"]]>> + <<$пластика[slave["beauty_enchanced"]]>> - (<<$шрамы[slave["scares"]]>> + <<$синяки[slave["bruises"]]>>)
+ <<$экзотика[slave["exotic"]]>> = <<$природная_экзотика[slave["base_exotic"]]>> + <<$slave_tatoo[slave["tatoo"]]>> + <<$пирсинг[slave["piercing_count"]]>> + <<$wear[slave["ex_count"]]>>
+ <div style="font-size: 95%;"><<$стиль[slave["style"]]>> = <<$wear[slave["st_count"]]>> + <<$slave_makeup[slave["makeup"]]>> + <<$hair_style[slave["hairstyle"]]>> + <<$мейкап[slave["makeup_count"]]>> + <<$гигиена[slave["hygiene"]]>> + <<$грация[slave["grace_count"]]>></div>
+ </div>'
  *p '<div id = "upper_text">
-<<$hair_style[slave["hairstyle"]]>>
-<<$slave_makeup[slave["makeup"]]>>
 <<$slave_boobs[slave["boobs"]]>>
-<<$niple_piercing[slave["niple_piercing"]]>>
 <<$slave_lactation[slave["lactation"]]>>
+<<$niple_piercing[slave["niple_piercing"]]>>
 <<$boobs_modification[slave["breast_enchanced"]]>>
 </div>'
  *p '<div id = "lower_text">
-<<$clit_piercing[slave["clit_piercing"]]>>
 <<$virginity[virginity]>>
 <<$slave_anal_description[slave["anal_stretch"]]>>
-<<$slave_tatoo[slave["tatoo"]]>>
-<<$slave_brand[slave["brand"]]>>
+<<$clit_piercing[slave["clit_piercing"]]>>
 <<$vaginal_modification[slave["vaginal_modification"]]>>
+<<$slave_brand[slave["brand"]]>>
 </div>' 
 END
 

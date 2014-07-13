@@ -797,15 +797,15 @@ text-align:right;
 #upper_image {
 position:absolute;
 left:260px;
-top:40px;
+top:50px;
 width:500px;
 height:290px;
 }
 
 #upper_text {
 position:absolute;
-left:670px;
-top:40px;
+left:270px;
+top:290px;
 width:350px;
 height:290px;
 color:#0000CD;
@@ -814,20 +814,30 @@ font-family:"Segoe Print";
 
 #lower_image {
 position:absolute;
-left:630px;
-top:335px;
+left:655px;
+top:50px;
 width:500px;
 height:290px;
 }
 
 #lower_text {
 position:absolute;
-left:260px;
-top:335px;
+left:665px;
+top:290px;
 width:350px;
 height:290px;
 text-align:right;
 color:#0000CD;
+font-family:"Segoe Print";
+}
+
+#stat_text {
+position:absolute;
+left:290px;
+top:460px;
+text-align:center;
+color:#0000CD;
+font-size: 82%;
 font-family:"Segoe Print";
 }
 

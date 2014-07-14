@@ -4299,6 +4299,7 @@ IF interaction_city = 33121:
 
     slave["wounds"] = 0
     slave_rate["wounds"] = 0
+    slave['neg_sick'] = 0
 
     !Если еще остались - прыгаем на старое меню. Копипаста из interaction_city = 3312
     IF slave_issues > 0:
@@ -6482,6 +6483,7 @@ IF interaction_city = 94:
     sparks += discount_price[rating]
     if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
     slave_state = CONST_INT['no_slave']
+    master_mood['pos_deal'] = 1
     gt "guild"
  }
  $no = {gt 'guild'}

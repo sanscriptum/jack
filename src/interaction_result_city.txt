@@ -38,6 +38,7 @@ IF $interaction_type = 'sell_slave_simple':
   $text[1] = $buy_quote[$npc_id]
   sparks += common_price[demand_rating[$npc_id]]
   slave_state = CONST_INT['no_slave']
+  master_mood['pos_deal'] = 1
   IF fixed_brand_rise = 0:
   !было brand_rate, что ломало прокачку рейта клейма мастера совсем и не давало прокачки
    if brand_reputation <= demand_rating[$npc_id]: brand_rate += demand_rating[$npc_id]
@@ -71,6 +72,7 @@ IF $interaction_type = 'sell_slave_complex':
   $text[1] = $buy_quote[$npc_id]
   if  noprice = 0: sparks += common_price[demand_rating[$npc_id]]
   slave_state = CONST_INT['no_slave']
+  master_mood['pos_deal'] = 3
   !фиксированный код для королей
   IF demand_rating[$npc_id] = 5:
    brand_rate += 20
@@ -144,6 +146,7 @@ IF $interaction_type = 'slave_sold':
  killvar 'slave_rate'
  $slave_name = '' 
  sparks += sell_price
+ master_mood['pos_deal'] = 1
  rr = RAND (0,10)
  no_slave_count[$npc_id] = count_size[$npc_id] + rr
  txt_count = 1

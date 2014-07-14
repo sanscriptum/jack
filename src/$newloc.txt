@@ -333,6 +333,17 @@ else
 	if master_mood['neg_tired'] > 0 or master_mood['neg_drunk'] > 0 or master_mood['neg_wounded'] > 0 or master_mood['neg_no_koffe'] > 0 or master_mood['neg_no_meth'] > 0 or master_mood['neg_no_opium'] > 0 or master_mood['neg_master_ill'] > 0: master_mood['pos_energy'] = 0
 end 
 
+master_mood['pos_optimism'] = 0
+master_mood['neg_grumpy'] = 0
+master_mood['neg_alone'] = 0
+
+IF slave_state = CONST_INT['no_slave'] and assistant_state = 0: 
+ if alone_count > 2: master_mood['neg_alone'] = 100
+ else
+ master_mood['neg_alone'] = 0
+ alone_count = 0
+END
+
 !Врубаем мудлеты рабыни
 slave['neg_slave_mess'] = 0
 if house_mess > 3: slave['neg_slave_mess'] = 100  
@@ -499,6 +510,19 @@ IF sanity < 3:
 END
 
 if $slave_psy_status ! $prev_status: display_psy_status = 1
+
+!для мудлетов
+IF $slave_psy_status = 'servile' or $slave_psy_status = 'obedient': 
+ slave["status_met"] = 1
+ else
+ slave["status_met"] = 0
+END
+
+IF slave_state = CONST_INT['slave_exist']:
+ if slave["beauty"] > 2 and slave["expression"] > 3 and slave["status_met"] = 1: master_mood['pos_optimism'] = 100
+ if $slave_psy_status = 'broken': master_mood['neg_grumpy'] = 100 & master_mood['pos_optimism'] = 0
+ if slave["wounds"] = 0: slave['neg_sick'] = 0
+END
 
 !Проверка на привычку
 if slave["exhibitionism_xp"] > 10 and slave["exhibitionism"] = 0: slave["exhibitionism"] = 1

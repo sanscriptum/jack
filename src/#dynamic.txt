@@ -361,7 +361,8 @@ $sin_gained_now = {
                 !TODO: проверить, правильно ли работает исправление
                 !Из-за фикса, возможно ухудшение на один день состояния мастера (влияние мудов)
                 !master_bad_mood['neg_nice_slave'] = 1
-                master_mood['neg_nice_slave'] = 1
+                master_mood['neg_rebell'] = 1
+                master_mood['pos_nice_slave'] = 0
                 gs '$mod_master_drop', 1
             END 
         END
@@ -370,18 +371,21 @@ $sin_gained_now = {
 }
 
 $virtue_gained_now = {
-IF already_done_today[interaction] = 0:
- virtue_gained = diligence
- if slave_skill > 0: virtue_gained = min (diligence, slave_skill)
- if virtue_gained <= 0: virtue_gained = 1
- if virtue_gained > 5: virtue_gained = 5
- IF virtue_gained => slave["sin"]:
-  slave["sin"] = 0
-  if virtue_gained > slave["virtue"]: slave["virtue"] = virtue_gained
-  if virtue_gained > slave["virtue"]: master_mood_rate += virtue_gained    
- END
- if sententia_veritas = 1: slave["virtue"] = 5 & slave["sin"] = 0 
-END
+	IF already_done_today[interaction] = 0:
+		virtue_gained = diligence
+		if slave_skill > 0: virtue_gained = min (diligence, slave_skill)
+		if virtue_gained <= 0: virtue_gained = 1
+		if virtue_gained > 5: virtue_gained = 5
+		IF virtue_gained => slave["sin"]:
+			slave["sin"] = 0
+			IF virtue_gained > slave["virtue"]:
+				slave["virtue"] = virtue_gained
+				master_mood['pos_nice_slave'] = 1
+				master_mood['neg_rebell'] = 0
+			END
+		END
+	END
+	if sententia_veritas = 1: slave["virtue"] = 5 & slave["sin"] = 0 
 }
 
 $virtue_gained_eroles = {

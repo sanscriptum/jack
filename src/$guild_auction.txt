@@ -103,6 +103,7 @@ IF x < 3:
  jump 'torg_loop'
 END
 sparks_get = bank_size
+master_mood['pos_deal'] = 1
 
 interaction_city = 931
 gt 'interaction_city'

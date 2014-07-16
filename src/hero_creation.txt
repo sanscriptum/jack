@@ -33,7 +33,7 @@ $master_ava_color = $clear_ava_path[hero_choice]
 <a href = "EXEC: dynamic $rise_flagelation & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_flagelation & gt curloc ">[-]</a>&nbsp<a href="EXEC: msg $флагеляция_с_справка & gt $curloc"><<$master_flagelation[master_flagelation]>></a>
 <a href = "EXEC: dynamic $rise_torture & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_torture & gt curloc ">[-]</a>&nbsp<a href="EXEC: msg $палач_с_справка & gt $curloc"><<$master_torture[master_torture]>></a>
 <a href = "EXEC: dynamic $rise_bondage & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_bondage & gt curloc ">[-]</a>&nbsp<a href="EXEC: msg $бондаж_с_справка & gt $curloc"><<$master_bondage[master_bondage]>></a>
-<u><a style = "color: black;" href="EXEC: msg $секс_техники_с_справка & gt $curloc">СЕКС-ТЕХНИКИ:</a></u>
+<u><a style = "color: #191970;" href="EXEC: msg $секс_техники_с_справка & gt $curloc">СЕКС-ТЕХНИКИ:</a></u>
 <a href = "EXEC: dynamic $rise_petting & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_petting & gt curloc ">[-]</a>&nbsp<<$master_petting[master_petting]>>
 <a href = "EXEC: dynamic $rise_penetration & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_penetration & gt curloc ">[-]</a>&nbsp<<$master_penetration[master_penetration]>>
 <a href = "EXEC: dynamic $rise_oral & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_oral & gt curloc ">[-]</a>&nbsp<<$master_oral[master_oral]>>

@@ -554,7 +554,6 @@ $item_property["nekomimi"] = {
     slave_rate["exotic_bonus"] += 5
     learn_bonus["pet"] += 1
     slave["ex_plus"] += 1
-    slave["st_plus"] += 1
 }
 
 !["golden_collar"]

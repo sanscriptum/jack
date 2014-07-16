@@ -139,6 +139,20 @@ if slave["hygiene"] = 3: slave_rate["hygiene"] = 40
 if slave["hygiene"] = 4: slave_rate["hygiene"] = 80
 if slave["hygiene"] = 5: slave_rate["hygiene"] = 160
 
+IF assistant["bcheck"] = 0:
+ assistant["bcheck"] = 1
+ if assistant["beauty"] = 1: assistant_rate["beauty"] = 10
+ if assistant["beauty"] = 2: assistant_rate["beauty"] = 20
+ if assistant["beauty"] = 3: assistant_rate["beauty"] = 40
+ if assistant["beauty"] = 4: assistant_rate["beauty"] = 80
+ if assistant["beauty"] = 5: assistant_rate["beauty"] = 160
+ if assistant_rate["beauty"] => 10: assistant["base_beauty"] = 1
+ if assistant_rate["beauty"] => 20: assistant["base_beauty"] = 2
+ if assistant_rate["beauty"] => 40: assistant["base_beauty"] = 3
+ if assistant_rate["beauty"] => 80: assistant["base_beauty"] = 4
+ if assistant_rate["beauty"] => 160: assistant["base_beauty"] = 5
+END
+
 gs '#txt'
 gs '#txt_2'
 --- get_special_assistant ---------------------------------

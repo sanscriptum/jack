@@ -984,9 +984,9 @@ font-family:"Segoe Print";
 
 #right_column {
 position:absolute;
-left:1055px;
+left:1063px;
 top:5px;
-width:220px;
+width:210px;
 height:790px;
 text-align:right;
 font-family:"Segoe Print";

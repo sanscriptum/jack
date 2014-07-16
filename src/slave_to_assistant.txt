@@ -108,6 +108,20 @@ tmp = death_treat
 death_treat = death_treat_assistant
 death_treat_assistant = tmp
 
+IF assistant["bcheck"] = 0:
+ assistant["bcheck"] = 1
+ if assistant["beauty"] = 1: assistant_rate["beauty"] = 10
+ if assistant["beauty"] = 2: assistant_rate["beauty"] = 20
+ if assistant["beauty"] = 3: assistant_rate["beauty"] = 40
+ if assistant["beauty"] = 4: assistant_rate["beauty"] = 80
+ if assistant["beauty"] = 5: assistant_rate["beauty"] = 160
+ if assistant_rate["beauty"] => 10: assistant["base_beauty"] = 1
+ if assistant_rate["beauty"] => 20: assistant["base_beauty"] = 2
+ if assistant_rate["beauty"] => 40: assistant["base_beauty"] = 3
+ if assistant_rate["beauty"] => 80: assistant["base_beauty"] = 4
+ if assistant_rate["beauty"] => 160: assistant["base_beauty"] = 5
+END
+
 gs '#txt'
 gs '#txt_2'
 gs '$newloc'

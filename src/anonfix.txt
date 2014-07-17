@@ -1,16 +1,15 @@
 # anonfix
-!Раздел анонфикса
-!Не забывать менять версию в описании после каждого обновления!
+!about the fix
 
 '<div id = "title_scroll"><img src = "content\pic\bg\scroll_large.gif"></div>'
-'<div id = "title_scroll_text">Данная версия использует неофициальный патч-фикс, который исправляет незначительные баги, ошибки и недоработки оригинальной версии.
+'<div id = "title_scroll_text">This version uses an unofficial patch-fix, which fixes minor bugs, errors and shortcomings of the original version.
 
-Свежую версию фикса всегда можно скачать <a href="https://db.tt/Xz59JzLc">здесь</a>. 
-Версия фикса:вставить_дату
+The latest version of the fix you can always download <a href="https://db.tt/Xz59JzLc">here</a>.
+Fix ver: %insert_date%
 
-Репозиторий фикса открыт для всех желающих улучшать и дополнять игру, и находится <a href="https://github.com/thevm/jack">по этому адресу</a>.
+Repository is open to everyone who wants to improve and complement the game, as well as improve the quality of translation, you can find it <a href="https://github.com/thevm/jack">here</a>.
 
-Подробное описание фикса можно найти в файле readme.txt, который поставляется в архиве с фиксом.</div>'
+Detailed description of a what fix does can be found in the readme.txt, which comes in the archive with this fix.</div>'
 
 {<div id = "close_scroll"><a href = 'EXEC: gt "main_menu"'><img src = "content\close_button.png"></a></div>}
 --- anonfix ---------------------------------

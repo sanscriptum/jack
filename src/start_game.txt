@@ -1,4 +1,5 @@
 # start_game
+!additional options after starting the game
 !IF $master_name = 'Старый Охотник': $master_name = 'Грязный Читер'
 wizard_mode = IIF($master_name = 'Старый Охотник', 1, 0)
 $place = 'study'
@@ -18,7 +19,7 @@ gladi_count = 4
 slave_food_portion = 2
 active[$quest[0]] = 1
 
-!Объявляем переменные
+!declare variables
 slave["nul"] = 0 
 contractor_demand['refuse_age'] = 99
 contractor_demand['max_temper'] = 99
@@ -55,7 +56,7 @@ if master_cha = 3: master_cha_rate = 60
 if master_cha = 4: master_cha_rate = 100
 if master_cha = 5: master_cha_rate = 180
 
-!Создание трассы на следующий заезд
+!Creating a route to the next race
 $trace[1] = 'ride_start'
 i = 1
 :loop

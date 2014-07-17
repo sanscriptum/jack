@@ -5,51 +5,48 @@ $info_text = ''
 $prisoner_info_text = ''
 
 *p '<div id = "large_image"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
-!CHECK: костыль для старых версий, иначе будут глюки с аватаркой раба и прочим
+!CHECK: crutch for older versions, otherwise there will be glitches with avatar for slave
 gs '#var_base'
 
 IF wizard_mode = 1:
- *p '<div id = "upper">День: <<day>> (<<sparks>>$) Кн: <<contract["time"]>> дн. |  Клр: <<slave["calories"]>>  |  Fr: <<slave["fear"]>>/<<slave_rate["fear"]>>  |  Ins: <<slave["instinct"]>>/<<slave_rate["instinct"]>>  |  Rat: <<slave["rational"]>>/<<slave_rate["rational"]>>  |  Cus: <<slave["custom"]>>/<<slave_rate["custom"]>>  |  Mor: <<slave["moral"]>>/<<slave_rate["moral"]>>  |  Spl: <<slave["spoil"]>>/<<slave_rate["spoil"]>>  |  Ang: <<slave["angst"]>>/<<slave_rate["angst"]>></div>' 
+ *p '<div id = "upper">Day: <<day>> (<<sparks>>$) Кн: <<contract["time"]>> дн. |  Клр: <<slave["calories"]>>  |  Fr: <<slave["fear"]>>/<<slave_rate["fear"]>>  |  Ins: <<slave["instinct"]>>/<<slave_rate["instinct"]>>  |  Rat: <<slave["rational"]>>/<<slave_rate["rational"]>>  |  Cus: <<slave["custom"]>>/<<slave_rate["custom"]>>  |  Mor: <<slave["moral"]>>/<<slave_rate["moral"]>>  |  Spl: <<slave["spoil"]>>/<<slave_rate["spoil"]>>  |  Ang: <<slave["angst"]>>/<<slave_rate["angst"]>></div>' 
  else
- $upper_info_bar = '<a style = "color: black;" href="EXEC: msg $shedule">День: <<day>></a>  |  Декада: <<decade>>  |  (<<sparks>>$) '
+ $upper_info_bar = '<a style = "color: black;" href="EXEC: msg $shedule">Day: <<day>></a>  |  Decade: <<decade>>  |  (<<sparks>>$)'
  $shedule_warn = ''
- if contract["time"] > 0: $upper_info_bar += ' |  Контракт: <<contract["time"]>> дн. ' 
- if debt > 0: $upper_info_bar += ' |  Задолженность: <<debt>>$ (<<debt_count>> дн.) '
+ if contract["time"] > 0: $upper_info_bar += ' |  Contract: <<contract["time"]>> дн. ' 
+ if debt > 0: $upper_info_bar += ' |  Debt: <<debt>>$ (<<debt_count>> дн.) '
  if ride_count = 0: $shedule_warn += '<font color="#ff5700"><b>!</b></font>'
  if auction_count = 0: $shedule_warn += '<font color="#ff5700"><b>!</b></font>'
  if gladi_count = 0: $shedule_warn += '<font color="#ff5700"><b>!</b></font>'
  *p '<div id = "upper"><<$shedule_warn>>&nbsp<<$upper_info_bar>></div>'
 END
 
-!расписание
-if ride_count > 4: $rideday = "До гонок осталось <<ride_count>> дней."
-if ride_count < 5: $rideday = "До гонок осталось <<ride_count>> дня."
-if ride_count = 1: $rideday = "До гонок остался <<ride_count>> день."
-if ride_count = 0: $rideday =  "Гонки проводятся сегодня!"
-if auction_count > 4: $auctionday = 'через <<auction_count>> дней.'
-if auction_count < 5: $auctionday = 'через <<auction_count>> дня.'
-if auction_count = 2: $auctionday = 'послезавтра.'
-if auction_count = 1: $auctionday = 'завтра.'
-if auction_count = 0: $auctionday =  "сегодня!"
-if gladi_count > 4: $gladiday = 'через <<gladi_count>> дней.'
-if gladi_count < 5: $gladiday = 'через <<gladi_count>> дня.'
-if gladi_count = 2: $gladiday = 'послезавтра.'
-if gladi_count = 1: $gladiday = 'завтра.'
-if gladi_count = 0: $gladiday =  "сегодня!"
+!schedule
+if ride_count > 1: $rideday = "The race will begin in <<ride_count>> days."
+if ride_count = 1: $rideday = "The race will begin tomorrow."
+if ride_count = 0: $rideday =  "Races are held today!"
+if auction_count > 2: $auctionday = 'after <<auction_count>> days.'
+if auction_count = 2: $auctionday = 'day after tomorrow.'
+if auction_count = 1: $auctionday = 'tomorrow.'
+if auction_count = 0: $auctionday =  "today!"
+if gladi_count > 2: $gladiday = 'after <<gladi_count>> days.'
+if gladi_count = 2: $gladiday = 'day after tomorrow.'
+if gladi_count = 1: $gladiday = 'tomorrow.'
+if gladi_count = 0: $gladiday =  "today!"
 
-$shedule = '<center><u>Расписание событий</u></center>
+$shedule = '<center><u>Events schedule</u></center>
 
 - <<$rideday>>
-- Аукцион начнется <<$auctionday>>
-- Бои в Колизее будут <<$gladiday>>'
+- Auction begins <<$auctionday>>
+- Fights in the Coliseum will start <<$gladiday>>'
 
-*p '<div id = "master_short_stat">Энергия <<$stars[master_energy_plus]>>
+*p '<div id = "master_short_stat">Energy <<$stars[master_energy_plus]>>
 <<$boy_mood[master_mood_plus]>> 
 <<$excitement[master_excitement_plus]>>
 <<$boy_hygiene[master_hygiene]>>
 </div>'
 
-!иконка для настроек
+!option icon
 IF exam_in_progress = 1:
  *p {<div id="options_icon"><a href = "EXEC: menu_form = 2000 & gt 'demo_menu_form'"><img src="content\gear.png"></a></div>} 
  else
@@ -62,16 +59,16 @@ IF sound_on = 1:
  *p '<div id="sound_icon"><a href = "EXEC: sound_on = 1 & gt curloc"><img src="content\sound_off.png"></a></div>'  
 END
 
-!настройки звука
+!sound option
 IF menu_form = 2000:
  IF exam_in_progress = 1:
   *p '<div style="position:absolute;top:255px;left:619px;font-family:Victoriana;"><img src = "content/sound_setting.png"></div>'
-  *p '<div style="position:absolute;top:234px;left:640px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">МУЗЫКА:</font></TD><TD><a href = 1><img src="content/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/Plus.png"></a></TD><TD><a href = 3><img src="content/close_button.png"></a></TD></TR>
-<TR><TD style="width:130px"><font color="#FFD700" size="5">ЗВУК:</font></TD><TD><a href = 4><img src="content/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/Plus.png"></a></TD><TD><a href = 6><img src="content/close_button.png"></a></TD></TR></table></div>'
+  *p '<div style="position:absolute;top:234px;left:640px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">MUSIC:</font></TD><TD><a href = 1><img src="content/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/Plus.png"></a></TD><TD><a href = 3><img src="content/close_button.png"></a></TD></TR>
+<TR><TD style="width:130px"><font color="#FFD700" size="5">SOUND:</font></TD><TD><a href = 4><img src="content/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/Plus.png"></a></TD><TD><a href = 6><img src="content/close_button.png"></a></TD></TR></table></div>'
   else
   *p '<div style="position:absolute;top:525px;left:619px;font-family:Victoriana;"><img src = "content/sound_setting.png"></div>'
-  *p '<div style="position:absolute;top:504px;left:640px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">МУЗЫКА:</font></TD><TD><a href = 1><img src="content/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/Plus.png"></a></TD><TD><a href = 3><img src="content/close_button.png"></a></TD></TR>
-<TR><TD style="width:130px"><font color="#FFD700" size="5">ЗВУК:</font></TD><TD><a href = 4><img src="content/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/Plus.png"></a></TD><TD><a href = 6><img src="content/close_button.png"></a></TD></TR></table></div>'
+  *p '<div style="position:absolute;top:504px;left:640px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">MUSIC:</font></TD><TD><a href = 1><img src="content/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/Plus.png"></a></TD><TD><a href = 3><img src="content/close_button.png"></a></TD></TR>
+<TR><TD style="width:130px"><font color="#FFD700" size="5">SOUND:</font></TD><TD><a href = 4><img src="content/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/Plus.png"></a></TD><TD><a href = 6><img src="content/close_button.png"></a></TD></TR></table></div>'
  END
 END
 
@@ -109,7 +106,7 @@ IF assistant_state = 1:
  *p '<div id = "assistant_short_ava"><a href = "EXEC: gt ''assistant_stat''"><img src = "<<$assistant[''ava'']>>.jpg"></a></div>'
  *p '<div id = "assistant_short_stat"><<$house_mess[house_mess]>>
  <<$cooked_food[cooked_food_plus]>>
- Энергия <<$stars[assistant_energy_plus]>>
+ Energy <<$stars[assistant_energy_plus]>>
  <<$tentacle_state[tentacle_state]>>
 </div>'
  else
@@ -130,7 +127,7 @@ IF cooked_food < 1 and kitchen > 0:
  END
 END
 
-!быстрые действия для исчадия
+!fast button for fiend
 IF tentacle_state = 1: 
  IF slave_state = CONST_INT['slave_exist'] and slave_tentacle_rule = 1:
   *p {<div id="fast_tentacle"><a href = "EXEC: interaction = 59 & gt 'interaction'"><img src="content\fast_button.png"></a></div>}  
@@ -150,19 +147,20 @@ END
 
 IF slave_state = CONST_INT['slave_dead']:
  *p '<div id = "slave_short_ava"><a href = "EXEC: gt ''slave_stat''"><img src = "<<$slave[''ava_gray'']>>.jpg"></a></div>'
- *p '<div id = "slave_short_stat">Умерла
+ *p '<div id = "slave_short_stat">Died
 </div>'
 END
 
 IF slave_state = CONST_INT['no_slave']:
+! *p '<div id = "slave_short_ava"><img src = "content/pic/blank_ava.jpg"></div>'
  *p '<div id = "slave_short_ava"><a href = "EXEC: menu_form = 3000 & gt ''menu_form''"><img src = "content/pic/blank_ava.jpg"></a></div>'
- *p '<div id = "slave_short_stat">Нет воспитуемой
+ *p '<div id = "slave_short_stat">No slave
 </div>'
 END
 
 IF slave_state = CONST_INT['slave_exist']:
  *p '<div id = "slave_short_ava"><a href = "EXEC: gt ''slave_stat''"><img src = "<<$slave[''ava'']>>.jpg"></a></div>'
- *p '<div id = "slave_short_stat">Энергия <<$stars[slave_energy_plus]>>
+ *p '<div id = "slave_short_stat">Energy <<$stars[slave_energy_plus]>>
 <<$girl_mood[slave_mood_plus]>> 
 <<$behavior_evaluation[eval]>>
 <<$girl_hygiene[slave["hygiene"]]>>
@@ -179,7 +177,7 @@ END
 
 IF slave_state = CONST_INT['slave_faint']:
  *p '<div id = "slave_short_ava"><a href = "EXEC: gt ''slave_stat''"><img src = "<<$slave[''ava_gray'']>>.jpg"></a></div>'
- *p '<div id = "slave_short_stat">Без сознания
+ *p '<div id = "slave_short_stat">Unconscious
 </div>'
 END
 
@@ -217,13 +215,13 @@ IF master_excitement > 0:
 END
 
 *p '<div id = "main_screen"><<$text_display>></div>'
-!для настроек
+!options
 *p '<div id = "settings"><<$setting_display>></div>'
 *p '<div id = "settings_ex"><<$setting_display_c>></div>'
 *p '<div id = "settings_ex2"><<$setting_display_c2>></div>'
 *p '<div id = "settings_2r"><<$setting_display_r>></div>'
 
-!иконки пропадают в настройках
+!icons disabled in option menu
 IF menu_form ! 2000:
 IF dungeon > 0:
  IF prisoner_state > 0:
@@ -261,7 +259,7 @@ END
 
 gs 'revelations'
 
-!для правильного отображения счетчика декады
+!for decade count
 IF decadecount => 10:
  gs 'billing'
  msg '<<$bill_message>>'
@@ -269,7 +267,7 @@ IF decadecount => 10:
  decade += 1
  decadesave = 1
  IF final_payment > sparks and exam_in_progress ! 1:
-   dynamic $death, 'Вы не смогли заплатить по счетам и были изгнаны из гильдии работорговцев за неспособность решать собственные финансовые проблемы.'
+   dynamic $death, 'You are not able to pay the bills and have been expulsion from Slavers Guild for their inability to solve their financial problems.'
   else
    sparks -= final_payment
  END
@@ -279,9 +277,9 @@ END
 IF search['active'] = 2:
  search['active'] = 3
  msg 'Gaudete, <<$master_name>>!
- Похоже, я сумел найти именно такую рабыню, какую ты мне заказывал. Я уже приобрёл её и поместил в личную стасис-камеру. Подготовь место для воспитуемой и приходи ко мне в гильдию.
+It seems I managed to find just such a slave, as you ordered me. I already bought it and put in personal stasis chamber. Prepare a place for educability and come to me in the guild.
  
-                С уважением, Скупс.'
+                 Sincerely, Skups.'
 END
 
 if sbros = 1:
@@ -311,7 +309,7 @@ IF prisoner['pregnant'] => 150:
  gt 'interaction'
 END
 
-!автосейв
+!autosave
 IF autosave = 1:
  IF autosave_day = 1:
    autosave = 0

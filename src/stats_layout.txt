@@ -1,5 +1,5 @@
 # stats_layout
-!Разметка экрана статистики персонажа
+!layout for a stats screen
 INTEGRATED_ACTIONS = 0
 if ui_style = 1:$backimage = 'content/pic/ui/old/bg_stat_old.jpg'
 if ui_style = 2:$backimage = 'content/pic/ui/grimdark/bg_stat.jpg'

@@ -1,324 +1,322 @@
 # #help_msg
-!TODO: Нужен var_base для vb_cycle вставок, + придумать нормальную замену by Lyazar
-!Сообщения-помощь
-$красота_справка = '<center>КРАСОТА<br>
-<font color="#cd0000">Изуродована</font>
-<font color="#C71585">Дурнушка</font>
-<font color="#4B0082">Миловидная</font>
-<font color="#0000CD">Привлекательная</font>
-<font color="#008080">Красавица</font>
-<font color="#008000">Королева красоты</font></center>
+!help messages
+$красота_справка = '<center>BEAUTY<br>
+<font color="#cd0000">Ugly</font>
+<font color="#C71585">Plain</font>
+<font color="#4B0082">Cute</font>
+<font color="#0000CD">Pretty</font>
+<font color="#008080">Beautiful</font>
+<font color="#008000">Exquisite</font></center>
 '
-$красота_справка_2 = '  Природная красота рабыни очень сильно отражается на её рыночной цене. Рейтинг вашей рабыни никогда не поднимется выше значения её красоты. За красивых рабынь больше дают на аукционах.'
-$красота_совет = '   [СОВЕТЫ ПО КРАСОТЕ]
-<div style="font-size: 95%;">   Все ваши ухищрения по улучшению внешности рабыни будут влиять на стиль, а не красоту. Стильность тоже важна, однако значение природной красоты огромно. Увеличить красоту можно только пластической операцией в техносфере и только один раз. Постарайтесь покупать красивых рабынь, если намерены обучить их до высокого рейтинга. Красота ухудшается, если у рабыни есть шрамы и синяки.</div>'
+$красота_справка_2 = "  Natural beauty very strongly influences her market price. Your slave's rank will never rise higher than her beauty value. At auctions beautiful slaves are sold for higher prices."
+$красота_совет = '   [BEAUTY TIPS]
+<div style="font-size: 95%;">   All your efforts to improve appearance of the slave will ifluence style, not beauty. Stylishness is important too, but the value of natural beauty is huge. You can increase beauty only by plastic surgery in technosphere and only once. Try to buy beautiful slaves if you intend to train them to high ranks. Beauty will decrease, if a slave has scars or bruises.</div>'
 
-$здоровье_справка = '<center>ВЫНОСЛИВОСТЬ<br>
-<font color="#cd0000">Умирает</font>
-<font color="#C71585">Немощная</font>
-<font color="#4B0082">Слабое здоровье</font>
-<font color="#0000CD">Здорова</font>
-<font color="#008080">Выносливая</font>
-<font color="#008000">Вынослива как лошадь</font></center>'
-$здоровье_справка_2 = '  Выносливая рабыня может хорошо и много работать, а также выглядит более привлекательной для клиентов. Критичное падение здоровья может убить рабыню.'
-$здоровье_совет = '   [СОВЕТЫ ПО ЗДОРОВЬЮ]
-<div style="font-size: 88%;">  Здоровье всегда полезно. Если ваша рабыня обладает слабым здоровьем, её нужно хорошо кормить, желательно прописать витамины и не давать ей переутомляться (получать красные звездочки энергии). Ассистентка с высоким навыком медсестры тоже поможет. Чтобы увеличить выносливость здоровой рабыни, заставьте её заниматься спортом, упряжкой и боевыми искусствами. Также надо вовремя лечить её раны и болезни, не давать голодать и перенапрягаться.</div>'
+$здоровье_справка = '<center>ENDURANCE<br>
+<font color="#cd0000">Dying</font>
+<font color="#C71585">Feeble</font>
+<font color="#4B0082">Weakened</font>
+<font color="#0000CD">Healthy</font>
+<font color="#008080">Tough</font>
+<font color="#008000">Enduring</font></center>'
+$здоровье_справка_2 = '  Hardy slave can work well and hard and is more attractive for clients. Critical dectrease of endurance can kill your slave.'
+$здоровье_совет = "   [ENDURANCE TIPS]
+<div style='font-size: 88%;'>  Endurance always comes handy. If your slave has weak endurance you need to feed her well; it's desirable to prescribe vitamins and not let her become exhausted (recieve red energy stars). Assistant with high nurse skill can help too. To increase endurance of healthy slave, make her do sports, race and martial arts. You also need to heal her injuries and sicknesses in time, don't let her starve or overwork.</div>"
 
-$экзотичность_справка = '<center>ЭКЗОТИЧНОСТЬ<br>
-<font color="#cd0000">Не выделяется</font>
-<font color="#C71585">Имеет изюминку</font>
-<font color="#4B0082">Загадочный вид</font>
-<font color="#0000CD">Экзотична</font>
-<font color="#008080">Весьма экзотична</font>
-<font color="#008000">Дико экзотична</font></center>'
-$экзотичность_справка_2 = '  Рабыни с необычной, нестандартной внешностью сразу привлекают внимание, и как правило более интересны для покупателей.'
-$экзотичность_совет = '   [СОВЕТЫ ПО ЭКЗОТИЧНОСТИ]
-   Некоторые рабыни экзотичны по своей природе. Вы сами можете увеличить экзотичность рабыни, благодаря татуировкам, пирсингу, телесным модификациям, яркой одежде и парикам.'
+$экзотичность_справка = '<center>EXOTICISM<br>
+<font color="#cd0000">Ordinary</font>
+<font color="#C71585">Quirky</font>
+<font color="#4B0082">Mysterious</font>
+<font color="#0000CD">Enigmatic</font>
+<font color="#008080">Exotic</font>
+<font color="#008000">Mystical</font></center>'
+$экзотичность_справка_2 = '  Slaves with unusual, irregular appearance attract attention at once and generally are more interesting for customers.'
+$экзотичность_совет = "   [EXOTICISM TIPS]
+   Some slaves are exotic inherently. You can increase exoticism of your slave by using tattoos, piercings, body modifications, as well as flamboyant clothes and wigs."
    
-$жыр_справка = '<center>ТЕЛОСЛОЖЕНИЕ<br>
-<font color="#cd0000">Жирная</font>
-<font color="#C71585">Толстая</font>
-<font color="#4B0082">Полная</font>
-<font color="#0000CD">Худосочная</font>
-<font color="#008080">Ядреная</font>
-<font color="#008000">Стройная</font></center>'
-$жыр_справка_2 = '  С жирных рабынь можно получить больше фарша, но они не очень привлекательны. Худосочные заморыши тоже, да и мяса с них много не получишь. Лучше держать её стройной, но не тощей.'
-$жыр_совет = '   [СОВЕТЫ ПО ВЕСУ]
-<div style="font-size: 95%;">   Лишний вес в целом вреден, также как и недостаток веса. Чтобы держать свою рабыню стройной, вам нужно сбалансировать её питание так, чтобы оно было достаточным, но не избыточным. Чем больше рабыня работает, чем она здоровее, тем больше ей нужно еды. Физические нагрузки не снижают вес напрямую, но хорошо сжигают лишние калории. Активно занимающуюся спортом рабыню надо хорошо кормить.</div>'
-   
-$чувствительность_справка = '<center>НЕЖНОСТЬ<br>
-<font color="#cd0000">Бесчувственная</font>
-<font color="#C71585">Огрубевшая</font>
-<font color="#4B0082">Слегка огрубевшая</font>
-<font color="#0000CD">Чувствительная</font>
-<font color="#008080">Нежная</font>
-<font color="#008000">Нежная как цветок</font></center>'
-$чувствительность_справка_2 = '  Нежная рабыня более подвержена стрессам и острее переживает наказания. Зато она гораздо быстрее возбуждается и ярче реагирует, что делает её привлекательней для клиента.'
-$чувствительность_совет = '   [СОВЕТЫ ПО НЕЖНОСТИ]
-<div style="font-size: 95%;">   Чувствительность можно очень легко загубить грубым обращением. Сильные наказания особенно вредны. Конечно, менее чувствительная рабыня не так подвержена депрессиям и переносит страдания проще, но её цена на рынке упадёт. Увеличить чувствительность сложно, надежных способов нет. Но изысканные ласки и удовольствия могут помочь.</div>'
-   
-$стиль_справка = '<center>СТИЛЬ<br>
-<font color="#cd0000">Чумичка</font>
-<font color="#C71585">Невзрачная</font>
-<font color="#4B0082">Ухоженная</font>
-<font color="#0000CD">Изящная</font>
-<font color="#008080">Элегантная</font>
-<font color="#008000">Икона стиля</font></center>'
-$стиль_справка_2 = '  Внешний вид рабыни крайне важен при продаже. Ухоженная и нарядная рабыня понравится клиенту, а от неряшливой он может отказаться даже когда та подходит по требованиям.'
-$стиль_совет = '   [СОВЕТЫ ПО СТИЛЮ]
-<div style="font-size: 92%;">   Стиль мало зависит от природных данных и навыков рабыни, хотя на него влияет умение общаться ("эскорт") и осанка ("танцовщица"). Стиль страдает от грязи и неухоженности. Причёска, макияж, духи, красивая одежда и украшения - всё это улучшает стиль и делает рабыню более привлекательной для клиентов. Стиль можно не поддерживать постоянно, он играет роль тогда когда настаёт время показывать девушку покупателю.</div>'
-   
-$ум_справка = '<center>СООБРАЗИТЕЛЬНОСТЬ<br>
-<font color="#cd0000">Дура</font>
-<font color="#C71585">Глупая</font>
-<font color="#4B0082">Недалекая</font>
-<font color="#0000CD">Сообразительная</font>
-<font color="#008080">Умная</font>
-<font color="#008000">Интеллектуальная</font></center>'
-$ум_справка_2 = '  Умные рабыни быстрее овладевают навыками и лучше справляются с бухгалтерией, они ценнее на рынке. Зато глупых проще подчинить своей воле и манипулировать ими.'
-$ум_совет = '   [СОВЕТЫ ПО СООБРАЗИТЕЛЬНОСТИ]
-<div style="font-size: 95%;">   Ум не всегда полезен, так как более интеллектуальные рабыни труднее поддаются контролю, ими сложнее манипулировать. С другой стороны, рациональные факторы подчинения и пояснительные беседы будут работать даже лучше. Умные рабыни также лучше обучаются, хорошо справляются с работой секретаря и в целом выше ценятся на рынке. Ум можно слега развить, сделав рабыню бухгалтером.</div>'
-   
-$темперамент_справка = '<center>ТЕМПЕРАМЕНТ<br>
-<font color="#cd0000">Апатичная</font>
-<font color="#C71585">Холодная</font>
-<font color="#4B0082">Сдержаная</font>
-<font color="#0000CD">Уравновешенная</font>
-<font color="#008080">Темпераментная</font>
-<font color="#008000">Вулкан страстей</font></center>'
-$темперамент_справка_2 = '  Темпераментные рабыни неуправляемы и хуже поддаются воспитанию, зато горячи в постели и более интересны для покупателей, обладают яркой индивидуальностью. Спокойных проще контролировать.'
-$темперамент_совет = '   [СОВЕТЫ ПО ТЕМПЕРАМЕНТУ]
-   Темперамент — неоднозначная характеристика. Более эмоциональные рабыни труднее поддаются контролю, а холодные меньше ценятся. Подавляя инициативу, загоняя в депрессию и заставляя рабыню молчать, вы постепенно снизите её темперамент. Хороших способов увеличить его нет, разве что можно заставить рабыню носить шипастый ошейник и высокие сапоги.'
-   
-$характер_справка = '<center>ХАРАКТЕР<br>
-<font color="#cd0000">Безвольная</font>
-<font color="#C71585">Бесхребетная</font>
-<font color="#4B0082">Слабохарактерная</font>
-<font color="#0000CD">Самостоятельная</font>
-<font color="#008080">Твердый характер</font>
-<font color="#008000">Волевая</font></center>'
-$характер_справка_2 = '  Сильный характер делает рабыню интереснее и самостоятельнее, но снижает её подчиняемость. Слабохарактерной рабыней легко управлять, но её ценность снижается.'
-$характер_совет = '   [СОВЕТЫ ПО ХАРАКТЕРУ]
-<div style="font-size: 90%;">   Характер — характеристика неоднозначная. Воспитать волевую рабыню очень сложно, но безвольная сильно потеряет в цене. Чем больше вы будете заставлять рабыню делать то, чего она не хочет, тем больше будет ломаться её характер. Восстановить характер затруднительно, так что не переусердствуйте. Победы в поединках, помощь в обучении других рабынь, занятия боевыми искусствами и отдых в золотой клетке могут помочь в формировании твердого характера.</div>'
-   
-$гордыня_справка = '<center>ГОРДЫНЯ<br>
-<font color="#cd0000">Высокомерная</font>
-<font color="#C71585">Надменная</font>
-<font color="#4B0082">Гордячка</font>
-<font color="#0000CD">Брезгливая</font>
-<font color="#008080">Открытая</font>
-<font color="#008000">Без комплексов</font></center>'
-$гордыня_справка_2 = '  Гордыня мешает рабыне открыться и получать удовольствие от секса, заставляет её сопротивляться вашей воле и отказываться от унизительных поручений.'
-$гордыня_совет = '   [СОВЕТЫ ПО ГОРДЫНЕ]
-   Гордыня вредна и в обучении и при продаже, так что вам стоит поработать над открытостью рабыни. Заставляёте её делать грязные, извращенные и унизительные вещи, назначайте строгие правила. Постепенно гордыня будет сломлена и рабыня станет более открытой. Не переборщите с этим, так как вместе с гордыней вы можете сломать саму рабыню.'
-   
-$слава_справка = '<center>СЛАВА В РИМЕ<br>
-<font color="#cd0000">Безвестная</font>
-<font color="#C71585">Известная</font>
-<font color="#4B0082">Знаменитость</font>
-<font color="#0000CD">Прославленная</font>
-<font color="#008080">Суперзвезда</font>
-<font color="#008000">Легенда Рима</font></center>'
-$слава_справка_2 = '  Прославленные рабыни стоят намного дороже. Рейтинг вашей рабыни будет не ниже чем её уровень славы, даже если ей не хватает других показателей, включая красоту.'
-$слава_совет = '   [СОВЕТЫ ПО СЛАВЕ]
-   Известность — не самый необходимый параметр для рабыни. Вы можете воспитать замечательный товар, не заботясь об этом. Известность будет расти с победами на арене в колизее.'
+$жыр_справка = '<center>PHYSIQUE<br>
+<font color="#cd0000">Obese</font>
+<font color="#C71585">Overweight</font>
+<font color="#4B0082">Plump</font>
+<font color="#0000CD">Underweight</font>
+<font color="#008080">Voluptuous</font>
+<font color="#008000">Healthy weight</font></center>'
+$жыр_справка_2 = "  You can get more mince from fat slaves but they are not attractive. Weedy starvelings aren't attractive as well, but you can't get a lot meat from them either. It's better to keep your slave slim, but not skinny."
+$жыр_совет = "   [PHYSIQUE TIPS]
+<div style='font-size: 95%;'>   Extra weight is generally harmful, as well as a lack of it. To keep your slave slim you need to balance her nutrition that way that it is sufficient, but not excessive. The more your slave works and the more endurant she is - the more food she needs. Physycal excercises don't decrease weight directly but are a good way to burn extra callories. Actively involved in sports slave should be well fed slave.</div>"
 
-$калории_совет = '   [ЧТО ОЗНАЧАЮТ КАЛОРИИ?]
-<div style="font-size: 83%;">   Калории обозначают насколько ваша рабыня сыта. Если количество калорий меньше или равно нулю - рабыня будет голодать, терять массу (ж) и у неё начнется истощение, однако если рабыня достаточно толстая - она начнет худеть. Каждое активное действие потребляет калории, чем больше калорий - тем быстрее рабыня будет толстеть и набирать массу и наоборот. Количество калорий также определяют здоровье рабыни, важно не давать ей истощать себя. При изменении телосложения счетчик жира обнуляется.</div>'
+$чувствительность_справка = '<center>EMPATHY<br>
+<font color="#cd0000">Uncaring</font>
+<font color="#C71585">Callous</font>
+<font color="#4B0082">Insensitive</font>
+<font color="#0000CD">Sensitive</font>
+<font color="#008080">Caring</font>	
+<font color="#008000">Nurturing</font></center>'
+$чувствительность_справка_2 = '  On one hand the gentle slave is easier affected by stress and stung by punishments. On the other hand she is turned on much faster and more lively, which makes her attractive for customers.'
+$чувствительность_совет = "   [EMPATHY TIPS]
+<div style='font-size: 95%;'>   Callousness develops quickly with mistreatment. Severe punishments are especially harmful. While a less sensitive slave is hardened against depression and endures suffering, she is also less valuable. There are no reliable ways to increase a slave's empathy, but refined petting and pleasures may help.</div>"
+
+$стиль_справка = '<center>STYLE<br>
+<font color="#cd0000">Unfashionable</font>
+<font color="#C71585">Unremarkable</font>
+<font color="#4B0082">Common</font>
+<font color="#0000CD">Stylish</font>
+<font color="#008080">Refined</font>
+<font color="#008000">Graceful</font></center>'
+$стиль_справка_2 = "  Slave's appearance is extremely important during the sales. Customers will like well-groomed and well-dressed slave, and sloppy slave can be turned down even if she fits to the requirements."
+$стиль_совет = '   [STYLE TIPS]
+<div style="font-size: 88%;">   Style depends little on the natural abilities and skills, though it is influences by ability to communicate ("escort") and presence ("dancer"). Style suffers from dirt and sloppiness. Hairstyle, make up, perfume, beautiful clothes and jewelry -  all of these improve style and makes slave more attractive to customers. It is not necessary to constantly maintain style - it plays a role only when it is time to show girl to customer.</div>'
+   
+$ум_справка = '<center>INTELLECT<br>
+<font color="#cd0000">Retarded</font>
+<font color="#C71585">Stupid</font>
+<font color="#4B0082">Dimwitted</font>
+<font color="#0000CD">Bright</font>
+<font color="#008080">Clever</font>
+<font color="#008000">Intelligent</font></center>'
+$ум_справка_2 = '  Smart slaves master skills faster and are able to cope with accounting better, they are more valuable on the market. But it is easier to dominate and manipulate stupid ones.'
+$ум_совет = '   [INTELLECT TIPS]
+<div style="font-size: 95%;">   Smarts are not always useful, as more intellectual slaves are harder to control and manipulate. On the other hand rational factors of submission and explanatory conversations will work even better. Smart slaves also are trained better, cope well with the work of secretary and generally are valued more on the market. Smarts can be slightly increased if you make your slave an accountant.</div>'
+   
+$темперамент_справка = '<center>TEMPERAMENT<br>
+<font color="#cd0000">Apathetic</font>
+<font color="#C71585">Cold</font>
+<font color="#4B0082">Reserved</font>
+<font color="#0000CD">Reactive</font>
+<font color="#008080">Lively</font>
+<font color="#008000">Passionate</font></center>'
+$темперамент_справка_2 = '  Temperamental slaves are uncontrollable and are less suspectible to education but they are passionate lovers and are more interesting for customers, as they have a bright personality. Calms ones are easier to control.'
+$темперамент_совет = '   [TEMPERAMENT TIPS]
+   Temperament is ambiguous feature. More emotional slaves are harder to control, but cold ones are less valuable. By suppressing initiative, driving her in depression and silencing her you will eventually lower her temperament. There are no good ways to increase it, but you can make a slave wear a spiked collar and high boots.'
+   
+$характер_справка = '<center>NATURE<br>
+<font color="#cd0000">Spineless</font>
+<font color="#C71585">Cowardly</font>
+<font color="#4B0082">Uncertain</font>
+<font color="#0000CD">Independent</font>
+<font color="#008080">Determined</font>
+<font color="#008000">Willful</font></center>'
+$характер_справка_2 = '  Strong character makes slave more interesting and indpendent but lowers her obedience. It is easier to control a weak-willed slaves but their value will be lower.'
+$характер_совет = '   [NATURE TIPS]
+<div style="font-size: 90%;">   Nature is ambiguous feature. It is very hard to train willful slave but weak-willed will lose its value greatly. The more you make a slave do what she does not want to do, the more her nature will break. It is difficult to restore nature so do not overdo it. Victory in duels, assistance in training, martial arts and recreation in a golden cage can help in the formation of solid nature.</div>'
+
+$гордыня_справка = '<center>PRIDE<br>
+<font color="#cd0000">Arrogant</font>
+<font color="#C71585">Haughty</font>
+<font color="#4B0082">Proud</font>
+<font color="#0000CD">Fastidious</font>
+<font color="#008080">Open</font>
+<font color="#008000">Unashamed</font></center>'
+$гордыня_справка_2 = '  Pride prevents slave from being open and enjoying sex, causes her to resist your will, refuse humuliating orders.'
+$гордыня_совет = '   [PRIDE TIPS]
+   Pride is harmful both in training and in the sale, so you should work on her openness. Force her to do dirty, perverted and degrading things, and assign strict rules. Eventually pride will be broken and the slave will become more open. But do not overdo it, as with pride, you can break the very slave.'
+
+$слава_справка = '<center>FAME IN ROME<br>
+<font color="#cd0000">Unknown</font>
+<font color="#C71585">Obscure</font>
+<font color="#4B0082">Rumoured</font>
+<font color="#0000CD">Recognised</font>
+<font color="#008080">Famous</font>
+<font color="#008000">Legendary</font></center>'
+$слава_справка_2 = "  Famous slaves are much more expensive. Your slave's rank won't be lower than level of her fame, even if she lacks other attributes, beauty included."
+$слава_совет = '   [FAME TIPS]
+   Fame is not the most important parameter for a slave. You can train wonderful product uncncerned about this. Fame will grow with victories in the arena coliseum.'
+
+$калории_совет = '   [WHAT CALORIES DOES?]
+<div style="font-size: 83%;">   Calories represent how your slave fed. If the number of calories less than or equal to zero - slave will starve to lose weight (f) and she will starve, but if a slave is thick enough - she will begin to lose weight. Each active action consumes calories, the more calories - the faster the slave will get fat and gain weight, and vice versa. Determine the amount of calories as a slave health, it is important not to give it to drain itself. If you change the physique, fat meter will reset.</div>'
 
 !ХАРАКТЕРИСТИКИ ТРЕНЕРА
-$сила_справка = '<center>СИЛА<br>
-<font color="#cd0000">Беспомощен</font>
-<font color="#C71585">Задохлик</font>
-<font color="#4B0082">Слабак</font>
-<font color="#0000CD">Крепкий</font>
-<font color="#008080">Атлетичный</font>
-<font color="#008000">Могучий</font></center>'
-$сила_совет = '   [СОВЕТЫ ПО СИЛЕ]
-  Для тренера очень важно поддерживать хорошую физическую форму. Это влияет и на силу ударов в бою и на количество ежедневно выполняемых задач и на покорность рабыни. Атлетичный мужчина внушает уважение. Чтобы сила росла, постарайтесь хорошо питаться, не зарастать грязью, не переутомляться и поддерживать позитивный настрой.'
+$сила_справка = '<center>STRENGTH<br>
+<font color="#cd0000">Helpless</font>
+<font color="#C71585">Weak</font>
+<font color="#4B0082">Unfit</font>
+<font color="#0000CD">Strong</font>
+<font color="#008080">Conditioned</font>
+<font color="#008000">Herculean</font></center>'
+$сила_совет = "   [STRENGTH TIPS]
+  Strength commands respect. It is very important for a trainer to be strong. Strength affects the force of your blows in combat, your endurance in daily tasks and the submissiveness of your slaves. Increase strength by eating well, paying attention to hygiene, avoiding exhaustion and staying positive."
 
-$харизма_справка = '<center>СИЛА ЛИЧНОСТИ<br>
-<font color="#cd0000">Зомби</font>
-<font color="#C71585">Бесхребетный</font>
-<font color="#4B0082">Лузер</font>
-<font color="#0000CD">Целеустремленный</font>
-<font color="#008080">Волевой</font>
-<font color="#008000">Лидер</font></center>'
-$харизма_совет = '   [СОВЕТЫ ПО СИЛЕ ЛИЧНОСТИ]
-  Харизма, целеустремленность и воля играют важнейшую роль для тренера рабов, так как они значительно облегчают задачу управления другими людьми. Ваши навыки лидерства будут расти одновременно с ростом престижа клейма.'
+$харизма_справка = '<center>PERSONALITY<br>
+<font color="#cd0000">Boring</font>
+<font color="#C71585">Coward</font>
+<font color="#4B0082">Loser</font>
+<font color="#0000CD">Driven</font>
+<font color="#008080">Ambitious</font>
+<font color="#008000">Leader</font></center>'
+$харизма_совет = '   [PERSONALITY TIPS]
+  Charisma, determination and will play a crucial role for a trainer of slaves, as they make it much easier to control other people. Your leadership skills will grow with increasing prestige.'
 
-$импозантность_справка = '<center>ПРИВЛЕКАТЕЛЬНОСТЬ<br>
-<font color="#cd0000">Отвратительный</font>
-<font color="#C71585">Неприятный</font>
-<font color="#4B0082">Невзрачный</font>
-<font color="#0000CD">Привлекательный</font>
-<font color="#008080">Импозантный</font>
-<font color="#008000">Очаровательный</font></center>'
-$импозантность_совет = '   [СОВЕТЫ ПО ПРИВЛЕКАТЕЛЬНОСТИ]
-  Рабыни с большей готовностью подчиняются привлекательным тренерам, иногда их даже не надо заставлять. Импозантный внешний вид может помочь и в общении с заказчиками. Чтобы поддерживать стиль, не забывайте о чистоте тела, прическе и одежде.'
+$импозантность_справка = '<center>ALLURE<br>
+<font color="#cd0000">Repulsive</font>
+<font color="#C71585">Unpleasant</font>
+<font color="#4B0082">Unmemorable</font>
+<font color="#0000CD">Charming</font>
+<font color="#008080">Memorable</font>
+<font color="#008000">Irresistible</font></center>'
+$импозантность_совет = '   [ALLURE TIPS]
+  Slaves are more willing to obey alluring trainers, sometimes they do not even need to be forced. An impressive appearance can help in communicating with customers. To maintain style, pay attention to the body, hair and clothes.'
 
-$клеймо_справка = '<center>СТАТУС КЛЕЙМА<br>
+$клеймо_справка = '<center>BRAND STATUS<br>
 <<$brand[0]>>
 <<$brand[1]>>
 <<$brand[2]>>
 <<$brand[3]>>
 <<$brand[4]>>
 <<$brand[5]>></center>'
-$клеймо_совет = '   [СОВЕТЫ ПО РАНГУ КЛЕЙМА]
-  Для члена цеха Тренеров в Гильдии нет ничего важнее, чем престиж клейма. Это ваш бренд, ваша торговая марка. Чем выше качество подготовленных вами рабынь, тем громче гремит ваше имя. Статус повышается, аукционы проходят успешнее, и клиенты становятся более сговорчивыми.'
+$клеймо_совет = '   [BRAND STATUS TIPS]
+  For a member of the Guild of Trainers nothing is more important than the prestige of the training house. It is your brand, your trademark. The quality of the slaves you train will speak for your reputation. With fame, your personal status will rise, auctions become more successful and customers more accommodating.'
 
-! нет <br>, т.к. большое окно, by Lyazar
-$богатство_справка = '<center>УРОВЕНЬ ЖИЗНИ
-<font color="#cd0000">Нищий</font>
-<font color="#C71585">Бедный</font>
-<font color="#4B0082">Малоимущий</font>
-<font color="#0000CD">Обеспеченный</font>
-<font color="#008080">Респектабельный</font>
-<font color="#008000">Патриций</font>
-<font color="#556832">Негоциант</font></center>'
-$богатство_совет = '   [СОВЕТЫ ПО УРОВНЮ ЖИЗНИ]
-  Вы можете иметь сколько угодно искр, но если не тратить их на улучшение своей жизни, вы останетесь для всех нищебродом. Уровень жизни можно выставить в настойках меню "бытовые вопросы". Оптимально иметь уровень жизни чуть выше, чем рейтинг клейма, но помните, что это стоит искр! Поставьте хорошего бухгалтера, чтобы оптимизировать расходы.'
+$богатство_справка = '<center>STANDARD OF LIVING<br>
+<font color="#cd0000">Impoverished</font>
+<font color="#C71585">Poor</font>
+<font color="#4B0082">Basic</font>
+<font color="#0000CD">Comfortableoff</font>
+<font color="#008080">Respectable</font>
+<font color="#008000">Luxurious</font>
+<font color="#008000">Extravagant</font></center>'
+$богатство_совет = "   [STANDARD OF LIVING TIPS]
+  All the wealth in the world will do nothing to improve your standing if you live like a beggar and never improve your lot in life. Set the standard of living in the menu under 'Domestic Issues'. A standard of living a little above your fame is optimal, but beware of the expense. Assigning a good accountant can optimise your costs."
 
-$гигиена_справка = '<center>ГИГИЕНА<br>
-<font color="#cd0000">Покрыт коростой</font>
-<font color="#C71585">Трубочист</font>
-<font color="#4B0082">Грязнуля</font>
-<font color="#0000CD">Пора мыться</font>
-<font color="#008080">Чистый</font>
-<font color="#008000">Чист и свеж</font></center>'
-$гигиена_совет = '   [СОВЕТЫ ПО ГИГИЕНЕ]
-  Живя в трущобах, вам будет трудно поддерживать чистоту тела. Лучше снимите приличное жильё с ванной комнатой. Грязный тренер будет недоволен жизнью и может даже поплатиться своим здоровьем. Если вас моет опытная рабыня, это улучшит настроение.'
+$гигиена_справка = '<center>HYGIENE<br>
+<font color="#cd0000">Disgusting</font>
+<font color="#C71585">Filthy</font>
+<font color="#4B0082">Dirty</font>
+<font color="#0000CD">Unclean</font>
+<font color="#008080">Scruffy</font>
+<font color="#008000">Fresh and clean</font></center>'
+$гигиена_совет = "   [HYGIENE TIPS]
+  It's hard to be hygienic in the slums. Better to rent decent housing with a bathroom. Poor hygiene leads to unhappiness and poor health. On the other hand, being bathed by an experienced slave might improve your mood."
 
-$настроение_справка = '<center>НАСТРОЕНИЕ
-Если настроение обозначено <font color="#cd0000">красным</font> — это значит что вы чувствуете себя несчастным и эффективность всех действий снижается.
-<font color="#008000">Зеленое</font> настроение наоборот повышает работоспособность и способствует успеху.</center>'
-$настроение_совет = '   [СОВЕТЫ ПО НАСТРОЕНИЮ]
-   Поддерживать хорошее настроение тренера довольно важно. Вы всегда можете посмотреть в дневник, чтобы увидеть список вопросов, которые огорчают или радуют вашего тренера. Решайте проблемы, не откладывая их, и ищите в жизни позитива. Настроение зависит практически от всего, что с вами происходит!'
+$настроение_справка = '<center>MOOD
+If mood is indicated with <font color="#cd0000">red</font> — it means that you feel miserable and efficiency of all actions decreases.
+Vice versa, <font color="#008000">green</font> mood improves performance and contributes to the success.</center>'
+$настроение_совет = "     [MOOD TIPS]
+   It's important to always maintain good mood. You can always view your diary to see a list of things that make trainer happy or unhappy. Solve problems without delay and look for the positive in life. Mood depends on virtually all that is happening to you!"
 
-$учитель_справка = '<center>УЧИТЕЛЬ<br>
-<font color="#cd0000">Не учитель</font>
-<font color="#C71585">Плохой учитель</font>
-<font color="#4B0082">Учитель</font>
-<font color="#0000CD">Хороший учитель</font>
-<font color="#008080">Отличный учитель</font>
-<font color="#008000">Мастер обучения</font></center>'
-$учитель_совет = '  Навык учителя для тренера - один из самых ключевых. Он отвечает за эффективность обучения рабыни любым навыкам, кроме сексуальных. Навыки учителя приобретаются автоматически, каждый раз, когда вы учите воспитуемую чему-либо.'
+$учитель_справка = '<center>TEACHING<br>
+<font color="#cd0000">Unskilled teacher</font>
+<font color="#C71585">Poor teacher</font>
+<font color="#4B0082">Average teacher</font>
+<font color="#0000CD">Good teacher</font>
+<font color="#008080">Excellent teacher</font>
+<font color="#008000">Master educator</font></center>'
+$учитель_совет = '  Teaching is one of the key skills of the slaver. It determines the efficiency of training a slave in any non-sexual skill. Teaching skill is gained automatically each time you teach your slave something.'
 
-$дворецкий_справка = '<center>ДВОРЕЦКИЙ<br>
-<font color="#cd0000">Не дворецкий</font>
-<font color="#C71585">Плохой дворецкий</font>
-<font color="#4B0082">Дворецкий</font>
-<font color="#0000CD">Хороший дворецкий</font>
-<font color="#008080">Отличный дворецкий</font>
-<font color="#008000">Мастер-дворецкий</font></center>'
-$дворецкий_совет = '  Навык дворецкого совмещает в себе познания в кулинарии, домашнем хозяйстве и управлении слугами. Хороший дворецкий может сам приготовить обед или убраться в доме, но самое главное — он может обучить этому воспитуемую. Навыки горничной и кухарки не будут расти выше вашего уровня дворецкого при личных уроках. Растет автоматически, при обучении воспитуемых релевантным навыкам.'
+$дворецкий_справка = '<center>STEWARDSHIP<br>
+<font color="#cd0000">Foppish</font>
+<font color="#C71585">Limited housekeeping</font>
+<font color="#4B0082">Basic housekeeping</font>
+<font color="#0000CD">Housekeeper</font>
+<font color="#008080">Steward</font>
+<font color="#008000">Master steward</font></center>'
+$дворецкий_совет = "  Stewardship combines the knowledge of cooking, household and slave management. A good steward can cook dinner himself or clean the house, but more importantly he can pass his skills to his slaves. Maid and cook skills will not rise above the level of your butler skill during personal lessons. Skill is improved automatically each time you teach your slave relevant skills."
 
-$артдиректор_справка = '<center>АРТДИРЕКТОР<br>
-<font color="#cd0000">Не режиссер</font>
-<font color="#C71585">Плохой режиссер</font>
-<font color="#4B0082">Режиссер</font>
-<font color="#0000CD">Хороший режиссер</font>
-<font color="#008080">Отличный режиссер</font>
-<font color="#008000">Мастер режиссуры</font></center>'
-$артдиректор_совет = '  Умение красиво поставить сцену и срежиссировать выступление — пригодится при обучении пению, танцам, музыке и некоторым сексуальным практикам, типа стриптиза и соблазнения. Растет автоматически, при обучении воспитуемых релевантным навыкам.'
+$артдиректор_справка = '<center>ARTISTRY<br>
+<font color="#cd0000">Vulgar</font>
+<font color="#C71585">Tasteless</font>
+<font color="#4B0082">Uncultured</font>
+<font color="#0000CD">Cultured</font>
+<font color="#008080">Artist</font>
+<font color="#008000">Master artist</font></center>'
+$артдиректор_совет = '  Artistry comes in many forms. Painting, singing, dancing, music, public speaking, even some more esoteric skills such as stripping and seduction. Your skill as an artist improves automatically as you teach your slaves.'
 
-$медик_справка = '<center>МЕДИК<br>
-<font color="#cd0000">Не врач</font>
-<font color="#C71585">Плохой врач</font>
-<font color="#4B0082">Врач</font>
-<font color="#0000CD">Хороший врач</font>
-<font color="#008080">Отличный врач</font>
-<font color="#008000">Мастер медицины</font></center>'
-$медик_совет = '  Грамотный медик может обучать медсестёр и умеет быстрее ставить на ноги больных и раненых рабынь. Уровень ваших медсестёр при личном обучении не поднимется выше вашего уровня медика. Растет автоматически, при обучении медсестёр.'
+$медик_справка = '<center>MEDIC<br>
+<font color="#cd0000">Homeopath</font>
+<font color="#C71585">Vaccine denier</font>
+<font color="#4B0082">Hospitaler</font>
+<font color="#0000CD">Doctor</font>
+<font color="#008080">Physician</font>
+<font color="#008000">Surgeon</font></center>'
+$медик_совет = '  A competent medic can train nurses and can quickly cure sick and injured slaves. The level of your nurses cannot exceed the level of your phycisian skill during personal lessons. Increases automatically when training nurses.'
 
-$боец_справка = '<center>БОЕЦ<br>
-<font color="#cd0000">Не боец</font>
-<font color="#C71585">Слабый боец</font>
-<font color="#4B0082">Боец</font>
-<font color="#0000CD">Сильный боец</font>
-<font color="#008080">Отличный боец</font>
-<font color="#008000">Мастер меча</font></center>'
-$боец_совет = '   Этот навык пригодится тренеру гладиаторов. Но ещё важнее он будет, если вы столкнётесь с реальным врагом. От боевых навыков зависит количество суперударов, которым вас может научить Брина в колизее, и то, насколько долго будут действовать эффекты ваших ударов. Растет автоматически, при обучении гладиаторш, а также при победах в схватках.'
+$боец_справка = '<center>FIGHTER<br>
+<font color="#cd0000">Non-combatant</font>
+<font color="#C71585">Weak fighter</font>
+<font color="#4B0082">Fighter</font>
+<font color="#0000CD">Soldier</font>
+<font color="#008080">Warrior</font>
+<font color="#008000">Master swordsman</font></center>'
+$боец_совет = "   Martial skill is useful both to train a gladiatrix and in real combat. Your capacity to learn special techniques from the Colosseum trainer and the duration of your strike's effects are both dependant upon your combat skill. These skills increase automatically when training a slave and with victory in battle."
 
-$маг_справка = '<center>МАГ<br>
-<font color="#cd0000">Не маг</font>
-<font color="#C71585">Слабый маг</font>
-<font color="#4B0082">Маг-ученик</font>
-<font color="#0000CD">Сильный маг</font>
-<font color="#008080">Могучий волшебник</font>
-<font color="#008000">Архимаг</font></center>'
-$маг_совет = '<div style="font-size: 95%;">   Этот навык отвечает за вашу способность к заклинаниям, использующим искры напрямую, и влияет на эффективность этих заклинаний. Навык чародеек при личном обучении не превысит вашего ранга навыка в магии. Обученные чародейки смогут варить для вас полезные зелья в лаборатории, но вам потребуются реагенты, которые можно найти в магазине "Редкости Мистры". Растет автоматически, при обучении чародеек и применении магии самого высокого из доступных уровней.</div>'
+$маг_справка = '<center>MAGIC<br>
+<font color="#cd0000">Mundane</font>
+<font color="#C71585">Apprentice</font>
+<font color="#4B0082">Journeyman</font>
+<font color="#0000CD">Mage</font>
+<font color="#008080">Magister</font>
+<font color="#008000">Archmage</font></center>'
+$маг_совет = "<div style='font-size: 95%;'>   This skill is responsible for your ability to cast spells using sparks and directly affects the effectiveness of these spells.  The skill of enchantresses you personally train cannot exceed your skill rank in magic. Trained enchantresses can brew useful potions for you in the lab, but you will need reagents that can be found at the 'Rarities of Mystra' in the Outcasts' Quarter. Increases automatically when training enchantresses and applying magic of the highest levels available.</div>"
 
-$доминирование_справка = '<center>ДОМИНИРОВАНИЕ<br>
-<font color="#cd0000">Не хозяин</font>
-<font color="#C71585">Мягкий хозяин</font>
-<font color="#4B0082">Хозяин</font>
-<font color="#0000CD">Господин</font>
-<font color="#008080">Повелитель</font>
-<font color="#008000">Властелин</font></center>'
-$доминирование_совет = '  Умение доминировать и подчинять — не менее важно для тренера рабынь, чем умение обучать. От уровня вашего доминирования сильно зависит подчиняемость рабыни и эффективность некоторых наказаний, особенно словесных. Также пригодится при обучении некоторым сексуальным навыкам. Растёт автоматически при применении.'
+$доминирование_справка = '<center>DOMINANCE<br>
+<font color="#cd0000">Passive</font>
+<font color="#C71585">Submissive</font>
+<font color="#4B0082">Dominant</font>
+<font color="#0000CD">Unbending</font>
+<font color="#008080">Unyielding</font>
+<font color="#008000">Indomitable</font></center>'
+$доминирование_совет = "  Ability to dominate and subdue is just as important for a slave trainer as ability to teach. Your level of dominance has strong influence on your slave's obedience and the effectiveness of some punishments, especially verbal ones. Dominance is also is useful when teaching some sexual skills. Increases automatically when applied."
 
-$флагеляция_справка = '<center>ПОРКА<br>
-<font color="#cd0000">Не умеет пороть</font>
-<font color="#C71585">Азы порки</font>
-<font color="#4B0082">Умеет пороть</font>
-<font color="#0000CD">Больно порет</font>
-<font color="#008080">Знаток порки</font>
-<font color="#008000">Мастер кнута</font></center>'
-$флагеляция_совет = '  Грамотное владение ремнем, плетью и кнутом не только повышает эффективность наказаний, но и снижает риск оставить на рабыне ненужные шрамы. Навык растёт автоматически при применении.'
+$флагеляция_справка = '<center>FLAGELLATION<br>
+<font color="#cd0000">Cannot whip</font>
+<font color="#C71585">Basic whip skill</font>
+<font color="#4B0082">Average whip skill</font>
+<font color="#0000CD">Good whip skills</font>
+<font color="#008080">Whip expert</font>
+<font color="#008000">Master of the whip</font></center>'
+$флагеляция_совет = '  Proper use of belt, whip and knout whip not only improves the efficiency of punishment but also reduces the risk to leave unwanted scars on a slave. Increases automatically when applied.'
 
-$палач_справка = '<center>ПЫТКИ<br>
-<font color="#cd0000">Не палач</font>
-<font color="#C71585">Плохой палач</font>
-<font color="#4B0082">Палач</font>
-<font color="#0000CD">Умелый палач</font>
-<font color="#008080">Страшный палач</font>
-<font color="#008000">Мастер пыток</font></center>'
-$палач_совет = '  Если вы используете громоздкий пыточный агрегат, то он всё делает за вас. Но мастер пыток может добиться не меньшего эффекта, используя скромные подручные материалы. А главное не испортит внешность и здоровье рабыни. Требуется темница. Навык растёт автоматически при применении.'
+$палач_справка = '<center>TORTURE<br>
+<font color="#cd0000">Not a torturer</font>
+<font color="#C71585">Basic torture</font>
+<font color="#4B0082">Torturer</font>
+<font color="#0000CD">Skilled torturer</font>
+<font color="#008080">Inquisitor</font>
+<font color="#008000">Master inquisitor</font></center>'
+$палач_совет = '  If you are using a bulky torture unit, it does everything for you. But the master of torture can achieve no less using modest materials at hand. More importantly skill in this area prevents spoiling the appearance and health of slaves. Requires dungeon. Increases automatically when applied.'
 
-$бондаж_справка = '<center>СВЯЗЫВАНИЕ<br>
-<font color="#cd0000">Не умеет вязать</font>
-<font color="#C71585">Новичок связывания</font>
-<font color="#4B0082">Грамотно связывает</font>
-<font color="#0000CD">Умело связывает</font>
-<font color="#008080">Отлично связывает</font>
-<font color="#008000">Мастер веревки</font></center>'
-$бондаж_совет = '  Выгода связывания заключается в том, что вы можете оставить рабыню без присмотра, и она будет получать наказание, пока вы занимаетесь другими делами. Грамотный болевой или эротический бондаж может быть весьма эффективен в качестве воспитательной и возбуждающей меры. Навык развивается автоматически при применении.'
+$бондаж_справка = '<center>BINDING<br>
+<font color="#cd0000">Unskilled with rope</font>
+<font color="#C71585">Novice rope binding</font>
+<font color="#4B0082">Binds correctly</font>
+<font color="#0000CD">Binds skillfully</font>
+<font color="#008080">Binds effectively</font>
+<font color="#008000">Master of rope</font></center>'
+$бондаж_совет = '  Binding allows you to leave a slave unattended to receive punishment from the rope. Proper painful or erotic bondage can be very effective as an educational or exciting action. Skill develops automatically when applied.'
 
-$атрибуты_справка = '  Имеется в виду суммарное качество следующих атрибутов: здоровье, чувствительность, темперамент, интеллект, характер и гордыня. Гордыня влияет отрицательно.'
+$атрибуты_справка = 'Basic attribute reflects the total of: Endurance, Empathy, Temperament, Intellect, Nature and Pride (lower pride is more desirable).'
 
-$no_money_school = '  У меня слишком мало денег, чтобы тратить их на учебу в школе.'
+$no_money_school = '  I do not have enough money to send my slave to school.'
 
-$no_money_coach= '  У меня слишком мало денег, чтобы тратить их на тренировку у репетитора.'
+$no_money_coach= '  I do not have enough money to hire a tutor for my slave.'
 
 !Подсказки для экрана создания мастера
-$сила_с_справка = '   Для тренера очень важно поддерживать хорошую физическую форму. Это влияет и на силу ударов в бою и на количество ежедневно выполняемых задач и на покорность рабыни. Атлетичный мужчина внушает уважение.'
+$сила_с_справка = '   Strength commands respect. It is very important for a trainer to be strong. Strength affects the force of your blows in combat, your endurance in daily tasks and the submissiveness of your slaves.'
 
-$харизма_с_справка = '   Харизма, целеустремленность и воля играют важнейшую роль для тренера рабов, так как они значительно облегчают задачу управления другими людьми.'
+$харизма_с_справка = '   Charisma, determination and will play a crucial role for a trainer of slaves, as they make it much easier to control other people.'
 
-$возбуждение_с_справка = '   Сексуальное влечение и либидо определяет насколько сильно будет повышаться возбуждение с каждым днем.'
+$возбуждение_с_справка = '   Sexual desire and libido determines how much excitement will increase each day.'
 
-$учитель_с_справка = '  Навык учителя для тренера - один из самых ключевых. Он отвечает за эффективность обучения рабыни любым навыкам, кроме сексуальных.'
+$учитель_с_справка = '  Teaching is one of the key skills of the slaver. It determines the efficiency of training a slave in any non-sexual skill.'
 
-$дворецкий_с_справка = '  Навык дворецкого совмещает в себе познания в кулинарии, домашнем хозяйстве и управлении слугами. Хороший дворецкий может сам приготовить обед или убраться в доме, но самое главное — он может обучить этому воспитуемую.'
+$дворецкий_с_справка = "  Stewardship combines the knowledge of cooking, household and slave management. A good steward can cook dinner himself or clean the house, but more importantly he can pass his skills to his slaves."
 
-$артдиректор_с_справка = '  Умение красиво поставить сцену и срежиссировать выступление — пригодится при обучении пению, танцам, музыке и некоторым сексуальным практикам, типа стриптиза и соблазнения.'
+$артдиректор_с_справка = '  Artistry comes in many forms. Painting, singing, dancing, music, public speaking, even some more esoteric skills such as stripping and seduction.'
 
-$медик_с_справка = '  Грамотный медик может обучать медсестёр и умеет быстрее ставить на ноги больных и раненых рабынь.'
+$медик_с_справка = '  A competent medic can train nurses and can quickly cure sick and injured slaves.'
 
-$боец_с_справка = '   Этот навык пригодится тренеру гладиаторов. Но ещё важнее он будет, если вы столкнётесь с реальным врагом. От боевых навыков зависит количество суперударов, которым вас может научить Брина в колизее, и то, насколько долго будут действовать эффекты ваших ударов.'
+$боец_с_справка = "   Martial skill is useful both to train a gladiatrix and in real combat. Your capacity to learn special techniques from the Colosseum trainer and the duration of your strike's effects are both dependant upon your combat skill."
 
-$маг_с_справка = '<div style="font-size: 95%;">   Этот навык отвечает за вашу способность к заклинаниям, использующим искры напрямую, и влияет на эффективность этих заклинаний. Обученные чародейки смогут варить для вас полезные зелья в лаборатории, но вам потребуются реагенты, которые можно найти в магазине "Редкости Мистры".</div>'
+$маг_с_справка = "<div style='font-size: 92%;'>   This skill is responsible for your ability to cast spells using sparks and directly affects the effectiveness of these spells.  The skill of enchantresses you personally train cannot exceed your skill rank in magic. Trained enchantresses can brew useful potions for you in the lab, but you will need reagents that can be found at the 'Rarities of Mystra' in the Outcasts' Quarter.</div>"
 
-$доминирование_с_справка = '  Умение доминировать и подчинять — не менее важно для тренера рабынь, чем умение обучать. От уровня вашего доминирования сильно зависит подчиняемость рабыни и эффективность некоторых наказаний, особенно словесных.'
+$доминирование_с_справка = "  Ability to dominate and subdue is just as important for a slave trainer as ability to teach. Your level of dominance has strong influence on your slave's obedience and the effectiveness of some punishments, especially verbal ones. Dominance is also is useful when teaching some sexual skills."
 
-$флагеляция_с_справка = '  Грамотное владение ремнем, плетью и кнутом не только повышает эффективность наказаний, но и снижает риск оставить на рабыне ненужные шрамы.'
+$флагеляция_с_справка = '  Proper use of belt, whip and knout whip not only improves the efficiency of punishment but also reduces the risk to leave unwanted scars on a slave.'
 
-$палач_с_справка = '  Если вы используете громоздкий пыточный агрегат, то он всё делает за вас. Но мастер пыток может добиться не меньшего эффекта, используя скромные подручные материалы. А главное не испортит внешность и здоровье рабыни.'
+$палач_с_справка = '  If you are using a bulky torture unit, it does everything for you. But the master of torture can achieve no less using modest materials at hand. More importantly skill in this area prevents spoiling the appearance and health of slaves.'
 
-$бондаж_с_справка = '<div style="font-size: 95%;">  Выгода связывания заключается в том, что вы можете оставить рабыню без присмотра, и она будет получать наказание, пока вы занимаетесь другими делами. Грамотный болевой или эротический бондаж может быть весьма эффективен в качестве воспитательной и возбуждающей меры.</div>'
+$бондаж_с_справка = '<div style="font-size: 95%;">  Binding allows you to leave a slave unattended to receive punishment from the rope. Proper painful or erotic bondage can be very effective as an educational or exciting action.</div>'
 
-$секс_техники_с_справка = '  Различные секс-техники увеличивают эффективность тренировки релеватных навыков и при должном умении будут доставлять партнеру больше удовольствия.'
+$секс_техники_с_справка = '  Different sex techniques will increase the effectiveness of training relevant skills and with due skill sexual partner will have more excitement.'
 
 !"
 $ = '<center>КРАСОТА<br>

@@ -1,5 +1,5 @@
 # $counter
-!Локация-счетчик, обрабатывает музыкальный плейлист
+!Location counter, handles music playlist
 IF $music_theme ! $music_theme_prev:
  CLOSE ALL
  $music_theme_prev = $music_theme

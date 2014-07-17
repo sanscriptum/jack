@@ -1,5 +1,5 @@
 # #place_base
-!МЕСТА
+!places
 $bg['dungeon'] = 'dungeon'
 $bg['study'] = 'study'
 $bg['bathroom'] = 'bathroom'

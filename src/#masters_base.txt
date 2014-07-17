@@ -1,14 +1,14 @@
 # #masters_base
-!База данных по прегенерированным тренерам
+!master base
 
 
 $sepia_ava_path[1] = 'content\pic\master\master_noble_sepia.jpg'
 $clear_ava_path[1] = 'content\pic\master\master_noble.jpg'
-$master_base_name[1] = 'Милорд'
-$hero_difficulty[1] = '<font color="#008080">несложная игра</font>'
-$hero_description[1] = '   Аристократ с блестящим воспитанием, имеющий опыт придворной и военной службы. Обладая всеми основными навыками необходимыми тренеру, он с лёгкостью влился в ряды работорговцев и все согласны с тем, что впереди его ждёт замечательная карьера...
+$master_base_name[1] = 'Milord'
+$hero_difficulty[1] = '<font color="#008080">simple difficulty</font>'
+$hero_description[1] = '   Aristocrat with a great education, with experience in court and military service. Having all the basic skills necessary to coach, he easily joined the ranks of the slavers and all agree that it is waiting in front of a wonderful career...
 
-Фракция: Великий Дом Таурус'
+Faction: Taurus Great House'
 $master_version_stats[1] = {
 master_str = 4
 master_cha = 4
@@ -43,11 +43,11 @@ faction_fame['serpis'] = 0
 
 $sepia_ava_path[2] = 'content\pic\master\master_torturer_sepia.jpg'
 $clear_ava_path[2] = 'content\pic\master\master_torturer.jpg'
-$master_base_name[2] = 'Робеспьер'
-$hero_description[2] = '   Когда-то он был солдатом и воевал за короля в его колониальных войнах. Затем короля свергли и революции понадобились палачи. Больше всего на свете он гордится тем, что собственноручно обезглавил красивую, но надменную королеву. В Вечном Риме навыки палача тоже пригодятся.
+$master_base_name[2] = 'Robespierre'
+$hero_description[2] = '   Once upon a time he was a soldier and fought for the king in his colonial wars. Then the king was overthrown and the revolution needed executioners. More than anything, he is proud that his own decapitated beautiful but haughty queen. In Rome, the Eternal hangman skills also come in handy.
 
-Фракция: Великий Дом Таурус'
-$hero_difficulty[2] = '<font color="#0000CD">нормальная сложность</font>'
+Faction: Taurus Great House'
+$hero_difficulty[2] = '<font color="#0000CD">normal difficulty</font>'
 $master_version_stats[2] = {
 master_str = 5
 master_cha = 1
@@ -81,11 +81,11 @@ faction_fame['serpis'] = 0
 
 $sepia_ava_path[3] = 'content\pic\master\master_fighter_sepia.jpg'
 $clear_ava_path[3] = 'content\pic\master\master_fighter.jpg'
-$master_base_name[3] = 'Блейд'
-$hero_description[3] = '   В суровом мире, где он родился — врожденная физическая сила ценилась очень дорого. Блейд стал одним из лучших воинов и уверенно шел к успеху, но попал почему-то в Туман. Хотя хороший боец не пропадёт в Вечном Риме, всем нам иногда хочется изменить свою жизнь и добиться чего-то большего, чем рядовая служба сильным мира сего.
+$master_base_name[3] = 'Blade'
+$hero_description[3] = '   In the harsh world where he was born, innate physical strength was appreciated very much. Blade was one of the best warriors and confidently walked to success, but somehow got in Fog. Although a good fighter will not get lost in the Eternal Rome, we all sometimes want to change your life and achieve something more than an ordinary office of the powers that be.
 
-Фракция: Великий Дом Таурус'
-$hero_difficulty[3] = '<font color="#0000CD">нормальная сложность</font>'
+Faction: Taurus Great House'
+$hero_difficulty[3] = '<font color="#0000CD">normal difficulty</font>'
 $master_version_stats[3] = {
 master_str = 5
 master_cha = 2
@@ -119,11 +119,11 @@ faction_fame['serpis'] = 0
 
 $sepia_ava_path[4] = 'content\pic\master\master_pimp_sepia.jpg'
 $clear_ava_path[4] = 'content\pic\master\master_pimp.jpg'
-$master_base_name[4] = 'Шёлковый Папочка'
-$hero_description[4] = '   У всех свои представления об успехе. Для ребят типа Шёлкового Папочки, быть состоявшимся сутенёром — это мечта. Мечта, воплотившаяся в жизнь. Теперь он в новом мире, но работа-то похожая. Чёрные, белые, желтые, хвостатые или ушастые — сучки всегда останутся сучками. И им нужен большой чёрный папочка. А папочке нужны большие деньги.
+$master_base_name[4] = 'Silk Daddy'
+$hero_description[4] = '   Everyone has his own idea of ​​success. For the guys type Silk Daddy, be held pimps dream. A dream come true. Now hes in a new world, but something similar work. Black, white, yellow, or tailed eared - bitches will always be bitches. And they need a big black daddy. And daddy needs big money.
 
-Фракция: Великий Дом Серпис'
-$hero_difficulty[4] = '<font color="#0000CD">нормальная сложность</font>'
+Faction: Great House Serpis'
+$hero_difficulty[4] = '<font color="#0000CD">normal difficulty</font>'
 $master_version_stats[4] = {
 master_str = 3
 master_cha = 4
@@ -157,11 +157,11 @@ faction_fame['taurus'] = 0
 
 $sepia_ava_path[5] = 'content\pic\master\master_butler_sepia.jpg'
 $clear_ava_path[5] = 'content\pic\master\master_butler.jpg'
-$master_base_name[5] = 'Батлер'
-$hero_description[5] = '   Попав в Вечный Рим, он обнаружил себя в щекотливом положении. Конечно, опытный слуга пригодится везде, но быть рабом как то не хочется. Батлер приложил много усилий, чтобы получить статус работорговца. В конце концов, уж что-что, а тренировать горничных — это работа, с которой лучше дворецкого никому не справиться.
+$master_base_name[5] = 'Butler'
+$hero_description[5] = '   Once in the Eternal Rome, he found himself in a delicate situation. Certainly experienced servant useful everywhere, but to be a slave as you do not want. Butler put a lot of effort to get the status of a slaver. After all that-and that is to train maids work which nobody better butler handle.
 
-Фракция: Великий Дом Таурус'
-$hero_difficulty[5] = '<font color="#4B0082">высокая сложность</font>'
+Faction: Taurus Great House'
+$hero_difficulty[5] = '<font color="#4B0082">high difficulty</font>'
 $master_version_stats[5] = {
 master_str = 3
 master_cha = 3
@@ -195,11 +195,11 @@ faction_fame['serpis'] = 0
 
 $sepia_ava_path[6] = 'content\pic\master\master_teacher_sepia.jpg'
 $clear_ava_path[6] = 'content\pic\master\master_teacher.jpg'
-$master_base_name[6] = 'Сэнсей'
-$hero_description[6] = '   Он был самым обычным учителем в школе, ничего особенного. Такому человеку сложно адаптироваться в Вечном Риме, но если сложить волю с толикой удачи - то пробиться можно везде. Обучение рабынь имеет большую выгоду по сравнению с обучением школьниц: вместо двойки нерадивую ученицу будет ждать примерная порка!
+$master_base_name[6] = 'Sensei'
+$hero_description[6] = '   He was a very ordinary school teacher, nothing special. Such a person is difficult to adapt to the Eternal Rome, but if you add a little bit of luck will break it is possible everywhere. Education slaves is of great benefit in comparison with the schoolgirls learning instead of two careless student will wait exemplary spanking!
 
-Фракция: Великий Дом Серпис'
-$hero_difficulty[6] = '<font color="#4B0082">высокая сложность</font>'
+Faction: Great House Serpis'
+$hero_difficulty[6] = '<font color="#4B0082">high difficulty</font>'
 $master_version_stats[6] = {
 master_str = 3
 master_cha = 3
@@ -234,11 +234,11 @@ faction_fame['taurus'] = 0
 
 $sepia_ava_path[7] = 'content\pic\master\master_doctor_sepia.jpg'
 $clear_ava_path[7] = 'content\pic\master\master_doctor.jpg'
-$master_base_name[7] = 'Док'
-$hero_description[7] = '   Он всегда был очень хорошим врачом, и карьера шла в гору, но... Туманы многим спутали карты. Оказалось, что для Медцентра Техносферы даже знания Дока недостаточны, но это же не повод отчаиваться, верно? Ему всегда хотелось попробовать обучать медсестёр в более раскрепощённой манере. Может быть, это призвание?
+$master_base_name[7] = 'Doc'
+$hero_description[7] = '   He was always very good doctor, and career went uphill, but... Mists many confused card. It turned out that even the Technosphere Medical center Doc insufficient knowledge, but its no reason to despair right? He always wanted to try to educate nurses in a relaxed manner. Maybe its calling?
 
-Фракция: Великий Дом Серпис'
-$hero_difficulty[7] = '<font color="#4B0082">высокая сложность</font>'
+Faction: Great House Serpis'
+$hero_difficulty[7] = '<font color="#4B0082">high difficulty</font>'
 $master_version_stats[7] = {
 master_str = 3
 master_cha = 3
@@ -272,11 +272,11 @@ faction_fame['taurus'] = 0
 
 $sepia_ava_path[8] = 'content\pic\master\master_impressario_sepia.jpg'
 $clear_ava_path[8] = 'content\pic\master\master_impressario.jpg'
-$master_base_name[8] = 'Мистер Джестико'
-$hero_description[8] = '   Если бы он был помоложе, то имел бы в гильдии работорговцев просто блестящие перспективы. В конце концов, для опытного импрессарио, найти и раскрутить новый талант — это прямая обязанность. А с рабыней работать проще, чем с избалованной старлеткой. К сожалению, Мистер Джестико уже староват, и учиться новым фокусам будет тяжело. Но он полон решимости!
+$master_base_name[8] = 'Mr. Jestiko'
+$hero_description[8] = '   If he was younger, it would have to Slavers Guild just brilliant prospects. In the end, for an experienced impresario, to find and promote new talent is the direct responsibility. A slave is easier to work with than a spoiled starlet. Unfortunately Mr. Dzhestiko too old to learn new tricks and will be hard. But he is determined!
 
-Фракция: Великий Дом Таурус'
-$hero_difficulty[8] = '<font color="#4B0082">высокая сложность</font>'
+Faction: Taurus Great House'
+$hero_difficulty[8] = '<font color="#4B0082">high difficulty</font>'
 $master_version_stats[8] = {
 master_str = 2
 master_cha = 4
@@ -310,11 +310,11 @@ faction_fame['serpis'] = 0
 
 $sepia_ava_path[9] = 'content\pic\master\master_granpa_sepia.jpg'
 $clear_ava_path[9] = 'content\pic\master\master_granpa.jpg'
-$master_base_name[9] = 'Валентин Макарыч'
-$hero_description[9] = '   Рядовому пенсионеру, всю жизнь отпахавшему на заводе и надеющемуся прожить спокойную жизнь меньше всего хочется ухнуть в Туманы. Но Вечный Рим сам выбирает себе гостей. По удивительному стечению обстоятельств, единственной надеждой на достойную жизнь для дедули стала работа в гильдии работорговцев. Это будет непросто, но надо стараться — про пенсии в Вечном Риме никто не слыхал!
+$master_base_name[9] = 'Uncle Tom'
+$hero_description[9] = '   Ordinary pensioner life otpahat factory and looking to live a peaceful life is a long-uhnut in Mists. But Eternal Rome chooses a guest. By an amazing coincidence, the only hope for a decent life for Granddaddy was the work of a Slavers Guild. It will not be easy, but we must try - about the pensions in the Eternal Rome is unheard of!
 
-Фракция: Великий Дом Серпис'
-$hero_difficulty[9] = '<font color="#C71585">очень высокая сложность</font>'
+Faction: Great House Serpis'
+$hero_difficulty[9] = '<font color="#C71585">very high difficulty</font>'
 $master_version_stats[9] = {
 master_str = 2
 master_cha = 3
@@ -348,10 +348,11 @@ faction_fame['taurus'] = 0
 
 $sepia_ava_path[10] = 'content\pic\master\master_nerd_sepia.jpg'
 $clear_ava_path[10] = 'content\pic\master\master_nerd.jpg'
-$hero_description[10] = '   Этот прыщавый ботан и маменькин сынок, да как он вообще попал в Гильдию? Говорят, что Госпожа Ангелика сжалилась, когда он стоял на рыночной площади с воткнутым в задницу флажком с загадочной надписью «sup /b». Но кто поверит в милосердие Ангелики? Так или иначе, возможность воспитывать сексуальных рабынь для озабоченного школьника-девственника — это просто Клондайк. Только из всех навыков у него для этого есть лишь бездонная пропасть извращённых фантазий и подогреваемая гормонами гиперсексуальность.
-Фракция: Великий Дом Серпис'
-$hero_difficulty[10] = '<font color="#cd0000">максимальная сложность</font>'
-$master_base_name[10] = 'Алёшка'
+$hero_description[10] = '   This pimply nerd and a sissy, but he got all the Guild? It is said that Mrs. Angelika pity when he stood in the market square with a flag stuck into the ass with a mysterious inscription. But who would believe in the mercy of Angelica? Anyway, the opportunity to educate sex slaves for horny virgin schoolboy is just Klondike. Only from all his skills for this is only a bottomless pit of perverse fantasies fueled by hormones and hypersexuality.
+
+Faction: Great House Serpis'
+$hero_difficulty[10] = '<font color="#cd0000">maximal difficulty</font>'
+$master_base_name[10] = 'Johny'
 $master_version_stats[10] = {
 master_str = 1
 master_cha = 1

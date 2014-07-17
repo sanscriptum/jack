@@ -1,5 +1,5 @@
 # _layout
-!Разметка основного игрового экрана
+!layout of a main game screen
 INTEGRATED_ACTIONS = 0
 if ui_style = 1:$backimage = 'content/pic/ui/old/bg_old.jpg'
 if ui_style = 2:$backimage = 'content/pic/ui/grimdark/bg.jpg'

@@ -1,7 +1,7 @@
 # hero_customization
 get_initial_slave = 1
 *p '<div id = "title_scroll"><img src = "content\pic\bg\scroll_large.gif"></div>'
-*p '<div id = "center_text_column_4"> <center><b>ВЫБЕРИТЕ ВАШЕГО ГЕРОЯ</center></b></div>'
+*p '<div id = "center_text_column_4"> <center><b>SELECT YOUR CHARACTER</center></b></div>'
 
 *p {<div id = "ava_choice_1_1"><a href = 'EXEC: hero_choice = 1 & gt "hero_description"'><img src = "content\pic\master\master_noble_sepia.jpg"></a></div>}
 *p {<div id = "ava_choice_1_2"><a href = 'EXEC: hero_choice = 5 & gt "hero_description"'><img src = "content\pic\master\master_butler_sepia.jpg"></a></div>}

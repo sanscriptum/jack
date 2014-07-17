@@ -42,12 +42,12 @@ gs '#charriots_base'
 gs '#masters_base'
 gs '#quest_base'
 gs '#help_msg'
-!тринити
+!fight engine
 gs '#тексты_движка'
 gs '#противники'
 gs '#суперудары'
 gs '#боевые_предметы'
-!секси-тайм
+!sex engine
 gs '#sex_texts'
 gs '#sex_options'
 

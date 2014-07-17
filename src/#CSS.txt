@@ -134,7 +134,7 @@ text-align:center;
 #hero_diff {
 position:absolute;
 left:475px;
-top:180px;
+top:190px;
 width:500px;
 height:50px;
 font-size:50px;
@@ -202,15 +202,8 @@ text-align:center;
 }
 
 #title_small {
-color:#FFD700;
-font-size:40px;
-font-family:Victoriana;
-text-align:center;
-}
-
-#title_fix {
 color:#ff5700;
-font-size:30px;
+font-size:40px;
 font-family:Victoriana;
 text-align:center;
 }
@@ -219,7 +212,7 @@ text-align:center;
 position:absolute;
 left:40px;
 top:20px;
-width:450px;
+width:490px;
 height:300px;
 }
 
@@ -314,7 +307,7 @@ height:25px;
 
 #title_scroll_text_rightlow {
 position:absolute;
-left:680px;
+left:710px;
 top:440px;
 width:300px;
 height:280px;

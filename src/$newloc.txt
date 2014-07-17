@@ -1,5 +1,5 @@
 # $newloc
-!Локация-обработчик переходов.
+!Location handler transitions.
 if $rating[0] = '': gs '#var_base'
 IF $master_name ! 'Старый Охотник': wizard_mode = 0
 

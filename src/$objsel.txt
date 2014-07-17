@@ -1,5 +1,5 @@
 # $objsel
-!Локация обработчик-объектов
+!Location handler objects
 
 IF selobj = '@':
  !'

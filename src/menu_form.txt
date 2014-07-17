@@ -223,7 +223,7 @@ END
 !Главное меню - Сотворить заклинание
 IF menu_form = 6:
   $text_display += {<br><div id="under">Книга заклинаний<br><div id = "clear"><a href = 'EXEC: interaction = 70 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
- IF already_done_today[61] = 0:
+ IF auspex = 0:
   $text_display += {<br><div id="under">Auspex (2 искры)<br><div id = "clear"><a href = 'EXEC: interaction = 61 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Auspex<br></div>}

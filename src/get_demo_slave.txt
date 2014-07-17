@@ -28,6 +28,7 @@ slave["ego"] = seed_ego[slave_type]
 slave["pride"] = seed_pride[slave_type]
 slave["intellect"] = seed_intellect[slave_type]
 slave["exotic"] = seed_exotic[slave_type]
+slave["base_exotic"] = seed_exotic[slave_type]
 
 slave["custom"] = seed_custom[slave_type]
 slave["moral"] = seed_moral[slave_type]

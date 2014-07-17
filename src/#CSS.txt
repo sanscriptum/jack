@@ -566,6 +566,16 @@ height:150px;
 text-align:center;
 }
 
+#active_spell {
+position:absolute;
+left:1018px;
+top:35px;
+font-size:28px;
+font-family:Victoriana;
+font-weight:bold;
+color:#191970;
+}
+
 #master_short_stat {
 position:absolute;
 left:1030px;

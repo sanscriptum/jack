@@ -161,14 +161,37 @@ IF menu_form = 5:
 END
 
 IF menu_form = 6:
- $text_display += {<br><div id="under">Auspex (2 искры)<br><div id = "clear"><a href = 'EXEC: interaction = 61 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Книга заклинаний<br><div id = "clear"><a href = 'EXEC: interaction = 70 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+ IF already_done_today[61] = 0:
+  $text_display += {<br><div id="under">Auspex (2 искры)<br><div id = "clear"><a href = 'EXEC: interaction = 61 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+  else
+  $text_display += {<br><div id="under_gray">Auspex<br></div>}
+ END 
  IF slave_state = CONST_INT['slave_exist'] and sparks > 5 and master_mage > 0:
   IF slave["sin"] > 0: $text_display += {<br><div id="under">Cruciato (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction = 62 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
   IF slave["virtue"] > 0: $text_display += {<br><div id="under">Delikacia (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction = 63 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
-  IF slave["virtue"] = 0 and slave["sin"] = 0: $text_display += {<br><div id="under">Sententia veritas (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction = 64 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
-  $text_display += {<br><div id="under">Magna Magnifika (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction = 65 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
-  $text_display += {<br><div id="under">Tremendio (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction = 66 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
-  $text_display += {<br><div id="under">Domini Dictum (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction = 67 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+  IF slave["virtue"] = 0 and slave["sin"] = 0: 
+   if already_done_today[64] = 0: 
+    $text_display += {<br><div id="under">Sententia veritas (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction = 64 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+    else
+    $text_display += {<br><div id="under_gray">Sententia veritas<br></div>}
+   END 
+  END
+  IF already_done_today[65] = 0: 
+   $text_display += {<br><div id="under">Magna Magnifika (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction = 65 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+   else
+   $text_display += {<br><div id="under_gray">Magna Magnifika<br></div>}
+  END 
+  IF already_done_today[66] = 0: 
+   $text_display += {<br><div id="under">Tremendio (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction = 66 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+   else
+   $text_display += {<br><div id="under_gray">Tremendio<br></div>}
+  END
+  IF already_done_today[67] = 0: 
+   $text_display += {<br><div id="under">Domini Dictum (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction = 67 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>}
+   else
+   $text_display += {<br><div id="under_gray">Domini Dictum<br></div>}
+  END
   else 
   $text_display += {<br><div id="under_gray">Sententia veritas (5 искр)<br></div>}      
   $text_display += {<br><div id="under_gray">Magna Magnifika (5 искр)<br></div>}

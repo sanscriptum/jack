@@ -216,6 +216,15 @@ IF master_excitement > 0:
  END
 END
 
+!показ состояния заклинаний
+$active_spell = ''
+if auspex = 1: $active_spell += 'AUS<br>'
+if sententia_veritas = 1: $active_spell += 'SENT<br>'
+if magna_magnifika > 0: $active_spell += 'MAGN<br>'
+if slave['domini_dictum'] = 1: $active_spell += 'DOMI<br>'
+
+*p '<div id = "active_spell"><<$active_spell>></div>'
+
 *p '<div id = "main_screen"><<$text_display>></div>'
 !для настроек
 *p '<div id = "settings"><<$setting_display>></div>'

@@ -1326,6 +1326,26 @@ $text_display += {<div id="under">Приворотное зелье<div id = "cl
 $text_display += {<br><div id="under">Закончить разговор<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
 }
 
+!помощь по заклинаниям
+$spell_book[0] = {
+$sp_text[0] = '   Вы открываете старую потрепанную книгу с изображением искры на обложке. Кажется здесь можно узнать побольше о действиях заклинаний. Было бы неплохо это сделать, прежде чем начать колдовать.'
+$text_display = '<br>'
+$text_display += {<br><div id="under">Основы<div id = "clear"><a href = 'EXEC: interaction = 71 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>} 
+$text_display += {<br><div id="under">Auspex<div id = "clear"><a href = 'EXEC: interaction = 72 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>} 
+$text_display += {<div id="under">Cruciato<div id = "clear"><a href = 'EXEC: interaction = 73 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>} 
+$text_display += {<div id="under">Delikacia<div id = "clear"><a href = 'EXEC: interaction = 74 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>} 
+$text_display += {<div id="under">Sententia veritas<div id = "clear"><a href = 'EXEC: interaction = 75 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>} 
+$text_display += {<div id="under">Magna Magnifika<div id = "clear"><a href = 'EXEC: interaction = 76 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>} 
+$text_display += {<div id="under">Tremendio<div id = "clear"><a href = 'EXEC: interaction = 77 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>} 
+$text_display += {<div id="under">Domini Dictum<div id = "clear"><a href = 'EXEC: interaction = 78 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>} 
+$text_display += {<div id="under">Adverto Servili<div id = "clear"><a href = 'EXEC: interaction = 79 & gt "interaction"'><img src = "content\clear.gif"></a></div></div>} 
+IF exam_in_progress = 1:
+ $text_display += {<br><div id="under">Назад<br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "demo_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under">Назад<br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\clear.gif"></a></div></div>}
+END
+}
+
 !Собственная лаборатория
 $lab_options[0] = {
 $potion_base = 'water'

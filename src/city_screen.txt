@@ -62,7 +62,7 @@ IF sound_on = 1:
 END
 
 !настройки
-*p {<div id="options_icon"><a href = "EXEC: $prev_city_form = city_form & city_form = 1000 & gt 'city_menu_form'"><img src="content\gear.png"></a></div>}
+if city_form ! 1000:*p {<div id="options_icon"><a href = "EXEC: $prev_city_form = city_form & city_form = 1000 & gt 'city_menu_form'"><img src="content\gear.png"></a></div>}
 
 IF city_form = 1000:
  *p '<div style="position:absolute;top:525px;left:619px;font-family:Victoriana;"><img src = "content/sound_setting.png"></div>'

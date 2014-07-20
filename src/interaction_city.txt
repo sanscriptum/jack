@@ -3427,7 +3427,7 @@ IF interaction_city = 2221:
  whore_price = 1
  whore_quality = 1 
  $interaction_type = 'whore'
- $special_bg  = 'scene\whore'
+ $special_bg  = 'scene\whore\whore'
  copyarr '$text', '$brothel_whore'
 END
 
@@ -3435,7 +3435,7 @@ IF interaction_city = 2222:
  whore_price = 1
  whore_quality = 1 
  $interaction_type = 'whore'
- $special_bg  = 'scene\whore_anal'
+ $special_bg  = 'scene\whore\whore_anal'
  copyarr '$text', '$brothel_whore_anal'
 END
 
@@ -3443,7 +3443,7 @@ IF interaction_city = 2223:
  whore_price = 1
  whore_quality = 1 
  $interaction_type = 'whore'
- $special_bg  = 'scene\whore_oral'
+ $special_bg  = 'scene\whore\whore_oral'
  copyarr '$text', '$brothel_whore_oral'
 END
 
@@ -3451,7 +3451,7 @@ IF interaction_city = 2224:
  whore_price = 1
  whore_quality = 1 
  $interaction_type = 'whore'
- $special_bg  = 'scene\whore_pazuri'
+ $special_bg  = 'scene\whore\whore_pazuri'
  copyarr '$text', '$brothel_whore_pazuri'
 END
 
@@ -3459,7 +3459,7 @@ IF interaction_city = 2225:
  whore_price = 1
  whore_quality = 1 
  $interaction_type = 'whore'
- $special_bg  = 'scene\whore_loli'
+ $special_bg  = 'scene\whore\whore_loli'
  copyarr '$text', '$brothel_whore_loli'
 END
 
@@ -3467,7 +3467,7 @@ IF interaction_city = 2231:
  whore_price = 5
  whore_quality = 3 
  $interaction_type = 'whore'
- $special_bg  = 'scene\whore_twins'
+ $special_bg  = 'scene\whore\whore_twins'
  copyarr '$text', '$brothel_whore_twins'
 END
 
@@ -3475,7 +3475,7 @@ IF interaction_city = 2232:
  whore_price = 5
  whore_quality = 3 
  $interaction_type = 'whore'
- $special_bg  = 'scene\whore_loli_3'
+ $special_bg  = 'scene\whore\whore_loli_3'
  copyarr '$text', '$brothel_whore_loli_3'
 END
 
@@ -3483,7 +3483,7 @@ IF interaction_city = 2233:
  whore_price = 5
  whore_quality = 3 
  $interaction_type = 'whore'
- $special_bg  = 'scene\whores_5'
+ $special_bg  = 'scene\whore\whores_5'
  copyarr '$text', '$brothel_whores_5'
 END
 
@@ -3491,7 +3491,7 @@ IF interaction_city = 2234:
  whore_price = 5
  whore_quality = 3 
  $interaction_type = 'whore'
- $special_bg  = 'scene\whore_bdsm'
+ $special_bg  = 'scene\whore\whore_bdsm'
  copyarr '$text', '$brothel_whore_bdsm'
 END
 
@@ -3499,7 +3499,7 @@ IF interaction_city = 2235:
  whore_price = 5
  whore_quality = 3 
  $interaction_type = 'whore'
- $special_bg  = 'scene\whore_exotic'
+ $special_bg  = 'scene\whore\whore_exotic'
  copyarr '$text', '$brothel_whore_exotic'
 END
 
@@ -3507,7 +3507,7 @@ IF interaction_city = 2241:
  whore_price = 15
  whore_quality = 5 
  $interaction_type = 'whore'
- $special_bg  = 'scene\whore_incest'
+ $special_bg  = 'scene\whore\whore_incest'
  copyarr '$text', '$brothel_whore_incest'
 END
 
@@ -3515,7 +3515,7 @@ IF interaction_city = 2242:
  whore_price = 15
  whore_quality = 5 
  $interaction_type = 'whore'
- $special_bg  = 'scene\whore_loli_6'
+ $special_bg  = 'scene\whore\whore_loli_6'
  copyarr '$text', '$brothel_whore_loli_6'
 END
 
@@ -3523,7 +3523,7 @@ IF interaction_city = 2243:
  whore_price = 15
  whore_quality = 5 
  $interaction_type = 'whore'
- $special_bg  = 'scene\whores_7'
+ $special_bg  = 'scene\whore\whores_7'
  copyarr '$text', '$brothel_whores_7'
 END
 
@@ -3531,7 +3531,7 @@ IF interaction_city = 2244:
  whore_price = 15
  whore_quality = 5 
  $interaction_type = 'whore'
- $special_bg  = 'scene\whore_exotic_2'
+ $special_bg  = 'scene\whore\whore_exotic_2'
  copyarr '$text', '$brothel_whore_exotic_2'
 END
 
@@ -3539,9 +3539,9 @@ IF interaction_city = 2245:
  whore_price = 15
  whore_quality = 5 
  $interaction_type = 'whore'
- $special_image[2] = 'scene\whore_twins_exotic_two.jpg'
- $special_image[3] = 'scene\whore_twins_exotic_two.jpg'
- $special_bg  = 'scene\whore_twins_exotic'
+ $special_image[2] = 'scene\whore\whore_twins_exotic_two.jpg'
+ $special_image[3] = 'scene\whore\whore_twins_exotic_two.jpg'
+ $special_bg  = 'scene\whore\whore_twins_exotic'
  copyarr '$text', '$brothel_whore_twins_exotic'
 END
 
@@ -5499,7 +5499,7 @@ IF interaction_city = 5211:
  $return_lock  = 'shop_general'
  $interaction_type = 'service'
  service_price = 5
- $service_picture = 'scene\service_niple_pierce'  
+ $service_picture = 'scene\service\service_niple_pierce'  
  copyarr '$text', '$niple_pierce' 
  $do_service = {
   slave["niple_piercing"] = 1
@@ -5518,7 +5518,7 @@ IF interaction_city = 5212:
  $return_lock  = 'shop_general'
  $interaction_type = 'service'
  service_price = 5
- $service_picture = 'scene\service_clit_pierce'  
+ $service_picture = 'scene\service\service_clit_pierce'  
  copyarr '$text', '$clit_pierce' 
  $do_service = {
   slave["clit_piercing"] = 1
@@ -5537,7 +5537,7 @@ IF interaction_city = 5213:
  $return_lock  = 'shop_general'
  $interaction_type = 'service'
  service_price = 5
- $service_picture = 'scene\service_ear_pierce'  
+ $service_picture = 'scene\service\service_ear_pierce'  
  copyarr '$text', '$ear_pierce' 
  $do_service = {
   slave["ear_piercing"] = 1
@@ -5555,7 +5555,7 @@ IF interaction_city = 5214:
  $return_lock  = 'shop_general'
  $interaction_type = 'service'
  service_price = 5
- $service_picture = 'scene\service_thongue_piercing'  
+ $service_picture = 'scene\service\service_thongue_piercing'  
  copyarr '$text', '$thongue_piercing' 
  $do_service = {
   slave["thongue_piercing"] = 1
@@ -5573,7 +5573,7 @@ IF interaction_city = 5215:
  $return_lock  = 'shop_general'
  $interaction_type = 'service'
  service_price = 5
- $service_picture = 'scene\service_belly_piercing'  
+ $service_picture = 'scene\service\service_belly_piercing'  
  copyarr '$text', '$belly_piercing' 
  $do_service = {
   slave["belly_piercing"] = 1
@@ -5591,7 +5591,7 @@ IF interaction_city = 5216:
  $return_lock  = 'shop_general'
  $interaction_type = 'service'
  service_price = 5
- $service_picture = 'scene\service_nosdril_piercing'  
+ $service_picture = 'scene\service\service_nosdril_piercing'  
  copyarr '$text', '$nosdril_piercing' 
  $do_service = {
   slave["nosdril_piercing"] = 1
@@ -5609,7 +5609,7 @@ IF interaction_city = 5217:
  $return_lock  = 'shop_general'
  $interaction_type = 'service'
  service_price = 5
- $service_picture = 'scene\service_nose_piercing'  
+ $service_picture = 'scene\service\service_nose_piercing'  
  copyarr '$text', '$nose_piercing' 
  $do_service = {
   slave["nose_piercing"] = 1
@@ -5627,7 +5627,7 @@ IF interaction_city = 5218:
  $return_lock  = 'shop_general'
  $interaction_type = 'service'
  service_price = 10
- $service_picture = 'scene\service_scarification'  
+ $service_picture = 'scene\service\service_scarification'  
  copyarr '$text', '$scarification' 
  $do_service = {
   slave["scarification"] = 1
@@ -5650,7 +5650,7 @@ IF interaction_city = 5219:
  $return_lock  = 'shop_general'
  $interaction_type = 'service'
  service_price = 25
- $service_picture = 'scene\service_thongue_split'  
+ $service_picture = 'scene\service\service_thongue_split'  
  copyarr '$text', '$thongue_split' 
  $do_service = {
   slave["thongue_split"] = 1

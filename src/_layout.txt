@@ -21,7 +21,7 @@ MAINDESC_W = 1278
 MAINDESC_H = 798
 
 $MSG_BACKIMAGE = 'content\pic\msg_bg.jpg'
-$MSG_OK_IMAGE = 'content/ok-icon.png'
+$MSG_OK_IMAGE = 'content/pic/buttons/ok-icon.png'
 $MSG_FORMAT = '<div id = "ink">%TEXT%</div>'
 MSG_TEXT_X = 80
 MSG_TEXT_Y = 50

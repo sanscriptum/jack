@@ -339,7 +339,7 @@ width:90px;
 height:30px;
 padding:3px 3px 0px 5px;
 font-family:Victoriana;
-background-image:url(content/money_counter.png);
+background-image:url(content/pic/money_counter.png);
 }
 
 #clear {
@@ -360,7 +360,7 @@ font-size:30px;
 width:400px;
 height:40px;
 font-family:Victoriana;
-background-image:url(content/menu_button.png);
+background-image:url(content/pic/menu_button.png);
 }
 
 #under_gray {
@@ -370,7 +370,7 @@ font-size:30px;
 width:400px;
 height:40px;
 font-family:Victoriana;
-background-image:url(content/menu_button.png);
+background-image:url(content/pic/menu_button.png);
 }
 
 #intensity_05 {
@@ -746,7 +746,7 @@ width:230px;
 height:596px;
 color:#FFD700;
 font-family:"Segoe Print";
-background-image:url(content/padding.png);
+background-image:url(content/pic/padding.png);
 }
 
 #right_padding {
@@ -757,7 +757,7 @@ width:200px;
 height:596px;
 color:#FFD700;
 font-family:"Segoe Print";
-background-image:url(content/padding.png);
+background-image:url(content/pic/padding.png);
 text-align:right;
 }
 
@@ -1806,7 +1806,7 @@ width:680px;
 height:480px;
 color:#f2e8c9;
 text-align:center;
-background-image:url(content/padding.png);
+background-image:url(content/pic/padding.png);
 }
 
 #fight_options {
@@ -2140,7 +2140,7 @@ top:250px;
 width:40px;
 height:40px;
 text-align:center;
-background-image:url(content/hart_red.png);
+background-image:url(content/pic/hart_red.png);
 }
 
 #ally_stamina {
@@ -2150,7 +2150,7 @@ top:250px;
 width:40px;
 height:40px;
 text-align:center;
-background-image:url(content/hart_green.png);
+background-image:url(content/pic/hart_green.png);
 }
 
 #ally_will {
@@ -2160,7 +2160,7 @@ top:250px;
 width:40px;
 height:40px;
 text-align:center;
-background-image:url(content/hart_purple.png);
+background-image:url(content/pic/hart_purple.png);
 }
 
 #enemy_health {
@@ -2170,7 +2170,7 @@ top:250px;
 width:40px;
 height:40px;
 text-align:center;
-background-image:url(content/hart_red.png);
+background-image:url(content/pic/hart_red.png);
 }
 
 #enemy_stamina {
@@ -2180,7 +2180,7 @@ top:250px;
 width:40px;
 height:40px;
 text-align:center;
-background-image:url(content/hart_green.png);
+background-image:url(content/pic/hart_green.png);
 }
 
 #enemy_will {
@@ -2190,7 +2190,7 @@ top:250px;
 width:40px;
 height:40px;
 text-align:center;
-background-image:url(content/hart_purple.png);
+background-image:url(content/pic/hart_purple.png);
 }
 
 #ally_conditions {

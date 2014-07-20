@@ -114,11 +114,11 @@ END
 
 *p '<div id = "ally_name"><<$combatant_name>></div>'
 *p '<div id = "enemy_name"><<$имя_врага[текущий]>></div>'
-if количество_врагов > 1: *p '<div id = "next_enemy"><a href="EXEC: dynamic $next_enemy_click"><img src = "content/next.png"></a></div>'
-if количество_врагов > 1: *p '<div id = "prev_enemy"><a href="EXEC: dynamic $prev_enemy_click"><img src = "content/prev.png"></a></div>'
+if количество_врагов > 1: *p '<div id = "next_enemy"><a href="EXEC: dynamic $next_enemy_click"><img src = "content/pic/buttons/next.png"></a></div>'
+if количество_врагов > 1: *p '<div id = "prev_enemy"><a href="EXEC: dynamic $prev_enemy_click"><img src = "content/pic/buttons/prev.png"></a></div>'
 
 *p '<div id = "ally_def"><<$защита_описание[$защита[0]]>></div>'
-*p '<div id = "next_def"><a href="EXEC: dynamic $сменить_защиту"><img src = "content/loop.png"></a></div>'
+*p '<div id = "next_def"><a href="EXEC: dynamic $сменить_защиту"><img src = "content/pic/buttons/loop.png"></a></div>'
 *p '<div id = "enemy_def"><<$защита_врага_описание[$защита[текущий]]>></div>'
 
 !исправлен код с отображением подсказки при нажатии на сердца
@@ -144,9 +144,9 @@ END
 if sound_on = 1: play $music_now, music_volume
 
 IF sound_on = 1:
- *p '<div id="sound_icon"><a href = "EXEC: sound_on = 0 & close all & gt curloc"><img src="content\sound_on.png"></a></div>'  
+ *p '<div id="sound_icon"><a href = "EXEC: sound_on = 0 & close all & gt curloc"><img src="content\pic\buttons\sound_on.png"></a></div>'  
  else
- *p '<div id="sound_icon"><a href = "EXEC: sound_on = 1 & gt curloc"><img src="content\sound_off.png"></a></div>'  
+ *p '<div id="sound_icon"><a href = "EXEC: sound_on = 1 & gt curloc"><img src="content\pic\buttons\sound_off.png"></a></div>'  
 END
 --- боевой_интерфейс ---------------------------------
 

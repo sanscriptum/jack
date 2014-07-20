@@ -42,11 +42,11 @@ IF $special_image[txt] ! '':
 END
 
 if txt > min_txt: 
- addobj '<img src = "content\back_button.png">'
+ addobj '<img src = "content\pic\buttons\back_button.png">'
  else
- addobj '<img src = "content\noback_button.png">' 
+ addobj '<img src = "content\pic\buttons\noback_button.png">' 
 END 
-if txt < txt_count: addobj '<img src = "content\forward_button.png">'
+if txt < txt_count: addobj '<img src = "content\pic\buttons\forward_button.png">'
 
 $yes = {$slave['fullimage'] = $fullimage[txt]
 $slave['ava'] = $seed_ava[txt]
@@ -57,6 +57,6 @@ killobj
 gt 'shop_general'
 }
 
-*p {<div id = "approve"><a href = 'EXEC: dynamic $yes'><img src="content\approve.png"></a></div>}
+*p {<div id = "approve"><a href = 'EXEC: dynamic $yes'><img src="content\pic\buttons\approve.png"></a></div>}
 --- plastics ---------------------------------
 

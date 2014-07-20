@@ -68,7 +68,7 @@ END
 if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3', sound_volume
 
 
-*p {<div id = "approve"><a href = 'EXEC: dynamic $yes'><img src="content\approve.png"></a></div>}
-*p {<div id = "deny"><a href = 'EXEC: dynamic $no'><img src="content\deny.png"></a></div>}
+*p {<div id = "approve"><a href = 'EXEC: dynamic $yes'><img src="content\pic\buttons\approve.png"></a></div>}
+*p {<div id = "deny"><a href = 'EXEC: dynamic $no'><img src="content\pic\buttons\deny.png"></a></div>}
 --- choice_screen ---------------------------------
 

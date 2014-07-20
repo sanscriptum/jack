@@ -1,6 +1,6 @@
 # hero_customization
 get_initial_slave = 1
-*p '<div id = "title_scroll"><img src = "content\pic\bg\scroll_large.gif"></div>'
+*p '<div id = "title_scroll"><img src = "content\pic\scroll_large.gif"></div>'
 *p '<div id = "center_text_column_4"> <center><b>ВЫБЕРИТЕ ВАШЕГО ГЕРОЯ</center></b></div>'
 
 *p {<div id = "ava_choice_1_1"><a href = 'EXEC: hero_choice = 1 & gt "hero_description"'><img src = "content\pic\master\master_noble_sepia.jpg"></a></div>}
@@ -20,6 +20,6 @@ get_initial_slave = 1
 !*p {<div id = "ava_choice_4_3"><a href = 'EXEC: hero_choice = 12 & gt "hero_description"'><img src = "content\pic\master\master_blank.jpg"></a></div>}
 
 
-*p {<div id = "close_scroll"><a href = 'EXEC: gt "main_menu"'><img src = "content\close_button.png"></a></div>}
+*p {<div id = "close_scroll"><a href = 'EXEC: gt "main_menu"'><img src = "content\pic\buttons\close_button.png"></a></div>}
 --- hero_customization ---------------------------------
 

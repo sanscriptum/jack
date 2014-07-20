@@ -70,11 +70,11 @@ END
 
 IF brand_reputation <= 0 and slave['brand'] > 0 and txt > 2: txt = 7
 
-if txt > 1 and txt <= 4: addobj '<img src = "content\back_button.png">'
+if txt > 1 and txt <= 4: addobj '<img src = "content\pic\buttons\back_button.png">'
 
-if txt <= 4: addobj '<img src = "content\forward_button.png">'
+if txt <= 4: addobj '<img src = "content\pic\buttons\forward_button.png">'
 
-if txt = 7: addobj '<img src = "content\forward_button.png">'
+if txt = 7: addobj '<img src = "content\pic\buttons\forward_button.png">'
 
 --- slave_auction_sell ---------------------------------
 

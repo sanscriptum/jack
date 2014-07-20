@@ -4,7 +4,7 @@ exam_in_progress = 1
 txt_count = 1
 ui_style = 1
 killobj
-addobj '<img src = "content\demo_forward_button.png">'
+addobj '<img src = "content\pic\buttons\demo_forward_button.png">'
 
 *p '<div id = "bg"><img src="content\pic\bg\dungeon.jpg"></div>'
 *p '<div id = "bg"><center>Выберите воспитуемую</center></div>'

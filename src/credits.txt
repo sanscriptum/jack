@@ -1,7 +1,7 @@
 # credits
 !Раздел инфо
 
-'<div id = "title_scroll"><img src = "content\pic\bg\scroll_large.gif"></div>'
+'<div id = "title_scroll"><img src = "content\pic\scroll_large.gif"></div>'
 
 '<div id = "title_scroll_text">Автор безобразия: <a href="http://www.blogger.com/profile/07866533522635117580">Old Huntsman</a>
 Адрес для связи: <a href="mailto:old_huntsman@yahoo.com">old_huntsman@yahoo.com</a>
@@ -14,7 +14,7 @@
 Также огромное спасибо всем кто помогал с созданием оформления, редактурой текстов и бета-тестированием. Один я бы ни за что не справился.
 </div>'
 
-{<div id = "close_scroll"><a href = 'EXEC: gt "main_menu"'><img src = "content\close_button.png"></a></div>}
+{<div id = "close_scroll"><a href = 'EXEC: gt "main_menu"'><img src = "content\pic\buttons\close_button.png"></a></div>}
 --- credits ---------------------------------
 
 

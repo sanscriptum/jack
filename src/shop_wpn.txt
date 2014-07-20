@@ -7,32 +7,32 @@ $text_display = ''
 if sp_txt = 0: sp_txt = 1
 
 IF sp_txt = 1:
- $text_display += {<br><br><div id="under">Оружие<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Доспехи<br><div id = "clear"><a href = 'EXEC: sp_txt = 3 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><br><div id="under">Узнать предпочтения<div id = "clear"><a href = 'EXEC: interaction_city = 1111 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><div id="under">Оружие<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Доспехи<br><div id = "clear"><a href = 'EXEC: sp_txt = 3 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><br><div id="under">Узнать предпочтения<div id = "clear"><a href = 'EXEC: interaction_city = 1111 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
  IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
-  $text_display += {<br><div id="under">Предложить рабыню<br><div id = "clear"><a href = 'EXEC: interaction_city = 1112 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Предложить рабыню<br><div id = "clear"><a href = 'EXEC: interaction_city = 1112 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Предложить рабыню<br></div>}
  END 
- $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 2:
- $text_display += {<br><br><div id="under">Вторичное<br><div id = "clear"><a href = 'EXEC: sp_txt = 11 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Одноручное<br><div id = "clear"><a href = 'EXEC: sp_txt = 12 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Двуручное<br><div id = "clear"><a href = 'EXEC: sp_txt = 13 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><div id="under">Вторичное<br><div id = "clear"><a href = 'EXEC: sp_txt = 11 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Одноручное<br><div id = "clear"><a href = 'EXEC: sp_txt = 12 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Двуручное<br><div id = "clear"><a href = 'EXEC: sp_txt = 13 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 11:
- $text_display += {<br><br><div id="under">Кинжал (10 искр)<br><div id = "clear"><a href = 'EXEC: sp_txt = 111 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Стилет (10 искр)<br><div id = "clear"><a href = 'EXEC: sp_txt = 112 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Кастет (10 искр)<br><div id = "clear"><a href = 'EXEC: sp_txt = 113 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Нагайка (10 искр)<br><div id = "clear"><a href = 'EXEC: sp_txt = 114 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Глушилка (10 искр)<br><div id = "clear"><a href = 'EXEC: sp_txt = 115 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Мясницкий тесак (20 искр)<br><div id = "clear"><a href = 'EXEC: sp_txt = 116 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Назад<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><div id="under">Кинжал (10 искр)<br><div id = "clear"><a href = 'EXEC: sp_txt = 111 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Стилет (10 искр)<br><div id = "clear"><a href = 'EXEC: sp_txt = 112 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Кастет (10 искр)<br><div id = "clear"><a href = 'EXEC: sp_txt = 113 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Нагайка (10 искр)<br><div id = "clear"><a href = 'EXEC: sp_txt = 114 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Глушилка (10 искр)<br><div id = "clear"><a href = 'EXEC: sp_txt = 115 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Мясницкий тесак (20 искр)<br><div id = "clear"><a href = 'EXEC: sp_txt = 116 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Назад<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 111:
@@ -43,8 +43,8 @@ IF sp_txt = 111:
   else
   $shop_wpn[111] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 112:
@@ -55,8 +55,8 @@ IF sp_txt = 112:
   else
   $shop_wpn[112] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 113:
@@ -67,8 +67,8 @@ IF sp_txt = 113:
   else
   $shop_wpn[113] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 114:
@@ -79,8 +79,8 @@ IF sp_txt = 114:
   else
   $shop_wpn[114] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 115:
@@ -91,8 +91,8 @@ IF sp_txt = 115:
   else
   $shop_wpn[115] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 116:
@@ -103,21 +103,21 @@ IF sp_txt = 116:
   else
   $shop_wpn[116] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 12:
- $text_display += {<br><br><div id="under">Кнут (50$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 121 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Шпага (50$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 122 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Рапира (50$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 123 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Кончар (50$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 124 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Гладиус (50$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 125 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Бастард (100$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 126 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Мачете (50$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 127 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Катана (100$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 128 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Демократизатор (25$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 129 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Назад<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><div id="under">Кнут (50$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 121 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Шпага (50$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 122 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Рапира (50$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 123 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Кончар (50$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 124 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Гладиус (50$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 125 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Бастард (100$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 126 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Мачете (50$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 127 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Катана (100$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 128 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Демократизатор (25$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 129 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Назад<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 121:
@@ -128,8 +128,8 @@ IF sp_txt = 121:
   else
   $shop_wpn[121] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 122:
@@ -140,8 +140,8 @@ IF sp_txt = 122:
   else
   $shop_wpn[122] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 123:
@@ -152,8 +152,8 @@ IF sp_txt = 123:
   else
   $shop_wpn[123] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 124:
@@ -164,8 +164,8 @@ IF sp_txt = 124:
   else
   $shop_wpn[124] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 125:
@@ -176,8 +176,8 @@ IF sp_txt = 125:
   else
   $shop_wpn[125] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 126:
@@ -188,8 +188,8 @@ IF sp_txt = 126:
   else
   $shop_wpn[126] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 127:
@@ -200,8 +200,8 @@ IF sp_txt = 127:
   else
   $shop_wpn[127] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 128:
@@ -212,8 +212,8 @@ IF sp_txt = 128:
   else
   $shop_wpn[128] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 129:
@@ -224,18 +224,18 @@ IF sp_txt = 129:
   else
   $shop_wpn[129] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 13:
- $text_display += {<br><br><div id="under">Фламберг (200$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 131 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Нагината (200$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 132 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Моргенштерн (150$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 133 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Топор дровосека (100$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 134 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Бейсбольная бита (100$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 135 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Шокер для скота (150$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 136 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Назад<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><div id="under">Фламберг (200$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 131 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Нагината (200$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 132 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Моргенштерн (150$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 133 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Топор дровосека (100$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 134 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Бейсбольная бита (100$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 135 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Шокер для скота (150$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 136 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Назад<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 131:
@@ -246,8 +246,8 @@ IF sp_txt = 131:
   else
   $shop_wpn[131] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 132:
@@ -258,8 +258,8 @@ IF sp_txt = 132:
   else
   $shop_wpn[132] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 133:
@@ -270,8 +270,8 @@ IF sp_txt = 133:
   else
   $shop_wpn[133] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 134:
@@ -282,8 +282,8 @@ IF sp_txt = 134:
   else
   $shop_wpn[134] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 135:
@@ -294,8 +294,8 @@ IF sp_txt = 135:
   else
   $shop_wpn[135] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 136:
@@ -306,18 +306,18 @@ IF sp_txt = 136:
   else
   $shop_wpn[136] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 3:
- $text_display += {<br><br><div id="under">Арамидный комбез (100$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 21 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Кожаный доспех(400$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 22 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Эльфийская кольчуга(250$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 23 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Яцериновая кольчуга(300$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 24 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Комбинированные латы(800$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 25 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Готические латы(1000$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 26 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><div id="under">Арамидный комбез (100$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 21 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Кожаный доспех(400$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 22 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Эльфийская кольчуга(250$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 23 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Яцериновая кольчуга(300$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 24 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Комбинированные латы(800$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 25 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Готические латы(1000$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 26 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 21:
@@ -328,8 +328,8 @@ IF sp_txt = 21:
   else
   $shop_wpn[21] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 22:
@@ -340,8 +340,8 @@ IF sp_txt = 22:
   else
   $shop_wpn[22] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 23:
@@ -352,8 +352,8 @@ IF sp_txt = 23:
   else
   $shop_wpn[23] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 24:
@@ -364,8 +364,8 @@ IF sp_txt = 24:
   else
   $shop_wpn[24] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 25:
@@ -376,8 +376,8 @@ IF sp_txt = 25:
   else
   $shop_wpn[25] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 26:
@@ -388,13 +388,13 @@ IF sp_txt = 26:
   else
   $shop_wpn[26] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><br><br><br><br><div id="under">Посмотреть другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 4:
- $text_display += {<br><br><br><br><br><br><br><div id="under">- Взгляни-ка на мой товар!<br><div id = "clear"><a href = 'EXEC: gt "slave_sell"'><img src = "content\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">- Расскажи подробней чего ты ожидаешь?<br><div id = "clear"><a href = 'EXEC: interaction_city = 1112 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><br><br><br><br><div id="under">- Взгляни-ка на мой товар!<br><div id = "clear"><a href = 'EXEC: gt "slave_sell"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">- Расскажи подробней чего ты ожидаешь?<br><div id = "clear"><a href = 'EXEC: interaction_city = 1112 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 $text[txt] = $shop_wpn[sp_txt]

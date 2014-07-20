@@ -173,7 +173,7 @@ $text_display = '<center>ИНФОРМАЦИЯ О КЛИЕНТЕ
 *p '<div id = "text"><<$text[txt]>></div>'
 *p '<div id = "bg_blue_script"><<$text_display>></div>'
 *p '<div id = "bg_blue_script_add"><<$npc_demand_list_add>></div>'
-*p '<div id = "close_left"><a href = "EXEC: gt ''master_stat''"><img src = "content\close_button.png"></a></div>'
+*p '<div id = "close_left"><a href = "EXEC: gt ''master_stat''"><img src = "content\pic\buttons\close_button.png"></a></div>'
 
 
 $info_bar = '' 
@@ -188,18 +188,18 @@ $info_bar = ''
 
 !'
 IF slave_state = 0 and contract['time'] = 0:
- *p {<div id = "evaluate"><a href = 'EXEC: interaction_city = 900 & gt "interaction_city"'><img src="content\evaluate.png"></a></div>}
+ *p {<div id = "evaluate"><a href = 'EXEC: interaction_city = 900 & gt "interaction_city"'><img src="content\pic\buttons\evaluate.png"></a></div>}
  else
- *p {<div id = "evaluate"><img src="content\deny.png"></div>} 
+ *p {<div id = "evaluate"><img src="content\pic\buttons\deny.png"></div>} 
 END
 '
 
 if txt > 1: 
- addobj '<img src = "content\back_button.png">'
+ addobj '<img src = "content\pic\buttons\back_button.png">'
  else
- addobj '<img src = "content\noback_button.png">' 
+ addobj '<img src = "content\pic\buttons\noback_button.png">' 
 END 
-addobj '<img src = "content\forward_button.png">'
+addobj '<img src = "content\pic\buttons\forward_button.png">'
 
 --- master_stat_clients ---------------------------------
 

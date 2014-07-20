@@ -38,7 +38,7 @@ contractor_demand['max_temper'] = 99
 <<$stock_features_list>>
 </div>'
 
-*p {<div id = "approve"><a href = 'EXEC: gt "slave_to_train_get"'><img src="content\approve.png"></a></div>}
-*p {<div id = "deny"><a href = 'EXEC: city_form = 1 & gt "city_menu_form"'><img src="content\deny.png"></a></div>}
+*p {<div id = "approve"><a href = 'EXEC: gt "slave_to_train_get"'><img src="content\pic\buttons\approve.png"></a></div>}
+*p {<div id = "deny"><a href = 'EXEC: city_form = 1 & gt "city_menu_form"'><img src="content\pic\buttons\deny.png"></a></div>}
 --- slave_to_train ---------------------------------
 

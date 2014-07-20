@@ -27,23 +27,23 @@ if lecture = 100:
  IF exam_in_progress = 0:
   *p '<div id = "bg">
 
-<div id="under">Лекция I: Слагаемые успеха<br><div id = "clear"><a href = ''EXEC: lecture = 1 & gt curloc''><img src = "content\clear.gif"></a></div></div>
-<div id="under">Лекция II: Психология подчинения<br><div id = "clear"><a href = ''EXEC: lecture = 2 & gt curloc''><img src = "content\clear.gif"></a></div></div>
-<div id="under">Лекция III: Кнуты и пряники<br><div id = "clear"><a href = ''EXEC: lecture = 3 & gt curloc''><img src = "content\clear.gif"></a></div></div>
-<div id="under">Лекция IV: Кухонное рабство<br><div id = "clear"><a href = ''EXEC: lecture = 4 & gt curloc''><img src = "content\clear.gif"></a></div></div>
-<div id="under">Узнать условия экзамена<br><div id = "clear"><a href = ''EXEC: lecture = 5 & gt curloc''><img src = "content\clear.gif"></a></div></div>
-<div id="under">Экзаменационная работа<br><div id = "clear"><a href = ''EXEC: gt "start_demo_game"''><img src = "content\clear.gif"></a></div></div>
+<div id="under">Лекция I: Слагаемые успеха<br><div id = "clear"><a href = ''EXEC: lecture = 1 & gt curloc''><img src = "content\pic\clear.gif"></a></div></div>
+<div id="under">Лекция II: Психология подчинения<br><div id = "clear"><a href = ''EXEC: lecture = 2 & gt curloc''><img src = "content\pic\clear.gif"></a></div></div>
+<div id="under">Лекция III: Кнуты и пряники<br><div id = "clear"><a href = ''EXEC: lecture = 3 & gt curloc''><img src = "content\pic\clear.gif"></a></div></div>
+<div id="under">Лекция IV: Кухонное рабство<br><div id = "clear"><a href = ''EXEC: lecture = 4 & gt curloc''><img src = "content\pic\clear.gif"></a></div></div>
+<div id="under">Узнать условия экзамена<br><div id = "clear"><a href = ''EXEC: lecture = 5 & gt curloc''><img src = "content\pic\clear.gif"></a></div></div>
+<div id="under">Экзаменационная работа<br><div id = "clear"><a href = ''EXEC: gt "start_demo_game"''><img src = "content\pic\clear.gif"></a></div></div>
 </div>' 
  $text[1] = 'Надо выбрать какую лекцию послушать теперь. Или может уже перейти к практической части?'
   else
   '<div id = "bg">
 
-<div id="under">Лекция I: Слагаемые успеха<br><div id = "clear"><a href = ''EXEC: lecture = 1 & gt curloc''><img src = "content\clear.gif"></a></div></div>
-<div id="under">Лекция II: Психология подчинения<br><div id = "clear"><a href = ''EXEC: lecture = 2 & gt curloc''><img src = "content\clear.gif"></a></div></div>
-<div id="under">Лекция III: Кнуты и пряники<br><div id = "clear"><a href = ''EXEC: lecture = 3 & gt curloc''><img src = "content\clear.gif"></a></div></div>
-<div id="under">Лекция IV: Кухонное рабство<br><div id = "clear"><a href = ''EXEC: lecture = 4 & gt curloc''><img src = "content\clear.gif"></a></div></div>
-<div id="under">Сдать экзаменационную работу<br><div id = "clear"><a href = ''EXEC: lecture = 11 & gt curloc''><img src = "content\clear.gif"></a></div></div>
-<div id="under">Вернуться к работе<br><div id = "clear"><a href = ''EXEC: menu_form = 0 & gt "demo_menu_form"''><img src = "content\clear.gif"></a></div></div>
+<div id="under">Лекция I: Слагаемые успеха<br><div id = "clear"><a href = ''EXEC: lecture = 1 & gt curloc''><img src = "content\pic\clear.gif"></a></div></div>
+<div id="under">Лекция II: Психология подчинения<br><div id = "clear"><a href = ''EXEC: lecture = 2 & gt curloc''><img src = "content\pic\clear.gif"></a></div></div>
+<div id="under">Лекция III: Кнуты и пряники<br><div id = "clear"><a href = ''EXEC: lecture = 3 & gt curloc''><img src = "content\pic\clear.gif"></a></div></div>
+<div id="under">Лекция IV: Кухонное рабство<br><div id = "clear"><a href = ''EXEC: lecture = 4 & gt curloc''><img src = "content\pic\clear.gif"></a></div></div>
+<div id="under">Сдать экзаменационную работу<br><div id = "clear"><a href = ''EXEC: lecture = 11 & gt curloc''><img src = "content\pic\clear.gif"></a></div></div>
+<div id="under">Вернуться к работе<br><div id = "clear"><a href = ''EXEC: menu_form = 0 & gt "demo_menu_form"''><img src = "content\pic\clear.gif"></a></div></div>
 </div>' 
   gs '$slave_price'
   IF rating => 2:
@@ -219,11 +219,11 @@ END
 
 IF lecture ! 100:
  if txt > 1: 
-  addobj '<img src = "content\demo_back_button.png">'
+  addobj '<img src = "content\pic\buttons\demo_back_button.png">'
   else
-  addobj '<img src = "content\demo_noback_button.png">' 
+  addobj '<img src = "content\pic\buttons\demo_noback_button.png">' 
  END 
- addobj '<img src = "content\demo_forward.png">'
+ addobj '<img src = "content\pic\buttons\demo_forward.png">'
 END
 --- demo_intro ---------------------------------
 

@@ -340,6 +340,6 @@ END
 
 *p '<div id = "interaction_stat_bar"><<$info_bar>></div>'
 
-addobj '<img src = "content\forward_button.png">'
+addobj '<img src = "content\pic\buttons\forward_button.png">'
 --- end_day_screen ---------------------------------
 

@@ -14,15 +14,15 @@ if prisoner_state > 0: if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$p
 !*p '<div id = "text"><<$text>></div>'
 
 IF prisoner_state ! 0 and slave_state = CONST_INT['no_slave']:
- *p '<div id = "cell"><a href = "EXEC: $prisoner_info_text = '''' & gt ''slave_to_cage''"><img src="content\pic\release.png"></a></div>'
+ *p '<div id = "cell"><a href = "EXEC: $prisoner_info_text = '''' & gt ''slave_to_cage''"><img src="content\pic\buttons\release.png"></a></div>'
 END
 
 IF prisoner_state = 0 and slave_state ! CONST_INT['no_slave']:
- *p '<div id = "cell"><a href = "EXEC: gt ''slave_to_cage''"><img src="content\pic\imprison.png"></a></div>'
+ *p '<div id = "cell"><a href = "EXEC: gt ''slave_to_cage''"><img src="content\pic\buttons\imprison.png"></a></div>'
 END
 
 IF prisoner_state ! 0 and slave_state ! CONST_INT['no_slave']:
- *p '<div id = "cell"><a href = "EXEC: gt ''slave_to_cage''"><img src="content\pic\cell_exchange.png"></a></div>'
+ *p '<div id = "cell"><a href = "EXEC: gt ''slave_to_cage''"><img src="content\pic\buttons\cell_exchange.png"></a></div>'
 END
 
 IF prisoner_state > 0:
@@ -48,19 +48,19 @@ IF prisoner_state > 0:
 Сперма исчадия
 </div>'
  IF prisoner_ration = 1:
-  *p '<div id="chekbox_1s"><a href = "EXEC: prisoner_ration = -1 & $prisoner_info_text = $prisoner_ration[1] & gt curloc"><img src="content\sel_button.png"></a></div>'  
+  *p '<div id="chekbox_1s"><a href = "EXEC: prisoner_ration = -1 & $prisoner_info_text = $prisoner_ration[1] & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
   else
-  *p '<div id="chekbox_1s"><a href = "EXEC: prisoner_ration = 1 & $prisoner_info_text = $prisoner_ration[2] & gt curloc"><img src="content\unsel_button.png"></a></div>'  
+  *p '<div id="chekbox_1s"><a href = "EXEC: prisoner_ration = 1 & $prisoner_info_text = $prisoner_ration[2] & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
  END    
  IF prisoner_ration = 0:
-  *p '<div id="chekbox_2s"><a href = "EXEC: prisoner_ration = -1 & $prisoner_info_text = $prisoner_ration[1] & gt curloc"><img src="content\sel_button.png"></a></div>'  
+  *p '<div id="chekbox_2s"><a href = "EXEC: prisoner_ration = -1 & $prisoner_info_text = $prisoner_ration[1] & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
   else
-  *p '<div id="chekbox_2s"><a href = "EXEC: prisoner_ration = 0 & $prisoner_info_text = $prisoner_ration[3] & gt curloc"><img src="content\unsel_button.png"></a></div>'  
+  *p '<div id="chekbox_2s"><a href = "EXEC: prisoner_ration = 0 & $prisoner_info_text = $prisoner_ration[3] & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
  END  
  IF prisoner_ration = 2:
-  *p '<div id="chekbox_3s"><a href = "EXEC: prisoner_ration = -1 & $prisoner_info_text = $prisoner_ration[1] & gt curloc"><img src="content\sel_button.png"></a></div>'  
+  *p '<div id="chekbox_3s"><a href = "EXEC: prisoner_ration = -1 & $prisoner_info_text = $prisoner_ration[1] & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
   else
-  *p '<div id="chekbox_3s"><a href = "EXEC: prisoner_ration = 2 & $prisoner_info_text = $prisoner_ration[4] & gt curloc"><img src="content\unsel_button.png"></a></div>'  
+  *p '<div id="chekbox_3s"><a href = "EXEC: prisoner_ration = 2 & $prisoner_info_text = $prisoner_ration[4] & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
  END
 END
 
@@ -70,13 +70,13 @@ IF prisoner_state = 1:
   *p '<div id = "prison_short_stat">Энергия <<$stars[prisoner_energy_plus]>>
 <<$girl_mood[prisoner_mood_plus]>>
 <<$girl_hygiene[prisoner["hygiene"]]>>
-<img src="content\kalkulyator.png"> <<prisoner["calories"]>> калорий / <<prisoner_rate["fat"]>> ж
+<img src="content\pic\kalkulyator.png"> <<prisoner["calories"]>> калорий / <<prisoner_rate["fat"]>> ж
 </div>'
   else
   *p '<div id = "prison_short_stat">Энергия <<$stars[prisoner_energy_plus]>>
 <<$girl_mood[prisoner_mood_plus]>>
 <<$girl_hygiene[prisoner["hygiene"]]>>
-<img src="content\kalkulyator.png"> <<prisoner["calories"]>> калорий
+<img src="content\pic\kalkulyator.png"> <<prisoner["calories"]>> калорий
 </div>'
   END
 END
@@ -88,15 +88,14 @@ IF prisoner_state = 2:
 END
 
 if prisoner_state ! 0: *p '<div id = "prison_stat_bar"><<$info_bar>></div>'
-*p '<div id = "close_far"><a href = "EXEC: $prisoner_info_text = '''' & menu_form = 0 & gt ''menu_form''"><img src = "content\close_button.png"></a></div>'
 
 *p '<div id="text"><<$prisoner_info_text>></div>'
 
 IF pstarvation_varning = 1:
- msg '    Вы замечаете у заключенной признаки истощения. Похоже, пища которую вы ей даете недостаточна для неё. Возможно даже придется вытащить рабыню из темницы чтобы откормить как следует.'
  pstarvation_varning = 0
+ msg '    Вы замечаете у заключенной признаки истощения. Похоже, пища которую вы ей даете недостаточна для неё. Возможно даже придется вытащить рабыню из темницы чтобы откормить как следует.'
 END
 
-*p '<div id = "close_far"><a href = "EXEC: menu_form = 0 & gt ''menu_form''"><img src = "content\close_button.png"></a></div>'
+*p '<div id = "close_far"><a href = "EXEC: $prisoner_info_text = '''' & menu_form = 0 & gt ''menu_form''"><img src = "content\pic\buttons\close_button.png"></a></div>'
 --- prison_cell ---------------------------------
 

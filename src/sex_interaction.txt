@@ -580,7 +580,9 @@ IF sex_interaction = 19:
   
  $text[1] = '  Смазка сделает секс более комфортным.'
  $play_sound[1] = '<<$slopy[1]>>'
- $special_bg = $master_fap  
+ g = RAND(1,2)
+ if g = 1: $special_bg = $master_fap 
+ if g = 2: $special_bg = 'scene\master_fap_2'  
 END
 
 
@@ -1318,7 +1320,11 @@ IF sex_interaction = 21:
  sex["darkness_attitude_revealed"] = 1
 
  $text[1] = '  Вы крепко завязываете девушке глаза. Это должно помочь ей лучше сконцентрироваться на собственных ощущениях и отвлечься от внешних раздражителей.' 
- $special_bg = 'scene\blindfold'  
+ g = RAND(1,4)
+ if g = 1: $special_bg = 'scene\blindfold' 
+ if g = 2: $special_bg = 'scene\blindfold_2'    
+ if g = 3: $special_bg = 'scene\blindfold_3'  
+ if g = 4: $special_bg = 'scene\blindfold_4'
  sex['pc_energy'] -= 1
  sex["pc_interest"] -= 1 
  sex["climax_buildup"] -= sex["girl_attention"] 

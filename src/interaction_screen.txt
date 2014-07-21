@@ -33,8 +33,12 @@ END
 
 IF $interaction_type = 'chestbuster':
  if txt = 1 and sound_on = 1: play 'content\snd\girl_suffering.mp3', sound_volume
- if txt = 2: *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
- if nsfw = 0:if txt > 2: *p '<div id = "bg"><img src="content\pic\scene\event_chestbuster.jpg"></div>' 
+ if txt = 2: if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+ if nsfw = 0 and txt > 2:
+  g = RAND(1,2)
+  if g = 1:*p '<div id = "bg"><img src="content\pic\scene\event_chestbuster.jpg"></div>' 
+  if g = 2:*p '<div id = "bg"><img src="content\pic\scene\event_chestbuster_2.jpg"></div>' 
+ end
 END
 
 IF $interaction_type = 'special_png':

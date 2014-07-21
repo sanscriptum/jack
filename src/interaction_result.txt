@@ -384,7 +384,11 @@ IF $interaction_type = 'present':
   slave_rate["rational"] += rational_rise
  END
  slave["virtue"] = 0
- $interaction_type = 'special_jpg'
+ if $item_id = 'plaid':
+  $interaction_type = 'special'
+  else
+  $interaction_type = 'special_jpg'
+ end
  $special_bg = $item_demo[$item_id]  
  sparks -= item_price[$item_id]
  slave['gift_promised'] = 0    

@@ -657,14 +657,17 @@ END
 !Личные дейсвтия героя
 !Герой моется один
 IF interaction = 34:
- $interaction_type = 'special' 
+ $interaction_type = 'special_jpg' 
  master_hygiene_rate = 0
  master_hygiene = 0 
  master_mood['pos_self_clean'] = 1
  house_mess_rate += 3
  dynamic $master_energy_drop
  txt_count = 1
- $special_bg = 'scene\master_bathing'    
+ g = RAND(1,3)
+ if g = 1: $special_bg = 'scene\master_bathing'
+ if g = 2: $special_bg = 'scene\master_bathing_2'
+ if g = 3: $special_bg = 'scene\master_bathing_3'
  $text[1] = '<<$bathing_master_alone>>'
  $place = 'bathroom' 
  npc = 0 
@@ -3338,7 +3341,11 @@ END
 !Сладкое
 IF interaction = 1551:
  $interaction_type = 'prise_sweets'
- $special_bg = $chokolate    
+ g = RAND(1,4)
+ if g = 1: $special_bg = $chokolate 
+ if g = 2: $special_bg = 'scene/chokolate_2'    
+ if g = 3: $special_bg = 'scene/chokolate_3'     
+ if g = 4: $special_bg = 'scene/chokolate_4' 
  prise_level = 1
  prise_potence = 2
  prise_cost = 1
@@ -3351,7 +3358,10 @@ END
 
 IF interaction = 1552:
  $interaction_type = 'prise_sweets'
- $special_bg = $cake     
+ g = RAND(1,3)
+ if g = 1: $special_bg = $cake  
+ if g = 2: $special_bg = 'scene/cake_2'    
+ if g = 3: $special_bg = 'scene/cake_3'       
  prise_level = 2 
  prise_potence = 4
  prise_cost = 2 
@@ -3364,7 +3374,11 @@ END
 
 IF interaction = 1553:
  $interaction_type = 'prise_sweets'
- $special_bg = $ice_cream     
+ g = RAND(1,4)
+ if g = 1: $special_bg = $ice_cream  
+ if g = 2: $special_bg = 'scene/ice_cream_2'    
+ if g = 3: $special_bg = 'scene/ice_cream_3'  
+ if g = 4: $special_bg = 'scene/ice_cream_4'  
  prise_level = 3 
  prise_potence = 8
  prise_cost = 4 
@@ -3377,7 +3391,9 @@ END
 
 IF interaction = 1554:
  $interaction_type = 'prise_sweets'
- $special_bg = $jelly     
+ g = RAND(1,2)
+ if g = 1: $special_bg = $jelly  
+ if g = 2: $special_bg = 'scene/jelly_2' 
  prise_level = 4
  gift_promised = 0  
  prise_potence = 16
@@ -4452,7 +4468,11 @@ IF interaction = 1473:
  torture_fear = slave["pride"]*4
  sensitivity_threshold = 4
  torture_intensity = 3
- $special_bg = 'scene\public_paint'
+ g = RAND(1,4)
+ if g = 1: $special_bg = 'scene\public_paint' 
+ if g = 2: $special_bg = 'scene\public_paint_2'    
+ if g = 3: $special_bg = 'scene\public_paint_3'  
+ if g = 4: $special_bg = 'scene\public_paint_4'
  add_slave_hygiene += 20 
  easy_for_master = 1  
  $special_part = {
@@ -4474,7 +4494,13 @@ IF interaction = 1474:
  torture_intensity = 4
  fear_force = 10
  add_slave_hygiene += 10 
- $special_bg = 'scene\public_use'
+ g = RAND(1,6)
+ if g = 1: $special_bg = 'scene\public_use' 
+ if g = 2: $special_bg = 'scene\public_use_2'    
+ if g = 3: $special_bg = 'scene\public_use_3'  
+ if g = 4: $special_bg = 'scene\public_use_4'
+ if g = 5: $special_bg = 'scene\public_use_5'  
+ if g = 6: $special_bg = 'scene\public_use_6'
  easy_for_master = 1  
  $special_part = {
  $interaction_type = 'special_jpg'
@@ -4505,7 +4531,11 @@ IF interaction = 1475:
  sensitivity_threshold = 2
  torture_intensity = 5
  fear_force = 12
- $special_bg = 'scene\public_urinal'
+ g = RAND(1,4)
+ if g = 1: $special_bg = 'scene\public_urinal' 
+ if g = 2: $special_bg = 'scene\public_urinal_2'    
+ if g = 3: $special_bg = 'scene\public_urinal_3'  
+ if g = 4: $special_bg = 'scene\public_urinal_4'
  easy_for_master = 1  
  add_slave_hygiene += 25
  $special_part = {

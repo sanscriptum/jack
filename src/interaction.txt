@@ -6066,12 +6066,13 @@ IF interaction = 9913:
 END
 
 !РОЖДЕНИЕ ПАРАЗИТА
+!TODO: Паразит не родится у ассистентки и заключенной если нет рабыни
 IF interaction = 9921:
  $interaction_type = 'chestbuster'
+ $special_bg = '<<$slave["fullimage"]>>' 
  slave_state = CONST_INT['no_slave']
  killvar 'slave'
  killvar 'slave_rate'
- $special_bg = '<<$slave["fullimage"]>>' 
  gs '#txt'
  gs '#txt_2'
  copyarr '$text', '$slave_chestbuster'
@@ -6079,10 +6080,10 @@ END
 
 IF interaction = 9922:
  $interaction_type = 'chestbuster'
+ $special_bg = '<<$assistant["fullimage"]>>' 
  assistant_state = 0
  killvar 'assistant'
  killvar 'assistant_rate'
- $special_bg = '<<$assistant["fullimage"]>>' 
  gs '#txt'
  gs '#txt_2'
  copyarr '$text', '$assistant_chestbuster'
@@ -6090,10 +6091,10 @@ END
 
 IF interaction = 9923:
  $interaction_type = 'chestbuster'
+ $special_bg = '<<$prisoner["fullimage"]>>' 
  prisoner_state = 0
  killvar 'prisoner'
  killvar 'prisoner_rate'
- $special_bg = '<<$prisoner["fullimage"]>>' 
  gs '#txt'
  gs '#txt_2'
  copyarr '$text', '$prisoner_chestbuster'

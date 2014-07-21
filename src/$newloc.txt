@@ -326,12 +326,16 @@ if master_hygiene <= 3: master_mood['neg_dirty'] = 0
 if master_mood['pos_statisfied'] < 0: master_mood['pos_statisfied'] = 0
 if master_excitement > master_mood['pos_statisfied']: master_mood['neg_boner'] = master_excitement
 if master_excitement <= master_mood['pos_statisfied']: master_mood['neg_boner'] = 0
+if master_excitement < -2: master_mood['neg_softcore'] = 100
+if master_excitement > -3: master_mood['neg_softcore'] = 0
 
 if master_energy => master_str:
 	master_mood['pos_energy'] = 1
 else
 	if master_mood['neg_tired'] > 0 or master_mood['neg_drunk'] > 0 or master_mood['neg_wounded'] > 0 or master_mood['neg_no_koffe'] > 0 or master_mood['neg_no_meth'] > 0 or master_mood['neg_no_opium'] > 0 or master_mood['neg_master_ill'] > 0: master_mood['pos_energy'] = 0
 end 
+if master_energy < 0: master_mood['neg_tired'] = 100
+if master_energy > 0: master_mood['neg_tired'] = 0
 
 master_mood['pos_optimism'] = 0
 master_mood['neg_grumpy'] = 0

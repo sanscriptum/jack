@@ -863,17 +863,17 @@ $text_display += {<br><div id="under">Она слишком опасна<br><div
 !Салон мадам Жофрэ
 $brothel_options[1] = {
 $text_display = '<br>'
-IF sparks => 1:
+IF sparks => 1 and master_energy > 0:
  $text_display += {<br><div id="under">Быстрый сервис (1 искра)<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
  else
  $text_display += {<br><div id="under_gray">Быстрый сервис (1 искра)<br></div>}  
 END
-IF sparks => 5:
+IF sparks => 5 and master_energy > 0:
  $text_display += {<br><div id="under">Стандартный сервис (5 искр)<br><div id = "clear"><a href = 'EXEC: sp_txt = 3 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
  else
  $text_display += {<br><div id="under_gray">Стандартный сервис (5 искр)<br></div>}  
 END
-IF sparks => 15:
+IF sparks => 15 and master_energy > 0:
  $text_display += {<br><div id="under">Элитный сервис (15 искр)<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
  else
  $text_display += {<br><div id="under_gray">Элитный сервис (15 искр)<br></div>}  
@@ -1086,10 +1086,26 @@ $beauty_options[1] = {
 $text_display = '<br>'
 $text_display += {<br><div id="under">Услуги для мужчин<div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
 IF slave_state = CONST_INT['slave_exist']:
- $text_display += {<div id="under">Спа и массаж (3 искры)<div id = "clear"><a href = 'EXEC: interaction_city = 11611 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
- $text_display += {<div id="under">Модная стрижка (3 искры)<div id = "clear"><a href = 'EXEC: interaction_city = 11612 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Восковая эпиляция (3 искры)<div id = "clear"><a href = 'EXEC: interaction_city = 11613 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Визаж и маникюр (3 искры) <div id = "clear"><a href = 'EXEC: interaction_city = 11614 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ IF slave["massaged"] = 0: 
+  $text_display += {<div id="under">Спа и массаж (3 искры)<div id = "clear"><a href = 'EXEC: interaction_city = 11611 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+  else
+  $text_display += {<div id="under_gray">Спа и массаж</div>}
+ END
+ IF slave["hairstyle"] ! 7:
+  $text_display += {<div id="under">Модная стрижка (3 искры)<div id = "clear"><a href = 'EXEC: interaction_city = 11612 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Модная стрижка</div>} 
+ END
+ IF slave["epilation"] < 12:
+  $text_display += {<div id="under">Восковая эпиляция (3 искры)<div id = "clear"><a href = 'EXEC: interaction_city = 11613 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Восковая эпиляция</div>}
+ END
+ IF slave["manicure"] < 5:
+  $text_display += {<div id="under">Визаж и маникюр (3 искры) <div id = "clear"><a href = 'EXEC: interaction_city = 11614 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Визаж и маникюр</div>} 
+ END
  else
  $text_display += {<div id="under_gray">Спа и массаж</div>} 
  $text_display += {<div id="under_gray">Модная стрижка</div>} 
@@ -1107,11 +1123,31 @@ $text_display += {<br><div id="under">Покинуть магазин<br><div id
 
 $beauty_options[2] = {
 $text_display = '<br>'
-$text_display += {<br><div id="under">Модная стрижка (3 искры)<div id = "clear"><a href = 'EXEC: interaction_city = 11621 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
-$text_display += {<br><div id="under">Косметические процедуры (5 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 11622 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
-$text_display += {<br><div id="under">Бодрящий массаж (3 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 11623 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
-$text_display += {<br><div id="under">Эротический массаж (3 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 11624 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
-$text_display += {<br><div id="under">Арома спа (5 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 11625 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+IF master_haircut < 30: 
+ $text_display += {<br><div id="under">Модная стрижка (3 искры)<div id = "clear"><a href = 'EXEC: interaction_city = 11621 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Модная стрижка</div>}
+END
+IF master_visage < 10: 
+ $text_display += {<br><div id="under">Косметические процедуры (5 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 11622 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Косметические процедуры</div>}
+END
+IF master_massaged = 0: 
+ $text_display += {<br><div id="under">Бодрящий массаж (3 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 11623 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Бодрящий массаж</div>}
+END
+IF master_erected = 0: 
+ $text_display += {<br><div id="under">Эротический массаж (3 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 11624 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Эротический массаж</div>}
+END
+IF master_hygiene ! 0 or master_spaed = 0:
+ $text_display += {<br><div id="under">Арома спа (5 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 11625 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Арома спа</div>}
+END
 $text_display += {<br><div id="under">Другие услуги<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
 }
 
@@ -1568,18 +1604,22 @@ $colloseum_options[1] = {
 
 $colloseum_options[21] = { 
  $text_display = '<br>'
- $text_display += {<br><div id="under">- Устрой мне спарринг<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- IF slave_state = CONST_INT['slave_exist']:
+ IF master_energy > 0:
+  $text_display += {<br><div id="under">- Устрой мне спарринг<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">- Устрой мне спарринг<br></div>} 
+ END
+ IF slave_state = CONST_INT['slave_exist'] and slave["energy"] > 0:
   $text_display += {<div id="under">- Устрой спарринг для моей воспитуемой<br><div id = "clear"><a href = 'EXEC: sp_txt = 3 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<div id="under_gray">- Устрой спарринг для моей воспитуемой<br></div>}   
  END
- IF assistant_state = 1: 
+ IF assistant_state = 1 and assistant["energy"] > 0: 
   $text_display += {<div id="under">- Устрой спарринг для моей ассистентки<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<div id="under_gray">- Устрой спарринг для моей ассистентки<br></div>} 
  END
- IF spm_number < master_fighter:
+ IF spm_number < master_fighter and master_energy > 0:
   $text_display += {<div id="under">- Обучи меня особому приёму<br><div id = "clear"><a href = 'EXEC: sp_txt = 5 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<div id="under_gray">- Обучи меня особому приёму<br></div>} 

@@ -46,7 +46,7 @@ if txt > 1:
  else
  addobj '<img src = "content\pic\buttons\noback_button.png">' 
 END 
-addobj '<img src = "content\fpic\buttons\orward_button.png">'
+addobj '<img src = "content\pic\buttons\forward_button.png">'
 
 if $msg_txt ! '': msg '<<$msg_txt>>'
 --- sex_interaction_screen ---------------------------------

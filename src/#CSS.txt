@@ -1633,6 +1633,14 @@ width:48px;
 height:48px;
 }
 
+#exchange {
+position:absolute;
+left:1020px;
+top:455px;
+width:48px;
+height:48px;
+}
+
 #auction_rise_up {
 position:absolute;
 left:530px;

@@ -216,6 +216,9 @@ IF master_excitement > 0:
  END
 END
 
+!кнопка для обмена рабыни с ассистенткой
+IF slave_state = CONST_INT['slave_exist'] and slave["moral"] => 3 and assistant_state = 1:*p  {<div id="exchange"><a href = "EXEC: gt 'slave_to_assistant'"><img src="content\pic\buttons\exchange.png"></a></div>}  
+
 !показ состояния заклинаний
 $active_spell = ''
 if auspex = 1: $active_spell += 'AUS<br>'

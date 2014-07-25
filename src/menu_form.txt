@@ -121,7 +121,7 @@ IF menu_form = 0:
   END
  END  
  $text_display += {<br><div id="under">Конец рабочего дня <br><div id = "clear"><a href = "EXEC: gt 'next_day'"><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += '<br><div id="under_gray">Калории: <<slave["calories"]>>/ Истощение: <<slave["starvation"]>> / жЫр <<slave_rate["fat"]>><br></div>'
+ !$text_display += '<br><div id="under_gray">Калории: <<slave["calories"]>>/ Истощение: <<slave["starvation"]>> / жЫр <<slave_rate["fat"]>><br></div>'
 END
 
 !Главное меню - Заняться воспитуемой

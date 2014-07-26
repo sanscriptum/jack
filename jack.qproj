@@ -11,6 +11,7 @@
     <Location name="exid"/>
     <Folder name="crutches">
       <Location name="new_game"/>
+      <Location name="slavebase_test"/>
       <Location name="test_loc"/>
     </Folder>
     <Folder name="system">

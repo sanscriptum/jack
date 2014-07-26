@@ -5,7 +5,7 @@
 '<div id = "title_scroll"><img src = "content\pic\scroll_large.gif"></div>'
 '<div id = "title_scroll_text">Данная версия базируется на исправлениях the_vm.
 
-Версия фикса: 27.07
+Версия фикса: 25.07#1
 Свежую версию фикса всегда можно скачать <a href="https://db.tt/Xz59JzLc">здесь</a>. 
 Репозиторий фикса открыт для всех желающих улучшать и дополнять игру, и находится <a href="https://github.com/thevm/jack">по этому адресу</a>.
 Подробное описание фикса можно найти в файле fix_readme.txt

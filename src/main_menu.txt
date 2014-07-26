@@ -11,8 +11,8 @@ MAINDESC_H = 798
 '<div id = "title">
 
 <center><div id = "title_large">Валет плетей</div></center>
-<div id = "title_small">Версия 1.2 (fix 25.07)
-</div></div>'
+<div id = "title_small">Версия 1.2.1</div> <div id = "title_fix">(fix 25.07#1)</div>
+</div>'
 '<div id = "title_menu">
 <div id="under">{ Пройти обучение }<br><div id = "clear"><a href = ''EXEC: gt "demo_intro"''><img src = "content\pic\clear.gif"></a></div></div>
 <div id="under">{ Сюжетный режим }<br><div id = "clear"><a href = ''EXEC: gt "hero_customization"''><img src = "content\pic\clear.gif"></a></div></div>

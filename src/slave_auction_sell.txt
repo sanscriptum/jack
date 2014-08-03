@@ -1,5 +1,5 @@
 # slave_auction_sell
-!Продаём рабыню Фариду
+!Sell ​​slave to Farid
 IF farid_potential_debt > 0:
  if slave_state = CONST_INT['no_slave']: interaction_city = 1191
  if slave_state ! CONST_INT['no_slave']: interaction_city = 1192
@@ -18,32 +18,32 @@ $npc_id = 'фарид_аукционщик'
 npc = 1
 txt_count = 6
 
-$text[1] = '[ФАРИД]
-  <font color="#660000">- А! Это же мой добрый друг <<$master_name>>!!! Всегда рад тебя видеть, дАрагой! Ну-ка, кого ты привел с собой? Это одна из твоих воспитанниц? Вах, какова!
+$text[1] = '[FARID]
+  <font color="#660000">- Oh! This is my good friend <<$master_name>>!!! Always glad to see you, my dear! Well, who did you bring with you? This is one of your pupils? Wah, so lovely!
 </font>'
-$text[2] = '  <font color="#191970">- Без тебя никуда, Фарид. Будь другом, глянь чего она стоит? Я бы сдал её тебе на реализацию, если по цене сойдемся.
+$text[2] = '  <font color="#191970">- Without you nowhere, Farid. Be a friend, look what its worth? I would have passed it to you to implement if costs get together.
 </font>'
 
 IF slave['brand'] = 0:
- $text[3] = '[ФАРИД]
-  <font color="#660000">- Неклейменая? Ну, это мой профиль, да, но много тут не выйдет, сам понимаешь. Оценю только внешние данные... Ну-ка, пакрутисъ сладкая...
+ $text[3] = '[FARID]
+  <font color="#660000">- Not branded? Well this is my profile, yes, but there will come a lot, you know. Estimate only external data ... Well, show yourself, sweet ...
 </font>'
  else
- $text[3] = '[ФАРИД]
-  <font color="#660000">- О! Девочка то с клеймом! Не совсем мой профиль, канэшна, но для тебя найдем и ей сбыт, радной. Расскажи-ка, чему ты её научил, что умеет, как с поведением у нее?
+ $text[3] = '[FARID]
+  <font color="#660000">- Оh! The girl is with brand! Not quite my profile, but for you I will find way to sell her, my dear. Tell me what you taught her? How she behaves?
 </font>'
- if brand_reputation <= 3: $text[3] = '[ФАРИД]
-  <font color="#660000">- Беда-беда... Девочка то с клеймом! Не мой профиль. Не магу её взять, дарагой. Рад бы, да не магу. С меня же гильдия щкуру спустит за такие щтуки.
+ if brand_reputation <= 3: $text[3] = '[FARID]
+  <font color="#660000">- Well, this is bad... Girl is branded! Not my profile. I cannot take her, my dear. Would be happy to, but I can''t. Guild will pull the skin out of me for such things.
 </font>' & text_count = 3
 END
 
-$text[4] = '[ФАРИД]
-  <font color="#660000">- Ага... ага... Ну, ясно, читож. Чтобы самому без паследний штаны не астаца, магу дать тебе за нее <<sell_price>> искра. Больше искра? Нет, радной, извиняй. Больше искра никак не магу.
+$text[4] = '[FARID]
+  <font color="#660000">- Yeah... Yeah... Well, I see. Not to be left without a penny, I'll give you for her <<sell_price>> sparks. More sparks? No, my dear, I can''t.
 </font>'
 
-$text[5] = '  <a href = ''EXEC: gt "slave_auction_sell_end"''><font color="#228B22">- Грабишь средь бела дня, Фарид. Ну да ладно... по рукам! 
+$text[5] = '  <a href = ''EXEC: gt "slave_auction_sell_end"''><font color="#228B22">- Rob in broad daylight, Farid. Oh well... deal!  
 </font></a>
-  <a href = ''EXEC: gt "city_menu_form"''><font color="#B22222">- Ну это никуда не годится! Я и с завязанными глазами покупателя получше найду.
+  <a href = ''EXEC: gt "city_menu_form"''><font color="#B22222">- This is awful! Being blindfolded I can find better buyer.
 </font></a>'
 
 *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
@@ -53,7 +53,7 @@ IF npc = 1:
  if nsfw = 0:*p '<div id = "bg"><img src="content\pic\characters\<<$npc_image[$npc_id]>>.gif"></div>'
  *p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$npc_name[$npc_id]>></div><<$npc_status[$npc_id]>>
 
-Информация к размышлению:
+Information for consideration:
 </center></div>'
  *p '<div id = "side_panel_text">  <<$npc_attitude[npc_attitude[$npc_id]]>>
 
@@ -62,7 +62,7 @@ IF npc = 1:
  else
  *p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$place_name[$place]>></div><<$place_location[$place]>>
 
-Информация к размышлению:
+Information for consideration:
 </center></div>'
  *p '<div id = "side_panel_text">  <<$place_info[$place]>>
 </div>' 

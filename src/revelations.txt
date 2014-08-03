@@ -1,5 +1,5 @@
 # revelations
-!ВСКРЫВАЕМ ОСОБЕННОСТИ
+!reveals traits
 
 IF slave["nymphomania_revealed"] = 1:
  IF slave["nymphomania"] > 0: msg '<<$Нимфоманка>>'
@@ -205,21 +205,21 @@ IF slave["compassion_revealed"] = 1:
 END
 
 IF slave["pregnant_revealed"] = 1:
- msg '<<$slave_name>> испытывает последствия интоксикации. К тому же у неё очень давно не было месячных. Похоже она беременна!'
+ msg '<<$slave_name>> experiencing the effects of intoxication. Besides, it was not a very long period. It looks like she''s pregnant!'
  slave["pregnant_revealed"] = 2
 END
 
 IF slave["pregnant_revealed"] = 2 and slave["pregnant"] = 0: slave["pregnant_revealed"] = 0
 
 IF assistant["pregnant_revealed"] = 1:
- msg '<<$assistant_name>> испытывает последствия интоксикации. К тому же у неё очень давно не было месячных. Похоже она беременна!'
+ msg '<<$assistant_name>> experiencing the effects of intoxication. Besides, it was not a very long period. It looks like she''s pregnant!'
  assistant["pregnant_revealed"] = 2
 END
 
 IF assistant["pregnant_revealed"] = 2 and assistant["pregnant"] = 0: assistant["pregnant_revealed"] = 0
 
 IF prisoner["pregnant_revealed"] = 1:
- msg '<<$prisoner_name>> испытывает последствия интоксикации. К тому же у неё очень давно не было месячных. Похоже она беременна!'
+ msg '<<$prisoner_name>> experiencing the effects of intoxication. Besides, it was not a very long period. It looks like she''s pregnant!'
  prisoner["pregnant_revealed"] = 2
 END
 

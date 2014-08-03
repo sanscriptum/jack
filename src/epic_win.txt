@@ -1,5 +1,5 @@
 # epic_win
-!Экран завершения сюжетной миссии
+!end screen of story mode
 day -= 1
 base_score += day/2
 score = base_score/day
@@ -16,12 +16,12 @@ $yes = {gt 'menu_form'}
 $no = {gt 'Start'}
 
 '<div id = "title_scroll"><img src = "content\pic\scroll_large.gif"></div>'
-'<div id = "title_scroll_text"><center><h2><font face="Victoriana" size="+20">Поздравляем!</font></h2>
-Вы добились статуса патриция, получили самых лучших клиентов и тем самым завершили сюжетную часть игры с рейтингом<br>
+'<div id = "title_scroll_text"><center><h2><font face="Victoriana" size="+20">Congratulations!</font></h2>
+You have achieved the status of a patrician, got the best customers, and thus completed the story of the game with rating<br>
 <h1><font face="Victoriana" size="+20"><<$rating[score]>></font></h1>
-<font face="Victoriana" size="+10">Затрачено дней: <<day>></font><br>
-<font face="Victoriana" size="+10">Используемый персонаж: <<$master_base_name[hero_choice]>></font><br>
-Желаете продолжить в свободном режиме?</center>
+<font face="Victoriana" size="+10">Spent days: <<day>></font><br>
+<font face="Victoriana" size="+10">Played as: <<$master_base_name[hero_choice]>></font><br>
+Wish to continue in free mode?</center>
 </div>'
 
 *p {<div id = "approve_low"><a href = 'EXEC: dynamic $yes'><img src="content\pic\buttons\approve.png"></a></div>}

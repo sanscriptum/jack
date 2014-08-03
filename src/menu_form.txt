@@ -72,10 +72,10 @@ Menu option - active with variable
   $text_display += {<br><div id="under_gray">Деалать <br></div>}
  END
  
-Menu exit option - active
+Menu interaction option - active
  $text_display += {<br><div id="under">Деалать <br><div id = "clear"><a href = 'EXEC: interaction = 1 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
 
-Menu exit option - active with variable
+Menu interaction option - active with variable
  IF assistant_state = 1:
   $text_display += {<br><div id="under">Деалать <br><div id = "clear"><a href = 'EXEC: interaction = 1 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
@@ -83,7 +83,7 @@ Menu exit option - active with variable
  END
  
 Cancel
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 '
 !debug
 !msg '$place = <<$place>>'
@@ -308,214 +308,214 @@ END
 !main menu - Slave activities - Punish
 IF menu_form = 14:
  $text_display += {<br><div id="under">Psychological pressure<br><div id = "clear"><a href = 'EXEC: menu_form = 141 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Рукоприкладство<br><div id = "clear"><a href = 'EXEC: menu_form = 142 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Флаггеляция<br><div id = "clear"><a href = 'EXEC: menu_form = 143 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Battering<br><div id = "clear"><a href = 'EXEC: menu_form = 142 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Flagellation<br><div id = "clear"><a href = 'EXEC: menu_form = 143 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  IF dungeon = 0:
-  $text_display += {<br><div id="under_gray">Пыточные инструменты<br></div>}
-  $text_display += {<br><div id="under_gray">Пыточные агрегаты<br></div>}
+  $text_display += {<br><div id="under_gray">Torture instruments<br></div>}
+  $text_display += {<br><div id="under_gray">Torture units<br></div>}
   else
-  $text_display += {<br><div id="under">Пыточные инструменты<br><div id = "clear"><a href = 'EXEC: menu_form = 144 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
-  $text_display += {<br><div id="under">Пыточные агрегаты<br><div id = "clear"><a href = 'EXEC: menu_form = 145 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Torture instruments<br><div id = "clear"><a href = 'EXEC: menu_form = 144 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Torture units<br><div id = "clear"><a href = 'EXEC: menu_form = 145 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  END
- $text_display += {<br><div id="under">Бондаж и депривация<br><div id = "clear"><a href = 'EXEC: menu_form = 146 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Наказание стыдом<br><div id = "clear"><a href = 'EXEC: menu_form = 147 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Bondage and deprivation<br><div id = "clear"><a href = 'EXEC: menu_form = 146 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Shaming<br><div id = "clear"><a href = 'EXEC: menu_form = 147 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  IF prisoner_state = 1:
-  $text_display += {<br><div id="under">Наказание примером<br><div id = "clear"><a href = 'EXEC: menu_form = 148 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Example of punishment<br><div id = "clear"><a href = 'EXEC: menu_form = 148 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Наказание примером<br></div>}  
+  $text_display += {<br><div id="under_gray">Example of punishment<br></div>}  
  END
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!main menu - Slave activities - Поощрить
+!main menu - Slave activities - Reward
 IF menu_form = 15:
- $text_display += {<br><div id="under">Моральное поощрение<br><div id = "clear"><a href = 'EXEC: menu_form = 156 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Провести время вместе<br><div id = "clear"><a href = 'EXEC: menu_form = 151 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Дать свободное время<br><div id = "clear"><a href = 'EXEC: menu_form = 152 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Эротическое поощрение<br><div id = "clear"><a href = 'EXEC: menu_form = 153 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Сделать подарок<br><div id = "clear"><a href = 'EXEC: menu_form = 154 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Угостить сладким<br><div id = "clear"><a href = 'EXEC: menu_form = 155 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Moral encouragement<br><div id = "clear"><a href = 'EXEC: menu_form = 156 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Spend time together<br><div id = "clear"><a href = 'EXEC: menu_form = 151 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Give free time<br><div id = "clear"><a href = 'EXEC: menu_form = 152 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Erotic reward<br><div id = "clear"><a href = 'EXEC: menu_form = 153 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Make a gift<br><div id = "clear"><a href = 'EXEC: menu_form = 154 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Sweet treat<br><div id = "clear"><a href = 'EXEC: menu_form = 155 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!main menu - Slave activities - Заняться сексом
+!main menu - Slave activities - Sex
 IF menu_form = 16:
- $text_display += {<br><div id="under">Расслабленный секс<br><div id = "clear"><a href = 'EXEC: interaction = 5414 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Активный секс<br><div id = "clear"><a href = 'EXEC: interaction = 5415 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Relaxed sex<br><div id = "clear"><a href = 'EXEC: interaction = 5414 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Active sex<br><div id = "clear"><a href = 'EXEC: interaction = 5415 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
  IF assistant_state = 1:
   $text_display += {<br><div id="under">Lamour de trois<br><div id = "clear"><a href = 'EXEC: interaction = 5416 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Lamour de trois<br></div>}
  END   
  IF master_excitement => 0:
-  $text_display += {<br><div id="under">Изнасиловать<br><div id = "clear"><a href = 'EXEC: interaction = 161 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Rape<br><div id = "clear"><a href = 'EXEC: interaction = 161 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Изнасиловать<br></div>}
+  $text_display += {<br><div id="under_gray">Rape<br></div>}
  END
  IF master_excitement => 0:
-  $text_display += {<br><div id="under">Изнасиловать орально<br><div id = "clear"><a href = 'EXEC: interaction = 162 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Oral rape<br><div id = "clear"><a href = 'EXEC: interaction = 162 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Изнасиловать орально<br></div>}
+  $text_display += {<br><div id="under_gray">Oral rape<br></div>}
  END
  IF master_excitement => 0:
-  $text_display += {<br><div id="under">Изнасиловать анально<br><div id = "clear"><a href = 'EXEC: interaction = 163 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Anal rape<br><div id = "clear"><a href = 'EXEC: interaction = 163 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Изнасиловать анально<br></div>}
+  $text_display += {<br><div id="under_gray">Anal rape<br></div>}
  END
-! $text_display += {<br><div id="under_gray">Изнасиловать комплексно<br></div>} 
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ !$text_display += {<br><div id="under_gray">Complex rape<br></div>} 
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!main menu - Slave activities - Пригласить репетитора
+!main menu - Slave activities - Invite a tutor
 IF menu_form = 17:
- IF house_mess > 0 and slave['service'] < 5:
-  $text_display += '<div id="under">Домоводство (<<$couch_price[slave["service"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 1711 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
+IF house_mess > 0 and slave['service'] < 5:
+  $text_display += '<div id="under">Housekeeping (<<$couch_price[slave["service"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 1711 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<div id="under_gray">Домоводство<br></div>}
+  $text_display += {<div id="under_gray">Housekeeping<br></div>}
  END 
  IF kitchen > 0 and slave['cook'] < 5:
-  $text_display += '<div id="under">Кулинария (<<$couch_price[slave["cook"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 1712 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>' 
+  $text_display += '<div id="under">Cookery (<<$couch_price[slave["cook"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 1712 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>' 
   else
-  $text_display += {<div id="under_gray">Кулинария<br></div>}
+  $text_display += {<div id="under_gray">Cookery<br></div>}
  END  
  IF slave['nurse'] < 5: 
-  $text_display += '<div id="under">Медицина (<<$couch_price[slave["nurse"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 1713 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>' 
+  $text_display += '<div id="under">Medicine (<<$couch_price[slave["nurse"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 1713 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>' 
   else
-  $text_display += {<div id="under_gray">Медицина<br></div>}
+  $text_display += {<div id="under_gray">Medicine<br></div>}
  END
  IF slave['secretary'] < 5: 
-  $text_display += '<div id="under">Делопроизводство (<<$couch_price[slave["secretary"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 1714 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>' 
+  $text_display += '<div id="under">Clerical work (<<$couch_price[slave["secretary"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 1714 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>' 
   else
-  $text_display += {<div id="under_gray">Делопроизводство<br></div>} 
+  $text_display += {<div id="under_gray">Clerical work<br></div>} 
  END
  IF slave["stamina"] > 1 and slave['stamina'] < 5: 
-  $text_display += '<div id="under">Гимнастика (<<$couch_price[slave["stamina"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 1721 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<div id="under">Gymnastics (<<$couch_price[slave["stamina"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 1721 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<div id="under_gray">Гимнастика<br></div>}   
+  $text_display += {<div id="under_gray">Gymnastics<br></div>}   
  END
  IF slave["stamina"] > 1 and slave['callisthenics'] < 5: 
-  $text_display += '<div id="under">Хореография (<<$couch_price[slave["callisthenics"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 1722 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<div id="under">Choreography (<<$couch_price[slave["callisthenics"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 1722 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<div id="under_gray">Хореография<br></div>}     
+  $text_display += {<div id="under_gray">Choreography<br></div>}     
  END
  IF slave["stamina"] > 1 and slave['gladiatrix'] < 5: 
-  $text_display += '<div id="under">Боевые искусства (<<$couch_price[slave["gladiatrix"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 1723 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<div id="under">Martial arts (<<$couch_price[slave["gladiatrix"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 1723 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<div id="under_gray">Боевые искусства<br></div>}       
+  $text_display += {<div id="under_gray">Martial arts<br></div>}       
  END
  IF slave["stamina"] > 1 and slave['dressage'] < 5: 
-  $text_display += '<div id="under">Выездка (<<$couch_price[slave["dressage"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 1724 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<div id="under">Dressage (<<$couch_price[slave["dressage"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 1724 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<div id="under_gray">Выездка<br></div>}
+  $text_display += {<div id="under_gray">Dressage<br></div>}
  END
  IF slave["stamina"] > 1 and slave['pet'] < 5: 
-  $text_display += '<div id="under">Дрессура (<<$couch_price[slave["pet"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 1725 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<div id="under">Taming (<<$couch_price[slave["pet"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 1725 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<div id="under_gray">Дрессура<br></div>}
+  $text_display += {<div id="under_gray">Taming<br></div>}
  END 
  IF slave['expression'] < 5: 
-  $text_display += '<div id="under">Этикет и риторика (<<$couch_price[slave["expression"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 1731 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<div id="under">Etiquette and rhetoric (<<$couch_price[slave["expression"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 1731 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<div id="under_gray">Этикет и риторика<br></div>}
+  $text_display += {<div id="under_gray">Etiquette and rhetoric<br></div>}
  END
  IF slave['music'] < 5: 
-  $text_display += '<div id="under">Музыкальные инструменты (<<$couch_price[slave["music"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 1732 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<div id="under">Musical instruments (<<$couch_price[slave["music"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 1732 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<div id="under_gray">Музыкальные инструменты<br></div>}
+  $text_display += {<div id="under_gray">Musical instruments<br></div>}
  END
  IF slave['vocal'] < 5:  
-  $text_display += '<div id="under">Вокал (<<$couch_price[slave["vocal"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 1733 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<div id="under">Vocal (<<$couch_price[slave["vocal"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 1733 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<div id="under_gray">Вокал<br></div>}
+  $text_display += {<div id="under_gray">Vocal<br></div>}
  END
  IF lab = 1 and slave['enchanter'] < 5:
-  $text_display += '<div id="under">Чародейство (<<$couch_price[slave["enchanter"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 1734 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<div id="under">Witchcraft (<<$couch_price[slave["enchanter"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 1734 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<div id="under_gray">Чародейство<br></div>}
+  $text_display += {<div id="under_gray">Witchcraft<br></div>}
  END  
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!main menu - Slave activities - Избавиться от нее
+!main menu - Slave activities - Get rid of her
 IF menu_form = 18:
- $text_display += {<div id="under">Прогнать из дома<br><div id = "clear"><a href = 'EXEC: interaction = 181 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under_gray">Перерезать глотку<br></div>}
- $text_display += {<br><div id="under">Повесить<br><div id = "clear"><a href = 'EXEC: interaction = 182 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отрубить голову<br><div id = "clear"><a href = 'EXEC: interaction = 183 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Посадить на кол<br><div id = "clear"><a href = 'EXEC: interaction = 184 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Drive out the house<br><div id = "clear"><a href = 'EXEC: interaction = 181 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under_gray">Cut the throat<br></div>}
+ $text_display += {<br><div id="under">Hang<br><div id = "clear"><a href = 'EXEC: interaction = 182 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Decapitate<br><div id = "clear"><a href = 'EXEC: interaction = 183 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Impale<br><div id = "clear"><a href = 'EXEC: interaction = 184 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
 !" IF noway > 0:
-  $text_display += {<br><div id="under">Утопить<br><div id = "clear"><a href = 'EXEC: interaction = 185 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Drown<br><div id = "clear"><a href = 'EXEC: interaction = 185 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Утопить<br></div>}
+  $text_display += {<br><div id="under_gray">Drown<br></div>}
  END
  IF noway > 0:
-  $text_display += {<br><div id="under">Зажарить живьём<br><div id = "clear"><a href = 'EXEC: interaction = 185 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Roast alive<br><div id = "clear"><a href = 'EXEC: interaction = 185 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Зажарить живьём<br></div>}
+  $text_display += {<br><div id="under_gray">Roast alive<br></div>}
  END
  IF noway > 0:
-  $text_display += {<br><div id="under">Отдать чудовищу<br><div id = "clear"><a href = 'EXEC: interaction = 185 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Give to monster<br><div id = "clear"><a href = 'EXEC: interaction = 185 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Отдать чудовищу<br></div>}
+  $text_display += {<br><div id="under_gray">Give to monster<br></div>}
  END"
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Бытовые вопросы - Бухгалтерия
+!main menu - Domestic issues - Accounting
 IF menu_form = 31:
  IF master_wealth_target = 0:
-  $text_display += {<br><div id="under">+Уровень жизни: Бедный<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">+Standard of living: Poor<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  END   
  IF master_wealth_target = 1:
-  $text_display += {<br><div id="under">+Уровень жизни: Малоимущий<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 2 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
-  $text_display += {<br><div id="under">-Уровень жизни: Нищий<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">+Standard of living: Basic<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 2 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">-Standard of living: Impoverished<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  END   
  IF master_wealth_target = 2:
-  $text_display += {<br><div id="under">+Уровень жизни: Обеспеченный<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 3 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
-  $text_display += {<br><div id="under">-Уровень жизни: Бедный<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">+Standard of living: Comfortable<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 3 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">-Standard of living: Poor<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  END   
  IF master_wealth_target = 3:
-  $text_display += {<br><div id="under">+Уровень жизни: Респектабельный<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 4 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
-  $text_display += {<br><div id="under">-Уровень жизни: Малоимущий<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 2 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">+Standard of living: Respectable<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 4 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">-Standard of living: Basic<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 2 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  END   
  IF master_wealth_target = 4:
-  $text_display += {<br><div id="under">+Уровень жизни: Патриций<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 5 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
-  $text_display += {<br><div id="under">-Уровень жизни: Обеспеченый<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 3 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">+Standard of living: Luxurious<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 5 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">-Standard of living: Comfortable<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 3 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  END   
  IF master_wealth_target = 5:
-  $text_display += {<br><div id="under">+Уровень жизни: Негоциант<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 6 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
-  $text_display += {<br><div id="under">-Уровень жизни: Респектабельеый<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 4 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">+Standard of living: Extravagant<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 6 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">-Standard of living: Respectable<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 4 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  END   
  IF master_wealth_target = 6:
-  $text_display += {<br><div id="under">-Уровень жизни: Патриций<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 5 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">-Standard of living: Luxurious<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 5 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  END   
  IF $bill_message ! '':
-  $text_display += {<br><div id="under">Финансовый отчёт<br><div id = "clear"><a href = 'EXEC: msg "<<$bill_message>>"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Financial report<br><div id = "clear"><a href = 'EXEC: msg "<<$bill_message>>"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Финансовый отчёт<br></div>}
+  $text_display += {<br><div id="under_gray">Financial report<br></div>}
  END 
  IF assistant_state = 1 and assistant_account_rule = 1:
-  $text_display += {<br><div id="under">Заняться счетами лично<br><div id = "clear"><a href = 'EXEC: assistant_account_rule = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Do accounting personally<br><div id = "clear"><a href = 'EXEC: assistant_account_rule = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  if assistant_state = 1:   $text_display += {<br><div id="under">Ассистентка - счетовод<br><div id = "clear"><a href = 'EXEC: slave_account_rule = 0 & assistant_account_rule = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
-  if assistant_state ! 1: $text_display += {<br><div id="under_gray">Ассистентка - счетовод<br></div>}
+  if assistant_state = 1:   $text_display += {<br><div id="under">Assistant - accountant<br><div id = "clear"><a href = 'EXEC: slave_account_rule = 0 & assistant_account_rule = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  if assistant_state ! 1: $text_display += {<br><div id="under_gray">Assistant - accountant<br></div>}
  END 
- IF slave_state = CONST_INT['slave_exist'] and slave_account_rule = 1:
-  $text_display += {<br><div id="under">Заняться счетами лично<br><div id = "clear"><a href = 'EXEC: slave_account_rule = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ IF slave_state = 1 and slave_account_rule = 1:
+  $text_display += {<br><div id="under">Do accounting personally<br><div id = "clear"><a href = 'EXEC: slave_account_rule = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  if slave_state = CONST_INT['slave_exist']: $text_display += {<br><div id="under">Воспитуемая - счетовод<br><div id = "clear"><a href = 'EXEC: slave_account_rule = 1 & assistant_account_rule = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
-  if slave_state ! CONST_INT['slave_exist']: $text_display += {<br><div id="under_gray">Воспитуемая - счетовод<br></div>}
+  if slave_state = 1: $text_display += {<br><div id="under">Slave - accountant<br><div id = "clear"><a href = 'EXEC: slave_account_rule = 1 & assistant_account_rule = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  if slave_state ! 1: $text_display += {<br><div id="under_gray">Slave - accountant<br></div>}
  END 
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 3 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 3 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Не используется
+!not used
 IF menu_form = 32:
  $text_display += {<br><div id="under">Ночь в карцере<br><div id = "clear"><a href = 'EXEC: interaction = 321 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Холодный пол<br><div id = "clear"><a href = 'EXEC: interaction = 322 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
@@ -526,10 +526,10 @@ IF menu_form = 32:
   else
   $text_display += {<br><div id="under_gray">Будуар<br></div>}
  END
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Не используется
+!not used
 IF menu_form = 33:
  $text_display += {<br><div id="under">Не кормить (бесплатно)<br><div id = "clear"><a href = 'EXEC: interaction = 331 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Хлеб и вода (1 искр/день)<br><div id = "clear"><a href = 'EXEC: interaction = 332 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
@@ -547,1069 +547,1069 @@ IF menu_form = 33:
   $text_display += {<br><div id="under">Запретить десерт<br><div id = "clear"><a href = 'EXEC: interaction = 338 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
  END
  $text_display += {<br><div id="under_gray">Пищевые добавки (1 искр/день)<br></div>}  
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Бытовые вопросы - Принять наркотик
+!main menu - Domestic issues - Take a drug
 IF menu_form = 37:
- IF lab_store["koffe"] > 0:
-  $text_display += '<br><div id="under">Выпить камры (<<lab_store["koffe"]>>)<br><div id = "clear"><a href = ''EXEC: interaction = 371 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
+IF lab_store["koffe"] > 0:
+  $text_display += '<br><div id="under">Drink camra (<<lab_store["koffe"]>>)<br><div id = "clear"><a href = ''EXEC: interaction = 371 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<br><div id="under_gray">Камры нету<br></div>}
+  $text_display += {<br><div id="under_gray">No camra<br></div>}
  END
  IF lab_store["kanabis"] > 0:
-  $text_display += '<br><div id="under">Пыхнуть дурману (<<lab_store["kanabis"]>>)<br><div id = "clear"><a href = ''EXEC: interaction = 372 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<br><div id="under">Take datura (<<lab_store["kanabis"]>>)<br><div id = "clear"><a href = ''EXEC: interaction = 372 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<br><div id="under_gray">Дурман закончился<br></div>}
+  $text_display += {<br><div id="under_gray">Datura ran out<br></div>}
  END
  IF frige["alcohol"] > 0:
-  $text_display += '<br><div id="under">Забухать (<<frige["alcohol"]>>)<br><div id = "clear"><a href = ''EXEC: interaction = 373 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<br><div id="under">Blooze (<<frige["alcohol"]>>)<br><div id = "clear"><a href = ''EXEC: interaction = 373 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<br><div id="under_gray">Спиртного нету<br></div>}
+  $text_display += {<br><div id="under_gray">No alcohol<br></div>}
  END
  IF lab_store["meth"] > 0:
-  $text_display += '<br><div id="under">Снюхать пыльцы (<<lab_store["meth"]>>)<br><div id = "clear"><a href = ''EXEC: interaction = 374 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<br><div id="under">Smell pollen (<<lab_store["meth"]>>)<br><div id = "clear"><a href = ''EXEC: interaction = 374 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<br><div id="under_gray">Пыльцы фей нету<br></div>}
+  $text_display += '<br><div id="under_gray">No faerie''s pollen<br></div>}'
  END  
  IF lab_store["opium"] > 0:
-  $text_display += '<br><div id="under">Вмазаться забвением (<<lab_store["opium"]>>)<br><div id = "clear"><a href = ''EXEC: interaction = 375 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<br><div id="under">Dive into oblivion (<<lab_store["opium"]>>)<br><div id = "clear"><a href = ''EXEC: interaction = 375 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<br><div id="under_gray">Эссенция забвения закончилась<br></div>}
+  $text_display += {<br><div id="under_gray">Essense of oblivion ran out<br></div>}
  END  
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 3 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 3 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Бытовые вопросы - Употребить зелье
+!main menu - Domestic issues - Drink a potion
 IF menu_form = 38:
  IF вакхический_нектар > 0:
-  $text_display += '<br><div id="under">Вакхический нектар (<<вакхический_нектар>>)<br><div id = "clear"><a href = ''EXEC: interaction = 381 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<br><div id="under">Bacchic nectar (<<вакхический_нектар>>)<br><div id = "clear"><a href = ''EXEC: interaction = 381 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<br><div id="under_gray">Вакхический нектар [0]<br></div>}
+  $text_display += {<br><div id="under_gray">Bacchic nectar [0]<br></div>}
  END
  IF тонизируюзщий_эликсир > 0:
-  $text_display += '<br><div id="under">Тонизирующий эликсир (<<тонизируюзщий_эликсир>>)<br><div id = "clear"><a href = ''EXEC: interaction = 382 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<br><div id="under">Tonic elixir (<<тонизируюзщий_эликсир>>)<br><div id = "clear"><a href = ''EXEC: interaction = 382 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<br><div id="under_gray">Тонизирующий эликсир [0]<br></div>}
+  $text_display += {<br><div id="under_gray">Tonic elixir [0]<br></div>}
  END
  IF целительный_бальзам > 0:
-  $text_display += '<br><div id="under">Целительный бальзам (<<целительный_бальзам>>)<br><div id = "clear"><a href = ''EXEC: interaction = 383 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<br><div id="under">Balm (<<целительный_бальзам>>)<br><div id = "clear"><a href = ''EXEC: interaction = 383 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<br><div id="under_gray">Целительный бальзам [0]<br></div>}
+  $text_display += {<br><div id="under_gray">Balm [0]<br></div>}
  END
  IF афродизиак > 0:
-  $text_display += '<br><div id="under">Афродизиак (<<афродизиак>>)<br><div id = "clear"><a href = ''EXEC: interaction = 384 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<br><div id="under">Aphrodisiac (<<афродизиак>>)<br><div id = "clear"><a href = ''EXEC: interaction = 384 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<br><div id="under_gray">Афродизиак [0]<br></div>}
+  $text_display += {<br><div id="under_gray">Aphrodisiac [0]<br></div>}
  END  
  IF мощный_афодизиак > 0:
-  $text_display += '<br><div id="under">Мощный афродизиак (<<мощный_афодизиак>>) <br><div id = "clear"><a href = ''EXEC: interaction = 385 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<br><div id="under">Powerful aphrodisiac (<<мощный_афодизиак>>) <br><div id = "clear"><a href = ''EXEC: interaction = 385 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<br><div id="under_gray">Мощный афродизиак [0]<br></div>}
+  $text_display += {<br><div id="under_gray">Powerful aphrodisiac [0]<br></div>}
  END  
  IF приворотное_зелье > 0:
-  $text_display += '<br><div id="under">Приворотное зелье (<<приворотное_зелье>>)<br><div id = "clear"><a href = ''EXEC: interaction = 386 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<br><div id="under">Philtre (<<приворотное_зелье>>)<br><div id = "clear"><a href = ''EXEC: interaction = 386 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<br><div id="under_gray">Приворотное зелье [0]<br></div>}
+  $text_display += {<br><div id="under_gray">Philtre [0]<br></div>}
  END  
  IF вода_леты > 0:
-  $text_display += '<br><div id="under">Вода Леты (<<вода_леты>>)<br><div id = "clear"><a href = ''EXEC: interaction = 387 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<br><div id="under">Water of Lethe (<<вода_леты>>)<br><div id = "clear"><a href = ''EXEC: interaction = 387 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<br><div id="under_gray">Вода Леты [0]<br></div>}
+  $text_display += {<br><div id="under_gray">Water of Lethe [0]<br></div>}
  END 
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 3 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 3 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Поручения ассистентке - Проведи урок
+!main menu - Assistant assignments - Conduct a lesson
 IF menu_form = 41:
- $text_display += {<br><div id="under">Прикладные навыки<br><div id = "clear"><a href = 'EXEC: menu_form = 411 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Applied skills<br><div id = "clear"><a href = 'EXEC: menu_form = 411 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  IF slave["stamina"] > 1:
-  $text_display += {<br><div id="under">Физическое развитие<br><div id = "clear"><a href = 'EXEC: menu_form = 412 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Physycal development<br><div id = "clear"><a href = 'EXEC: menu_form = 412 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Физическое развитие<br></div>}
+  $text_display += {<br><div id="under_gray">Physycal development<br></div>}
  END
- $text_display += {<br><div id="under">Творческое развитие <br><div id = "clear"><a href = 'EXEC: menu_form = 413 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Специальные навыки <br><div id = "clear"><a href = 'EXEC: menu_form = 414 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 4 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Creative development <br><div id = "clear"><a href = 'EXEC: menu_form = 413 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Special skills <br><div id = "clear"><a href = 'EXEC: menu_form = 414 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 4 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Поручения воспитуемой - Сходи на занятия
+!main menu - Slave assignments - Attend classes
 IF menu_form = 56:
  IF slave['service'] < 5:
-  $text_display += '<div id="under">Урок домоводства (<<$school_price[slave["service"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 561 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<div id="under">Housekeeping lesson (<<$school_price[slave["service"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 561 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<div id="under_gray">Урок домоводства <br></div>}
+  $text_display += {<div id="under_gray">Housekeeping lesson <br></div>}
  END 
  IF slave['cook'] < 5:
-  $text_display += '<div id="under">Кулинарные классы (<<$school_price[slave["cook"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 562 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>' 
+  $text_display += '<div id="under">Cookery classes (<<$school_price[slave["cook"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 562 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>' 
   else
-  $text_display += {<div id="under_gray">Кулинарные классы <br></div>}
+  $text_display += {<div id="under_gray">Cookery classes <br></div>}
  END  
  IF slave['nurse'] < 5: 
-  $text_display += '<div id="under">Курсы медсестёр (<<$school_price[slave["nurse"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 563 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>' 
+  $text_display += '<div id="under">Nursing courses (<<$school_price[slave["nurse"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 563 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>' 
   else
-  $text_display += {<div id="under_gray">Курсы медсестёр<br></div>}
+  $text_display += {<div id="under_gray">Nursing courses<br></div>}
  END
  IF slave['secretary'] < 5: 
-  $text_display += '<div id="under">Урок делопроизводства (<<$school_price[slave["secretary"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 564 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>' 
+  $text_display += '<div id="under">Clerical work lesson (<<$school_price[slave["secretary"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 564 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>' 
   else
-  $text_display += {<div id="under_gray">Урок делопроизводства <br></div>} 
+  $text_display += {<div id="under_gray">Clerical work lesson <br></div>} 
  END
  IF slave["stamina"] > 1 and slave['stamina'] < 5: 
-  $text_display += '<div id="under">Спортивный класс (<<$school_price[slave["stamina"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 565 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<div id="under">Sport class (<<$school_price[slave["stamina"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 565 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<div id="under_gray">Спортивный класс <br></div>}   
+  $text_display += {<div id="under_gray">Sport class <br></div>}   
  END
  IF slave["stamina"] > 1 and slave['callisthenics'] < 5: 
-  $text_display += '<div id="under">Класс хореографии (<<$school_price[slave["callisthenics"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 566 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<div id="under">Choreography class (<<$school_price[slave["callisthenics"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 566 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<div id="under_gray">Класс хореографии <br></div>}     
+  $text_display += {<div id="under_gray">Choreography class <br></div>}     
  END
  IF slave["stamina"] > 1 and slave['gladiatrix'] < 5: 
-  $text_display += '<div id="under">Боевые искусства (<<$school_price[slave["gladiatrix"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 567 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<div id="under">Martial arts (<<$school_price[slave["gladiatrix"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 567 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<div id="under_gray">Боевые искусства<br></div>}       
+  $text_display += {<div id="under_gray">Martial arts<br></div>}       
  END
  IF slave["stamina"] > 1 and slave['dressage'] < 5: 
-  $text_display += '<div id="under">Выездка (<<$school_price[slave["dressage"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 568 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<div id="under">Dressage (<<$school_price[slave["dressage"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 568 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<div id="under_gray">Выездка<br></div>}
+  $text_display += {<div id="under_gray">Dressage<br></div>}
  END
  IF slave["stamina"] > 1 and slave['pet'] < 5: 
-  $text_display += '<div id="under">Дрессура (<<$school_price[slave["pet"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 569 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<div id="under">Taming (<<$school_price[slave["pet"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 569 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<div id="under_gray">Дрессура<br></div>}
+  $text_display += {<div id="under_gray">Taming <br></div>}
  END 
  IF slave['expression'] < 5: 
-  $text_display += '<div id="under">Класс риторики (<<$school_price[slave["expression"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 5610 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<div id="under">Rhetorics class (<<$school_price[slave["expression"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 5610 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<div id="under_gray">Класс риторики <br></div>}
+  $text_display += {<div id="under_gray">Rhetorics class <br></div>}
  END
  IF slave['music'] < 5: 
-  $text_display += '<div id="under">Музыкальный класс (<<$school_price[slave["music"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 5611 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<div id="under">Music class (<<$school_price[slave["music"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 5611 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<div id="under_gray">Музыкальный класс <br></div>}
+  $text_display += {<div id="under_gray">Music class <br></div>}
  END
  IF slave['vocal'] < 5:  
-  $text_display += '<div id="under">Курсы вокала (<<$school_price[slave["vocal"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 5612 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<div id="under">Vocal class (<<$school_price[slave["vocal"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 5612 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<div id="under_gray">Курсы вокала <br></div>}
+  $text_display += {<div id="under_gray">Vocal class <br></div>}
  END
  IF slave['enchanter'] < 5:
-  $text_display += '<div id="under">Урок зельеварения (<<$school_price[slave["enchanter"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 5613 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<div id="under">Potions lesson (<<$school_price[slave["enchanter"]]>>)<br><div id = "clear"><a href = "EXEC: interaction = 5613 & gt ''interaction''"><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<div id="under_gray">Урок зельеварения <br></div>}
+  $text_display += {<div id="under_gray">Potions lesson <br></div>}
  END  
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 5 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 5 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Поручения воспитуемой - Прими наркотик
+!main menu - Slave assignments - Take a drug
 IF menu_form = 57:
  IF lab_store["koffe"] > 0:
-  $text_display += '<br><div id="under">- Выпей камры (<<lab_store["koffe"]>>)<br><div id = "clear"><a href = ''EXEC: interaction = 571 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<br><div id="under">- Drink camra (<<lab_store["koffe"]>>)<br><div id = "clear"><a href = ''EXEC: interaction = 571 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<br><div id="under_gray">Камры нету<br></div>}
+  $text_display += {<br><div id="under_gray">No camra<br></div>}
  END
  IF lab_store["kanabis"] > 0:
-  $text_display += '<br><div id="under">- Раскумарься (<<lab_store["kanabis"]>>)<br><div id = "clear"><a href = ''EXEC: interaction = 572 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<br><div id="under">- Blaze it (<<lab_store["kanabis"]>>)<br><div id = "clear"><a href = ''EXEC: interaction = 572 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<br><div id="under_gray">Дурман закончился<br></div>}
+  $text_display += {<br><div id="under_gray">Datura ran out<br></div>}
  END
  IF frige["alcohol"] > 0:
-  $text_display += '<br><div id="under">- Пей до дна (<<frige["alcohol"]>>)<br><div id = "clear"><a href = ''EXEC: interaction = 573 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<br><div id="under">- Chug (<<frige["alcohol"]>>)<br><div id = "clear"><a href = ''EXEC: interaction = 573 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<br><div id="under_gray">Спиртного нету<br></div>}
+  $text_display += {<br><div id="under_gray">No alcohol<br></div>}
  END
  IF lab_store["meth"] > 0:
-  $text_display += '<br><div id="under">- Попудри носик (<<lab_store["meth"]>>)<br><div id = "clear"><a href = ''EXEC: interaction = 574 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<br><div id="under">- Smell pollen (<<lab_store["meth"]>>)<br><div id = "clear"><a href = ''EXEC: interaction = 574 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<br><div id="under_gray">Пыльцы фей нету<br></div>}
+  $text_display += '<br><div id="under_gray">No faerie''s pollen<br></div>}'
  END  
  IF lab_store["opium"] > 0:
-  $text_display += '<br><div id="under">- Твоя доза счастья (<<lab_store["opium"]>>)<br><div id = "clear"><a href = ''EXEC: interaction = 575 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<br><div id="under">- Your dose of happiness (<<lab_store["opium"]>>)<br><div id = "clear"><a href = ''EXEC: interaction = 575 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<br><div id="under_gray">Эссенция забвения закончилась<br></div>}
+  $text_display += {<br><div id="under_gray">Essense of oblivion ran out<br></div>}
  END  
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 5 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 5 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Поручения воспитуемой - Используй зелья
+!main menu - Slave assignments - Drink a potion
 IF menu_form = 58:
  IF вакхический_нектар > 0:
-  $text_display += '<br><div id="under">Вакхический нектар (<<вакхический_нектар>>)<br><div id = "clear"><a href = ''EXEC: interaction = 581 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<br><div id="under">Bacchic nectar (<<вакхический_нектар>>)<br><div id = "clear"><a href = ''EXEC: interaction = 581 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<br><div id="under_gray">Вакхический нектар [0]<br></div>}
+  $text_display += {<br><div id="under_gray">Bacchic nectar [0]<br></div>}
  END
  IF тонизируюзщий_эликсир > 0:
-  $text_display += '<br><div id="under">Тонизирующий эликсир (<<тонизируюзщий_эликсир>>)<br><div id = "clear"><a href = ''EXEC: interaction = 582 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<br><div id="under">Tonic elixir (<<тонизируюзщий_эликсир>>)<br><div id = "clear"><a href = ''EXEC: interaction = 582 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<br><div id="under_gray">Тонизирующий эликсир [0]<br></div>}
+  $text_display += {<br><div id="under_gray">Tonic elixir [0]<br></div>}
  END
  IF целительный_бальзам > 0:
-  $text_display += '<br><div id="under">Целительный бальзам (<<целительный_бальзам>>)<br><div id = "clear"><a href = ''EXEC: interaction = 583 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<br><div id="under">Balm (<<целительный_бальзам>>)<br><div id = "clear"><a href = ''EXEC: interaction = 583 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<br><div id="under_gray">Целительный бальзам [0]<br></div>}
+  $text_display += {<br><div id="under_gray">Balm [0]<br></div>}
  END
  IF афродизиак > 0:
-  $text_display += '<br><div id="under">Афродизиак (<<афродизиак>>)<br><div id = "clear"><a href = ''EXEC: interaction = 584 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<br><div id="under">Aphrodisiac (<<афродизиак>>)<br><div id = "clear"><a href = ''EXEC: interaction = 584 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<br><div id="under_gray">Афродизиак [0]<br></div>}
+  $text_display += {<br><div id="under_gray">Aphrodisiac [0]<br></div>}
  END  
  IF мощный_афодизиак > 0:
-  $text_display += '<br><div id="under">Мощный афродизиак (<<мощный_афодизиак>>) <br><div id = "clear"><a href = ''EXEC: interaction = 585 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<br><div id="under">Powerful aphrodisiac (<<мощный_афодизиак>>) <br><div id = "clear"><a href = ''EXEC: interaction = 585 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<br><div id="under_gray">Мощный афродизиак [0]<br></div>}
+  $text_display += {<br><div id="under_gray">Powerful aphrodisiac [0]<br></div>}
  END  
  IF приворотное_зелье > 0:
-  $text_display += '<br><div id="under">Приворотное зелье (<<приворотное_зелье>>)<br><div id = "clear"><a href = ''EXEC: interaction = 586 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<br><div id="under">Philtre (<<приворотное_зелье>>)<br><div id = "clear"><a href = ''EXEC: interaction = 586 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<br><div id="under_gray">Приворотное зелье [0]<br></div>}
+  $text_display += {<br><div id="under_gray">Philtre [0]<br></div>}
  END  
  IF вода_леты > 0:
-  $text_display += '<br><div id="under">Вода Леты (<<вода_леты>>)<br><div id = "clear"><a href = ''EXEC: interaction = 587 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
+  $text_display += '<br><div id="under">Water of Lethe (<<вода_леты>>)<br><div id = "clear"><a href = ''EXEC: interaction = 587 & gt "interaction"''><img src = "content\pic\clear.gif"></a></div></div>'
   else
-  $text_display += {<br><div id="under_gray">Вода Леты [0]<br></div>}
+  $text_display += {<br><div id="under_gray">Water of Lethe [0]<br></div>}
  END 
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 5 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 5 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Поговорить - Спросить
+!main menu - Slave activities - Talk - Ask
 IF menu_form = 111:
- $text_display += {<br><div id="under">- Расскажи о своем прошлом<br><div id = "clear"><a href = 'EXEC: interaction = 1111 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">- Как настроение?<br><div id = "clear"><a href = 'EXEC: interaction = 1116 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">- Что ты думаешь обо мне?<br><div id = "clear"><a href = 'EXEC: interaction = 1112 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">- У тебя есть ко мне просьбы?<br><div id = "clear"><a href = 'EXEC: interaction = 1113 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">- Чем ты сама хочешь заниматься?<br><div id = "clear"><a href = 'EXEC: interaction = 1114 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">- Есть вещи которые тебе неприятны?<br><div id = "clear"><a href = 'EXEC: interaction = 1115 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 11 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">- Tell me about your past<br><div id = "clear"><a href = 'EXEC: interaction = 1111 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">- How are you feeling?<br><div id = "clear"><a href = 'EXEC: interaction = 1116 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">- What do you think about me?<br><div id = "clear"><a href = 'EXEC: interaction = 1112 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">- Do you have any requests for me?<br><div id = "clear"><a href = 'EXEC: interaction = 1113 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">- What do you want to do?<br><div id = "clear"><a href = 'EXEC: interaction = 1114 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">- Are there things that are unpleasant for you?<br><div id = "clear"><a href = 'EXEC: interaction = 1115 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 11 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Поговорить - Воздействовать
+!main menu - Slave activities - Talk - Affect
 IF menu_form = 112:
- $text_display += {<br><div id="under">Разъяснить её положение<br><div id = "clear"><a href = 'EXEC: interaction = 1121 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Explain her position<br><div id = "clear"><a href = 'EXEC: interaction = 1121 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
  IF already_done_today[1122] = 0:
-  $text_display += {<br><div id="under">Ободрить<br><div id = "clear"><a href = 'EXEC: interaction = 1122 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Encourage<br><div id = "clear"><a href = 'EXEC: interaction = 1122 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Ободрить<br></div>}
+  $text_display += {<br><div id="under_gray">Encourage<br></div>}
  END 
  IF already_done_today[1123] = 0:
-  $text_display += {<br><div id="under">Запугать<br><div id = "clear"><a href = 'EXEC: interaction = 1123 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Threaten<br><div id = "clear"><a href = 'EXEC: interaction = 1123 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Запугать<br></div>}
+  $text_display += {<br><div id="under_gray">Threaten<br></div>}
  END 
  IF slave["spoil"] > 0:
-  $text_display += {<br><div id="under">Поставить на место<br><div id = "clear"><a href = 'EXEC: interaction = 1124 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Put in place<br><div id = "clear"><a href = 'EXEC: interaction = 1124 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Поставить на место<br></div>}
+  $text_display += {<br><div id="under_gray">Put in place<br></div>}
  END   
- $text_display += {<br><div id="under">Дать новое имя<br><div id = "clear"><a href = 'EXEC: interaction = 1125 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 11 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Give a new name<br><div id = "clear"><a href = 'EXEC: interaction = 1125 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 11 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Провести урок - Прикладные навыки
+!main menu - Slave activities - Conduct a lesson - Applied skills
 IF menu_form = 121:
  IF house_mess > 0:
-  $text_display += {<br><div id="under">Домоводство<br><div id = "clear"><a href = 'EXEC: interaction = 1211 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Housekeeping<br><div id = "clear"><a href = 'EXEC: interaction = 1211 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Домоводство<br></div>}
+  $text_display += {<br><div id="under_gray">Housekeeping<br></div>}
  END 
  IF kitchen > 0:
-  $text_display += {<br><div id="under">Кулинария<br><div id = "clear"><a href = 'EXEC: interaction = 1212 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Cookery<br><div id = "clear"><a href = 'EXEC: interaction = 1212 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Кулинария<br></div>}
+  $text_display += {<br><div id="under_gray">Cookery<br></div>}
  END  
- $text_display += {<br><div id="under">Медицина<br><div id = "clear"><a href = 'EXEC: interaction = 1213 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Делопроизводство<br><div id = "clear"><a href = 'EXEC: interaction = 1214 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 12 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Medicine<br><div id = "clear"><a href = 'EXEC: interaction = 1213 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Clerical work<br><div id = "clear"><a href = 'EXEC: interaction = 1214 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 12 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!!Главное меню - Заняться воспитуемой - Провести урок - Физическое развитие
+!!main menu - Slave activities - Conduct a lesson - Physical development
 IF menu_form = 122:
- $text_display += {<br><div id="under">Гимнастика<br><div id = "clear"><a href = 'EXEC: interaction = 1221 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Хореография<br><div id = "clear"><a href = 'EXEC: interaction = 1222 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Боевые искусства<br><div id = "clear"><a href = 'EXEC: interaction = 1223 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Gymnastics<br><div id = "clear"><a href = 'EXEC: interaction = 1221 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Choreography<br><div id = "clear"><a href = 'EXEC: interaction = 1222 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Martial arts<br><div id = "clear"><a href = 'EXEC: interaction = 1223 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
  IF slave["stamina"] > 1: 
-  $text_display += {<br><div id="under">Выездка<br><div id = "clear"><a href = 'EXEC: interaction = 1224 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Dressage<br><div id = "clear"><a href = 'EXEC: interaction = 1224 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Выездка<br></div>}
+  $text_display += {<br><div id="under_gray">Dressage<br></div>}
  END
  IF slave["stamina"] > 2:
-  $text_display += {<br><div id="under">Упряжка<br><div id = "clear"><a href = 'EXEC: interaction = 1225 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Harness<br><div id = "clear"><a href = 'EXEC: interaction = 1225 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Упряжка<br></div>}
+  $text_display += {<br><div id="under_gray">Harness<br></div>}
  END
-!" IF master_tantra > 0:
-  $text_display += {<br><div id="under">Тантра-йога<br><div id = "clear"><a href = 'EXEC: interaction = 1226 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ !"IF master_tantra > 0:
+  $text_display += {<br><div id="under">Tantra-yoga<br><div id = "clear"><a href = 'EXEC: interaction = 1226 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Тантра-йога<br></div>}
+  $text_display += {<br><div id="under_gray">Tantra-yoga<br></div>}
  END"
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 12 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 12 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Провести урок - Творческое развитие
+!main menu - Slave activities - Conduct a lesson - Creative development
 IF menu_form = 123:
- $text_display += {<br><div id="under">Этикет и риторика<br><div id = "clear"><a href = 'EXEC: interaction = 1231 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Актерское мастерство<br><div id = "clear"><a href = 'EXEC: interaction = 1232 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Музыкальные инструменты<br><div id = "clear"><a href = 'EXEC: menu_form = 1233 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Вокал<br><div id = "clear"><a href = 'EXEC: interaction = 1234 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 12 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Etiquette and rhetoric<br><div id = "clear"><a href = 'EXEC: interaction = 1231 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Acting skills<br><div id = "clear"><a href = 'EXEC: interaction = 1232 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Musical instruments<br><div id = "clear"><a href = 'EXEC: menu_form = 1233 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Vocal<br><div id = "clear"><a href = 'EXEC: interaction = 1234 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 12 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Провести урок - Специальные навыки
+!main menu - Slave activities - Conduct a lesson - Special skills
 IF menu_form = 124:
- $text_display += {<br><div id="under">Приручение<br><div id = "clear"><a href = 'EXEC: interaction = 1241 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Дрессура<br><div id = "clear"><a href = 'EXEC: interaction = 1242 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Domestication<br><div id = "clear"><a href = 'EXEC: interaction = 1241 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Taming<br><div id = "clear"><a href = 'EXEC: interaction = 1242 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
  IF lab = 1:
-  $text_display += {<br><div id="under">Алхимия<br><div id = "clear"><a href = 'EXEC: interaction = 1243 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Alchemy<br><div id = "clear"><a href = 'EXEC: interaction = 1243 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Алхимия<br></div>}
+  $text_display += {<br><div id="under_gray">Alchemy<br></div>}
  END  
-!" IF library = 1:
-  $text_display += {<br><div id="under">Зачарование<br><div id = "clear"><a href = 'EXEC: interaction = 1244 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+!"IF library = 1:
+  $text_display += {<br><div id="under">Enchanting<br><div id = "clear"><a href = 'EXEC: interaction = 1244 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Зачарование<br></div>}
+  $text_display += {<br><div id="under_gray">Enchanting<br></div>}
  END  "
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 12 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 12 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Провести урок - Творческое развитие - Музыкальные инструменты
+!main menu - Slave activities - Conduct a lesson - Creative development - Musical instruments
 IF menu_form = 1233:
- IF flute > 0 and slave["music"] < 4:
-  $text_display += {<br><div id="under">Блок-флейта<br><div id = "clear"><a href = 'EXEC: interaction = 112331 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  IF flute > 0 and slave["music"] < 4:
+  $text_display += {<br><div id="under">Block flute<br><div id = "clear"><a href = 'EXEC: interaction = 112331 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Блок-флейта<br></div>}
+  $text_display += {<br><div id="under_gray">Block flute<br></div>}
  END  
  IF guitar > 0 and slave["music"] < 5:
-  $text_display += {<br><div id="under">Гитара<br><div id = "clear"><a href = 'EXEC: interaction = 112332 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Guitar<br><div id = "clear"><a href = 'EXEC: interaction = 112332 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Гитара<br></div>}
+  $text_display += {<br><div id="under_gray">Guitar<br></div>}
  END  
  IF fortepiano > 0 and slave["music"] > 1:
-  $text_display += {<br><div id="under">Фортепьяно<br><div id = "clear"><a href = 'EXEC: interaction = 112333 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Piano<br><div id = "clear"><a href = 'EXEC: interaction = 112333 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Фортепьяно<br></div>}
+  $text_display += {<br><div id="under_gray">Piano<br></div>}
  END  
  IF cello > 0 and slave["music"] > 2:
-  $text_display += {<br><div id="under">Виолончель<br><div id = "clear"><a href = 'EXEC: interaction = 112334 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Cello<br><div id = "clear"><a href = 'EXEC: interaction = 112334 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Виолончель<br></div>}
+  $text_display += {<br><div id="under_gray">Cello<br></div>}
  END  
  IF violin > 0 and slave["music"] > 3:
-  $text_display += {<br><div id="under">Скрипка<br><div id = "clear"><a href = 'EXEC: interaction = 112335 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Violin<br><div id = "clear"><a href = 'EXEC: interaction = 112335 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Скрипка<br></div>}
+  $text_display += {<br><div id="under_gray">Violin<br></div>}
  END    
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 123 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 123 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Секс-обучение - Петтинг
+!main menu - Slave activities - Sex - Petting
 IF menu_form = 131:
- $text_display += {<br><div id="under">Работа руками<br><div id = "clear"><a href = 'EXEC: interaction = 1311 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Работа ногами<br><div id = "clear"><a href = 'EXEC: interaction = 1312 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Обжимания<br><div id = "clear"><a href = 'EXEC: interaction = 1313 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Пазури<br><div id = "clear"><a href = 'EXEC: interaction = 1314 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 13 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Handjob<br><div id = "clear"><a href = 'EXEC: interaction = 1311 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Footjob<br><div id = "clear"><a href = 'EXEC: interaction = 1312 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Rubbing<br><div id = "clear"><a href = 'EXEC: interaction = 1313 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Paizuri<br><div id = "clear"><a href = 'EXEC: interaction = 1314 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 13 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Секс-обучение - Оральные техники
+!main menu - Slave activities - Sex - Oral techniques
 IF menu_form = 132:
- $text_display += {<br><div id="under">Поцелуи<br><div id = "clear"><a href = 'EXEC: interaction = 1321 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Вылизывание<br><div id = "clear"><a href = 'EXEC: interaction = 1322 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Минет<br><div id = "clear"><a href = 'EXEC: interaction = 1323 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Иррумация<br><div id = "clear"><a href = 'EXEC: interaction = 1324 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Римминг<br><div id = "clear"><a href = 'EXEC: interaction = 1325 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 13 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Kissing<br><div id = "clear"><a href = 'EXEC: interaction = 1321 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Licking<br><div id = "clear"><a href = 'EXEC: interaction = 1322 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Blowjob<br><div id = "clear"><a href = 'EXEC: interaction = 1323 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Irrumatio<br><div id = "clear"><a href = 'EXEC: interaction = 1324 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Rimming<br><div id = "clear"><a href = 'EXEC: interaction = 1325 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 13 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Секс-обучение - Пенетрация
+!main menu - Slave activities - Sex - Penetration
 IF menu_form = 133:
- $text_display += {<br><div id="under">Вагинальный секс<br><div id = "clear"><a href = 'EXEC: interaction = 1331 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Анальный секс<br><div id = "clear"><a href = 'EXEC: interaction = 1332 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Фистинг<br><div id = "clear"><a href = 'EXEC: interaction = 1333 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Анальный фистинг<br><div id = "clear"><a href = 'EXEC: interaction = 1334 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 13 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Vaginal sex<br><div id = "clear"><a href = 'EXEC: interaction = 1331 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Anal sex<br><div id = "clear"><a href = 'EXEC: interaction = 1332 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Fisting<br><div id = "clear"><a href = 'EXEC: interaction = 1333 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Anal fisting<br><div id = "clear"><a href = 'EXEC: interaction = 1334 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 13 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Секс-обучение - Групповой секс
+!main menu - Slave activities - Sex - Group sex
 IF menu_form = 134:
  IF assistant_state = 1: 
-  $text_display += {<br><div id="under">Две на одного<br><div id = "clear"><a href = 'EXEC: interaction = 1341 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Two on one<br><div id = "clear"><a href = 'EXEC: interaction = 1341 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Две на одного<br></div>}
+  $text_display += {<br><div id="under_gray">Two on one<br></div>}
  END    
- $text_display += {<br><div id="under">Двойное проникновение<br><div id = "clear"><a href = 'EXEC: interaction = 1342 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Тройное проникновение<br><div id = "clear"><a href = 'EXEC: interaction = 1343 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Великолепная пятерка<br><div id = "clear"><a href = 'EXEC: interaction = 1344 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Букакэ<br><div id = "clear"><a href = 'EXEC: interaction = 1345 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 13 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Double penetration<br><div id = "clear"><a href = 'EXEC: interaction = 1342 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Triple penetration<br><div id = "clear"><a href = 'EXEC: interaction = 1343 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Fantastic five<br><div id = "clear"><a href = 'EXEC: interaction = 1344 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Bukkake<br><div id = "clear"><a href = 'EXEC: interaction = 1345 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 13 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Секс-обучение - Ксенофилия
+!main menu - Slave activities - Sex - Xenophily
 IF menu_form = 135:
  if dog > 0: 
-  $text_display += {<br><div id="under">Кобель<br><div id = "clear"><a href = 'EXEC: interaction = 1351 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Dog<br><div id = "clear"><a href = 'EXEC: interaction = 1351 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Кобель<br></div>}
+  $text_display += {<br><div id="under_gray">Dog<br></div>}
  END    
  IF svine > 0:  
-  $text_display += {<br><div id="under">Хряк-осеменитель<br><div id = "clear"><a href = 'EXEC: interaction = 1352 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Boar-inseminator<br><div id = "clear"><a href = 'EXEC: interaction = 1352 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Хряк-осеменитель<br></div>}
+  $text_display += {<br><div id="under_gray">Boar-inseminator<br></div>}
  END    
  IF horse > 0:  
-  $text_display += {<br><div id="under">Жеребец-производитель<br><div id = "clear"><a href = 'EXEC: interaction = 1353 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Stallion-breeder<br><div id = "clear"><a href = 'EXEC: interaction = 1353 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Жеребец-производитель<br></div>}
+  $text_display += {<br><div id="under_gray">Stallion-breeder<br></div>}
  END    
  IF pet_tentacle > 0:  
-  $text_display += {<br><div id="under">Исчадие Туманов<br><div id = "clear"><a href = 'EXEC: interaction = 1354 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Fiend of the Fogs<br><div id = "clear"><a href = 'EXEC: interaction = 1354 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Исчадие Туманов<br></div>}
+  $text_display += {<br><div id="under_gray">Fiend of the Fogs<br></div>}
  END    
  !if arachnid > 0:  $text_display += {<br><div id="under">Мохнатая арахнида<br><div id = "clear"><a href = 'EXEC: interaction = 1354 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
  !if polypus > 0: $text_display += {<br><div id="under">Мегалополип<br><div id = "clear"><a href = 'EXEC: interaction = 1355 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 13 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 13 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Секс-обучение - Фетишизм
+!main menu - Slave activities - Sex - Fetishism
 IF menu_form = 136:
  IF bath > 0:
-  $text_display += {<br><div id="under">Клизмы<br><div id = "clear"><a href = 'EXEC: interaction = 1365 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Enema<br><div id = "clear"><a href = 'EXEC: interaction = 1365 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Клизмы<br></div>}
+  $text_display += {<br><div id="under_gray">Enema<br></div>}
  END
- $text_display += {<br><div id="under">Мазохизм<br><div id = "clear"><a href = 'EXEC: interaction = 1361 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Самоистязание<br><div id = "clear"><a href = 'EXEC: interaction = 1362 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Masochism<br><div id = "clear"><a href = 'EXEC: interaction = 1361 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Self-torture<br><div id = "clear"><a href = 'EXEC: interaction = 1362 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
  IF bath > 0:
-  $text_display += {<br><div id="under">Золотой дождь<br><div id = "clear"><a href = 'EXEC: interaction = 1363 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Golden shower<br><div id = "clear"><a href = 'EXEC: interaction = 1363 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Золотой дождь<br></div>}
+  $text_display += {<br><div id="under_gray">Golden shower<br></div>}
  END
  IF bath > 0:
-  $text_display += {<br><div id="under">Копрофилия<br><div id = "clear"><a href = 'EXEC: interaction = 1364 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Scat<br><div id = "clear"><a href = 'EXEC: interaction = 1364 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Копрофилия<br></div>}
+  $text_display += {<br><div id="under_gray">Scat<br></div>}
  END
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 13 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 13 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Секс-обучение - Демонстрация
+!main menu - Slave activities - Sex - Demonstration
 IF menu_form = 137:
- $text_display += {<br><div id="under">Соблазнение<br><div id = "clear"><a href = 'EXEC: interaction = 1371 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Мастурбация<br><div id = "clear"><a href = 'EXEC: interaction = 1372 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Дилдо-мастурбация<br><div id = "clear"><a href = 'EXEC: interaction = 1373 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Эксгибиционизм<br><div id = "clear"><a href = 'EXEC: interaction = 1374 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Поклонение и унижение<br><div id = "clear"><a href = 'EXEC: interaction = 1375 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 13 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Seduction<br><div id = "clear"><a href = 'EXEC: interaction = 1371 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Masturbation<br><div id = "clear"><a href = 'EXEC: interaction = 1372 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Dildo<br><div id = "clear"><a href = 'EXEC: interaction = 1373 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Exhibitionism<br><div id = "clear"><a href = 'EXEC: interaction = 1374 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Worship and humilitation<br><div id = "clear"><a href = 'EXEC: interaction = 1375 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 13 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Наказать - Психологическое давление
+!main menu - Slave activities - Punish - Psychological pressure
 IF menu_form = 141:
- $text_display += {<br><div id="under">Строго отчитать (=1)<br><div id = "clear"><a href = 'EXEC: interaction = 1411 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Грубо обругать (=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1412 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Угрожать пытками (=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1413 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Угрожать продажей (=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1414 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Угрожать смертью (=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1415 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 14 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Strictly chastise (=1)<br><div id = "clear"><a href = 'EXEC: interaction = 1411 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Roughly scold (=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1412 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Threaten with tortures (=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1413 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Threaten with sale (=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1414 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Threaten with death (=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1415 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 14 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Наказать - Рукоприкладство
+!main menu - Slave activities - Punish - Battering
 IF menu_form = 142:
- $text_display += {<br><div id="under">Отшлепать(=1)<br><div id = "clear"><a href = 'EXEC: interaction = 1421 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Дать пощечину(=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1422 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Выдрать за ухо(=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1423 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Ударить в живот(=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1424 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Жестоко избить(=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1425 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 14 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Paddle(=1)<br><div id = "clear"><a href = 'EXEC: interaction = 1421 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Slap(=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1422 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Tear the ear(=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1423 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Hit in the stomach(=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1424 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Beat brutally(=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1425 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 14 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Наказать - Флагелляция
+!main menu - Slave activities - Punish - Flagellation
 IF menu_form = 143:
- $text_display += {<br><div id="under">Отшлепать тапком(=1)<br><div id = "clear"><a href = 'EXEC: interaction = 1431 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Выпороть ремнем(=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1432 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Spank with slipper(=1)<br><div id = "clear"><a href = 'EXEC: interaction = 1431 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Flog with belt(=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1432 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
  IF dungeon > 0:
-  $text_display += {<br><div id="under">Высечь розгой(=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1433 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Flog with branch(=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1433 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   IF whipequiped > 0 or нагайка > 0:
-   $text_display += {<br><div id="under">Высечь плетью(=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1434 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+   $text_display += {<br><div id="under">Flog with lash(=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1434 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
    else
-   $text_display += {<br><div id="under_gray">Высечь плетью<br></div>}
+   $text_display += {<br><div id="under_gray">Flog with lash<br></div>}
   END 
   IF knoutequiped > 0 or кнут > 0:
-   $text_display += {<br><div id="under">Высечь кнутом(=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1435 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+   $text_display += {<br><div id="under">Flog with whip(=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1435 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
    else
-   $text_display += {<br><div id="under_gray">Высечь кнутом<br></div>}
+   $text_display += {<br><div id="under_gray">Flog with whip<br></div>}
   END  
   ELSE 
-  $text_display += {<br><div id="under_gray">Высечь розгой<br></div>}
-  $text_display += {<br><div id="under_gray">Высечь плетью<br></div>}   
-  $text_display += {<br><div id="under_gray">Высечь кнутом<br></div>}
+  $text_display += {<br><div id="under_gray">Flog with branch<br></div>}
+  $text_display += {<br><div id="under_gray">Flog with lash<br></div>}   
+  $text_display += {<br><div id="under_gray">Flog with whip<br></div>}
  END
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 14 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 14 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Наказать - Пыточные инструменты
+!main menu - Slave activities - Punish - Torture instruments
 IF menu_form = 144:
- $text_display += {<br><div id="under">Горячий воск (=1)<br><div id = "clear"><a href = 'EXEC: interaction = 1441 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Жгучая мазь (=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1442 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Крокодильчики (=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1443 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Уксусная инфузия (=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1444 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Тиски для пальцев (=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1445 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Прокалывание (=>3)<br><div id = "clear"><a href = 'EXEC: interaction = 1446 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Пытка водой (=>3)<br><div id = "clear"><a href = 'EXEC: interaction = 1447 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Прижигание (=>4)<br><div id = "clear"><a href = 'EXEC: interaction = 1448 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 14 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Hot wax (=1)<br><div id = "clear"><a href = 'EXEC: interaction = 1441 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Burning ointment (=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1442 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Crocodiles (=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1443 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Acetic infusion (=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1444 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Finger vices (=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1445 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Pricking (=>3)<br><div id = "clear"><a href = 'EXEC: interaction = 1446 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Water torture (=>3)<br><div id = "clear"><a href = 'EXEC: interaction = 1447 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cauterization (=>4)<br><div id = "clear"><a href = 'EXEC: interaction = 1448 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 14 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Наказать - Пыточные агрегаты
+!main menu - Slave activities - Punish - Torture units
 IF menu_form = 145:
- $text_display += {<br><div id="under">Презентация (=1)<br><div id = "clear"><a href = 'EXEC: menu_form = 1451 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Демонстрация (=3)<br><div id = "clear"><a href = 'EXEC: menu_form = 1452 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Применение (=5)<br><div id = "clear"><a href = 'EXEC: menu_form = 1453 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 14 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Presentation (=1)<br><div id = "clear"><a href = 'EXEC: menu_form = 1451 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Demonstration (=3)<br><div id = "clear"><a href = 'EXEC: menu_form = 1452 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Application (=5)<br><div id = "clear"><a href = 'EXEC: menu_form = 1453 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 14 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Наказать - Пыточные агрегаты - Презентация
+!main menu - Slave activities - Punish - Torture units - Presentation
 IF menu_form = 1451:
- $text_display += {<br><div id="under">Деревянный конь<br><div id = "clear"><a href = 'EXEC: interaction = 14511 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Механическая дыба<br><div id = "clear"><a href = 'EXEC: interaction = 14512 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Водяная бочка<br><div id = "clear"><a href = 'EXEC: interaction = 14513 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Огненные качели<br><div id = "clear"><a href = 'EXEC: interaction = 14514 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Железная дева<br><div id = "clear"><a href = 'EXEC: interaction = 14515 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Кишащая яма<br><div id = "clear"><a href = 'EXEC: interaction = 14516 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 145 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Wooden horse<br><div id = "clear"><a href = 'EXEC: interaction = 14511 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Manual rack<br><div id = "clear"><a href = 'EXEC: interaction = 14512 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Water barrel<br><div id = "clear"><a href = 'EXEC: interaction = 14513 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Molten swing<br><div id = "clear"><a href = 'EXEC: interaction = 14514 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Iron maiden<br><div id = "clear"><a href = 'EXEC: interaction = 14515 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Infested pit<br><div id = "clear"><a href = 'EXEC: interaction = 14516 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 145 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Наказать - Пыточные агрегаты - Демонстрация
+!main menu - Slave activities - Punish - Torture units - Demonstration
 IF menu_form = 1452:
- $text_display += {<br><div id="under">Деревянный конь<br><div id = "clear"><a href = 'EXEC: interaction = 14521 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Механическая дыба<br><div id = "clear"><a href = 'EXEC: interaction = 14522 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Водяная бочка<br><div id = "clear"><a href = 'EXEC: interaction = 14523 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Огненные качели<br><div id = "clear"><a href = 'EXEC: interaction = 14524 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Железная дева<br><div id = "clear"><a href = 'EXEC: interaction = 14525 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Кишащая яма<br><div id = "clear"><a href = 'EXEC: interaction = 14526 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 145 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Wooden horse<br><div id = "clear"><a href = 'EXEC: interaction = 14521 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Manual rack<br><div id = "clear"><a href = 'EXEC: interaction = 14522 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Water barrel<br><div id = "clear"><a href = 'EXEC: interaction = 14523 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Molten swing<br><div id = "clear"><a href = 'EXEC: interaction = 14524 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Iron maiden<br><div id = "clear"><a href = 'EXEC: interaction = 14525 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Infested pit<br><div id = "clear"><a href = 'EXEC: interaction = 14526 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 145 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Наказать - Пыточные агрегаты - Применение
+!main menu - Slave activities - Punish - Torture units - Application
 IF menu_form = 1453:
- $text_display += {<br><div id="under">Деревянный конь<br><div id = "clear"><a href = 'EXEC: interaction = 14531 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Механическая дыба<br><div id = "clear"><a href = 'EXEC: interaction = 14532 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Водяная бочка<br><div id = "clear"><a href = 'EXEC: interaction = 14533 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Огненные качели<br><div id = "clear"><a href = 'EXEC: interaction = 14534 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Железная дева<br><div id = "clear"><a href = 'EXEC: interaction = 14535 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Кишащая яма<br><div id = "clear"><a href = 'EXEC: interaction = 14536 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 145 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Wooden horse<br><div id = "clear"><a href = 'EXEC: interaction = 14531 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Manual rack<br><div id = "clear"><a href = 'EXEC: interaction = 14532 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Water barrel<br><div id = "clear"><a href = 'EXEC: interaction = 14533 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Molten swing<br><div id = "clear"><a href = 'EXEC: interaction = 14534 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Iron maiden<br><div id = "clear"><a href = 'EXEC: interaction = 14535 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Infested pit<br><div id = "clear"><a href = 'EXEC: interaction = 14536 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 145 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Наказать - Бондаж и депривация
+!main menu - Slave activities - Punish - Bondage and deprivation
 IF menu_form = 146:
- $text_display += {<br><div id="under">Поставить в угол (=1)<br><div id = "clear"><a href = 'EXEC: interaction = 1461 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Поставить на горох (=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1462 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Put into a corner (=1)<br><div id = "clear"><a href = 'EXEC: interaction = 1461 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Put on peas (=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1462 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
  IF dungeon > 0:
-  $text_display += {<br><div id="under">Веревочное седло (=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1463 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
-  $text_display += {<br><div id="under">Подвесить за ноги (=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1464 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
-  $text_display += {<br><div id="under">Веревочная дыба (=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1465 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Rope saddle (=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1463 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Hang by the legs (=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1464 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Rope rack (=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1465 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Веревочное седло<br></div>}
-  $text_display += {<br><div id="under_gray">Подвесить за ноги<br></div>}
-  $text_display += {<br><div id="under_gray">Веревочная дыба<br></div>}  
+  $text_display += {<br><div id="under_gray">Rope saddle<br></div>}
+  $text_display += {<br><div id="under_gray">Hang by the legs<br></div>}
+  $text_display += {<br><div id="under_gray">Rope rack<br></div>}  
  END  
  IF inventory['deprivation_suit'] > 0:
-  $text_display += {<br><div id="under">Депривация (=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1468 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Deprivation (=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1468 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Депривация<br></div>}
+  $text_display += {<br><div id="under_gray">Deprivation<br></div>}
  END    
  IF vibrator > 0:
-  $text_display += {<br><div id="under">Эротический бондаж (=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1466 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Erotic bondage (=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1466 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Эротический бондаж<br></div>}
+  $text_display += {<br><div id="under_gray">Erotic bondage<br></div>}
  END    
- $text_display += {<br><div id="under">Болевой бондаж (=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1467 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 14 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Painful bondage (=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1467 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 14 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Наказать - Наказание стыдом
+!main menu - Slave activities - Punish - Shaming
 IF menu_form = 147:
- $text_display += {<br><div id="under">Прогулка голышом (=1)<br><div id = "clear"><a href = 'EXEC: interaction = 1471 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Позорный подиум (=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1472 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Живой холст (=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1473 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Общественное пользование (=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1474 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Общественный туалет (=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1475 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 14 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Naked walk (=1)<br><div id = "clear"><a href = 'EXEC: interaction = 1471 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Shameful podium (=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1472 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Living canvas (=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1473 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Public use (=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1474 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Public toilet (=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1475 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 14 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Наказать - Наказание примером
+!main menu - Slave activities - Punish - Example of punishment
 IF menu_form = 148:
- $text_display += {<br><div id="under">Угрожать заключённой (=1)<br><div id = "clear"><a href = 'EXEC: interaction = 1481 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Выпороть заключённую (=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1482 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Избить заключённую (=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1483 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Threaten prisoner (=1)<br><div id = "clear"><a href = 'EXEC: interaction = 1481 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Flog prisoner (=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1482 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Beat prisoner (=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1483 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
  IF dungeon > 0:
-  $text_display += {<br><div id="under">Пытать заключённую (=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1484 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Torture prisoner (=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1484 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Пытать заключённую<br></div>}
+  $text_display += {<br><div id="under_gray">Torture prisoner<br></div>}
  END  
- $text_display += {<br><div id="under">Казнить заключённую (=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1485 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 14 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Execute prisoner (=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1485 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 14 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Поощрить - Провести время вместе
+!main menu - Slave activities - Reward - Spend time together
 IF menu_form = 151:
  $text_display = ''
- $text_display += {<br><div id="under">Прогулка на крыше (=1)<br><div id = "clear"><a href = 'EXEC: interaction = 1511 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Прогулка по городу (=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1512 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Stroll on the roof (=1)<br><div id = "clear"><a href = 'EXEC: interaction = 1511 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Walk around the city (=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1512 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
  IF sparks => 2 and already_done_today[1513] = 0: 
-  $text_display += {<br><div id="under">Сходить на пляж (2 ис) (=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1513 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Go to the beach (2 ис) (=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1513 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Сходить на пляж (2 ис) (=3)<br></div>}   
+  $text_display += {<br><div id="under_gray">Go to the beach (2 ис) (=3)<br></div>}   
  END
  IF sparks => 4 and already_done_today[1514] = 0: 
-  $text_display += {<br><div id="under">Сходить в театр (4 ис) (=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1514 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Go to the theatre (4 ис) (=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1514 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Сходить в театр (4 ис) (=4)<br></div>} 
+  $text_display += {<br><div id="under_gray">Go to the theatre (4 ис) (=4)<br></div>} 
  end 
  IF sparks => 8 and already_done_today[1515] = 0: 
-  $text_display += {<br><div id="under">Сходить в ресторан (8 ис) (=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1515 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Go to a restaurant (8 ис) (=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1515 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Сходить в ресторан (8 ис) (=5)<br></div>} 
+  $text_display += {<br><div id="under_gray">Go to a restaurant (8 ис) (=5)<br></div>} 
  end 
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 15 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 15 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Поощрить - Дать свободное время
+!main menu - Slave activities - Reward - Give free time
 full_day = slave["stamina"] - 1
 if full_day < 1: full_day = 1
 
 IF menu_form = 152:
  IF slave["energy"] => 1:
-  $text_display += {<br><div id="under">Час отдыха (=1)<br><div id = "clear"><a href = 'EXEC: interaction = 1521 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">An hour of rest (=1)<br><div id = "clear"><a href = 'EXEC: interaction = 1521 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Час отдыха (=1)<br></div>}
+  $text_display += {<br><div id="under_gray">An hour of rest (=1)<br></div>}
  END  
  IF slave["energy"] => 1 and boardgames => 0:
-  $text_display += {<br><div id="under">Час развлечений (=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1522 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">An hour of fun (=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1522 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Час развлечений (=2)<br></div>}
+  $text_display += {<br><div id="under_gray">An hour of fun (=2)<br></div>}
  END  
  IF slave["energy"] => full_day:
-  $text_display += {<br><div id="under">Отдых до вечера (=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1523 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Rest till evening (=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1523 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Отдых до вечера (=3)<br></div>}
+  $text_display += {<br><div id="under_gray">Rest till evening (=3)<br></div>}
  END  
  IF slave["energy"] => full_day and boardgames => 0:
-  $text_display += {<br><div id="under">Развлечения до вечера (=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1524 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Fun till evening (=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1524 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Развлечения до вечера (=4)<br></div>}
+  $text_display += {<br><div id="under_gray">Fun till evening (=4)<br></div>}
  END  
  IF slave["energy"] => full_day: 
-  $text_display += {<br><div id="under">Гефсиманский сад (=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1525 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Garden of Gethsemane (=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1525 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Гефсиманский сад (=5)<br></div>}
+  $text_display += {<br><div id="under_gray">Garden of Gethsemane (=5)<br></div>}
  END   
  IF slave["energy"] => 1 and sparks => 2:
-  $text_display += {<br><div id="under">Горячие источники (2 ис) (=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1526 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Hot springs (2 sp) (=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1526 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Горячие источники (2 ис) (=2)<br></div>}
+  $text_display += {<br><div id="under_gray">Hot springs (2 sp) (=2)<br></div>}
  END 
  IF slave["energy"] => full_day and sparks => 5:  
-  $text_display += {<br><div id="under">"Золотая клетка" (5 ис) (=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1527 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">"Golden cage" (5 sp) (=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1527 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">"Золотая клетка" (5 ис) (=5)<br></div>}  
+  $text_display += {<br><div id="under_gray">"Golden cage" (5 sp) (=5)<br></div>}  
  END
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 15 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 15 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Поощрить - Эротическое поощрение
+!main menu - Slave activities - Reward - Erotic reward
 IF menu_form = 153:
  IF slave["obedience"] > 0:
-  $text_display += {<br><div id="under">Нежные объятья (=1)<br><div id = "clear"><a href = 'EXEC: interaction = 1531 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Gentle hug (=1)<br><div id = "clear"><a href = 'EXEC: interaction = 1531 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Нежные объятья (=1)<br></div>}
+  $text_display += {<br><div id="under_gray">Gentle hug (=1)<br></div>}
  END  
  IF slave["obedience"] > 1:
-  $text_display += {<br><div id="under">Чувственный массаж (=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1532 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Sensual massage (=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1532 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Чувственный массаж (=2)<br></div>}
+  $text_display += {<br><div id="under_gray">Sensual massage (=2)<br></div>}
  END  
  IF slave["obedience"] > 2 and slave["arousal"] > 2:
-  $text_display += {<br><div id="under">Петтинг (=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1533 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Petting (=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1533 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Петтинг (=3)<br></div>}
+  $text_display += {<br><div id="under_gray">Petting (=3)<br></div>}
  END  
  IF slave["obedience"] > 2 and slave["arousal"] > 1:
-  $text_display += {<br><div id="under">Вибраторы (=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1534 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Vibes (=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1534 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Вибраторы (=4)<br></div>}
+  $text_display += {<br><div id="under_gray">Vibes (=4)<br></div>}
  END  
  IF slave["obedience"] > 1 and slave["arousal"] > 0:
-  $text_display += {<br><div id="under">Кунилингус (=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1535 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Cunnilingus (=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1535 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Кунилингус (=5)<br></div>}
+  $text_display += {<br><div id="under_gray">Cunnilingus (=5)<br></div>}
  END  
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 15 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 15 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Поощрить - Сделать подарок
+!main menu - Slave activities - Reward - Make a gift
 IF menu_form = 154:
  IF sparks => 2:
-  $text_display += {<br><div id="under">Букет цветов (2 искры)<br><div id = "clear"><a href = 'EXEC: interaction = 1541 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Bouquet of flowers (2 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 1541 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Букет цветов (2 искры)<br></div>}
+  $text_display += {<br><div id="under_gray">Bouquet of flowers (2 sparks)<br></div>}
  END  
  IF sparks => 5:
-  $text_display += {<div id="under">Парфюм (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction = 1542 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<div id="under">Perfume (5 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 1542 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<div id="under_gray">Парфюм (5 искр)<br></div>}
+  $text_display += {<div id="under_gray">Perfume (5 sparks)<br></div>}
  END 
  IF sparks => 9:
-  $text_display += {<div id="under">Тёплый клетчатый плед (9 искр)<br><div id = "clear"><a href = 'EXEC: interaction = 1543 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<div id="under">Warm plaid (9 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 1543 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<div id="under_gray">Тёплый клетчатый плед (9 искр)<br></div>}
+  $text_display += {<div id="under_gray">Warm plaid (9 sparks)<br></div>}
  END  
  IF sparks => 15:
-  $text_display += {<div id="under">Плюшевая игрушка (15 искр)<br><div id = "clear"><a href = 'EXEC: interaction = 1544 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<div id="under">Plush toy (15 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 1544 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<div id="under_gray">Плюшевая игрушка (15 искр)<br></div>}
+  $text_display += {<div id="under_gray">Plush toy (15 sparks)<br></div>}
  END   
  IF sparks => 50 and slave['pony'] = 0:
-  $text_display += {<div id="under">Мини-пони (50 искр)<br><div id = "clear"><a href = 'EXEC: interaction = 1545 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<div id="under">Mini-pony (50 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 1545 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<div id="under_gray">Мини-пони (50 искр)<br></div>}
+  $text_display += {<div id="under_gray">Mini-pony (50 sparks)<br></div>}
  END    
- $text_display += {<br><div id="under">Драгоценности <br><div id = "clear"><a href = 'EXEC: menu_form = 1546 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Шмотки <br><div id = "clear"><a href = 'EXEC: menu_form = 1547 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 15 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Jewelry <br><div id = "clear"><a href = 'EXEC: menu_form = 1546 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Clothes <br><div id = "clear"><a href = 'EXEC: menu_form = 1547 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 15 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Поощрить - Сделать подарок - Драгоценности
+!main menu - Slave activities - Reward - Make a gift - Jewelry
 IF menu_form = 1546:
  IF sparks => 3:
-  $text_display += {<br><div id="under">Ободок для волос (3 искры)<br><div id = "clear"><a href = 'EXEC: interaction = 15461 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Headband (3 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 15461 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Ободок для волос (3 искры)<br></div>}
+  $text_display += {<br><div id="under_gray">Headband (3 sparks)<br></div>}
  END  
  IF sparks => 3:
-  $text_display += {<br><div id="under">Блестящие серёжки (3 искры)<br><div id = "clear"><a href = 'EXEC: interaction = 15462 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Sparkly earrings (3 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 15462 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Блестящие сережки (3 искры)<br></div>}
+  $text_display += {<br><div id="under_gray">Sparkly earrings (3 sparks)<br></div>}
  END 
  IF sparks => 5:
-  $text_display += {<br><div id="under">Перстень с самоцветом (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction = 15463 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">A ring with a gem (5 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 15463 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Перстень с самоцветом (5 искр)<br></div>}
+  $text_display += {<br><div id="under_gray">A ring with a gem (5 sparks)<br></div>}
  END  
  IF sparks => 10:
-  $text_display += {<br><div id="under">Сверкающее ожерелье (10 искр)<br><div id = "clear"><a href = 'EXEC: interaction = 15464 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Sparkling necklace (10 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 15464 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Сверкающее ожерелье (10 искр)<br></div>}
+  $text_display += {<br><div id="under_gray">Sparkling necklace (10 sparks)<br></div>}
  END   
  IF sparks => 20:
-  $text_display += {<br><div id="under">Драгоценная тиара (20 искр)<br><div id = "clear"><a href = 'EXEC: interaction = 15465 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Precious tiara (20 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 15465 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Драгоценная тиара (20 искр)<br></div>}
+  $text_display += {<br><div id="under_gray">Precious tiara (20 sparks)<br></div>}
  END    
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 154 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 154 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Поощрить - Сделать подарок - Шмотки
+!main menu - Slave activities - Reward - Make a gift - Clothes
 IF menu_form = 1547:
  IF sparks => 5:
-  $text_display += {<br><div id="under">Мягкие тапочки (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction = 15471 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Soft slippers (5 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 15471 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Мягкие тапочки (5 искр)<br></div>}
+  $text_display += {<br><div id="under_gray">Soft slippers (5 sparks)<br></div>}
  END  
  IF sparks => 5:
-  $text_display += {<br><div id="under">Сарафанчик (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction = 15472 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Sundress (5 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 15472 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Сарафанчик (5 искр)<br></div>}
+  $text_display += {<br><div id="under_gray">Sundress (5 sparks)<br></div>}
  END 
  IF sparks => 10:
-  $text_display += {<br><div id="under">Вечернее платье (10 искр)<br><div id = "clear"><a href = 'EXEC: interaction = 15473 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Gown (10 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 15473 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Вечернее платье (10 искр)<br></div>}
+  $text_display += {<br><div id="under_gray">Gown (10 sparks)<br></div>}
  END  
  IF sparks => 50:
-  $text_display += {<br><div id="under">Роскошное платье (50 искр)<br><div id = "clear"><a href = 'EXEC: interaction = 15474 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Gorgeous dress (50 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 15474 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Роскошное платье (50 искр)<br></div>}
+  $text_display += {<br><div id="under_gray">Gorgeous dress (50 sparks)<br></div>}
  END   
  IF sparks => 100:
-  $text_display += {<br><div id="under">Подвенечное платье (100 искр)<br><div id = "clear"><a href = 'EXEC: interaction = 15475 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Wedding dress (100 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 15475 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Подвенечное платье (100 искр)<br></div>}
- END    
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 154 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under_gray">Wedding dress (100 sparks)<br></div>}
+ END
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 154 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Поощрить - Угостить сладким
+!main menu - Slave activities - Reward - Sweet treat
 IF menu_form = 155:
  IF sparks => 1:
-  $text_display += {<br><div id="under">Шоколадка (1 ис)<br><div id = "clear"><a href = 'EXEC: interaction = 1551 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Chocolate (1 sp)<br><div id = "clear"><a href = 'EXEC: interaction = 1551 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Шоколадка (1 ис)<br></div>}
+  $text_display += {<br><div id="under_gray">Chocolate (1 sp)<br></div>}
  END  
  IF sparks => 2:
-  $text_display += {<br><div id="under">Кремовый торт (2 ис)<br><div id = "clear"><a href = 'EXEC: interaction = 1552 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Cream cake (2 sp)<br><div id = "clear"><a href = 'EXEC: interaction = 1552 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Кремовый торт (2 ис)<br></div>}
+  $text_display += {<br><div id="under_gray">Cream cake (2 sp)<br></div>}
  END  
  IF sparks => 4:
-  $text_display += {<br><div id="under">Банановый пломбир (4 ис)<br><div id = "clear"><a href = 'EXEC: interaction = 1553 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Banana sundae (4 sp)<br><div id = "clear"><a href = 'EXEC: interaction = 1553 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Банановый пломбир (4 ис)<br></div>}
+  $text_display += {<br><div id="under_gray">Banana sundae (4 sp)<br></div>}
  END  
  IF sparks => 8:
-  $text_display += {<br><div id="under">Эйфорижелле (8 ис)<br><div id = "clear"><a href = 'EXEC: interaction = 1554 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Euphorijelly (8 sp)<br><div id = "clear"><a href = 'EXEC: interaction = 1554 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Эйфорижелле (8 ис)<br></div>}
+  $text_display += {<br><div id="under_gray">Euphorijelly (8 sp)<br></div>}
  END  
  IF sparks => 16:
-  $text_display += {<br><div id="under">Вестурианская амброзия (16 ис)<br><div id = "clear"><a href = 'EXEC: interaction = 1555 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Vesturian ambrosia (16 sp)<br><div id = "clear"><a href = 'EXEC: interaction = 1555 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Вестурианская амброзия (16 ис)<br></div>}
+  $text_display += {<br><div id="under_gray">Vesturian ambrosia (16 sp)<br></div>}
  END  
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 15 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 15 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Заняться воспитуемой - Поощрить - Моральное поощрение
+!main menu - Slave activities - Reward - Moral encouragement
 IF menu_form = 156:
- $text_display += {<br><div id="under">Скупо одобрить<br><div id = "clear"><a href = 'EXEC: interaction = 1561 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Похвалить<br><div id = "clear"><a href = 'EXEC: interaction = 1562 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Увесистый комплимент<br><div id = "clear"><a href = 'EXEC: interaction = 1563 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Обещать поощрение<br><div id = "clear"><a href = 'EXEC: interaction = 1564 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Обещать подарок<br><div id = "clear"><a href = 'EXEC: interaction = 1565 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 15 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Sparingly approve<br><div id = "clear"><a href = 'EXEC: interaction = 1561 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Praise<br><div id = "clear"><a href = 'EXEC: interaction = 1562 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Weighty compliment<br><div id = "clear"><a href = 'EXEC: interaction = 1563 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Promise a promotion<br><div id = "clear"><a href = 'EXEC: interaction = 1564 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Promise a gift<br><div id = "clear"><a href = 'EXEC: interaction = 1565 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 15 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Поручения ассистентке - Проведи урок - Прикладные навыки
+!main menu - Assistant assignments - Conduct a lesson - Applied skills
 IF menu_form = 411:
  IF house_mess > 0 and assistant["service"] > slave["service"]:
-  $text_display += {<br><div id="under">Домоводство<br><div id = "clear"><a href = 'EXEC: interaction = 4111 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Housekeeping<br><div id = "clear"><a href = 'EXEC: interaction = 4111 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Домоводство<br></div>}
+  $text_display += {<br><div id="under_gray">Housekeeping<br></div>}
  END 
  IF kitchen > 0 and assistant["cook"] > slave["cook"]:
-  $text_display += {<br><div id="under">Кулинария<br><div id = "clear"><a href = 'EXEC: interaction = 4112 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Cookery<br><div id = "clear"><a href = 'EXEC: interaction = 4112 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Кулинария<br></div>}
+  $text_display += {<br><div id="under_gray">Cookery<br></div>}
  END  
  IF assistant["nurse"] > slave["nurse"]: 
-  $text_display += {<br><div id="under">Медицина<br><div id = "clear"><a href = 'EXEC: interaction = 4113 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Medicine<br><div id = "clear"><a href = 'EXEC: interaction = 4113 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Медицина<br></div>}
+  $text_display += {<br><div id="under_gray">Medicinebr></div>}
  END
  IF assistant["secretary"] > slave["secretary"]: 
-  $text_display += {<br><div id="under">Делопроизводство<br><div id = "clear"><a href = 'EXEC: interaction = 4114 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Clerical work<br><div id = "clear"><a href = 'EXEC: interaction = 4114 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Делопроизводство<br></div>}
+  $text_display += {<br><div id="under_gray">Clerical work<br></div>}
  END
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 41 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 41 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Поручения ассистентке - Проведи урок - Физическое развитие
+!main menu - Assistant assignments - Conduct a lesson - Physycal development
 IF menu_form = 412:
  IF assistant["stamina"] > slave["stamina"] and slave["stamina"] > 1: 
-  $text_display += {<br><div id="under">Гимнастика<br><div id = "clear"><a href = 'EXEC: interaction = 4121 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Gymnastics<br><div id = "clear"><a href = 'EXEC: interaction = 4121 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Гимнастика<br></div>}
+  $text_display += {<br><div id="under_gray">Gymnastics<br></div>}
  END
  IF assistant["callisthenics"] > slave["callisthenics"]: 
-  $text_display += {<br><div id="under">Хореография<br><div id = "clear"><a href = 'EXEC: interaction = 4122 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Choreography<br><div id = "clear"><a href = 'EXEC: interaction = 4122 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Хореография<br></div>}
+  $text_display += {<br><div id="under_gray">Choreography<br></div>}
  END 
  IF assistant["gladiatrix"] > slave["gladiatrix"]: 
-  $text_display += {<br><div id="under">Боевые искусства<br><div id = "clear"><a href = 'EXEC: interaction = 4123 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Martial arts<br><div id = "clear"><a href = 'EXEC: interaction = 4123 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Боевые искусства<br></div>}
+  $text_display += {<br><div id="under_gray">Martial arts<br></div>}
  END
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 41 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 41 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Поручения ассистентке - Проведи урок - Творческое развитие
+!main menu - Assistant assignments - Conduct a lesson - Creative development
 IF menu_form = 413:
  IF assistant["expression"] > slave["expression"]: 
-  $text_display += {<br><div id="under">Экспрессия<br><div id = "clear"><a href = 'EXEC: interaction = 4131 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Expression<br><div id = "clear"><a href = 'EXEC: interaction = 4131 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Экспрессия<br></div>}
+  $text_display += {<br><div id="under_gray">Expression<br></div>}
  END
  IF assistant["music"] > slave["music"]: 
-  $text_display += {<br><div id="under">Музыка<br><div id = "clear"><a href = 'EXEC: interaction = 4132 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Music<br><div id = "clear"><a href = 'EXEC: interaction = 4132 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Музыка<br></div>}
+  $text_display += {<br><div id="under_gray">Music<br></div>}
  END
  IF assistant["vocal"] > slave["vocal"]: 
-  $text_display += {<br><div id="under">Вокал<br><div id = "clear"><a href = 'EXEC: interaction = 4133 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Vocal<br><div id = "clear"><a href = 'EXEC: interaction = 4133 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Вокал<br></div>}
+  $text_display += {<br><div id="under_gray">Vocal<br></div>}
  END
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 41 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 41 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Поручения ассистентке - Проведи урок - Специальные навыки
+!main menu - Assistant assignments - Conduct a lesson - Special skills
 IF menu_form = 414:
  IF assistant["pet"] > slave["pet"]: 
-  $text_display += {<br><div id="under">Игра в питомца<br><div id = "clear"><a href = 'EXEC: interaction = 4141 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Pet play<br><div id = "clear"><a href = 'EXEC: interaction = 4141 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Игра в питомца<br></div>}
+  $text_display += {<br><div id="under_gray">Pet play<br></div>}
  END 
  IF assistant["dressage"] > slave["dressage"]: 
-  $text_display += {<br><div id="under">Груминг<br><div id = "clear"><a href = 'EXEC: interaction = 4143 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Dressage<br><div id = "clear"><a href = 'EXEC: interaction = 4143 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Груминг<br></div>}
+  $text_display += {<br><div id="under_gray">Dressage<br></div>}
  END 
  IF lab = 1 and  assistant["enchanter"] > slave["enchanter"]:
-  $text_display += {<br><div id="under">Эзотерическая теория<br><div id = "clear"><a href = 'EXEC: interaction = 4142 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Esoteric theory<br><div id = "clear"><a href = 'EXEC: interaction = 4142 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Эзотерическая теория<br></div>}
+  $text_display += {<br><div id="under_gray">Esoteric theory<br></div>}
  END  
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 41 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 41 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Поручения воспитуемой - Обслужи меня
+!main menu - Slave assignments - Serve me
 IF menu_form = 541:
  IF bath > 0:
-  $text_display += {<br><div id="under">- Помой меня<br><div id = "clear"><a href = 'EXEC: interaction = 5411 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">- Wash me<br><div id = "clear"><a href = 'EXEC: interaction = 5411 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">- Помой меня<br></div>}
+  $text_display += {<br><div id="under_gray">- Wash me<br></div>}
  END  
- $text_display += {<br><div id="under">- Сделай мне массаж<br><div id = "clear"><a href = 'EXEC: interaction = 5412 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">- Развлеки меня<br><div id = "clear"><a href = 'EXEC: menu_form = 5413 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Расслабленный секс<br><div id = "clear"><a href = 'EXEC: interaction = 5414 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Активный секс<br><div id = "clear"><a href = 'EXEC: interaction = 5415 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 5 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">- Make me massage<br><div id = "clear"><a href = 'EXEC: interaction = 5412 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">- Entertain me<br><div id = "clear"><a href = 'EXEC: menu_form = 5413 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Relaxed sex<br><div id = "clear"><a href = 'EXEC: interaction = 5414 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Active sex<br><div id = "clear"><a href = 'EXEC: interaction = 5415 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 5 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!Главное меню - Поручения воспитуемой - Обслужи меня - Развлеки меня
+!main menu - Slave assignments - Serve me - Развлеки меня
 IF menu_form = 5413:
- $text_display += {<br><div id="under">Концерт<br><div id = "clear"><a href = 'EXEC: interaction = 54131 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Акробатический номер<br><div id = "clear"><a href = 'EXEC: interaction = 54132 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Стриптиз<br><div id = "clear"><a href = 'EXEC: interaction = 54133 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Эротическое шоу<br><div id = "clear"><a href = 'EXEC: interaction = 54134 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cencert<br><div id = "clear"><a href = 'EXEC: interaction = 54131 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Acrobatics<br><div id = "clear"><a href = 'EXEC: interaction = 54132 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Striptease<br><div id = "clear"><a href = 'EXEC: interaction = 54133 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Erotical show<br><div id = "clear"><a href = 'EXEC: interaction = 54134 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
  IF assistant_state = 1:
-  $text_display += {<br><div id="under">Лесбийское шоу<br><div id = "clear"><a href = 'EXEC: interaction = 54135 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Lesbian show<br><div id = "clear"><a href = 'EXEC: interaction = 54135 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Лесбийское шоу<br></div>}
+  $text_display += {<br><div id="under_gray">Lesbian show<br></div>}
  END  
- $text_display += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 541 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Отмена <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 541 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF menu_form = 1000:
-  $text_display = {<BR><div id="under">Проснуться <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display = {<BR><div id="under">Wake up <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF menu_form = 2000: 
-  $setting_display += {<div id="under_gray">{ { { ИНТЕРФЕЙС } } }<br></div>}
+  $setting_display += {<div id="under_gray">{ { { UI } } }<br></div>}
   IF ui_style ! 1:
-   $setting_display += {<br><div id="under">Старый<br><div id = "clear"><a href = 'EXEC: ui_style = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+   $setting_display += {<br><div id="under">Old<br><div id = "clear"><a href = 'EXEC: ui_style = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
    else
-   $setting_display += {<br><div id="under_gray">Старый<br></div>}
+   $setting_display += {<br><div id="under_gray">Old<br></div>}
   END
   IF ui_style ! 0:
-   $setting_display += {<br><div id="under">Классический<br><div id = "clear"><a href = 'EXEC: ui_style = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+   $setting_display += {<br><div id="under">Classic<br><div id = "clear"><a href = 'EXEC: ui_style = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
    else
-   $setting_display += {<br><div id="under_gray">Классический<br></div>}
+   $setting_display += {<br><div id="under_gray">Classic<br></div>}
   END
   IF ui_style ! 2:
-   $setting_display += {<br><div id="under">Гримдарк<br><div id = "clear"><a href = 'EXEC: ui_style = 2 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+   $setting_display += {<br><div id="under">Grimdark<br><div id = "clear"><a href = 'EXEC: ui_style = 2 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
    else
-   $setting_display += {<br><div id="under_gray">Гримдарк<br></div>}
+   $setting_display += {<br><div id="under_gray">Grimdark<br></div>}
   END
-  $setting_display += {<br><br><div id="under_gray">{ { { АВТОСОХРАНЕНИЕ } } }<br></div>}
-  $setting_display += {<br><div id="under_gray">{ В начале дня }<br></div>}
+  $setting_display += {<br><br><div id="under_gray">{ { { AUTOSAVE } } }<br></div>}
+  $setting_display += {<br><div id="under_gray">{ At the beginning of the day }<br></div>}
   IF autosave_day ! 1:
-   $setting_display += {<br><div id="under">Вкл<br><div id = "clear"><a href = 'EXEC: autosave_day = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+   $setting_display += {<br><div id="under">On<br><div id = "clear"><a href = 'EXEC: autosave_day = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
    else
-   $setting_display += {<br><div id="under">Выкл<br><div id = "clear"><a href = 'EXEC: autosave_day = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>} 
+   $setting_display += {<br><div id="under">Off<br><div id = "clear"><a href = 'EXEC: autosave_day = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>} 
   END
-  $setting_display += {<br><div id="under_gray">{ Каждую декаду }<br></div>}
+  $setting_display += {<br><div id="under_gray">{ Each decade }<br></div>}
   IF autosave_decade ! 1:
-   $setting_display += {<br><div id="under">Вкл<br><div id = "clear"><a href = 'EXEC: autosave_decade = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+   $setting_display += {<br><div id="under">On<br><div id = "clear"><a href = 'EXEC: autosave_decade = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
    else
-   $setting_display += {<br><div id="under">Выкл<br><div id = "clear"><a href = 'EXEC: autosave_decade = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>} 
+   $setting_display += {<br><div id="under">Off<br><div id = "clear"><a href = 'EXEC: autosave_decade = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>} 
   END
   
   $setting_display_r += {<div id="under_gray">{ { { NSFW } } }<br></div>}
   IF nsfw ! 1:
-   $setting_display_r += {<br><div id="under">Вкл<br><div id = "clear"><a href = 'EXEC: nsfw = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+   $setting_display_r += {<br><div id="under">On<br><div id = "clear"><a href = 'EXEC: nsfw = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
    else
-   $setting_display_r += {<br><div id="under">Выкл<br><div id = "clear"><a href = 'EXEC: nsfw = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>} 
+   $setting_display_r += {<br><div id="under">Off<br><div id = "clear"><a href = 'EXEC: nsfw = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>} 
   END
   
   $setting_display_r += {<br><div id="under_gray">{ { { No Loli } } }<br></div>}
   IF no_loli ! 1:
-   $setting_display_r += {<br><div id="under">Вкл<br><div id = "clear"><a href = 'EXEC: no_loli = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+   $setting_display_r += {<br><div id="under">On<br><div id = "clear"><a href = 'EXEC: no_loli = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
    else
-   $setting_display_r += {<br><div id="under">Выкл<br><div id = "clear"><a href = 'EXEC: no_loli = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>} 
+   $setting_display_r += {<br><div id="under">Off<br><div id = "clear"><a href = 'EXEC: no_loli = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>} 
   END
   
   $setting_display_r += {<br><div id="under_gray">{ { { No MILF } } }<br></div>}
   IF no_milf ! 1:
-   $setting_display_r += {<br><div id="under">Вкл<br><div id = "clear"><a href = 'EXEC: no_milf = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+   $setting_display_r += {<br><div id="under">On<br><div id = "clear"><a href = 'EXEC: no_milf = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
    else
-   $setting_display_r += {<br><div id="under">Выкл<br><div id = "clear"><a href = 'EXEC: no_milf = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>} 
+   $setting_display_r += {<br><div id="under">Off<br><div id = "clear"><a href = 'EXEC: no_milf = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>} 
   END
   
-  $setting_display_r += {<br><br><div id="under_gray">{ { { НАСТРОЙКИ ЗВУКА } } }<br></div>}
+  $setting_display_r += {<br><br><div id="under_gray">{ { { SOUND SETTINGS } } }<br></div>}
   
-  $setting_display_c += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
-  $setting_display_c2 += {<br><div id="under_gray"> Вперед <br></div>}
+  $setting_display_c += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $setting_display_c2 += {<br><div id="under_gray"> Next <br></div>}
 END
 
-!переход на рынок при нажатии на слот рабыни если её нет
+!transition to the market by clicking on the slave slot if she does not exist
 IF menu_form = 3000:
-  $text_display += {<br><div id="under_gray">У вас сейчас нет воспитуемой.</div>}
-  $text_display += {<div id="under_gray">Отправиться на рынок рабынь?<br></div>}
+  $text_display += '<br><div id="under_gray">You don''t have any slaves.</div>'
+  $text_display += {<div id="under_gray">Go to slave market?<br></div>}
   IF auction_phase = 7:
-   $text_display += {<BR><div id="under">Да<div id = "clear"><a href = 'EXEC: dynamic $master_energy_drop & homerun = 1 & menu_form = 0 & city_form = 11 & txt = 1 & gt "slave_auction_buy"'><img src = "content\pic\clear.gif"></a></div></div>}
+   $text_display += {<BR><div id="under">Yes<div id = "clear"><a href = 'EXEC: dynamic $master_energy_drop & homerun = 1 & menu_form = 0 & city_form = 11 & txt = 1 & gt "slave_auction_buy"'><img src = "content\pic\clear.gif"></a></div></div>}
    else
-   $text_display += {<BR><div id="under">Да<div id = "clear"><a href = 'EXEC: homerun = 1 & menu_form = 0 & city_form = 11 & txt = 1 & gt "slave_auction_buy"'><img src = "content\pic\clear.gif"></a></div></div>}
+   $text_display += {<BR><div id="under">Yes<div id = "clear"><a href = 'EXEC: homerun = 1 & menu_form = 0 & city_form = 11 & txt = 1 & gt "slave_auction_buy"'><img src = "content\pic\clear.gif"></a></div></div>}
   END
-  $text_display += {<BR><div id="under">Нет<div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<BR><div id="under">No<div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 GT 'main_screen'

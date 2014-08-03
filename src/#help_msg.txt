@@ -113,11 +113,11 @@ $гордыня_совет = '   [PRIDE TIPS]
 
 $слава_справка = '<center>FAME IN ROME<br>
 <font color="#cd0000">Unknown</font>
-<font color="#C71585">Obscure</font>
-<font color="#4B0082">Rumoured</font>
-<font color="#0000CD">Recognised</font>
-<font color="#008080">Famous</font>
-<font color="#008000">Legendary</font></center>'
+<font color="#C71585">Well-known</font>
+<font color="#4B0082">Celebrity</font>
+<font color="#0000CD">Illustrious</font>
+<font color="#008080">Superstar</font>
+<font color="#008000">Legend of Rome</font></center>'
 $слава_справка_2 = "  Famous slaves are much more expensive. Your slave's rank won't be lower than level of her fame, even if she lacks other attributes, beauty included."
 $слава_совет = '   [FAME TIPS]
    Fame is not the most important parameter for a slave. You can train wonderful product uncncerned about this. Fame will grow with victories in the arena coliseum.'

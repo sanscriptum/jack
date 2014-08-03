@@ -1,8 +1,8 @@
 # ride_interface
-!ГОНКИ НА КОЛЕСНИЦАХ
+!Chariot races
 !$current_ride += " (DIS<<charriot['maneurability_displayed']>>, <<charriot['inertion']>>, EF<<charriot['maneurability_effective']>>)"
 
-!Проверка на завершение гонок
+!Check for race completion
 IF boards = 0 or frame = 0:
  $crush_text = $current_ride
  GT '$ride_finish', 1
@@ -22,7 +22,7 @@ IF trace_segment > 12:
  GT '$ride_finish', 4
 END
 
-!Определение порядка наездников
+!Determination of the order of riders
 killvar '$participant'
 
 i = 0
@@ -60,7 +60,7 @@ if i < 6-e : jump 'loop3'
 e +=1
 if e < n+1 : jump 'loop2'
 
-!Информация о последних действиях игрока и противников
+!Information about the latest actions of the player and opponents
 IF trace_segment = 1: 
  $current_ride = ''
  $future_ride = $trace_forward_description['ride_start']
@@ -149,15 +149,15 @@ END
 
 $ride_flow += ' <br><br><<$future_ride>><br><br>'
 
-!новый CSS для пикчи заезда
+!new CSS for ride pic
 if nsfw = 0:*p '<div id = "ride_bg"><img src = "content\pic\bg\ride.jpg"></div>'
 *p '<div id = "fight_txt"><<$ride_flow>></div>'
 
-!новый CSS для параметров заезда
+!new CSS for ride var
 IF ui_style = 2:
-  *p '<div id = "ride_options_ui2">СКОРОСТЬ: <<charriot["speed"]>> км/ч
-УПРАВЛЯЕМОСТЬ: <<charriot["maneurability_displayed"]>> (I<<charriot["inertion"]>>)
-ВЫНОСЛИВОСТЬ: <<charriot["pony_health"]>>
+  *p '<div id = "ride_options_ui2">SPEED: <<charriot["speed"]>> км/ч
+HANDLING: <<charriot["maneurability_displayed"]>> (I<<charriot["inertion"]>>)
+ENDURANCE: <<charriot["pony_health"]>>
 
 <<$frame[frame]>>
 <<$boards[boards]>>
@@ -165,9 +165,9 @@ IF ui_style = 2:
 <<$wheels[wheels]>>
 </div>'
   else
-  *p '<div id = "ride_options">СКОРОСТЬ: <<charriot["speed"]>> км/ч
-УПРАВЛЯЕМОСТЬ: <<charriot["maneurability_displayed"]>> (I<<charriot["inertion"]>>)
-ВЫНОСЛИВОСТЬ: <<charriot["pony_health"]>>
+  *p '<div id = "ride_options">SPEED: <<charriot["speed"]>> км/ч
+HANDLING: <<charriot["maneurability_displayed"]>> (I<<charriot["inertion"]>>)
+ENDURANCE: <<charriot["pony_health"]>>
 
 <<$frame[frame]>>
 <<$boards[boards]>>
@@ -176,33 +176,33 @@ IF ui_style = 2:
 </div>'
 END
 
-!новые CSS для текста управления колесницей
+!new CSS for ride var
 IF trace_segment = 1:
  IF ui_style = 2:
   *p '<div id = "ride_subtions_ui2">
-<a href = "EXEC: gt ''ride_next'',1">Щёлкнуть плетью</a>
+<a href = "EXEC: gt ''ride_next'',1">Click whip</a>
 </div>'
   else
   *p '<div id = "ride_subtions">
-<a href = "EXEC: gt ''ride_next'',1">Щёлкнуть плетью</a>
+<a href = "EXEC: gt ''ride_next'',1">Click whip</a>
 </div>'
  END
  else
  IF ui_style = 2:
   *p '<div id = "ride_subtions_ui2">
-<a href = "EXEC: gt ''ride_next'',1">Хлестать плетью</a>
+<a href = "EXEC: gt ''ride_next'',1">Whip lash</a>
 
-<a href = "EXEC: gt ''ride_next'',2">Управлять поводьями</a>
+<a href = "EXEC: gt ''ride_next'',2">Manage the reins</a>
 
-<a href = "EXEC: gt ''ride_next'',3">Натянуть поводья</a>
+<a href = "EXEC: gt ''ride_next'',3">Draw rein</a>
 </div>'
   else
   *p '<div id = "ride_subtions">
-<a href = "EXEC: gt ''ride_next'',1">Хлестать плетью</a>
+<a href = "EXEC: gt ''ride_next'',1">Whip lash</a>
 
-<a href = "EXEC: gt ''ride_next'',2">Управлять поводьями</a>
+<a href = "EXEC: gt ''ride_next'',2">Manage the reins</a>
 
-<a href = "EXEC: gt ''ride_next'',3">Натянуть поводья</a>
+<a href = "EXEC: gt ''ride_next'',3">Draw rein</a>
 </div>'
  END
 END
@@ -221,12 +221,12 @@ END
 *p '<div id = "rider5_name"><<$rider_name[$participant[5]]>> (<<rider_structure[$participant[5]]>>)</div>'
 *p '<div id = "rider6_name"><<$rider_name[$participant[6]]>> (<<rider_structure[$participant[6]]>>)</div>'
 
-*p '<div id = "rider1_score">Победные очки: <<speed_points[$participant[1]]>></div>'
-*p '<div id = "rider2_score">Победные очки: <<speed_points[$participant[2]]>></div>'
-*p '<div id = "rider3_score">Победные очки: <<speed_points[$participant[3]]>></div>'
-*p '<div id = "rider4_score">Победные очки: <<speed_points[$participant[4]]>></div>'
-*p '<div id = "rider5_score">Победные очки: <<speed_points[$participant[5]]>></div>'
-*p '<div id = "rider6_score">Победные очки: <<speed_points[$participant[6]]>></div>'
+*p '<div id = "rider1_score">Winning points: <<speed_points[$participant[1]]>></div>'
+*p '<div id = "rider2_score">Winning points: <<speed_points[$participant[2]]>></div>'
+*p '<div id = "rider3_score">Winning points: <<speed_points[$participant[3]]>></div>'
+*p '<div id = "rider4_score">Winning points: <<speed_points[$participant[4]]>></div>'
+*p '<div id = "rider5_score">Winning points: <<speed_points[$participant[5]]>></div>'
+*p '<div id = "rider6_score">Winning points: <<speed_points[$participant[6]]>></div>'
 
 IF $music_now ! $music['ride']:
   close $music_now

@@ -4,12 +4,12 @@ gs 'main_layout'
 *p '<div id = "large_image"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
 
 IF wizard_mode = 1:
- *p '<div id = "upper">День: <<day>> (<<sparks>>$)  |  Клр: <<slave["calories"]>>  |  Fr: <<slave["fear"]>>/<<slave_rate["fear"]>>  |  Ins: <<slave["instinct"]>>/<<slave_rate["instinct"]>>  |  Rat: <<slave["rational"]>>/<<slave_rate["rational"]>>  |  Cus: <<slave["custom"]>>/<<slave_rate["custom"]>>  |  Mor: <<slave["moral"]>>/<<slave_rate["moral"]>>  |  Spl: <<slave["spoil"]>>/<<slave_rate["spoil"]>>  |  Ang: <<slave["angst"]>>/<<slave_rate["angst"]>></div>' 
+ *p '<div id = "upper">Day: <<day>> (<<sparks>>$)  |  Cal: <<slave["calories"]>>  |  Fr: <<slave["fear"]>>/<<slave_rate["fear"]>>  |  Ins: <<slave["instinct"]>>/<<slave_rate["instinct"]>>  |  Rat: <<slave["rational"]>>/<<slave_rate["rational"]>>  |  Cus: <<slave["custom"]>>/<<slave_rate["custom"]>>  |  Mor: <<slave["moral"]>>/<<slave_rate["moral"]>>  |  Spl: <<slave["spoil"]>>/<<slave_rate["spoil"]>>  |  Ang: <<slave["angst"]>>/<<slave_rate["angst"]>></div>' 
  else
- *p '<div id = "upper">День: <<day>> (<<sparks>>$)</div>' 
+ *p '<div id = "upper">Day: <<day>> (<<sparks>>$)</div>' 
 END
 
-*p '<div id = "master_short_stat">Энергия <<$stars[master_energy_plus]>>
+*p '<div id = "master_short_stat">Energy <<$stars[master_energy_plus]>>
 <<$boy_mood[master_mood_plus]>> 
 <<$excitement[master_excitement_plus]>>
 <<$boy_hygiene[master_hygiene]>>
@@ -19,7 +19,7 @@ IF assistant_state = 1:
  *p '<div id = "assistant_short_ava"><img src = "<<$assistant["ava"]>>.jpg"></div>'
  *p '<div id = "assistant_short_stat"><<$house_mess[house_mess]>>
  <<$cooked_food[cooked_food_plus]>>
- Энергия <<$stars[assistant_energy_plus]>>
+ Energy <<$stars[assistant_energy_plus]>>
 </div>'
  else
  *p '<div id = "assistant_short_ava"><img src = "content/pic/blank_ava.jpg"></div>'
@@ -30,19 +30,19 @@ END
 
 IF slave_state = CONST_INT['slave_dead']:
  *p '<div id = "slave_short_ava"><img src = "<<$slave["ava_gray"]>>.jpg"></div>'
- *p '<div id = "slave_short_stat">Умерла
+ *p '<div id = "slave_short_stat">Died
 </div>'
 END
 
 IF slave_state = CONST_INT['no_slave']:
  *p '<div id = "slave_short_ava"><img src = "content/pic/blank_ava.jpg"></div>'
- *p '<div id = "slave_short_stat">Нет воспитуемой
+ *p '<div id = "slave_short_stat">No slave
 </div>'
 END
 
 IF slave_state = CONST_INT['slave_exist']:
  *p '<div id = "slave_short_ava"><img src = "<<$slave["ava"]>>.jpg"></div>'
- *p '<div id = "slave_short_stat">Энергия <<$stars[slave_energy_plus]>>
+ *p '<div id = "slave_short_stat">Energy <<$stars[slave_energy_plus]>>
 <<$girl_mood[slave_mood_plus]>> 
 <<$behavior_evaluation[eval]>>
 <<$girl_hygiene[slave["hygiene"]]>>
@@ -51,7 +51,7 @@ END
 
 IF slave_state = CONST_INT['slave_faint']:
  *p '<div id = "slave_short_ava"><img src = "<<$slave["ava_gray"]>>.jpg"></div>'
- *p '<div id = "slave_short_stat">Без сознания
+ *p '<div id = "slave_short_stat">Unconscious
 </div>'
 END
 
@@ -61,13 +61,13 @@ IF sound_on = 1:
  *p '<div id="sound_icon"><a href = "EXEC: sound_on = 1 & gt curloc"><img src="content\pic\buttons\sound_off.png"></a></div>'  
 END
 
-!настройки
+!options
 if city_form ! 1000:*p {<div id="options_icon"><a href = "EXEC: $prev_city_form = city_form & city_form = 1000 & gt 'city_menu_form'"><img src="content\pic\buttons\gear.png"></a></div>}
 
 IF city_form = 1000:
  *p '<div style="position:absolute;top:525px;left:619px;font-family:Victoriana;"><img src = "content/pic/sound_setting.png"></div>'
- *p '<div style="position:absolute;top:504px;left:640px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">МУЗЫКА:</font></TD><TD><a href = 1><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 3><img src="content/pic/buttons/close_button.png"></a></TD></TR>
-<TR><TD style="width:130px"><font color="#FFD700" size="5">ЗВУК:</font></TD><TD><a href = 4><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 6><img src="content/pic/buttons/close_button.png"></a></TD></TR></table></div>'
+ *p '<div style="position:absolute;top:504px;left:640px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">MUSIC:</font></TD><TD><a href = 1><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 3><img src="content/pic/buttons/close_button.png"></a></TD></TR>
+<TR><TD style="width:130px"><font color="#FFD700" size="5">SOUND:</font></TD><TD><a href = 4><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 6><img src="content/pic/buttons/close_button.png"></a></TD></TR></table></div>'
 END
 
 ACT '1':

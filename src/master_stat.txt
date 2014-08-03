@@ -11,9 +11,9 @@ slot = 0
 *p '<div id = "bookmark_three">Снаряжение</div>'
 *p '<div id = "bookmark_four">Дневник</div>'
 IF exam_in_progress = 1:
- *p '<div id = "close"><a href = "EXEC: $equip_choice = '''' & gt ''demo_menu_form''"><img src = "content\close_button.png"></a></div>'
+ *p '<div id = "close"><a href = "EXEC: $equip_choice = '''' & gt ''demo_menu_form''"><img src = "content\pic\buttons\close_button.png"></a></div>'
  else
- *p '<div id = "close"><a href = "EXEC: $equip_choice = '''' & gt ''menu_form''"><img src = "content\close_button.png"></a></div>'
+ *p '<div id = "close"><a href = "EXEC: $equip_choice = '''' & gt ''menu_form''"><img src = "content\pic\buttons\close_button.png"></a></div>'
 END
 
 !'
@@ -82,14 +82,14 @@ $right_text_list += '<u>ДОМ</u>[<<house_items>>/<<estate_size[$estate]>>]:
 
 !ЗАКЛАДКА СКЛАДА
 If master_stat_screen = 0:
- *p '<div id = "mark_one"><img src = "content\sel_button.png"></div>'
- *p '<div id = "mark_two"><a href = "EXEC: master_stat_screen = 1 & $info_text = '''' & gt curloc"><img src = "content\unsel_button.png"></a></div>' 
- *p '<div id = "mark_three"><a href = "EXEC: master_stat_screen = 2 & $info_text = '''' & gt curloc"><img src = "content\unsel_button.png"></a></div>' 
- *p '<div id = "mark_four"><a href = "EXEC: master_stat_screen = 3 & $info_text = '''' & gt curloc"><img src = "content\unsel_button.png"></a></div>' 
+ *p '<div id = "mark_one"><img src = "content\pic\buttons\sel_button.png"></div>'
+ *p '<div id = "mark_two"><a href = "EXEC: master_stat_screen = 1 & $info_text = '''' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>' 
+ *p '<div id = "mark_three"><a href = "EXEC: master_stat_screen = 2 & $info_text = '''' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>' 
+ *p '<div id = "mark_four"><a href = "EXEC: master_stat_screen = 3 & $info_text = '''' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>' 
  IF ui_style = 2: 
   *p '<div id="center_image"><img src = "content\pic\ui\grimdark\bg\page_blank.gif"></div>'
   else
-  *p '<div id="center_image"><img src = "content\pic\bg\page_blank.gif"></div>' 
+  *p '<div id="center_image"><img src = "content\pic\page_blank.gif"></div>' 
  END
  *p '<div id = "left_text"><<$left_text_list>></div>' 
  *p '<div id = "middle_text"><<$middle_text_list>></div>'   
@@ -132,14 +132,14 @@ END
 
 !ЗАКЛАДКА КВЕСТОВ
 IF master_stat_screen = 1:
- *p '<div id = "mark_one"><a href = "EXEC: master_stat_screen = 0 & gt curloc"><img src = "content\unsel_button.png"></a></div>'
- *p '<div id = "mark_two"><img src = "content\sel_button.png"></div>'
- *p '<div id = "mark_three"><a href = "EXEC: master_stat_screen = 2 & gt curloc"><img src = "content\unsel_button.png"></a></div>' 
- *p '<div id = "mark_four"><a href = "EXEC: master_stat_screen = 3 & gt curloc"><img src = "content\unsel_button.png"></a></div>'  
+ *p '<div id = "mark_one"><a href = "EXEC: master_stat_screen = 0 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
+ *p '<div id = "mark_two"><img src = "content\pic\buttons\sel_button.png"></div>'
+ *p '<div id = "mark_three"><a href = "EXEC: master_stat_screen = 2 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>' 
+ *p '<div id = "mark_four"><a href = "EXEC: master_stat_screen = 3 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'  
  IF ui_style = 2: 
   *p '<div id="center_image"><img src = "content\pic\ui\grimdark\bg\page_blank.gif"></div>'
   else
-  *p '<div id="center_image"><img src = "content\pic\bg\page_blank.gif"></div>' 
+  *p '<div id="center_image"><img src = "content\pic\page_blank.gif"></div>' 
  END
 
  *p '<div id = "bg_blue_script_right"><br><<$quest_list>></div>'
@@ -148,14 +148,14 @@ END
 !Закладка снаряжения
 !& $info_text = '''' - окошко корректно очищается при переключении вкладки чтобы не залипал текст при экипировке одежды
 If master_stat_screen = 2:
-   *p '<div id = "mark_one"><a href = "EXEC: master_stat_screen = 0 & $info_text = '''' & gt curloc"><img src = "content\unsel_button.png"></a></div>'
-    *p '<div id = "mark_two"><a href = "EXEC: master_stat_screen = 1 & $info_text = '''' & gt curloc"><img src = "content\unsel_button.png"></a></div>'
-    *p '<div id = "mark_three"><img src = "content\sel_button.png"></div>'
-    *p '<div id = "mark_four"><a href = "EXEC: master_stat_screen = 3 & $info_text = '''' & gt curloc"><img src = "content\unsel_button.png"></a></div>'  
+   *p '<div id = "mark_one"><a href = "EXEC: master_stat_screen = 0 & $info_text = '''' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
+    *p '<div id = "mark_two"><a href = "EXEC: master_stat_screen = 1 & $info_text = '''' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
+    *p '<div id = "mark_three"><img src = "content\pic\buttons\sel_button.png"></div>'
+    *p '<div id = "mark_four"><a href = "EXEC: master_stat_screen = 3 & $info_text = '''' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'  
 	IF ui_style = 2: 
 		*p '<div id="center_image"><img src = "content\pic\ui\grimdark\bg\page_blank.gif"></div>'
 		else
-		*p '<div id="center_image"><img src = "content\pic\bg\page_blank.gif"></div>' 
+		*p '<div id="center_image"><img src = "content\pic\page_blank.gif"></div>' 
 	END
     *p '<div id = "center_text_column_1">'
         *p '<div style = "text-align: center;"><u>МОЁ СНАРЯЖЕНИЕ</u></div>'
@@ -178,14 +178,14 @@ If master_stat_screen = 2:
 END
 
 IF master_stat_screen = 3:
- *p '<div id = "mark_one"><a href = "EXEC: master_stat_screen = 0 & gt curloc"><img src = "content\unsel_button.png"></a></div>'
- *p '<div id = "mark_two"><a href = "EXEC: master_stat_screen = 1 & gt curloc"><img src = "content\unsel_button.png"></a></div>'  
- *p '<div id = "mark_three"><a href = "EXEC: master_stat_screen = 2 & gt curloc"><img src = "content\unsel_button.png"></a></div>' 
- *p '<div id = "mark_four"><img src = "content\sel_button.png"></div>'
+ *p '<div id = "mark_one"><a href = "EXEC: master_stat_screen = 0 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
+ *p '<div id = "mark_two"><a href = "EXEC: master_stat_screen = 1 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'  
+ *p '<div id = "mark_three"><a href = "EXEC: master_stat_screen = 2 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>' 
+ *p '<div id = "mark_four"><img src = "content\pic\buttons\sel_button.png"></div>'
  IF ui_style = 2: 
   *p '<div id="center_image"><img src = "content\pic\ui\grimdark\bg\page_blank.gif"></div>'
   else
-  *p '<div id="center_image"><img src = "content\pic\bg\page_blank.gif"></div>' 
+  *p '<div id="center_image"><img src = "content\pic\page_blank.gif"></div>' 
  END 
 
  *p '<div id = "bg_blue_script_right"><br><u>День <<day>>:</u>

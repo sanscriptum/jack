@@ -192,7 +192,12 @@ END
 IF menstruation = 1:
  $text = $menstrual_anounce
  $place = 'bedroom'
- $special_bg = 'scene\menstruation'     
+ jpg = 1
+ g = RAND(1,4)
+ if g = 1: $special_bg = 'scene\menstruation' 
+ if g = 2: $special_bg = 'scene\menstruation_2'    
+ if g = 3: $special_bg = 'scene\menstruation_3' 
+ if g = 4: $special_bg = 'scene\menstruation_4' 
  menstruation = 0
  jump 'loop'  
 END
@@ -204,7 +209,11 @@ IF egg_time = 1:
  if prisoner['egg_time'] > 0: $text += '<<$prisoner_name>> снесла для вас свежее яйцо.<br>' 
  $place = 'bedroom'
  if kitchen > 0: $place = 'kitchen'
- $special_bg = 'scene\egg_birth'     
+ jpg = 1
+ g = RAND(1,3)
+ if g = 1: $special_bg = 'scene\egg_birth' 
+ if g = 2: $special_bg = 'scene\egg_birth_2'    
+ if g = 3: $special_bg = 'scene\egg_birth_3'  
  IF frige_space > 0:
   IF frige_space => total_eggs_gain:
    frige["eggs"] += total_eggs_gain
@@ -224,7 +233,14 @@ IF milking_time = 1:
  $text += '<br>Общий результат утренней дойки: <<milk_bottle_plus>> бут. молока и <<cream_bottle_plus>> бут. сливок.'
  $place = 'bedroom'
  if kitchen > 0: $place = 'kitchen'
- $special_bg = 'scene\milking'     
+ jpg = 1
+ g = RAND(1,6)
+ if g = 1: $special_bg = 'scene\milking'
+ if g = 2: $special_bg = 'scene\milking_2' 
+ if g = 3: $special_bg = 'scene\milking_3' 
+ if g = 4: $special_bg = 'scene\milking_4' 
+ if g = 5: $special_bg = 'scene\milking_5' 
+ if g = 6: $special_bg = 'scene\milking_6' 
  IF frige_space > 0:
   IF frige_space => cream_bottle_plus:
    frige["cream"] += cream_bottle_plus
@@ -310,6 +326,7 @@ END
 *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
 *p '<div id = "text"><<$text>></div>'
 if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+if jpg = 1: if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$special_bg>>.jpg"></div>' & jpg = 0
 
 $info_bar = '
 <u>ОЦЕНКА:</u>&nbsp;<<$rating[rating]>>
@@ -340,6 +357,6 @@ END
 
 *p '<div id = "interaction_stat_bar"><<$info_bar>></div>'
 
-addobj '<img src = "content\forward_button.png">'
+addobj '<img src = "content\pic\buttons\forward_button.png">'
 --- end_day_screen ---------------------------------
 

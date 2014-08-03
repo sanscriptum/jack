@@ -1,5 +1,5 @@
 # hero_description
-*p '<div id = "title_scroll"><img src = "content\pic\bg\scroll_large.gif"></div>'
+*p '<div id = "title_scroll"><img src = "content\pic\scroll_large.gif"></div>'
 
 $master_name = $master_base_name[hero_choice]
 $master_ava = $sepia_ava_path[hero_choice]
@@ -37,11 +37,11 @@ $secondary_stt += '<<$master_fetish[master_fetish]>><br>'
 *p '<div id = "hero_desc"><<$hero_description[hero_choice]>></div>'
 
 *p '<div id = "ava_choice_1_1_1"><img src = "<<$master_ava>>"></div>'
-*p {<div id = "close_scroll"><a href = 'EXEC: gt "main_menu"'><img src = "content\close_button.png"></a></div>}
+*p {<div id = "close_scroll"><a href = 'EXEC: gt "main_menu"'><img src = "content\pic\buttons\close_button.png"></a></div>}
 
-*p '<div id = "confirm_box"><a href = ''EXEC: dynamic $name_and_start''><img src = "content\approve_small.png"></a></div>'
+*p '<div id = "confirm_box"><a href = ''EXEC: dynamic $name_and_start''><img src = "content\pic\buttons\approve_small.png"></a></div>'
 
-*p '<div id = "scroll_forward"><a href = ''EXEC: dynamic $scroll_heroes''><img src = "content\forward_button.png"></a></div>'
-*p '<div id = "scroll_back"><a href = ''EXEC: dynamic $scroll_heroes_back''><img src = "content\back_button.png"></a></div>'
+*p '<div id = "scroll_forward"><a href = ''EXEC: dynamic $scroll_heroes''><img src = "content\pic\buttons\forward_button.png"></a></div>'
+*p '<div id = "scroll_back"><a href = ''EXEC: dynamic $scroll_heroes_back''><img src = "content\pic\buttons\back_button.png"></a></div>'
 --- hero_description ---------------------------------
 

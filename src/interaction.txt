@@ -88,9 +88,6 @@ $interaction_type = 'basic'
 !Auspex
 IF interaction = 61:
  $interaction_type = 'spell_cast' 
- $interaction_type = 'special_png' 
- $special_bg = 'magic' 
- $text[1] = '<<$cast_spell[interaction]>>'
  sparks -= 2
  auspex = 1
  npc = 0 
@@ -100,27 +97,17 @@ END
 !Cruciato
 IF interaction = 62:
  $interaction_type = 'spell_cast' 
- $interaction_type = 'special_png' 
- $special_bg = 'magic' 
- $text[1] = '<<$cast_spell[interaction]>>'
  sparks -= 5
  painful = 1
- if master_mage = 0: spell_effectiveness = 1
- if master_mage = 1: spell_effectiveness = 2
- if master_mage = 2: spell_effectiveness = 4
- if master_mage = 3: spell_effectiveness = 6
- if master_mage = 4: spell_effectiveness = 8
- if master_mage = 5: spell_effectiveness = 10 
- if master_mage = 6: spell_effectiveness = 10  
- spell_effectiveness -= slave['ego']
  torture_intensity = min (slave['sin'], spell_effectiveness)
  $special_part = {
  IF spell_effectiveness < 1:
-  txt_count = 2
   if already_done_today[interaction] = 0: slave_rate['ego'] += master_mage
   slave['pos_spellguarded'] = 1
   slave['neg_spellbound'] = 0
   if already_done_today[interaction] = 0: master_mage_rate += 2
+  txt_count += 1
+  $text[txt_count] = '<<$spell_fail>>'
   else
   slave["sin"] = 0
   fear_force += slave["sensitivity"] - 3
@@ -147,9 +134,6 @@ END
 !Delikacia
 IF interaction = 63:
  $interaction_type = 'spell_cast' 
- $interaction_type = 'special_png' 
- $special_bg = 'magic' 
- $text[1] = '<<$cast_spell[interaction]>>'
  sparks -= 5
  $play_sound[1] = '<<$orgasm_sound[slave["age"]]>>'
  slave['pos_orgasm'] = 3
@@ -165,19 +149,17 @@ END
 !Sententia veritas
 IF interaction = 64:
  $interaction_type = 'spell_cast' 
- $interaction_type = 'special_png' 
- $special_bg = 'magic' 
- $text[1] = '<<$cast_spell[interaction]>>'
  sparks -= 5
  if already_done_today[interaction] = 0: slave_rate["instinct"] += master_mage
  if master_mage < 3 and already_done_today[interaction] = 0: master_mage_rate += 3 - master_mage
  $special_part = {
  IF spell_effectiveness < 1:
-  txt_count = 2
   if already_done_today[interaction] = 0: slave_rate['ego'] += master_mage
   slave['pos_spellguarded'] = 1
   slave['neg_spellbound'] = 0
   if already_done_today[interaction] = 0: master_mage_rate += 2
+  txt_count += 1
+  $text[txt_count] = '<<$spell_fail>>'
   else
   IF slave['neg_spellbound'] => 0:
    slave['neg_spellbound'] += 1
@@ -193,9 +175,6 @@ END
 !Magna magnifika
 IF interaction = 65:
  $interaction_type = 'spell_cast' 
- $interaction_type = 'special_png' 
- $special_bg = 'magic' 
- $text[1] = '<<$cast_spell[interaction]>>'
  sparks -= 5
  magna_magnifika = master_mage * 2
  if master_mage = 6: magna_magnifika = 10
@@ -205,17 +184,15 @@ END
 !Tremendio
 IF interaction = 66:
  $interaction_type = 'spell_cast' 
- $interaction_type = 'special_png' 
- $special_bg = 'magic' 
- $text[1] = '<<$cast_spell[interaction]>>'
  sparks -= 5
  $special_part = {
  IF spell_effectiveness < 1:
-  txt_count = 2
   if already_done_today[interaction] = 0: slave_rate['ego'] += master_mage
   slave['pos_spellguarded'] = 1
   slave['neg_spellbound'] = 0
   if already_done_today[interaction] = 0: master_mage_rate += 2
+  txt_count += 1
+  $text[txt_count] = '<<$spell_fail>>'
   else
   slave["fear"] = spell_effectiveness
   IF slave['neg_spellbound'] => 0:
@@ -232,17 +209,15 @@ END
 !Domini dictum
 IF interaction = 67:
  $interaction_type = 'spell_cast' 
- $interaction_type = 'special_png' 
- $special_bg = 'magic' 
- $text[1] = '<<$cast_spell[interaction]>>'
  sparks -= 5
  $special_part = {
  IF master_mage < slave['ego']:
-  txt_count = 2
   if already_done_today[interaction] = 0: slave_rate['ego'] += master_mage
   slave['pos_spellguarded'] = 1
   slave['neg_spellbound'] = 0
   if already_done_today[interaction] = 0: master_mage_rate += 2
+  txt_count = 2
+  $text[2] = '<<$spell_fail>>'
   else
   slave['domini_dictum'] = 1
   IF slave['neg_spellbound'] => 0:
@@ -259,9 +234,6 @@ END
 !Adverto Servili
 IF interaction = 68:
  $interaction_type = 'spell_cast' 
- $interaction_type = 'special_png' 
- $special_bg = 'magic' 
- $text[1] = '<<$cast_spell[interaction]>>'
  sparks -= 25
  slave["brand"] = 3
  IF slave['neg_spellbound'] => 0:
@@ -271,6 +243,67 @@ IF interaction = 68:
  END
  slave['pos_spellguarded'] = 0     
  if master_mage < 5: master_mage_rate += brand_reputation
+END
+
+!описание заклинаний
+IF interaction = 70:
+ npc = 0
+ copyarr '$display_options', '$spell_book'   
+ GT 'shop_general'
+END
+
+IF interaction = 71:
+ $return_lock  = 'shop_general' 
+ txt_count = arrsize('$spell_help') - 1
+ copyarr '$text', '$spell_help'
+END
+
+IF interaction = 72:
+ $return_lock  = 'shop_general' 
+ txt_count = arrsize('$auspex_help') - 1
+ copyarr '$text', '$auspex_help'
+END
+
+IF interaction = 73:
+ $return_lock  = 'shop_general' 
+ txt_count = arrsize('$cruciato_help') - 1
+ copyarr '$text', '$cruciato_help'
+END
+
+IF interaction = 74:
+ $return_lock  = 'shop_general' 
+ txt_count = arrsize('$delikacia_help') - 1
+ copyarr '$text', '$delikacia_help'
+END
+
+IF interaction = 75:
+ $return_lock  = 'shop_general' 
+ txt_count = arrsize('$sententia_help') - 1
+ copyarr '$text', '$sententia_help'
+END
+
+IF interaction = 76:
+ $return_lock  = 'shop_general' 
+ txt_count = arrsize('$magna_help') - 1
+ copyarr '$text', '$magna_help'
+END
+
+IF interaction = 77:
+ $return_lock  = 'shop_general' 
+ txt_count = arrsize('$tremendio_help') - 1
+ copyarr '$text', '$tremendio_help'
+END
+
+IF interaction = 78:
+ $return_lock  = 'shop_general' 
+ txt_count = arrsize('$domini_help') - 1
+ copyarr '$text', '$domini_help'
+END
+
+IF interaction = 79:
+ $return_lock  = 'shop_general' 
+ txt_count = arrsize('$adverto_help') - 1
+ copyarr '$text', '$adverto_help'
 END
 
 
@@ -624,14 +657,17 @@ END
 !Личные дейсвтия героя
 !Герой моется один
 IF interaction = 34:
- $interaction_type = 'special' 
+ $interaction_type = 'special_jpg' 
  master_hygiene_rate = 0
  master_hygiene = 0 
  master_mood['pos_self_clean'] = 1
  house_mess_rate += 3
  dynamic $master_energy_drop
  txt_count = 1
- $special_bg = 'scene\master_bathing'    
+ g = RAND(1,3)
+ if g = 1: $special_bg = 'scene\master_bathing'
+ if g = 2: $special_bg = 'scene\master_bathing_2'
+ if g = 3: $special_bg = 'scene\master_bathing_3'
  $text[1] = '<<$bathing_master_alone>>'
  $place = 'bathroom' 
  npc = 0 
@@ -3305,7 +3341,11 @@ END
 !Сладкое
 IF interaction = 1551:
  $interaction_type = 'prise_sweets'
- $special_bg = $chokolate    
+ g = RAND(1,4)
+ if g = 1: $special_bg = $chokolate 
+ if g = 2: $special_bg = 'scene/chokolate_2'    
+ if g = 3: $special_bg = 'scene/chokolate_3'     
+ if g = 4: $special_bg = 'scene/chokolate_4' 
  prise_level = 1
  prise_potence = 2
  prise_cost = 1
@@ -3318,7 +3358,10 @@ END
 
 IF interaction = 1552:
  $interaction_type = 'prise_sweets'
- $special_bg = $cake     
+ g = RAND(1,3)
+ if g = 1: $special_bg = $cake  
+ if g = 2: $special_bg = 'scene/cake_2'    
+ if g = 3: $special_bg = 'scene/cake_3'       
  prise_level = 2 
  prise_potence = 4
  prise_cost = 2 
@@ -3331,7 +3374,11 @@ END
 
 IF interaction = 1553:
  $interaction_type = 'prise_sweets'
- $special_bg = $ice_cream     
+ g = RAND(1,4)
+ if g = 1: $special_bg = $ice_cream  
+ if g = 2: $special_bg = 'scene/ice_cream_2'    
+ if g = 3: $special_bg = 'scene/ice_cream_3'  
+ if g = 4: $special_bg = 'scene/ice_cream_4'  
  prise_level = 3 
  prise_potence = 8
  prise_cost = 4 
@@ -3344,7 +3391,9 @@ END
 
 IF interaction = 1554:
  $interaction_type = 'prise_sweets'
- $special_bg = $jelly     
+ g = RAND(1,2)
+ if g = 1: $special_bg = $jelly  
+ if g = 2: $special_bg = 'scene/jelly_2' 
  prise_level = 4
  gift_promised = 0  
  prise_potence = 16
@@ -4419,7 +4468,11 @@ IF interaction = 1473:
  torture_fear = slave["pride"]*4
  sensitivity_threshold = 4
  torture_intensity = 3
- $special_bg = 'scene\public_paint'
+ g = RAND(1,4)
+ if g = 1: $special_bg = 'scene\public_paint' 
+ if g = 2: $special_bg = 'scene\public_paint_2'    
+ if g = 3: $special_bg = 'scene\public_paint_3'  
+ if g = 4: $special_bg = 'scene\public_paint_4'
  add_slave_hygiene += 20 
  easy_for_master = 1  
  $special_part = {
@@ -4441,7 +4494,13 @@ IF interaction = 1474:
  torture_intensity = 4
  fear_force = 10
  add_slave_hygiene += 10 
- $special_bg = 'scene\public_use'
+ g = RAND(1,6)
+ if g = 1: $special_bg = 'scene\public_use' 
+ if g = 2: $special_bg = 'scene\public_use_2'    
+ if g = 3: $special_bg = 'scene\public_use_3'  
+ if g = 4: $special_bg = 'scene\public_use_4'
+ if g = 5: $special_bg = 'scene\public_use_5'  
+ if g = 6: $special_bg = 'scene\public_use_6'
  easy_for_master = 1  
  $special_part = {
  $interaction_type = 'special_jpg'
@@ -4472,7 +4531,11 @@ IF interaction = 1475:
  sensitivity_threshold = 2
  torture_intensity = 5
  fear_force = 12
- $special_bg = 'scene\public_urinal'
+ g = RAND(1,4)
+ if g = 1: $special_bg = 'scene\public_urinal' 
+ if g = 2: $special_bg = 'scene\public_urinal_2'    
+ if g = 3: $special_bg = 'scene\public_urinal_3'  
+ if g = 4: $special_bg = 'scene\public_urinal_4'
  easy_for_master = 1  
  add_slave_hygiene += 25
  $special_part = {
@@ -6003,12 +6066,13 @@ IF interaction = 9913:
 END
 
 !РОЖДЕНИЕ ПАРАЗИТА
+!TODO: Паразит не родится у ассистентки и заключенной если нет рабыни
 IF interaction = 9921:
  $interaction_type = 'chestbuster'
+ $special_bg = '<<$slave["fullimage"]>>' 
  slave_state = CONST_INT['no_slave']
  killvar 'slave'
  killvar 'slave_rate'
- $special_bg = '<<$slave["fullimage"]>>' 
  gs '#txt'
  gs '#txt_2'
  copyarr '$text', '$slave_chestbuster'
@@ -6016,10 +6080,10 @@ END
 
 IF interaction = 9922:
  $interaction_type = 'chestbuster'
+ $special_bg = '<<$assistant["fullimage"]>>' 
  assistant_state = 0
  killvar 'assistant'
  killvar 'assistant_rate'
- $special_bg = '<<$assistant["fullimage"]>>' 
  gs '#txt'
  gs '#txt_2'
  copyarr '$text', '$assistant_chestbuster'
@@ -6027,10 +6091,10 @@ END
 
 IF interaction = 9923:
  $interaction_type = 'chestbuster'
+ $special_bg = '<<$prisoner["fullimage"]>>' 
  prisoner_state = 0
  killvar 'prisoner'
  killvar 'prisoner_rate'
- $special_bg = '<<$prisoner["fullimage"]>>' 
  gs '#txt'
  gs '#txt_2'
  copyarr '$text', '$prisoner_chestbuster'

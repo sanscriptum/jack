@@ -42,16 +42,22 @@ END
 
 !Магия
 IF $interaction_type = 'spell_cast':
- if master_mage = 0: spell_effectiveness = 1
- if master_mage = 1: spell_effectiveness = 2
- if master_mage = 2: spell_effectiveness = 4
- if master_mage = 3: spell_effectiveness = 6
- if master_mage = 4: spell_effectiveness = 8
- if master_mage = 5: spell_effectiveness = 10 
- if master_mage = 6: spell_effectiveness = 10   
- spell_effectiveness -= slave['ego']
- $text[2] = '$spell_fail'
- dynamic $special_part   
+ txt_count = 1
+ $text[1] = '<<$cast_spell[interaction]>>'
+ spell_effectiveness = 0
+ IF spell_effectiveness = 0:
+  if master_mage = 0: spell_effectiveness = 1
+  if master_mage = 1: spell_effectiveness = 2
+  if master_mage = 2: spell_effectiveness = 4
+  if master_mage = 3: spell_effectiveness = 6
+  if master_mage = 4: spell_effectiveness = 8
+  if master_mage = 5: spell_effectiveness = 10 
+  if master_mage = 6: spell_effectiveness = 10   
+  spell_effectiveness -= slave['ego']
+ END
+ dynamic $special_part 
+ $interaction_type = 'special_png'  
+ $special_bg = 'magic'  
 END
 
 !Тип взаимодействия - поручение воспитуемой
@@ -378,7 +384,11 @@ IF $interaction_type = 'present':
   slave_rate["rational"] += rational_rise
  END
  slave["virtue"] = 0
- $interaction_type = 'special_jpg'
+ if $item_id = 'plaid':
+  $interaction_type = 'special'
+  else
+  $interaction_type = 'special_jpg'
+ end
  $special_bg = $item_demo[$item_id]  
  sparks -= item_price[$item_id]
  slave['gift_promised'] = 0    

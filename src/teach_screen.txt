@@ -41,9 +41,9 @@ gs 'stats_layout'
 *p '<div id = "bookmark_three">Школа</div>'
 *p '<div id = "bookmark_four">Ассистентка</div>'
 IF exam_in_progress = 1:
- *p '<div id = "close"><a href = "EXEC: gt ''demo_menu_form''"><img src = "content\close_button.png"></a></div>'
+ *p '<div id = "close"><a href = "EXEC: gt ''demo_menu_form''"><img src = "content\pic\buttons\close_button.png"></a></div>'
  else
- *p '<div id = "close"><a href = "EXEC: gt ''menu_form''"><img src = "content\close_button.png"></a></div>'
+ *p '<div id = "close"><a href = "EXEC: gt ''menu_form''"><img src = "content\pic\buttons\close_button.png"></a></div>'
 END
 
 *p '<div id="left_column">
@@ -248,23 +248,23 @@ IF teach_stat_screen = 0:
    $middle_text_8 += '<font color="#C0C0C0">Исчадие<BR></font>' 
   END 
  END
- *p '<div id = "mark_one"><img src = "content\sel_button.png"></div>'
+ *p '<div id = "mark_one"><img src = "content\pic\buttons\sel_button.png"></div>'
  !добавлена проверка здесь и у ассистентки (teach_stat_screen = 3) на присутствие у мастера денег, иначе обучение невозможно
  IF sparks > 25: 
-  *p '<div id = "mark_two"><a href = "EXEC: teach_stat_screen = 1 & gt curloc"><img src = "content\unsel_button.png"></a></div>'
+  *p '<div id = "mark_two"><a href = "EXEC: teach_stat_screen = 1 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
   else 
-  *p '<div id = "mark_two"><a href = "EXEC: msg $no_money_coach & gt curloc"><img src = "content\unsel_button.png"></a></div>'
+  *p '<div id = "mark_two"><a href = "EXEC: msg $no_money_coach & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
  END
  IF sparks > 16: 
-  if exam_in_progress ! 1: *p '<div id = "mark_three"><a href = "EXEC: teach_stat_screen = 2 & gt curloc"><img src = "content\unsel_button.png"></a></div>'
+  if exam_in_progress ! 1: *p '<div id = "mark_three"><a href = "EXEC: teach_stat_screen = 2 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
   else
-  if exam_in_progress ! 1: *p '<div id = "mark_three"><a href = "EXEC: msg $no_money_school & gt curloc"><img src = "content\unsel_button.png"></a></div>'
+  if exam_in_progress ! 1: *p '<div id = "mark_three"><a href = "EXEC: msg $no_money_school & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
  END
- if assistant_state = 1: *p '<div id = "mark_four"><a href = "EXEC: teach_stat_screen = 3 & gt curloc"><img src = "content\unsel_button.png"></a></div>' 
+ if assistant_state = 1: *p '<div id = "mark_four"><a href = "EXEC: teach_stat_screen = 3 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>' 
  IF ui_style = 2: 
   *p '<div id="center_image"><img src = "content\pic\ui\grimdark\bg\page_blank.gif"></div>'
   else
-  *p '<div id="center_image"><img src = "content\pic\bg\page_blank.gif"></div>' 
+  *p '<div id="center_image"><img src = "content\pic\page_blank.gif"></div>' 
  END
  *p '<div id = "left_text"><<$left_text_list>></div>' 
  *p '<div id = "middle_text"><<$middle_text_list>></div>'   
@@ -357,14 +357,14 @@ If teach_stat_screen = 1:
   $left_text_teach += '<p><<$dressage_lesson[6]>></p>'     
  END
 
- *p '<div id = "mark_one"><a href = "EXEC: teach_stat_screen = 0 & gt curloc"><img src = "content\unsel_button.png"></a></div>'
- *p '<div id = "mark_two"><img src = "content\sel_button.png"></div>'
- if exam_in_progress ! 1: *p '<div id = "mark_three"><a href = "EXEC: teach_stat_screen = 2 & gt curloc"><img src = "content\unsel_button.png"></a></div>'
- if assistant_state = 1: *p '<div id = "mark_four"><a href = "EXEC: teach_stat_screen = 3 & gt curloc"><img src = "content\unsel_button.png"></a></div>'  
+ *p '<div id = "mark_one"><a href = "EXEC: teach_stat_screen = 0 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
+ *p '<div id = "mark_two"><img src = "content\pic\buttons\sel_button.png"></div>'
+ if exam_in_progress ! 1: *p '<div id = "mark_three"><a href = "EXEC: teach_stat_screen = 2 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
+ if assistant_state = 1: *p '<div id = "mark_four"><a href = "EXEC: teach_stat_screen = 3 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'  
  IF ui_style = 2: 
   *p '<div id="center_image"><img src = "content\pic\ui\grimdark\bg\page_blank.gif"></div>'
   else
-  *p '<div id="center_image"><img src = "content\pic\bg\page_blank.gif"></div>' 
+  *p '<div id="center_image"><img src = "content\pic\page_blank.gif"></div>' 
  END
  *p '<div id = "left_text"><<$left_text_list>></div>' 
  *p '<div id = "middle_text"><<$middle_text_list>></div>'   
@@ -412,14 +412,14 @@ If teach_stat_screen = 2:
   $left_text_teach += '<font color="#C0C0C0">Выездка<BR></font>'     
  END
 
- *p '<div id = "mark_one"><a href = "EXEC: teach_stat_screen = 0 & gt curloc"><img src = "content\unsel_button.png"></a></div>'
- *p '<div id = "mark_two"><a href = "EXEC: teach_stat_screen = 1 & gt curloc"><img src = "content\unsel_button.png"></a></div>'
- *p '<div id = "mark_three"><img src = "content\sel_button.png"></div>' 
- if assistant_state = 1: *p '<div id = "mark_four"><a href = "EXEC: teach_stat_screen = 3 & gt curloc"><img src = "content\unsel_button.png"></a></div>'  
+ *p '<div id = "mark_one"><a href = "EXEC: teach_stat_screen = 0 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
+ *p '<div id = "mark_two"><a href = "EXEC: teach_stat_screen = 1 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
+ *p '<div id = "mark_three"><img src = "content\pic\buttons\sel_button.png"></div>' 
+ if assistant_state = 1: *p '<div id = "mark_four"><a href = "EXEC: teach_stat_screen = 3 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'  
  IF ui_style = 2: 
   *p '<div id="center_image"><img src = "content\pic\ui\grimdark\bg\page_blank.gif"></div>'
   else
-  *p '<div id="center_image"><img src = "content\pic\bg\page_blank.gif"></div>' 
+  *p '<div id="center_image"><img src = "content\pic\page_blank.gif"></div>' 
  END
  *p '<div id = "left_text"><<$left_text_list>></div>' 
  *p '<div id = "middle_text"><<$middle_text_list>></div>'   
@@ -498,22 +498,22 @@ If teach_stat_screen = 3:
   $left_text_teach += '<font color="#C0C0C0">Выездка<BR></font>'     
  END
 
- *p '<div id = "mark_one"><a href = "EXEC: teach_stat_screen = 0 & gt curloc"><img src = "content\unsel_button.png"></a></div>'
+ *p '<div id = "mark_one"><a href = "EXEC: teach_stat_screen = 0 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
  IF sparks > 25: 
-  *p '<div id = "mark_two"><a href = "EXEC: teach_stat_screen = 1 & gt curloc"><img src = "content\unsel_button.png"></a></div>'
+  *p '<div id = "mark_two"><a href = "EXEC: teach_stat_screen = 1 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
   else 
-  *p '<div id = "mark_two"><a href = "EXEC: msg $no_money_coach & gt curloc"><img src = "content\unsel_button.png"></a></div>'
+  *p '<div id = "mark_two"><a href = "EXEC: msg $no_money_coach & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
  END
  IF sparks > 16: 
-  *p '<div id = "mark_three"><a href = "EXEC: teach_stat_screen = 2 & gt curloc"><img src = "content\unsel_button.png"></a></div>'
+  *p '<div id = "mark_three"><a href = "EXEC: teach_stat_screen = 2 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
   else
-  *p '<div id = "mark_three"><a href = "EXEC: msg $no_money_school & gt curloc"><img src = "content\unsel_button.png"></a></div>'
+  *p '<div id = "mark_three"><a href = "EXEC: msg $no_money_school & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
  END
- *p '<div id = "mark_four"><img src = "content\sel_button.png"></div>' 
+ *p '<div id = "mark_four"><img src = "content\pic\buttons\sel_button.png"></div>' 
  IF ui_style = 2: 
   *p '<div id="center_image"><img src = "content\pic\ui\grimdark\bg\page_blank.gif"></div>'
   else
-  *p '<div id="center_image"><img src = "content\pic\bg\page_blank.gif"></div>' 
+  *p '<div id="center_image"><img src = "content\pic\page_blank.gif"></div>' 
  END
  *p '<div id = "left_text"><<$left_text_list>></div>' 
  *p '<div id = "middle_text"><<$middle_text_list>></div>'   

@@ -1,4 +1,5 @@
 # sex_screen
+!ЭКРАН ИНТЕРФЕЙСА ДЛЯ СЕКСА
 GS '_layout'
 gs 'sex_addup'
 
@@ -56,22 +57,22 @@ $sex_slave_var += '<<sex["climax_buildup"]>> / <<sex["climax_treshold"]>><br>'
 *p '<div id = "bg"><<$sex_menu>></div>'
 
 IF sound_on = 1:
- *p '<div id="side_sound_icon"><a href = "EXEC: sound_on = 0 & close all & gt curloc"><img src="content\sound_on.png"></a></div>'  
+ *p '<div id="side_sound_icon"><a href = "EXEC: sound_on = 0 & close all & gt curloc"><img src="content\pic\buttons\sound_on.png"></a></div>'  
  else
- *p '<div id="side_sound_icon"><a href = "EXEC: sound_on = 1 & gt curloc"><img src="content\sound_off.png"></a></div>'  
+ *p '<div id="side_sound_icon"><a href = "EXEC: sound_on = 1 & gt curloc"><img src="content\pic\buttons\sound_off.png"></a></div>'  
 END
 
-*p {<div id="side_options_icon"><a href = "EXEC: sex_num = 100 & gt curloc"><img src="content\gear.png"></a></div>}
+*p {<div id="side_options_icon"><a href = "EXEC: sex_num = 100 & gt curloc"><img src="content\pic\buttons\gear.png"></a></div>}
 
 IF sex_num = 100:
  IF exam_in_progress = 1:
-  *p '<div style="position:absolute;top:196px;left:244px;font-family:Victoriana;"><img src = "content/sound_setting.png"></div>'
-  *p '<div style="position:absolute;top:176px;left:268px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">МУЗЫКА:</font></TD><TD><a href = 1><img src="content/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/Plus.png"></a></TD><TD><a href = 3><img src="content/close_button.png"></a></TD></TR>
-<TR><TD style="width:130px"><font color="#FFD700" size="5">ЗВУК:</font></TD><TD><a href = 4><img src="content/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/Plus.png"></a></TD><TD><a href = 6><img src="content/close_button.png"></a></TD></TR></table></div>'
+  *p '<div style="position:absolute;top:196px;left:244px;font-family:Victoriana;"><img src = "content/pic/sound_setting.png"></div>'
+  *p '<div style="position:absolute;top:176px;left:268px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">МУЗЫКА:</font></TD><TD><a href = 1><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 3><img src="content/pic/buttons/close_button.png"></a></TD></TR>
+<TR><TD style="width:130px"><font color="#FFD700" size="5">ЗВУК:</font></TD><TD><a href = 4><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 6><img src="content/pic/buttons/close_button.png"></a></TD></TR></table></div>'
   else
-  *p '<div style="position:absolute;top:396px;left:244px;font-family:Victoriana;"><img src = "content/sound_setting.png"></div>'
-  *p '<div style="position:absolute;top:376px;left:268px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">МУЗЫКА:</font></TD><TD><a href = 1><img src="content/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/Plus.png"></a></TD><TD><a href = 3><img src="content/close_button.png"></a></TD></TR>
-<TR><TD style="width:130px"><font color="#FFD700" size="5">ЗВУК:</font></TD><TD><a href = 4><img src="content/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/Plus.png"></a></TD><TD><a href = 6><img src="content/close_button.png"></a></TD></TR></table></div>'
+  *p '<div style="position:absolute;top:396px;left:244px;font-family:Victoriana;"><img src = "content/pic/sound_setting.png"></div>'
+  *p '<div style="position:absolute;top:376px;left:268px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">МУЗЫКА:</font></TD><TD><a href = 1><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 3><img src="content/pic/buttons/close_button.png"></a></TD></TR>
+<TR><TD style="width:130px"><font color="#FFD700" size="5">ЗВУК:</font></TD><TD><a href = 4><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 6><img src="content/pic/buttons/close_button.png"></a></TD></TR></table></div>'
  END
 END
 
@@ -116,29 +117,29 @@ $info_bar = ''
 !Кнопки интенсивности
 IF sex_num => 0:
  IF intensity = 1:
-   *p {<div id = "intensity_01"><img src = "content\01.gif"></div>}
+   *p {<div id = "intensity_01"><img src = "content\pic\buttons\01.gif"></div>}
   else
-   *p {<div id = "intensity_01"><a href = 'EXEC: intensity = 1 & gt $curloc'><img src = "content\01g.gif"></a></div>}
+   *p {<div id = "intensity_01"><a href = 'EXEC: intensity = 1 & gt $curloc'><img src = "content\pic\buttons\01g.gif"></a></div>}
  END
  IF intensity = 2:
-   *p {<div id = "intensity_02"><img src = "content\02.gif"></div>}
+   *p {<div id = "intensity_02"><img src = "content\pic\buttons\02.gif"></div>}
   else
-   *p {<div id = "intensity_02"><a href = 'EXEC: intensity = 2 & gt $curloc'><img src = "content\02g.gif"></a></div>}
+   *p {<div id = "intensity_02"><a href = 'EXEC: intensity = 2 & gt $curloc'><img src = "content\pic\buttons\02g.gif"></a></div>}
  END
  IF intensity = 3:
-   *p {<div id = "intensity_03"><img src = "content\03.gif"></div>}
+   *p {<div id = "intensity_03"><img src = "content\pic\buttons\03.gif"></div>}
   else
-   *p {<div id = "intensity_03"><a href = 'EXEC: intensity = 3 & gt $curloc'><img src = "content\03g.gif"></a></div>}
+   *p {<div id = "intensity_03"><a href = 'EXEC: intensity = 3 & gt $curloc'><img src = "content\pic\buttons\03g.gif"></a></div>}
  END
  IF intensity = 4:
-   *p {<div id = "intensity_04"><img src = "content\04.gif"></div>}
+   *p {<div id = "intensity_04"><img src = "content\pic\buttons\04.gif"></div>}
   else
-   *p {<div id = "intensity_04"><a href = 'EXEC: intensity = 4 & gt $curloc'><img src = "content\04g.gif"></a></div>}
+   *p {<div id = "intensity_04"><a href = 'EXEC: intensity = 4 & gt $curloc'><img src = "content\pic\buttons\04g.gif"></a></div>}
  END
  IF intensity = 5:
-   *p {<div id = "intensity_05"><img src = "content\05.gif"></div>}
+   *p {<div id = "intensity_05"><img src = "content\pic\buttons\05.gif"></div>}
   else
-   *p {<div id = "intensity_05"><a href = 'EXEC: intensity = 5 & gt $curloc'><img src = "content\05g.gif"></a></div>}
+   *p {<div id = "intensity_05"><a href = 'EXEC: intensity = 5 & gt $curloc'><img src = "content\pic\buttons\05g.gif"></a></div>}
  END
 END
 

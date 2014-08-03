@@ -56,18 +56,18 @@ IF slave_state = CONST_INT['slave_faint']:
 END
 
 IF sound_on = 1:
- *p '<div id="sound_icon"><a href = "EXEC: sound_on = 0 & close all & gt curloc"><img src="content\sound_on.png"></a></div>'  
+ *p '<div id="sound_icon"><a href = "EXEC: sound_on = 0 & close all & gt curloc"><img src="content\pic\buttons\sound_on.png"></a></div>'  
  else
- *p '<div id="sound_icon"><a href = "EXEC: sound_on = 1 & gt curloc"><img src="content\sound_off.png"></a></div>'  
+ *p '<div id="sound_icon"><a href = "EXEC: sound_on = 1 & gt curloc"><img src="content\pic\buttons\sound_off.png"></a></div>'  
 END
 
 !настройки
-*p {<div id="options_icon"><a href = "EXEC: $prev_city_form = city_form & city_form = 1000 & gt 'city_menu_form'"><img src="content\gear.png"></a></div>}
+if city_form ! 1000:*p {<div id="options_icon"><a href = "EXEC: $prev_city_form = city_form & city_form = 1000 & gt 'city_menu_form'"><img src="content\pic\buttons\gear.png"></a></div>}
 
 IF city_form = 1000:
- *p '<div style="position:absolute;top:525px;left:619px;font-family:Victoriana;"><img src = "content/sound_setting.png"></div>'
- *p '<div style="position:absolute;top:504px;left:640px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">МУЗЫКА:</font></TD><TD><a href = 1><img src="content/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/Plus.png"></a></TD><TD><a href = 3><img src="content/close_button.png"></a></TD></TR>
-<TR><TD style="width:130px"><font color="#FFD700" size="5">ЗВУК:</font></TD><TD><a href = 4><img src="content/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/Plus.png"></a></TD><TD><a href = 6><img src="content/close_button.png"></a></TD></TR></table></div>'
+ *p '<div style="position:absolute;top:525px;left:619px;font-family:Victoriana;"><img src = "content/pic/sound_setting.png"></div>'
+ *p '<div style="position:absolute;top:504px;left:640px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">МУЗЫКА:</font></TD><TD><a href = 1><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 3><img src="content/pic/buttons/close_button.png"></a></TD></TR>
+<TR><TD style="width:130px"><font color="#FFD700" size="5">ЗВУК:</font></TD><TD><a href = 4><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 6><img src="content/pic/buttons/close_button.png"></a></TD></TR></table></div>'
 END
 
 ACT '1':
@@ -113,6 +113,6 @@ if sbros = 1:
  gt 'city_menu_form'
 END
 
-if city_form ! 1000:*p '<div id = "back_home"><a href = "EXEC: menu_form = 0 & city_form = 0 & gt ''menu_form''"><img src="content\home_button.png"></a></div>'
+if city_form ! 1000:*p '<div id = "back_home"><a href = "EXEC: menu_form = 0 & city_form = 0 & gt ''menu_form''"><img src="content\pic\buttons\home_button.png"></a></div>'
 --- city_screen ---------------------------------
 

@@ -1,16 +1,19 @@
 # anonfix
 !about the fix
 
-'<div id = "title_scroll"><img src = "content\pic\bg\scroll_large.gif"></div>'
-'<div id = "title_scroll_text">This version uses an unofficial patch-fix, which fixes minor bugs, errors and shortcomings of the original version.
+'<div id = "title_scroll"><img src = "content\pic\scroll_large.gif"></div>'
+'<div id = "title_scroll_text">This version based on patches from the_vm.
 
-The latest version of the fix you can always download <a href="https://db.tt/Xz59JzLc">here</a>.
-Fix ver: %insert_date%
+The latest version of the fix you can always download <a href="fix the link faggot">here</a>.
+Fix ver: 25.07#1
 
-Repository is open to everyone who wants to improve and complement the game, as well as improve the quality of translation, you can find it <a href="https://github.com/thevm/jack">here</a>.
+Repository is open to everyone who wants to improve and complement the game, as well as improve the quality of translation, you can find it <a href="https://github.com/thevm/jack/tree/english">here</a>.
 
-Detailed description of a what fix does can be found in the readme.txt, which comes in the archive with this fix.</div>'
+Detailed description of a what fix does can be found in the readme.txt, which comes in the archive with this fix.
 
-{<div id = "close_scroll"><a href = 'EXEC: gt "main_menu"'><img src = "content\close_button.png"></a></div>}
+You can also support the fix''s author by donating to the Yandex-money wallet: 410011223841597
+</div>'
+
+{<div id = "close_scroll"><a href = 'EXEC: gt "main_menu"'><img src = "content\pic\buttons\close_button.png"></a></div>}
 --- anonfix ---------------------------------
 

@@ -2,7 +2,7 @@
 !hero creation screen
 !for msg
 $MSG_BACKIMAGE = 'content\pic\msg_bg.jpg'
-$MSG_OK_IMAGE = 'content/ok-icon.png'
+$MSG_OK_IMAGE = 'content/pic/buttons/ok-icon.png'
 $MSG_FORMAT = '<div id = "ink">%TEXT%</div>'
 MSG_TEXT_X = 80
 MSG_TEXT_Y = 50
@@ -16,7 +16,7 @@ if hero_choice = 0: hero_choice = 1
 $master_ava = $sepia_ava_path[hero_choice]
 $master_ava_color = $clear_ava_path[hero_choice]
 
-*p '<div id = "title_scroll"><img src = "content\pic\bg\scroll_large.gif"></div>'
+*p '<div id = "title_scroll"><img src = "content\pic\scroll_large.gif"></div>'
 
 *p '<div id = "title_scroll_text_left"> <br>
 <a href = "EXEC: dynamic $rise_str & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_str & gt curloc ">[-]</a>&nbsp<a href="EXEC: msg $сила_с_справка & gt $curloc"><<$master_str[master_str]>></a>
@@ -33,7 +33,7 @@ $master_ava_color = $clear_ava_path[hero_choice]
 <a href = "EXEC: dynamic $rise_flagelation & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_flagelation & gt curloc ">[-]</a>&nbsp<a href="EXEC: msg $флагеляция_с_справка & gt $curloc"><<$master_flagelation[master_flagelation]>></a>
 <a href = "EXEC: dynamic $rise_torture & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_torture & gt curloc ">[-]</a>&nbsp<a href="EXEC: msg $палач_с_справка & gt $curloc"><<$master_torture[master_torture]>></a>
 <a href = "EXEC: dynamic $rise_bondage & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_bondage & gt curloc ">[-]</a>&nbsp<a href="EXEC: msg $бондаж_с_справка & gt $curloc"><<$master_bondage[master_bondage]>></a>
-<u><a style = "color: black;" href="EXEC: msg $секс_техники_с_справка & gt $curloc">SEX TECHNIQUES:</a></u>
+<u><a style = "color: #191970;" href="EXEC: msg $секс_техники_с_справка & gt $curloc">SEX TECHNIQUES:</a></u>
 <a href = "EXEC: dynamic $rise_petting & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_petting & gt curloc ">[-]</a>&nbsp<<$master_petting[master_petting]>>
 <a href = "EXEC: dynamic $rise_penetration & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_penetration & gt curloc ">[-]</a>&nbsp<<$master_penetration[master_penetration]>>
 <a href = "EXEC: dynamic $rise_oral & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_oral & gt curloc ">[-]</a>&nbsp<<$master_oral[master_oral]>>
@@ -44,7 +44,7 @@ $master_ava_color = $clear_ava_path[hero_choice]
 
 *p '<div id = "title_scroll_text_right"><center>Free points
 <<hero_points>>
-<a href = "EXEC: dynamic $scroll_ava_back & gt curloc"><img src = "content\back_button.png"></a> APPEARANCE <a href = "EXEC: dynamic $scroll_ava & gt curloc"><img src = "content\forward_button.png"></a>
+<a href = "EXEC: dynamic $scroll_ava_back & gt curloc"><img src = "content\pic\buttons\back_button.png"></a> APPEARANCE <a href = "EXEC: dynamic $scroll_ava & gt curloc"><img src = "content\pic\buttons\forward_button.png"></a>
 </center>
 </div>'
 
@@ -70,6 +70,6 @@ $master_ava_color = $clear_ava_path[hero_choice]
 
 *p '<div style="position:absolute;top:715px;left:580px;font-family:Victoriana;font-size:36px;"><a style = "color: black;" href = ''EXEC: gt "start_game"''>{ Start }</a></div>'
 
-*p {<div id = "close_scroll"><a href = 'EXEC: hero_points = 0 & gt "main_menu"'><img src = "content\close_button.png"></a></div>}
+*p {<div id = "close_scroll"><a href = 'EXEC: hero_points = 0 & gt "main_menu"'><img src = "content\pic\buttons\close_button.png"></a></div>}
 --- hero_creation ---------------------------------
 

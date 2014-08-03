@@ -1385,7 +1385,7 @@ assistant["arousal"] = 0
 assistant_rate["arousal"] = 0
 
 !Снижаем избалованность
-assistant_rate["spoil"] -= 1 + slave["fear"]
+assistant_rate["spoil"] -= 1 + assistant["fear"]
 
 !Обнуляем все что не действует на ассистентку
 assistant["virtue"] = 0

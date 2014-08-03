@@ -22,7 +22,7 @@ IF selobj = '@':
 END
 
 
-IF selobj = '<img src = "content\forward_button.png">':
+IF selobj = '<img src = "content\pic\buttons\forward_button.png">':
  IF txt < txt_count:
   txt += 1
   killobj 
@@ -38,14 +38,14 @@ IF selobj = '<img src = "content\forward_button.png">':
  GT curloc
 END
 
-IF selobj = '<img src = "content\back_button.png">':
+IF selobj = '<img src = "content\pic\buttons\back_button.png">':
  txt -= 1
  killobj 
  unsel
  GT curloc
 END
 
-IF selobj = '<img src = "content\demo_forward_button.png">':
+IF selobj = '<img src = "content\pic\buttons\demo_forward_button.png">':
  IF txt < txt_count:
   txt += 1
   killobj 
@@ -61,14 +61,14 @@ IF selobj = '<img src = "content\demo_forward_button.png">':
  GT curloc
 END
 
-IF selobj = '<img src = "content\demo_back_button.png">':
+IF selobj = '<img src = "content\pic\buttons\demo_back_button.png">':
  txt -= 1
  killobj 
  unsel
  GT curloc
 END
 
-IF selobj = '<img src = "content\demo_forward.png">':
+IF selobj = '<img src = "content\pic\buttons\demo_forward.png">':
  IF txt < txt_count:
   txt += 1
   killobj 

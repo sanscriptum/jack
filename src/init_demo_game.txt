@@ -76,10 +76,20 @@ slave_inventory['sailor_foku'] = 1
 slave_inventory['leotard'] = 1
 slave_inventory['chainmail_bikini'] = 1
 slave_inventory['sun_dress'] = 1
-slave_inventory['laced_underwear'] = 1
+slave_inventory['leather_corset'] = 1
 slave_inventory['fluffy_stepins'] = 1
 slave_inventory['high_boots'] = 1
+slave_inventory['sneakers'] = 1
+slave_inventory['tabi'] = 1
+slave_inventory['glasses'] = 1
+slave_inventory['nekomimi'] = 1
+slave_inventory['leather_gloves'] = 1
+slave_inventory['fluffy_gloves'] = 1
+slave_inventory['rubber_gloves'] = 1
 slave_inventory['plain_headband'] = 1
+slave_inventory['golden_collar'] = 1
+slave_inventory['leather_collar'] = 1
+slave_inventory['spiked_collar'] = 1
 
 faction_fame['neutral'] = 0
 faction_fame['taurus'] = 0
@@ -88,6 +98,7 @@ faction_fame['korvus'] = 0
 faction_fame['kamira'] = 0
 
 vibrator = 1
+inventory['vaginal_balls'] = 1
 get_initial_slave = 0
 
 estate_size[''] = 150

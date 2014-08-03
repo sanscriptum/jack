@@ -66,6 +66,8 @@ $trace[i] = $trace_type[a]
 if i < 11: jump 'loop'
 $trace[12] = 'ride_finish'
 
+ui_style = 2
+
 gs '#npc_base'
 GS '_layout'
 

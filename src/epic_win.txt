@@ -15,7 +15,7 @@ MAINDESC_H = 798
 $yes = {gt 'menu_form'}
 $no = {gt 'Start'}
 
-'<div id = "title_scroll"><img src = "content\pic\bg\scroll_large.gif"></div>'
+'<div id = "title_scroll"><img src = "content\pic\scroll_large.gif"></div>'
 '<div id = "title_scroll_text"><center><h2><font face="Victoriana" size="+20">Поздравляем!</font></h2>
 Вы добились статуса патриция, получили самых лучших клиентов и тем самым завершили сюжетную часть игры с рейтингом<br>
 <h1><font face="Victoriana" size="+20"><<$rating[score]>></font></h1>
@@ -24,7 +24,7 @@ $no = {gt 'Start'}
 Желаете продолжить в свободном режиме?</center>
 </div>'
 
-*p {<div id = "approve_low"><a href = 'EXEC: dynamic $yes'><img src="content\approve.png"></a></div>}
-*p {<div id = "deny_low"><a href = 'EXEC: dynamic $no'><img src="content\deny.png"></a></div>}
+*p {<div id = "approve_low"><a href = 'EXEC: dynamic $yes'><img src="content\pic\buttons\approve.png"></a></div>}
+*p {<div id = "deny_low"><a href = 'EXEC: dynamic $no'><img src="content\pic\buttons\deny.png"></a></div>}
 --- epic_win ---------------------------------
 

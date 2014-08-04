@@ -26,7 +26,7 @@ $text[2] = '  <font color="#191970">- Without you nowhere, Farid. Be a friend, l
 
 IF slave['brand'] = 0:
  $text[3] = '[FARID]
-  <font color="#660000">- Not branded? Well this is my profile, yes, but there will come a lot, you know. Estimate only external data ... Well, show yourself, sweet ...
+  <font color="#660000">- Not branded? Well this is my profile, yes, but there will not come a lot, you know. I will evaluate only her appearance... Well, show yourself, sweet...
 </font>'
  else
  $text[3] = '[FARID]
@@ -38,7 +38,7 @@ IF slave['brand'] = 0:
 END
 
 $text[4] = '[FARID]
-  <font color="#660000">- Yeah... Yeah... Well, I see. Not to be left without a penny, I'll give you for her <<sell_price>> sparks. More sparks? No, my dear, I can''t.
+  <font color="#660000">- Yeah... Yeah... Well, I see. Not to be left without a penny, I''ll give you for her <<sell_price>> sparks. More sparks? No, my dear, I can''t.
 </font>'
 
 $text[5] = '  <a href = ''EXEC: gt "slave_auction_sell_end"''><font color="#228B22">- Rob in broad daylight, Farid. Oh well... deal!  

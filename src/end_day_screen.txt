@@ -42,7 +42,7 @@ IF show_food = 1:
  $special_bg = ''
  $place = 'study' 
  if kitchen > 0: $place = 'kitchen'  
- $text = '  Tonight's dinner:<BR> <center><<$meal_name[$cooked_meal]>></center>'
+ $text = '  Tonight''s dinner:<BR> <center><<$meal_name[$cooked_meal]>></center>'
  show_food = 0
  jump 'loop'
 END

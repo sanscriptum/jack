@@ -1,5 +1,5 @@
 # slave_to_assistant
-!Делаем воспитуемую ассистенткой или ассистентку воспитуемой
+!move slave an assistant or or vice versa
 
 temp = slave_state
 slave_state = assistant_state

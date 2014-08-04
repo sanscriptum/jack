@@ -1,5 +1,5 @@
 # $quest_list
-!Создаём список активных квестов
+!create a list for active quests
 $quest_list = ''
 
 n = arrsize('$quest') - 1

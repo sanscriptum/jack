@@ -1,5 +1,5 @@
 # $mod_master_drop
-!Снижение хороших модов мастера
+!Decrease good moodlets of master
 n = arrsize('$master_good_mood')
 i = 0
 :loop

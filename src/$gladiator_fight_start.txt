@@ -1,5 +1,5 @@
 # $gladiator_fight_start
-!ВХОД В ГЛАДИАТОРСКИЙ ПОЕДИНОК
+!START OF THE GLADIATRIX FIGHT
 $fight_return = 'Start'
 arena_mode = 1
 
@@ -11,7 +11,7 @@ base_flagelation = slave['gladiatrix'] + slave["gladiatrix_affinity"]
 восприятие = slave['gladiatrix'] + slave["gladiatrix_affinity"]
 if slave["gladiatrix_affinity_revealed"] = 0: slave["gladiatrix_affinity_revealed"] = 1
 
-!Обнуляем переменные
+!reset vars
 поверженные_враги = 0
 killvar '$состояние'
 
@@ -37,10 +37,10 @@ killvar '$суперудар'
 
 суперудар_сделан[1] = IIF(slave['gladiatrix'] > 2, 0, 1)
 
-!Формат интерфейса
+!interface
 gs 'раскладка_бой'
 
-!Получение информации об игроке
+!Getting information about the player
 gs '#тексты_движка'
 gs '#противники'
 gs '#суперудары'
@@ -68,7 +68,7 @@ slave_rate["sensitivity"] -= 5
 dynamic $броня_надеть[$броня]
 dynamic $броня_эффект[$броня]
 
-!Цикл получения информации о мобах-противниках
+!Cycle information about mobs-enemies
 i = 0
 :loop
 IF i < количество_врагов:

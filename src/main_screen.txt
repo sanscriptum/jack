@@ -13,8 +13,8 @@ IF wizard_mode = 1:
  else
  $upper_info_bar = '<a style = "color: black;" href="EXEC: msg $shedule">Day: <<day>></a>  |  Decade: <<decade>>  |  (<<sparks>>$)'
  $shedule_warn = ''
- if contract["time"] > 0: $upper_info_bar += ' |  Contract: <<contract["time"]>> дн. ' 
- if debt > 0: $upper_info_bar += ' |  Debt: <<debt>>$ (<<debt_count>> дн.) '
+ if contract["time"] > 0: $upper_info_bar += ' |  Contract: <<contract["time"]>> days ' 
+ if debt > 0: $upper_info_bar += ' |  Debt: <<debt>>$ (<<debt_count>> days) '
  if ride_count = 0: $shedule_warn += '<font color="#ff5700"><b>!</b></font>'
  if auction_count = 0: $shedule_warn += '<font color="#ff5700"><b>!</b></font>'
  if gladi_count = 0: $shedule_warn += '<font color="#ff5700"><b>!</b></font>'

@@ -1,5 +1,5 @@
 # $appropriate_buyers_list
-!Составляем список оптимальных покупателей для текущей рабыни
+!Draw up a list of the best customers for the current slave
 gs '$slave_price'
 $appropriate_buyers_list = ''
 
@@ -14,10 +14,10 @@ END
 
 if i < n: jump 'loop'
 
-if $appropriate_buyers_list = '': $appropriate_buyers_list = '<br>  Вряд ли я найду сейчас подходящего покупателя для моей воспитуемой. Ей ещё многому предстоит научиться.'
+if $appropriate_buyers_list = '': $appropriate_buyers_list = '<br>  It is unlikely that I will find a suitable buyer for my slave. She has a lot to learn.'
 
 $quest_description[2] = '<<$appropriate_buyers_list>>
 
-<a href = "EXEC: quest_description_mode = 0 & gt curloc">Назад</a>'
+<a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>'
 --- $appropriate_buyers_list ---------------------------------
 

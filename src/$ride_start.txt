@@ -1,5 +1,5 @@
 # $ride_start
-!Подготовка заезда на колесницах
+!Preparation for chariot race
 gs '#charriots_base'
 charriot['weight'] = (heavy_frame + heavy_boards + heavy_chasis + heavy_wheels + heavy_rider_armor) + 5
 charriot['pony_health'] = slave['stamina'] 
@@ -19,7 +19,8 @@ killvar 'speed_points'
 trace_segment = 1
 
 !$BACKIMAGE = 'content/pic/bg_fight.jpg'
-!новая пикча by XxX_dark-youba-pojeeratyel'-tvoyei-pees'ki-the_vm-\|-_-_-^__^-_-_-|/MLG_PRO_YOLO#2014_RUS99N4giB4T0R_XxX
+!new super image by XxX_dark-youba-pojeeratyel'-tvoyei-pees'ki-the_vm-\|-_-_-^__^-_-_-|/MLG_PRO_YOLO#2014_RUS99N4giB4T0R_XxX
+!self-explanatory
 if ui_style = 1:$backimage = 'content/pic/ui/old/bg_fight_old.jpg'
 if ui_style = 2:$backimage = 'content/pic/ui/grimdark/bg_ride.jpg'
 if ui_style = 0:$backimage = 'content/pic/ui/classic/bg_ride.jpg'
@@ -28,7 +29,7 @@ MSG_X = 350
 
 $future_ride = $trace_forward_description[$trace[2]]
 
-!ОПРЕДЕЛЯЕМ СОПЕРНИКОВ
+!DEFINE RIVALS
 killvar 'rider_participates'
 killvar 'speed_points'
 

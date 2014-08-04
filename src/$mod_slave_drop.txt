@@ -1,5 +1,5 @@
 # $mod_slave_drop
-!Уменьшение хороших модов рабыни
+!Decrease good moodlets of slave
 n = arrsize('$slave_good_mod')
 i = 0
 :loop

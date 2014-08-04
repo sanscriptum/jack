@@ -1,9 +1,9 @@
 # $ride_finish
-!Завершение гонки на колесницах
+!end of the chariot race
 ride_count = 10
 sp_txt = 0
 
-!Создание трассы на следующий заезд
+!Creating a route to the next race
 $trace[1] = 'ride_start'
 i = 1
 :loop
@@ -13,7 +13,7 @@ $trace[i] = $trace_type[a]
 if i < 11: jump 'loop'
 $trace[12] = 'ride_finish'
 
-!Травмы скакуньи
+!Racehorse injuries
 a = slave['stamina'] - charriot['pony_health']
 if a > 0: 
  b = RAND (11,59)
@@ -29,25 +29,25 @@ END
 slave['energy'] = -3
 
 
-!1 =  колесница развалилась
+!1 =  chariot broke
 IF args = 1:
  interaction_city = 121
  gt 'interaction_city' 
 END
 
-!2 = колесо отлетело
+!2 = wheel flew off
 IF args = 2:
  interaction_city = 121
  gt 'interaction_city' 
 END
 
-!3 = скакунья пала
+!3 = steed fell
 IF args = 3:
  interaction_city = 123
  gt 'interaction_city' 
 END
 
-!4 = дошел до финиша
+!4 = reached the the finish line
 IF args = 4:
  $race_winner = $participant[1]
  interaction_city = 124

@@ -5,7 +5,7 @@ $auspex_list = ''
 
 IF auspex = 0:
  $auspex_list = '' 
- $info_text = '   Без заклинаний усиливающих ауспекс, аура воспитуемой видится вам бледной и нечеткой тенью. Вы не можете определить цвета, силу и направления потоков её духовного поля.'
+ $info_text = '   Without spells reinforcing auspex, aura of your slave is seen as pale and indistinct shadow. You can not determine the color, strength and direction of flow of her spiritual field.'
  else
  $auspex_list = '' 
  IF slave["obedience"] => 0:
@@ -42,7 +42,7 @@ IF auspex = 0:
  $auspex_list += '<<$aura_spoil[slave["spoil"]]>><br><BR>'
  $auspex_list += '<<$aura_moral[slave["moral"]]>>'
  
- $info_text = '   Заклинание ауспекса позволяет вам различить цвета, направления и силу потоков духовного поля воспитуемой. Проанализировав их, вы получаете детальную информацию.'
+ $info_text = '   Auspex allows you to distinguish between colors, direction and strength of the spiritual flow field of your slave. After analyzing them, you get detailed information.'
  $auspex_list += ''
 END
 
@@ -50,7 +50,7 @@ IF assistant_aura = 1:
  $auspex_list = ''
  IF auspex = 0:
   $auspex_list = '' 
-  $assistant_info_text = '   Без заклинаний усиливающих ауспекс, аура ассистентки видится вам бледной и нечеткой тенью. Вы не можете определить цвета, силу и направления потоков её духовного поля.'
+  $assistant_info_text = '   Without spells reinforcing auspex, aura of your assistant is seen as pale and indistinct shadow. You can not determine the color, strength and direction of flow of her spiritual field.'
   else
   $auspex_list = '' 
   IF assistant["obedience"] => 0:
@@ -87,7 +87,7 @@ IF assistant_aura = 1:
   $auspex_list += '<<$aura_assistant_spoil[assistant["spoil"]]>><br><BR>'
   $auspex_list += '<<$aura_assistant_moral[assistant["moral"]]>>'
  
-  $assistant_info_text = '   Заклинание ауспекса позволяет вам различить цвета, направления и силу потоков духовного поля ассистентки. Проанализировав их, вы получаете детальную информацию.'
+  $assistant_info_text = '   Auspex allows you to distinguish between colors, direction and strength of the spiritual flow field of your assistant. After analyzing them, you get detailed information.'
   $auspex_list += ''
  END
 END
@@ -95,13 +95,13 @@ END
 !"IF wizard_mode = 1:
  $auspex_list += ''
  $auspex_list += '
-Страх:          <<slave["fear"]>>/<<slave_rate["fear"]>>      Калории: <<slave["calories"]>>
-Ангст:          <<slave["angst"]>>/<<slave_rate["angst"]>>    
-Инстинкт:       <<slave["instinct"]>>/<<slave_rate["instinct"]>>  
-Рацио:          <<slave["rational"]>>/<<slave_rate["rational"]>>  
-Привычка:       <<slave["custom"]>>/<<slave_rate["custom"]>>      
-Мораль:         <<slave["moral"]>>/<<slave_rate["moral"]>>       
-Избалованность: <<slave["spoil"]>>/<<slave_rate["spoil"]>>      
+Fear:          <<slave["fear"]>>/<<slave_rate["fear"]>>      Cal: <<slave["calories"]>>
+Angst:          <<slave["angst"]>>/<<slave_rate["angst"]>>    
+Instinct:       <<slave["instinct"]>>/<<slave_rate["instinct"]>>  
+Ratio:          <<slave["rational"]>>/<<slave_rate["rational"]>>  
+Custom:       <<slave["custom"]>>/<<slave_rate["custom"]>>      
+Moral:         <<slave["moral"]>>/<<slave_rate["moral"]>>       
+Spoil: <<slave["spoil"]>>/<<slave_rate["spoil"]>>      
 
 <<$beauty[slave["beauty"]]>> (<<slave_rate["beauty"]>>)
 <<$stamina[slave["stamina"]]>> (<<slave_rate["stamina"]>>)

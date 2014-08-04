@@ -1,5 +1,5 @@
 # $mod_slave_rise
-!Уменьшение эффекта негативных мудлетов
+!Decrease bad moodlets of slave
 n = arrsize('$slave_bad_mod')
 i = 0
 :loop

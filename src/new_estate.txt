@@ -1,5 +1,5 @@
 # new_estate
-!Инициализация нового дома или интерьера
+!Initializes a new home or interior
 
 IF $estate = 'slum_house':
   bath = 0

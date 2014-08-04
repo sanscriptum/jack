@@ -1,5 +1,5 @@
 # ride_next
-!Обработка следующего участка трассы
+!Processing of the next section of the race route
 charriot['max_speed'] = (slave['temper'] + charriot['pony_health']*3) - charriot['weight']
 if slave['age'] ! CONST_INT['loli_age']: charriot['max_speed'] = charriot['max_speed']*2
 charriot['acceleration'] = charriot['max_speed']/4
@@ -118,7 +118,7 @@ IF $trace[trace_segment] = 'bladestrings':
   $current_ride = $trace_pass_description['bladestrings'] 
   else
   IF slave['age'] = CONST_INT['loli_age']:
-   $current_ride = '   Благодаря низенькому росту запряженной в вашу колесницу девочки, вы можете спокойно проходить струны-лезвия на любой скорости: они натянуты на уровне шеи взрослой женщины и просто свистят над вашими головами, не причиняя ни малейшего вреда. А вот противникам будет не так просто преодолеть этот участок!'
+   $current_ride = '   Due to the low growth of your girl yoked to the chariot, you can safely pass a string-blade at any speed: they are stretched at the neck of an adult woman and just whistling over your heads, without causing any harm. But for your opponents this section will not be easy to overcome!'
    else
    $current_ride = $trace_fail_description['bladestrings']  
    dynamic $pony_death 

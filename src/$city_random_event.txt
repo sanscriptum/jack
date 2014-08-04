@@ -1,5 +1,5 @@
 # $city_random_event
-!Случайные события при посещении города
+!random events in city
 
 IF city_form = 6 and isabella_met = 0 and assistant_state = 0 and $estate ! 'slum_house':
  isabella_met = 1

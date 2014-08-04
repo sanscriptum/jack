@@ -1,5 +1,5 @@
 # #simple_npc
-!Замена для копипасты NPC
+!replace for npc copypasta
 !TODO: проверить внешние связи
 $sn_cycle = {
     $_sn_cycle_name = $args[0]
@@ -13,90 +13,90 @@ $sn_cycle = {
     killvar '$_sn_cycle_name'
 }
 
-!Например:
+!example
 
-!$npc_name['cardinal_de_mujlon'] = 'Кардинал де Мужлон'
+!$npc_name['cardinal_de_mujlon'] = 'Gerard De Muzhlon'
 !npc_participation_chance['cardinal_de_mujlon'] = 0
 !demand_rating['cardinal_de_mujlon'] = 4
 !$interesting_specialisation['cardinal_de_mujlon'] = 'refferent'
 !npc_cap_rise['cardinal_de_mujlon'] = 0
 !npc_money_cap['cardinal_de_mujlon'] = 1000
 
-! Заменяется на:
+! replaces to:
 
-!dynamic $sn_cycle, 'cardinal_de_mujlon', 'Кардинал де Мужлон', 0, 4, 'refferent', 0, 1000
+!dynamic $sn_cycle, 'cardinal_de_mujlon', 'Gerard De Muzhlon', 0, 4, 'refferent', 0, 1000
 
 !-----Замена для копипасты NPC-----
-dynamic $sn_cycle, 'cardinal_de_mujlon', 'Кардинал де Мужлон', 0, 4, 'refferent', 0, 1000
-dynamic $sn_cycle, 'bishop_shaitana', 'Епископ Шайтана', 0, 4, 'enchanter', 0, 1000
-dynamic $sn_cycle, 'bullhorn', 'Буллхорн', 0, 2, 'concubine', 0, 1000
-dynamic $sn_cycle, 'colonel_akbars', 'Полковник Акбарс', 0, 3, 'gladiatrix', 0, 1000
-dynamic $sn_cycle, 'countess_bathory', 'Герцогиня Батори', 0, 3, 'none', 0, 1000
-dynamic $sn_cycle, 'garsid', 'Гарсид', 0, 1, 'nurse', 0, 1000
-dynamic $sn_cycle, 'gloth_prisonguard', 'Тюремщик Глот', 0, 1, 'pet', 0, 1000
-dynamic $sn_cycle, 'jarik', 'Ярик', 0, 1, 'pet', 0, 1000
-dynamic $sn_cycle, 'kratos', 'Кратос', 0, 2, 'concubine', 0, 1000
-dynamic $sn_cycle, 'kurfilinn', 'Курфилинн', 0, 3, 'artist', 0, 1000
-dynamic $sn_cycle, 'lady_mordhulla', 'Леди Мордулла', 0, 3, 'pet', 0, 1000
-dynamic $sn_cycle, 'lord_pira', 'Лорд Пира', 0, 3, 'concubine', 0, 1000
-dynamic $sn_cycle, 'magnaga', 'Магнага', 0, 2, 'concubine', 0, 1000
-dynamic $sn_cycle, 'mikkey', 'Весельчак Микки', 0, 2, 'pet', 0, 1000
-dynamic $sn_cycle, 'pretor_tifaret', 'Претор Тифарет', 0, 4, 'maid', 0, 1000
-dynamic $sn_cycle, 'prince_charming', 'Прекрасный Принц', 0, 3, 'artist', 0, 1000
-dynamic $sn_cycle, 'sfinga', 'Сфинга', 0, 2, 'enchanter', 0, 1000
-dynamic $sn_cycle, 'baron_imladis', 'Барон Имладис', 0, 3, 'maid', 200, 1000
-dynamic $sn_cycle, 'bishop_nerilis', 'Епископ Нирелис', 0, 4, 'nurse', 200, 1000
-dynamic $sn_cycle, 'blackwing', 'Вранокрыл', 0, 3, 'enchanter', 200, 1000
-dynamic $sn_cycle, 'count_albin', 'Граф Альбин', 0, 3, 'artist', 200, 1000
-dynamic $sn_cycle, 'donna_venturi', 'Донна Вентури', 0, 3, 'maid', 200, 1000
-dynamic $sn_cycle, 'faceless', 'Безликая', 0, 3, 'artist', 200, 1000
-dynamic $sn_cycle, 'hand_of_the_knyaz', 'Десница Князя', 0, 4, 'artist', 200, 1000
-dynamic $sn_cycle, 'lady_yasmenia', 'Леди Ясмания', 0, 3, 'maid', 200, 1000
-dynamic $sn_cycle, 'lihomanka', 'Лихоманка', 0, 1, 'none', 90, 1000
-dynamic $sn_cycle, 'mad_baron', 'Безумный Барон', 0, 3, 'nurse', 90, 1000
-dynamic $sn_cycle, 'magister_vailos', 'Магистр Валиус', 0, 3, 'nurse', 90, 1000
-dynamic $sn_cycle, 'paral_itch', 'Парал Ич', 0, 2, 'concubine', 90, 1000
-dynamic $sn_cycle, 'pretor_kamael', 'Претор Камаэль', 0, 4, 'enchanter', 90, 1000
-dynamic $sn_cycle, 'wight', 'Умертвий', 0, 1, 'nurse', 90, 1000
-dynamic $sn_cycle, 'archdeakon_frolo', 'Архидьякон Фролло', 0, 2, 'artist', 90, 1000
-dynamic $sn_cycle, 'archmage_zephiros', 'Архимаг Зефирос', 0, 3, 'enchanter', 90, 1000
-dynamic $sn_cycle, 'avek_plesir', 'Авек Плезир', 0, 3, 'concubine', 90, 1000
-dynamic $sn_cycle, 'bishop_abbaton', 'Епископ Аббатон', 0, 4, 'maid', 90, 1000
-dynamic $sn_cycle, 'dofine_tutti', 'Наследник Тутти', 0, 4, 'nurse', 200, 1000
-dynamic $sn_cycle, 'earl_gray', 'Граф Грей', 0, 3, 'artist', 90, 1000
-dynamic $sn_cycle, 'edgar_baldhead', 'Эдгар Бальдхэд', 0, 2, 'concubine', 90, 1000
-dynamic $sn_cycle, 'frogger', 'Фроглер', 0, 3, 'artist', 90, 1000
-dynamic $sn_cycle, 'green_mamba', 'Зеленая Мамба', 0, 2, 'pet', 90, 1000
-dynamic $sn_cycle, 'hivenet', 'Хайвнет', 0, 4, 'nurse', 90, 1000
-dynamic $sn_cycle, 'krull', 'Крулл', 0, 1, 'concubine', 90, 1000
-dynamic $sn_cycle, 'leonid_alexandriatos', 'Леонид Александриатос', 0, 3, 'artist', 90, 1000
-dynamic $sn_cycle, 'lucius_patricius', 'Люций Патриций', 0, 3, 'artist', 90, 1000
-dynamic $sn_cycle, 'mister_grease', 'Мистер Гриз', 0, 2, 'pet', 90, 1000
-dynamic $sn_cycle, 'mister_lardbag', 'Мистер Лардбаг', 0, 2, 'concubine', 90, 1000
-dynamic $sn_cycle, 'piter_viabu', 'Питер Виабу', 0, 1, 'concubine', 200, 1000
-dynamic $sn_cycle, 'pretor_diabaz', 'Претор Диабаз', 0, 4, 'artist', 90, 1000
-dynamic $sn_cycle, 'bishop_porter', 'Епископ Портер', 0, 3, 'maid', 90, 1000
-dynamic $sn_cycle, 'shihuan', 'Шихуань', 0, 2, 'artist', 90, 1000
-dynamic $sn_cycle, 'shraik', 'Шрайк', 0, 2, 'concubine', 90, 1000
-dynamic $sn_cycle, 'singh_khan', 'Сингх-Хан', 0, 3, 'gladiatrix', 90, 1000
-dynamic $sn_cycle, 'titus', 'Патриций Титус', 0, 2, 'artist', 90, 1000
-dynamic $sn_cycle, 'zashemitsu', 'Защемицу', 0, 1, 'nurse', 90, 1000
-dynamic $sn_cycle, 'bishop_molaru', 'Епископ Молару', 0, 4, 'maid', 200, 1000
-dynamic $sn_cycle, 'don_bobrit', 'Дон Бобрит', 0, 2, 'artist', 90, 1000
-dynamic $sn_cycle, 'don_castilio', 'Дон Кастилио', 0, 3, 'refferent', 90, 1000
-dynamic $sn_cycle, 'don_diego', 'Дон Диего', 0, 2, 'concubine', 90, 1000
-dynamic $sn_cycle, 'don_karbolio', 'Дон Карболио', 0, 3, 'artist', 90, 1000
-dynamic $sn_cycle, 'don_mladio', 'Дон Младио', 0, 3, 'maid', 90, 1000
-dynamic $sn_cycle, 'don_sedos', 'Дон Сэдос', 0, 2, 'nurse', 90, 1000
-dynamic $sn_cycle, 'don_sigismund', 'Дон Сигизмунд', 0, 3, 'maid', 90, 1000
-dynamic $sn_cycle, 'don_sorino', 'Дон Сорино', 0, 2, 'artist', 90, 1000
-dynamic $sn_cycle, 'general_drago', 'Генерал Драго', 0, 4, 'gladiatrix', 90, 1000
-dynamic $sn_cycle, 'lady_edna', 'Леди Эдна', 0, 2, 'maid', 90, 1000
-dynamic $sn_cycle, 'lady_suinton', 'Леди Суинтон', 0, 3, 'pet', 200, 1000
-dynamic $sn_cycle, 'magister_gilmeritus', 'Магистр Гильмеритус', 0, 3, 'enchanter', 90, 1000
-dynamic $sn_cycle, 'pastor_shlang', 'Пастор Шланг', 0, 1, 'maid', 90, 1000
-dynamic $sn_cycle, 'pretor_siegfrid', 'Претор Зигфрид', 0, 4, 'concubine', 90, 1000
-dynamic $sn_cycle, 'sir_shelly', 'Сир Шелли', 0, 3, 'maid', 90, 1000
-dynamic $sn_cycle, 'sir_toughbar', 'Сир Тугбар', 0, 2, 'concubine', 90, 1000
+dynamic $sn_cycle, 'cardinal_de_mujlon', 'Gerard De Muzhlon', 0, 4, 'refferent', 0, 1000
+dynamic $sn_cycle, 'bishop_shaitana', 'Bishop Shaitana', 0, 4, 'enchanter', 0, 1000
+dynamic $sn_cycle, 'bullhorn', 'Bullhorn', 0, 2, 'concubine', 0, 1000
+dynamic $sn_cycle, 'colonel_akbars', 'Colonel Akbars', 0, 3, 'gladiatrix', 0, 1000
+dynamic $sn_cycle, 'countess_bathory', 'Countess Bathory', 0, 3, 'none', 0, 1000
+dynamic $sn_cycle, 'garsid', 'Garsid', 0, 1, 'nurse', 0, 1000
+dynamic $sn_cycle, 'gloth_prisonguard', 'Glot the Jailer', 0, 1, 'pet', 0, 1000
+dynamic $sn_cycle, 'jarik', 'Jarik', 0, 1, 'pet', 0, 1000
+dynamic $sn_cycle, 'kratos', 'Kratos', 0, 2, 'concubine', 0, 1000
+dynamic $sn_cycle, 'kurfilinn', 'Kurfilinn', 0, 3, 'artist', 0, 1000
+dynamic $sn_cycle, 'lady_mordhulla', 'Lady Mordhulla', 0, 3, 'pet', 0, 1000
+dynamic $sn_cycle, 'lord_pira', 'Lord Pira', 0, 3, 'concubine', 0, 1000
+dynamic $sn_cycle, 'magnaga', 'Magnaga', 0, 2, 'concubine', 0, 1000
+dynamic $sn_cycle, 'mikkey', 'Merry Mickey', 0, 2, 'pet', 0, 1000
+dynamic $sn_cycle, 'pretor_tifaret', 'Praetor Tifaret', 0, 4, 'maid', 0, 1000
+dynamic $sn_cycle, 'prince_charming', 'Prince Charming', 0, 3, 'artist', 0, 1000
+dynamic $sn_cycle, 'sfinga', 'Sfinga', 0, 2, 'enchanter', 0, 1000
+dynamic $sn_cycle, 'baron_imladis', 'Baron Imladis', 0, 3, 'maid', 200, 1000
+dynamic $sn_cycle, 'bishop_nerilis', 'Bishop Nerilis', 0, 4, 'nurse', 200, 1000
+dynamic $sn_cycle, 'blackwing', 'Blackwing', 0, 3, 'enchanter', 200, 1000
+dynamic $sn_cycle, 'count_albin', 'Count Albin', 0, 3, 'artist', 200, 1000
+dynamic $sn_cycle, 'donna_venturi', 'Donna Venturi', 0, 3, 'maid', 200, 1000
+dynamic $sn_cycle, 'faceless', 'Faceless', 0, 3, 'artist', 200, 1000
+dynamic $sn_cycle, 'hand_of_the_knyaz', 'The Hand of the Prince', 0, 4, 'artist', 200, 1000
+dynamic $sn_cycle, 'lady_yasmenia', 'Lady Yasmaniya', 0, 3, 'maid', 200, 1000
+dynamic $sn_cycle, 'lihomanka', 'Fever', 0, 1, 'none', 90, 1000
+dynamic $sn_cycle, 'mad_baron', 'Mad Baron', 0, 3, 'nurse', 90, 1000
+dynamic $sn_cycle, 'magister_vailos', 'Magister Vailos', 0, 3, 'nurse', 90, 1000
+dynamic $sn_cycle, 'paral_itch', 'Para Lysis', 0, 2, 'concubine', 90, 1000
+dynamic $sn_cycle, 'pretor_kamael', 'Praetor Kamael', 0, 4, 'enchanter', 90, 1000
+dynamic $sn_cycle, 'wight', 'Slew', 0, 1, 'nurse', 90, 1000
+dynamic $sn_cycle, 'archdeakon_frolo', 'Archdeacon Frollo', 0, 2, 'artist', 90, 1000
+dynamic $sn_cycle, 'archmage_zephiros', 'Archmage Zephiros', 0, 3, 'enchanter', 90, 1000
+dynamic $sn_cycle, 'avek_plesir', 'Avec Plaisir', 0, 3, 'concubine', 90, 1000
+dynamic $sn_cycle, 'bishop_abbaton', 'Bishop Abbaton', 0, 4, 'maid', 90, 1000
+dynamic $sn_cycle, 'dofine_tutti', 'Tutti heir', 0, 4, 'nurse', 200, 1000
+dynamic $sn_cycle, 'earl_gray', 'Earl Grey', 0, 3, 'artist', 90, 1000
+dynamic $sn_cycle, 'edgar_baldhead', 'Edgar the Baldhead', 0, 2, 'concubine', 90, 1000
+dynamic $sn_cycle, 'frogger', 'Frogger', 0, 3, 'artist', 90, 1000
+dynamic $sn_cycle, 'green_mamba', 'Green Mamba', 0, 2, 'pet', 90, 1000
+dynamic $sn_cycle, 'hivenet', 'Hivenet', 0, 4, 'nurse', 90, 1000
+dynamic $sn_cycle, 'krull', 'Krull', 0, 1, 'concubine', 90, 1000
+dynamic $sn_cycle, 'leonid_alexandriatos', 'Leonid Aleksandriatos', 0, 3, 'artist', 90, 1000
+dynamic $sn_cycle, 'lucius_patricius', 'Lucius Patricius', 0, 3, 'artist', 90, 1000
+dynamic $sn_cycle, 'mister_grease', 'Mister Grease', 0, 2, 'pet', 90, 1000
+dynamic $sn_cycle, 'mister_lardbag', 'Mister Lardbag', 0, 2, 'concubine', 90, 1000
+dynamic $sn_cycle, 'piter_viabu', 'Peter Viaboo', 0, 1, 'concubine', 200, 1000
+dynamic $sn_cycle, 'pretor_diabaz', 'Praetor Diabaz', 0, 4, 'artist', 90, 1000
+dynamic $sn_cycle, 'bishop_porter', 'Bishop Porter', 0, 3, 'maid', 90, 1000
+dynamic $sn_cycle, 'shihuan', 'Shihuan', 0, 2, 'artist', 90, 1000
+dynamic $sn_cycle, 'shraik', 'Shraik', 0, 2, 'concubine', 90, 1000
+dynamic $sn_cycle, 'singh_khan', 'Singh-Khan', 0, 3, 'gladiatrix', 90, 1000
+dynamic $sn_cycle, 'titus', 'Patrician Titus', 0, 2, 'artist', 90, 1000
+dynamic $sn_cycle, 'zashemitsu', 'Zashemitsu', 0, 1, 'nurse', 90, 1000
+dynamic $sn_cycle, 'bishop_molaru', 'Bishop Molaru', 0, 4, 'maid', 200, 1000
+dynamic $sn_cycle, 'don_bobrit', 'Don Bobrit', 0, 2, 'artist', 90, 1000
+dynamic $sn_cycle, 'don_castilio', 'Don Castilio', 0, 3, 'refferent', 90, 1000
+dynamic $sn_cycle, 'don_diego', 'Don Diego', 0, 2, 'concubine', 90, 1000
+dynamic $sn_cycle, 'don_karbolio', 'Don Karbolio', 0, 3, 'artist', 90, 1000
+dynamic $sn_cycle, 'don_mladio', 'Don Mladio', 0, 3, 'maid', 90, 1000
+dynamic $sn_cycle, 'don_sedos', 'Don Sedos', 0, 2, 'nurse', 90, 1000
+dynamic $sn_cycle, 'don_sigismund', 'Don Sigismund', 0, 3, 'maid', 90, 1000
+dynamic $sn_cycle, 'don_sorino', 'Don Sorino', 0, 2, 'artist', 90, 1000
+dynamic $sn_cycle, 'general_drago', 'General Drago', 0, 4, 'gladiatrix', 90, 1000
+dynamic $sn_cycle, 'lady_edna', 'Lady Edna', 0, 2, 'maid', 90, 1000
+dynamic $sn_cycle, 'lady_suinton', 'Lady Suinton', 0, 3, 'pet', 200, 1000
+dynamic $sn_cycle, 'magister_gilmeritus', 'Master Gilmeritus', 0, 3, 'enchanter', 90, 1000
+dynamic $sn_cycle, 'pastor_shlang', 'Pastor Shlang', 0, 1, 'maid', 90, 1000
+dynamic $sn_cycle, 'pretor_siegfrid', 'Praetor Siegfrid', 0, 4, 'concubine', 90, 1000
+dynamic $sn_cycle, 'sir_shelly', 'Sir Shelly', 0, 3, 'maid', 90, 1000
+dynamic $sn_cycle, 'sir_toughbar', 'Sir Toughbar', 0, 2, 'concubine', 90, 1000
 --- #simple_npc ---------------------------------
 

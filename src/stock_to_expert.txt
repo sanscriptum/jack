@@ -1,5 +1,5 @@
 # stock_to_expert
-!Откладываем подобранную экспертом рабыню для игрока
+!expert stashes a matched slave for a master
 selected_type = stock_type
 $selected_type = $stock_type
 stock['age'] = seed_age[stock_type]

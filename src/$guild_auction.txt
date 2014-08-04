@@ -1,11 +1,11 @@
 # $guild_auction
-!Аукцион клейменых рабынь
+!Auction of branded slaves
 auction_count = 10
 killvar '$auction_flow'
 u = 2
 
 
-!Определение участников аукциона
+!Determination of the bidders
 killvar '$auction_participant'
 n = arrsize('$auction_buyer')
 i = 0
@@ -51,7 +51,7 @@ if i < n: jump 'interest_loop'
 
 bank_size = 100 * rating
 $auction_flow[1] = '
-   Перекупщик предлагает стартовую цену лота в <<bank_size>> искр. Если никто не захочет поднимать ставки, <<$slave_name>> отойдёт ему по этой цене.'
+   Middleman offers starting bid of <<bank_size>> sparks. If noone bids more, <<$slave_name>> goes to him at that price.'
 $auc_winner = 'Перекупщик'
 bet_size = auction_increment[rating]
 y = 0
@@ -77,7 +77,7 @@ IF bank_size < cap_summ[$auction_participant[i]] and i ! y:
  IF bet_size > 0:
   bank_size += bet_size
   $auction_flow[u] = '
-   <<$npc_name[$auction_participant[i]]>> повышает ставку на <<bet_size>> до <<bank_size>>'
+   <<$npc_name[$auction_participant[i]]>> bets <<bet_size>> more and increases bet to <<bank_size>>'
   $auc_winner = $npc_name[$auction_participant[i]]
   y = i
   x = 1
@@ -89,12 +89,12 @@ END
 
 if i < n: jump 'torg_loop'
 
-$auction_hammer[1] = '   [АУКЦИОНИСТ]
-   - <<bank_size>> искр раз!'
-$auction_hammer[2] = '   [АУКЦИОНИСТ]
-   - <<bank_size>> искр два! Неужели это финальная цена?'
-$auction_hammer[3] = '   [АУКЦИОНИСТ]
-   - <<bank_size>> искр три! Продано!!! Финальная цена: <<bank_size>>. Покупатель: <<$auc_winner>>.'
+$auction_hammer[1] = '   [AUCTIONEER]
+   - <<bank_size>> sparks, one!'
+$auction_hammer[2] = '   [AUCTIONEER]
+   - <<bank_size>> sparks, two! Perhaps this is the final price?'
+$auction_hammer[3] = '   [AUCTIONEER]
+   - <<bank_size>> sparks, three! Sold!!! Final price: <<bank_size>>. Buyer: <<$auc_winner>>.'
 $auction_flow[u] = $auction_hammer[x]
 i = 0
 u += 1

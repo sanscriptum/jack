@@ -550,7 +550,7 @@ font-family:Victoriana;
 position:absolute;
 left:835px;
 top:200px;
-width:440px;
+width:410px;
 height:790px;
 font-size:20px;
 font-family:"Segoe Print";
@@ -903,7 +903,7 @@ font-family: Segoe Print;
 
 #middle_text_2 {
 position:absolute;
-left:820px;
+left:900px;
 top:70px;
 text-align:right;
 color:#0000CD;
@@ -921,7 +921,7 @@ font-family: Segoe Print;
 
 #middle_text_4 {
 position:absolute;
-left:890px;
+left:835px;
 top:210px;
 text-align:right;
 color:#0000CD;
@@ -939,7 +939,7 @@ font-family: Segoe Print;
 
 #middle_text_6 {
 position:absolute;
-left:850px;
+left:875px;
 top:379px;
 text-align:right;
 color:#0000CD;
@@ -948,7 +948,7 @@ font-family: Segoe Print;
 
 #middle_text_7 {
 position:absolute;
-left:695px;
+left:675px;
 top:545px;
 text-align:left;
 color:#0000CD;
@@ -957,7 +957,7 @@ font-family: Segoe Print;
 
 #middle_text_8 {
 position:absolute;
-left:815px;
+left:835px;
 top:545px;
 text-align:right;
 color:#0000CD;

@@ -1,5 +1,5 @@
 # $moodlets_account
-!Просчитываем эффекты мудлетов
+!calculate the moodlets effect
 gs '#moodlet_base'
 master_mood_rate = 0
 master_mood = 0
@@ -32,7 +32,7 @@ i = 0
     END
 if i < n: jump 'loop1'
 
-!Часть рабыни
+!slave part
 slave_rate['mood'] = 0
 slave['mood'] = 0
 
@@ -67,11 +67,11 @@ i = 0
 if i < n: jump 'loop4'
 
 if ndex < 1: $slave_mood_list[1] = '   [<<$slave_name>>]
-- У меня всё в порядке. Ничего особенного...'
+- I''m all right. nothing special...'
 
 :loop_broken
 if $slave_psy_status = 'broken': $slave_mood_list[1] = '   [<<$slave_name>>]
-- Никак, мне всё равно.'
+- Nothing, I do not care.'
 
 if master_mood > 5:  master_mood = 5
 if master_mood < -5:  master_mood = -5

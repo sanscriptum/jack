@@ -1,5 +1,5 @@
 # billing
-!Выставление счетов по итогам декады
+!Billing on the basis of the decade
 
 rental_cost = estate_cost_main[$estate]
 if dungeon > 0: rental_cost += estate_cost_dungeon[$estate]
@@ -74,13 +74,13 @@ END
 
 final_payment = rental_cost + revised_payment + fine - discount
 
-$bill_message = '<center>СЧЕТА К ОПЛАТЕ</center>
-Аренда помещений: <<rental_cost>> иск.
-Счета за еду: <<food_bill>> иск.
-Другие расходы: <<other_bills>> иск.
-Скидки: <<discount>> иск.
-Пени: <<fine>> иск. 
+$bill_message = '<center>BILLS TO PAY</center>
+Rental cost: <<rental_cost>> иск.
+Food bills: <<food_bill>> иск.
+Other expenses: <<other_bills>> иск.
+Discount: <<discount>> иск.
+Fines: <<fine>> иск. 
 --------------------------
-       Итого: <<final_payment>> иск.'
+       Total: <<final_payment>> иск.'
 --- billing ---------------------------------
 

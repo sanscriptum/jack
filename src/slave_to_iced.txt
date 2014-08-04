@@ -1,5 +1,5 @@
 # slave_to_iced
-!Помещаем воспитуемую в домашнюю криогенную ячейку c заменой
+!move slave to a home cryo cell with replacement
 temp = slave_state
 slave_state = iced_state
 iced_state = temp

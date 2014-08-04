@@ -1,5 +1,5 @@
 # slave_to_cage
-!Сажаем воспитуемую в клетку, делаем заключенную воспитуемой
+!move slave to prisoner
 temp = slave_state
 slave_state = prisoner_state
 prisoner_state = temp
@@ -103,7 +103,7 @@ gs '#txt'
 gs '#txt_2'
 gs '$newloc'
 if prisoner_state = 1: $prisoner_info_text = '<<$ppsy_status[$prisoner_psy_status]>>'
-if prisoner_state = 2: $prisoner_info_text = '   <<$prisoner_name>> лежит без сил и тихо стонет. Она явно находится в очень плохом состоянии. Надо дать ей отдохнуть или даже оказать медицинскую помощь.'
+if prisoner_state = 2: $prisoner_info_text = '   <<$prisoner_name>> is exhausted and moans quietly. She is clearly in a very bad condition. You have to give her a rest or even medical assistance.'
 GT 'prison_cell'
 --- slave_to_cage ---------------------------------
 

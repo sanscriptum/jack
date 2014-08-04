@@ -1,5 +1,5 @@
 # get_special_assistant
-!Активация специальной ассистентки
+!special assistant activation
 assistant_state = 1
 $assistant_psy_basic = $seed_psy_basic[assistant_type]
 $assistant_type = 'unic'
@@ -8,7 +8,7 @@ assistant["age"] = seed_age[assistant_type]
 
 if assistant["age"] = CONST_INT['loli_age']: assistant['fertility'] = -2
 
-!АТРИБУТЫ
+!stats
 assistant["beauty"] = seed_beauty[assistant_type]
 assistant["stamina"] = seed_stamina[assistant_type]
 assistant["sensitivity"] = seed_sensitivity[assistant_type]
@@ -74,12 +74,12 @@ assistant["metabolism"] = 3
 assistant["scares"] = assistant_scares[assistant_type]
 assistant_virginity = seed_virginity[assistant_type] 
 
-!ОСОБЕННОСТИ
+!traits
 assistant["boobs"] = seed_boobs[assistant_type]
 assistant_virginity = seed_virginity[assistant_type]
 display_psy_status = 1
 
-!ПРЕДЫСТОРИЯ
+!background
 $assistant_world_description = $stock_world_description[assistant_type]
 $assistant_family_description = $stock_family_description[assistant_type]
 $assistant_occupation_description = $stock_occupation_description[assistant_type]
@@ -91,7 +91,7 @@ $assistant['boobs_img'] = $seed_boobs_img[assistant_type]
 $assistant['pussy_img'] = $seed_pussy_img[assistant_type]
 assistant['brand'] = 1
 
-!Выравнивание характеристик
+!stats alignment
 assistant["energy"] = 3
 assistant["hygiene"] = 1
 assistant["exotic"] = seed_exotic[assistant_type]
@@ -106,7 +106,7 @@ $assistant['ava'] = $seed_ava[assistant_type]
 $assistant['ava_gray'] = $seed_ava_gray[assistant_type]
 $assistant['ava_clear'] = $seed_ava_clear[assistant_type]
 
-!СНАРЯЖЕНИЕ
+!equip
 $assistant["wpn"] = 'кинжал'
 $assistant["armor"] = 'кожан'
 $assistant["scnd"] = ''

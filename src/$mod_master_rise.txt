@@ -1,5 +1,5 @@
 # $mod_master_rise
-!Снижение плохих модов мастера
+!Decrease bad moodlets of master
 n = arrsize('$master_bad_mood')
 i = 0
 :loop

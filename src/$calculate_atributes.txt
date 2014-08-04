@@ -1,7 +1,7 @@
 # $calculate_atributes
-!Считаем рейтовые характеристики
+!calculate rate stats
 
-!Непрерывные
+!continuous
 i = 0
 n = arrsize('$cont_atr')
 n -= 1
@@ -43,7 +43,7 @@ if assistant_rate[$cont_atr[i]] <= -160: assistant[$cont_atr[i]] = -5
 
 if i < n: jump 'slave_cont_loop'
 
-!Дискретные, поленезависимые
+!Discrete field independence
 i = 0
 n = arrsize('$indep_atr')
 n -= 1
@@ -147,8 +147,8 @@ END
 
 if i < n: jump 'slave_independent_loop'
 
-!Дискретные, полезависимые
-!Расчёт таланта
+!Discrete, field dependence
+!Calculation talent
 affinity['expression'] = slave["expression_affinity"]
 affinity['pet'] = slave["pet_affinity"]
 affinity['dressage'] = slave["dressage_affinity"]
@@ -176,7 +176,7 @@ assistant_rm += assistant[$dep_atr[i]]
 if i < n: jump 'affinity_loop'
 
 
-!Основной рассчёт дискретных, полезависимых
+!The main calculation of discrete, semi-dependent
 i = 0
 :slave_dependent_loop
 i += 1
@@ -250,8 +250,8 @@ END
 if i < n: jump 'slave_dependent_loop'
 
 
-!Для героя
-!Проверка предметов ChemistFTW
+!for master
+!check items bonuses by ChemistFTW
 killvar 'boost_up'
 dynamic $item_property[$master_cloth]
 
@@ -262,7 +262,7 @@ master_mage_own = master_mage - boost_up['master_mage']
 master_medic_own = master_medic - boost_up['master_medic']
 
 
-!Заводим в массив характеристики героя
+!Set up in an array of characteristics of the master
 $master_rate['str'] = 'master_str_rate'
 $master['str'] = 'master_str'
 $master_rate['cha'] = 'master_cha_rate'
@@ -276,7 +276,7 @@ $master['mess'] = 'house_mess'
 $master_rate['wounds'] = 'master_wounds_rate'
 $master['wounds'] = 'master_wounds'
 
-!Непрерывные
+!continuous
 $master_rate['domination'] = 'master_domination_rate'
 $master['domination'] = 'master_domination'
 $master_rate['flagelation'] = 'master_flagelation_rate'
@@ -353,7 +353,7 @@ if <<$master_rate[$hero_con[i]]>> => 160: <<$master[$hero_con[i]]>> = 5
 if i < n: jump 'master_cont_loop'
 
 
-!Считаем сложность роста навыка для героя
+!Consider the complexity of skill rise for a master
 i = 0
 hrm = 0
 n = arrsize('$hero_dep')
@@ -365,7 +365,7 @@ dynamic 'hrm += <<$master[$hero_dep[i]]>>'
 
 if i < n: jump 'hrm_loop'
 
-!Считаем навыки
+!calculate skills
 i = 0
 :hero_dep_loop
 i += 1
@@ -402,7 +402,7 @@ END
 
 if i < n: jump 'hero_dep_loop'
 
-!выводим посчитанные характеристики
+!derive calculated characteristics
 master_domination_rate = master_rate['domination'] 
 master_domination = master['domination'] 
 master_flagelation_rate = master_rate['flagelation'] 

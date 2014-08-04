@@ -1,5 +1,5 @@
 # slave_auction_rise
-!ДЕЛАЕМ СТАВКУ НА АУКЦИОНЕ
+!Place your bets on auction
 
 auction_phase = 1
 if cur_stock_price > stock_base_price: cur_stock_price += 5

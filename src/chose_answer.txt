@@ -1,5 +1,5 @@
 # chose_answer
-!Выбор ответа на вопрос в диалоге с воспитуемой
+!The choice of answer to the question in the dialogue with slave
 
 IF interaction = 1113:
  $text[1] = $no_need

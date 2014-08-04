@@ -1,7 +1,7 @@
 # #variative
-!База переменных атрибутов
+!variable attributes database
 
-!для генерации рабыни
+!for generate slave
 $stockatr[1] = 'stock["beauty"]'
 $stockatr[2] = 'stock["stamina"]'
 $stockatr[3] = 'stock["sensitivity"]'
@@ -10,7 +10,7 @@ $stockatr[5] = 'stock["ego"]'
 $stockatr[6] = 'stock["pride"]'
 $stockatr[7] = 'stock["intellect"]'
 
-!Непрерывные, поленезависимые
+!Continuous, field independence
 $cont_atr[0] = 'none'
 $cont_atr[1] = 'bruises'
 $cont_atr[2] = 'scares'
@@ -19,7 +19,7 @@ $cont_atr[4] = 'arousal'
 $cont_atr[5] = 'wounds'
 $cont_atr[6] = 'fame'
 
-!Дискретные, поленезависимые
+!Discrete, field independence
 $indep_atr[0] = 'none'
 $indep_atr[1] = 'fat'
 $indep_atr[2] = 'stamina'
@@ -35,7 +35,7 @@ $indep_atr[11] = 'spoil'
 $indep_atr[12] = 'instinct'
 $indep_atr[13] = 'rational'
 
-!Дискретные, полезависимые (навыки)
+!Discrete, field dependence (skills)
 $dep_atr[0] = 'none'
 $dep_atr[1] = 'expression'
 $dep_atr[2] = 'pet'
@@ -50,9 +50,9 @@ $dep_atr[10] = 'music'
 $dep_atr[11] = 'callisthenics'
 $dep_atr[12] = 'secretary'
 
-!Характеристики героя
+!master stats
 
-!Непрерывные
+!continuous
 $hero_con[0] = 'none'
 $hero_con[1] = 'hygiene'
 $hero_con[2] = 'mess'
@@ -60,7 +60,7 @@ $hero_con[3] = 'wounds'
 $hero_con[4] = 'str'
 $hero_con[5] = 'cha'
 
-!Дискретные, полезависимые
+!Discrete, field dependence
 $hero_dep[0] = 'none'
 $hero_dep[1] = 'petting'
 $hero_dep[2] = 'penetration'

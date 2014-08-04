@@ -1,5 +1,5 @@
 # slave_auction_pass
-!ПРОПУСКАЕМ ОДИН ХОД АУКЦИОНА (покупка рабыни)
+!Skip over one auction phase (buying slave)
 IF auction_phase = 5:
  haggling_stage = 0
  auction_phase = 7

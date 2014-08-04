@@ -1,5 +1,5 @@
 # slave_auction_next
-!Пропуск лота аукциона
+!Skip auction lot
 
 IF stock_sold => stock_limit:
   auction_phase = 5

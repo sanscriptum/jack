@@ -1,8 +1,8 @@
 # #estate_base
-!База данных по съемным помещениям и интерьерам
+!Database of rental housing and interiors
 
-!ПОМЕЩЕНИЯ
-!Дом в трущобах [slum_house]
+!housings
+!slum_house [slum_house]
 estate_prestige['slum_house'] = -1
 estate_size['slum_house'] = 100
 estate_cost_main['slum_house'] = 0
@@ -11,22 +11,22 @@ estate_cost_dungeon['slum_house'] = 0
 estate_cost_lab['slum_house'] = 0
 estate_location['slum_house'] = 6
 
-$estate_study_name['slum_house'] = 'Обшарпанная комната'
-$estate_study_location['slum_house'] = 'Лачуга в трущобах'
-$estate_bed_name['slum_house'] = 'Обшарпанная кровать'
-$estate_bed_location['slum_house'] = 'Лачуга в трущобах'
-$estate_bath_name['slum_house'] = 'Ванная'
-$estate_bath_location['slum_house'] = 'Лачуга'
-$estate_bouduar_name['slum_house'] = 'Будуар'
-$estate_bouduar_location['slum_house'] = 'Лачуга'
-$estate_kitchen_name['slum_house'] = 'Кухня'
-$estate_kitchen_location['slum_house'] = 'Лачуга'
-$estate_dungeon_name['slum_house'] = 'Темница'
-$estate_dungeon_location['slum_house'] = 'Лачуга'
-$estate_lab_name['slum_house'] = 'Лаборатория'
-$estate_lab_location['slum_house'] = 'Лачуга'
+$estate_study_name['slum_house'] = 'Shabby Room'
+$estate_study_location['slum_house'] = 'Shack in the Slums'
+$estate_bed_name['slum_house'] = 'Ragged Bed'
+$estate_bed_location['slum_house'] = 'Shack in the Slums'
+$estate_bath_name['slum_house'] = 'Bathroom'
+$estate_bath_location['slum_house'] = 'Shack'
+$estate_bouduar_name['slum_house'] = 'Boudoir'
+$estate_bouduar_location['slum_house'] = 'Shack'
+$estate_kitchen_name['slum_house'] = 'Kitchen'
+$estate_kitchen_location['slum_house'] = 'Shack'
+$estate_dungeon_name['slum_house'] = 'Dungeon'
+$estate_dungeon_location['slum_house'] = 'Shack'
+$estate_lab_name['slum_house'] = 'Lab'
+$estate_lab_location['slum_house'] = 'Shack'
 
-!Дом в квартале отверженных [kamira_house]
+!kamira_house [kamira_house]
 estate_prestige['kamira_house'] = 0
 estate_size['kamira_house'] = 100
 estate_cost_main['kamira_house'] = 50
@@ -35,22 +35,22 @@ estate_cost_dungeon['kamira_house'] = 15
 estate_cost_lab['kamira_house'] = 20
 estate_location['kamira_house'] = 4
 
-$estate_study_name['kamira_house'] = 'Большая комната'
-$estate_study_location['kamira_house'] = 'Квартал отверженных'
-$estate_bed_name['kamira_house'] = 'Спальня'
-$estate_bed_location['kamira_house'] = 'Квартал отверженных'
-$estate_bath_name['kamira_house'] = 'Ванная'
-$estate_bath_location['kamira_house'] = 'Квартал отверженных'
-$estate_bouduar_name['kamira_house'] = 'Будуар'
-$estate_bouduar_location['kamira_house'] = 'Квартал отверженных'
-$estate_kitchen_name['kamira_house'] = 'Кухня'
-$estate_kitchen_location['kamira_house'] = 'Квартал отверженных'
-$estate_dungeon_name['kamira_house'] = 'Темница'
-$estate_dungeon_location['kamira_house'] = 'Квартал отверженных'
-$estate_lab_name['kamira_house'] = 'Лаборатория'
-$estate_lab_location['kamira_house'] = 'Квартал отверженных'
+$estate_study_name['kamira_house'] = 'Big Room'
+$estate_study_location['kamira_house'] = 'Quarter of the Outcasts'
+$estate_bed_name['kamira_house'] = 'Bedroom'
+$estate_bed_location['kamira_house'] = 'Quarter of the Outcasts'
+$estate_bath_name['kamira_house'] = 'Bathroom'
+$estate_bath_location['kamira_house'] = 'Quarter of the Outcasts'
+$estate_bouduar_name['kamira_house'] = 'Boudoir'
+$estate_bouduar_location['kamira_house'] = 'Quarter of the Outcasts'
+$estate_kitchen_name['kamira_house'] = 'Kitchen'
+$estate_kitchen_location['kamira_house'] = 'Quarter of the Outcasts'
+$estate_dungeon_name['kamira_house'] = 'Dungeon'
+$estate_dungeon_location['kamira_house'] = 'Quarter of the Outcasts'
+$estate_lab_name['kamira_house'] = 'Lab'
+$estate_lab_location['kamira_house'] = 'Quarter of the Outcasts'
 
-!Дом в квартале змеи [serpis_house]
+!serpis_house [serpis_house]
 estate_prestige['serpis_house'] = 1
 estate_size['serpis_house'] = 50
 estate_cost_main['serpis_house'] = 50
@@ -59,22 +59,22 @@ estate_cost_dungeon['serpis_house'] = 15
 estate_cost_lab['serpis_house'] = 20
 estate_location['serpis_house'] = 3
 
-$estate_study_name['serpis_house'] = 'Небольшая комната'
-$estate_study_location['serpis_house'] = 'Муравейник'
-$estate_bed_name['serpis_house'] = 'Спальня'
-$estate_bed_location['serpis_house'] = 'Муравейник'
-$estate_bath_name['serpis_house'] = 'Ванная'
-$estate_bath_location['serpis_house'] = 'Муравейник'
-$estate_bouduar_name['serpis_house'] = 'Будуар'
-$estate_bouduar_location['serpis_house'] = 'Муравейник'
-$estate_kitchen_name['serpis_house'] = 'Кухня'
-$estate_kitchen_location['serpis_house'] = 'Муравейник'
-$estate_dungeon_name['serpis_house'] = 'Темница'
-$estate_dungeon_location['serpis_house'] = 'Муравейник'
-$estate_lab_name['serpis_house'] = 'Лаборатория'
-$estate_lab_location['serpis_house'] = 'Муравейник'
+$estate_study_name['serpis_house'] = 'Small Room'
+$estate_study_location['serpis_house'] = 'Anthill'
+$estate_bed_name['serpis_house'] = 'Bedroom'
+$estate_bed_location['serpis_house'] = 'Anthill'
+$estate_bath_name['serpis_house'] = 'Bathroom'
+$estate_bath_location['serpis_house'] = 'Anthill'
+$estate_bouduar_name['serpis_house'] = 'Boudoir'
+$estate_bouduar_location['serpis_house'] = 'Anthill'
+$estate_kitchen_name['serpis_house'] = 'Kitchen'
+$estate_kitchen_location['serpis_house'] = 'Anthill'
+$estate_dungeon_name['serpis_house'] = 'Dungeon'
+$estate_dungeon_location['serpis_house'] = 'Anthill'
+$estate_lab_name['serpis_house'] = 'Lab'
+$estate_lab_location['serpis_house'] = 'Anthill'
 
-!Дом в квартале быка [taurus_house]
+!taurus_house [taurus_house]
 estate_prestige['taurus_house'] = 2
 estate_size['taurus_house'] = 100
 estate_cost_main['taurus_house'] = 75
@@ -83,22 +83,22 @@ estate_cost_dungeon['taurus_house'] = 20
 estate_cost_lab['taurus_house'] = 30
 estate_location['taurus_house'] = 2
 
-$estate_study_name['taurus_house'] = 'Большая комната'
-$estate_study_location['taurus_house'] = 'Зона резиденций'
-$estate_bed_name['taurus_house'] = 'Спальня'
-$estate_bed_location['taurus_house'] = 'Зона резиденций'
-$estate_bath_name['taurus_house'] = 'Ванная'
-$estate_bath_location['taurus_house'] = 'Зона резиденций'
-$estate_bouduar_name['taurus_house'] = 'Будуар'
-$estate_bouduar_location['taurus_house'] = 'Зона резиденций'
-$estate_kitchen_name['taurus_house'] = 'Кухня'
-$estate_kitchen_location['taurus_house'] = 'Зона резиденций'
-$estate_dungeon_name['taurus_house'] = 'Темница'
-$estate_dungeon_location['taurus_house'] = 'Зона резиденций'
-$estate_lab_name['taurus_house'] = 'Лаборатория'
-$estate_lab_location['taurus_house'] = 'Зона резиденций'
+$estate_study_name['taurus_house'] = 'Big Room'
+$estate_study_location['taurus_house'] = 'Residences Area'
+$estate_bed_name['taurus_house'] = 'Bedroom'
+$estate_bed_location['taurus_house'] = 'Residences Area'
+$estate_bath_name['taurus_house'] = 'Bathroom'
+$estate_bath_location['taurus_house'] = 'Residences Area'
+$estate_bouduar_name['taurus_house'] = 'Boudoir'
+$estate_bouduar_location['taurus_house'] = 'Residences Area'
+$estate_kitchen_name['taurus_house'] = 'Kitchen'
+$estate_kitchen_location['taurus_house'] = 'Residences Area'
+$estate_dungeon_name['taurus_house'] = 'Dungeon'
+$estate_dungeon_location['taurus_house'] = 'Residences Area'
+$estate_lab_name['taurus_house'] = 'Lab'
+$estate_lab_location['taurus_house'] = 'Residences Area'
 
-!Дом в некрополисе [korvus_house]
+!korvus_house [korvus_house]
 estate_prestige['korvus_house'] = 3
 estate_size['korvus_house'] = 150
 estate_cost_main['korvus_house'] = 100
@@ -107,22 +107,22 @@ estate_cost_dungeon['korvus_house'] = 25
 estate_cost_lab['korvus_house'] = 50
 estate_location['korvus_house'] = 5
 
-$estate_study_name['korvus_house'] = 'Большая комната'
-$estate_study_location['korvus_house'] = 'Район смертных'
-$estate_bed_name['korvus_house'] = 'Спальня'
-$estate_bed_location['korvus_house'] = 'Район смертных'
-$estate_bath_name['korvus_house'] = 'Ванная'
-$estate_bath_location['korvus_house'] = 'Район смертных'
-$estate_bouduar_name['korvus_house'] = 'Будуар'
-$estate_bouduar_location['korvus_house'] = 'Район смертных'
-$estate_kitchen_name['korvus_house'] = 'Кухня'
-$estate_kitchen_location['korvus_house'] = 'Район смертных'
-$estate_dungeon_name['korvus_house'] = 'Темница'
-$estate_dungeon_location['korvus_house'] = 'Район смертных'
-$estate_lab_name['korvus_house'] = 'Лаборатория'
-$estate_lab_location['korvus_house'] = 'Район смертных'
+$estate_study_name['korvus_house'] = 'Big Room'
+$estate_study_location['korvus_house'] = 'District of Mortals'
+$estate_bed_name['korvus_house'] = 'Bedroom'
+$estate_bed_location['korvus_house'] = 'District of Mortals'
+$estate_bath_name['korvus_house'] = 'Bathroom'
+$estate_bath_location['korvus_house'] = 'District of Mortals'
+$estate_bouduar_name['korvus_house'] = 'Boudoir'
+$estate_bouduar_location['korvus_house'] = 'District of Mortals'
+$estate_kitchen_name['korvus_house'] = 'Kitchen'
+$estate_kitchen_location['korvus_house'] = 'District of Mortals'
+$estate_dungeon_name['korvus_house'] = 'Dungeon'
+$estate_dungeon_location['korvus_house'] = 'District of Mortals'
+$estate_lab_name['korvus_house'] = 'Lab'
+$estate_lab_location['korvus_house'] = 'District of Mortals'
 
-!Дом в белом городе [white_house]
+!white_house [white_house]
 estate_prestige['white_house'] = 4
 estate_size['white_house'] = 150
 estate_cost_main['white_house'] = 150
@@ -131,50 +131,50 @@ estate_cost_dungeon['white_house'] = 25
 estate_cost_lab['white_house'] = 50
 estate_location['white_house'] = 1
 
-$estate_study_name['white_house'] = 'Большая комната'
-$estate_study_location['white_house'] = 'Предместья Ватикана'
-$estate_bed_name['white_house'] = 'Спальня'
-$estate_bed_location['white_house'] = 'Предместья Ватикана'
-$estate_bath_name['white_house'] = 'Ванная'
-$estate_bath_location['white_house'] = 'Предместья Ватикана'
-$estate_bouduar_name['white_house'] = 'Будуар'
-$estate_bouduar_location['white_house'] = 'Предместья Ватикана'
-$estate_kitchen_name['white_house'] = 'Кухня'
-$estate_kitchen_location['white_house'] = 'Предместья Ватикана'
-$estate_dungeon_name['white_house'] = 'Темница'
-$estate_dungeon_location['white_house'] = 'Предместья Ватикана'
-$estate_lab_name['white_house'] = 'Лаборатория'
-$estate_lab_location['white_house'] = 'Предместья Ватикана'
+$estate_study_name['white_house'] = 'Big Room'
+$estate_study_location['white_house'] = 'Vatican Suburbs'
+$estate_bed_name['white_house'] = 'Bedroom'
+$estate_bed_location['white_house'] = 'Vatican Suburbs'
+$estate_bath_name['white_house'] = 'Bathroom'
+$estate_bath_location['white_house'] = 'Vatican Suburbs'
+$estate_bouduar_name['white_house'] = 'Boudoir'
+$estate_bouduar_location['white_house'] = 'Vatican Suburbs'
+$estate_kitchen_name['white_house'] = 'Kitchen'
+$estate_kitchen_location['white_house'] = 'Vatican Suburbs'
+$estate_dungeon_name['white_house'] = 'Dungeon'
+$estate_dungeon_location['white_house'] = 'Vatican Suburbs'
+$estate_lab_name['white_house'] = 'Lab'
+$estate_lab_location['white_house'] = 'Vatican Suburbs'
 
 
 
 
 
-!ИНТЕРЬЕРЫ
+!INTERIORS
 !Лачуга [slum_house]
 interior_prestige['slum_house'] = -1
 
 $interior_bg['slum_house'] = 'interiors\slum_large'
 $interior_study['slum_house'] = 'interiors\slum_study'
-$interior_study_info['slum_house'] = '   Вам пришлось поселиться в остатках полусъеденного туманом дома. Для трущоб это место построено весьма основательно, однако жить здесь совсем не комфортно, а главное очень и очень опасно.'
+$interior_study_info['slum_house'] = '   You had to live in the remains of house that was half-eaten by the Fog. For slum this place was built very thoroughly, but staying here is not comfortably at all, and most importantly - very, very dangerous.'
 
 $interior_bed['slum_house'] = 'interiors\slum_bed'
-$interior_bed_info['slum_house'] = '   Вы постарались обустроить своё спальное место с максимальным комфортом. Насколько это возможно в ветхой лачуге на самой границе туманов.'
+$interior_bed_info['slum_house'] = '   You tried to equip your bed with maximum comfort. As far as possible in the old shack on the border of fog.'
 
 $interior_bath['slum_house'] = 'interiors\slum_bath'
-$interior_bath_info['slum_house'] = '   Если вы это читаете, значит тут что то не так...'
+$interior_bath_info['slum_house'] = '   If you''re reading this, it means that there is something wrong...'
 
 $interior_bouduar['slum_house'] = 'interiors\slum_bouduar'
-$interior_bouduar_info['slum_house'] = '   Если вы это читаете, значит тут что то не так...'
+$interior_bouduar_info['slum_house'] = '   If you''re reading this, it means that there is something wrong...'
 
 $interior_kitchen['slum_house'] = 'interiors\slum_kitchen'
-$interior_kitchen_info['slum_house'] = '   Если вы это читаете, значит тут что то не так...'
+$interior_kitchen_info['slum_house'] = '   If you''re reading this, it means that there is something wrong...'
 
 $interior_dungeon['slum_house'] = 'interiors\slum_dungeon'
-$interior_dungeon_info['slum_house'] = '   Если вы это читаете, значит тут что то не так...'
+$interior_dungeon_info['slum_house'] = '   If you''re reading this, it means that there is something wrong...'
 
 $interior_lab['slum_house'] = 'interiors\slum_lab'
-$interior_lab_info['slum_house'] = '   Если вы это читаете, значит тут что то не так...'
+$interior_lab_info['slum_house'] = '   If you''re reading this, it means that there is something wrong...'
 
 
 !Базовый интерьер ['basic']

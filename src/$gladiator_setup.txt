@@ -1,5 +1,5 @@
 # $gladiator_setup
-!Рассчёт вводных для гладиаторского поединка
+!Calculation of input for gladiatrix combat
 количество_врагов = 1
 
 IF slave['arena_level'] < 1:

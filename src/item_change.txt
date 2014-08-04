@@ -1,5 +1,5 @@
 # item_change
-!ЗАМЕНЯЕМ ШМОТКУ В ВЫБРАННОМ СЛОТЕ СНАРЯЖЕНИЯ
+!change item in the selected slot
 IF slot = 1:
  if $master_armor ! 'без_брони': dynamic '<<$master_armor>> += 1'
  $master_armor = $new_item

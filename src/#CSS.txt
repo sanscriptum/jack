@@ -289,7 +289,7 @@ font-family:Victoriana;
 
 #title_scroll_text_rightmid {
 position:absolute;
-left:746px;
+left:750px;
 top:290px;
 width:280px;
 height:280px;
@@ -843,7 +843,7 @@ font-family:"Segoe Print";
 
 #stat_text {
 position:absolute;
-left:290px;
+left:360px;
 top:460px;
 text-align:center;
 color:#0000CD;
@@ -1643,7 +1643,7 @@ height:48px;
 
 #auction_rise_up {
 position:absolute;
-left:530px;
+left:555px;
 top:535px;
 width:50px;
 height:50px;
@@ -1651,7 +1651,7 @@ height:50px;
 
 #auction_price {
 position:absolute;
-left:580px;
+left:605px;
 top:540px;
 width:250px;
 height:100px;

@@ -1,10 +1,10 @@
 # sex_interaction
-!Первый этап обработки действий в секси-тайм
+!all effects from interactions in sex mode
 gs 'sex_addup'
 killvar '$play_sound'  
 $play_sound[1] = ''
 
-!Обнуление переменных
+!resetting
 shameful = 0
 painful = 0
 disgusting = 0
@@ -39,7 +39,7 @@ boy_x_change = 0
 
 $rise_skill = 'dump'
 
-!Стриптиз
+!striptease
 IF sex_interaction = 101:
  $interaction_type = 'foreplay'
  shameful = 1
@@ -92,7 +92,7 @@ IF sex_interaction = 101:
  strip = 1
 END
 
-!Соблазнение
+!Seduce
 IF sex_interaction = 102:
  $interaction_type = 'foreplay'
  res = 0
@@ -148,7 +148,7 @@ IF sex_interaction = 102:
  $play_sound[1] = '<<$seduce_sound[sex["girl_age"]]>>' 
 END
 
-!Целоваться
+!kiss
 IF sex_interaction = 103:
  $interaction_type = 'foreplay'
  res = 0
@@ -193,7 +193,7 @@ IF sex_interaction = 103:
  sex["climax_buildup"] -= 2 
 END
 
-!Ласкай меня * (НУЖНО ВСТАВИТЬ РОСТ НАВЫКОВ РАБЫНИ)
+!Caress me
 IF sex_interaction = 104:
  sex_interaction = 1040 + intensity  
 END
@@ -488,7 +488,7 @@ IF sex_interaction = 1045:
 END
 
 
-!Массировать её *
+!Massage her
 IF sex_interaction = 105:
  $interaction_type = 'foreplay'
  force = sex['girl_sensitivity'] + intensity - 3
@@ -525,7 +525,7 @@ IF sex_interaction = 105:
 END
 
 
-!Возбуждать её *
+!Arouse her
 IF sex_interaction = 106:
  $interaction_type = 'foreplay'
  stimulating = 1  
@@ -570,7 +570,7 @@ IF sex_interaction = 106:
  sex['pc_energy'] -= 2 * intensity
 END
 
-!Смазка
+!lubricant
 IF sex_interaction = 19:
  lube = 1
  
@@ -578,7 +578,7 @@ IF sex_interaction = 19:
  sex['pc_energy'] -= 1
  sex["climax_buildup"] -= 1 
   
- $text[1] = '  Смазка сделает секс более комфортным.'
+ $text[1] = '  Lubrication will make sex more comfortable.'
  $play_sound[1] = '<<$slopy[1]>>'
  g = RAND(1,2)
  if g = 1: $special_bg = $master_fap 
@@ -586,7 +586,7 @@ IF sex_interaction = 19:
 END
 
 
-!Дефлорация
+!Defloration
 IF sex_interaction = 11:
  $interaction_type = 'penetration'
  stimulating = 1 
@@ -645,7 +645,7 @@ IF sex_interaction = 11:
 END
 
 
-!Вагинальный секс
+!Vaginal sex
 IF sex_interaction = 12:
  $interaction_type = 'penetration'
  stimulating = 1 
@@ -730,7 +730,7 @@ IF sex_interaction = 12:
  END  
 END
 
-!Анальный секс
+!Anal sex
 IF sex_interaction = 13:
  $interaction_type = 'penetration'
  stimulating = 1 
@@ -805,7 +805,7 @@ IF sex_interaction = 13:
 END
 
 
-!Минет
+!blowjob
 IF sex_interaction = 14:
  disgusting = 1
  sex_interaction = 141
@@ -911,7 +911,7 @@ IF sex_interaction = 142:
 END
 
 
-!Фроттаж
+!frottage
 IF sex_interaction = 15:
  stimulating = 1
  sex_interaction = 150 + intensity
@@ -1297,8 +1297,8 @@ IF sex_interaction = 165:
 END
 
 
-!ИГРЫ
-!Завязать глаза
+!Perverse games
+!Blindfold
 IF sex_interaction = 21:
  $interaction_type = 'foreplay'
  res = 1
@@ -1319,7 +1319,7 @@ IF sex_interaction = 21:
  
  sex["darkness_attitude_revealed"] = 1
 
- $text[1] = '  Вы крепко завязываете девушке глаза. Это должно помочь ей лучше сконцентрироваться на собственных ощущениях и отвлечься от внешних раздражителей.' 
+ $text[1] = '  You tie a girl eyes with blindfold. This should help concentrate better on her own feelings and get away from external stimuli.' 
  g = RAND(1,4)
  if g = 1: $special_bg = 'scene\blindfold' 
  if g = 2: $special_bg = 'scene\blindfold_2'    
@@ -1330,21 +1330,21 @@ IF sex_interaction = 21:
  sex["climax_buildup"] -= sex["girl_attention"] 
 END
 
-!Развязать глаза
+!Remove blindfold
 IF sex_interaction = 211:
  $interaction_type = 'foreplay'
 
  sex['eyes_bound'] = 0 
  sex["girl_attention"] += 1
 
- $text[1] = '   Вы снимаете повязку с глаз девушки, чтобы она могла обратить своё внимание на происходяшее вокруг неё и проявить больше инициативы.' 
+ $text[1] = '   You remove the blindfold from girl eyes so she could turn her attention to what is happening around her and show more initiative.'
  $special_bg = 'scene\blindfold'  
  sex['pc_energy'] -= 1
  sex["pc_interest"] -= 1 
  sex["climax_buildup"] -= sex["girl_attention"] 
 END
 
-!Связать
+!Tie up
 IF sex_interaction = 22:
  $interaction_type = 'foreplay'
  res = 2
@@ -1365,27 +1365,27 @@ IF sex_interaction = 22:
  
  sex["deprivation_attitude_revealed"] = 1
 
- $text[1] = '  Вы крепко связываете девушку, так, чтобы она чувствовала себя беспомощной.' 
+ $text[1] = '  You firmly bind a girl, so that she felt helpless.' 
  $special_bg = $bondage[sex['girl_type']]   
  sex['pc_energy'] -= 10
  sex["pc_interest"] -= 1 
  sex["climax_buildup"] -= sex["girl_attention"] - master_bondage
 END
 
-!Развязать
+!untie
 IF sex_interaction = 221:
  $interaction_type = 'foreplay'
 
  sex['bondage'] = 0 
 
- $text[1] = '    Вы освобождаете девушку от веревок, чтобы она могла действовать самостоятельно.' 
+ $text[1] = '    You release the girl from the ropes so that she could act independently.' 
  $special_bg = $bondage[sex['girl_type']]   
  sex['pc_energy'] -= 1
  sex["pc_interest"] -= 1 
  sex["climax_buildup"] -= sex["girl_attention"]
 END
 
-!Зажимы для сосков
+!Nipple clamps
 IF sex_interaction = 23:
  $interaction_type = 'foreplay'
  res = 2
@@ -1405,7 +1405,7 @@ IF sex_interaction = 23:
  
  sex["masohism_revealed"] = 1
 
- $text[1] = '  Вы берете металлические зажимы соединённые цепью и прикрепляете их на соски девушки. Ощущения будут довольно болезненными, но при верном настрое возбуждение вырастет.' 
+ $text[1] = '  You take the metal clamps connected by a chain and attach them to the girl''s nipples. Feeling will be quite painful, but at the right mood arousal will grow.' 
  $special_bg = $pins[sex['girl_type']]   
  $play_sound[1] = '<<$clamps[1]>>'  
  sex['pc_energy'] -= 2
@@ -1413,13 +1413,13 @@ IF sex_interaction = 23:
  sex["climax_buildup"] -= sex["girl_attention"] - master_torture
 END
 
-!Снять зажимы
+!Remove clamps
 IF sex_interaction = 231:
  $interaction_type = 'foreplay'
 
  sex['clamps'] = 0 
 
- $text[1] = '    Вы отцепляете металлические зажимы с сосков девушки. Иногда момент снятия прищепок бывает куда болезненней, чем их прикрепление, но он приносит особое болезненное облегчение.' 
+ $text[1] = '    You remove metal clamps from the girls nipples. Sometimes removing the clamps painful than their attachment, but this brings a special painful relief.' 
  $special_bg = $pins[sex['girl_type']]  
  $play_sound[1] = '<<$clamps[2]>>'   
  sex['pc_energy'] -= 1
@@ -1427,7 +1427,7 @@ IF sex_interaction = 231:
  sex["climax_buildup"] += master_torture
 END
 
-!Щекотать кинжалом
+!Tickle with the dagger
 IF sex_interaction = 24:
  $interaction_type = 'foreplay'
  bloody = 1
@@ -1458,7 +1458,7 @@ IF sex_interaction = 24:
  sex["cum_buildup"] = 0  
 END
 
-!Капать воском
+!Hot wax
 IF sex_interaction = 25:
  $interaction_type = 'foreplay'
  painfull = 1
@@ -1493,7 +1493,7 @@ IF sex_interaction = 25:
 END
 
 
-!Поставить клизму
+!Put an enema
 IF sex_interaction = 26:
  $interaction_type = 'foreplay'
  res = 2
@@ -1520,7 +1520,7 @@ IF sex_interaction = 26:
  sex["climax_buildup"] -= sex["girl_attention"] - master_fetish
 END
 
-!Выпустить воду
+!Release water
 IF sex_interaction = 261:
  $interaction_type = 'foreplay'
  shameful = 1  
@@ -1534,7 +1534,7 @@ IF sex_interaction = 261:
 END
 
 
-!Золотой дождь
+!Golden shower
 IF sex_interaction = 27:
  $interaction_type = 'foreplay'
  disgusting = 1
@@ -1580,7 +1580,7 @@ IF sex_interaction = 27:
  sex["cum_buildup"] = 0  
 END
 
-!Фистинг
+!Fisting
 IF sex_interaction = 28:
  $interaction_type = 'foreplay'
  if sex['girl_anal_stretch'] <= 3: painful = 1
@@ -1624,8 +1624,8 @@ IF sex_interaction = 28:
  sex["girl_energy"] -= 10
 END
 
-!КОНЧАНИЯ
-!Внутрь
+!CUMMING
+!inside
 IF sex_interaction = 91:
  $interaction_type = 'ejaculate'
  res = 2
@@ -1657,7 +1657,7 @@ IF sex_interaction = 91:
  sex['pc_energy'] -= 5
 END
 
-!В ротик
+!in mouth
 IF sex_interaction = 92:
  $interaction_type = 'ejaculate'
  res = 2
@@ -1691,7 +1691,7 @@ IF sex_interaction = 92:
  $text[1] = '<<$sex_cum_oral>>'   
 END
 
-!На лицо
+!into face, bukake
 IF sex_interaction = 93:
  $interaction_type = 'ejaculate'
  res = 1
@@ -1723,7 +1723,7 @@ IF sex_interaction = 93:
  $text[1] = '<<$sex_cum_bukake>>'   
 END
 
-!На тело
+!on breasts
 IF sex_interaction = 94:
  $interaction_type = 'ejaculate'
  res = 0
@@ -1760,7 +1760,7 @@ IF sex_interaction = 94:
  $text[1] = '<<$sex_cum_body>>'     
 END
 
-!На пол
+!on the floor
 IF sex_interaction = 95:
  $interaction_type = 'ejaculate'
  sex["pc_interest"] -= 10

@@ -55,7 +55,7 @@ END
 
 IF auction_phase = 5:
   $text = '  [FARID]
-  -  And that concludes our auction today! All lots are sold. Please come back tomorrow &#45; Mists will give us many more wondrous beauties!'
+  -  And that concludes our auction today! All lots are sold. Please come back tomorrow &#45; Fogs will give us many more wondrous beauties!'
 END
 
 IF auction_phase = 6:

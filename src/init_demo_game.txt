@@ -1,7 +1,7 @@
 # init_demo_game
 $master_ava = 'content\pic\master\master_noble_sepia.jpg'
 $master_ava_color = 'content\pic\master\master_noble.jpg'
-$master_name = 'Джек'
+$master_name = 'Jack'
 
 master_str = 4
 master_cha = 3
@@ -24,7 +24,7 @@ master_oral = 3
 master_penetration = 3
 master_fetish = 3
 
-!Другие стартовые переменные
+!other starting vars
 
 bath = 1
 kitchen = 1
@@ -41,7 +41,7 @@ violin = 1
 svine = 1
 horse = 1
 dog = 1
-$dog_name = 'Барбос'
+$dog_name = 'Jake'
 
 cooked_food = -1
 sparks = 300
@@ -118,7 +118,7 @@ frige["meat"] = 15
 brand_rate = 0
 
 
-!Квесты
+!quests
 active[$quest[1]] = 0
 active[$quest[3]] = 0
 --- init_demo_game ---------------------------------

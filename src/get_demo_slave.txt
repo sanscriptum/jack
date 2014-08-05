@@ -1,5 +1,5 @@
 # get_demo_slave
-!Активация рабыни для демо-игры
+!activates the slave for training mode
 slave_state = CONST_INT['slave_exist']
 $slave_psy_basic = $seed_psy_basic[slave_type]
 $slave_type = 'unic'
@@ -19,7 +19,7 @@ IF slave["age"] ! CONST_INT['loli_age']:
  slave["makeup"] = 0
 END
 
-!АТРИБУТЫ
+!STATS
 slave["beauty"] = seed_beauty[slave_type]
 slave["stamina"] = seed_stamina[slave_type]
 slave["sensitivity"] = seed_sensitivity[slave_type]
@@ -92,7 +92,7 @@ slave["scares"] = seed_scares[slave_type]
 
 $slave_psy_basic = $seed_psy_basic[slave_type]
 
-!ОСОБЕННОСТИ
+!TRAITS
 slave["masohism"] = seed_masohism[slave_type]
 slave["nymphomania"] = seed_nymphomania[slave_type]
 slave["exhibitionism"] = seed_exhibitionism[slave_type]
@@ -107,7 +107,7 @@ slave["boobs"] = seed_boobs[slave_type]
 virginity = seed_virginity[slave_type]
 display_psy_status = 1
 
-!ПРЕДЫСТОРИЯ
+!BACKGROUND
 $slave_world_description = $stock_world_description[slave_type]
 $slave_family_description = $stock_family_description[slave_type]
 $slave_occupation_description = $stock_occupation_description[slave_type]
@@ -119,7 +119,7 @@ $slave['boobs_img'] = $seed_boobs_img[slave_type]
 $slave['pussy_img'] = $seed_pussy_img[slave_type]
 slave['brand'] = 4
 
-!Выравнивание характеристик
+!stats alignment
 slave["energy"] = slave["metabolism"]
 slave["hygiene"] = 2
 slave["exotic"] = seed_exotic[slave_type]
@@ -134,7 +134,7 @@ $slave['ava'] = $seed_ava[slave_type]
 $slave['ava_gray'] = $seed_ava_gray[slave_type]
 $slave['ava_clear'] = $seed_ava_clear[slave_type]
 
-!СНАРЯЖЕНИЕ
+!EQUIP
 !"$slave["wpn"] = 'кинжал'
 $slave["armor"] = 'кожан'
 $slave["scnd"] = ''

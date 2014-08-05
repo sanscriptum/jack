@@ -1,5 +1,5 @@
 # sex_screen
-!ЭКРАН ИНТЕРФЕЙСА ДЛЯ СЕКСА
+!SEX SCREEN USER INTERFACE
 GS '_layout'
 gs 'sex_addup'
 
@@ -17,18 +17,18 @@ if pc_boner_plus < 0: pc_boner_plus = 5 - sex['pc_boner']
 if pc_boner_plus > 10: pc_boner_plus = 10
 
 $sex_master_stat = ''
-$sex_master_stat = '<a style = "color: black;" href="EXEC: msg $возбуждение_справка & gt $curloc">Возбуждение:</a><br>'
-$sex_master_stat += '<a style = "color: black;" href="EXEC: msg $энергия_справка & gt $curloc">Энергия:</a><br>'
-$sex_master_stat += '<a style = "color: black;" href="EXEC: msg $интерес_справка & gt $curloc">Интерес:</a><br>'
-$sex_master_stat += '<a style = "color: black;" href="EXEC: msg $запас_семени_справка & gt $curloc">Запас семени:</a><br>'
-$sex_master_stat += '<a style = "color: black;" href="EXEC: msg $порог_справка & gt $curloc">Порог:</a><br>'
+$sex_master_stat = '<a style = "color: black;" href="EXEC: msg $возбуждение_справка & gt $curloc">Arousal:</a><br>'
+$sex_master_stat += '<a style = "color: black;" href="EXEC: msg $энергия_справка & gt $curloc">Energy:</a><br>'
+$sex_master_stat += '<a style = "color: black;" href="EXEC: msg $интерес_справка & gt $curloc">Interest:</a><br>'
+$sex_master_stat += '<a style = "color: black;" href="EXEC: msg $запас_семени_справка & gt $curloc">Cum buildup:</a><br>'
+$sex_master_stat += '<a style = "color: black;" href="EXEC: msg $порог_справка & gt $curloc">Threshold:</a><br>'
 
-$sex_info = '<a style = "color: black;" href="EXEC: msg $партнер_выносливость_справка & gt $curloc"><BR>Выносливость:</a><br>'
+$sex_info = '<a style = "color: black;" href="EXEC: msg $партнер_выносливость_справка & gt $curloc"><BR>Stamina:</a><br>'
 $sex_info += '<a href="EXEC: msg $партнер_возбуждение_справка & gt $curloc"><<$sex_girl_arousal[sex["girl_excitement"]]>></a><br>'
 $sex_info += '<a href="EXEC: msg $партнер_внимание_справка & gt $curloc"><<$sex_girl_concentration[sex["girl_attention"]]>></a><br>'
 $sex_info += '<a href="EXEC: msg $партнер_открытость_справка & gt $curloc"><<$sex_girl_openmind[sex["girl_openmind"]]>></a><br>'
 !$sex_info += '<a href="EXEC: msg $партнер_боль_справка & gt $curloc"><<$sex_girl_pain[sex["girl_pain"]]>></a><br>'
-$sex_info += '<a style = "color: black;" href="EXEC: msg $партнер_оргазмометр_справка & gt $curloc">Оргазмометр:</a><br>'
+$sex_info += '<a style = "color: black;" href="EXEC: msg $партнер_оргазмометр_справка & gt $curloc">Climax:</a><br>'
 
 $sex_master_var = ''
 $sex_master_var = '<<$sex_pc_excitement[sex["pc_excitement_state"]]>><br>'
@@ -67,12 +67,12 @@ END
 IF sex_num = 100:
  IF exam_in_progress = 1:
   *p '<div style="position:absolute;top:196px;left:244px;font-family:Victoriana;"><img src = "content/pic/sound_setting.png"></div>'
-  *p '<div style="position:absolute;top:176px;left:268px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">МУЗЫКА:</font></TD><TD><a href = 1><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 3><img src="content/pic/buttons/close_button.png"></a></TD></TR>
-<TR><TD style="width:130px"><font color="#FFD700" size="5">ЗВУК:</font></TD><TD><a href = 4><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 6><img src="content/pic/buttons/close_button.png"></a></TD></TR></table></div>'
+  *p '<div style="position:absolute;top:176px;left:268px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">MUSIC:</font></TD><TD><a href = 1><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 3><img src="content/pic/buttons/close_button.png"></a></TD></TR>
+<TR><TD style="width:130px"><font color="#FFD700" size="5">SOUND:</font></TD><TD><a href = 4><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 6><img src="content/pic/buttons/close_button.png"></a></TD></TR></table></div>'
   else
   *p '<div style="position:absolute;top:396px;left:244px;font-family:Victoriana;"><img src = "content/pic/sound_setting.png"></div>'
-  *p '<div style="position:absolute;top:376px;left:268px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">МУЗЫКА:</font></TD><TD><a href = 1><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 3><img src="content/pic/buttons/close_button.png"></a></TD></TR>
-<TR><TD style="width:130px"><font color="#FFD700" size="5">ЗВУК:</font></TD><TD><a href = 4><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 6><img src="content/pic/buttons/close_button.png"></a></TD></TR></table></div>'
+  *p '<div style="position:absolute;top:376px;left:268px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">MUSIC:</font></TD><TD><a href = 1><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 3><img src="content/pic/buttons/close_button.png"></a></TD></TR>
+<TR><TD style="width:130px"><font color="#FFD700" size="5">SOUND:</font></TD><TD><a href = 4><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 6><img src="content/pic/buttons/close_button.png"></a></TD></TR></table></div>'
  END
 END
 
@@ -114,7 +114,7 @@ $info_bar = ''
 *p '<div id = "side_stats_master_var"><<$sex_master_var>></div>'  
 *p '<div id = "side_stats_slave_var"><<$sex_slave_var>></div>'  
 
-!Кнопки интенсивности
+!intensity buttons
 IF sex_num => 0:
  IF intensity = 1:
    *p {<div id = "intensity_01"><img src = "content\pic\buttons\01.gif"></div>}

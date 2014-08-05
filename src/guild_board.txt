@@ -1,5 +1,5 @@
 # guild_board
-!ДОСКА ОБЪЯВЛЕНИЙ В ГИЛЬДИИ РАБОТОРГОВЦЕВ
+!BILLBOARDS IN SLAVERS GUILD
 $place = 'guild_board'
 txt_count = notes_count
 $text_display = $guild_board[txt]
@@ -14,7 +14,7 @@ if npc = 0:
  $info_bar = ''
  *p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$place_name[$place]>></div><<$place_location[$place]>>
 
- Информация к размышлению:
+ Information for consideration:
  </center></div>'
  *p '<div id = "side_panel_text">  <<$place_info[$place]>>
 </div>'  
@@ -23,7 +23,7 @@ if npc = 0:
  *p '<div id = "bg"><img src="content\pic\characters\<<$npc_image[$npc_id]>>.gif"></div>'
  *p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$npc_name[$npc_id]>></div><<$npc_status[$npc_id]>>
 
-Информация к размышлению:
+Information for consideration:
 </center></div>'
  *p '<div id = "side_panel_text">  <<$npc_attitude[npc_attitude[$npc_id]]>>
 

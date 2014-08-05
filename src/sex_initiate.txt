@@ -1,5 +1,5 @@
 # sex_initiate
-!РАССЧИТЫВАЕМ ХАРАКТЕРИСТИКИ ДЛЯ СЕКСА
+!INITIATE SEX STATS WHEN STARTING
 sex['girl_virgin'] = 2
 add_master_hygiene = 5 
 add_slave_hygiene = 5 
@@ -27,7 +27,7 @@ $sex['partner'] = $sex_partner
 
 $onnewloc = '$sex_newloc' 
 
-!Базовые секс-характеристики партнерши
+!base sex stats for slave
 $sex["girl_ava"] = $slave["ava"]
 $sex["girl_name"] = $slave_name
 
@@ -124,7 +124,7 @@ IF $sex_partner = '':
  
  $sex['girl_name'] = $slave_name
 END
-
+!for assistant
 IF $sex_partner = 'assistant':
  $sex['girl_ava'] = $assistant["ava"]
  $sex["girl_name"] = $assistant_name 
@@ -222,13 +222,13 @@ IF $sex_partner = 'assistant':
  $sex['girl_name'] = $assistant_name
 END
 
-!Рассчетные стартовые секс-характеристики партнерши
-!ОРГАЗМОМЕТР
+!The calculated starting sex partner characteristics
+!CLIMAX COUNT
 if sex['girl_arousal'] > 1: sex['girl_excitement'] += 1
 if sex['girl_arousal'] > 3: sex['girl_excitement'] += 1
 if sex['girl_arousal'] > 4: sex['girl_excitement'] += 1
 
-!ВЫНОСЛИВОСТЬ
+!STAMINA
 IF sex['girl_stamina'] <= 0: sex['girl_energy'] = 5
 IF sex['girl_stamina'] = 1: sex['girl_energy'] = 10
 IF sex['girl_stamina'] = 2: sex['girl_energy'] = 25
@@ -237,13 +237,13 @@ IF sex['girl_stamina'] = 4: sex['girl_energy'] = 65
 IF sex['girl_stamina'] => 5: sex['girl_energy'] = 75
 sex['girl_energy'] += sex['girl_energy_bonus'] * 5
 
-!ОТКРЫТОСТЬ
+!OPENNESS
 IF sex['girl_pride'] < master_style: sex['girl_openmind'] += 1
 IF sex['girl_pride'] < master_hygiene: sex['girl_openmind'] += 1
 
-!СТРАДАНИЕ
+!PAIN
 
-!ВНИМАНИЕ
+!ATTENTION
 IF sex['girl_intellect'] < 3: sex['girl_attention'] -= 1
 IF sex['girl_intellect'] > 3: sex['girl_attention'] += 1
 
@@ -261,7 +261,7 @@ IF sex['girl_angst'] > 2: sex['girl_attention'] -= 1
 IF sex['girl_angst'] > 3: sex['girl_attention'] -= 1
 IF sex['girl_angst'] > 4: sex['girl_attention'] -= 1
 
-!ОТКРЫТОСТЬ
+!OPENNESS
 IF sex['girl_fear'] => 1: sex['girl_openmind'] -= 1
 IF sex['girl_fear'] => 2: sex['girl_openmind'] -= 1
 IF sex['girl_fear'] => 3: sex['girl_openmind'] -= 1
@@ -285,8 +285,8 @@ IF sex['girl_angst'] => 3: sex['girl_openmind'] -= 1
 IF sex['girl_angst'] => 4: sex['girl_openmind'] -= 1
 IF sex['girl_angst'] => 5: sex['girl_openmind'] -= 1
 
-!Считаем секс-характеристики игрока
-!ЭНЕРГИЯ
+!calculate player sex stats
+!ENERGY
 IF master_str <= 0: sex['pc_energy'] = 5
 IF master_str = 1: sex['pc_energy'] = 10
 IF master_str = 2: sex['pc_energy'] = 25
@@ -296,12 +296,12 @@ IF master_str => 5: sex['pc_energy'] = 75
 sex['pc_energy'] += master_energy * 5
 IF sex['pc_energy'] < 1: sex['pc_energy'] = 1
 
-!ЗАПАС СЕМЕНИ
+!CUM BUILDUP
 sex['pc_boner'] = master_excitement
 sex['base_boner'] = master_excitement
 if sex['pc_boner'] < 0: sex['pc_boner'] = 1
 
-!ВОЗБУЖДЕНИЕ
+!EXCITMENT
 if master_excitement <= -5: sex['pc_excitement'] = -25
 if master_excitement = -4: sex['pc_excitement'] = -20
 if master_excitement = -3: sex['pc_excitement'] = -15
@@ -318,7 +318,7 @@ if sex['pc_excitement'] < 0: sex['pc_excitement'] = 0
 
 sex['prev_pc_excitement'] = sex['pc_excitement']
 
-!ИНТЕРЕС
+!INTEREST
 if chimera_gem_on = 1: sex['pc_interest'] += 25
 
 if sex['girl_beauty'] <= 0: sex['pc_interest'] -= 15

@@ -1,5 +1,5 @@
 # #slave_base
-!БАЗОВЫЕ ХАРАКТЕРИСТИКИ РАБЫНЬ (ВЕРСИЯ С ПОЛНОЙ ГРАФИКОЙ)
+!SLAVE DATABASE
 !'study_genetal_loli' - не фикшено, т.к. файл именно так и называется.
 
 !Нулевой вариант
@@ -97,8 +97,8 @@ $horse_sex[0] = 'girls\sex\'
 $pig_sex[0] = 'girls\sex\'
 $dog_sex[0] = 'girls\sex\'
 
-!ДИАПАЗОН 001-199 (ДЕВОЧКИ)
-!"ШАБЛОН
+!RANGE 001-199 (LOLIS)
+!"TEMPLATE
 !0 
 $fullimage[] = 'girls\full\001_blond_long_blue'
 $fullmade[] = 'girls\full\maid\blond_long_blue_loli'
@@ -5905,8 +5905,8 @@ $hanging[58] = 'girls\torture\hanging_general'
 $throat_slit[58] = 'girls\torture\decapitation_general_loli' 
 $cook_whole[58] = 'girls\torture\cooked_general_loli' 
 
-!ДИАПАЗОН 201-499 (ДЕВУШКИ)
-!"ШАБЛОН
+!RANGE 201-499 (GIRLS)
+!"TEMPLATE
 !2 
 $fullimage[] = 'girls\full\201_blond_long_brown'
 $fullmade[] = 'girls\full\maid\blond_brown'
@@ -13193,8 +13193,8 @@ $throat_slit[273] = 'girls\torture\decapitation_general'
 $cook_whole[273] = 'girls\torture\cooked_general' 
 
 
-!ДИАПАЗОН 501-699 (ЖЕНЩИНЫ)
-!"ШАБЛОН
+!RANGE 501-699 (MILFS)
+!"TEMPLATE
 !5 
 $fullimage[] = 'girls\full\501_blond_blue'
 $fullmade[] = 'girls\full\maid\blond_blue'
@@ -20066,9 +20066,9 @@ $throat_slit[569] = 'girls\torture\decapitation_general_milf'
 $cook_whole[569] = 'girls\torture\cooked_general_milf' 
 
 
-!ОСОБЫЕ ПЕРСОНАЖИ
-!901 - Изабелла  
-$seed_name[901] = 'Изабелла'
+!SPECIAL SLAVES
+!901 - Isabella  
+$seed_name[901] = 'Isabella'
 seed_fat[901] = 1
 seed_sub_gangbang[901] = 1
 seed_sub_tp[901] = 2
@@ -20113,9 +20113,9 @@ seed_intellect[901] = 3
 seed_scares[901] = 3
 seed_virginit[901] = 3
 
-$stock_world_description[901] = '   Мы не так уж давно поняли, насколько мир огромен. Но когда за океаном были открыты новые богатые земли, всё изменилось. Сила государства сейчас измеряется силой его парусного флота.'
-$stock_family_description[901] = '   Я родилась в семье простого рыбака, и с детства помогала отцу ловить рыбу на лодке. Всегда была сорванцом. Потом родители умерли от оспы, и мне пришлось стать портовой шлюхой.'
-$stock_occupation_description[901] = '   Трахаться я, конечно, люблю, но зарабатывать этим на жизнь — дело мерзкое. Мне удалось попасть на пиратский корабль. Это у военных — женщина на корабле к беде. А среди пиратов ценится сила и смекалка, и неважно кто ты — чернокожий, калека или баба.'
+$stock_world_description[901] = '   Not so very long ago we are realized how much the world is huge. But when the ocean opened new rich land, everything changed. Power of the state is now measured by the force of his sailing fleet.'
+$stock_family_description[901] = '   I was born in the family of a simple fisherman, and since childhood I helped father to catch fish on the boat. I was always a tomboy. Then my parents died of smallpox, and I had to become port whore.'
+$stock_occupation_description[901] = '   I certainly like to fuck, but I hate earn money by this. I managed to get on the pirate ship. It''s in the military - a woman on a ship to the trouble. And among the pirates valued strength and savvy, and it does not matter who you are - black, crippled or woman.'
 
 $fullimage[901] = 'girls\full\isabela'
 $fullmade[901] = ''
@@ -20216,9 +20216,9 @@ $throat_slit[901] = 'girls\torture\decapitation_general'
 $cook_whole[901] = 'girls\torture\cooked_general' 
 
 
-!рабыни для демо-игры
-!902, домохозяйка
-$seed_name[902] = 'Хелен'
+!demo game slaves
+!902, housewife
+$seed_name[902] = 'Helen'
 
 seed_sub_hj[902] = 2
 seed_sub_hug[902] = 3
@@ -20247,9 +20247,9 @@ seed_pride[902] = 1
 seed_intellect[902] = 4
 seed_fat[902] = 2
 
-$stock_world_description[902] = '   Моим миром правят гигантские трансконтинентальные корпорации. Территориальные правительства давно потеряли свою силу и делают то, что им диктуют олигархи. Получить хорошую работу довольно трудно, но те кто устроился в корпорацию могут рассчитывать на хороший заработок.'
-$stock_family_description[902] = '   Мой отец был менеджером по подбору персонала в Dynamical Pharmaceuticals, а мама работала репетитором математики для богатых детей. Благодаря поддержке родителей, мне удалось получить неплохое образование и начать карьеру в компании где работал папа.'
-$stock_occupation_description[902] = '   Потом я встретила Грега — он был линейным менеджером в Vega Industries и имел неплохие виды на карьеру. Мы поженились и я бросила работу чтобы стать домохозяйкой, родила сына. Но однажды Грег облажался и его выгнали со службы. Из-за долгов мы все были лишены гражданских прав и стали собственностью банка.'
+$stock_world_description[902] = '   My world is ruled by giant multinational corporations. Territorial governments have lost their power and do what the oligarchs dictate. Get a good job is difficult, but those who settled in the corporation can rely on good earnings.'
+$stock_family_description[902] = '   My father was the manager of recruitment in Dynamical Pharmaceuticals, and my mother worked as a tutor of mathematics for rich kids. With the support of parents, I managed to get a good education and start a career in a company where my dad worked.'
+$stock_occupation_description[902] = '   Then I met Greg - he was a line manager at Vega Industries and had good views of the career. We got married and I quit my job to become a housewife, gave birth to a son. But once Greg fucked up and he was expelled from the service. Because of the debts we were deprived of civil rights and became the property of the bank.'
 
 seed_virginity[902] = 3
 seed_metabolism[902] = 3
@@ -20353,8 +20353,8 @@ $hanging[902] = 'girls\torture\hanging_general'
 $throat_slit[902] = 'girls\torture\decapitation_general_milf' 
 $cook_whole[902] = 'girls\torture\cooked_general_milf' 
 
-!903, амазонка
-$seed_name[903] = 'Ярина'
+!903, amazon
+$seed_name[903] = 'Yasmin'
 
 seed_sub_hug[903] = 3
 seed_sub_kiss[903] = 3
@@ -20371,9 +20371,9 @@ seed_intellect[903] = 3
 seed_exotic[903] = 2
 seed_fat[903] = 1
 
-$stock_world_description[903] = '   Раньше нашей вселенной правила Великая Империя Древних. Но она распалась. Теперь есть множество племен, которые бороздят космос на звездолетах созданные Древними. Чем больше кораблей у племени, тем оно могущественней. Все хотят захватить новые корабли, потому что никто не умеет их строить.'
-$stock_family_description[903] = '   Мое племя очень могущественное — у нас целых три эсминца класса «Тайфун» и два штурмовых транспорта. Мужчин типа тебя мы держим в рабстве, потому что они глупы и ненадежны. Только женщинам позволено принимать решения, так как наш разум открыт Великой Богине.'
-$stock_occupation_description[903] = '   Я всегда была сильной и быстрой, поэтому вошла в абордажную команду сразу, как только смогла поднять штурмовой бластер. Мы славно дрались. За мои заслуги Совет Матерей сделал меня командиром крыла. А потом я попала в эти чертовы туманы, когда вышла поохотиться на планете где мы пополняли запасы. '
+$stock_world_description[903] = '   Previously, our universe ruled by the great empire of the Ancients. But it broke. Now there are many tribes that roam the space on a starship created by the Ancients. The more ships in the tribe, the more powerful it is. Everyone wants to grab a new ships, because no one knows how to build them.'
+$stock_family_description[903] = '   My tribe is very powerful - we have as many as three-class destroyers "Typhoon" and two assault transport. Men like you we are keeping in bondage because they are stupid and unreliable. Only women are allowed to make decisions, as our mind is open to the Great Goddess.'
+$stock_occupation_description[903] = '   I''ve always been a strong and quick, so I went into the boarding party as soon as I could raise the assault blaster. We have a nice fights. For my services Mother''s Council made ​​me commander of the wing. And then I got into the damn fogs, when I got to hunt on the planet where we restock.'
 
 seed_virginity[903] = 0
 seed_metabolism[903] = 5
@@ -20480,8 +20480,8 @@ $hanging[903] = 'girls\torture\hanging_general'
 $throat_slit[903] = 'girls\torture\decapitation_general' 
 $cook_whole[903] = 'girls\torture\cooked_general' 
 
-!904, принцесса
-$seed_name[904] = 'Вильгельмина'
+!904, princess
+$seed_name[904] = 'Wilhelmine'
 
 seed_callisthenics[904] = 1
 seed_expression[904] = 2
@@ -20497,8 +20497,8 @@ seed_exotic[904] = 1
 seed_fat[904] = 0
 seed_spoil[904] = 3
 
-$stock_world_description[904] = '   В моем мире Светлый Альянс ведет нескончаемую войну с Древним Злом. В альянс входят все достойные народы: и светлые эльфы, и гномы и цивилизованные люди. Даже ангелы и единороги бьются на нашей стороне, но у Врага есть драконы и тролли. Он хочет поработить всех, чтобы в мире воцарилась Тьма.'
-$stock_family_description[904] = '   Мой папа - король Артурии. Артурия - очень гордое королевство с большой военной историей, хотя земель у нас и немного. Наши паладины известны по всему миру своим благородством и вселяют ужас в жалких прихвостней Врага одним своим видом. А еще у меня был ручной единорог. Эх, если бы он был тут...'
+$stock_world_description[904] = '   In my world Bright Alliance leads a never-ending war against an ancient evil. In alliance includes all worthy nations: light elves, dwarves and civilized people. Even the angels and unicorns fight on our side, but the enemy has dragons and trolls. He wants to enslave all to reign in the world of darkness.'
+$stock_family_description[904] = '   My dad - king of Arthuria. Arthuria - very proud kingdom with a big military history, although we own only a little land. Our paladins are known worldwide for they nobility and strike fear in the enemy''s miserable henchmen with only their looks. And I had a hand unicorn. Oh, if only he was here...'
 
 seed_metabolism[904] = 1
 seed_virginity[904] = 0

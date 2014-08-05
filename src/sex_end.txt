@@ -1,5 +1,5 @@
 # sex_end
-!окончание секса, применение модификаторов полученные в процессе, возврат в обычный режим
+!sex end, use modifiers obtained in the process, returns to normal mode
 $return_lock = $return_lock_prev
 
 gs 'main_layout'

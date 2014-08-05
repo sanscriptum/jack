@@ -31,13 +31,13 @@ $info_bar = ''
 
 $info_bar = ''
 *p '<div id = "side_panel_main">
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<u>Итог</u>
-        Новизна: <<sex["girl_newness"]>>
-        Старание: <<diligence>>
-        Навык: <<skill>>
-        Качество: <<quality>>
-        Сложность: <<diff>>
-        Баланс: <<balance>></div>'  
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<u>Result</u>
+        Newness: <<sex["girl_newness"]>>
+        Diligence: <<diligence>>
+        Skill: <<skill>>
+        Quality: <<quality>>
+        Complexity: <<diff>>
+        Balance: <<balance>></div>'  
 
 if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3', sound_volume
 

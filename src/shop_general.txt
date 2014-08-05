@@ -1,5 +1,5 @@
 # shop_general
-!Общий интерфейс для выбора опций в разных заведениях\
+!Common interface for selecting options in different places
 GS '_layout'
 if colloseum_fight > 0:
  gt 'colloseum_fight'
@@ -21,34 +21,34 @@ IF $place = 'gastronom':
 ! сразу выводится сумма запасов дома, минус алкоголь(не занимает места?), by Lyazar
 ! возможно и не нужно, т.к. впилил подсчет в каждый пункт магаза, но пусть будет
  dynamic $get_frige_space
- $place_info['gastronom'] = 'ЗАПАСЫ ДОМА [<<frige_items>>/<<estate_size[$estate]>>]:
-Овощи х<<frige["vegetables"]>>
-Мука и крупы х<<frige["flower"]>>
-Зелень и специи х<<frige["spice"]>>
-Сыр и масло х<<frige["cheese"]>>
-Алкоголь х<<frige["alcohol"]>>
-Яйца х<<frige["eggs"]>>
-Молоко х<<frige["milk"]>>
-Сливки х<<frige["cream"]>>
-Мясной фарш х<<frige["mince"]>>
-Вырезка х<<frige["meat"]>>
-Девчатина х<<frige["virgin_meat"]>><br> '
+ $place_info['gastronom'] = 'CURRENT STOCK [<<frige_items>>/<<estate_size[$estate]>>]:
+Vegetables х<<frige["vegetables"]>>
+Grains and flour х<<frige["flower"]>>
+Herbs and spices - <<frige["spice"]>>
+Cheese and butter - <<frige["cheese"]>>
+Alcohol - <<frige["alcohol"]>>
+Eggs - <<frige["eggs"]>>
+Milk - <<frige["milk"]>>
+Cream - <<frige["cream"]>>
+Mincemeat - <<frige["mince"]>>
+Tenderloin - <<frige["meat"]>>
+Virgin meat - <<frige["virgin_meat"]>><br> '
 END
 
 !счетчик мяса будет отображаться когда спускаешься к мяснику
 IF $place = 'slaughter':
  dynamic $get_frige_space
- $place_info['slaughter'] = 'ЗАПАСЫ ДОМА [<<frige_items>>/<<estate_size[$estate]>>]:
-Мясной фарш х<<frige["mince"]>>
-Вырезка х<<frige["meat"]>>
-Девчатина х<<frige["virgin_meat"]>><br> '
+ $place_info['slaughter'] = 'CURRENT STOCK [<<frige_items>>/<<estate_size[$estate]>>]:
+Mincemeat - <<frige["mince"]>>
+Tenderloin - <<frige["meat"]>>
+Virgin meat - <<frige["virgin_meat"]>><br>'
 END
 
 if npc = 0:
  $info_bar = ''
  *p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$place_name[$place]>></div><<$place_location[$place]>>
 
- Информация к размышлению:
+ Information for consideration:
  </center></div>'
  *p '<div id = "side_panel_text">  <<$place_info[$place]>>
 </div>'  
@@ -57,7 +57,7 @@ if npc = 0:
  *p '<div id = "bg"><img src="content\pic\characters\<<$npc_image[$npc_id]>>.gif"></div>' 
  *p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$npc_name[$npc_id]>></div><<$npc_status[$npc_id]>>
 
-Информация к размышлению:
+Information for consideration:
 </center></div>'
  *p '<div id = "side_panel_text">  <<$npc_attitude[npc_attitude[$npc_id]]>>
 

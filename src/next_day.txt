@@ -13,7 +13,7 @@ base_score += master_mood
 
 debt_count -= 1
 if debt_count < 0 and debt > 0:
-	dynamic $death, 'Как и в любом другом городе, в Вечном Риме опрометчиво забывать о деньгах, которые ты взял в долг у бандитов. Ваша жизнь закончена бесславно...'
+	dynamic $death, 'As in any other city, in the Eternal Rome recklessly to forget about the money that you borrowed from the bandits. Your life is over disgracefully...'
 end
 
 if contract['active'] = 2: contract['active'] = 0
@@ -38,7 +38,7 @@ IF ride_count > 0:
  ride_count -= 1
  else
  ride_count = 10
- !Создание трассы на следующий заезд
+ !Creating a route to the next race
  $trace[1] = 'ride_start'
  i = 1
  :loop_trace
@@ -64,23 +64,23 @@ slave['reabilitation'] -= 1
 assistant['reabilitation'] -= 1
 prisoner['reabilitation'] -= 1
 
-!Состояние NPC
+!NPC state
 gs 'npc_progress'
 farid_debt += farid_potential_debt 
 farid_potential_debt = 0
 
-!Время завершения контракта на обучение
+!training contract time rise
 if contract['active'] = 1: contract['time'] += 1
 
-!Открываем скрытые особенности
+!reveal hidden traits
 IF slave['weight_before'] ! slave["fat"]: 
  if slave["metabolism_revealed"] = 0: slave["metabolism_revealed"] = 1
 END
 slave['weight_before'] = slave["fat"]
 !if slave["memory_revealed"] = 0: slave["memory_revealed"] = 1
 
-!Самостоятельные действия воспитуемой
-!добавлена проверка на здоровье и безсознательное состояние, если здоровье равно нулю или она валяется без сознания, то рабыня не сможет сбежать либо атаковать - the_vm
+!independent slave actions
+!added check for health and unconsciousness, if health is zero or it she lying unconscious, the slave will not be able to escape or attack - the_vm
 slave_attack = 0
 slave_escape = 0
 slave_suicide = 0
@@ -102,7 +102,7 @@ IF slave["mood"] < 0 and slave['temper'] > slave['obedience']:
  END 
 END
 
-!не позволяем сбежать рабыне из туториала
+!slave cannot escape during exam in training mode
 IF exam_in_progress = 1:
  slave_escape = 0
 END
@@ -169,7 +169,7 @@ IF slave_tentacle_rule = 1 and spawn_milked = 0 and pet_tentacle > 0  and slave[
  END 
 END
 
-!Самостоятельные действия ассистентки
+!independent assistant actions
 IF assistant_cooks_rule = 1 and cooked_food <= 0 and kitchen > 0 and assistant["energy"] > 0:
  assistant_auto_cook = 1
  cooked_food = assistant["cook"]
@@ -211,15 +211,15 @@ IF assistant_cleans_rule = 1 and house_mess > 1 and assistant["energy"] > 0:
 END
 
 show_food = 1
-!CHECK: костыль для старых версий, иначе еда будет все время уровня F-
+!CHECK: crutch for older versions, otherwise the food will be all-time F- level
 gs '#food_base'
 
 gs '$food_choice'
 
-!Закупаем продукты
+!buying food
 food_buy_volume = 5
 dynamic $get_frige_space
-!and sparks > 50 - ассистентка не будет тратить зря деньги на продукты если их меньше 50, даже если правило включено
+!and sparks > 50 - assistant will not be wasting money on food if sparks are less than 50, even if the rule is enabled
 IF assistant_buy_vegetables = 1 and frige["vegetables"] = 0 and frige_space => 5 and sparks > 50:
  frige["vegetables"] += 5
  autobuy_cost += 5
@@ -281,7 +281,7 @@ dynamic $get_frige_space
 IF frige_space < 5 and frige["mince"] > 10: frige["mince"] = 10
 dynamic $get_frige_space 
 
-!Обнуляем и снижаем переменные 
+!reseting and lowering vars
 killvar 'already_done_today'
 auspex = 0
 slave["beaten"] = 0
@@ -312,22 +312,22 @@ gs '$mod_global_drop', 1
 
 if raven_crown_on = 1: auspex = 1
 
-!ЧАСТЬ РАБЫНИ
+!slave part
 if slave["makeup"] = 1: slave["makeup"] = 0
 if slave["parfume"] = 1: slave["parfume"] = 0
 if slave["epilation"] > 0: slave["epilation"] -= 1
 if slave["manicure"] > 0: slave["manicure"] -= 1
 if slave["hairstyle"] > 0: slave["hairstyle"] -= 1
-!убирается хардкод состояния волос, волософикс
+!removed hair hardcode state, hairfix
 !if slave["hairstyle"] > 0: slave["hairstyle_demo"] = 1 
 
-! пофиксил, была опечатка, by Lyazar
+! fixed the typo, by Lyazar
 if slave_inventory["parfume"] > 0: slave["parfume"] = 1
 
 slave_rate["hygiene"] += 5
 slave_rate["hygiene"] += slave["wounds"]
 
-!Ежедневные бонусы
+!daily bonuses
 slave_rate["temper"] += daily_bonus["temper"]
 slave_rate["ego"] += daily_bonus["ego"]
 slave_rate["pride"] += daily_bonus["pride"]
@@ -335,11 +335,11 @@ slave_rate["instinct"] += daily_bonus["instinct"]
 slave_rate["rational"] += daily_bonus["rational"]
 slave_rate["custom"] += daily_bonus["custom"]
 
-!Повышаем интерес к рабыне
+!Raise interest to the slave
 if slave_state = CONST_INT['slave_exist']: slave['newness'] += 1
 if assistant_state > 0: assistant['newness'] += 1
 
-!Лактация
+!lactation
 slave['milk_gain'] = 0
 IF slave['lactation'] > 0:
  slave['milk_gain'] = slave["boobs"] + slave["stamina"] - 3 + slave['mood'] - slave['angst']
@@ -358,7 +358,7 @@ IF slave['lactation'] > 0:
  if slave['milk_gain'] > 11: slave['lactation'] = 5  
 END
 
-!Учет калорий
+!calories counting
 slave["calories"] -= 1
 food_need = 1
 if slave["age"] ! CONST_INT['loli_age']: slave["calories"] -= 1 & food_need += 1
@@ -379,7 +379,7 @@ IF slave["calories"] > 0 and slave_rate["fat"] => 1:
 END
 
 if slave["calories"] = 0: slave['starvation'] -= 1
-!убрано получение голодного мудлета если калории равны нулю
+!removed getting hungry moodlet if the calories are equal to zero
 if slave["calories"] < 0: slave['neg_hungry'] = 1 
 
 IF slave["calories"] > 0:
@@ -410,7 +410,7 @@ IF special_food = 1:
  special_food = 0
 END
 
-! TODO: проверить код 'end ... else', странный оборот, возможно неправильно пашет
+! TODO: check 'end ... else', strange, it might dont work properly
 IF slave_food_type = 0 or slave_food_type = 2: 
  IF slave_food_type = 2 and slave_food_portion > 0:
   slave["neg_slave_food"] = 1
@@ -463,7 +463,7 @@ if slave['starvation'] < 0: slave['starvation'] = 0
 if slave['starvation'] > slave['stamina']: slave_rate["stamina"] -= slave['starvation'] & starvation_varning = 1
 if slave_state ! CONST_INT['no_slave']: total_food_cost += food_cost
 
-!Лечение и зависимости
+!healing and dependence
 IF slave['koffed'] > 0:
  slave['koffed'] = 0
  a = slave['stamina']*10
@@ -524,7 +524,7 @@ IF slave['parasite'] > 0:
  slave['parasite'] += 1
 END
 
-!Менструальный цикл  и беременность
+!Menstrual cycle and pregnancy
 IF slave["age"] = CONST_INT['loli_age']: slave['fertility'] = -2
 if slave['fertility'] < 0: slave['parasite'] = 0
 if slave['fertility'] < 0: slave['pregnant'] = 0
@@ -557,12 +557,12 @@ IF slave['pregnant'] > 3 and slave['fertility'] = 1:
  if virginity < 2: virginity = 2  
 END
 
-!Снижаем настроение из-за страха
+!Reduce the mood because of the fear
 IF slave["fear"] > slave["custom"] and slave["fear"] > slave["ego"] and slave["fear"] > slave["pride"] :
  if slave["fear"] > slave["ego"]: slave["neg_fear"] = 1
 END
 
-!Получаем/снижаем ангст
+!Obtain/reduce Angst
 IF slave["mood"] < 0:
  angst_rise = 6 - slave["sensitivity"] + slave["mood"]
  if angst_rise < 0: slave_rate["angst"] -= angst_rise
@@ -570,7 +570,7 @@ IF slave["mood"] < 0:
  slave_rate["angst"] -= slave["mood"] * slave["angst"]
 END
 
-!Растим мораль
+!growing moral
 moral_app = min (slave["moral"], slave["custom"], slave["rational"], slave["instinct"])
 IF slave["angst"] <= 0 and slave["mood"] > 0 and moral_app = slave["moral"]:
  moral_basis = (slave["custom"] + slave["rational"] + slave["instinct"])/3
@@ -579,15 +579,15 @@ IF slave["angst"] <= 0 and slave["mood"] > 0 and moral_app = slave["moral"]:
 END
 if slave["moral"] > slave["fear"] and slave["fear"] > 0: slave["fear"] -= 1
 
-!Снижаем избалованность
+!lowering spoil
 slave_rate["spoil"] -= 1 + slave["fear"] + slave["moral"]
 
-!Эффект клейма
+!brand effect
 IF slave['brand'] > 0: slave_rate["custom"] += 1
 IF slave['brand'] = 1: slave_rate["custom"] += 1
 IF slave['brand'] = 3: slave_rate["custom"] += 1
 
-!Забытые грехи и заслуги
+!Forgotten sins and merits
 IF slave["virtue"] > 0:
  slave_rate["mood"] -= slave["virtue"]
  if slave["virtue"] > slave["neg_no_prise"]: slave["neg_no_prise"] = slave["virtue"]
@@ -608,7 +608,7 @@ IF slave["sin"] > 0:
 END
 
 
-!Считаем возбуждение и настроение
+!counting the arousal and mood
 slave_rate["mood"] += slave["moral"] + (slave["stamina"] - 3) + slave["energy"] + daily_bonus["mood"] - slave["arousal"] - slave["fear"] - slave["spoil"] - slave["angst"] - slave["hygiene"] - (house_mess - 1) - slave["mood"]
 
 if slave['moral'] > 0: slave['pos_moral'] = slave['moral']
@@ -627,10 +627,10 @@ if slave["nymphomania"] > 1: slave['neg_horny'] = 1
 if slave["nymphomania"] < 0: slave['neg_horny'] = 0
 
 
-!Изменение параметров под влиянием установленных правил
+!change stats under the influence of the established rules
 
-!TODO: странный код с else, возможно криво пашет, by Lyazar
-!запоминаем правила у отключившейся рабыни
+!TODO: check else, strange, it might dont work properly by Lyazar
+!remembering the rules of fainted slave
 IF slave_state ! CONST_INT['slave_exist']:
  if silence_rule = 1: silence_rule = 2
  if master_rule = 1: master_rule = 2
@@ -650,7 +650,7 @@ IF slave_state ! CONST_INT['slave_exist']:
 END
 
 $force_msg  = ''
-!Молчанка
+!self explanatory
 IF silence_rule = 1: 
  silence_rule_res = slave["obedience"] - slave["temper"]
  IF force_rules = 1 and inventory['secure_gag'] = 1: 
@@ -722,7 +722,7 @@ IF toilet_rule = 1:
  else
  toilet_rule_res = 0
 END
-!v_balls_rule = 1 - добавлен эффект для правила v-шарики
+!v_balls_rule = 1 - added effect for this rule
 IF v_balls_rule = 1:
  v_balls_rule_res = slave["obedience"] + slave["sub_vaginal"] - slave["pride"]*2 - slave["ego"] - 4
  IF force_rules = 1 and assistant_state = 1:
@@ -879,7 +879,7 @@ IF rules_broken = 1:
  END 
 END
 
-!Отдых
+!rest conditions
 IF slave_sleep_condition = -2:
  if slave["deprivation_attitude"] = -1: 
   if slave["sin"] < 3: slave_rate["angst"] += 10
@@ -943,7 +943,7 @@ IF slave_sleep_condition = 2:
  slave_rate["spoil"] += 1 
 END
 
-!Ангст делает свое черное дело
+!Angst does the dirty work
 if $slave_psy_status = 'depresive': slave_rate["angst"] += 1
 
 slave_rate["temper"] -= slave["angst"]
@@ -965,11 +965,11 @@ IF slave["angst"] > 0:
  if slave["angst"] > slave["temper"]: slave["neg_angst"] = slave["angst"]
 END
 
-!шанс смерти при нулевом значении здоровья
-!базовый шанс - 14% - минимальный 6% максимальный 20%
+!chance of dying at the zero value of health
+!base - 14% - min 6% max 20%
 IF slave_state = CONST_INT['slave_faint'] and slave["stamina"] = 0:
  dprob_max = 7
-! пси-статусы влияют на шанс
+! psy status affect the chance
  if $slave_psy_status = 'servile' or $slave_psy_status = 'obedient': dprob_max = 16 
  if $slave_psy_status = 'soft' or $slave_psy_status = 'optimistic': dprob_max = 9 
  if $slave_psy_status = 'broken': dprob_max = 5
@@ -979,21 +979,21 @@ IF slave_state = CONST_INT['slave_faint'] and slave["stamina"] = 0:
  END
 END
 
-!ЧАСТЬ ТРЕНЕРА
+!master part
 estate_quality = estate_prestige[$estate] + interior_prestige[$study] + interior_prestige[$bath] + interior_prestige[$bed] - house_mess
 estate_quality_modifier = estate_quality - brand_reputation 
 if brand_reputation > master_cha: master_cha_rate += 1
 if master_visage > 0: master_visage -= 1
 if master_haircut > 0: master_haircut -= 1
 
-!Изменение в настроении
+!mood change
 a = brand_rate - 11 - master_mood
 IF master_mood['pos_show'] < a: 
  master_mood['neg_boring'] += 1
  gs '$mod_master_drop', 1
 END
 
-!Лечим раны
+!treat wounds
 healing = master_medic + assistant["nurse"]
 IF master_wounds_rate > 0:
  master_wounds_rate -= master_str + master_mood + healing - master_hygiene + 1
@@ -1010,7 +1010,7 @@ IF master_ill > 0:
  if master_ill > 6: master_mood['neg_master_ill'] = master_ill
 END
 
-!Модифицируем здоровье
+!rise health
 if master_str < 2: master_str_rate += 1
 if master_str < 3: master_str_rate += 1
 if master_hygiene < 2: master_str_rate += 1
@@ -1059,12 +1059,12 @@ master_energised = 0
 
 if master_mood['neg_wounded'] < master_wounds: master_mood['neg_wounded'] = master_wounds
 
-!Растим возбуждение
+!rise arousal
 if master_excitement < 5: master_excitement += master_libido
 if master_excitement > 5: master_excitement = 5
 
 
-!"Деградация навыков
+!"skills degradation
 i = 0
 :loop1
 i += 1
@@ -1077,7 +1077,7 @@ END
 
 IF i < 12: jump 'loop1'"
 
-!ЧАСТЬ ЗАКЛЮЧЕННОЙ
+!prisoner part
 if prisoner['neg_prisoner'] < 0: prisoner['neg_prisoner'] = 0
 prisoner['neg_prisoner'] += 1  
 
@@ -1103,7 +1103,7 @@ if prisoner["hairstyle"] > 0: prisoner["hairstyle"] -= 1
 prisoner_rate["hygiene"] += 7
 prisoner_rate["hygiene"] += prisoner["wounds"]
 
-!Учет калорий
+!counting calories
 prisoner["calories"] = 0
 
 IF prisoner_ration = -1:
@@ -1151,7 +1151,7 @@ if prisoner['starvation'] > prisoner['stamina'] and prisoner_state > 0: pstarvat
 
 if prisoner_state ! 0: total_food_cost += prisoner_food_cost
 
-!Лечимся
+!heal
 IF prisoner['koffe_addiction'] > 0:
  prisoner['koffe_addiction'] -= 1
  prisoner_mood['neg_slave_koffe'] = 1 
@@ -1182,7 +1182,7 @@ IF prisoner['parasite'] > 0:
  prisoner['parasite'] += 1
 END
 
-!Менструальный цикл  и беременность
+!Menstrual cycle and pregnancy
 IF prisoner["age"] = CONST_INT['loli_age']: prisoner['fertility'] = -2
 if prisoner['fertility'] < 0: prisoner['parasite'] = 0
 if prisoner['fertility'] < 0: prisoner['pregnant'] = 0
@@ -1213,12 +1213,12 @@ IF prisoner['pregnant'] > 3 and prisoner['fertility'] = 1:
  if prisoner_virginity < 2: prisoner_virginity = 2 
 END
 
-!Снижаем настроение если оно высокое
+!Reduce the mood if it is high
 if prisoner["mood"] > 0:
  prisoner["mood"] -= 1
 END
 
-!Получаем/снижаем ангст
+!Obtain/reduce Angst
 IF prisoner["mood"] < 0:
  angst_rise = (5 - prisoner["sensitivity"]) + prisoner["mood"]
  if angst_rise < 0: prisoner_rate["angst"] -= angst_rise
@@ -1226,10 +1226,10 @@ IF prisoner["mood"] < 0:
  prisoner_rate["angst"] -= prisoner["mood"] * prisoner["angst"]
 END
 
-!Снижаем избалованность
+!lowering spoil
 prisoner_rate["spoil"] -= 1 + prisoner["fear"]
 
-!Забытые грехи и заслуги
+!Forgotten sins and merits
 IF prisoner["virtue"] > 0:
  prisoner_rate["mood"] -= prisoner["virtue"]
  prisoner["virtue"] = 0
@@ -1237,7 +1237,7 @@ END
 
 IF prisoner["sin"] > 0: prisoner["sin"] = 0
 
-!Считаем возбуждение и настроение
+!counting arousal and mood
 prisoner_rate["mood"] += prisoner["moral"] + (prisoner["stamina"] - 3) + prisoner["energy"] - prisoner["arousal"] - prisoner["fear"] - prisoner["spoil"] - prisoner["angst"] - prisoner["hygiene"] - 5 - prisoner["mood"]
 
 arousal_modifier = 0
@@ -1245,13 +1245,13 @@ if prisoner["nymphomania"] > 0: arousal_modifier += prisoner["temper"] + prisone
 if prisoner["nymphomania"] < 0: arousal_modifier -= prisoner["temper"] + prisoner["sensitivity"] + prisoner["mood"]
 prisoner_rate["arousal"] += (prisoner["stamina"] - 3) + prisoner["energy"] + prisoner["temper"] + prisoner["sensitivity"] + prisoner["mood"] - prisoner["angst"] + arousal_modifier
 
-!Ангст делает свое черное дело
+!Angst does the dirty work
 if $prisoner_psy_status = 'depresive': prisoner_rate["angst"] += 2
 
 prisoner_rate["temper"] -= prisoner["angst"]
 prisoner_rate["ego"] -= prisoner["angst"]
 
-!Отдых
+!rest
 if prisoner["deprivation_attitude"] = -1: 
  prisoner_rate["fear"] += 20
  prisoner_rate["angst"] += 20   
@@ -1287,7 +1287,7 @@ prisoner["energy"] += prisoner["stamina"] - 1 - prisoner["wounds"]
 if prisoner["energy"] > 5: prisoner["energy"] = 5
 if prisoner["energy"] < -5: prisoner["energy"] = -5
 
-!ЧАСТЬ АССИСТЕНТА
+!assistant part
 assistant["energy"] += assistant["stamina"] + 1 - assistant["wounds"]
 if assistant["energy"] > 5: assistant["energy"] = 5
 if assistant["energy"] < -5: assistant["energy"] = -5
@@ -1310,12 +1310,12 @@ IF assistant['lactation'] > 0:
  assistant['cream_gain'] = assistant['milk_gain']/3
 END
 
-!Снижаем страх
+!lowering fear
 IF assistant_rate["fear"] > 0:
  assistant_rate["fear"] -= 2
 END 
 
-!Лечимся
+!heal
 IF assistant['koffe_addiction'] > 20:
  if lab_store["koffe"] > 0: lab_store["koffe"] -= 1
 END
@@ -1345,7 +1345,7 @@ IF assistant['parasite'] > 0:
  assistant['parasite'] += 1
 END
 
-!Менструальный цикл  и беременность
+!Menstrual cycle and pregnancy
 IF assistant["age"] = CONST_INT['loli_age']: assistant['fertility'] = -2
 if assistant['fertility'] < 0: assistant['parasite'] = 0
 if assistant['fertility'] < 0: assistant['pregnant'] = 0
@@ -1375,7 +1375,7 @@ IF assistant['pregnant'] > 3 and assistant['fertility'] = 1:
  if assistant_virginity < 2: assistant_virginity = 2
 END
 
-!Нормализуем настроение и возбуждение
+!Normalize mood and arousal
 if assistant["mood"] ! 0: assistant_prev["mood"] = assistant["mood"]
 assistant["mood"] = 0
 assistant_rate["mood"] = 0
@@ -1384,19 +1384,19 @@ if assistant["arousal"] ! 0: assistant_prev["arousal"] = assistant["arousal"]
 assistant["arousal"] = 0
 assistant_rate["arousal"] = 0
 
-!Снижаем избалованность
+!lowering spoil
 assistant_rate["spoil"] -= 1 + assistant["fear"]
 
-!Обнуляем все что не действует на ассистентку
+!reset all that does not affect the assistant
 assistant["virtue"] = 0
 assistant["sin"] = 0
 assistant["calories"] = 4
 
-!Появляется грязь в доме
+!Appears dirt in the house
 house_mess_rate += 5
 master_hygiene_rate += 5
 
-!Обнуляем еду
+!food reset
 master_food_cost = IIF(cooked_food < 1, 2, 0)
 
 total_food_cost += master_food_cost
@@ -1405,8 +1405,8 @@ if assistant_inventory['pony'] > 0: total_food_cost += 1
 if prisoner_inventory['pony'] > 0: total_food_cost += 1
 cooked_food = -1
 
-!Определяем действия на конец дня
-!добавлена проверка на статус рабыни
+!Define the action at the end of the day
+!added check for slave status 
 IF slave["arousal"] > slave["pride"] and slave["arousal"] > 1 and slave_state = CONST_INT['slave_exist']:
  slave_will_masturbate = 1
 END
@@ -1415,7 +1415,7 @@ IF slave['pregnant'] => 40 and slave['pregnant_revealed'] = 0: slave['pregnant_r
 IF assistant['pregnant'] => 40 and assistant['pregnant_revealed'] = 0: assistant['pregnant_revealed'] = 1
 IF prisoner['pregnant'] => 40 and prisoner['pregnant_revealed'] = 0: prisoner['pregnant_revealed'] = 1
 
-!Утренняя дойка
+!Morning milking
 total_milk_gain = slave['milk_gain'] + assistant['milk_gain'] + prisoner['milk_gain']
 total_cream_gain = slave['cream_gain'] + assistant['cream_gain'] + prisoner['cream_gain']
 milk_summ += total_milk_gain
@@ -1438,7 +1438,7 @@ IF cream_summ => 5:
  jump 'cream_loop'
 END
 
-!Кладка яиц
+!egg-laying
 total_eggs_gain = slave['egg_time'] + assistant['egg_time'] + prisoner['egg_time']
 IF total_eggs_gain > 0:
  egg_time = 1
@@ -1448,7 +1448,7 @@ spawn_milked = 0
 end_of_the_day = 1
 if rules_broken = 1: rules_broken_message = 1
 
-!ДОМАШНЕЕ ИСЧАДИЕ
+!pet tentacle
 IF pet_tentacle > 0:
  tentacle_hp -= 1
  if tentacle_size => 4: tentacle_hp -= 2
@@ -1467,7 +1467,7 @@ menu_form = 0
 !debug
 !msg 'master_ill = <<master_ill>>'
 
-!условие проигрыша туториала если рабыня больна
+!loss condition in tutorial if slave is kill
 IF exam_in_progress = 1:
  IF slave["stamina"] = 0:
   txt = 1
@@ -1476,12 +1476,12 @@ IF exam_in_progress = 1:
  END
 END
 
-!условие для автосейва
+!autosave condition
 IF autosave_day = 1:
  autosave = 1
 END
 
-!счетчик одиночества
+!alone count
 IF slave_state = CONST_INT['no_slave'] and assistant_state = 0:
  alone_count += 1
 END

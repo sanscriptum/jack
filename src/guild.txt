@@ -1,5 +1,5 @@
 # guild
-!ЗДАНИЕ ГИЛЬДИИ РАБОТОРГОВЦЕВ
+!SLAVERS GUILD
 GS '_layout'
 gs '$slave_price'
 npc = 0
@@ -8,26 +8,26 @@ $text_display = '<br>'
 
 
 IF sp_txt = 1:
- IF contract['active'] = 1: $text_display += {<br><div id="under">Закрыть контракт<br><div id = "clear"><a href = 'EXEC: interaction_city = 142 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- if contract['active'] = 2: $text_display += {<br><div id="under_gray">Работа по контракту<br></div>}     
- if contract['active'] = 0 and slave_state ! CONST_INT['no_slave']: $text_display += {<br><div id="under">Работа по контракту<br><div id = "clear"><a href = 'EXEC: interaction_city = 1411 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- if contract['active'] = 0 and slave_state = CONST_INT['no_slave']: $text_display += {<br><div id="under">Работа по контракту<br><div id = "clear"><a href = 'EXEC: interaction_city = 141 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ IF contract['active'] = 1: $text_display += {<br><div id="under">Close contract<br><div id = "clear"><a href = 'EXEC: interaction_city = 142 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ if contract['active'] = 2: $text_display += {<br><div id="under_gray">Contract work<br></div>}     
+ if contract['active'] = 0 and slave_state ! CONST_INT['no_slave']: $text_display += {<br><div id="under">Contract work<br><div id = "clear"><a href = 'EXEC: interaction_city = 1411 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ if contract['active'] = 0 and slave_state = CONST_INT['no_slave']: $text_display += {<br><div id="under">Contract work<br><div id = "clear"><a href = 'EXEC: interaction_city = 141 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
  IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0:
-  $text_display += {<br><div id="under">Поговорить с перекупщиком<br><div id = "clear"><a href = 'EXEC: interaction_city = 94 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Talk to subpurchaser<br><div id = "clear"><a href = 'EXEC: interaction_city = 94 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Поговорить с перекупщиком<br></div>}     
+  $text_display += {<br><div id="under_gray">Talk to subpurchaser<br></div>}     
  END
- $text_display += {<br><div id="under">Поговорить с экспертом<br><div id = "clear"><a href = 'EXEC: interaction_city = 95 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Talk to expert<br><div id = "clear"><a href = 'EXEC: interaction_city = 95 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
  IF auction_count = 0: 
   IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and rating > 0:
-   $text_display += {<br><div id="under">Аукцион клейменых рабынь<br><div id = "clear"><a href = 'EXEC: interaction_city = 93 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+   $text_display += {<br><div id="under">Auction of branded slaves<br><div id = "clear"><a href = 'EXEC: interaction_city = 93 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
    else
-   $text_display += {<br><div id="under_gray">Аукцион клейменых рабынь<br></div>}      
+   $text_display += {<br><div id="under_gray">Auction of branded slaves<br></div>}      
   END 
   else
-  $text_display += '<br><div id="under_gray">Дней до аукциона: <<auction_count>><br></div>'   
+  $text_display += '<br><div id="under_gray">Days to auction: <<auction_count>><br></div>'   
  END
- $text_display += {<br><div id="under">Выйти на улицу<br><div id = "clear"><a href = 'EXEC: city_form = 1 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Leave<br><div id = "clear"><a href = 'EXEC: city_form = 1 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 $text[txt] = $guild[sp_txt]
@@ -45,7 +45,7 @@ if npc = 0:
  $info_bar = ''
  *p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$place_name[$place]>></div><<$place_location[$place]>>
 
- Информация к размышлению:
+ Information for consideration:
  </center></div>'
  *p '<div id = "side_panel_text">  <<$place_info[$place]>>
 </div>'  
@@ -53,7 +53,7 @@ if npc = 0:
  $info_bar = '' 
  *p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$npc_name[$npc_id]>></div><<$npc_status[$npc_id]>>
 
-Информация к размышлению:
+Information for consideration:
 </center></div>'
  *p '<div id = "side_panel_text">  <<$npc_attitude[npc_attitude[$npc_id]]>>
 

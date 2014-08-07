@@ -1,30 +1,30 @@
 # assistant_stat
-!переписан кусок кода с инфотекстом ассистентки, теперь он весь в одном файле, убрана часть из main_screen
+!rewritten a piece of code with assistant infotext, now its all in one file, removed some from main_screen
 
 IF $assistant_info_text = '':
 	$assistant_info_text = '   [<<$assistant_name>>]
-  - Новенькие рабыни часто могут попытаться убежать или сделать ещё какую-нибудь глупость. Я буду следить за ними по мере своего разумения и преданности. Но если вы прикажете мне надзирать за ней, то я уделю этому особое внимание, употребив всю свою волю и боевые навыки для того, чтобы сохранить ваш товар.'
+  - Newcomer slaves can often try to escape or make any stupid moves. I will watch over them with my comprehension and devotion. But if you order me to supervise over them, then I''ll pay particular attention to this, having to use all my will and fighting skills in order to keep your goods.'
 	IF slave_state > CONST_INT['no_slave']:
 		gs '$slave_price'
-		$spec_list = 'чернорабочая'
-		if slave_specialisation['concubine'] = 1: $spec_list += ', наложница'
-		if slave_specialisation['pet'] = 1: $spec_list += ', питомец'
-		if slave_specialisation['nurse'] = 1: $spec_list += ', медсестра'
-		if slave_specialisation['maid'] = 1: $spec_list += ', служанка'
-		if slave_specialisation['gladiatrix'] = 1: $spec_list += ', гладиаторша'
-		if slave_specialisation['enchanter'] = 1: $spec_list += ', чародейка'
-		if slave_specialisation['artist'] = 1: $spec_list += ', артистка'
-		if slave_specialisation['refferent'] = 1: $spec_list += ', ассистентка'
+		$spec_list = 'laborer'
+		if slave_specialisation['concubine'] = 1: $spec_list += ', concubine'
+		if slave_specialisation['pet'] = 1: $spec_list += ', pet'
+		if slave_specialisation['nurse'] = 1: $spec_list += ', nurse'
+		if slave_specialisation['maid'] = 1: $spec_list += ', maid'
+		if slave_specialisation['gladiatrix'] = 1: $spec_list += ', gladiatrix'
+		if slave_specialisation['enchanter'] = 1: $spec_list += ', enchanter'
+		if slave_specialisation['artist'] = 1: $spec_list += ', artist'
+		if slave_specialisation['refferent'] = 1: $spec_list += ', assistant'
 		$assistant_info_text = '  [<<$assistant_name>>]
-<div style="font-size: 90%;">  - Я проверила подготовку вашей воспитуемой, господин. На данный момент она соответствует требованиям для следующих ролей: <<$spec_list>>. Для соответствия той или иной профессии, рабыня должна иметь любой подходящий навык развитый как минимум до уровня <<$rating[3]>> и к тому же не ниже чем её собственный ранг.</div>'  
+<div style="font-size: 90%;">  - I checked the specialization of your slave, master. At this moment she meets the requirements for the following roles: <<$spec_list>>. To match a particular profession, slave should have any suitable skill at least at the <<$rating[3]>> level and also not less than her own rank.</div>'
 		IF slave['brand'] = 0:
 			$assistant_info_text = '  [<<$assistant_name>>]
-  - Вам следует поставить на рабыню клеймо, прежде чем она будет готова к продаже, господин. Я также замечала, что женщины уже имеющие клеймо более склонны к подчинению, чем те, которых ещё не заклеймили.'
+  - You should put on a brand to the slave before she is ready for sale, master. I also noticed that women already having a brand are more inclined to obey, than those which have not yet been branded.'
 		END
 	END
 END
 
-!очищение менюшки выбора экипировки при переключении вкладки
+!reset equip choice menu
 if slot = 0: $equip_choice = ''
 slot = 0
 
@@ -55,14 +55,14 @@ slot = 0
   
 gs 'stats_layout'
 
-*p '<div id = "bookmark_one">Правила</div>'
-!*p '<div id = "bookmark_two">Анатомия</div>'
-*p '<div id = "bookmark_three">Снаряжение</div>'
-*p '<div id = "bookmark_four">Аура</div>'
+*p '<div id = "bookmark_one">Rules</div>'
+!*p '<div id = "bookmark_two">Anatomy</div>'
+*p '<div id = "bookmark_three">Equipment</div>'
+*p '<div id = "bookmark_four">Aura</div>'
 *p '<div id = "close"><a href = "EXEC: $equip_choice = '''' & $assistant_info_text = '''' & gt ''menu_form''"><img src = "content\pic\buttons\close_button.png"></a></div>'
 
 *p '<div id="left_column">
-<u>РЕЗЮМЕ</u>
+<u>SUMMARY</u>
 <<$beauty[assistant["beauty"]]>> 
 <<$stamina[assistant["stamina"]]>> 
 <<$exotic[assistant["exotic"]]>> 
@@ -74,7 +74,7 @@ gs 'stats_layout'
 <<$ego[assistant["ego"]]>> 
 <<$pride[assistant["pride"]]>> 
 
-<u>ОСОБЕННОСТИ</u>
+<u>TRAITS</u>
 <<$assistant_features_list>>
 </div>'
 
@@ -83,8 +83,8 @@ gs 'stats_layout'
 <<$assistant_features_list>>
 "
 
-!Основная закладка
-!$assistant_info_text = ''&nbsp'' - окошко корректно обнуляется при переключении
+!main tab
+!$assistant_info_text = ''&nbsp'' - info text will reset after switching
 IF assistant_stat_screen = 0:
  *p '<div id = "mark_one"><img src = "content\pic\buttons\sel_button.png"></div>'
 ! *p '<div id = "mark_two"><a href = "EXEC: assistant_stat_screen = 1 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
@@ -97,20 +97,20 @@ IF assistant_stat_screen = 0:
   if assistant['domina'] = 1: *p '<div id="center_image"><img src="content\pic\<<$fullmistress[assistant_type]>>.gif"></div>' 
   if assistant['executive'] = 1: *p '<div id="center_image"><img src="content\pic\<<$fullsecretary[assistant_type]>>.gif"></div>' 
  END
- *p '<div id="right_padding">ПРАВИЛА: <BR><BR><BR><BR><BR><BR><BR><BR><BR>ВНЕШНОСТЬ:</div>'  
+ *p '<div id="right_padding">JOBS: <BR><BR><BR><BR><BR><BR><BR><BR><BR>APPEARANCE:</div>'  
  *p '<div id="right_rules">
-Ты горничная
-Ты кухарка
-Ты меня моешь
-Ты счетовод
-Ты надзираешь
-Ты алхимик
-Ты доярка
-<BR><BR><BR><BR><BR><BR><BR><BR>
-&nbsp&nbsp&nbsp<a style = "color: #FFD700;" href = "EXEC: dynamic $assistant_purge_rules & gt curloc"><u>Обнулить все правила</u></a>
+Maid - 
+Cook - 
+Bath slave - 
+Accountant - 
+Supervise slave - 
+Alchemist - 
+Milkmaid - 
+<BR><BR><BR><BR><BR><BR><BR><BR><BR>
+&nbsp&nbsp&nbsp<a style = "color: #FFD700;" href = "EXEC: dynamic $assistant_purge_rules & gt curloc"><u>Reset rules</u></a>
 </div>'  
 
- if sparks > 50: *p '<div id="left_padding">БАКАЛЕЯ: <BR><BR><BR><BR><BR><BR><BR><BR>ПРОИЗВОДНЫЕ:<BR><BR><BR><BR><BR>МЯСО:<BR><BR><BR><BR><BR></div>'  
+ if sparks > 50: *p '<div id="left_padding">GROCERIES: <BR><BR><BR><BR><BR><BR><BR><BR>DERIVATIVES:<BR><BR><BR><BR><BR>MEAT:<BR><BR><BR><BR><BR></div>'  
  IF assistant_cleans_rule = 1:
   slave_cleans_rule = 0
   *p '<div id="chekbox_1r"><a href = "EXEC: assistant_cleans_rule = 0 & $assistant_info_text = $assistant_cleans_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
@@ -153,21 +153,21 @@ IF assistant_stat_screen = 0:
  END   
 
  if kitchen => 0 and sparks > 50: *p '<div id="left_rules">
-Овощи
-Мука и крупа
-Зелень и специи
-Сыры и масло
-Алкоголь
+ - Vegetables
+ - Flour and grains
+ - Herbs and spices
+ - Cheese and butter
+ - Alcohol
 
 
+ 
+ - Eggs
+ - Milk
+ - Cream
 
-Яйца
-Молоко
-Сливки
 
-
-Мясной фарш
-Вырезка
+ - Mince
+ - Tenderloin
 </div>'  
 
 IF kitchen > 0 and sparks > 50:
@@ -223,22 +223,22 @@ IF kitchen > 0 and sparks > 50:
  END
 END
 
-!Внешность
-$assistant_apperiance = 'Рабыня<br>'
+!appearance
+$assistant_apperiance = 'Slave - <br>'
 if $fullmade[assistant_type] ! '': 
- $assistant_apperiance += 'Служанка<br>'
+ $assistant_apperiance += 'Maid - <br>'
  else
  $assistant_apperiance += '<br>'
 end
 if $fullmistress[assistant_type] ! '': 
- $assistant_apperiance += 'Домина<br>'
+ $assistant_apperiance += 'Dominatrix - <br>'
  else
  $assistant_apperiance += '<br>'
 end
  IF assistant["age"] ! 1:
-  if $fullsecretary[assistant_type] ! '': $assistant_apperiance += 'Секретарь'
+  if $fullsecretary[assistant_type] ! '': $assistant_apperiance += 'Secretary -&nbsp'
   else
-  if $fullsecretary[assistant_type] ! '': $assistant_apperiance += 'Школьница'
+  if $fullsecretary[assistant_type] ! '': $assistant_apperiance += 'Schoolgirl -&nbsp'
  END
  
 *p '<div id="a_apperiance">
@@ -275,8 +275,8 @@ end
  END
 END
  
-!Закладка снаряжения
-!$assistant_info_text = '''' - окошко корректно показывает реплику ассистентки при переключении
+!equipment tab
+!$assistant_info_text = '''' - infotext will show the right information after switching
 IF assistant_stat_screen = 2:
     *p '<div id = "mark_one"><a href = "EXEC: assistant_stat_screen = 0 & $assistant_info_text = '''' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
     !*p '<div id = "mark_two"><a href = "EXEC: assistant_stat_screen = 1 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
@@ -288,30 +288,30 @@ IF assistant_stat_screen = 2:
 		*p '<div id="center_image"><img src = "content\pic\page_blank.gif"></div>' 
 	END
     *p '<div id = "center_text_column_1">'
-        *p '<div style = "text-align: center;"><u>СНАРЯЖЕНИЕ АССИСТЕНТКИ</u></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 40 & dynamic $assistant_armor_list"><u>Доспехи:</u> <<$название_предмета[$assistant["armor"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 41 & dynamic $assistant_wpn_list_large"><u>За спиной:</u> <<$название_предмета[$assistant["back_wpn"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 42 & dynamic $assistant_wpn_list"><u>На поясе слева:</u> <<$название_предмета[$assistant["left_wpn"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 43 & dynamic $assistant_wpn_list_2"><u>На поясе справа:</u> <<$название_предмета[$assistant["right_wpn"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 44 & dynamic $assistant_cloth_list"><u>Одежда:</u> <<$item_name[$assistant["cloth"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 45 & dynamic $assistant_head_list"><u>На голове:</u> <<$item_name[$assistant["headband"]]>></a></div>'
+        *p '<div style = "text-align: center;"><u>ASSISTANT EQUIPMENT</u></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 40 & dynamic $assistant_armor_list"><u>Armour:</u> <<$название_предмета[$assistant["armor"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 41 & dynamic $assistant_wpn_list_large"><u>Shoulder holster:</u> <<$название_предмета[$assistant["back_wpn"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 42 & dynamic $assistant_wpn_list"><u>Left hand:</u> <<$название_предмета[$assistant["left_wpn"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 43 & dynamic $assistant_wpn_list_2"><u>Right hand:</u> <<$название_предмета[$assistant["right_wpn"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 44 & dynamic $assistant_cloth_list"><u>Clothes:</u> <<$item_name[$assistant["cloth"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 45 & dynamic $assistant_head_list"><u>Headgear:</u> <<$item_name[$assistant["headband"]]>></a></div>'
         *p '<br>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 46 & dynamic $assistant_ears_list"><u>В ушах:</u> <<$item_name[$assistant["earrings"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 47 & dynamic $assistant_neck_list"><u>На шее:</u> <<$item_name[$assistant["collar"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 48 & dynamic $assistant_hands_list"><u>На руках:</u> <<$item_name[$assistant["gloves"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 49 & dynamic $assistant_niples_list"><u>В сосках:</u> <<$item_name[$assistant["nipplerings"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 50 & dynamic $assistant_clitor_list"><u>В клиторе:</u> <<$item_name[$assistant["clitring"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 51 & dynamic $assistant_feet_list"><u>На ногах:</u> <<$item_name[$assistant["boots"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 52 & dynamic $assistant_ring_list"><u>Левое кольцо:</u> <<$item_name[$assistant["ring_left"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 53 & dynamic $assistant_ring_list_2"><u>Правое кольцо:</u> <<$item_name[$assistant["ring_right"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 46 & dynamic $assistant_ears_list"><u>Earring:</u> <<$item_name[$assistant["earrings"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 47 & dynamic $assistant_neck_list"><u>Neck:</u> <<$item_name[$assistant["collar"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 48 & dynamic $assistant_hands_list"><u>Hands:</u> <<$item_name[$assistant["gloves"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 49 & dynamic $assistant_niples_list"><u>Nipples:</u> <<$item_name[$assistant["nipplerings"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 50 & dynamic $assistant_clitor_list"><u>Clitoris:</u> <<$item_name[$assistant["clitring"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 51 & dynamic $assistant_feet_list"><u>Feet:</u> <<$item_name[$assistant["boots"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 52 & dynamic $assistant_ring_list"><u>Ring 1:</u> <<$item_name[$assistant["ring_left"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 53 & dynamic $assistant_ring_list_2"><u>Ring 2:</u> <<$item_name[$assistant["ring_right"]]>></a></div>'
         *p '</div>'
 
-    *p '<div id = "center_text_column_2"> <center><u>ДОСТУПНЫЕ ВАРИАНТЫ</u></center><<$equip_choice>>
+    *p '<div id = "center_text_column_2"> <center><u>AVAILABLE OPTIONS</u></center><<$equip_choice>>
     </div>'
  
 END 
 
-!закладка ауры ассистентки
+!ASSISTANT AURA TAB
 If assistant_stat_screen = 3:
  *p '<div id = "mark_one"><a href = "EXEC: assistant_stat_screen = 0 & $assistant_info_text = '''' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
 ! *p '<div id = "mark_two"><a href = "EXEC: slave_stat_screen = 1 & $info_text = ''&nbsp'' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
@@ -325,7 +325,7 @@ END
  
 IF slave_state = CONST_INT['slave_exist']:
  *p '<div id="right_column_a">
-<u>НАВЫКИ</u>
+<u>SKILLS</u>
 <a href = "EXEC: interaction = 4111 & gt ''interaction''"><<$slave_service[assistant["service"]]>></a> 
 <a href = "EXEC: interaction = 4112 & gt ''interaction''"><<$slave_cook[assistant["cook"]]>></a>
 <a href = "EXEC: interaction = 4113 & gt ''interaction''"><<$slave_nurse[assistant["nurse"]]>></a>
@@ -340,7 +340,7 @@ IF slave_state = CONST_INT['slave_exist']:
 <a href = "EXEC: menu_form = 4143 & gt ''menu_form''"><<$slave_dressage[assistant["dressage"]]>></a>
 </div>'
 
- *p '<div id="right_column"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><u>СЕКС-ТЕХНИКИ</u>
+ *p '<div id="right_column"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><u>SEX-TECHNIQUES</u>
 <<$slave_petting[assistant["petting"]]>> 
 <<$slave_penetration[assistant["penetration"]]>> 
 <<$slave_oral[assistant["oral"]]>>
@@ -413,7 +413,7 @@ IF slave_state = CONST_INT['slave_exist']:
   
  else
  *p '<div id="right_column">
-<u>НАВЫКИ</u>
+<u>SKILLS</u>
 <<$slave_service[assistant["service"]]>> 
 <<$slave_cook[assistant["cook"]]>> 
 <<$slave_nurse[assistant["nurse"]]>> 
@@ -427,7 +427,7 @@ IF slave_state = CONST_INT['slave_exist']:
 <<$slave_pet[assistant["pet"]]>>
 <<$slave_dressage[assistant["dressage"]]>> 
 
-<u>СЕКС-ТЕХНИКИ</u>
+<u>SEX-TECHNIQUES</u>
 <<$slave_petting[assistant["petting"]]>> 
 <<$slave_penetration[assistant["penetration"]]>> 
 <<$slave_oral[assistant["oral"]]>>

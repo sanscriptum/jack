@@ -442,8 +442,8 @@ END
 
 !main menu - Slave activities - Get rid of her
 IF menu_form = 18:
-$text_display += {<div id="under">Drive out the house<br><div id = "clear"><a href = 'EXEC: interaction = 181 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under_gray">Cut the throat<br></div>}
+ $text_display += {<div id="under">Drive out the house<br><div id = "clear"><a href = 'EXEC: interaction = 181 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ !$text_display += {<br><div id="under_gray">Cut the throat<br></div>}
  $text_display += {<br><div id="under">Hang<br><div id = "clear"><a href = 'EXEC: interaction = 182 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Decapitate<br><div id = "clear"><a href = 'EXEC: interaction = 183 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Impale<br><div id = "clear"><a href = 'EXEC: interaction = 184 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
@@ -626,9 +626,9 @@ END
 IF menu_form = 41:
  $text_display += {<br><div id="under">Applied skills<br><div id = "clear"><a href = 'EXEC: menu_form = 411 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  IF slave["stamina"] > 1:
-  $text_display += {<br><div id="under">Physycal development<br><div id = "clear"><a href = 'EXEC: menu_form = 412 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Physical development<br><div id = "clear"><a href = 'EXEC: menu_form = 412 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Physycal development<br></div>}
+  $text_display += {<br><div id="under_gray">Physical development<br></div>}
  END
  $text_display += {<br><div id="under">Creative development <br><div id = "clear"><a href = 'EXEC: menu_form = 413 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Special skills <br><div id = "clear"><a href = 'EXEC: menu_form = 414 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
@@ -1194,9 +1194,9 @@ IF menu_form = 151:
   $text_display += {<br><div id="under_gray">Go to the beach (2 ис) (=3)<br></div>}   
  END
  IF sparks => 4 and already_done_today[1514] = 0: 
-  $text_display += {<br><div id="under">Go to the theatre (4 ис) (=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1514 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Go to the theater (4 ис) (=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1514 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Go to the theatre (4 ис) (=4)<br></div>} 
+  $text_display += {<br><div id="under_gray">Go to the theater (4 ис) (=4)<br></div>} 
  end 
  IF sparks => 8 and already_done_today[1515] = 0: 
   $text_display += {<br><div id="under">Go to a restaurant (8 ис) (=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1515 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
@@ -1434,7 +1434,7 @@ IF menu_form = 411:
  IF assistant["nurse"] > slave["nurse"]: 
   $text_display += {<br><div id="under">Medicine<br><div id = "clear"><a href = 'EXEC: interaction = 4113 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Medicinebr></div>}
+  $text_display += {<br><div id="under_gray">Medicine<br></div>}
  END
  IF assistant["secretary"] > slave["secretary"]: 
   $text_display += {<br><div id="under">Clerical work<br><div id = "clear"><a href = 'EXEC: interaction = 4114 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
@@ -1445,7 +1445,7 @@ IF menu_form = 411:
  $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
-!main menu - Assistant assignments - Conduct a lesson - Physycal development
+!main menu - Assistant assignments - Conduct a lesson - Physical development
 IF menu_form = 412:
  IF assistant["stamina"] > slave["stamina"] and slave["stamina"] > 1: 
   $text_display += {<br><div id="under">Gymnastics<br><div id = "clear"><a href = 'EXEC: interaction = 4121 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}

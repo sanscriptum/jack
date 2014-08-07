@@ -43,8 +43,8 @@ IF prisoner_state > 0:
 '
 
  *p '<div id="solo_rules">
-Dehydrated food
-Fresh food
+Dry food
+Dog food
 Fiend''s cum
 </div>'
  IF prisoner_ration = 1:

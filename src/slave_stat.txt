@@ -1,12 +1,12 @@
 # slave_stat
-!ЭКРАН ПОДРОБНОЙ СТАТИСТИКИ ВОСПИТУЕМОЙ
+!SLAVE STAT SCREEN
 IF $info_text = '':
  $info_text = $psy_status[$slave_psy_status]
- if slave_state = CONST_INT['slave_faint']: $info_text = '   <<$slave_name>> лежит без сил и тихо стонет. Она явно находится в очень плохом состоянии. Надо дать ей отдохнуть или даже оказать медицинскую помощь.'
- if slave_state = CONST_INT['slave_dead']: $info_text = '   <<$slave_name>> мертва. Её бездыханный труп лежит на полу.'
+ if slave_state = CONST_INT['slave_faint']: $info_text = '   <<$slave_name>> is exhausted and moans quietly. She is clearly in a very bad condition. You have to give her a rest or even medical assistance.'
+ if slave_state = CONST_INT['slave_dead']: $info_text = '   <<$slave_name>> is dead. Her lifeless corpse is lying on the floor.'
 END
 
-!очищение менюшки выбора экипировки при переключении вкладки
+!reset equipment selection when switching tabs
 if slot = 0: $equip_choice = ''
 slot = 0
 
@@ -46,10 +46,10 @@ stat_importance['fetishism'] = 1
 gs '$slave_price'
 gs 'stats_layout'
 
-*p '<div id = "bookmark_one">Правила</div>'
-*p '<div id = "bookmark_two">Анатомия</div>'
-*p '<div id = "bookmark_three">Снаряжение</div>'
-*p '<div id = "bookmark_four">Аура</div>'
+*p '<div id = "bookmark_one">Rules</div>'
+*p '<div id = "bookmark_two">Anatomy</div>'
+*p '<div id = "bookmark_three">Equipment</div>'
+*p '<div id = "bookmark_four">Aura</div>'
 IF exam_in_progress = 1:
  *p '<div id = "close"><a href = "EXEC: $equip_choice = '''' & gt ''demo_menu_form''"><img src = "content\pic\buttons\close_button.png"></a></div>'
  else
@@ -57,7 +57,7 @@ IF exam_in_progress = 1:
 END
 
 *p '<div id="left_column">
-<u>ОЦЕНКА:</u>&nbsp;<a href="EXEC: msg $rating_help"><<$rating[rating]>></a>
+<u>SLAVE RANK:</u>&nbsp;<a href="EXEC: msg $rating_help"><<$rating[rating]>></a>
 <a href="EXEC: msg $красота_справка & msg $красота_справка_2 & $info_text = $красота_совет & gt $curloc"><<$beauty[slave["beauty"]]>></a>
 <a href="EXEC: msg $здоровье_справка & msg $здоровье_справка_2 & $info_text = $здоровье_совет & gt $curloc"><<$stamina[slave["stamina"]]>></a>
 <a href="EXEC: msg $чувствительность_справка & msg $чувствительность_справка_2 & $info_text = $чувствительность_совет & gt $curloc"><<$sensitivity[slave["sensitivity"]]>></a>
@@ -70,11 +70,11 @@ END
 <a href="EXEC: msg $стиль_справка & msg $стиль_справка_2 & $info_text = $стиль_совет & gt $curloc"><<$style[slave["style"]]>></a>
 <a href="EXEC: msg $слава_справка & msg $слава_справка_2 & $info_text = $слава_совет & gt $curloc"><<$girl_fame[slave["fame"]]>></a>
 
-<u>ОСОБЕННОСТИ</u>
+<u>TRAITS</u>
 <<$features_list>>
 </div>'
 
-!Расчет стоимости содержания
+!calculation the food cost
 food_cost = 0
 IF slave_ration = -2: food_cost = 1
 IF slave_ration > -2: food_cost = 2
@@ -85,7 +85,7 @@ IF vitamin = 1: food_cost += 1
 
 daily_cost = food_cost
 
-!$info_text = ''&nbsp'' - текст обнуляется если его нет, $info_text = '''' - показывается текст привязанный к вкладке
+!$info_text = ''&nbsp'' - info text reset if not exist, $info_text = '''' - show the specific text in certain tab
 IF slave_stat_screen = 0:
  *p '<div id = "mark_one"><img src = "content\pic\buttons\sel_button.png"></div>'
  *p '<div id = "mark_two"><a href = "EXEC: slave_stat_screen = 1 & $info_text = ''&nbsp'' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
@@ -97,66 +97,66 @@ IF slave_stat_screen = 0:
   *p '<div id="center_image"><img src = "content\pic\bg\<<$interior_study[$study]>>.jpg"></div>'
  END
  if nsfw = 0: *p '<div id="center_image"><img src="content\pic\<<$slave["fullimage"]>>.gif"></div>' 
- *p '<div id="left_padding">РЕЖИМ СНА: <BR><BR><BR><BR><BR><BR><BR>РЕЖИМ ПИТАНИЯ:<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>СЧЕТЧИК КАЛОРИЙ:</div>'  
+ *p '<div id="left_padding">SLEEP: <BR><BR><BR><BR><BR><BR><BR>DIET:<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>CALORIE COUNTER:</div>'  
  IF master_medic => 2:
   *p '<div id="left_rules">
-Ночь в карцере
-Холодный пол
-Циновка и плед
-Спи со мной
-Спи в будуаре
+ - in the cells
+ - on the floor
+ - on a bedroll
+ - in my bed
+ - in the boudoir
 <BR>
-Сухой корм
-Собачьи консервы
-Сперма исчадия
-Объедки со стола
+ - Dehydrated food
+ - Fresh food
+ - Fiend`s cum
+ - Your leftovers
 
-Похудание
-Поддержка веса
-Набор веса
-Биодобавки
+ - Weight loss
+ - Weight stable
+ - Weight gain
+ - Add supplements
 
-<<slave["calories"]>> калорий / <<slave_rate["fat"]>> ж
+<<slave["calories"]>> cal / <<slave_rate["fat"]>> f
 </div>'  
   else
   *p '<div id="left_rules">
-Ночь в карцере
-Холодный пол
-Циновка и плед
-Спи со мной
-Спи в будуаре
+ - in the cells
+ - on the floor
+ - on a bedroll
+ - in my bed
+ - in the boudoir
 <BR>
-Сухой корм
-Собачьи консервы
-Сперма исчадия
-Объедки со стола
+ - Dehydrated food
+ - Fresh food
+ - Fiend''s cum
+ - Your leftovers
 
-Похудание
-Поддержка веса
-Набор веса
-Биодобавки
+ - Weight loss
+ - Weight stable
+ - Weight gain
+ - Add supplements
 
-<<slave["calories"]>> калорий
+<<slave["calories"]>> cal
 </div>'
  END
- *p '<div id="right_padding">ПРАВИЛА: <BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><<$rules_obedience[rules_broken]>></div>'  
+ *p '<div id="right_padding">RULES: <BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><<$rules_obedience[rules_broken]>></div>'  
  *p '<div id="right_rules">
-Ты молчишь
-Я Хозяин
-Не кончать
-Не гадить
-Ты животное
-Ты будильник
-Ты писсуар
-Ты унитаз
+Force silence - 
+Force humility - 
+Deny orgasm - 
+Deny toileting - 
+Behave: pet - 
+Behave: alarm - 
+Behave: urinal - 
+Behave: toilet - 
 
-Ты горничная
-Ты кухарка
-Ты меня моешь
-Ты доярка
+Act as maid - 
+Act as cook - 
+Bath slave - 
+Milkmaid - 
 
-V-шарики
-Форсировано
+Vaginal vibe - 
+Force rules -
 </div>'  
  IF slave_sleep_condition = -2:
   *p '<div id="chekbox_1l"><img src="content\pic\buttons\sel_button.png"></div>'  
@@ -311,8 +311,8 @@ V-шарики
  END        
 END
 
-!ЗАКЛАДКА АНАТОМИИ
-!Убран хардкод с hairstyle_demo на hairstyle, волософикс
+!ANATOMY TAB
+!removed hairstyle_demo hardcode
 If slave_stat_screen = 1:
  *p '<div id = "mark_one"><a href = "EXEC: slave_stat_screen = 0 & $info_text = '''' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
  *p '<div id = "mark_two"><img src = "content\pic\buttons\sel_button.png"></div>'
@@ -345,7 +345,7 @@ If slave_stat_screen = 1:
 </div>' 
 END
 
-!Закладка снаряжения
+!EQUIPMENT TAB
 If slave_stat_screen = 2:
     *p '<div id = "mark_one"><a href = "EXEC: slave_stat_screen = 0 & $info_text = '''' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
     *p '<div id = "mark_two"><a href = "EXEC: slave_stat_screen = 1 & $info_text = ''&nbsp'' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
@@ -357,25 +357,25 @@ If slave_stat_screen = 2:
 		*p '<div id="center_image"><img src = "content\pic\page_blank.gif"></div>' 
 	END
     *p '<div id = "center_text_column_1">'
-        *p '<div style = "text-align: center;"><u>СНАРЯЖЕНИЕ ВОСПИТУЕМОЙ</u></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 20 & dynamic $slave_armor_list"><u>Доспехи:</u> <<$название_предмета[$slave["armor"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 21 & dynamic $slave_wpn_list_large"><u>За спиной:</u> <<$название_предмета[$slave["back_wpn"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 22 & dynamic $slave_wpn_list"><u>На поясе слева:</u> <<$название_предмета[$slave["left_wpn"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 23 & dynamic $slave_wpn_list_2"><u>На поясе справа:</u> <<$название_предмета[$slave["right_wpn"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 24 & dynamic $slave_cloth_list"><u>Одежда:</u> <<$item_name[$slave["cloth"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 25 & dynamic $slave_head_list"><u>На голове:</u> <<$item_name[$slave["headband"]]>></a></div>'
+        *p '<div style = "text-align: center;"><u>SLAVE EQUIPMENT</u></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 20 & dynamic $slave_armor_list"><u>Armour:</u> <<$название_предмета[$slave["armor"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 21 & dynamic $slave_wpn_list_large"><u>Shoulder holster:</u> <<$название_предмета[$slave["back_wpn"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 22 & dynamic $slave_wpn_list"><u>Left hand:</u> <<$название_предмета[$slave["left_wpn"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 23 & dynamic $slave_wpn_list_2"><u>Right hand:</u> <<$название_предмета[$slave["right_wpn"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 24 & dynamic $slave_cloth_list"><u>Clothes:</u> <<$item_name[$slave["cloth"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 25 & dynamic $slave_head_list"><u>Headgear:</u> <<$item_name[$slave["headband"]]>></a></div>'
         *p '<br>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 26 & dynamic $slave_ears_list"><u>В ушах:</u> <<$item_name[$slave["earrings"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 27 & dynamic $slave_neck_list"><u>На шее:</u> <<$item_name[$slave["collar"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 28 & dynamic $slave_hands_list"><u>На руках:</u> <<$item_name[$slave["gloves"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 29 & dynamic $slave_niples_list"><u>В сосках:</u> <<$item_name[$slave["nipplerings"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 30 & dynamic $slave_clitor_list"><u>В клиторе:</u> <<$item_name[$slave["clitring"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 31 & dynamic $slave_feet_list"><u>На ногах:</u> <<$item_name[$slave["boots"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 32 & dynamic $slave_ring_list"><u>Левое кольцо:</u> <<$item_name[$slave["ring_left"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 33 & dynamic $slave_ring_list_2"><u>Правое кольцо:</u> <<$item_name[$slave["ring_right"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 26 & dynamic $slave_ears_list"><u>Earring:</u> <<$item_name[$slave["earrings"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 27 & dynamic $slave_neck_list"><u>Neck:</u> <<$item_name[$slave["collar"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 28 & dynamic $slave_hands_list"><u>Hands:</u> <<$item_name[$slave["gloves"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 29 & dynamic $slave_niples_list"><u>Nipples:</u> <<$item_name[$slave["nipplerings"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 30 & dynamic $slave_clitor_list"><u>Clitoris:</u> <<$item_name[$slave["clitring"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 31 & dynamic $slave_feet_list"><u>Feet:</u> <<$item_name[$slave["boots"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 32 & dynamic $slave_ring_list"><u>Ring 1:</u> <<$item_name[$slave["ring_left"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 33 & dynamic $slave_ring_list_2"><u>Ring 2:</u> <<$item_name[$slave["ring_right"]]>></a></div>'
     *p '</div>'
 
-    *p '<div id = "center_text_column_2"> <center><u>ДОСТУПНЫЕ ВАРИАНТЫ</u></center><<$equip_choice>>
+    *p '<div id = "center_text_column_2"> <center><u>AVAILABLE OPTIONS</u></center><<$equip_choice>>
     </div>'
 
 END
@@ -433,10 +433,10 @@ IF slave_state = CONST_INT['slave_exist']:
   $skill_text += '<<$slave_dressage[slave["dressage"]]>><BR>'  
  END
  *p '<div id="right_column">
-<u>НАВЫКИ</u>
+<u>SKILLS</u>
 <<$skill_text>>
 
-<u>СЕКС-ТЕХНИКИ</u>
+<u>SEX-TECHNIQUES</u>
 <a href = "EXEC: menu_form = 131 & gt ''menu_form''"><<$slave_petting[slave["petting"]]>></a> 
 <a href = "EXEC: menu_form = 133 & gt ''menu_form''"><<$slave_penetration[slave["penetration"]]>></a> 
 <a href = "EXEC: menu_form = 132 & gt ''menu_form''"><<$slave_oral[slave["oral"]]>></a>
@@ -447,7 +447,7 @@ IF slave_state = CONST_INT['slave_exist']:
 </div>'
  else
  *p '<div id="right_column">
-<u>НАВЫКИ</u>
+<u>SKILLS</u>
 <<$slave_service[slave["service"]]>> 
 <<$slave_cook[slave["cook"]]>> 
 <<$slave_nurse[slave["nurse"]]>> 
@@ -461,7 +461,7 @@ IF slave_state = CONST_INT['slave_exist']:
 <<$slave_pet[slave["pet"]]>>
 <<$slave_dressage[slave["dressage"]]>> 
 
-<u>СЕКС-ТЕХНИКИ</u>
+<u>SEX-TECHNIQUES</u>
 <<$slave_petting[slave["petting"]]>> 
 <<$slave_penetration[slave["penetration"]]>> 
 <<$slave_oral[slave["oral"]]>>

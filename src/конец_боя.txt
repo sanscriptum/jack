@@ -1,10 +1,10 @@
 # конец_боя
-!СЮДА ПРИХОДИМ КОГДА ЗАВЕРШАЕТСЯ БОЙ
+!WHEN FIGHT IS FINISHED WE WILL BE HERE
 arena_mode = 0
-!если мастер сильный боец, спецспособности обнуляются
+!superb usage will reset if a master decent fighter
 if master_fighter > 2: killvar 'суперудар_сделан'
 
-!Информация о последних действиях игрока и противников
+!Information about the latest actions of the player and opponents
 $информация_о_бое = ''
 if $боевая_обстановка!'': $информация_о_бое += '<<$боевая_обстановка>><br><br>'
 $информация_о_бое += '<<$действия_игрока>><br><br>'
@@ -21,7 +21,7 @@ IF ui_style = 2:
 END
 *p '<div id = "fight_txt"><<$информация_о_бое>></div>'
 
-!меню управления
+!control menu
 if $extra_special_used = '': $extra_special_used = 'content/pic/buttons/shield_used.gif'
 if $extra_special_used = 'content/pic/buttons/dual_used.gif': $extra_special_used = 'content/pic/buttons/shield_used.gif'
 if $extra_special_used = 'content/pic/buttons/net_used.gif': $extra_special_used = 'content/pic/buttons/shield_used.gif'
@@ -73,7 +73,7 @@ END
 
 *p '<div id = "ally_def"><<$защита_описание[$защита[0]]>></div>'
 *p '<div id = "next_def"><a href="EXEC: dynamic $сменить_защиту"><img src = "content/pic/buttons/loop.png"></a></div>'
-*p '<div id = "enemy_def">Не защищается</div>'
+*p '<div id = "enemy_def">Not defends</div>'
 
 *p '<div id = "ally_health"><<здоровье_игрока>></div>'
 *p '<div id = "ally_stamina"><<выносливость_игрока>></div>'

@@ -2,47 +2,47 @@
 
 ---
 
-###'Валет Плетей', разработка фикса
+###'Jack-o-nine-tails', fix development
 
 
-Готовую последнюю версию можно скачать здесь: https://dl.dropboxusercontent.com/u/67382680/jack_fix.rar
+You can download english version from here: WILL BE AVAILABLE SOON
 
-Changelog: http://pastebin.com/HCiCKAxx
+Changelog (untranslated): http://pastebin.com/HCiCKAxx
 
-###Установка
+###Installation
 
-Распаковать в папку с игрой, заменяя файлы.
+You have to download full version from author's blog (1.2 ATM), then install this on top with replacing files.
 
-###Как собрать все файлы воедино из репозитория?
-Главный файл в этом репозитории разбит с помощью split_file.py
+###How to collect all the files together from the repository?
+Main file in the repository is split by a split_file.py
 
-**СКРИПТ split_file.py РАБОТАЕТ ТОЛЬКО СО ВТОРЫМ ПИТОНОМ!**
+**split_file.py SCRIPT WORKS ONLY WITH A 2 VERSION OF PYTHON!**
 
-Перед началом обязательно скачайте txt2gam и пропишите к нему путь в qgen!
+Before you start be sure to download and mount txt2gam path to it in qgen!
 
-Внимание - если один из текстовых файлов при редактировании был сохранен не в формате utf8 без bom, то при сборке txt2gam может проигнорировать его!
+Warning - if one of the text files when editing was not saved in utf8 without bom format, then txt2gam can ignore it while merging!
 
-Не качайте код с сайта используя кнопку "Download ZIP"! Текстовые файлы скачанные с сайта конвертируются в UNIX формат, что превращает их содержимое в кашу и делает невозможным сборку файла! Скачивайте исходный код с GitHub клиента напрямую, и следите чтобы формат файлов был dos/win!
+Do not download the source code from the site using the button "Download ZIP"! Text files are downloaded from the site will be converted to UNIX format, which makes their contents into a mess and makes it impossible to build a file! Download the source code from GitHub client directly, and make sure that the file format was dos/win!
 ***
 
-**Как из .qsp файла получить кучку исходников?**
+**How get a bunch of sources from the .qsp file?**
 
-1. Qgen -> экспорт -> txt2gam формат -> ```jack.txt```
-2. ```split_file.py --split jack.txt``` в батнике. Внимание, папка src будет удалена!
-3. В папке src появятся разрезанные исходники в формате utf8.
+1. Qgen -> export -> as txt2gam -> ```jack.txt```
+2. ```split_file.py --split jack.txt``` in batch file. src folder will be deleted!
+3. In src folder there will be txt files in utf8 format.
 
-**Корявый, полуавтоматический способ сборки:**
+**First way to merge this:**
 
-1. ```split_file.py --merge2 jack.txt``` в батнике;
-2. В кугене открываем старую версию ```jack.qsp``` и делаем туда импорт ```jack.txt```;
-3. В кугене делаем Save as в другой файл, и закрываем куген;
-4. Новый файл переименовываем в ```jack.qsp``` и заменяем им исходный;
+1. ```split_file.py --merge2 jack.txt``` in batch file;
+2. Open old version of ```jack.qsp``` in qgen and import of new ```jack.txt```;
+3. Make Save as and name it differently, close qgen;
+4. Rename new file to ```jack.qsp``` and replace old by it;
 
-**Второй способ:**
+**Second way:**
 
-1. ```split_file.py --merge2 jack.txt``` в батнике;
-2. Собираем игру с помощью TXT2GAM: ```txt2gam jack.txt jack.qsp``` в батнике;
-3. В кугене открываем получившийся ```jack.qsp``` и экспортируем ```текстовой файл формата TXT2GAM```;
-4. Снова собираем игру с помощью TXT2GAM;
+1. ```split_file.py --merge2 jack.txt``` in batch file;
+2. Compile the game with TXT2GAM: ```txt2gam jack.txt jack.qsp``` in batch file;
+3. Open new ```jack.qsp``` in qgen and make export ```text file in TXT2GAM format``` to jack.txt;
+4. Compile the game again with TXT2GAM;
 
-Если QSP файл оказался подозрительно маленьким после его сборки - он 100% побит и не запустится, проверяйте код на ошибки.
+If QSP the file was suspiciously little after its compiling - it 100% corrupted and will not start, check the code for errors.

@@ -283,8 +283,8 @@ IF city_form = 1000:
   
   $setting_display_r += {<br><br><div id="under_gray">{ { { SOUND SETTINGS } } }<br></div>}
 
-  $setting_display_c += {<br><div id="under">Назад <br><div id = "clear"><a href = 'EXEC: city_form = $prev_city_form & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
-  $setting_display_c2 += {<br><div id="under_gray"> Вперед <br></div>}
+  $setting_display_c += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: city_form = $prev_city_form & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $setting_display_c2 += {<br><div id="under_gray"> Next <br></div>}
 END
 
 GT 'city_screen'

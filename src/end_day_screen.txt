@@ -22,9 +22,9 @@ IF slave_auto_tentacle = 1:
  $special_bg = $tentacles[slave_type] 
  $place = 'study'  
  IF slave["sub_tentacles"] > tentacle_size: 
-  $text = '  <<$slave_name>> takes a bucket-pot and goes to the corral with fiend in it. Thanks to previous experience, she manages not to lose control. While some insatiable slippery tentacles penetrate all her holes, she grabs the other processes and milked their hands directly into the bucket.'   
+  $text = '  <<$slave_name>> takes a bucket-pot and goes to the pen with fiend in it. Thanks to previous experience, she manages not to lose control. While some insatiable slippery tentacles penetrate all her holes, she grabs the other feelers and milk them directly into the bucket.'   
   else
-  $text = '  <<$slave_name>> takes a bucket-pot and goes to the corral with fiend in it. Nevertheless, her efforts to milk the thing to nothing lead. Braided with powerful tentacles, your slave completely loses touch with reality and gets orgasm after orgasm until fiend pumps her holes with seed.'
+  $text = '  <<$slave_name>> takes a bucket-pot and goes to the pen with fiend in it. Nevertheless, her efforts to milk the thing to nothing lead. Braided with powerful tentacles, your slave completely loses touch with reality and gets orgasm after orgasm until fiend pumps her holes with seed.'
  END
  slave_auto_tentacle = 0
  jump 'loop'
@@ -51,9 +51,9 @@ IF assistant_auto_tentacle = 1:
  $special_bg = $tentacles[assistant_type] 
  $place = 'study'  
  IF assistant["sub_tentacles"] > tentacle_size: 
-  $text = '  <<$assistant_name>> takes a bucket-pot and goes to the corral with fiend in it. Thanks to previous experience, she manages not to lose control. While some insatiable slippery tentacles penetrate all her holes, she grabs the other processes and milked their hands directly into the bucket.'  
+  $text = '  <<$assistant_name>> takes a bucket-pot and goes to the pen with fiend in it. Thanks to previous experience, she manages not to lose control. While some insatiable slippery tentacles penetrate all her holes, she grabs the other feelers and milk them directly into the bucket.'  
   else
-  $text = '  <<$assistant_name>> takes a bucket-pot and goes to the corral with fiend in it. Nevertheless, her efforts to milk the thing to nothing lead. Braided with powerful tentacles, your assistant completely loses touch with reality and gets orgasm after orgasm until fiend pumps her holes with seed.'
+  $text = '  <<$assistant_name>> takes a bucket-pot and goes to the pen with fiend in it. Nevertheless, her efforts to milk the thing to nothing lead. Braided with powerful tentacles, your assistant completely loses touch with reality and gets orgasm after orgasm until fiend pumps her holes with seed.'
  END
  assistant_auto_tentacle = 0
  jump 'loop'

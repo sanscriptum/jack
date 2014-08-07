@@ -1,5 +1,5 @@
 # ход_противников
-!ПО ОЧЕРЕДИ РАССЧИТЫВАЮТСЯ ДЕЙСТВИЯ ПРОТИВНИКОВ
+!CALCULATE THE ACTIONS QUEUE OF THE OPPONENTS
 i = 0
 :loop
 IF i < количество_врагов:

@@ -1,5 +1,5 @@
 # раскладка_бой
-!РАСКЛАДКА БОЕВОГО ИНТЕРФЕЙСА
+!FIGHT UI
 if ui_style = 1:$backimage = 'content/pic/ui/old/bg_fight_old.jpg'
 if ui_style = 2:$backimage = 'content/pic/ui/grimdark/bg_fight.jpg'
 if ui_style = 0:$backimage = 'content/pic/ui/classic/bg_fight.jpg'

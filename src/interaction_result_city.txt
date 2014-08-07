@@ -161,7 +161,7 @@ IF $interaction_type = 'rental_demo':
  $special_action[3] = {
  $place = 'demo'
  $place_name['demo'] = 'Rooms inspection'
- $place_info['demo'] = '   It is necessary to carefully examine all the rooms, so I do not slipped some garbage.' 
+ $place_info['demo'] = '   It is necessary to carefully examine all the rooms, so I do not slipped with some garbage.' 
  $bg['demo'] = $interior_study['<<$demo_var>>']
 } 
  $special_action[5] = {npc = 0}

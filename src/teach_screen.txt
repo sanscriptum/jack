@@ -1,5 +1,5 @@
 # teach_screen
-!ЭКРАН ПОДРОБНОЙ СТАТИСТИКИ ВОСПИТУЕМОЙ
+!SLAVE TEACH STATS SCREEN
 stat_importance['stamina'] = 1
 stat_importance['sensitivity'] = 1
 stat_importance['temper'] = 1
@@ -36,10 +36,10 @@ stat_importance['fetishism'] = 1
 gs '$slave_price'
 gs 'stats_layout'
 
-*p '<div id = "bookmark_one">Лично</div>'
-*p '<div id = "bookmark_two">Репетитор</div>'
-*p '<div id = "bookmark_three">Школа</div>'
-*p '<div id = "bookmark_four">Ассистентка</div>'
+*p '<div id = "bookmark_one">Personal</div>'
+*p '<div id = "bookmark_two">Tutor</div>'
+*p '<div id = "bookmark_three">School</div>'
+*p '<div id = "bookmark_four">Assistant</div>'
 IF exam_in_progress = 1:
  *p '<div id = "close"><a href = "EXEC: gt ''demo_menu_form''"><img src = "content\pic\buttons\close_button.png"></a></div>'
  else
@@ -47,7 +47,7 @@ IF exam_in_progress = 1:
 END
 
 *p '<div id="left_column">
-<u>ОЦЕНКА:</u>&nbsp;<<$rating[rating]>>
+<u>SLAVE RANK:</u>&nbsp;<<$rating[rating]>>
 <<$beauty[slave["beauty"]]>>
 <<$stamina[slave["stamina"]]>>
 <<$sensitivity[slave["sensitivity"]]>>
@@ -59,12 +59,12 @@ END
 <<$fat[slave["fat"]]>>
 <<$style[slave["style"]]>>
 
-<u>ОСОБЕННОСТИ</u>
+<u>TRAITS</u>
 <<$features_list>>
 </div>'
 
  *p '<div id="right_column">
-<u>НАВЫКИ</u>
+<u>SKILLS</u>
 <<$slave_service[slave["service"]]>> 
 <<$slave_cook[slave["cook"]]>> 
 <<$slave_nurse[slave["nurse"]]>> 
@@ -78,7 +78,7 @@ END
 <<$slave_pet[slave["pet"]]>>
 <<$slave_dressage[slave["dressage"]]>> 
 
-<u>СЕКС-ТЕХНИКИ</u>
+<u>SEX-TECHNIQUE</u>
 <<$slave_petting[slave["petting"]]>> 
 <<$slave_penetration[slave["penetration"]]>> 
 <<$slave_oral[slave["oral"]]>>
@@ -88,10 +88,10 @@ END
 <<$slave_xenophily[slave["xenophily"]]>>
 </div>'
 
-!ЗАКЛАДКА ЛИЧНОГО ОБУЧЕНИЯ
+!PERSONAL TRAINING TAB
 IF teach_stat_screen = 0:
 
-!Формируем список на обучение
+!creating a training list
 
  $left_text_list = ''
  $left_text_teach = ''
@@ -108,67 +108,67 @@ IF teach_stat_screen = 0:
  $left_text_heading = ''
  $right_text_heading = ''
 
- $left_text_heading += '<u>ОБУЧЕНИЕ НАВЫКАМ</u>' 
+ $left_text_heading += '<u>SKILLS TRAINING</u>' 
  IF house_mess > 0:
   $left_text_teach += "<a href = 'EXEC: interaction = 1211 & gt ""interaction""'><<$service_lesson[slave[""service""]]>><BR></a>"
   else
-  $left_text_teach += '<font color="#C0C0C0">Урок домоводства<BR></font>'
+  $left_text_teach += '<font color="#C0C0C0">Housekeeping lesson<BR></font>'
  END
  IF kitchen > 0:
   $left_text_teach += "<a href = 'EXEC: interaction = 1212 & gt ""interaction""'><<$cook_lesson[slave[""cook""]]>><BR></a>"
   else
-  $left_text_teach += '<font color="#C0C0C0">Урок кулинарии<BR></font>'
+  $left_text_teach += '<font color="#C0C0C0">Cookery lesson<BR></font>'
  END 
  $left_text_teach += "<a href = 'EXEC: interaction = 1213 & gt ""interaction""'><<$nurse_lesson[slave[""nurse""]]>><BR></a>" 
  $left_text_teach += "<a href = 'EXEC: interaction = 1214 & gt ""interaction""'><<$secretary_lesson[slave[""secretary""]]>><BR></a>"   
  IF lab = 1: 
   $left_text_teach += "<a href = 'EXEC: interaction = 1243 & gt ""interaction""'><<$alchemy_lesson[slave[""enchanter""]]>><BR></a>"
   else
-  $left_text_teach += '<font color="#C0C0C0">Алхимия<BR></font>'   
+  $left_text_teach += '<font color="#C0C0C0">Alchemy<BR></font>'   
  END 
  $left_text_teach += "<a href = 'EXEC: interaction = 1231 & gt ""interaction""'><<$exprtession_lesson[slave[""expression""]]>><BR></a>"   
  IF slave["stamina"] > 1:
   $left_text_teach += "<a href = 'EXEC: interaction = 1223 & gt ""interaction""'><<$fight_lesson[slave[""gladiatrix""]]>><BR></a>"
   else
-  $left_text_teach += '<font color="#C0C0C0">Боевая подготовка<BR></font>'
+  $left_text_teach += '<font color="#C0C0C0">Martial arts<BR></font>'
  END 
  IF slave["stamina"] > 1:
   $left_text_teach += "<a href = 'EXEC: interaction = 1221 & gt ""interaction""'><<$gym_lesson[slave[""stamina""]]>><BR></a>"
   else
-  $left_text_teach += '<font color="#C0C0C0">Гимнастика<BR></font>'
+  $left_text_teach += '<font color="#C0C0C0">Fitness training<BR></font>'
  END 
  IF slave["stamina"] > 1: 
   $left_text_teach += "<a href = 'EXEC: interaction = 1222 & gt ""interaction""'><<$dance_lesson[slave[""callisthenics""]]>><BR></a>" 
   else
-  $left_text_teach += '<font color="#C0C0C0">Урок танцев<BR></font>'
+  $left_text_teach += '<font color="#C0C0C0">Dance lesson<BR></font>'
  END 
  $left_text_teach += "<a href = 'EXEC: interaction = 1234 & gt ""interaction""'><<$vocal_lesson[slave[""vocal""]]>><BR></a>"  
  $left_text_teach += "<a href = 'EXEC: menu_form = 1233 & gt ""menu_form""'><<$music_lesson[slave[""music""]]>><BR></a>" 
 !" IF library = 1: 
   $left_text_list += "<a href = 'EXEC: interaction = 1244 & gt ""interaction""'><<$enchant_lesson[slave[""enchanter""]]>><BR></a>"
   else
-  $left_text_list += '<font color="#C0C0C0">Зачарование<BR></font>'   
+  $left_text_list += '<font color="#C0C0C0">Enchanting<BR></font>'   
  END"
  $left_text_teach += "<a href = 'EXEC: interaction = 1241 & gt ""interaction""'><<$domestik_lesson[slave[""pet""]]>><BR></a>"
  $left_text_teach += "<a href = 'EXEC: interaction = 1242 & gt ""interaction""'><<$dressur_lesson[slave[""pet""]]>><BR></a>"
  IF slave["stamina"] > 1: 
   $left_text_teach += "<a href = 'EXEC: interaction = 1224 & gt ""interaction""'><<$dressage_lesson[slave[""dressage""]]>><BR></a>"
   else
-  $left_text_teach += '<font color="#C0C0C0">Выездка<BR></font>'     
+  $left_text_teach += '<font color="#C0C0C0">Pony training<BR></font>'     
  END
  IF slave["stamina"] > 2: 
   $left_text_teach += "<a href = 'EXEC: interaction = 1225 & gt ""interaction""'><<$draft_lesson[slave[""dressage""]]>><BR></a>"
   else
-  $left_text_teach += '<font color="#C0C0C0">Упряжка<BR></font>'     
+  $left_text_teach += '<font color="#C0C0C0">Harness training<BR></font>'     
  END
 !" IF master_tantra > 0:
   $left_text_list += "<a href = 'EXEC: interaction = 1226 & gt ""interaction""'><<$tantra_lesson[slave[""tantra""]]>><BR></a>"
   else
-  $left_text_list += '<font color="#C0C0C0">Тантра-йога<BR></font>'    
+  $left_text_list += '<font color="#C0C0C0">Tantra Yoga<BR></font>'    
  END "
 
 
- $right_text_heading += '<u>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspОБУЧЕНИЕ СЕКС-ТЕХНИКАМ</u>'
+ $right_text_heading += '<u>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSEXUAL TRAINING&nbsp&nbsp</u>'
  $middle_text_1 += "<a href = 'EXEC: interaction = 1311 & gt ""interaction""'><<$slave_sub_hj[slave[""sub_hj""]]>><BR></a>"
  $middle_text_1 += "<a href = 'EXEC: interaction = 1312 & gt ""interaction""'><<$slave_sub_fj[slave[""sub_fj""]]>><BR></a>"
  $middle_text_1 += "<a href = 'EXEC: interaction = 1313 & gt ""interaction""'><<$slave_sub_hug[slave[""sub_hug""]]>><BR></a>"
@@ -183,16 +183,16 @@ IF teach_stat_screen = 0:
  $middle_text_3 += "<a href = 'EXEC: interaction = 1324 & gt ""interaction""'><<$slave_sub_dt[slave[""sub_dt""]]>><BR></a>"
  $middle_text_3 += "<a href = 'EXEC: interaction = 1325 & gt ""interaction""'><<$slave_sub_asslik[slave[""sub_asslik""]]>><BR></a>"
  IF exam_in_progress = 1:
-  $middle_text_4 += '<font color="#C0C0C0">М+Ж+Ж<BR></font>' 
-  $middle_text_4 += '<font color="#C0C0C0">Два ствола<BR></font>' 
-  $middle_text_4 += '<font color="#C0C0C0">Три ствола<BR></font>' 
-  $middle_text_4 += '<font color="#C0C0C0">Пятёрка<BR></font>' 
-  $middle_text_4 += '<font color="#C0C0C0">Букакэ<BR></font>' 
+  $middle_text_4 += '<font color="#C0C0C0">Threesome<BR></font>' 
+  $middle_text_4 += '<font color="#C0C0C0">Double penetration<BR></font>' 
+  $middle_text_4 += '<font color="#C0C0C0">Triple penetration<BR></font>' 
+  $middle_text_4 += '<font color="#C0C0C0">Gangbang<BR></font>' 
+  $middle_text_4 += '<font color="#C0C0C0">Bukkake<BR></font>' 
   else
   IF assistant_state = 1: 
    $middle_text_4 += "<a href = 'EXEC: interaction = 1341 & gt ""interaction""'><<$slave_sub_threesome[slave[""sub_threesome""]]>><BR></a>"   
    else
-   $middle_text_4 += '<font color="#C0C0C0">М+Ж+Ж<BR></font>' 
+   $middle_text_4 += '<font color="#C0C0C0">Threesome<BR></font>' 
   END
   $middle_text_4 += "<a href = 'EXEC: interaction = 1342 & gt ""interaction""'><<$slave_sub_dp[slave[""sub_dp""]]>><BR></a>"   
   $middle_text_4 += "<a href = 'EXEC: interaction = 1343 & gt ""interaction""'><<$slave_sub_tp[slave[""sub_tp""]]>><BR></a>"   
@@ -207,45 +207,45 @@ IF teach_stat_screen = 0:
  IF bath > 0:
   $middle_text_6 += "<a href = 'EXEC: interaction = 1365 & gt ""interaction""'><<$slave_sub_enema[slave[""sub_enema""]]>><BR></a>"
   else
-  $middle_text_6 += '<font color="#C0C0C0">Клизмы<BR></font>' 
+  $middle_text_6 += '<font color="#C0C0C0">Enema<BR></font>' 
  END
  $middle_text_6 += "<a href = 'EXEC: interaction = 1361 & gt ""interaction""'><<$slave_sub_mazo[slave[""sub_mazo""]]>><BR></a>"
  $middle_text_6 += "<a href = 'EXEC: interaction = 1362 & gt ""interaction""'><<$slave_sub_selfpain[slave[""sub_selfpain""]]>><BR></a>"
  IF bath > 0:
   $middle_text_6 += "<a href = 'EXEC: interaction = 1363 & gt ""interaction""'><<$slave_sub_piss[slave[""sub_piss""]]>><BR></a>"
   else
-  $middle_text_6 += '<font color="#C0C0C0">Золотой дождь<BR></font>' 
+  $middle_text_6 += '<font color="#C0C0C0">Golden shower<BR></font>' 
  END
  IF bath > 0:
   $middle_text_6 += "<a href = 'EXEC: interaction = 1364 & gt ""interaction""'><<$slave_sub_kopro[slave[""sub_kopro""]]>><BR><BR></a>"
   else
-  $middle_text_6 += '<font color="#C0C0C0">Копрофилия<BR></font>' 
+  $middle_text_6 += '<font color="#C0C0C0">Scatology<BR></font>' 
  END
  IF exam_in_progress = 1:
-  $middle_text_7 += '<font color="#C0C0C0">Кобель<BR></font>' 
-  $middle_text_7 += '<font color="#C0C0C0">Хряк<BR></font>' 
-  $middle_text_8 += '<font color="#C0C0C0">Жеребец<BR></font>' 
-  $middle_text_8 += '<font color="#C0C0C0">Исчадие<BR></font>' 
+  $middle_text_7 += '<font color="#C0C0C0">Dog mating<BR></font>' 
+  $middle_text_7 += '<font color="#C0C0C0">Pig mating<BR></font>' 
+  $middle_text_8 += '<font color="#C0C0C0">Horse mating<BR></font>' 
+  $middle_text_8 += '<font color="#C0C0C0">Fiend mating<BR></font>' 
   else
   IF dog > 0:   
    $middle_text_7 += "<a href = 'EXEC: interaction = 1351 & gt ""interaction""'><<$slave_sub_zoosex[slave[""sub_zoosex""]]>><BR></a>"   
    else
-   $middle_text_7 += '<font color="#C0C0C0">Кобель<BR></font>' 
+   $middle_text_7 += '<font color="#C0C0C0">Dog mating<BR></font>' 
   END
   IF svine > 0:   
    $middle_text_7 += "<a href = 'EXEC: interaction = 1352 & gt ""interaction""'><<$slave_svinesex[slave[""sub_bestiality""]]>><BR></a>"    
    else
-   $middle_text_7 += '<font color="#C0C0C0">Хряк<BR></font>' 
+   $middle_text_7 += '<font color="#C0C0C0">Pig mating<BR></font>' 
   END
   IF horse > 0:  
    $middle_text_8 += "<a href = 'EXEC: interaction = 1353 & gt ""interaction""'><<$slave_horsesex[slave[""sub_horse""]]>><BR></a>"   
    else
-   $middle_text_8 += '<font color="#C0C0C0">Жеребец<BR></font>' 
+   $middle_text_8 += '<font color="#C0C0C0">Horse mating<BR></font>' 
   END
   IF pet_tentacle > 0:  
    $middle_text_8 += "<a href = 'EXEC: interaction = 1354 & gt ""interaction""'><<$slave_tentacle[slave[""sub_tentacles""]]>><BR></a>"   
    else
-   $middle_text_8 += '<font color="#C0C0C0">Исчадие<BR></font>' 
+   $middle_text_8 += '<font color="#C0C0C0">Fiend mating<BR></font>' 
   END 
  END
  *p '<div id = "mark_one"><img src = "content\pic\buttons\sel_button.png"></div>'
@@ -282,7 +282,7 @@ IF teach_stat_screen = 0:
  *p '<div id = "middle_text_8"><<$middle_text_8>></div>'
 END
 
-!ЗАКЛАДКА ОБУЧЕНИЯ РЕПЕТИТОРОМ
+!TUTOR TRAINING TAB
 If teach_stat_screen = 1:
  $left_text_list = ''
  $middle_text_list = '' 
@@ -290,7 +290,7 @@ If teach_stat_screen = 1:
  $left_text_teach = ''
  $left_text_heading = ''
  
- $left_text_heading += '<u>ОБУЧЕНИЕ НАВЫКАМ</u>'
+ $left_text_heading += '<u>SKILLS TRAINING</u>'
  IF house_mess > 0 and slave['service'] < 5:
   $left_text_teach += "<p><a href = 'EXEC: interaction = 1711 & gt ""interaction""'><<$service_lesson[slave[""service""]]>></a></p>"
   else
@@ -373,7 +373,7 @@ If teach_stat_screen = 1:
  *p '<div id = "left_text_heading"><<$left_text_heading>></div>'
 END
 
-!ЗАКЛАДКА ОБУЧЕНИЯ В ШКОЛЕ
+!SCHOOL TRAINING TAB
 If teach_stat_screen = 2:
  $left_text_list = ''
  $middle_text_list = '' 
@@ -381,7 +381,7 @@ If teach_stat_screen = 2:
  $left_text_teach = ''
  $left_text_heading = ''
  
- $left_text_heading += '<u>ОБУЧЕНИЕ НАВЫКАМ</u>'
+ $left_text_heading += '<u>SKILLS TRAINING</u>'
  $left_text_teach += "<a href = 'EXEC: interaction = 561 & gt ""interaction""'><<$service_lesson[slave[""service""]]>><BR></a>"
  $left_text_teach += "<a href = 'EXEC: interaction = 562 & gt ""interaction""'><<$cook_lesson[slave[""cook""]]>><BR></a>"
  $left_text_teach += "<a href = 'EXEC: interaction = 563 & gt ""interaction""'><<$nurse_lesson[slave[""nurse""]]>><BR></a>"  
@@ -391,17 +391,17 @@ If teach_stat_screen = 2:
  IF slave["stamina"] > 1:
   $left_text_teach += "<a href = 'EXEC: interaction = 567 & gt ""interaction""'><<$fight_lesson[slave[""gladiatrix""]]>><BR></a>"
   else
-  $left_text_teach += '<font color="#C0C0C0">Боевая подготовка<BR></font>'
+  $left_text_teach += '<font color="#C0C0C0">Martial arts<BR></font>'
  END 
  IF slave["stamina"] > 1:
   $left_text_teach += "<a href = 'EXEC: interaction = 565 & gt ""interaction""'><<$gym_lesson[slave[""stamina""]]>><BR></a>"
   else
-  $left_text_teach += '<font color="#C0C0C0">Гимнастика<BR></font>'
+  $left_text_teach += '<font color="#C0C0C0">Fitness training<BR></font>'
  END 
  IF slave["stamina"] > 1: 
   $left_text_teach += "<a href = 'EXEC: interaction = 566 & gt ""interaction""'><<$dance_lesson[slave[""callisthenics""]]>><BR></a>" 
   else
-  $left_text_teach += '<font color="#C0C0C0">Урок танцев<BR></font>'
+  $left_text_teach += '<font color="#C0C0C0">Dance lesson<BR></font>'
  END 
  $left_text_teach += "<a href = 'EXEC: interaction = 5612 & gt ""interaction""'><<$vocal_lesson[slave[""vocal""]]>><BR></a>"  
  $left_text_teach += "<a href = 'EXEC: interaction = 5611 & gt ""interaction""'><<$music_lesson[slave[""music""]]>><BR></a>" 
@@ -409,7 +409,7 @@ If teach_stat_screen = 2:
  IF slave["stamina"] > 1: 
   $left_text_teach += "<a href = 'EXEC: interaction = 568 & gt ""interaction""'><<$dressage_lesson[slave[""dressage""]]>><BR></a>"
   else
-  $left_text_teach += '<font color="#C0C0C0">Выездка<BR></font>'     
+  $left_text_teach += '<font color="#C0C0C0">Pony training<BR></font>'     
  END
 
  *p '<div id = "mark_one"><a href = "EXEC: teach_stat_screen = 0 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
@@ -428,7 +428,7 @@ If teach_stat_screen = 2:
  *p '<div id = "left_text_heading"><<$left_text_heading>></div>'  
 END
 
-!ЗАКЛАДКА ОБУЧЕНИЯ АССИСТЕНТКОЙ
+!ASSISTANT TRAINING TAB
 If teach_stat_screen = 3:
  $left_text_list = ''
  $middle_text_list = '' 
@@ -436,66 +436,66 @@ If teach_stat_screen = 3:
  $left_text_teach = ''
  $left_text_heading = '' 
 
- $left_text_heading += '<u>ОБУЧЕНИЕ НАВЫКАМ</u>'  
+ $left_text_heading += '<u>SKILLS TRAINING</u>'  
  IF  house_mess > 0 and assistant["service"] > slave["service"]:
   $left_text_teach += "<a href = 'EXEC: interaction = 4111 & gt ""interaction""'><<$service_lesson[slave[""service""]]>><BR></a>"
   else
-  $left_text_teach += '<font color="#C0C0C0">Урок домоводства<BR></font>'
+  $left_text_teach += '<font color="#C0C0C0">Housekeeping lesson<BR></font>'
  END
  IF kitchen > 0 and assistant["cook"] > slave["cook"]:
   $left_text_teach += "<a href = 'EXEC: interaction = 4112 & gt ""interaction""'><<$cook_lesson[slave[""cook""]]>><BR></a>"
   else
-  $left_text_teach += '<font color="#C0C0C0">Урок кулинарии<BR></font>'
+  $left_text_teach += '<font color="#C0C0C0">Cookery lesson<BR></font>'
  END 
  IF assistant["nurse"] > slave["nurse"]:  
   $left_text_teach += "<a href = 'EXEC: interaction = 4113 & gt ""interaction""'><<$nurse_lesson[slave[""nurse""]]>><BR></a>"  
   else
-  $left_text_teach += '<font color="#C0C0C0">Урок медицины<BR></font>'
+  $left_text_teach += '<font color="#C0C0C0">Nurse training<BR></font>'
  END
  IF assistant["secretary"] > slave["secretary"]:  
   $left_text_teach += "<a href = 'EXEC: interaction = 4114 & gt ""interaction""'><<$secretary_lesson[slave[""secretary""]]>><BR></a>"  
   else
-  $left_text_teach += '<font color="#C0C0C0">Урок делопроизводства<BR></font>'
+  $left_text_teach += '<font color="#C0C0C0">Clerical work<BR></font>'
  END 
  IF lab = 1 and  assistant["enchanter"] > slave["enchanter"]: 
   $left_text_teach += "<a href = 'EXEC: interaction = 4142 & gt ""interaction""'><<$alchemy_lesson[slave[""enchanter""]]>><BR></a>"
   else
-  $left_text_teach += '<font color="#C0C0C0">Алхимия<BR></font>'   
+  $left_text_teach += '<font color="#C0C0C0">Alchemy<BR></font>'   
  END
  IF assistant["expression"] > slave["expression"]:   
   $left_text_teach += "<a href = 'EXEC: interaction = 4131 & gt ""interaction""'><<$exprtession_lesson[slave[""expression""]]>><BR></a>"   
   else
-  $left_text_teach += '<font color="#C0C0C0">Урок риторики<BR></font>'
+  $left_text_teach += '<font color="#C0C0C0">Etiquette lesson<BR></font>'
  END 
  IF slave["stamina"] > 1 and assistant["gladiatrix"] > slave["gladiatrix"]:
   $left_text_teach += "<a href = 'EXEC: interaction = 4123 & gt ""interaction""'><<$fight_lesson[slave[""gladiatrix""]]>><BR></a>"
   else
-  $left_text_teach += '<font color="#C0C0C0">Боевая подготовка<BR></font>'
+  $left_text_teach += '<font color="#C0C0C0">Martial arts<BR></font>'
  END 
  IF slave["stamina"] > 1 and assistant["callisthenics"] > slave["callisthenics"]: 
   $left_text_teach += "<a href = 'EXEC: interaction = 4122 & gt ""interaction""'><<$dance_lesson[slave[""callisthenics""]]>><BR></a>" 
   else
-  $left_text_teach += '<font color="#C0C0C0">Урок танцев<BR></font>'
+  $left_text_teach += '<font color="#C0C0C0">Dance lesson<BR></font>'
  END 
  IF assistant["vocal"] > slave["vocal"]:  
   $left_text_teach += "<a href = 'EXEC: interaction = 4133 & gt ""interaction""'><<$vocal_lesson[slave[""vocal""]]>><BR></a>"  
   else
-  $left_text_teach += '<font color="#C0C0C0">Урок вокала<BR></font>'
+  $left_text_teach += '<font color="#C0C0C0">Singing lesson<BR></font>'
  END   
  IF assistant["music"] > slave["music"]:  
   $left_text_teach += "<a href = 'EXEC: interaction = 4132 & gt ""interaction""'><<$music_lesson[slave[""music""]]>><BR></a>" 
   else
-  $left_text_teach += '<font color="#C0C0C0">Урок музыки<BR></font>'
+  $left_text_teach += '<font color="#C0C0C0">Music lesson<BR></font>'
  END  
  IF assistant["pet"] > slave["pet"]:  
   $left_text_teach += "<a href = 'EXEC: interaction = 4141 & gt ""interaction""'><<$dressur_lesson[slave[""pet""]]>><BR></a>"
   else
-  $left_text_teach += '<font color="#C0C0C0">Дрессура<BR></font>'   
+  $left_text_teach += '<font color="#C0C0C0">Pet training<BR></font>'   
  END     
  IF slave["stamina"] > 1 and assistant["dressage"] > slave["dressage"]: 
   $left_text_teach += "<a href = 'EXEC: interaction = 4143 & gt ""interaction""'><<$dressage_lesson[slave[""dressage""]]>><BR></a>"
   else
-  $left_text_teach += '<font color="#C0C0C0">Выездка<BR></font>'     
+  $left_text_teach += '<font color="#C0C0C0">Pony training<BR></font>'     
  END
 
  *p '<div id = "mark_one"><a href = "EXEC: teach_stat_screen = 0 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'

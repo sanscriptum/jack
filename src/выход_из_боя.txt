@@ -1,9 +1,9 @@
 # выход_из_боя
-!ПОДСЧЕТ РЕЗУЛЬТАТОВ БОЯ
-!выключает все звуки после боя
+!CALCULATION OF COMBAT RESULTS
+!turns off all sounds after the fight
 CLOSE ALL
 
-!Для гладиаторского боя
+!for arena fight
 IF $fight_return = 'Start':
  $fight_return = ''
  dynamic $master_energy_drop
@@ -51,7 +51,7 @@ IF $fight_return = 'Start':
  gt 'interaction_city'
 END
 
-!Для тренировки в колизее
+!for arena training
 IF colloseum_fight > 0:
  if combatant = 0: dynamic $master_energy_drop
  if combatant = 1: dynamic $slave_energy_drop
@@ -63,7 +63,7 @@ IF colloseum_fight > 0:
  gt 'shop_general'
 END
 
-!Общее
+!misc
 IF $враг[1] = 'воспитуемая':
  energy_max = slave["energy"]
  if выносливость_врага[1] < 5: slave["energy"] = -5
@@ -102,27 +102,27 @@ IF $враг[1] = 'воспитуемая':
  slave_rate["stamina"] -= pure_bashing_damage
 END
 
-!дополнительные итоги боя для противников
+!additional results of the battle for the opponents
 IF $итог_боя = 'бегство' and $враг[1] = 'воспитуемая':
  interaction_city = 143 
  gt "interaction_city"
 END
 IF $итог_боя = 'вырубился' and $враг[1] = 'воспитуемая':
-	dynamic $death, 'Не в силах совладать с ударами рабыни, вы падаете на колени. Увидев это, рабыня с улыбкой приближается к вам<br>и с разбегу бьет вас по лицу ногой, отправляя в нокаут. К сожалению, вы никогда не очнулись после этого...'
+	dynamic $death, 'Unable to cope with the punches of your slave, you fall on your knees. Seeing this, slave with a smile approaching you<br>and hits you in the face with her leg, sending you to a knockout. Unfortunately, you never woke up after that...'
 END
 IF $итог_боя = 'убит' and $враг[1] = 'воспитуемая':
-	dynamic $death, 'Получив тяжелые ранения, вы падаете на пол, истекая кровью.<br>Последнее, что вы увидели - как ваша бывшая воспитуемая выбегает на улицу...'
+	dynamic $death, 'Seriously wounded, you fall to the floor, bleeding.<br>Seriously wounded, you fall to the floor, bleeding.<br>Last thing you saw - that your ex slave runs out into the street...'
 END
 
-!общие итоги
+!general results
 IF $итог_боя = 'бегство':
-	dynamic $death, 'Вы сбежали из боя.'
+	dynamic $death, 'You have escaped from the battle.'
 END
 IF $итог_боя = 'вырубился':
-	dynamic $death, 'Вы потеряли сознание и вас добили.'
+	dynamic $death, 'You lost consciousness and you have finished.'
 END
 IF $итог_боя = 'убит':
-	dynamic $death, 'Вы были убиты.'
+	dynamic $death, 'You were killed.'
 END
 IF $итог_боя = 'победа':
  IF fighting_expirience > 0:
@@ -183,7 +183,7 @@ END
 IF get_girl = 1:
  get_girl = 0
  IF slave_state = CONST_INT['no_slave']:
-  msg '   Вы связываете доставшуюся вам в качестве трофея девушку и делаете её своей рабыней.'
+  msg '   You bind a trophy girl you''ve got and make her your slave.'
   gs 'stock_to_slave'
   else
   $return_lock = 'interaction_city'

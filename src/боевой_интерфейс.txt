@@ -1,11 +1,11 @@
 # боевой_интерфейс
-!ВЫВОД ИНФОРМАЦИИ О БОЕ И ВАРИАНТОВ ДЕЙСТВИЙ ИГРОКА
-!Большую часть времени боя вы находитесь на этой локации
+!Displays information about the battle and player options
+!Most of the time you are on this location when fighting
 
 if текущий < 1: текущий = количество_врагов
 if текущий > количество_врагов: текущий = 1
 
-!Переключаемся, если текущий враг убит
+!switching an enemy if he is dead
 IF враг[текущий] ! 1:
  i = 0
  :loop
@@ -14,7 +14,7 @@ IF враг[текущий] ! 1:
  текущий = i
 END
 
-!Эффекты на противнике
+!enemy statuses
 $плохие_эффекты_проивника = ''
 $хорошие_эффекты_противника = ''
 
@@ -35,7 +35,7 @@ dynamic $внимание_противника
 
 $эффекты_противника = $хорошие_эффекты_противника + $плохие_эффекты_проивника
 
-!Эффекты на игроке
+!player statuses
 $плохие_эффекты_игрока = ''
 $хорошие_эффекты_игрока = ''
 gs '#dynamic'
@@ -55,7 +55,7 @@ dynamic $внимание_игрока
 
 $эффекты_игрока = $хорошие_эффекты_игрока + $плохие_эффекты_игрока
 
-!Информация о последних действиях игрока и противников
+!Information about the latest actions of the player and enemies
 $информация_о_бое = ''
 if $боевая_обстановка!'': $информация_о_бое += '<<$боевая_обстановка>><br><br>'
 $информация_о_бое += '<<$действия_игрока>><br><br>'
@@ -76,18 +76,18 @@ END
 
 IF arena_mode = 0:
  IF ui_style = 2:
-  *p '<div id = "fight_options_ui2"><a href = "EXEC: dynamic $в_боевое_меню">Обычные атаки</a>
-<a href="EXEC: gt ''суперудары''">Особые приемы</a>
-<a href = "EXEC: gt ''инвентарь''">Использовать зелье</a>
-<a href = "EXEC: gt ''сменить_оружие''">Сменить оружие</a>
-<a href="EXEC: gt ''передышка''">Глухая оборона</a>
+  *p '<div id = "fight_options_ui2"><a href = "EXEC: dynamic $в_боевое_меню">Regular attacks</a>
+<a href="EXEC: gt ''суперудары''">Special techniques</a>
+<a href = "EXEC: gt ''инвентарь''">Use potion</a>
+<a href = "EXEC: gt ''сменить_оружие''">Change weapon</a>
+<a href="EXEC: gt ''передышка''">Defend</a>
 </div>'
  else
- *p '<div id = "fight_options"><a href = "EXEC: dynamic $в_боевое_меню">Обычные атаки</a>
-<a href="EXEC: gt ''суперудары''">Особые приемы</a>
-<a href = "EXEC: gt ''инвентарь''">Использовать зелье</a>
-<a href = "EXEC: gt ''сменить_оружие''">Сменить оружие</a>
-<a href="EXEC: gt ''передышка''">Глухая оборона</a>
+ *p '<div id = "fight_options"><a href = "EXEC: dynamic $в_боевое_меню">Regular attacks</a>
+<a href="EXEC: gt ''суперудары''">Special techniques</a>
+<a href = "EXEC: gt ''инвентарь''">Use potion</a>
+<a href = "EXEC: gt ''сменить_оружие''">Change weapon</a>
+<a href="EXEC: gt ''передышка''">Defend</a>
 </div>'
  END
  else
@@ -121,7 +121,7 @@ if количество_врагов > 1: *p '<div id = "prev_enemy"><a href="EX
 *p '<div id = "next_def"><a href="EXEC: dynamic $сменить_защиту"><img src = "content/pic/buttons/loop.png"></a></div>'
 *p '<div id = "enemy_def"><<$защита_врага_описание[$защита[текущий]]>></div>'
 
-!исправлен код с отображением подсказки при нажатии на сердца
+!Fixed code to display a tooltip when you click on the heart
 *p '<div id = "ally_health"><a style = "color: black;" href="EXEC: msg $живучесть_справка"><<здоровье_игрока>></a></div>'
 *p '<div id = "ally_stamina"><a style = "color: black;" href="EXEC: msg $выносливость_справка"><<выносливость_игрока>></a></div>'
 *p '<div id = "ally_will"><a style = "color: black;" href="EXEC: msg $боевой_дух_справка"><<дух_игрока>></a></div>'
@@ -130,10 +130,10 @@ if количество_врагов > 1: *p '<div id = "prev_enemy"><a href="EX
 *p '<div id = "enemy_will"><center><<дух_врага[текущий]>></center></div>'
 
 
-*p '<div id = "ally_conditions"><a href="EXEC: msg $хиты_справка">СОСТОЯНИЕ</a>
+*p '<div id = "ally_conditions"><a href="EXEC: msg $хиты_справка">STATUS</a>
 <<$эффекты_игрока>>
 </div>'
-*p '<div id = "enemy_conditions"><a href="EXEC: msg $хиты_справка">СОСТОЯНИЕ</a>
+*p '<div id = "enemy_conditions"><a href="EXEC: msg $хиты_справка">STATUS</a>
 <<$эффекты_противника>>
 </div>'
 

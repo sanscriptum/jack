@@ -1,7 +1,7 @@
 # interaction
-!ВЗАИМОДЕЙСТВИЯ С ВОСПИТУЕМОЙ
+!INTERACTIONS WITH SLAVE AND ASSISTANT
 
-!Обнуление переменных
+!resetting vars
 shameful = 0
 painful = 0
 disgusting = 0
@@ -84,7 +84,7 @@ $msg_txt = ''
 killvar 'play_sound'
 $interaction_type = 'basic' 
 
-!МАГИЯ
+!majjick
 !Auspex
 IF interaction = 61:
  $interaction_type = 'spell_cast' 
@@ -245,7 +245,7 @@ IF interaction = 68:
  if master_mage < 5: master_mage_rate += brand_reputation
 END
 
-!описание заклинаний
+!spellbook
 IF interaction = 70:
  npc = 0
  copyarr '$display_options', '$spell_book'   
@@ -307,8 +307,8 @@ IF interaction = 79:
 END
 
 
-!РАЗГОВОРЫ
-!Вопрос о прошлом
+!SPEAKING
+!Tell me about your past
 IF interaction = 1111:
  repulse = -1
  $interaction_type = 'talk' 
@@ -319,7 +319,7 @@ IF interaction = 1111:
  $text[3] = '  <<$slave_occupation_description>>'
 END
 
-!Вопрос - что ты думаешь обо мне?
+!What do you think about me?
 IF interaction = 1112:
  repulse = -1
  $interaction_type = 'talk' 
@@ -342,7 +342,7 @@ IF interaction = 1112:
  $text[9] = '  <<$slave_moral_description[slave["moral"]]>>'   
 END
 
-!Вопрос - какие просьбы?
+!Do you have any requests for me?
 IF interaction = 1113:
  repulse = -1
  $interaction_type = 'talk' 
@@ -350,7 +350,7 @@ IF interaction = 1113:
  gs 'chose_answer'
 END
 
-!Вопрос - чем хочешь заниматься?
+!What do you want to do?
 IF interaction = 1114:
  repulse = -1
  $interaction_type = 'talk' 
@@ -358,7 +358,7 @@ IF interaction = 1114:
  gs 'chose_answer'
 END
 
-!Вопрос - чего ты не любишь?
+!Are there things that are unpleasant for you?
 IF interaction = 1115:
  repulse = -1
  $interaction_type = 'talk' 
@@ -366,7 +366,7 @@ IF interaction = 1115:
  gs 'chose_answer'
 END
 
-!Вопрос о настроении
+!How are you feeling?
 IF interaction = 1116:
  repulse = -1
  $interaction_type = 'talk' 
@@ -374,7 +374,7 @@ IF interaction = 1116:
  copyarr '$text', '$slave_mood_list'
 END
 
-!Разъяснение положения
+!Explain her position
 IF interaction = 1121:
  repulse = -100
  $interaction_type = 'talk' 
@@ -404,7 +404,7 @@ IF interaction = 1121:
  END
 END
 
-!Ободрение
+!Encourage
 IF interaction = 1122:
  repulse = -2
  $interaction_type = 'talk' 
@@ -429,7 +429,7 @@ IF interaction = 1122:
   }  
 END
 
-!Запугивание
+!Threaten
 IF interaction = 1123:
  repulse = -100
  $interaction_type = 'talk' 
@@ -453,7 +453,7 @@ IF interaction = 1123:
   }  
 END
 
-!Поставить на место
+!Put in place
 IF interaction = 1124:
  repulse = -100
  $interaction_type = 'talk' 
@@ -473,7 +473,7 @@ IF interaction = 1124:
   }  
 END
 
-!Сменить имя рабыни
+!Give a new name
 IF interaction = 1125:
  repulse = -100
  $interaction_type = 'talk' 
@@ -485,14 +485,14 @@ IF interaction = 1125:
    gs '#txt'
    gs '#txt_2'
    slave_rate['mood'] -= slave['ego'] + slave['pride']
-   $text[1] = '   Вы говорите своей воспитуемой, что теперь её будут звать <<$slave_name>>. В конце концов, она принадлежит вам, так что у вас есть больше права давать ей имя, чем у её родителей.'   
+   $text[1] = "   You tell your slave that her new name is <<$slave_name>>. She is your property and you may name her as you wish."    
    else
-   $text[1] = '   Вы говорите своей воспитуемой, что думаете над новым именем для неё. В конце концов, вы можете называть её как угодно. Но пока что у вас нет достойных идей, так что пусть она походит пока со старым.'   
+   $text[1] = "   You tell your slave that you are still thinking of a new name for her. Still, it is important that she understands that she is your property and you can name her as you wish."   
   END
   }  
 END
 
-!Лаборатория
+!lab
 IF interaction = 21:
  npc = 0
  $place = 'lab'
@@ -532,7 +532,7 @@ IF interaction = 22:
   IF $potion_base = 'spirit' and slave['enchanter'] > 1: $get_pot = 'афродизиак'
   IF $potion_base = 'slime' and slave['enchanter'] > 2: $get_pot = 'мощный_афодизиак'  
  END  
- $text[1] = '   Когда все компоненты правильным образом смешаны, настаёт пора самого ответственного процесса. Необходимо перегнать и дистиллировать его при помощи алхимического оборудования, а затем напитать зелье силой Искр, чтобы магия обрела силу.' 
+ $text[1] = '   When all components are properly mixed, it''s time to most critical process. Need to overtake and distill mix with alchemical equipment, and then saturate the potion with the power of sparks, to make magic gain strength.' 
  $text[2] = $get_pot_description[$get_pot]
  IF $get_pot = 'самогон':
   frige["alcohol"] += 1
@@ -565,7 +565,7 @@ IF interaction = 23:
   IF $potion_base = 'spirit' and assistant['enchanter'] > 1: $get_pot = 'афродизиак'
   IF $potion_base = 'slime' and assistant['enchanter'] > 2: $get_pot = 'мощный_афодизиак'  
  END  
- $text[1] = '   Когда все компоненты правильным образом смешаны, настаёт пора самого ответственного процесса. Необходимо перегнать и дистиллировать его при помощи алхимического оборудования, а затем напитать зелье силой Искр, чтобы магия обрела силу.' 
+ $text[1] = '   When all components are properly mixed, it''s time to most critical process. Need to overtake and distill mix with alchemical equipment, and then saturate the potion with the power of sparks, to make magic gain strength.' 
  $text[2] = $get_pot_description[$get_pot]
  IF $get_pot = 'самогон':
   frige["alcohol"] += 1
@@ -574,7 +574,7 @@ IF interaction = 23:
  END
 END
 
-!Условия сна рабыни
+!slave sleeping condition
 IF interaction = 321:
  slave_sleep_condition = -2
  $interaction_type = 'special' 
@@ -606,7 +606,7 @@ IF interaction = 325:
  $text[1] = '<<$slave_sleep_condition[interaction]>>'
 END
 
-!Режим питания
+!slave food ration
 IF interaction = 331:
  slave_ration = -3
  $interaction_type = 'special' 
@@ -654,8 +654,8 @@ IF interaction = 338:
  $text[1] = '<<$slave_ration[interaction]>>'
 END
 
-!Личные дейсвтия героя
-!Герой моется один
+!masters interaction
+!master washes himself
 IF interaction = 34:
  $interaction_type = 'special_jpg' 
  master_hygiene_rate = 0
@@ -673,7 +673,7 @@ IF interaction = 34:
  npc = 0 
 END
 
-!Герой готовит еду
+!master cooks
 IF interaction = 35:
  $interaction_type = 'special' 
  if cooked_food < master_butler: cooked_food = master_butler
@@ -689,7 +689,7 @@ IF interaction = 35:
  npc = 0  
 END
 
-!Герой убирается в доме
+!master clean the house
 IF interaction = 36:
  $interaction_type = 'special' 
  master_butler_rate += 1
@@ -704,8 +704,8 @@ IF interaction = 36:
  npc = 0 
 END
 
-!Бытовые поручения ассистентке
-!Ассистентка убирается в доме
+!Assistant assignments
+!Assistant clean the house
 IF interaction = 42:
  repulse = 1
  $interaction_type = 'make_assistant_do'
@@ -724,7 +724,7 @@ IF interaction = 42:
  }
 END
 
-!Ассистентка готовит еду
+!assistant cooks
 IF interaction = 43:
  $interaction_type = 'make_assistant_do'
  $special_bg = $cooking[assistant_type] 
@@ -740,14 +740,14 @@ IF interaction = 43:
  $place = 'kitchen'   
 END
 
-!Активный секс с ассистенткой
+!active sex with assistant
 IF interaction = 44:
  $place = 'bedroom'
  $sex_partner = 'assistant' 
  gt 'sex_initiate'
 END
 
-!Расслабленный секс с ассистенткой
+!relaxed sex with assistant
 IF interaction = 441:
  $interaction_type = 'make_assistant_do'
  $special_bg = $sex_vaginal[assistant_type]
@@ -792,13 +792,13 @@ IF interaction = 441:
  $place = 'bedroom'    
 END
 
-!Поручения рабыне
-!Рабыня убирается в доме
+!Slave assignments
+!Slave clean the house
 IF interaction = 51:
  repulse = 1
  $interaction_type = 'make_slave_do'
  $special_bg = $cleaning[slave_type]  
- $refuse_txt = '  <<$slave_name>> отказывается убираться в доме. Похоже, ей надо преподать урок послушания.'
+ $refuse_txt = '  <<$slave_name>> refuses to clean the house. Looks like she needs to be taught a lesson of obedience.'
  slave_skill = slave["service"] 
  $done_txt = '  <<$home_work_description[slave_skill]>>'
  sin_potential = 4
@@ -815,12 +815,12 @@ IF interaction = 51:
  }
 END
 
-!Рабыня готовит еду
+!slave cooks
 IF interaction = 53:
  $interaction_type = 'make_slave_do'
  $special_bg = $cooking[slave_type] 
  repulse = 1
- $refuse_txt = '  <<$slave_name>> отказывается готовить еду. Похоже, ей надо преподать урок послушания.'
+ $refuse_txt = '  <<$slave_name>> refuses to cook. Looks like she needs to be taught a lesson of obedience.'
  slave_skill = slave["cook"]
  $done_txt = '  <<$slave_cook_description[slave_skill]>>'
  sin_potential = 4
@@ -835,12 +835,12 @@ IF interaction = 53:
  $place = 'kitchen'   
 END
 
-!Рабыня занимается спортом
+!Slave doing gymnastics
 IF interaction = 55:
  repulse = 1
  $interaction_type = 'make_slave_do'
  $special_bg = $gym[slave_type]  
- $refuse_txt = '  <<$slave_name>> отказывается заниматься спортом. Похоже, ей надо преподать урок послушания.'
+ $refuse_txt = '  <<$slave_name>> refuses to do gymnastics. Looks like she needs to be taught a lesson of obedience.'
  slave_skill = slave["stamina"]
  $done_txt = '  <<$work_out_description[slave_skill]>>'
  sin_potential = 4
@@ -856,7 +856,7 @@ IF interaction = 55:
  if hall = 1:  $place = 'hall'  
 END
 
-!Рабыня моется одна
+!slave washes herself
 IF interaction = 52:
  $interaction_type = 'special' 
  $special_bg = $bathing_alone[slave_type]  
@@ -871,12 +871,12 @@ IF interaction = 52:
  $place = 'bathroom'  
 END
 
-!Рабыня моет хозяина
+!slave washes master
 IF interaction = 5411:
  repulse = 2
  $interaction_type = 'make_slave_do'
  $special_bg = $washing[slave_type]  
- $refuse_txt = '<<$slave_name>> отказывается мыть вас. Похоже, ей надо преподать урок послушания.'
+ $refuse_txt = '<<$slave_name>> refuses to wash you. Looks like she needs to be taught a lesson of obedience.'
  $done_txt = $washing_description[slave["petting"]]
  sin_potential = 5
  add_house_mess = 3
@@ -900,12 +900,12 @@ IF interaction = 5411:
  $place = 'bathroom'  
 END
 
-!Рабыня делает массаж
+!Slave doing massage
 IF interaction = 5412:
  repulse = 2
  $interaction_type = 'make_slave_do'
  $special_bg = $pazuri[slave_type]  
- $refuse_txt = '<<$slave_name>> отказывается делать вам массаж. Похоже, ей надо преподать урок послушания.'
+ $refuse_txt = '<<$slave_name>> refuses to make you a massage. Looks like she needs to be taught a lesson of obedience.'
  $done_txt = $slave_massages_master[slave["petting"]]
  sin_potential = 4
  add_house_mess = 5
@@ -923,13 +923,13 @@ IF interaction = 5412:
  $place = 'bedroom'   
 END
 
-!Рабыня развлекает хозяина
-!Концерт
+!Slave entertains master
+!concert
 IF interaction = 54131:
  repulse = 1
  $interaction_type = 'make_slave_do'
  $special_bg = $music[slave_type]  
- $refuse_txt = '<<$slave_name>> отказывается развлекать вас представлением. Похоже, ей надо преподать урок послушания.'
+ $refuse_txt = '<<$slave_name>> refuses to entertain you with representation. Looks like she needs to be taught a lesson of obedience.'
  slave_skill = (1 + slave["music"] + slave["vocal"])/2
  concert_quality = slave_skill
  $done_txt = $slave_concert[concert_quality]
@@ -946,12 +946,12 @@ IF interaction = 54131:
  if hall = 1:  $place = 'hall'   
 END
 
-!Акробатический номер
+!acrobatic
 IF interaction = 54132:
  repulse = 1
  $interaction_type = 'make_slave_do'
  $special_bg = $dance[slave_type]  
- $refuse_txt = '<<$slave_name>> отказывается развлекать вас представлением. Похоже, ей надо преподать урок послушания.'
+ $refuse_txt = '<<$slave_name>> refuses to entertain you with representation. Looks like she needs to be taught a lesson of obedience.'
  slave_skill = (1 + slave["stamina"] + slave["callisthenics"])/2
  concert_quality = slave_skill
  $done_txt = $slave_acrobatic_stunt[concert_quality]
@@ -969,12 +969,12 @@ IF interaction = 54132:
  if hall = 1:  $place = 'hall'   
 END
 
-!Стриптиз
+!striptease
 IF interaction = 54133:
  repulse = 2
  $interaction_type = 'make_slave_do'
  $special_bg = $dance[slave_type]  
- $refuse_txt = '<<$slave_name>> отказывается развлекать вас представлением. Похоже, ей надо преподать урок послушания.'
+ $refuse_txt = '<<$slave_name>> refuses to entertain you with representation. Looks like she needs to be taught a lesson of obedience.'
  slave_skill = (1 + slave["roleplay"] + slave["callisthenics"])/2
  concert_quality = slave_skill
  $done_txt = $slave_strip[concert_quality]
@@ -993,12 +993,12 @@ IF interaction = 54133:
  if hall = 1:  $place = 'hall'   
 END
 
-!Эротическое шоу
+!ero show
 IF interaction = 54134:
  repulse = 3
  $interaction_type = 'make_slave_do'
  $special_bg = $masturbation[slave_type]  
- $refuse_txt = '<<$slave_name>> отказывается развлекать вас представлением. Похоже, ей надо преподать урок послушания.'
+ $refuse_txt = '<<$slave_name>> refuses to entertain you with representation. Looks like she needs to be taught a lesson of obedience.'
  slave_skill = (1 + slave["roleplay"] + slave["expression"])/2
  concert_quality = slave_skill
  $done_txt = $slave_ero_show[concert_quality]
@@ -1017,12 +1017,12 @@ IF interaction = 54134:
  if hall = 1:  $place = 'hall'   
 END
 
-!Лесбо-щоу
+!lesbian show
 IF interaction = 54135:
  repulse = 4
  $interaction_type = 'make_slave_do'
  $special_bg = $masturbation[slave_type]  
- $refuse_txt = '<<$slave_name>> отказывается развлекать вас лесбийским представлением. Похоже, ей надо преподать урок послушания.'
+ $refuse_txt = '<<$slave_name>> refuses to entertain you with a lesbian show. Looks like she needs to be taught a lesson of obedience.'
  slave_skill = (1 + slave["roleplay"] + assistant["roleplay"])/2
  concert_quality = slave_skill
  $done_txt = $slave_lesbo_show[concert_quality]
@@ -1041,7 +1041,7 @@ IF interaction = 54135:
  if hall = 1:  $place = 'hall'   
 END
 
-!Расслабленный секс
+!relaxed sex
 IF interaction = 5414:
  repulse = 4
  if slave["nymphomania"] > 0: repulse -= 3
@@ -1051,7 +1051,7 @@ IF interaction = 5414:
  !debug
  !msg 'slave_type = <<slave_type>>, $sex_vaginal[slave_type] = <<$sex_vaginal[slave_type]>>'
  if virginity < 2: $special_bg = $defloration[slave_type]  
- $refuse_txt = '<<$slave_name>> отказывается заниматься с вами любовью. Ну, если она предпочитает насилие - это несложно устроить...'
+ $refuse_txt = '<<$slave_name>> refuses to have sex with you. Well, if she prefers rape - it is easy to arrange...'
  sex_ability = (2 + slave["roleplay"] + slave["oral"] + slave["penetration"])/3
  sex_quality = max (1, sex_ability)
  sin_potential = 6
@@ -1099,7 +1099,7 @@ IF interaction = 5414:
  $place = 'bedroom'    
 END
 
-!Активный секс с воспитуемой
+!active sex with slave
 IF interaction = 5415:
  $place = 'bedroom'
  $interaction_type = 'make_slave_do'
@@ -1107,21 +1107,21 @@ IF interaction = 5415:
  dynamic $sex_acceptance 
  res = slave["obedience"] - repulse + sex_acceptance
  IF res < 0: 
-  $refuse_txt = '<<$slave_name>> отказывается заниматься с вами любовью. Ну, если она предпочитает насилие - это несложно устроить...'
+  $refuse_txt = '<<$slave_name>> refuses to have sex with you. Well, if she prefers rape - it is easy to arrange...'
   dynamic $sin_gained_now 
   else 
   gt 'sex_initiate'
  END
 END
 
-!Любовь втроём
+!threesome
 IF interaction = 5416:
  repulse = 5
  if slave["nymphomania"] > 0: repulse -= 3
  if slave["nymphomania"] < 0: repulse += 1
  $interaction_type = 'make_slave_do'
  $special_bg = $lesbian[slave_type]  
- $refuse_txt = '<<$slave_name>> отказывается заниматься с вами любовью. Ну, если она предпочитает насилие - это несложно устроить...'
+ $refuse_txt = '<<$slave_name>> refuses to have sex with you. Well, if she prefers rape - it is easy to arrange...'
  sex_ability = (assistant["roleplay"] + assistant["oral"] + assistant["penetration"] + slave["roleplay"] + slave["oral"] + slave["penetration"])/6
  sex_quality = max (1, sex_ability)
  if sex_quality < 5: sex_quality += 1
@@ -1167,7 +1167,7 @@ IF interaction = 5416:
  $place = 'bedroom'    
 END
 
-!Изнасилование
+!rape
 IF interaction = 161:
  $interaction_type = 'rape'
  $subskill = 'slave["sub_vaginal"]'
@@ -1222,7 +1222,7 @@ IF interaction = 161:
  $place = 'bedroom'    
 END
 
-!Оральное изнасилование
+!oral rape
 IF interaction = 162:
  $interaction_type = 'rape'
  disgusting = 1
@@ -1258,7 +1258,7 @@ IF interaction = 162:
  $place = 'bedroom'    
 END
 
-!Анальное изнасилование
+!anal rape
 IF interaction = 163:
  $interaction_type = 'rape'
  painful = 1
@@ -1304,11 +1304,11 @@ IF interaction = 163:
  $place = 'bedroom'    
 END
 
-!Личные уроки
-!Личный урок по домоводству
+!Personal lessons
+!Personal lesson on housekeeping
 IF interaction = 1211:
  IF house_mess < 1: 
-  $info_text = 'Сейчас в доме чисто и прибрано. Для того чтобы провести эффективное практическое занятие по уборке — нужен хотя бы минимальный бардак. По опыту вы знаете, что он неизбежно появится. Скоро.'
+  $info_text = 'Now the house is clean and tidy. In order to conduct an effective practice session for cleaning - you need at least a minimal mess. You know that it will inevitably appear. Soon.'
   gt 'slave_stat'
  END
  $interaction_type = 'master_teaches_slave'
@@ -1334,10 +1334,10 @@ IF interaction = 1211:
  }
 END
 
-!Личный урок по кулинарии
+!Personal lesson on cooking
 IF interaction = 1212:
  IF kitchen < 1: 
-  $info_text = 'У вас нет собственной кухни, поэтому вы не можете готовить еду и проводить кулинарные занятия на дому.'
+  $info_text = 'You do not have your own kitchen, so you can not cook and conduct cooking lessons at home.'
   gt 'slave_stat'
  END
  $interaction_type = 'master_teaches_slave'
@@ -1365,7 +1365,7 @@ IF interaction = 1212:
  $place = 'kitchen'    
 END
 
-!Личный урок по медицине
+!Personal lesson on medicine
 !добавлен код прокачки интеллекта для медицины, делопроизводства и алхимии, if diligence > 2 - старание выше двух, т.е. как минимум на троечку, slave["nurse"] < 5 - добавлена для всего на всякий случай, для школы обязательно, т.к. была возможность послать еще раз и получить рейт интеллекта на халяву.
 IF interaction = 1213:
  $interaction_type = 'master_teaches_slave'
@@ -1392,7 +1392,7 @@ IF interaction = 1213:
  }  
 END
 
-!Личный урок по делопроизводству
+!Personal lesson on paperwork
 IF interaction = 1214:
  $interaction_type = 'master_teaches_slave'
  $special_bg = $secretary[slave_type]  
@@ -1418,7 +1418,7 @@ IF interaction = 1214:
  }   
 END
 
-!Личный урок гимнастики
+!Personal lesson on gymnastics
 IF interaction = 1221:
  $interaction_type = 'master_teaches_slave'
  $special_bg = $gymnastics[slave_type]  
@@ -1448,7 +1448,7 @@ IF interaction = 1221:
   if hall = 1:  $place = 'hall'    
 END
 
-!Личный урок танца
+!Personal lesson on dance
 IF interaction = 1222:
  $interaction_type = 'master_teaches_slave'
  $special_bg = $dance[slave_type]   
@@ -1475,7 +1475,7 @@ IF interaction = 1222:
   if hall = 1:  $place = 'hall'    
 END
 
-!Личный урок боевых искусств
+!Personal lesson on martial arts
 IF interaction = 1223:
  $interaction_type = 'master_teaches_slave'
  $special_bg = $fighting[slave_type] 
@@ -1504,7 +1504,7 @@ IF interaction = 1223:
   if hall = 1:  $place = 'hall'    
 END
 
-!Личный урок выездки
+!Personal lesson on dressage
 IF interaction = 1224:
  $interaction_type = 'master_teaches_slave'
  $special_bg = $ponyplay[slave_type] 
@@ -1532,7 +1532,7 @@ IF interaction = 1224:
   if hall = 1:  $place = 'hall'    
 END
 
-!Личный урок упряжки
+!Personal lesson on ponyplay
 IF interaction = 1225:
  $interaction_type = 'master_teaches_slave'
  $special_bg = $ponyplay[slave_type] 
@@ -1559,7 +1559,7 @@ IF interaction = 1225:
   if hall = 1:  $place = 'hall'    
 END
 
-!Личный урок - этикет и риторика
+!Personal lesson - etiquette and rhetoric
 IF interaction = 1231:
  $interaction_type = 'master_teaches_slave'
  $special_bg = $student[slave_type]  
@@ -1583,7 +1583,7 @@ IF interaction = 1231:
  } 
 END
 
-!Личный урок - актерское мастерство
+!Personal lesson - acting
 IF interaction = 1232:
  $interaction_type = 'master_teaches_slave'
  $special_bg = $student[slave_type]   
@@ -1607,7 +1607,7 @@ IF interaction = 1232:
  }
 END
 
-!Личный урок вокала
+!Personal lesson on singing
 IF interaction = 1234:
  $interaction_type = 'master_teaches_slave'
  $special_bg = $singing[slave_type]   
@@ -1631,7 +1631,7 @@ IF interaction = 1234:
  } 
 END
 
-!Личный урок приручения
+!Personal lesson on domestication
 IF interaction = 1241:
  $interaction_type = 'master_teaches_slave'
  $special_bg = $petplay[slave_type] 
@@ -1656,7 +1656,7 @@ IF interaction = 1241:
   }
 END
 
-!Личный урок дрессуры
+!Personal lesson on taming
 IF interaction = 1242:
  $interaction_type = 'master_teaches_slave'
  $special_bg = $petplay[slave_type] 
@@ -1683,7 +1683,7 @@ IF interaction = 1242:
   $place = 'street'    
 END
 
-!Личный урок алхимии
+!Personal lesson on alchemy
 IF interaction = 1243:
  $interaction_type = 'master_teaches_slave'
  $special_bg = $enchanting[slave_type] 
@@ -1711,7 +1711,7 @@ IF interaction = 1243:
   $place = 'lab'    
 END
 
-!Личный урок зачарования
+!Personal lesson on enchanting
 IF interaction = 1244:
  $interaction_type = 'master_teaches_slave'
  $special_bg = $enchanting[slave_type] 
@@ -1738,7 +1738,7 @@ IF interaction = 1244:
   $place = 'lab'    
 END
 
-!Личный урок игры на флейте
+!Personal lesson play the flute
 IF interaction = 112331:
  $interaction_type = 'master_teaches_slave'
  $special_bg = $flyte[slave_type] 
@@ -1762,7 +1762,7 @@ IF interaction = 112331:
   }
 END
 
-!Личный урок игры на гитаре
+!Personal lesson on guitar
 IF interaction = 112332:
  $interaction_type = 'master_teaches_slave'
  $special_bg = $guitar[slave_type] 
@@ -1787,7 +1787,7 @@ IF interaction = 112332:
   }
 END
 
-!Личный урок игры на фортепьяно
+!Personal lesson on piano
 IF interaction = 112333:
  $interaction_type = 'master_teaches_slave'
  $special_bg = $piano[slave_type] 
@@ -1812,7 +1812,7 @@ IF interaction = 112333:
   }
 END
 
-!Личный урок игры на виолончели
+!Personal lesson on cello
 IF interaction = 112334:
  $interaction_type = 'master_teaches_slave'
  $special_bg = $cello[slave_type] 
@@ -1837,7 +1837,7 @@ IF interaction = 112334:
   }
 END
 
-!Личный урок игры на скрипке
+!Personal lesson on violin
 IF interaction = 112335:
  $interaction_type = 'master_teaches_slave'
  $special_bg = $violin[slave_type] 
@@ -1862,8 +1862,8 @@ IF interaction = 112335:
   }
 END
 
-!Секс-обучение
-!Работа руками
+!sex lessons
+!handjob
 IF interaction = 1311:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_hj"]'
@@ -1883,7 +1883,7 @@ IF interaction = 1311:
  $special_part = {master_petting_rate += 1}   
 END
 
-!Работа ногами
+!footjob
 IF interaction = 1312:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_fj"]'
@@ -1903,7 +1903,7 @@ IF interaction = 1312:
  $special_part = {master_petting_rate += 1}    
 END
 
-!Обжимание
+!hugs
 IF interaction = 1313:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_hug"]'
@@ -1928,7 +1928,7 @@ IF interaction = 1313:
   }  
 END
 
-!Пазури
+!pazuri
 IF interaction = 1314:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_pazuri"]'
@@ -1948,7 +1948,7 @@ IF interaction = 1314:
  $special_part = {master_petting_rate += 1}    
 END
 
-!Поцелуи
+!kiss
 IF interaction = 1321:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_kiss"]'
@@ -1970,7 +1970,7 @@ IF interaction = 1321:
  $place = 'bedroom'      
 END
 
-!Оральный массаж
+!oral massage
 IF interaction = 1322:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_thongue"]'
@@ -1990,7 +1990,7 @@ IF interaction = 1322:
  $special_part = {master_oral_rate += 1}     
 END
 
-!Минет
+!blowjob
 IF interaction = 1323:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_bj"]'
@@ -2010,7 +2010,7 @@ IF interaction = 1323:
  $special_part = {master_oral_rate += 1}      
 END
 
-!Иррумация
+!deepthroat
 IF interaction = 1324:
  $interaction_type = 'self_sex_lesson'
  painful = 1
@@ -2034,7 +2034,7 @@ IF interaction = 1324:
  $special_part = {master_oral_rate += 1}      
 END
 
-!Римминг
+!rimming
 IF interaction = 1325:
  $interaction_type = 'self_sex_lesson'
  disgusting = 1
@@ -2061,7 +2061,7 @@ IF interaction = 1325:
  $special_part = {master_oral_rate += 1}      
 END
 
-!Вагинальный секс
+!vaginal sex
 IF interaction = 1331:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_vaginal"]'
@@ -2103,7 +2103,7 @@ IF interaction = 1331:
  $place = 'bedroom'    
 END
 
-!Анальный секс
+!anal sex
 IF interaction = 1332:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_anal"]'
@@ -2138,7 +2138,7 @@ IF interaction = 1332:
  $place = 'bedroom'     
 END
 
-!Вагинальный фистинг
+!vaginal fisting
 IF interaction = 1333:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_fisting"]'
@@ -2166,7 +2166,7 @@ IF interaction = 1333:
  }     
 END
 
-!Анальный фистинг
+!anal fisting
 IF interaction = 1334:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["anal_stretch"]'
@@ -2186,7 +2186,7 @@ IF interaction = 1334:
  $place = 'bedroom'     
 END
 
-!Личный урок любви втроем
+!Personal lesson on threesome
 IF interaction = 1341:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_threesome"]'
@@ -2229,7 +2229,7 @@ IF interaction = 1341:
  $place = 'bedroom'    
 END
 
-!Личный урок двойного проникновения
+!Personal lesson on double penetration
 IF interaction = 1342:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_dp"]'
@@ -2269,7 +2269,7 @@ IF interaction = 1342:
  $place = 'street'    
 END
 
-!Личный урок тройного проникновения
+!Personal lesson on triple penetration
 IF interaction = 1343:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_tp"]'
@@ -2309,7 +2309,7 @@ IF interaction = 1343:
  $place = 'street'    
 END
 
-!Личный урок групповухи
+!Personal lesson on gangbang
 IF interaction = 1344:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_gangbang"]'
@@ -2349,7 +2349,7 @@ IF interaction = 1344:
  $place = 'street'    
 END
 
-!Личный урок букакэ
+!Personal lesson on bukkake
 IF interaction = 1345:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_bukake"]'
@@ -2383,7 +2383,7 @@ IF interaction = 1345:
  $place = 'street'    
 END
 
-!Личный урок удовлетворения собаки
+!Personal lesson on sex with dog
 IF interaction = 1351:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_zoosex"]'
@@ -2416,7 +2416,7 @@ IF interaction = 1351:
  ejaculation_intensity = 0  
 END
 
-!Личный урок удовлетворения хряка
+!Personal lesson on sex with pig
 IF interaction = 1352:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_bestiality"]'
@@ -2449,7 +2449,7 @@ IF interaction = 1352:
  ejaculation_intensity = 0   
 END
 
-!Личный урок удовлетворения жеребца
+!Personal lesson on sex with horse
 IF interaction = 1353:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_horse"]'
@@ -2485,7 +2485,7 @@ IF interaction = 1353:
  ejaculation_intensity = 0 
 END
 
-!Личный урок доения исчадия
+!Personal lesson on sex with tentacle fiend
 IF interaction = 1354:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_tentacles"]'
@@ -2525,7 +2525,7 @@ IF interaction = 1354:
  ejaculation_intensity = 0 
 END
 
-!Мазохизм
+!masochism
 IF interaction = 1361:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_mazo"]'
@@ -2552,7 +2552,7 @@ IF interaction = 1361:
  $place = 'bedroom'     
 END
 
-!Самоистязание
+!self-harm
 IF interaction = 1362:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_selfpain"]'
@@ -2579,7 +2579,7 @@ IF interaction = 1362:
  $place = 'bedroom'     
 END
 
-!Золотой дождь
+!golden shower
 IF interaction = 1363:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_piss"]'
@@ -2606,7 +2606,7 @@ IF interaction = 1363:
  $place = 'bathroom'     
 END
 
-!Копрофилия
+!scat
 IF interaction = 1364:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_kopro"]'
@@ -2634,7 +2634,7 @@ IF interaction = 1364:
  $place = 'bathroom'     
 END
 
-!Клизма (обучение)
+!enema
 IF interaction = 1365:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_enema"]'
@@ -2662,7 +2662,7 @@ IF interaction = 1365:
  $place = 'bathroom'     
 END
 
-!Соблазнение
+!seducing
 IF interaction = 1371:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_seduce"]'
@@ -2686,7 +2686,7 @@ IF interaction = 1371:
  $place = 'bedroom'     
 END
 
-!Мастурбация
+!masturbation
 IF interaction = 1372:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_masturbation"]'
@@ -2714,7 +2714,7 @@ IF interaction = 1372:
  $place = 'bedroom'     
 END
 
-!Дилдо-мастурбация
+!dildo
 IF interaction = 1373:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_dildo"]'
@@ -2742,7 +2742,7 @@ IF interaction = 1373:
  }     
 END
 
-!Эксгибиционизм
+!Exhibitionism
 IF interaction = 1374:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_exhibit"]'
@@ -2768,7 +2768,7 @@ IF interaction = 1374:
  $place = 'bedroom'     
 END
 
-!Поклонение и унижение
+!humiliation
 IF interaction = 1375:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_humiliation"]'
@@ -2796,8 +2796,8 @@ IF interaction = 1375:
 END
 
 
-!НАГРАДЫ
-!Прогулка по крыше
+!REWARDS
+!Stroll on the roof
 IF interaction = 1511:
  $interaction_type = 'prise_date'
  prise_level = 1 
@@ -2820,7 +2820,7 @@ IF interaction = 1511:
  if slave["passion_fame_revealed"] = 0:  slave["passion_fame_revealed"] = 1     
 END
 
-!Поход по улице
+!Walk around the city
 IF interaction = 1512:
  $interaction_type = 'prise_date'
  prise_level = 2 
@@ -2843,7 +2843,7 @@ IF interaction = 1512:
  if slave["passion_fame_revealed"] = 0:  slave["passion_fame_revealed"] = 1     
 END
 
-!Поход на пляж
+!Go to the beach
 IF interaction = 1513:
  $interaction_type = 'prise_date'
  prise_level = 3 
@@ -2870,7 +2870,7 @@ IF interaction = 1513:
  if slave["passion_fame_revealed"] = 0:  slave["passion_fame_revealed"] = 1     
 END
 
-!Поход в театр
+!Go to the theater
 IF interaction = 1514:
  $interaction_type = 'prise_date'
  prise_level = 4 
@@ -2897,7 +2897,7 @@ IF interaction = 1514:
  }
 END
 
-!Поход в ресторан
+!Go to a restaurant
 IF interaction = 1515:
  $interaction_type = 'prise_date'
  prise_level = 5 
@@ -2927,7 +2927,7 @@ IF interaction = 1515:
  }   
 END
 
-!Час отдыха
+!An hour of rest
 IF interaction = 1521:
  $interaction_type = 'rest'
  $special_bg = $rest[slave_type]  
@@ -2942,7 +2942,7 @@ IF interaction = 1521:
  if slave["passion_comfort_revealed"] = 0:  slave["passion_comfort_revealed"] = 1    
 END
 
-!Час развлечений
+!An hour of fun
 IF interaction = 1522:
  $interaction_type = 'rest'
  $special_bg = $games  
@@ -2958,7 +2958,7 @@ IF interaction = 1522:
  }    
 END
 
-!День отдыха
+!Rest till evening
 IF interaction = 1523:
  $interaction_type = 'rest'
  $special_bg = $rest[slave_type]  
@@ -2974,7 +2974,7 @@ IF interaction = 1523:
  if slave["passion_comfort_revealed"] = 0:  slave["passion_comfort_revealed"] = 1     
 END
 
-!День развлечений
+!Fun till evening
 IF interaction = 1524:
  $interaction_type = 'rest'
  $special_bg = $games  
@@ -2991,7 +2991,7 @@ IF interaction = 1524:
  }    
 END
 
-!День в гефсиманском саду
+!Garden of Gethsemane
 IF interaction = 1525:
  $interaction_type = 'rest'
  prise_level = 5
@@ -3011,7 +3011,7 @@ if slave['pos_games'] < 5: slave['pos_games'] = 5
 } 
 END
 
-!Горячие источники
+!Hot springs
 IF interaction = 1526:
  $interaction_type = 'rest'
  prise_level = 2
@@ -3034,7 +3034,7 @@ IF interaction = 1526:
 } 
 END
 
-!День в золотой клетке
+!Golden cage
 IF interaction = 1527:
  $interaction_type = 'rest'
  prise_level = 5
@@ -3055,7 +3055,7 @@ slave['pos_games'] = slave["ego"] + slave["temper"] + slave["sensitivity"]
 } 
 END
 
-!Нежные объятья
+!Gentle hug
 IF interaction = 1531:
  $interaction_type = 'prise_erotic'
  $special_bg = $hug[slave_type]    
@@ -3072,7 +3072,7 @@ IF interaction = 1531:
  master_petting_rate += 1  
 END
 
-!Массаж
+!Sensual massage
 IF interaction = 1532:
  $interaction_type = 'prise_erotic'
  $special_bg = $hug[slave_type]    
@@ -3093,7 +3093,7 @@ IF interaction = 1532:
  master_petting_rate += 2   
 END
 
-!Петтинг
+!Petting
 IF interaction = 1533:
  $interaction_type = 'prise_erotic'
  $special_bg = $hug[slave_type]    
@@ -3110,7 +3110,7 @@ IF interaction = 1533:
  master_petting_rate += 2      
 END
 
-!Вибраторы
+!Vibes
 IF interaction = 1534:
  $interaction_type = 'prise_erotic'
  $special_bg = $dildo[slave_type]    
@@ -3129,7 +3129,7 @@ IF interaction = 1534:
  master_petting_rate += 1       
 END
 
-!Кунилингус
+!Cunnilingus
 IF interaction = 1535:
  $interaction_type = 'prise_erotic'
  $special_bg = $kuni[slave_type]    
@@ -3147,8 +3147,8 @@ IF interaction = 1535:
  master_oral_rate += 2     
 END
 
-!ПОДАРКИ
-!Разное
+!GIFTS
+!misc
 IF interaction = 1541:
  $interaction_type = 'present'
  $item_id = 'bouqet'
@@ -3196,7 +3196,7 @@ IF interaction = 1545:
  slave_inventory['pony'] += 1   
 END
 
-!Украшения
+!Jewelry
 IF interaction = 15461:
  $interaction_type = 'present'
  $item_id = 'plain_headband'
@@ -3267,7 +3267,7 @@ IF interaction = 15465:
 }  
 END
 
-!Шмотки
+!Clothes
 IF interaction = 15471:
  $interaction_type = 'present'
  $item_id = 'fluffy_stepins'
@@ -3338,7 +3338,7 @@ IF interaction = 15475:
 }  
 END
 
-!Сладкое
+!sweets
 IF interaction = 1551:
  $interaction_type = 'prise_sweets'
  g = RAND(1,4)
@@ -3419,8 +3419,8 @@ IF interaction = 1555:
  if slave["passion_sweets_revealed"] = 0:  slave["passion_sweets_revealed"] = 1  
 END
 
-!Словесная награда
-!Одобрение
+!Moral encouragement
+!Sparingly approve
 IF interaction = 1561:
  $interaction_type = 'compliment'
  prise_level = 1
@@ -3429,7 +3429,7 @@ IF interaction = 1561:
  if slave["abuse_attitude_revealed"] = 0:  slave["abuse_attitude_revealed"] = 1  
 END
 
-!Похвала
+!Praise
 IF interaction = 1562:
  $interaction_type = 'compliment'
  prise_level = 2 
@@ -3438,7 +3438,7 @@ IF interaction = 1562:
  if slave["abuse_attitude_revealed"] = 0:  slave["abuse_attitude_revealed"] = 1   
 END
 
-!Увесистый комплимент
+!Weighty compliment
 IF interaction = 1563:
  $interaction_type = 'compliment'
  prise_level = 3 
@@ -3447,7 +3447,7 @@ IF interaction = 1563:
  if slave["abuse_attitude_revealed"] = 0:  slave["abuse_attitude_revealed"] = 1   
 END
 
-!Обещать поощрение
+!Promise a promotion
 IF interaction = 1564:
  $interaction_type = 'compliment'
  prise_level = 4 
@@ -3461,7 +3461,7 @@ IF interaction = 1564:
  prise_promised += 1
 END
 
-!Обещать подарок
+!Promise a gift
 IF interaction = 1565:
  $interaction_type = 'compliment'
  prise_level = 5 
@@ -3475,8 +3475,8 @@ IF interaction = 1565:
  slave['gift_promised'] += 1 
 END
 
-!НАКАЗАНИЯ
-!Строго отчитать
+!PUNISH
+!Strictly chastise
 IF interaction = 1411:
  $interaction_type = 'abuse'
  abuse = 1
@@ -3487,7 +3487,7 @@ IF interaction = 1411:
  $play_sound[1] = '<<$cry[slave["age"]]>>'
 END
 
-!Грубо обругать
+!Roughly scold
 IF interaction = 1412:
  abuse = 1
  $interaction_type = 'abuse'
@@ -3501,7 +3501,7 @@ IF interaction = 1412:
  if slave["abuse_attitude_revealed"] = 0:  slave["abuse_attitude_revealed"] = 1   
 END
 
-!Угрожать пытками
+!Threaten with tortures
 IF interaction = 1413:
  $interaction_type = 'abuse'
  abuse = 1
@@ -3521,7 +3521,7 @@ IF interaction = 1413:
  if slave["abuse_attitude_revealed"] = 0:  slave["abuse_attitude_revealed"] = 1  
 END
 
-!Угрожать отказом
+!Threaten with sale
 IF interaction = 1414:
  $interaction_type = 'abuse'
  abuse = 1
@@ -3540,7 +3540,7 @@ IF interaction = 1414:
  $play_sound[1] = '<<$cry[slave["age"]]>>'
 END
 
-!Угрожать смертью
+!Threaten with death
 IF interaction = 1415:
  $interaction_type = 'abuse'
  abuse = 1
@@ -3560,7 +3560,7 @@ IF interaction = 1415:
  if slave["abuse_attitude_revealed"] = 0:  slave["abuse_attitude_revealed"] = 1   
 END
 
-!Отшлепать рукой по заднице
+!Paddle
 IF interaction = 1421:
  $interaction_type = 'torture'
  painful = 1
@@ -3578,7 +3578,7 @@ IF interaction = 1421:
  if dungeon = 1: $place = 'dungeon'    
 END
 
-!Дать пощечину
+!Slap
 IF interaction = 1422:
  $interaction_type = 'torture'
  painful = 1 
@@ -3596,7 +3596,7 @@ IF interaction = 1422:
  if dungeon = 1: $place = 'dungeon'  
 END
 
-!Оттаскать за ухо
+!Tear the ear
 IF interaction = 1423:
  $interaction_type = 'torture'
  painful = 1 
@@ -3613,7 +3613,7 @@ IF interaction = 1423:
  if dungeon = 1: $place = 'dungeon'  
 END
 
-!Ударить
+!punch
 IF interaction = 1424:
  $interaction_type = 'torture'
  painful = 1 
@@ -3635,7 +3635,7 @@ IF interaction = 1424:
  if dungeon = 1: $place = 'dungeon'  
 END
 
-!Избить
+!Beat
 IF interaction = 1425:
  $interaction_type = 'torture'
  painful = 1 
@@ -3657,7 +3657,7 @@ IF interaction = 1425:
  if dungeon = 1: $place = 'dungeon'  
 END
 
-!Отшлепать тапком
+!Spank with slipper
 IF interaction = 1431:
  $interaction_type = 'torture'
  painful = 1
@@ -3676,7 +3676,7 @@ IF interaction = 1431:
  $special_part = {if master_flagelation <= 1: master_flagelation_rate += 1}
 END
 
-!Выпороть ремнем
+!Flog with belt
 IF interaction = 1432:
  $interaction_type = 'torture'
  painful = 1
@@ -3694,7 +3694,7 @@ IF interaction = 1432:
  $special_part = {if master_flagelation <= 2: master_flagelation_rate += 1} 
 END
 
-!Высечь розгой
+!Flog with branch
 IF interaction = 1433:
  $interaction_type = 'torture'
  painful = 1
@@ -3715,7 +3715,7 @@ IF interaction = 1433:
  $special_part = {if master_flagelation <= 3: master_flagelation_rate += 1}  
 END
 
-!Высечь плетью
+!Flog with lash
 IF interaction = 1434:
  $interaction_type = 'torture'
  painful = 1
@@ -3737,7 +3737,7 @@ IF interaction = 1434:
  $special_part = {if master_flagelation <= 4: master_flagelation_rate += 1}   
 END
 
-!Высечь кунтом
+!Flog with whip
 IF interaction = 1435:
  $interaction_type = 'torture'
  painful = 1
@@ -3759,7 +3759,7 @@ IF interaction = 1435:
 END
 
 
-!Горячий воск
+!hot wax
 IF interaction = 1441:
  $interaction_type = 'torture'
  fire_based = 1
@@ -3777,7 +3777,7 @@ IF interaction = 1441:
  $special_part = {if master_torture <= 1: master_torture_rate += 1}    
 END
 
-!Жгучая мазь
+!Burning ointment
 IF interaction = 1442:
  $interaction_type = 'torture'
  painful = 1
@@ -3795,7 +3795,7 @@ IF interaction = 1442:
  $special_part = {if master_torture <= 2: master_torture_rate += 1}    
 END
 
-!Крокодильчики
+!Crocodiles
 IF interaction = 1443:
  $interaction_type = 'torture'
  painful = 1
@@ -3817,7 +3817,7 @@ IF interaction = 1443:
  $special_part = {if master_torture <= 2: master_torture_rate += 1}     
 END
 
-!Уксусная инфузия
+!Acetic infusion
 IF interaction = 1444:
  $interaction_type = 'torture'
  painful = 1
@@ -3838,7 +3838,7 @@ IF interaction = 1444:
  $special_part = {if master_torture <= 3: master_torture_rate += 1}     
 END
 
-!Тиски для пальцев
+!Finger vices
 IF interaction = 1445:
  $interaction_type = 'torture'
  painful = 1
@@ -3859,7 +3859,7 @@ IF interaction = 1445:
  $special_part = {master_torture_rate += 2}     
 END
 
-!Прокалывание
+!Pricking
 IF interaction = 1446:
  $interaction_type = 'torture'
  bloody = 1
@@ -3882,7 +3882,7 @@ IF interaction = 1446:
  $special_part = {master_torture_rate += 2}      
 END
 
-!Пытка водой
+!Water torture
 IF interaction = 1447:
  $interaction_type = 'torture'
  water_based = 1
@@ -3904,7 +3904,7 @@ IF interaction = 1447:
  $special_part = {master_torture_rate += 2}      
 END
 
-!Прижигание
+!Cauterization
 IF interaction = 1448:
  $interaction_type = 'torture'
  fire_based = 1
@@ -3926,7 +3926,7 @@ IF interaction = 1448:
  $special_part = {master_torture_rate += 2}      
 END
 
-!Презентация - деревянный конь
+!Presentation - Wooden horse
 IF interaction = 14511:
  $interaction_type = 'present_torture'
  abuse = 1
@@ -3946,7 +3946,7 @@ IF interaction = 14511:
  $place = 'dungeon'   
 END
 
-!Презентация - механическая дыба
+!Presentation - Manual rack
 IF interaction = 14512:
  $interaction_type = 'present_torture'
  painful = 1
@@ -3966,7 +3966,7 @@ IF interaction = 14512:
  $place = 'dungeon'   
 END
 
-!Презентация - водяная бочка
+!Presentation - Water barrel
 IF interaction = 14513:
  $interaction_type = 'present_torture'
  water_based = 1
@@ -3986,7 +3986,7 @@ IF interaction = 14513:
  $place = 'dungeon'   
 END
 
-!Презентация - огненные качели
+!Presentation - Molten swing
 IF interaction = 14514:
  $interaction_type = 'present_torture'
  fire_based = 1
@@ -4006,7 +4006,7 @@ IF interaction = 14514:
  $place = 'dungeon'   
 END
 
-!Презентация - железная дева
+!Presentation - Iron maiden
 IF interaction = 14515:
  $interaction_type = 'present_torture'
  darkness = 1
@@ -4026,7 +4026,7 @@ IF interaction = 14515:
  $place = 'dungeon'   
 END
 
-!Презентация - кишащая яма
+!Presentation - Infested pit
 IF interaction = 14516:
  $interaction_type = 'present_torture'
  vermin_based = 1
@@ -4046,7 +4046,7 @@ IF interaction = 14516:
  $place = 'dungeon'   
 END
 
-!Демонстрация - деревянный конь
+!Demonstration - Wooden horse
 IF interaction = 14521:
  $interaction_type = 'torture'
  pain = 1
@@ -4065,7 +4065,7 @@ IF interaction = 14521:
  $place = 'dungeon'   
 END
 
-!Демонстрация - механическая дыба
+!Demonstration - Manual rack
 IF interaction = 14522:
  $interaction_type = 'torture'
  pain = 1
@@ -4084,7 +4084,7 @@ IF interaction = 14522:
  $place = 'dungeon'   
 END
 
-!Демонстрация - водяная бочка
+!Demonstration - Water barrel
 IF interaction = 14523:
  $interaction_type = 'torture'
  water_based = 1
@@ -4103,7 +4103,7 @@ IF interaction = 14523:
  $place = 'dungeon'   
 END
 
-!Демонстрация - огненные качели
+!Demonstration - Molten swing
 IF interaction = 14524:
  $interaction_type = 'torture'
  fire_based = 1
@@ -4122,7 +4122,7 @@ IF interaction = 14524:
  $place = 'dungeon'   
 END
 
-!Демонстрация - железная дева
+!Demonstration - Iron maiden
 IF interaction = 14525:
  $interaction_type = 'torture'
  darkness = 0
@@ -4142,7 +4142,7 @@ IF interaction = 14525:
  $place = 'dungeon'   
 END
 
-!Демонстрация - кишащая яма
+!Demonstration - Infested pit
 IF interaction = 14526:
  $interaction_type = 'torture'
  vermin_based = 1
@@ -4161,7 +4161,7 @@ IF interaction = 14526:
  $place = 'dungeon'   
 END
 
-!Применение - деревянный конь
+!Application - Wooden horse
 IF interaction = 14531:
  $interaction_type = 'torture'
  pain = 1
@@ -4180,7 +4180,7 @@ IF interaction = 14531:
  $place = 'dungeon'   
 END
 
-!Применение - механическая дыба
+!Application - Manual rack
 IF interaction = 14532:
  $interaction_type = 'torture'
  pain = 1
@@ -4199,7 +4199,7 @@ IF interaction = 14532:
  $place = 'dungeon'   
 END
 
-!Применение - водяная бочка
+!Application - Water barrel
 IF interaction = 14533:
  $interaction_type = 'torture'
  water_based = 1
@@ -4218,7 +4218,7 @@ IF interaction = 14533:
  $place = 'dungeon'   
 END
 
-!Применение - огненные качели
+!Application - Molten swing
 IF interaction = 14534:
  $interaction_type = 'torture'
  fire_based = 1
@@ -4237,7 +4237,7 @@ IF interaction = 14534:
  $place = 'dungeon'    
 END
 
-!Применение - железная дева
+!Application - Iron maiden
 IF interaction = 14535:
  $interaction_type = 'torture'
  deprivation = 1
@@ -4256,7 +4256,7 @@ IF interaction = 14535:
  $place = 'dungeon'   
 END
 
-!Применение - кишащая яма
+!Application - Infested pit
 IF interaction = 14536:
  $interaction_type = 'torture'
  vermin_based = 1
@@ -4275,7 +4275,7 @@ IF interaction = 14536:
  $place = 'dungeon'   
 END
 
-!Поставить в угол
+!Put into a corner
 IF interaction = 1461:
  $interaction_type = 'torture'
  deprivation = 1
@@ -4291,7 +4291,7 @@ IF interaction = 1461:
  easy_for_master = 1  
 END
 
-!Поставить на горох
+!Put on peas
 IF interaction = 1462:
  $interaction_type = 'torture'
  deprivation = 1
@@ -4309,7 +4309,7 @@ IF interaction = 1462:
  $special_part = {master_bondage_rate += 1}      
 END
 
-!Веревочное седло
+!Rope saddle
 IF interaction = 1463:
  $interaction_type = 'torture'
  deprivation = 1
@@ -4326,7 +4326,7 @@ IF interaction = 1463:
  $special_part = {master_bondage_rate += 1}       
 END
 
-!Подвесить за ноги
+!Hang by the legs
 IF interaction = 1464:
  $interaction_type = 'torture'
  deprivation = 1
@@ -4342,7 +4342,7 @@ IF interaction = 1464:
  $special_part = {master_bondage_rate += 2}       
 END
 
-!Веревочная дыба
+!Rope rack
 IF interaction = 1465:
  $interaction_type = 'torture'
  deprivation = 1
@@ -4360,7 +4360,7 @@ IF interaction = 1465:
  $special_part = {master_bondage_rate += 2}       
 END
 
-!Эротический бондаж
+!Erotic bondage
 IF interaction = 1466:
  $interaction_type = 'torture'
  shameful = 1
@@ -4379,7 +4379,7 @@ IF interaction = 1466:
  $special_part = {master_bondage_rate += 3}       
 END
 
-!Болевой бондаж
+!Painful bondage
 IF interaction = 1467:
  $interaction_type = 'torture'
  painful = 1
@@ -4406,7 +4406,7 @@ IF interaction = 1467:
  $special_part = {master_bondage_rate += 3}       
 END
 
-!Депривация
+!Deprivation
 IF interaction = 1468:
  $interaction_type = 'torture'
  deprivation = 1
@@ -4422,8 +4422,8 @@ IF interaction = 1468:
  easy_for_master = 1  
 END
 
-!НАКАЗАНИЯ СТЫДОМ
-!Прогулка голышом
+!SHAMING
+!Naked walk
 IF interaction = 1471:
  $interaction_type = 'torture'
  $place = 'marketplace'
@@ -4440,7 +4440,7 @@ IF interaction = 1471:
 } 
 END
 
-!Позорный подиум
+!Shameful podium
 IF interaction = 1472:
  $interaction_type = 'torture'
  $place = 'marketplace'
@@ -4458,7 +4458,7 @@ IF interaction = 1472:
  }
 END
 
-!Бодиарт
+!Living canvas
 IF interaction = 1473:
  $interaction_type = 'torture'
  $place = 'marketplace'
@@ -4481,7 +4481,7 @@ IF interaction = 1473:
  }
 END
 
-!Публичное использование
+!Public use
 IF interaction = 1474:
  $interaction_type = 'torture'
  $place = 'marketplace'
@@ -4516,7 +4516,7 @@ IF interaction = 1474:
  }
 END
 
-!Публичный туалет
+!Public toilet
 !Убрана потеря девственности при наказании общественным туалетом. Скорее всего - это ошибка копипасты наказания сверху.
 !Вероятность залететь оставлена - 1/10
 IF interaction = 1475:
@@ -4547,8 +4547,8 @@ IF interaction = 1475:
  }
 END
 
-!Наказания примером
-!Угрожать заключенной
+!Example of punishment
+!Threaten prisoner
 IF interaction = 1481:
  $interaction_type = 'prisoner_torture'
  compassion = 1
@@ -4564,7 +4564,7 @@ IF interaction = 1481:
  easy_for_master = 1  
 END
 
-!Выпороть заключенную
+!Flog prisoner
 IF interaction = 1482:
  $interaction_type = 'prisoner_torture'
  compassion = 1
@@ -4581,7 +4581,7 @@ IF interaction = 1482:
  $special_part = {master_flagelation_rate += 2}       
 END
 
-!Избить заключенную
+!Beat prisoner
 IF interaction = 1483:
  $interaction_type = 'prisoner_torture'
  compassion = 1
@@ -4597,7 +4597,7 @@ IF interaction = 1483:
  if dungeon = 1: $place = 'dungeon'  
 END
 
-!Пытать заключенную
+!Torture prisoner
 IF interaction = 1484:
  $interaction_type = 'prisoner_torture'
  compassion = 1
@@ -4620,7 +4620,7 @@ IF interaction = 1485:
  txt_count = 1
  txt = 1
  npc = 0
- $text[1] = '   В результате этого действия вы потеряете заключенную безвозвратно. Казнить?'
+ $text[1] = '   As a result of this action, you will lose this prisoner forever. Execute her?'
  $yes = {
 interaction = 14850 
 gt "interaction"
@@ -4648,8 +4648,8 @@ IF interaction = 14850:
 END
 
 
-!ОБУЧЕНИЕ РЕПЕТИТОР
-!Тренер по домоводству
+!TUTOR LESSONS
+!Tutor on housekeeping
 IF interaction = 1711:
  $interaction_type = 'couch_teaches_slave'
  $special_bg = 'characters\master_jeeves'
@@ -4673,7 +4673,7 @@ IF interaction = 1711:
   }
 END
 
-!Тренер по кулинарии
+!Tutor on cooking
 IF interaction = 1712:
  $interaction_type = 'couch_teaches_slave'
  $special_bg = 'characters\master_jeeves'
@@ -4697,7 +4697,7 @@ IF interaction = 1712:
   }
 END
 
-!Тренер по медицине
+!Tutor on medicine
 IF interaction = 1713:
  $interaction_type = 'couch_teaches_slave'
  $special_bg = 'characters\mistress_marivanna'
@@ -4720,7 +4720,7 @@ IF interaction = 1713:
   }
 END
 
-!Тренер по делопроизводству
+!Tutor on paperwork
 IF interaction = 1714:
  $interaction_type = 'couch_teaches_slave'
  $special_bg = 'characters\mistress_marivanna'
@@ -4744,7 +4744,7 @@ IF interaction = 1714:
   }
 END
 
-!Тренер по гимнастике
+!Tutor on gymnastics
 IF interaction = 1721:
  $interaction_type = 'couch_teaches_slave'
  $special_bg = 'characters\master_geralt'
@@ -4769,7 +4769,7 @@ IF interaction = 1721:
   }
 END
 
-!Тренер хореография
+!Tutor on dance
 IF interaction = 1722:
  $interaction_type = 'couch_teaches_slave'
  $special_bg = 'characters\mistress_avgia'
@@ -4794,7 +4794,7 @@ IF interaction = 1722:
   }
 END
 
-!Тренер по бою
+!Tutor on martial arts
 IF interaction = 1723:
  $interaction_type = 'couch_teaches_slave'
  $special_bg = 'characters\master_geralt'
@@ -4820,7 +4820,7 @@ IF interaction = 1723:
   }
 END
 
-!Тренер выездка
+!Tutor dressage
 IF interaction = 1724:
  $interaction_type = 'couch_teaches_slave'
  $special_bg = 'characters\mistress_avgia'
@@ -4846,7 +4846,7 @@ IF interaction = 1724:
   }
 END
 
-!Тренер дрессура
+!Tutor taming
 IF interaction = 1725:
  $interaction_type = 'couch_teaches_slave'
  $special_bg = 'characters\mistress_avgia'
@@ -4870,7 +4870,7 @@ IF interaction = 1725:
   }
 END
 
-!Тренер по риторике
+!Tutor rhetoric
 IF interaction = 1731:
  $interaction_type = 'couch_teaches_slave'
  $special_bg = 'characters\mistress_marivanna'
@@ -4892,7 +4892,7 @@ IF interaction = 1731:
   }
 END
 
-!Тренер по музыке
+!Tutor on music
 IF interaction = 1732:
  $interaction_type = 'couch_teaches_slave'
  $special_bg = 'characters\master_von_walz'
@@ -4914,7 +4914,7 @@ IF interaction = 1732:
   }
 END
 
-!Тренер по музыке
+!Tutor on vocal
 IF interaction = 1733:
  $interaction_type = 'couch_teaches_slave'
  $special_bg = 'characters\master_von_walz'
@@ -4936,7 +4936,7 @@ IF interaction = 1733:
   }
 END
 
-!Тренер по магии
+!Tutor on majjick
 IF interaction = 1734:
  $interaction_type = 'couch_teaches_slave'
  $special_bg = 'characters\master_S'
@@ -4960,11 +4960,11 @@ IF interaction = 1734:
 END
 
 
-!КЛЕЙМА
-!Клеймление железом
+!BRANDING
+!branding with iron
 IF interaction = 1811:
  IF dungeon = 0: 
-  msg '  Рабыню, конечно, стоит заклеймить, однако у вас нет условий для клеймления железом - нужно арендовать подземелье. Впрочем, можно воспользоваться услугами специалистов в городе.'
+  msg '  Of course slave need to be branded, but you do not have the conditions for branding with iron - you need to rent a dungeon. However, you can use the services of specialists in the city.'
   gt 'slave_stat'
  END
  $interaction_type = 'branding' 
@@ -4988,8 +4988,8 @@ slave['sin'] = 0
 }  
 END
 
-!ИЗБАВИТЬСЯ ОТ ВОСПИТУЕМОЙ
-!Выгнать
+!GET RID OF SLAVE
+!Drive out the house
 IF interaction = 181:
  $place = 'study'
  $picture_type = 'slave_picture'
@@ -4997,7 +4997,7 @@ IF interaction = 181:
  txt = 1
  npc = 0
  if already_done_curslave[interaction] = 0: slave['abandon_treat'] = 0 
- $text[1] = '   Если вы выгоните рабыню из дома, то уже вряд ли увидите её снова. Вы точно хотите избавиться от неё навсегда?'
+ $text[1] = '   If you kick the slave out of the house, you are unlikely to see her again. Are you sure you want to get rid of her forever?'
  $yes = {
      slave_state = CONST_INT['no_slave']
      gs 'generate_stock'
@@ -5008,7 +5008,7 @@ IF interaction = 181:
  gt 'choice_screen'
 END
 
-!Повешенье
+!Hang
 IF interaction = 182:
  $place = 'study'
  $picture_type = 'slave_picture'
@@ -5037,7 +5037,7 @@ IF interaction = 1820:
  add_master_hygiene = 10
 END
 
-!Отрубание головы
+!Decapitate
 IF interaction = 183:
  $place = 'study'
  $picture_type = 'slave_picture'
@@ -5066,7 +5066,7 @@ IF interaction = 1830:
  add_master_hygiene = 10
 END
 
-!Сажание на кол
+!Impale
 IF interaction = 184:
  $place = 'study'
  $picture_type = 'slave_picture'
@@ -5097,7 +5097,7 @@ IF interaction = 1840:
  add_master_hygiene = 10
 END
 
-!ВЕЩЕСТВА
+!STUFF
 !было slave_mood для мудлетов, что работает не правильно для рабыни
 IF interaction = 371:
  lab_store["koffe"] -= 1
@@ -5159,7 +5159,7 @@ IF interaction = 374:
  if sound_on = 1: play 'content\snd\bulk.mp3', sound_volume
  bulk = 1
  IF master_on_meth = 1:  
-  dynamic $death, 'Вы получили передозировку тяжелых наркотиков и скончались от угнетения дыхательного центра мозга. Никто не смог вам помочь.'
+  dynamic $death, 'You have received an overdose of hard drugs and died from depression of the respiratory center in the brain. No one was able to help you.'
  END
  IF master_on_meth = 0:  
   master_energy = 5
@@ -5178,7 +5178,7 @@ IF interaction = 375:
  if sound_on = 1: play 'content\snd\bulk.mp3', sound_volume
  bulk = 1
  IF master_on_opium = 1:  
-  dynamic $death, 'Вы получили передозировку тяжелых наркотиков и скончались от угнетения дыхательного центра мозга. Никто не смог вам помочь.'
+  dynamic $death, 'You have received an overdose of hard drugs and died from depression of the respiratory center in the brain. No one was able to help you.'
  END
  IF master_on_opium = 0:  
   gs '$mod_master_rise',100
@@ -5221,7 +5221,7 @@ IF interaction = 383:
  целительный_бальзам -= 1
  if sound_on = 1: play 'content\snd\bulk.mp3', sound_volume
  bulk = 1
- msg 'Целительный бальзам лучше наносить в тот же момент, когда рана получена, иначе его эффективность намного ниже. Тем не менее, вы чувствуете себя немного лучше.'
+ msg 'Balm better to apply at the same time when the wound is received, otherwise the efficiency is much lower. Nevertheless, you feel a little better.'
  master_wounds_rate -= 10
  master_str_rate += 1
  menu_form = 0
@@ -5310,7 +5310,7 @@ IF interaction = 573:
   slave['on_alco'] = 1
   slave['pos_slave_alco'] = 1
   else
-  msg "Изрядно напившись, ваша воспитуемая падает на пол без сознания."
+  msg "Pretty drunk, your slave falls to the floor unconscious."
   slave['energy'] = -4
   dynamic $slave_energy_drop
  END 
@@ -5327,7 +5327,7 @@ IF interaction = 574:
   slave['energy'] = 5
   slave['on_meth'] = 1
   else
-  msg "Вы решаете дать воспитуемой еще одну дозу в тот же день. Вдохнув пыль, ваша воспитуемая внезапно начинает трястись в припадке и падает на пол без сознания. Кажется у неё из носа идет кровь."
+  msg "You decide to give to slave another dose on the same day. Breathing the dust, your slave suddenly starts shaking in a fit and falls to the floor unconscious. It seems she is bleeding from the nose."
   slave_rate['stamina'] = 4
   slave['stamina'] = 0
  END 
@@ -5345,7 +5345,7 @@ IF interaction = 575:
   slave['pos_slave_opium'] = 1
   gs '$mod_slave_rise', 3
   else
-  msg "Вы решаете дать воспитуемой еще одну дозу в тот же день. После применения ваша воспитумая закатила глаза и стоит на месте с глупой улыбкой на лице некоторое время, игнорируя ваши команды. Затем она падает на пол, изо рта идет пена вперемешку с кровью."
+  msg "You decide to give to slave another dose on the same day. After applying, your slave rolled her eyes and goes on with a silly smile on her face for a while, ignoring your commands. Then she falls to the floor, at the mouth foam mixed with blood."
   slave_rate['stamina'] = 4
   slave['stamina'] = 0
  END 
@@ -5411,7 +5411,7 @@ IF interaction = 586:
   slave['pos_slave_love'] = 100
   slave_rate["moral"] += 100
   else
-  msg "Вы даете воспитуемой приворотное зелье, но кажется оно не сработает во второй раз. По крайней мере вы не видите никакого эффекта."
+  msg "You give to your slave the philtre, but seems it does not work the second time. At least you do not see any effect."
  END
  }
 END
@@ -5441,8 +5441,8 @@ IF interaction = 587:
 END
 
 
-!ЗАНЯТИЕ С АССИСТЕНТКОЙ
-!Урок по домоводству (ассистентка)
+!LESSONS WITH ASSISTANT
+!Lesson on housekeeping (assistant)
 IF interaction = 4111:
  $interaction_type = 'assistant_teaches_slave'
  repulse = 0
@@ -5462,7 +5462,7 @@ IF interaction = 4111:
  }
 END
 
-!Урок по кулинарии (ассистент)
+!Lesson on cooking (assistant)
 IF interaction = 4112:
  $interaction_type = 'assistant_teaches_slave'
  repulse = 0
@@ -5483,7 +5483,7 @@ IF interaction = 4112:
  $place = 'kitchen'    
 END
 
-!Урок по медицине (ассистент)
+!Lesson on medicine (assistant)
 IF interaction = 4113:
  $interaction_type = 'assistant_teaches_slave'
  repulse = 1
@@ -5503,7 +5503,7 @@ IF interaction = 4113:
  }
 END
 
-!Урок по делопроизводству (ассистент)
+!Lesson on paperwork (assistant)
 IF interaction = 4114:
  $interaction_type = 'assistant_teaches_slave'
  repulse = 1
@@ -5524,7 +5524,7 @@ IF interaction = 4114:
  }
 END
 
-!Урок гимнастики (ассистент)
+!Lesson on gymnastics (assistant)
 IF interaction = 4121:
  $interaction_type = 'assistant_teaches_slave'
  $special_bg = $gymnastics[slave_type]  
@@ -5549,7 +5549,7 @@ IF interaction = 4121:
   if hall = 1:  $place = 'hall'    
 END
 
-!Урок хореографии (асситент)
+!Lesson on dancing (асситент)
 IF interaction = 4122:
  $interaction_type = 'assistant_teaches_slave'
  repulse = 1
@@ -5569,7 +5569,7 @@ IF interaction = 4122:
   if hall = 1:  $place = 'hall'    
 END
 
-!Урок боевых искусств (ассистент)
+!Lesson on martial arts (assistant)
 IF interaction = 4123:
  $interaction_type = 'assistant_teaches_slave'
  repulse = 1
@@ -5591,7 +5591,7 @@ IF interaction = 4123:
   if hall = 1:  $place = 'hall'    
 END
 
-!Урок груминга (ассистент)
+!Lesson on dressage (assistant)
 IF interaction = 4143:
  $interaction_type = 'assistant_teaches_slave'
  repulse = 1 + slave["pride"]
@@ -5607,7 +5607,7 @@ IF interaction = 4143:
  if hall = 1:  $place = 'hall'    
 END
 
-!Урок - экспрессия (ассистент)
+!Lesson - rhetoric (assistant)
 IF interaction = 4131:
  $interaction_type = 'assistant_teaches_slave'
  repulse = 0
@@ -5622,7 +5622,7 @@ IF interaction = 4131:
  add_house_mess = 1
 END
 
-!Урок вокала (ассистент)
+!Lesson on singing (assistant)
 IF interaction = 4133:
  $interaction_type = 'assistant_teaches_slave'
  repulse = 0
@@ -5637,7 +5637,7 @@ IF interaction = 4133:
  add_house_mess = 1
 END
 
-!Урок пет-плей (асситент)
+!Lesson on petplay (assistant)
 IF interaction = 4141:
  $interaction_type = 'assistant_teaches_slave'
  repulse = 1 + slave["ego"]
@@ -5652,7 +5652,7 @@ IF interaction = 4141:
  add_house_mess += 5
 END
 
-!Урок эзотерики (ассистент)
+!Lesson on alchemy (assistant)
 IF interaction = 4142:
  $interaction_type = 'assistant_teaches_slave'
  sin_potential = 6
@@ -5671,7 +5671,7 @@ IF interaction = 4142:
  }
 END
 
-!Урок музыки (ассистент) 
+!Lesson on music (assistant) 
 IF interaction = 4132:
  $interaction_type = 'assistant_teaches_slave'
  sin_potential = 4
@@ -5686,14 +5686,14 @@ IF interaction = 4132:
  add_house_mess += 3
 END
 
-!Доение исчадия ассистенткой
+!milking fiend with assistant
 IF interaction = 45:
  $interaction_type = 'make_assistant_do'
  $special_bg = $tentacles[assistant_type]  
  IF assistant["sub_tentacles"] < tentacle_size:
-  $done_txt = '  <<$assistant_name>> берет ведро-непроливайку и входит в загон к исчадию. Тем не менее, её усилия подоить тварь ни к чему не приводят. Оплетённая его мощными щупальцами, ваша помощница полностью теряет связь с реальностью и получает оргазм за оргазмом, пока исчадие накачивает все её отверстия семенем.'
+  $done_txt = '  <<$assistant_name>> takes a bucket-pot and goes to the pen with fiend in it. Nevertheless, her efforts to milk the thing to nothing lead. Braided with powerful tentacles, your assistant completely loses touch with reality and gets orgasm after orgasm until fiend pumps her holes with seed.'
   else
-  $done_txt = '  <<$assistant_name>> берет ведро-непроливайку и входит в загон к исчадию. Благодаря своему предыдущему опыту ей удаётся не потерять контроль. Пока одни ненасытные скользкие щупальца проникают во все её отверстия, она хватает остальные отростки руками и выдаивает их прямо в ведро.'  
+  $done_txt = '  <<$assistant_name>> takes a bucket-pot and goes to the pen with fiend in it. Thanks to previous experience, she manages not to lose control. While some insatiable slippery tentacles penetrate all her holes, she grabs the other feelers and milk them directly into the bucket.'  
  END
  add_house_mess = 0
  $special_part = {
@@ -5710,8 +5710,8 @@ IF interaction = 45:
  }
 END
 
-!ЗАНЯТИЯ В ШКОЛЕ
-!Класс домоводства
+!LESSONS IN SCHOOL
+!Lesson on housekeeping
 IF interaction = 561:
  $interaction_type = 'school_class'
  $place = 'class_common'
@@ -5730,7 +5730,7 @@ IF interaction = 561:
   }
 END
 
-!Класс кулинарии
+!Lesson on cooking
 IF interaction = 562:
  $interaction_type = 'school_class'
  $place = 'class_common'
@@ -5749,7 +5749,7 @@ IF interaction = 562:
   }
 END
 
-!Класс медицины
+!Lesson on medicine
 IF interaction = 563:
  $interaction_type = 'school_class'
  $place = 'class_common'
@@ -5769,7 +5769,7 @@ IF interaction = 563:
   }
 END
 
-!Класс делопроизводства
+!Lesson on paperwork
 IF interaction = 564:
  $interaction_type = 'school_class'
  $place = 'class_common'
@@ -5789,7 +5789,7 @@ IF interaction = 564:
   }
 END
 
-!Класс гимнастики
+!Lesson on gymnastics
 IF interaction = 565:
  $interaction_type = 'school_class'
  $place = 'class_sport'
@@ -5809,7 +5809,7 @@ IF interaction = 565:
   }
 END
 
-!Класс танцев
+!Lesson on dancing
 IF interaction = 566:
  $interaction_type = 'school_class'
  $place = 'class_music'
@@ -5830,7 +5830,7 @@ IF interaction = 566:
   }
 END
 
-!Класс войны
+!Lesson on martial arts
 IF interaction = 567:
  $interaction_type = 'school_class'
  $place = 'class_sport'
@@ -5852,7 +5852,7 @@ IF interaction = 567:
   }
 END
 
-!Класс выездки
+!Lesson on dressage
 IF interaction = 568:
  $interaction_type = 'school_class'
  $place = 'class_sport'
@@ -5874,7 +5874,7 @@ IF interaction = 568:
   }
 END
 
-!Класс приручения
+!Lesson on domestication
 IF interaction = 569:
  $interaction_type = 'school_class'
  $place = 'class_sport'
@@ -5894,7 +5894,7 @@ IF interaction = 569:
   }
 END
 
-!Класс риторики
+!Lesson on rhetoric
 IF interaction = 5610:
  $interaction_type = 'school_class'
  $place = 'class_common'
@@ -5913,7 +5913,7 @@ IF interaction = 5610:
   }
 END
 
-!Класс музыки
+!Lesson on music
 IF interaction = 5611:
  $interaction_type = 'school_class'
  $place = 'class_music'
@@ -5932,7 +5932,7 @@ IF interaction = 5611:
   }
 END
 
-!Класс вокала
+!Lesson on singing
 IF interaction = 5612:
  $interaction_type = 'school_class'
  $place = 'class_music'
@@ -5951,7 +5951,7 @@ IF interaction = 5612:
   }
 END
 
-!Класс зельеварения
+!Lesson on alchemy
 IF interaction = 5613:
  $interaction_type = 'school_class'
  $place = 'class_magic'
@@ -5971,18 +5971,18 @@ IF interaction = 5613:
   }
 END
 
-!ДОЕНИЕ ИСЧАДИЯ
+!FIEND MILKING
 IF interaction = 59:
  $interaction_type = 'make_slave_do'
  repulse = 6
  disgusting = 1 
  $special_bg = $tentacles[slave_type]  
- $refuse_txt = '  <<$slave_name>> отказывается даже входить в загон к исчадию. Один только вид этого чудовища наполняет её страхом и омерзением. Но это ещё не значит, что можно игнорировать приказы хозяина...'
+ $refuse_txt = '  <<$slave_name>> refuses to even go into the pen to the fiend. The mere sight of this monster fills her with fear and loathing. But it does not mean that she can ignore the orders of her master...'
  slave_skill = slave["sub_tentacles"]
  IF slave["sub_tentacles"] < tentacle_size:
-  $done_txt = '  <<$slave_name>> берет ведро-непроливайку и входит в загон к исчадию. Тем не менее, её усилия подоить тварь ни к чему не приводят. Оплетённая его мощными щупальцами, рабыня полностью теряет связь с реальностью и получает оргазм за оргазмом, пока исчадие накачивает все её отверстия семенем.'
+  $done_txt = '  <<$slave_name>> takes a bucket-pot and goes to the pen with fiend in it. Nevertheless, her efforts to milk the thing to nothing lead. Braided with powerful tentacles, your slave completely loses touch with reality and gets orgasm after orgasm until fiend pumps her holes with seed.'
   else
-  $done_txt = '  <<$slave_name>> берет ведро-непроливайку и входит в загон к исчадию. Благодаря своему предыдущему опыту, ей удаётся не потерять контроль. Пока одни ненасытные скользкие щупальца проникают во все её отверстия, она хватает остальные отростки руками и выдаивает их прямо в ведро.'  
+  $done_txt = '  <<$slave_name>> takes a bucket-pot and goes to the pen with fiend in it. Thanks to previous experience, she manages not to lose control. While some insatiable slippery tentacles penetrate all her holes, she grabs the other feelers and milk them directly into the bucket.'  
  END
  sin_potential = 3
  add_house_mess = 0
@@ -6014,8 +6014,8 @@ IF interaction = 59:
 END
 
 
-!АВТОМАТИЧЕСКИЕ СОБЫТИЯ
-!Забирают беременную рабыню
+!AUTOMATIC INTERACTIONS
+!pregnant slave is gone
 IF interaction = 9911:
  $interaction_type = 'special_talk'
  $place = 'study'  
@@ -6065,8 +6065,8 @@ IF interaction = 9913:
  gs '$slave_price'
 END
 
-!РОЖДЕНИЕ ПАРАЗИТА
-!TODO: Паразит не родится у ассистентки и заключенной если нет рабыни
+!BIRTH OF THE PARASITE
+!TODO: Parasite will not born from the assistant or prisoner if there is no slave
 IF interaction = 9921:
  $interaction_type = 'chestbuster'
  $special_bg = '<<$slave["fullimage"]>>' 

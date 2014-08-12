@@ -38,7 +38,7 @@ If needed, I will be able to find Aramus at the Central forum.
 
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>'
 
-$quest_description[7] = '  Vudzhen, creator of artifacts from the House of Snakes offers a magical amulet in exchange for a slave, who won the races in the Colloseum. According to him this amulet is able to give the wearer an aura of confidence and personal strength, as well as doubles the ability to tolerate pain and fear, tempering spirit during the battle.
+$quest_description[7] = '  Vujin, creator of artifacts from the House of Snakes offers a magical amulet in exchange for a slave, who won the races in the Colloseum. According to him this amulet is able to give the wearer an aura of confidence and personal strength, as well as doubles the ability to tolerate pain and fear, tempering spirit during the battle.
 Vudzhen likes to walk at the Central forum, I will find him there if necessary.
 
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>'

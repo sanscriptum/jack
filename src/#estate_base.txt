@@ -35,7 +35,7 @@ estate_cost_dungeon['kamira_house'] = 15
 estate_cost_lab['kamira_house'] = 20
 estate_location['kamira_house'] = 4
 
-$estate_study_name['kamira_house'] = 'Big Room'
+$estate_study_name['kamira_house'] = 'Hall'
 $estate_study_location['kamira_house'] = 'Quarter of the Outcasts'
 $estate_bed_name['kamira_house'] = 'Bedroom'
 $estate_bed_location['kamira_house'] = 'Quarter of the Outcasts'
@@ -83,7 +83,7 @@ estate_cost_dungeon['taurus_house'] = 20
 estate_cost_lab['taurus_house'] = 30
 estate_location['taurus_house'] = 2
 
-$estate_study_name['taurus_house'] = 'Big Room'
+$estate_study_name['taurus_house'] = 'Hall'
 $estate_study_location['taurus_house'] = 'Residences Area'
 $estate_bed_name['taurus_house'] = 'Bedroom'
 $estate_bed_location['taurus_house'] = 'Residences Area'
@@ -107,7 +107,7 @@ estate_cost_dungeon['korvus_house'] = 25
 estate_cost_lab['korvus_house'] = 50
 estate_location['korvus_house'] = 5
 
-$estate_study_name['korvus_house'] = 'Big Room'
+$estate_study_name['korvus_house'] = 'Hall'
 $estate_study_location['korvus_house'] = 'District of Mortals'
 $estate_bed_name['korvus_house'] = 'Bedroom'
 $estate_bed_location['korvus_house'] = 'District of Mortals'
@@ -131,7 +131,7 @@ estate_cost_dungeon['white_house'] = 25
 estate_cost_lab['white_house'] = 50
 estate_location['white_house'] = 1
 
-$estate_study_name['white_house'] = 'Big Room'
+$estate_study_name['white_house'] = 'Hall'
 $estate_study_location['white_house'] = 'Vatican Suburbs'
 $estate_bed_name['white_house'] = 'Bedroom'
 $estate_bed_location['white_house'] = 'Vatican Suburbs'

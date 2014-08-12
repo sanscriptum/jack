@@ -10,7 +10,7 @@ $красота_справка = '<center>BEAUTY<br>
 '
 $красота_справка_2 = "  Natural beauty very strongly influences her market price. Your slave's rank will never rise higher than her beauty value. At auctions beautiful slaves are sold for higher prices."
 $красота_совет = '   [BEAUTY TIPS]
-<div style="font-size: 95%;">   All your efforts to improve appearance of the slave will ifluence style, not beauty. Stylishness is important too, but the value of natural beauty is huge. You can increase beauty only by plastic surgery in technosphere and only once. Try to buy beautiful slaves if you intend to train them to high ranks. Beauty will decrease, if a slave has scars or bruises.</div>'
+<div style="font-size: 95%;">   All your efforts to improve appearance of the slave will influence style, not beauty. Stylishness is important too, but the value of natural beauty is huge. You can increase beauty only by plastic surgery in technosphere and only once. Try to buy beautiful slaves if you intend to train them to high ranks. Beauty will decrease, if a slave has scars or bruises.</div>'
 
 $здоровье_справка = '<center>ENDURANCE<br>
 <font color="#cd0000">Dying</font>
@@ -19,9 +19,9 @@ $здоровье_справка = '<center>ENDURANCE<br>
 <font color="#0000CD">Healthy</font>
 <font color="#008080">Tough</font>
 <font color="#008000">Enduring</font></center>'
-$здоровье_справка_2 = '  Hardy slave can work well and hard and is more attractive for clients. Critical dectrease of endurance can kill your slave.'
+$здоровье_справка_2 = '  Hardy slave can work well and hard and is more attractive for clients. Critical decrease of endurance can kill your slave.'
 $здоровье_совет = "   [ENDURANCE TIPS]
-<div style='font-size: 88%;'>  Endurance always comes handy. If your slave has weak endurance you need to feed her well; it's desirable to prescribe vitamins and not let her become exhausted (recieve red energy stars). Assistant with high nurse skill can help too. To increase endurance of healthy slave, make her do sports, race and martial arts. You also need to heal her injuries and sicknesses in time, don't let her starve or overwork.</div>"
+<div style='font-size: 88%;'>  Endurance always comes handy. If your slave has weak endurance you need to feed her well; it's desirable to prescribe vitamins and not let her become exhausted (receive red energy stars). Assistant with high nurse skill can help too. To increase endurance of healthy slave, make her do sports, race and martial arts. You also need to heal her injuries and sicknesses in time, don't let her starve or overwork.</div>"
 
 $экзотичность_справка = '<center>EXOTICISM<br>
 <font color="#cd0000">Ordinary</font>
@@ -43,7 +43,7 @@ $жыр_справка = '<center>PHYSIQUE<br>
 <font color="#008000">Healthy weight</font></center>'
 $жыр_справка_2 = "  You can get more mince from fat slaves but they are not attractive. Weedy starvelings aren't attractive as well, but you can't get a lot meat from them either. It's better to keep your slave slim, but not skinny."
 $жыр_совет = "   [PHYSIQUE TIPS]
-<div style='font-size: 95%;'>   Extra weight is generally harmful, as well as a lack of it. To keep your slave slim you need to balance her nutrition that way that it is sufficient, but not excessive. The more your slave works and the more endurant she is - the more food she needs. Physycal excercises don't decrease weight directly but are a good way to burn extra callories. Actively involved in sports slave should be well fed slave.</div>"
+<div style='font-size: 95%;'>   Extra weight is generally harmful, as well as a lack of it. To keep your slave slim you need to balance her nutrition that way that it is sufficient, but not excessive. The more your slave works and the more endurant she is - the more food she needs. Physical exercises don't decrease weight directly but are a good way to burn extra calories. Actively involved in sports slave should be well fed slave.</div>"
 
 $чувствительность_справка = '<center>EMPATHY<br>
 <font color="#cd0000">Uncaring</font>
@@ -85,9 +85,9 @@ $темперамент_справка = '<center>TEMPERAMENT<br>
 <font color="#0000CD">Reactive</font>
 <font color="#008080">Lively</font>
 <font color="#008000">Passionate</font></center>'
-$темперамент_справка_2 = '  Temperamental slaves are uncontrollable and are less suspectible to education but they are passionate lovers and are more interesting for customers, as they have a bright personality. Calms ones are easier to control.'
+$темперамент_справка_2 = '  Temperamental slaves are uncontrollable and are less susceptible to education but they are passionate lovers and are more interesting for customers, as they have a bright personality. Calms ones are easier to control.'
 $темперамент_совет = '   [TEMPERAMENT TIPS]
-   Temperament is ambiguous feature. More emotional slaves are harder to control, but cold ones are less valuable. By suppressing initiative, driving her in depression and silencing her you will eventually lower her temperament. There are no good ways to increase it, but you can make a slave wear a spiked collar and high boots.'
+   Temperament is ambiguous feature. More emotional slaves are harder to control, but cold ones are less valuable. By suppressing initiative, driving her in depression and silencing her you will eventually lower her temperament. There are no good ways to increase it, but you can make a slave wear a spiked collar and boots.'
    
 $характер_справка = '<center>NATURE<br>
 <font color="#cd0000">Spineless</font>
@@ -96,7 +96,7 @@ $характер_справка = '<center>NATURE<br>
 <font color="#0000CD">Independent</font>
 <font color="#008080">Determined</font>
 <font color="#008000">Willful</font></center>'
-$характер_справка_2 = '  Strong character makes slave more interesting and indpendent but lowers her obedience. It is easier to control a weak-willed slaves but their value will be lower.'
+$характер_справка_2 = '  Strong character makes slave more interesting and independent but lowers her obedience. It is easier to control a weak-willed slaves but their value will be lower.'
 $характер_совет = '   [NATURE TIPS]
 <div style="font-size: 90%;">   Nature is ambiguous feature. It is very hard to train willful slave but weak-willed will lose its value greatly. The more you make a slave do what she does not want to do, the more her nature will break. It is difficult to restore nature so do not overdo it. Victory in duels, assistance in training, martial arts and recreation in a golden cage can help in the formation of solid nature.</div>'
 
@@ -107,7 +107,7 @@ $гордыня_справка = '<center>PRIDE<br>
 <font color="#0000CD">Fastidious</font>
 <font color="#008080">Open</font>
 <font color="#008000">Unashamed</font></center>'
-$гордыня_справка_2 = '  Pride prevents slave from being open and enjoying sex, causes her to resist your will, refuse humuliating orders.'
+$гордыня_справка_2 = '  Pride prevents slave from being open and enjoying sex, causes her to resist your will, refuse humiliating orders.'
 $гордыня_совет = '   [PRIDE TIPS]
    Pride is harmful both in training and in the sale, so you should work on her openness. Force her to do dirty, perverted and degrading things, and assign strict rules. Eventually pride will be broken and the slave will become more open. But do not overdo it, as with pride, you can break the very slave.'
 
@@ -120,7 +120,7 @@ $слава_справка = '<center>FAME IN ROME<br>
 <font color="#008000">Legend of Rome</font></center>'
 $слава_справка_2 = "  Famous slaves are much more expensive. Your slave's rank won't be lower than level of her fame, even if she lacks other attributes, beauty included."
 $слава_совет = '   [FAME TIPS]
-   Fame is not the most important parameter for a slave. You can train wonderful product uncncerned about this. Fame will grow with victories in the arena coliseum.'
+   Fame is not the most important parameter for a slave. You can train wonderful product unconcerned about this. Fame will grow with victories in the arena coliseum.'
 
 $калории_совет = '   [WHAT CALORIES DOES?]
 <div style="font-size: 83%;">   Calories represent how your slave fed. If the number of calories less than or equal to zero - slave will starve to lose weight (f) and she will starve, but if a slave is thick enough - she will begin to lose weight. Each active action consumes calories, the more calories - the faster the slave will get fat and gain weight, and vice versa. Determine the amount of calories as a slave health, it is important not to give it to drain itself. If you change the physique, fat meter will reset.</div>'
@@ -175,7 +175,7 @@ $богатство_справка = '<center>STANDARD OF LIVING<br>
 <font color="#008000">Luxurious</font>
 <font color="#008000">Extravagant</font></center>'
 $богатство_совет = "   [STANDARD OF LIVING TIPS]
-  All the wealth in the world will do nothing to improve your standing if you live like a beggar and never improve your lot in life. Set the standard of living in the menu under 'Domestic Issues'. A standard of living a little above your fame is optimal, but beware of the expense. Assigning a good accountant can optimise your costs."
+  All the wealth in the world will do nothing to improve your standing if you live like a beggar and never improve your lot in life. Set the standard of living in the menu under 'Domestic Issues'. A standard of living a little above your fame is optimal, but beware of the expense. Assigning a good accountant can optimize your costs."
 
 $гигиена_справка = '<center>HYGIENE<br>
 <font color="#cd0000">Disgusting</font>
@@ -227,7 +227,7 @@ $медик_справка = '<center>MEDIC<br>
 <font color="#0000CD">Doctor</font>
 <font color="#008080">Physician</font>
 <font color="#008000">Surgeon</font></center>'
-$медик_совет = '  A competent medic can train nurses and can quickly cure sick and injured slaves. The level of your nurses cannot exceed the level of your phycisian skill during personal lessons. Increases automatically when training nurses.'
+$медик_совет = '  A competent medic can train nurses and can quickly cure sick and injured slaves. The level of your nurses cannot exceed the level of your physician skill during personal lessons. Increases automatically when training nurses.'
 
 $боец_справка = '<center>FIGHTER<br>
 <font color="#cd0000">Non-combatant</font>
@@ -236,7 +236,7 @@ $боец_справка = '<center>FIGHTER<br>
 <font color="#0000CD">Soldier</font>
 <font color="#008080">Warrior</font>
 <font color="#008000">Master swordsman</font></center>'
-$боец_совет = "   Martial skill is useful both to train a gladiatrix and in real combat. Your capacity to learn special techniques from the Colosseum trainer and the duration of your strike's effects are both dependant upon your combat skill. These skills increase automatically when training a slave and with victory in battle."
+$боец_совет = "   Martial skill is useful both to train a gladiatrix and in real combat. Your capacity to learn special techniques from the Colosseum trainer and the duration of your strikes effects are both dependent upon your combat skill. These skills increase automatically when training a slave and with victory in battle."
 
 $маг_справка = '<center>MAGIC<br>
 <font color="#cd0000">Mundane</font>
@@ -304,7 +304,7 @@ $артдиректор_с_справка = '  Artistry comes in many forms. Pai
 
 $медик_с_справка = '  A competent medic can train nurses and can quickly cure sick and injured slaves.'
 
-$боец_с_справка = "   Martial skill is useful both to train a gladiatrix and in real combat. Your capacity to learn special techniques from the Colosseum trainer and the duration of your strike's effects are both dependant upon your combat skill."
+$боец_с_справка = "   Martial skill is useful both to train a gladiatrix and in real combat. Your capacity to learn special techniques from the Colosseum trainer and the duration of your strikes effects are both dependent upon your combat skill."
 
 $маг_с_справка = "<div style='font-size: 92%;'>   This skill is responsible for your ability to cast spells using sparks and directly affects the effectiveness of these spells.  The skill of enchantresses you personally train cannot exceed your skill rank in magic. Trained enchantresses can brew useful potions for you in the lab, but you will need reagents that can be found at the 'Rarities of Mystra' in the Outcasts' Quarter.</div>"
 

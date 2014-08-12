@@ -36,12 +36,12 @@ IF inventory['vaginal_balls'] = 1:
 END
 
 IF inventory['anal_plug'] = 1:
- $furniture_list += 'Anal plug x1 [0]<br>'
+ $furniture_list += 'Anal pear x1 [0]<br>'
  house_items += 0
 END
 
 IF inventory['secure_gag'] = 1:
- $furniture_list += 'Secure gag x1 [0]<br>'
+ $furniture_list += 'Reliable gag x1 [0]<br>'
  house_items += 0
 END
 
@@ -51,12 +51,12 @@ IF inventory['deprivation_suit'] = 1:
 END
 
 IF inventory['pissuar_stable'] = 1:
- $furniture_list += 'Pee-stable x1 [5]<br>'
+ $furniture_list += 'Urinal rack x1 [5]<br>'
  house_items += 5
 END
 
 IF inventory['toilet_stable'] = 1:
- $furniture_list += 'Toilet stable x1 [10]<br>'
+ $furniture_list += 'Toilet seat x1 [10]<br>'
  house_items += 10
 END
 

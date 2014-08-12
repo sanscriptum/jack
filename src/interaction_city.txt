@@ -694,11 +694,11 @@ IF interaction_city = 115451:
  sparks -= 5
  $play_sound[1] = $slaughter_sound
  $text[1] = '   Ruthlessly butcher takes the girl by the hair and pull her head back, he strikes her throat sharply across with a knife. Choking on her own blood, <<$slave_name>> twitches in his hands some time, but her life quickly fades.'
- $text[2] = '   With a special curved knife butcher cuts skin from the body, then he chop the carcass into pieces with a huge axe. Best tenderloin will be cut into portions, and the other meat butcher scrolls along with the fat through a large grinder to get a good minced meat.'
+ $text[2] = '   With a special curved knife butcher cuts skin from the body, then he chop the carcass into pieces with a huge axe. Best tenderloin will be cut into portions, and the other meat butcher scrolls along with the fat through a large grinder to get a good mince.'
  $text[3] = '   After about half an hour you get your slave back, neatly packed in sealed plastic bags.<BR> Content of the bags: '
  if virgin_meat_gain > 0: $text[3] += 'The most delicate virgin meat, <<virgin_meat_gain>> portions. '
  if meat_gain > 0: $text[3] += 'Best tenderloin, <<meat_gain>> portions. '
- if mince_gain > 0: $text[3] += 'Fat minced meat, <<mince_gain>> portions. ' 
+ if mince_gain > 0: $text[3] += 'Greasy mince, <<mince_gain>> portions. ' 
  $special_image[2] = 'scene\slaughter_work.jpg'
  $special_image[3] = 'scene\slaughter_result.jpg'
  dynamic $get_meat
@@ -1487,7 +1487,7 @@ IF interaction_city = 13411:
  $picture_type = 'pic_jpg'
  $special_bg = 'bg\interiors\basic_study'
  $text[1] = '   [Gloria]
-   - Do you really want to bring your big room in this form? It will be free of charge. Our workers simply will move out the extra furniture. Will do?'
+   - Do you really want to bring your hall in this form? It will be free of charge. Our workers simply will move out the extra furniture. Will do?'
  $yes = {
 $study = 'basic'
 $bg['study'] = $interior_study[$study]
@@ -2925,7 +2925,7 @@ IF interaction_city = 142:
   else
   !TODO: <<$rating[contract['level']]>> не выводится
   $text[1] = "[MISTRESS ANGELIKA]
-    - So what? I need a <font color='#0000CD'><<$slave_type_name[$contract['specialisation']]>> </font> for <<$rating[contract['level']]>> rank or higher. Alive and well. Not necessarily the one that I gave you, but as long as you do not hand over to me the finished work, the contract remains in you. Go back to work."
+    - So what? I need a <font color='#0000CD'><<$slave_type_name[$contract['specialisation']]>></font> for <<$rating[contract['level']]>> rank or higher. Alive and well. Not necessarily the one that I gave you, but as long as you do not hand over to me the finished work, the contract remains in you. Go back to work."
  END
 END
 
@@ -3333,7 +3333,7 @@ IF interaction_city = 1945:
  npc = 1
  $npc_id = 'брина_рыжая'
  $text[1] = "   [RED HAIR BRYN]
-   - I will take for that lesson <<spm_price>> sparks. <font color='green'>Dashing blow</font> to the tendons will weaken an enemy stand and make him vulnerable and shaky! You''ll need a slashing weapon, be careful! Choose your own special attacks carefully..."
+   - I will take for that lesson <<spm_price>> sparks. <font color='green'>Dashing blow</font> to the tendons will weaken an enemy stand and make him vulnerable and shaky! You'll need a slashing weapon, be careful! Choose your own special attacks carefully..."
  $yes = {
 $spm_to_learn = 'подрезка'
 sparks -= spm_price
@@ -3353,7 +3353,7 @@ IF interaction_city = 1946:
  npc = 1
  $npc_id = 'брина_рыжая'
  $text[1] = "   [RED HAIR BRYN]
-   - I will take for that lesson <<spm_price>> sparks. <font color='purple'>Precise hit</font> in the eyes not only cause a double damage, but also cause the enemy to become more scattered and vulnerable! You''ll need a piercing weapon, be careful!"
+   - I will take for that lesson <<spm_price>> sparks. <font color='purple'>Precise hit</font> in the eyes not only cause a double damage, but also cause the enemy to become more scattered and vulnerable! You'll need a piercing weapon, be careful!"
  $yes = {
 $spm_to_learn = 'ослепление'
 sparks -= spm_price
@@ -3757,7 +3757,7 @@ IF interaction_city = 24:
  IF faction_fame['taurus'] => 3 and taurus_met = 0:
   taurus_met = 1
   $text[1] = "   [GUARD KNIGHTS]
-   - We''ve heard about you, <<$master_name>>. You can go through."
+   - We've heard about you, <<$master_name>>. You can go through."
   elseif faction_fame['taurus'] => 3 and taurus_met = 1: 
 		$text[1] = "   [GUARD KNIGHTS]
    - Come in, <<$master_name>>."
@@ -3845,7 +3845,7 @@ IF interaction_city = 2431:
  npc_progress['pretor_siegfrid'] = 1
  active[$quest[5]] = 1
  $quest_description[5] = 'Praetor Siegfrid (White palace, <<$rating[4]>>)
-   Do you see this horse, slaver? This is my trusty Bucephalus, the best horse in the city and the only one I will ride. This is not an empty whim, thanks Bucephalus I can safely deliver sparks.
+   Do you see this horse, slaver? This is my trusty Bucephalus, the best horse in the city and the only one I will ride. This is not an empty whim, thanks to Bucephalus I can safely deliver sparks.
    This stallion saved my life a lot of times, but his life in this damn city is not very sweet. I can not keep mares in the palace, and his temper hot and insatiable. I have heard that some taught special women to please the beasts.
    If you can teach a slave, which will provide him with proper care and attention, will make him cheerful and happy, I do not skimp on sparks for you. But mind you, very few people can cope with the force of such a violent stallion as Bucephalus!
    Thus, a slave I that want to buy should be able to excellently know how <font color="#008000"><b>please the horse</b></font> and <font color="#008080"><b>pretend as mare</b></font> as well, so that he did not feel strange. And of course she would have to <font color="#008080"><b>clean the stall</b></font>.
@@ -3881,7 +3881,7 @@ IF interaction_city = 2441:
   Do not worry, I do not need anything fancy. I just need something BEST enough. Pick up and teach for me the most gorgeous concubine what you can.
   Of course, she should be <font color="#008000"><b>good in bed</b></font>, and she must know how to work with <font color="#008000"><b>hands</b></font> and <font color="#008000"><b>mouth</b></font>. Well, you know that better than me, of course. But I don''t want just a concubine.
   I need a woman that can support <font color="#008080"><b>conversation</b></font> and can show her <font color="#0000CD"><b>character</b></font>. Real woman, you know, with a <font color="#0000CD"><b>brains</b></font>, not just a mindless doll. Of course she needs to know her place as well.
-  What else? Hmm, nothing else I guess. Remains only one thing - she should please me. Bring her here, I will evaluate. Just do not waste my time, bring a prepared womans.
+  What else? Hmm, nothing else I guess. Remains only one thing - she should please me. Bring her here, I will evaluate. Just do not waste my time, bring a prepared women.
   
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>' 
  txt_count = 5
@@ -4311,7 +4311,7 @@ IF interaction_city = 3312:
   slave_issues += 1
   txt_count += 1  
   cure_slave_ill = 1 
-  $text[slave_issues] = '      [DOCTOR]
+  $text[slave_issues] = '   [DOCTOR]
    - We diagnosed rotphilis on your slave, <<$master_name>>. I would not recommend to sell her with a disease if you do not want lower your reputation. But it can be treated. Only for twenty-five sparks.' 
  END
  IF slave_issues > 0:
@@ -5258,7 +5258,7 @@ IF interaction_city = 44:
  copyarr '$display_options', '$farm_options'
  txt_count = 1
  $text[1] = "   [Jarik]
-   - Oh! Hello there, slaver. What wish today? Buy, sell, or maybe you want rent a cattle for the breed?"
+   - Oh! Hello there, sir-trainer. What wish today? Buy, sell, or maybe you want rent a cattle for the breed?"
 END
 
 IF interaction_city = 441:
@@ -5289,7 +5289,7 @@ IF interaction_city = 45:
  IF faction_fame['kamira'] => 3 and kamira_met = 0:
   kamira_met = 1
   $text[1] = "   [CITADEL GUARD]
-   - You''ve proven that you can be trusted, <<$master_name>>. Come on in."
+   - You've proven that you can be trusted, <<$master_name>>. Come on in."
   elseif faction_fame['kamira'] => 3 and kamira_met = 1: 
 		$text[1] = "   [CITADEL GUARD]
    - Go on, <<$master_name>>."
@@ -5409,11 +5409,11 @@ IF interaction_city = 4541:
  npc_progress['tiamath'] = 1
  active[$quest[5]] = 1
  $quest_description[5] = 'Mistress Tiamat (Tierra del Citadel, <<$rating[5]>>)
-<div style="font-size: 90%;"> DO YOU SEE THIS SHINING CHILD, HUMAN? HE''S MY HEIR, HOPE OF THE HOUSE IN THE NEXT MILLENNIUM. SO VULNERABLE NOW, BUT UNDER MY PROTECTION HE WILL GROW TO THE MOST POWERFUL CREATURE IN THIS DIRTY CITY.
+ DO YOU SEE THIS SHINING CHILD, HUMAN? HE''S MY HEIR, HOPE OF THE HOUSE IN THE NEXT MILLENNIUM. SO VULNERABLE NOW, BUT UNDER MY PROTECTION HE WILL GROW TO THE MOST POWERFUL CREATURE IN THIS DIRTY CITY.
  HE, HOWEVER, HAS THE PROBLEM. HE DOES NOT DISTINGUISH HIGHER AND LOWER. KINDNESS WILL MAKE HIM VULNERABLE. HE NEEDS TO GET USED TO COMMAND WITH LESSER BEINGS, LIKE UNTO THEE.
  BROUGHT UP FOR HIM HUMAN FEMALE. PREPARE HER WELL, LET SHE BE OBEDIENT TO HIS MASTER ABOVE ALL. SHE MUST BE ABLE SHARPLY <font color="#008000"><b>FEEL</b></font> PAIN AND SADNESS.
  SHE MUST TAKE CARE OF HIM, <font color="#008080"><b>CLEAN HIM UP</b></font> AND <font color="#008080"><b>HEAL HIM</b></font> AND <font color="#008080"><b>SING</b></font> HIM A LULLABY. IF HE WANTS TO <font color="#0000CD"><b>RAPE</b></font> HER, SHE MUST BE READY FOR THIS.
- AND MOST IMPORTANTLY, SHE MUST IDEALLY EXECUTE <font color="#008000"><b>THE ROLE OF ANIMAL</b></font>. MY HEIR HAD TO LEARN THE WORTH OF PEOPLE AND DO NOT MAKE MISTAKES, TRYING TO COMMUNICATE ON EQUAL TERMS. NOW GO. YOU HEARD MY WILL.</div>
+ AND MOST IMPORTANTLY, SHE MUST IDEALLY EXECUTE <font color="#008000"><b>THE ROLE OF ANIMAL</b></font>. MY HEIR HAD TO LEARN THE WORTH OF PEOPLE AND DO NOT MAKE MISTAKES, TRYING TO COMMUNICATE ON EQUAL TERMS. NOW GO. YOU HEARD MY WILL.
  
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>' 
  txt_count = 5
@@ -6123,7 +6123,7 @@ IF interaction_city = 6204:
  GT 'shop_general'
 END
 
-!paladin of taurus with a girl
+!taurus paladin with a girl
 IF interaction_city = 6205:
  $fight_return  = 'city_menu_form'
  skip_to = 6205
@@ -6138,11 +6138,11 @@ IF interaction_city = 6205:
  GT 'shop_general'
 END
 
-!beastmens with a girl
+!beastmen with a girl
 IF interaction_city = 6206:
  $fight_return  = 'city_menu_form'
  skip_to = 6206
- $sp_text[6206] = '   You hear screams from afar and roars, which indicate that nearby are the beastmen gang of Camira caught a woman. While one of them rape the victim, rest are building a fire to fry and eat the poor thing.'
+ $sp_text[6206] = '   You hear screams and roars from afar, which indicate that nearby are the beastmen gang of Camira caught a woman. While one of them rape the victim, rest are building a fire to fry and eat the poor thing.'
  количество_врагов = 4
  $зверолюд[1] = 'козлорогий'
  $зверолюд[2] = 'свинорылый'
@@ -6334,7 +6334,7 @@ IF interaction_city = 64:
  copyarr '$display_options', '$warcamp_options'
  txt_count = 1
  $text[1] = "   [SERGEANT]
-   - Civilian does not to be here, you better go back to the protected area. But do not even expect the protection and escort to the city, we''ve got short forces."
+   - Civilian does not to be here, you better go back to the protected area. But do not even expect the protection and escort to the city, we've got short forces."
 END
 
 IF interaction_city = 641:
@@ -6415,7 +6415,7 @@ IF interaction_city = 6529:
    - You're lucky kid. I just now have this right here. Gimme sparks and take away the girl."
 END
 
-!Всячина
+!misc
 IF interaction_city = 900:
  $return_lock  = 'slave_to_train' 
  npc = 1

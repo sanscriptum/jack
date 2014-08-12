@@ -1189,19 +1189,19 @@ IF menu_form = 151:
  $text_display += {<br><div id="under">Stroll on the roof (=1)<br><div id = "clear"><a href = 'EXEC: interaction = 1511 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Walk around the city (=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1512 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
  IF sparks => 2 and already_done_today[1513] = 0: 
-  $text_display += {<br><div id="under">Go to the beach (2 ис) (=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1513 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Go to the beach (2 sparks) (=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1513 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Go to the beach (2 ис) (=3)<br></div>}   
+  $text_display += {<br><div id="under_gray">Go to the beach (2 sparks) (=3)<br></div>}   
  END
  IF sparks => 4 and already_done_today[1514] = 0: 
-  $text_display += {<br><div id="under">Go to the theater (4 ис) (=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1514 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Go to the theater (4 sparks) (=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1514 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Go to the theater (4 ис) (=4)<br></div>} 
+  $text_display += {<br><div id="under_gray">Go to the theater (4 sparks) (=4)<br></div>} 
  end 
  IF sparks => 8 and already_done_today[1515] = 0: 
-  $text_display += {<br><div id="under">Go to a restaurant (8 ис) (=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1515 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Go to a restaurant (sparks) (=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1515 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Go to a restaurant (8 ис) (=5)<br></div>} 
+  $text_display += {<br><div id="under_gray">Go to a restaurant (8 sparks) (=5)<br></div>} 
  end 
  $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 15 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}

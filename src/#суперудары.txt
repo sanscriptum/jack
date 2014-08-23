@@ -281,13 +281,13 @@ $спецэффект_суперудара['заморозка'] = {
 }
 
 !_________FOR GLADIATRIX________
-!THROW A FISHNET ['бросок_сети']
+!THROW A NET ['бросок_сети']
 базовый_вред['бросок_сети'] = 5
 $тип_вреда['бросок_сети'] = дробящий
 $суперудар_тип['бросок_сети'] = 'быстрая'
-$суперудар_название['бросок_сети'] = "<font color='red'>TROW FISHNET</font>"
+$суперудар_название['бросок_сети'] = "<font color='red'>TROW NET</font>"
 суперудар_длительность['бросок_сети'] = 10+ловкость
-$суперудар_текст['бросок_сети'] = "You trow your fishnet at the enemy <font color='purple'>just in time</font>. Now she is almost helpless!"
+$суперудар_текст['бросок_сети'] = "You trow your net at the enemy <font color='purple'>just in time</font>. Now she is almost helpless!"
 $спецэффект_описание['бросок_сети'] = 'entangled'
 $суперудар_условие_1['бросок_сети'] = 'нет'
 $суперудар_условие_2['бросок_сети'] = 'нет'

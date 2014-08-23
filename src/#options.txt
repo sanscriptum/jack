@@ -1678,7 +1678,7 @@ $colloseum_options[24] = {
  IF $slave['trademark_style'] = '':
   $sp_text[24] = '   Battles take place in the arena with a clear regulation of weapons and equipment. You need to choose a style that will fight <<$slave_name>> and appropriate outfit to this style.'
   $text_display += {<br><br><div id="under">Net and trident<br><div id = "clear"><a href = 'EXEC: $g_type = "retiarius" & gt "$gladiator_setup"'><img src = "content\pic\clear.gif"></a></div></div>}
-  $text_display += {<br><div id="under">Armor and saw-whip<br><div id = "clear"><a href = 'EXEC: $g_type = "flagrius" & gt "$gladiator_setup"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Armor and whipsaw<br><div id = "clear"><a href = 'EXEC: $g_type = "flagrius" & gt "$gladiator_setup"'><img src = "content\pic\clear.gif"></a></div></div>}
   $text_display += {<br><div id="under">Dual wield<br><div id = "clear"><a href = 'EXEC: $g_type = "dimacherus" & gt "$gladiator_setup"'><img src = "content\pic\clear.gif"></a></div></div>}
   $text_display += {<br><div id="under">Weapon and shield<br><div id = "clear"><a href = 'EXEC: $g_type = "hoplomachus" & gt "$gladiator_setup"'><img src = "content\pic\clear.gif"></a></div></div>} 
   $text_display += {<br><div id="under">Heavy weapons<br><div id = "clear"><a href = 'EXEC: $g_type = "kimerian" & gt "$gladiator_setup"'><img src = "content\pic\clear.gif"></a></div></div>}

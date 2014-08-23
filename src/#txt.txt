@@ -446,7 +446,7 @@ $verbal_abuse_description[5]= "Вы хватаете воспитуемую за
 $abuse_torture_reaction['reluctant'] = "<<$slave_name>> seems to be a bit scared, but clearly less than you would like. She still doesn't take you seriously enough."
 $abuse_torture_reaction['arrogant'] = "<<$slave_name>> coldly responds to you that she will not tolerate such abuse."
 $abuse_torture_reaction['hateful'] = "<<$slave_name>> responds rudely and advises you to shove your threats up the place where the sun doesn't shine."
-$abuse_torture_reaction['resistant'] = "After listening to you <<$slave_name>> does not utter a word. Her stubborn look shows that she couldn't care less about your discontent."
+$abuse_torture_reaction['resistant'] = "After listening to you <<$slave_name>> does not utter a word. Her stubborn look shows that she couldn't care less about your discоntent."
 $abuse_torture_reaction['lachrymose'] = "Having heard your harsh words <<$slave_name>> starts to cry and can not calm down for a long time."
 $abuse_torture_reaction['soft'] = "<<$slave_name>> seem to perceive your words very seriously, although innate optimism makes her forget about what happened in half an hour."
 $abuse_torture_reaction['servile'] = "With her head shamefacedly bowed <<$slave_name>> admits that she behaved badly. She begs you to designate her the most severe punishment."
@@ -1783,7 +1783,7 @@ $slave_washes_rule_abort = '  You decide to wash yourself, to not distract your 
 
 $prisoner_ration[1] = '  You decide to starve the prisoner with hunger. This will save some sparks.'
 $prisoner_ration[2] = '  You decide to keep the prisoner at a minimum diet. Most likely, she will survive even with poor nutrition, and you can save sparks for a little.'
-$prisoner_ration[3] = '  Dog food - a fairly common food in the Eternal Rome. They both are not very expensive and provide good nutrition. You dumped the contents of a tin can in a shabby bowl standing in a cage.'
+$prisoner_ration[3] = '  Dog food - a fairly common food in the Eternal Rome. They both are not very expensive and provide good nutrition. You dumped the cоntents of a tin can in a shabby bowl standing in a cage.'
 $prisoner_ration[4] = '  You decide to feed the prisoner with fiend''s cum. Provided that the sperm is in stock - it will be free, which will save a lot of sparks. Another question - if prisoner will like such food? But you do not particularly care.'
 
 $Нимфоманка = "  You've noticed that your slave, to put it mildly, is partial to sex. Many sexual practices will be easier for her, but an insatiable desire will drive her crazy."
@@ -2098,7 +2098,7 @@ $slave_fear_description[4] = "  [<<$slave_name>>]<font color='#8B0A50'>
   - And I'm really scared. Comprehension of terrible things you can do with me makes me sick.
 </font>"
 $slave_fear_description[5] = "  [<<$slave_name>>]<font color='#8B0A50'>
-  - And I think about almost nothing, but a fear. The last thing I would like to do is to cause your discontent, Master. Given that you can do with me...
+  - And I think about almost nothing, but a fear. The last thing I would like to do is to cause your discоntent, Master. Given that you can do with me...
 </font>"
 
 $slave_ratio_description[0] = "  [<<$slave_name>>]<font color='#8B0A50'>

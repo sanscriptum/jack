@@ -26,12 +26,12 @@ IF sp_txt = 2:
 END
 
 IF sp_txt = 11:
- $text_display += {<br><br><div id="under">Dagger (10 искр)<br><div id = "clear"><a href = 'EXEC: sp_txt = 111 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Stiletto (10 искр)<br><div id = "clear"><a href = 'EXEC: sp_txt = 112 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Brass lnuckles (10 искр)<br><div id = "clear"><a href = 'EXEC: sp_txt = 113 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Lash (10 искр)<br><div id = "clear"><a href = 'EXEC: sp_txt = 114 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Stunner (10 искр)<br><div id = "clear"><a href = 'EXEC: sp_txt = 115 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Butcher`s cleaver (20 искр)<br><div id = "clear"><a href = 'EXEC: sp_txt = 116 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><br><div id="under">Dagger (10 sparks)<br><div id = "clear"><a href = 'EXEC: sp_txt = 111 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Stiletto (10 sparks)<br><div id = "clear"><a href = 'EXEC: sp_txt = 112 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Brass knuckles (10 sparks)<br><div id = "clear"><a href = 'EXEC: sp_txt = 113 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Lash (10 sparks)<br><div id = "clear"><a href = 'EXEC: sp_txt = 114 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Stunner (10 sparks)<br><div id = "clear"><a href = 'EXEC: sp_txt = 115 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Butcher`s cleaver (20 sparks)<br><div id = "clear"><a href = 'EXEC: sp_txt = 116 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Back<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
@@ -109,9 +109,9 @@ END
 
 IF sp_txt = 12:
  $text_display += {<br><br><div id="under">Whip (50$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 121 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Epee (50$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 122 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Épée (50$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 122 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<div id="under">Rapier (50$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 123 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Koncar (50$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 124 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Koncerz (50$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 124 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<div id="under">Gladius (50$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 125 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<div id="under">Bastard sword (100$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 126 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<div id="under">Machete (50$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 127 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}

@@ -348,7 +348,7 @@ faction_fame['taurus'] = 0
 
 $sepia_ava_path[10] = 'content\pic\master\master_nerd_sepia.jpg'
 $clear_ava_path[10] = 'content\pic\master\master_nerd.jpg'
-$hero_description[10] = '   This pimply nerd and a sissy, how did he got into Guild anyway? It is said that Mrs. Angelika took pity when he stood in the market square with a flag stuck in the ass with a mysterious inscription. But who will believe in the mercy of Angelica? Either way, the opportunity to educate sex slaves for horny virgin schoolboy - it''s just the Klondike. Only from all the skills he has for this is only a bottomless pit of perverse fantasies fueled by hormones and hypersexuality.
+$hero_description[10] = '   This pimply nerd and a sissy, how did he got into Guild anyway? It is said that Mistress Angelika took pity when he stood in the market square with a flag stuck in the ass with a mysterious inscription. But who will believe in the Angelica''s mercy? Either way, the opportunity to educate sex slaves for horny virgin schoolboy - it''s just a Klondike. From all the skills he has for this is only a bottomless pit of perverse fantasies fueled by hormones and hypersexuality.
 
 Faction: Serpis Great House'
 $hero_difficulty[10] = '<font color="#cd0000">maximal difficulty</font>'

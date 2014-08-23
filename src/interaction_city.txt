@@ -6169,7 +6169,7 @@ END
 IF interaction_city = 6207:
  $fight_return  = 'city_menu_form'
  skip_to = 6207
- $sp_text[6207] = '   Like a gray zipper rushes past you and jumps on a hardly seen girl, knocking her to the ground. It''s a werewolf, and he seems to believe that the pray belonged to him. Glancing at the corner of his eye to you, werewolf tore off the victim''s clothes, ready to rape and then eat her alive.'
+ $sp_text[6207] = '   Like a gray lightning rushes past you and jumps on a hardly seen girl, knocking her to the ground. It''s a werewolf, and he seems to believe that the pray belonged to him. Glancing at you with corner of his eye, werewolf tore off the victim''s clothes, ready to rape and then eat her alive.'
  количество_врагов = 1
  $враг[1] = 'вервольф' 
  fighting_expirience = 15

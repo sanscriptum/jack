@@ -123,7 +123,7 @@ $слава_совет = '   [FAME TIPS]
    Fame is not the most important parameter for a slave. You can train wonderful product unconcerned about this. Fame will grow with victories in the arena coliseum.'
 
 $калории_совет = '   [WHAT CALORIES DOES?]
-<div style="font-size: 83%;">   Calories represent how your slave fed. If the number of calories less than or equal to zero - slave will starve to lose weight (f) and she will starve, but if a slave is thick enough - she will begin to lose weight. Each active action consumes calories, the more calories - the faster the slave will get fat and gain weight, and vice versa. Determine the amount of calories as a slave health, it is important not to give it to drain itself. If you change the physique, fat meter will reset.</div>'
+<div style="font-size: 83%;">   Calories represent how your slave fed. If the number of calories less than zero - slave will starve and she will lose weight (f), but if slave is fat enough - she will begin to lose weight without starvation if her calories was equal to zero. Each active action consumes calories, the more calories left - the faster the slave will get fat and gain weight, and vice versa. The amount of calories also determine slave health, it is important not to give her to starve herself. If you change her physique, fat meter will reset.</div>'
 
 !ХАРАКТЕРИСТИКИ ТРЕНЕРА
 $сила_справка = '<center>STRENGTH<br>

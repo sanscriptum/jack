@@ -20247,9 +20247,9 @@ seed_pride[902] = 1
 seed_intellect[902] = 4
 seed_fat[902] = 2
 
-$stock_world_description[902] = '   My world is ruled by giant multinational corporations. Territorial governments have lost their power and do what the oligarchs dictate. Get a good job is difficult, but those who settled in the corporation can rely on good earnings.'
-$stock_family_description[902] = '   My father was the manager of recruitment in Dynamical Pharmaceuticals, and my mother worked as a tutor of mathematics for rich kids. With the support of parents, I managed to get a good education and start a career in a company where my dad worked.'
-$stock_occupation_description[902] = '   Then I met Greg - he was a line manager at Vega Industries and had good views of the career. We got married and I quit my job to become a housewife, gave birth to a son. But once Greg fucked up and he was expelled from the service. Because of the debts we were deprived of civil rights and became the property of the bank.'
+$stock_world_description[902] = '   My world is ruled by giant multinational corporations. Territorial governments have lost their power and do what the oligarchs dictate. It is difficult to find a good job, but those who work for corporation can rely on good earnings.'
+$stock_family_description[902] = '   My father was the manager of recruitment in Dynamical Pharmaceuticals, and my mother worked as a math tutor for rich kids. With the support of parents, I managed to get a good education and start a career in a company where my dad worked.'
+$stock_occupation_description[902] = '   Then I met Greg - he was a line manager at Vega Industries and had good views for the career. We got married and I quit my job to become a housewife, gave birth to a son. But once Greg fucked up and he was expelled from the service. Because of the debts we were deprived of civil rights and became the property of the bank.'
 
 seed_virginity[902] = 3
 seed_metabolism[902] = 3
@@ -20371,9 +20371,9 @@ seed_intellect[903] = 3
 seed_exotic[903] = 2
 seed_fat[903] = 1
 
-$stock_world_description[903] = '   Previously, our universe ruled by the great empire of the Ancients. But it broke. Now there are many tribes that roam the space on a starship created by the Ancients. The more ships in the tribe, the more powerful it is. Everyone wants to grab a new ships, because no one knows how to build them.'
-$stock_family_description[903] = '   My tribe is very powerful - we have as many as three-class destroyers "Typhoon" and two assault transport. Men like you we are keeping in bondage because they are stupid and unreliable. Only women are allowed to make decisions, as our mind is open to the Great Goddess.'
-$stock_occupation_description[903] = '   I''ve always been a strong and quick, so I went into the boarding party as soon as I could raise the assault blaster. We have a nice fights. For my services Mother''s Council made ​​me commander of the wing. And then I got into the damn fogs, when I got to hunt on the planet where we restock.'
+$stock_world_description[903] = '   Previously, our universe ruled by the great empire of the Ancients. But it collapsed. Now there are many tribes that roam the space on a starship created by the Ancients. The more ships in the tribe, the more powerful it is. Everyone wants to grab a new ships, because no one knows how to build them.'
+$stock_family_description[903] = '   My tribe is very powerful - we have three destroyers of "Typhoon" type and two assault transport. Men like you we are keeping in bondage because they are stupid and unreliable. Only women are allowed to make decisions, as our mind is open to the Great Goddess.'
+$stock_occupation_description[903] = '   I''ve always been strong and quick, so I went into the boarding party as soon as I could pick up the assault blaster. We had a glorious fights. For my services Mother''s Council made me as the commander of the wing. And then I got into the damn fogs, when I got to hunt on the planet where we restock.'
 
 seed_virginity[903] = 0
 seed_metabolism[903] = 5
@@ -20497,8 +20497,8 @@ seed_exotic[904] = 1
 seed_fat[904] = 0
 seed_spoil[904] = 3
 
-$stock_world_description[904] = '   In my world Bright Alliance leads a never-ending war against an ancient evil. In alliance includes all worthy nations: light elves, dwarves and civilized people. Even the angels and unicorns fight on our side, but the enemy has dragons and trolls. He wants to enslave all to reign in the world of darkness.'
-$stock_family_description[904] = '   My dad - king of Arthuria. Arthuria - very proud kingdom with a big military history, although we own only a little land. Our paladins are known worldwide for they nobility and strike fear in the enemy''s miserable henchmen with only their looks. And I had a hand unicorn. Oh, if only he was here...'
+$stock_world_description[904] = '   In my world Bright Alliance leads a never-ending war against an ancient evil. Alliance includes all worthy nations: bright elves, dwarves and civilized people. Even the angels and unicorns fight on our side, but the enemy has dragons and trolls. He wants to enslave everyone so that Darkness reigned in the world.'
+$stock_family_description[904] = '   My dad - king of Arthuria. Arthuria - very proud kingdom with a big military history, although we own only a little land. Our paladins are known worldwide for they nobility and they strike fear in the enemy''s miserable henchmen with only their looks. And I had a pet unicorn. Oh, if only he was here...'
 
 seed_metabolism[904] = 1
 seed_virginity[904] = 0

@@ -1050,7 +1050,7 @@ IF menu_form = 143:
  $text_display += {<br><div id="under">Spank with slipper(=1)<br><div id = "clear"><a href = 'EXEC: interaction = 1431 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Flog with belt(=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1432 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
  IF dungeon > 0:
-  $text_display += {<br><div id="under">Flog with branch(=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1433 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Flog with cane(=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1433 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   IF whipequiped > 0 or нагайка > 0:
    $text_display += {<br><div id="under">Flog with lash(=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1434 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
    else
@@ -1062,7 +1062,7 @@ IF menu_form = 143:
    $text_display += {<br><div id="under_gray">Flog with whip<br></div>}
   END  
   ELSE 
-  $text_display += {<br><div id="under_gray">Flog with branch<br></div>}
+  $text_display += {<br><div id="under_gray">Flog with cane<br></div>}
   $text_display += {<br><div id="under_gray">Flog with lash<br></div>}   
   $text_display += {<br><div id="under_gray">Flog with whip<br></div>}
  END

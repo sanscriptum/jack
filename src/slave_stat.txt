@@ -156,7 +156,7 @@ Bath slave -
 Milkmaid - 
 
 Vaginal vibe - 
-Force rules -
+Force rules - 
 </div>'  
  IF slave_sleep_condition = -2:
   *p '<div id="chekbox_1l"><img src="content\pic\buttons\sel_button.png"></div>'  

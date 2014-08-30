@@ -25,7 +25,7 @@ Warning - if one of the text files when editing was not saved in `utf8 without b
 Do not download the source code from the site using the button ``Download ZIP``! Text files are downloaded from the site will be converted to UNIX format, which makes their contents into a mess and makes it impossible to build a file! Download the source code from GitHub client directly, and make sure that the file format was dos/win!
 
 ###Note for translators
-Text is placed between neither `'` or `"` symbol.
+Text is placed between either `'` or `"` symbol.
 If you use `'` symbol in word when text is closed with same symbol, you will break line prematurely and also break the game. So use double quotes `''`, or ` symbol. 
 
 If line is closed with `"` symbol, you can use single quotes without any problem. The problem is, you can't just replace all `'` symbols with `"`, because it will break some certain places in code when using variable in the text. Also, you can use ` symbol instead of ', but it looks not that great. Example:

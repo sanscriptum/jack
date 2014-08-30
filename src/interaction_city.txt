@@ -3119,7 +3119,7 @@ IF interaction_city = 15343:
  pet_tentacle = 0 
 END
 
-!Ватикан
+!VATICAN
 IF interaction_city = 16:
  $place = 'vatican_gate'
  $return_lock  = 'shop_general' 
@@ -3152,11 +3152,11 @@ IF interaction_city = 1611:
  npc_progress['cardinal_de_mujlon'] = 1
  active[$quest[5]] = 1
  $quest_description[5] = 'Cardinal De Muzhlon (Vatican, <<$rating[4]>>)
-   So, <<$master_name>>, you want an audience with the pontiff, in order to advertise your goods to him. I have no doubt that you are preparing a wonderful slaves, but you must understand...
-   Do you really think that the Pope has no more important things? I do not know... Elite Squad of nun-slaves who personally care about the pontiff does really exist, but we already have distributors.
-   Let''s do this. I''ll check the quality of your work in practice, and then I will arrange you a meeting with the Pope, if I''m satisfied adequately. I need a worker in <font color="#008000"><b>secretarial</b></font> service.
-   As you must realize, this work will require a certain perseverance and <font color="#008080"><b>intellectual abilities</b></font>. However, we all understand why we need such a slave. I''ll check her <font color="#008080"><b>ability to love. Without perversions please</b></font>.
-   And the main thing that you must understand. I''m not going to pay. You will have access to the pope - that''s will be your only reward. However, do not expect to get sparks from him either. If you are relying on the patronage of the Pope, you have to give him your masterpiece as a gift.
+   So, <<$master_name>>, you want an audience with the pontiff and advertise your goods to him. I have no doubt that you are preparing a wonderful slave, but you must understand...
+   Do you really think that the Pope has no more important things to do? I don''t know... An Elite Squad of nun-slaves who personally care about the pontiff does exist, but we already have distributors.
+   Let''s do this. I''ll check the quality of your work in practice, and I will arrange a meeting with the Pope if I''m satisfied. I need a worker in <font color="#008000"><b>secretarial</b></font> service.
+   As you might realize, this work will require a certain perseverance and <font color="#008080"><b>intellectual abilities</b></font>. However, we all understand why we need such a slave. I''ll check her <font color="#008080"><b>ability to love. Without perversions please</b></font>.
+   And the main thing that you must understand: I''m not going to pay. You will have access to the pope - that''ll be your only reward. However, do not expect to get any sparks from him either. If you are relying on the patronage of the Pope, you will have to give him your masterpiece as a gift.
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>' 
  txt_count = 5
  copyarr '$text', '$cardinal_de_mujlon_pref'
@@ -3184,11 +3184,11 @@ IF interaction_city = 1621:
  npc_progress['pope'] = 1
  active[$quest[5]] = 1
  $quest_description[5] = 'His Holiness Pope Ioann I (Vatican, <<$rating[5]>>)
-   De Muzhlon buzzed all my ears about that you are preparing splendid slaves and how popular your brand is. There is a special Order of females engaged as my personal guard - Adepta Sororitas.
-   In order to have the capability to enter the Order, the girl should be untouched by man and meet the general high requirements. But the main requirement - absolute devotion in combination with the <font color="#008000"><b>iron will</b></font>.
-   Of course disciple will wait a stern examination in <font color="#008000"><b>hand-to-hand combat</b></font>, before she could even pretend to be given entry into the Order. After that, she will take the indoctrination in the order.
-   Do you will manage this task? Find a girl that <font color="#008000"><b>strong-willed</b></font> enough and <font color="#008000"><b>beautiful</b></font> in order to enter and then properly prepare her - it is an extremely difficult task, but I would not personally accept less.
-   If you make me such a gift, I give you a special status in the White Town and my support in all your endeavors.
+   De Muzhlon buzzed my ears about you preparing splendid slaves and how popular your brand is. There is a special Order of females engaged as my personal guard - Adepta Sororitas.
+   In order to have the capability to enter the Order, the girl should be untouched by man and meet the high requirements. But the main requirement - absolute devotion in combination with <font color="#008000"><b>iron will</b></font>.
+   Of course, she will have to show excellent <font color="#008000"><b>hand-to-hand combat</b></font> skills before she could even think about entering the Order. After that, she will take the indoctrination into the order.
+   Will you complete this task? Find a girl that is <font color="#008000"><b>strong-willed</b></font> enough and <font color="#008000"><b>beautiful</b></font> in order to enter and then properly prepare her - it is an extremely difficult task, but I would not personally accept less.
+   If you make me such a gift, I will give you a special status in the White Town and my support in all of your endeavors.
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>' 
  txt_count = 5
  copyarr '$text', '$pope_pref'
@@ -3781,11 +3781,11 @@ IF interaction_city = 2411:
  npc_progress['bishop_molaru'] = 1
  active[$quest[5]] = 1
  $quest_description[5] = 'Archbishop Molaru (White palace, <<$rating[4]>>)
-   What do you know about the CLEANLINESS, my son? Ah... what do you even know about the PURITY with such a work. Everything in this world the dust and dirt, everything is a Sin. Everything must be cut off! I clean myself three times in a day. THREE TIMES!!!
-   Thrice enema, only with praying and only with holy water from Zion. Unpleasant to hear about enemas, eh? But from me these slags getting out, and yours rot in your bowels! Slag, dirt, rot - this is all a satanic seed!!!
-   The body is the temple of the Soul! I need a pure and innocent maiden, vessel of chastity. Only she will be able to properly clean my precious body. She should wash me, <font color="#008080"><b>take care of cell cleanliness</b></font>, put the <font color="#008000"><b>enemas and dropper</b></font>.
-   I will not leave even my shit for this sinful City. This maiden will be a vessel, in which I will seal my uncleanness and she must <font color="#008080"><b>take them</b></font> with gratitude and clean, without dropping a single drop.
-   And mind you, fat flabby body - a sign of abominable lust and gluttony. Only in a dry, fry body can burn the fire of true Faith! Only such a maiden suitable to me. Go, my son, and remember my words.
+   What do you know about the CLEANLINESS, my son? Ah... what do you even know about PURITY, considering your work. Everything in this world, the dust and dirt, everything is a Sin. Everything must be burned! I clean myself three times a day. THREE TIMES!!!
+   I also use enema thrice a day, only while praying and only with holy water from Zion. Is it unpleasant for you to hear about enemas, eh? But I am clean, while you rot from the inside! Slag, dirt and rot - it is all satanic seed!!!
+   The body is the temple of the Soul! I need a pure and innocent maiden, a vessel of chastity. Only she will be able to properly clean my precious body. She should wash me, <font color="#008080"><b>take care of cell cleanliness</b></font> and use the <font color="#008000"><b>enemas</b></font>.
+   I will not leave even my shit in this sinful City. The maiden will be a vessel in which I will seal my uncleanliness and she must <font color="#008080"><b>take it</b></font> with gratitude without dropping a single drop.
+   And mind you, a fat and flabby body is a sign of abominable lust and gluttony. The fire of true Faith can only be sustained in a fit body! Only such a maiden is suitable for me. Go, my son, and remember my words.
 
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>' 
  txt_count = 5
@@ -3813,11 +3813,11 @@ IF interaction_city = 2421:
  npc_progress['general_barabas'] = 1
  active[$quest[5]] = 1
  $quest_description[5] = 'General Barabas (White palace, <<$rating[4]>>)
-  You are recommended as a very competent expert, <<$master_name>>. That is necessary, as I''m looking for something rather unusual. Point is that I have a son Vlomilio. Not native of course...
-  My own children stayed behind a Fogs. But I adopted him, to continue my family somehow. He is a handsome, daring guy, but ill-mannered and somewhat... wooden. And I have no time for education.
-  He had to raise among the soldiery and maidens, children here generally low. So I thought maybe buy him a girl-peer. But only that who could not only play with him, but also to educate!
-  I need an immature girl, but she should have <font color="#008080"><b>strong nature</b></font> and be <font color="#008080"><b>clever</b></font>. She should teach Vlomilio some <font color="#0000CD"><b>manners</b></font> and <font color="#0000CD"><b>sciences</b></font>. And something for aestheticism. Maybe <font color="#0000CD"><b>music</b></font>... piano or lute...
-  Sure, they may fall in love, so she should be a virgin. A whore does not fit my son. And of course she needs to be <font color="#008000"><b>beautiful</b></font>, with ringlets of hair, enormous eyes and face as in pupa.
+  You are renown as a very competent expert, <<$master_name>>. That is necessary, as I''m looking for something rather unusual. The point is that I have a son, Vlomilio. Not blood-related, of course...
+  My own children stayed behind the Fog. But I adopted him to continue my lineage. He is a handsome, daring guy, but ill-mannered and somewhat... dull. And I have no time for education.
+  He grew up amongst soldiers and housemaids, children are rare in these parts. So I thought I could buy him a girl-peer. Not only to play with him, but to educate him as well!
+  I need an immature girl, but she should have a <font color="#008080"><b>strong nature</b></font> and be <font color="#008080"><b>clever</b></font>. She should teach Vlomilio some <font color="#0000CD"><b>manners</b></font> and <font color="#0000CD"><b>sciences</b></font>. And something for aestheticism. She might be skilled in <font color="#0000CD"><b>music</b></font>... piano or lute...
+  Surely they may fall in love so she should be a virgin. A whore is not fit for my son. And of course she needs to be <font color="#008000"><b>beautiful</b></font>, with curly hair, big eyes and a face like a doll.
   
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>' 
  txt_count = 5
@@ -3845,11 +3845,11 @@ IF interaction_city = 2431:
  npc_progress['pretor_siegfrid'] = 1
  active[$quest[5]] = 1
  $quest_description[5] = 'Praetor Siegfrid (White palace, <<$rating[4]>>)
-   Do you see this horse, slaver? This is my trusty Bucephalus, the best horse in the city and the only one I will ride. This is not an empty whim, thanks to Bucephalus I can safely deliver sparks.
-   This stallion saved my life a lot of times, but his life in this damn city is not very sweet. I can not keep mares in the palace, and his temper hot and insatiable. I have heard that some taught special women to please the beasts.
-   If you can teach a slave, which will provide him with proper care and attention, will make him cheerful and happy, I do not skimp on sparks for you. But mind you, very few people can cope with the force of such a violent stallion as Bucephalus!
-   Thus, a slave I that want to buy should be able to excellently know how <font color="#008000"><b>please the horse</b></font> and <font color="#008080"><b>pretend as mare</b></font> as well, so that he did not feel strange. And of course she would have to <font color="#008080"><b>clean the stall</b></font>.
-   And do not try to slip me a rickety little girls! Let it be shapely statuesque woman, in the juice. To be sure she will be <font color="#0000CD"><b>healthy</b></font> and <font color="#0000CD"><b>temperamental</b></font>.
+   Do you see this horse, slaver? This is my trusty Bucephalus, the best horse in the city and the only one I will ride. The reason for that is that thanks to Bucephalus, I can safely deliver sparks.
+   This stallion saved my life a lot of times, but his life in this damn city is not very sweet. I can not keep mares in the palace and his temper hot and insatiable. I have heard though that some teach women to please beasts.
+   If you can teach a slave to provide him with proper care and attention, that would make him cheerful and happy. I would pay good money for such a girl. But mind you, very few people can cope with the force of such a violent stallion as Bucephalus!
+   She should be able to excellently know how to <font color="#008000"><b>please a horse</b></font> and <font color="#008080"><b>pretend to be a mare</b></font> as well.. so that the act does not feel strange to him. And of course, she would have to <font color="#008080"><b>clean the stall</b></font>.
+   And do not try to slip me a feeble little girl! She needs to be juicy and strong. She should be <font color="#0000CD"><b>healthy</b></font> and <font color="#0000CD"><b>temperamental</b></font>.
    
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>' 
  txt_count = 5
@@ -3877,11 +3877,11 @@ IF interaction_city = 2441:
  npc_progress['taurus_king'] = 1
  active[$quest[5]] = 1
  $quest_description[5] = 'King Arboreus (White palace, <<$rating[5]>>)
-  Well, <<$master_name>>, my lords gave you their truly exotic requests, eh? Sometimes they seem to be really weird, but who cares. Valuable professional can afford a little eccentricity.
-  Do not worry, I do not need anything fancy. I just need something BEST enough. Pick up and teach for me the most gorgeous concubine what you can.
-  Of course, she should be <font color="#008000"><b>good in bed</b></font>, and she must know how to work with <font color="#008000"><b>hands</b></font> and <font color="#008000"><b>mouth</b></font>. Well, you know that better than me, of course. But I don''t want just a concubine.
-  I need a woman that can support <font color="#008080"><b>conversation</b></font> and can show her <font color="#0000CD"><b>character</b></font>. Real woman, you know, with a <font color="#0000CD"><b>brains</b></font>, not just a mindless doll. Of course she needs to know her place as well.
-  What else? Hmm, nothing else I guess. Remains only one thing - she should please me. Bring her here, I will evaluate. Just do not waste my time, bring a prepared women.
+  Well, <<$master_name>>, my lords gave you their truly exotic requests, eh? Sometimes they seem to be really weird, but who cares. Valuable professionals can afford to be a little eccentric.
+  Do not worry, I do not need anything fancy. I just need the BEST girl. Pick up and teach the most gorgeous concubine for me.
+  Of course, she should be <font color="#008000"><b>good in bed</b></font> and know how to work with her <font color="#008000"><b>hands</b></font> and <font color="#008000"><b>mouth</b></font>. Well, you know that better than me, of course. But I don''t just want a concubine.
+  I need a woman that can hold a <font color="#008080"><b>conversation</b></font> and can show her <font color="#0000CD"><b>character</b></font>. A real woman, you know, with <font color="#0000CD"><b>brains</b></font>, not just a mindless slave. Of course, she needs to know her place as well.
+  What else? Hmm, nothing else I guess. Only one thing remains - she should please me. Bring her here, I will evaluate her. Just do not waste my time, only bring a prepared women.
   
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>' 
  txt_count = 5
@@ -4791,11 +4791,11 @@ IF interaction_city = 3411:
  npc_progress['bishop_porter'] = 1
  active[$quest[5]] = 1
  $quest_description[5] = 'Reverend Porter (Administrative spires, <<$rating[4]>>)
-  I am not a soldier, but the work is still dangerous, <<$master_name>>. Archbishop is too important for the house to take the risk. If anything happens to me - Fog will absorb half of our territory.
-  So I often use doubles to confuse assassins who attack me. Requirements are high, so there need someone experienced like you, to prepare a girl.
-  In the first place she must be a master of transformation and brilliantly own <font color="#008000"><b>etiquette of communication</b></font>. To be like me, slave must be <font color="#0000CD"><b>smart</b></font> and have a <font color="#0000CD"><b>strong nature</b></font>.
-  Of course, she should also not be too young, and generally have a similar physique to me. And one more thing... do not attempt on her innocence. I do not want defiled girl for my entourage.
-  The girls has their pleasure, tender and sensual. Unavailable for rude male. But if you are such a professional as they say, you will be able to teach her how to <font color="#008080"><b>work with hands</b></font> and with <font color="#008080"><b>tongue</b></font> to the proper degree.
+  I am not a soldier, but my work is still dangerous, <<$master_name>>. An archbishop is too important for the house to take any risks. If anything happens to me - the Fog will absorb House Serpis in mere weeks.
+  So I often use doubles to confuse assassins who try to attack me. The requirements are high so we need someone as experienced as you to prepare a girl.
+  In the first place, she must be a master of transformation and know all about <font color="#008000"><b>etiquette of communication</b></font>. To be like me, a slave must be <font color="#0000CD"><b>smart</b></font> and have a <font color="#0000CD"><b>strong nature</b></font>.
+  Of course, she should also not be too young, and generally have a similar physique to mine. And one more thing... do not attempt to steal her innocence. I do not want a defiled girl in my service.
+  The girl may be tender and sensual. Unlike most males. But if you are as professional as they say, you will be able to teach her how to <font color="#008080"><b>work with her hands</b></font> and <font color="#008080"><b>work with her tongue</b></font> to a proper degree.
   
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>' 
  txt_count = 5
@@ -4823,11 +4823,11 @@ IF interaction_city = 3421:
  npc_progress['general_drago'] = 1
  active[$quest[5]] = 1
  $quest_description[5] = 'General Drago (Administrative spires, <<$rating[4]>>)
-  Do you know what the strength of the general, <<$master_name>>? In the army. And the strength of the army - in devotion. With people who will follow you through fire and water - you can do anything. Enemy would not have a chance.
-  And soldiers - ordinary guys. Like myself. What soldier needs? Good wine and a warm woman under their side at rest. And simple entertainments. For my guys I do not skimp on anything.
-  I promised for one of my the most distinguished platoon, that''ll get for them a woman, one that even Pope or King does not always have. Can you get this? Don''t worry about sparks, I know how to reward.
-  Girl should not be confused. She must to know how to serve a full <font color="#008000"><b>platoon</b></font>, so no one would have been forgotten. And also something spectacular. Maybe with <font color="#0000CD"><b>horse or dog</b></font> or another <font color="#0000CD"><b>unusual</b></font> thing.
-  And most importantly she must be <font color="#008080"><b>lively</b></font>, not slack. And she must to know how to <font color="#008080"><b>fight</b></font> too. We''re throw girls in a dirt and force the fight. Who won - one day off. So let she not be disgraced in the cat fight!
+  Do you know what the strength of a general is, <<$master_name>>? His army. And do know what the strength of an army is? Their devotion. If your soldiers are devoted to you and your cause, you can do anything. No enemy will stand a chance.
+  And soldiers - what makes them different from ordinary guys? What makes me different? So how do we increase their devotion? With good wine and a caring woman. Such simple means are enough to make them follow me.
+  I promised one of my more.. disgusting platoons that they would get a woman even the pope would dream of. Can you do this? Don''t worry about sparks, I know how to reward.
+  The girl must be properly trained in various arts though. She must to know how to serve a full <font color="#008000"><b>platoon</b></font> of soldiers so no one feels out of place. She should also be able to do some of the more.. "exotic" acts to entertain them. Maybe sex with a <font color="#0000CD"><b>horse or dog</b></font> or some other <font color="#0000CD"><b>unusual</b></font> thing.
+  And most importantly she must be <font color="#008080"><b>lively</b></font>, not slack. And she must to know how to <font color="#008080"><b>fight</b></font> too. These guys will throw girls in a dirt pit and force them fight. The winner is rewarded a day off. So make sure she can handle a catfight!
   
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>' 
  txt_count = 5
@@ -4855,11 +4855,11 @@ IF interaction_city = 3431:
  npc_progress['pretor_diabaz'] = 1
  active[$quest[5]] = 1
  $quest_description[5] = 'Praetor Diabaz (Administrative spires, <<$rating[4]>>)
- Gaudete, <<$master_name>>. I was told that you prepare just wonderful slaves. Frankly, I do not mind to refresh my retinue a little. It is necessary to spend sparks somewhere after all.
- I need a fighting girlfriend. To not be ashamed that she accompanies me in the campaign for sparks every day. Our house has, you know, a special image. Local afraid of technology.
- So, what I need is a <font color="#008080"><b>physically strong</b></font> and <font color="#008080"><b>exotic</b></font> girl, which will look impressive with a heavy bolter or plasma rifle.
- And of course it is necessary that she really could <font color="#008000"><b>stand up for themselves</b></font>. Not that every day theres an attack to me, but the work is still dangerous. I used to rely on everyone who comes with me and does not think about how to cover my back.
- I assume she need to know how provide <font color="#0000CD"><b>first aid</b></font> and have <font color="#0000CD"><b>stage presence</b></font>. The rest rely on your experience of the slave master. Please me, and I will not stay in debt, do not hesitate.
+ Gaudete, <<$master_name>>. I was told that you prepare wonderful slaves. Frankly, I would not mind stocking up my security a little. It is necessary to spend sparks somewhere after all.
+ I need a fighting girlfriend. She should not be afraid to accompany me on my campaigns. Our house has a, you know, special image. The locals are afraid of our technology.
+ So, what I need is a <font color="#008080"><b>physically strong</b></font> and <font color="#008080"><b>exotic</b></font> girl which will look impressive with a heavy bolter or a plasma rifle.
+ And of course, it is necessary that she can <font color="#008000"><b>stand up for herself</b></font>. I am not attacked every day, but the work is still dangerous. I used to rely on whoever comes with me and did not think about how to cover my back.
+ I assume she need to know how to provide <font color="#0000CD"><b>first aid</b></font> and have <font color="#0000CD"><b>stage presence</b></font>. The rest relies on your experience as the slave master. Please me and I will make it worth your while.
  
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>' 
  txt_count = 5
@@ -4887,11 +4887,11 @@ IF interaction_city = 3441:
  npc_progress['serpis_prince_first'] = 1
  active[$quest[5]] = 1
  $quest_description[5] = 'Mr. President (Administrative spires, <<$rating[5]>>)
- Do you know that these assholes from the Vatican take away all the pregnant for themselves? So then, my power is enough to not allow this.
- But all children somehow are born dead, no matter how much I have not tried. But I will not give up. What are our achievements, if you have no heir, right? And the process enjoyable.
- I experiment. I do not know exactly what it takes to pregnancy gone well. So prepare any slave to your taste. I have been told that you are able to guess the wishes of the client as no one.
- The only thing to ask - let her know how <font color="#0000CD"><b>to get along and communicate</b></font> with the other girls. And let she be enough <font color="#0000CD"><b>sensitive</b></font>, not coarse. I hate rough uncut bitches.
- Of course, I expecting she to have some sexual training. <font color="#008080"><b>Oral</b></font>, <font color="#008080"><b>petting</b></font>, <font color="#008000"><b>sex</b></font>, everything like that. Well, I think it goes without saying, of course. The rest I leave everything in the selection of a specialist. I''ll wait for it!
+ Did you know that these assholes from the Vatican take away all the pregnant girls for themselves? But I am not willing to let them keep doing this.
+ But all children somehow are born dead, no matter how hard I try. But I will not give up. What are our achievements, if you have no heir, right? And the process is enjoyable.
+ I experiment. I do not know what exactly is needed for a successful pregnancy. So prepare the slave as you wish. I have been told that you are able to guess the wishes of the clients like no one else.
+ The only thing I ask for - let her know how <font color="#0000CD"><b>to get along and communicate</b></font> with the other girls. And she should be <font color="#0000CD"><b>sensitive</b></font>, not coarse. I hate rough uncut bitches.
+ Of course, I am expecting her to have some sexual training. <font color="#008080"><b>Oral</b></font>, <font color="#008080"><b>petting</b></font> and <font color="#008000"><b>sex</b></font> skills are required. That goes without saying, of course. The rest I will leave in your hands. I''ll wait for it!
  
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>' 
  txt_count = 5
@@ -4906,7 +4906,7 @@ IF interaction_city = 3442:
  $interaction_type = 'sell_slave_complex'
 END
 
-!Жилые дома Камира
+!CAMIRA HOUSINGS
 IF interaction_city = 411:
  $interaction_type = 'byer_invitation'
  city_form = 41
@@ -5313,11 +5313,11 @@ IF interaction_city = 4511:
  npc_progress['bishop_shaitana'] = 1
  active[$quest[5]] = 1
  $quest_description[5] = 'Archbishop Shaitana (Tierra del Citadel, <<$rating[4]>>)
- Oh, <<$master_name>>, come on in, sit down. Do you know what it takes us to keep at bay the Fogs and expand House ownership? These rituals require sparks, yes. But also they require a performance mastery.
- I have to pick up the temple maidens myself, and requirements are high, so I''m willing to pay well for the help. In our rituals must participate immature virgin, yet not included in the age of love.
- But at the same time she should be a <font color="#008000"><b>potion master</b></font>, because she will personally mix the Great Elixir. This task of the highest importance, it does not forgive mistakes.
- To participate in the rituals, the virgin also must well <font color="#008080"><b>sing</b></font>, <font color="#008080"><b>dance</b></font> and <font color="#008080"><b>play the dulcimer</b></font>. And in general, she should be pleasing to God.
- As you can see a set of requirements is not easy. I can not just take a child from the street and let her to the temple. Pick the best material, educate, teach and come to me. Sparks will wait.
+ Oh, <<$master_name>>, come on in, sit down. Do you know what it takes for us to keep at bay the Fogs and expand House ownership? These rituals require sparks, yes. But also they require a masterful performance.
+ I have to pick out the temple maidens myself, and the requirements are high, so I''m willing to pay well for the help. Our rituals must contain immature virgins, not yet experienced in the act of love.
+ But at the same time she must be a <font color="#008000"><b>potion master</b></font>, because she will personally mix the Great Elixir. This task is of the highest importance, it does not allow for mistakes.
+ To participate in the rituals, the virgin also must <font color="#008080"><b>sing</b></font> well, <font color="#008080"><b>dance</b></font> and <font color="#008080"><b>play the dulcimer</b></font>. And in general, she should be pleasing to God.
+ As you can see this set of requirements is not easy. I can not just take a child from the street and let her into the temple. Pick the best material, educate, teach and come to me. Sparks will wait.
 
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>' 
  txt_count = 5
@@ -5345,11 +5345,11 @@ IF interaction_city = 4521:
  npc_progress['general_carnis'] = 1
  active[$quest[5]] = 1
  $quest_description[5] = 'General Carneys (Tierra del Citadel, <<$rating[4]>>)
- Do you play chess, <<$master_name>>? I recommend it. Great game for a warrior and strategist. Offering a game, as we speak.
- So, my friends highly recommend your slaves. I decided to try. I honestly do not keep them before. There is someone cook and clean. But at night, something gets lonely. I''m getting old.
- Prepare me a woman who will know how to deal with my <font color="#008080"><b>beast nature</b></font>. The wolf in me is no less important than the human. Although the usual <font color="#0000CD"><b>art of love</b></font> and work with <font color="#0000CD"><b>tongue</b></font> also come in handy.
- But all this particular. Most importantly, the woman that you offer to me should have <font color="#008000"><b>outstanding intelligence</b></font>. Intelligence of a chess player. I find this game even more entertaining than hunting and love.
- And let she be <font color="#008080"><b>literate</b></font>, was able to put two and two together, so she would not yawn a queen as you do, my friend. And by the way... checkmate.
+ Do you play chess, <<$master_name>>? I recommend it. Great game for both a warrior and a strategist. Let us play, while we speak.
+ So, my friends highly recommend your slaves. I''ve decided to try one myself. I honestly have not kept them before. There is someone who cooks and cleans. But at night, it gets lonely. I''m getting old.
+ Prepare me a woman who will know how to deal with my <font color="#008080"><b>beast nature</b></font>. The wolf in me is no less important than the human. Although the usual <font color="#0000CD"><b>art of love</b></font> and work with the <font color="#0000CD"><b>tongue</b></font> also come in handy.
+ But all these are details. Most importantly, the woman that you offer to me should have <font color="#008000"><b>outstanding intelligence</b></font>. The intelligence of a chess player. I find this game even more entertaining than hunting and love.
+ And let her be <font color="#008080"><b>literate</b></font>, able to put two and two together, so she would not yield a queen as you have, my friend. And by the way... checkmate.
  
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>' 
  txt_count = 5
@@ -5377,11 +5377,11 @@ IF interaction_city = 4531:
  npc_progress['pretor_tifaret'] = 1
  active[$quest[5]] = 1
  $quest_description[5] = 'Praetor Tifaret (Tierra del Citadel, <<$rating[4]>>)
- It is said that you handle even with difficult tasks. Do you see my size, <<$master_name>>? It''s hard to find a woman who would stand my love and would not look as a hairy ogre.
- But you better try. I need some variety, stay out of boredom. I had nothing to do, I can''t even really fight with anyone. Only female affection saves.
- Try to check the slave that you prepare to me on a horse. If she <font color="#008080"><b>coincides with the stallion</b></font>, then maybe she will stand beneath me. And the most important thing - she need to be <font color="#008000"><b>healthy</b></font> and strong. But also beautiful.
- But of course she should be <font color="#008080"><b>adept in love</b></font> with a man. I''m still not a horse, even though I''m big. And <font color="#0000CD"><b>reactive</b></font>, hot. That she was not boring. Did I mention how I''m bored?
- I want when you come back home from work, someone would happy, met me <font color="#0000CD"><b>like a dog</b></font>. At the heart immediately becomes easier. That''s so.
+ It is said that you handle even difficult tasks. Do you see my size, <<$master_name>>? It''s hard to find a woman who can stand my love but will not look like a hairy ogre.
+ But you better try. I need some variety, stay out of boredom. I have nothing to do, I can''t even really fight anyone. Only female affection can save me.
+ Try to check the slave that you prepare for me on a horse. If she <font color="#008080"><b>coincides with the stallion</b></font>, then maybe she can stand beneath me. And the most important thing - she needs to be <font color="#008000"><b>healthy</b></font> and strong. But also beautiful.
+ But of course she should be <font color="#008080"><b>adept in making love with</b></font> with a man. I''m still not a horse, even though I''m big. And <font color="#0000CD"><b>reactive</b></font>, hot. She must not be boring. Did I mention how bored I am?
+ I want, when I come back home from work, someone happy, who will meet me <font color="#0000CD"><b>like a dog</b></font>. And immediately ease my heart. Just so.
  
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>' 
  txt_count = 5
@@ -5409,11 +5409,11 @@ IF interaction_city = 4541:
  npc_progress['tiamath'] = 1
  active[$quest[5]] = 1
  $quest_description[5] = 'Mistress Tiamat (Tierra del Citadel, <<$rating[5]>>)
- DO YOU SEE THIS SHINING CHILD, HUMAN? HE''S MY HEIR, HOPE OF THE HOUSE IN THE NEXT MILLENNIUM. SO VULNERABLE NOW, BUT UNDER MY PROTECTION HE WILL GROW TO THE MOST POWERFUL CREATURE IN THIS DIRTY CITY.
- HE, HOWEVER, HAS THE PROBLEM. HE DOES NOT DISTINGUISH HIGHER AND LOWER. KINDNESS WILL MAKE HIM VULNERABLE. HE NEEDS TO GET USED TO COMMAND WITH LESSER BEINGS, LIKE UNTO THEE.
- BROUGHT UP FOR HIM HUMAN FEMALE. PREPARE HER WELL, LET SHE BE OBEDIENT TO HIS MASTER ABOVE ALL. SHE MUST BE ABLE SHARPLY <font color="#008000"><b>FEEL</b></font> PAIN AND SADNESS.
+ DO YOU SEE THIS SHINING CHILD, HUMAN? HE''S MY HEIR, HOPE OF THE HOUSE IN THE NEXT MILLENNIUM. SO VULNERABLE NOW, BUT UNDER MY PROTECTION HE WILL GROW TO BE THE MOST POWERFUL CREATURE IN THIS DIRTY CITY.
+ HE, HOWEVER, HAS A PROBLEM. HE CANNOT DISTINGUISH BETWEEN HIGHER AND LOWER BEING. KINDNESS WILL MAKE HIM VULNERABLE. HE NEEDS TO GET USED TO COMMANDING LESSER BEINGS, SUCH AS THEE.
+ TRAIN A HUMAN FEMALE FOR HIM. PREPARE HER WELL, LET SHE BE OBEDIENT TO HER MASTER ABOVE ALL. SHE MUST BE ABLE TO <font color="#008000"><b>FEEL</b></font> PAIN AND SADNESS.
  SHE MUST TAKE CARE OF HIM, <font color="#008080"><b>CLEAN HIM UP</b></font> AND <font color="#008080"><b>HEAL HIM</b></font> AND <font color="#008080"><b>SING</b></font> HIM A LULLABY. IF HE WANTS TO <font color="#0000CD"><b>RAPE</b></font> HER, SHE MUST BE READY FOR THIS.
- AND MOST IMPORTANTLY, SHE MUST IDEALLY EXECUTE <font color="#008000"><b>THE ROLE OF ANIMAL</b></font>. MY HEIR HAD TO LEARN THE WORTH OF PEOPLE AND DO NOT MAKE MISTAKES, TRYING TO COMMUNICATE ON EQUAL TERMS. NOW GO. YOU HEARD MY WILL.
+ AND MOST IMPORTANTLY, SHE MUST IDEALLY EXECUTE <font color="#008000"><b>THE ROLE OF AN ANIMAL</b></font>. MY HEIR HAS TO LEARN THE WORTH OF PEOPLE AND NOT MAKE THE MISTAKE OF TRYING TO COMMUNICATE ON EQUAL TERMS. NOW GO. YOU HEARD MY WILL.
  
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>' 
  txt_count = 5
@@ -5906,11 +5906,11 @@ IF interaction_city = 5411:
  npc_progress['bishop_nerilis'] = 1
  active[$quest[5]] = 1
  $quest_description[5] = 'Archbishop Nirelis (Raven Tower, <<$rating[4]>>)
- My body is perishable. And difficult to say. 
- It need <font color="#008000"><b>sew and bandage</b></font>, inasmuch as crumbles.
-  <font color="#008080"><b>Magic potions</b></font> from herbal scented inside must done and contain the tomb <font color="#008080"><b>in order and clean</b></font>.
- All <font color="#0000CD"><b>entries</b></font> to keep in order, and keep track of things strict.
-  <font color="#0000CD"><b>Mind</b></font> is needed, that would still not be confused or disaster will happen. Get me this.
+ My body is perishable. And difficult to speak. 
+ It needs to be <font color="#008000"><b>sown and bandaged</b></font>, so as not to crumble.
+ <font color="#008080"><b> Magic potions</b></font> from herbs must be used inside my tomb as well as keeping it constantly <font color="#008080"><b>in order and clean</b></font>.
+ All <font color="#0000CD"><b>entries</b></font> must be kept in order.
+ <font color="#0000CD"><b> Mind</b></font> is needed, that will not be confused or disaster will happen. Get me this.
   
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>'
  txt_count = 5
@@ -5938,11 +5938,11 @@ IF interaction_city = 5421:
  npc_progress['hand_of_the_knyaz'] = 1
  active[$quest[5]] = 1
  $quest_description[5] = 'The Hand of the Prince (Raven Tower, <<$rating[4]>>)
- Greetings, <<$master_name>>. Everyone says that you prepare an excellent slaves. I could use one for the order. You see, our prince just obsessed with secular life. I always have to be present at the ball.
- Among our people, these overruns understand only a few people, even though we must pay tribute, such events reinforce the position of the house, improve our image and is suitable for most vampires. And the vampires in our house is on the rise.
- The only problem is that there need to go with a lady, and I do not have time for this nonsense. And I cannot take just a simple woman - I''l be laughed at. It is necessary to keep the reputation. In short I need <font color="#008000"><b>secular lioness</b></font>.
- She should be well <font color="#008080"><b>dancing</b></font> and have a <font color="#008080"><b>solid nature</b></font>. Otherwise they will peck me. Periodically it ends with an <font color="#0000CD"><b>orgy</b></font>, so she must be ready for that.
- Of course, vampires will drink her blood from time to time, so she need to be <font color="#0000CD"><b>physically healthy</b></font> and a virgin. Vampires freaks out from the blood of virgins, do not ask why. The rest on your way.
+ Greetings, <<$master_name>>. Everyone says that you prepare excellent slaves. I could use one. You see, our prince is obsessed with secular life. I always have to be present at his balls.
+ Among our people, few understand the purpose of these events. Even though we must pay tribute, such events reinforce the position of the house, improve our image, and is suitable for most vampires. And the vampires in our house are on the rise.
+ The only problem is that I must have a lady present on such occasions, and I do not have time for such nonsense. And I cannot take just a simple woman - I''ll be laughed at. It is necessary to keep our reputation. In short I need a <font color="#008000"><b>secular lioness</b></font>.
+ She should be well versed in <font color="#008080"><b>dancing</b></font> and have a <font color="#008080"><b>solid nature</b></font>. Otherwise I shall be ridiculed. Periodically the events will end with an <font color="#0000CD"><b>orgy</b></font>, so she must be ready for that.
+ Of course, vampires will drink her blood from time to time, so she need to be <font color="#0000CD"><b>physically healthy</b></font> and a virgin. Vampires freak out over the blood of virgins, do not ask why. The rest is up to you.
  
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>' 
  txt_count = 5
@@ -5970,11 +5970,11 @@ IF interaction_city = 5431:
  npc_progress['pretor_kamael'] = 1
  active[$quest[5]] = 1
  $quest_description[5] = 'Praetor Kamael (Raven Tower, <<$rating[4]>>)
- Few people notice this, but in Rome there is a war, <<$master_name>>. And it will not stop ever. And in the war is most important - to know the enemy''s plans in advance. I have a lot of spies, but they can not be too much.
- Too many people do not notice slaves at all. They make people''s lives easier and more accepted as a given. But the servants have eyes and ears. I need a slave, which will bring their knowledge to me.
- She should <font color="#008000"><b>brilliantly chat</b></font> and creep into the confidence. Maybe even <font color="#008080"><b>seduce</b></font>.
- She should carefully compare received rumors and gossip from the lips of the other slaves, and then write for me <font color="#0000CD"><b>report</b></font>. Such a task requires a high <font color="#008080"><b>intelligence</b></font>.
- And of course she should have <font color="#0000CD"><b>solid nature</b></font>, so as not to spill the beans herself. Issuing a spy does not live long.
+ Few people notice, but in Rome there is a war, <<$master_name>>. And it will not stop. And in war the most important thing is to know the enemy''s plans in advance. I have a lot of spies, but they cannot be too well known.
+ Most people do not notice slaves at all. They make people''s lives easier and are thus more accepted. But the servants have eyes and ears. I need a slave, who will bring their knowledge to me.
+ She should be <font color="#008000"><b>brilliantly chatty</b></font> and gain people''s confidence. Maybe even <font color="#008080"><b>seduce</b></font>.
+ She should carefully compare rumors and gossip from the lips of the other slaves, and then write me a <font color="#0000CD"><b>report</b></font>. Such a task requires a high <font color="#008080"><b>intelligence</b></font>.
+ And of course she should have a <font color="#0000CD"><b>solid nature</b></font>, so as not to spill the beans herself. Else she might not live long.
 
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>' 
  txt_count = 5
@@ -6002,8 +6002,8 @@ IF interaction_city = 5441:
  npc_progress['korvus_knyaz'] = 1
  active[$quest[5]] = 1
  $quest_description[5] = 'Prince of the Undead (Raven Tower, <<$rating[5]>>)
- We are glad to see you, <<$master_name>>. We reported a lot about your exceptional abilities in preparing slaves. Here, in this room there are mortals that are marked by the best brands of Guild. But not by yours. Unfortunate omission.
- We are determined to let you fix it. Prepare for us the best girl so she could practice to prove the superiority of your school on our receptions.
+ We are glad to see you, <<$master_name>>. We have heard a great deal about your exceptional abilities in preparing slaves. Here, in this room there are mortals that are marked by the best brands of the Guild. But not by yours. An unfortunate omission.
+ We are determined to let you fix it. Prepare for us the best girl so she could practice to prove the superiority of your school at our receptions.
  Try to give her the best skills for the entertainment of our dear guests. <font color="#008000"><b>Vocal</b></font>, <font color="#008000"><b>playing music</b></font>, <font color="#008000"><b>dance</b></font> and <font color="#008080"><b>recitation of poems</b></font> delight us most.
  And, of course, she should be <font color="#008080"><b>soft</b></font> and refined to fit the style of our yard. We also expect that she will be a virgin. Innocent blood has a special, unique flavor.
  All the rest I leave to your discretion, <<$master_name>>. I have no doubt that you will be able to surprise us with something special. Now go.
@@ -6356,7 +6356,7 @@ IF interaction_city = 642:
  fixed_brand_rise = 1
 END
 
-!Логово контрабандистов
+!smuggler den
 IF interaction_city = 65:
  npc = 1
  $npc_id = 'bararaika'

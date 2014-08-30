@@ -198,7 +198,7 @@ IF city_form = 51:
  $text_display += {<div id="under">Madman`s mansion<br><div id = "clear"><a href = 'EXEC: interaction_city = 516 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<div id="under">Lair of the Faceless<br><div id = "clear"><a href = 'EXEC: interaction_city = 517 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<div id="under">Venturi`s estate<br><div id = "clear"><a href = 'EXEC: interaction_city = 518 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Mansion of Lady Yasmanee<br><div id = "clear"><a href = 'EXEC: interaction_city = 519 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Mansion of Lady Yasmania<br><div id = "clear"><a href = 'EXEC: interaction_city = 519 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<div id="under">Jagellon palace<br><div id = "clear"><a href = 'EXEC: interaction_city = 5110 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<div id="under">Imladis castle<br><div id = "clear"><a href = 'EXEC: interaction_city = 5111 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">To the central street<br><div id = "clear"><a href = 'EXEC: city_form = 5 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}

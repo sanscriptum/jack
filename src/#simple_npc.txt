@@ -51,7 +51,7 @@ dynamic $sn_cycle, 'count_albin', 'Count Albin', 0, 3, 'artist', 200, 1000
 dynamic $sn_cycle, 'donna_venturi', 'Donna Venturi', 0, 3, 'maid', 200, 1000
 dynamic $sn_cycle, 'faceless', 'Faceless', 0, 3, 'artist', 200, 1000
 dynamic $sn_cycle, 'hand_of_the_knyaz', 'The Hand of the Prince', 0, 4, 'artist', 200, 1000
-dynamic $sn_cycle, 'lady_yasmenia', 'Lady Yasmanee', 0, 3, 'maid', 200, 1000
+dynamic $sn_cycle, 'lady_yasmenia', 'Lady Yasmania', 0, 3, 'maid', 200, 1000
 dynamic $sn_cycle, 'lihomanka', 'Fever', 0, 1, 'none', 90, 1000
 dynamic $sn_cycle, 'mad_baron', 'Mad Baron', 0, 3, 'nurse', 90, 1000
 dynamic $sn_cycle, 'magister_vailos', 'Magister Vailos', 0, 3, 'nurse', 90, 1000

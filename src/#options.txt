@@ -899,21 +899,21 @@ $text_display += {<br><div id="under">Change selection<br><div id = "clear"><a h
 
 $brothel_options[3] = {
 $text_display = '<br>'
-$text_display += {<br><div id="under">Twins<br><div id = "clear"><a href = 'EXEC: interaction_city = 2231 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<br><div id="under">Three lolita<br><div id = "clear"><a href = 'EXEC: interaction_city = 2232 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<br><div id="under">Five girls<br><div id = "clear"><a href = 'EXEC: interaction_city = 2233 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<br><div id="under">Mistress and slave<br><div id = "clear"><a href = 'EXEC: interaction_city = 2234 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<br><div id="under">Exotic sex<br><div id = "clear"><a href = 'EXEC: interaction_city = 2235 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Twins<br><div id = "clear"><a href = 'EXEC: interaction_city = 2231 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Three lolita<br><div id = "clear"><a href = 'EXEC: interaction_city = 2232 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Five girls<br><div id = "clear"><a href = 'EXEC: interaction_city = 2233 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Mistress and slave<br><div id = "clear"><a href = 'EXEC: interaction_city = 2234 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Exotic sex<br><div id = "clear"><a href = 'EXEC: interaction_city = 2235 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
 $text_display += {<br><div id="under">Change selection<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
 }
 
 $brothel_options[4] = {
 $text_display = '<br>'
-$text_display += {<br><div id="under">Mother and daughter<br><div id = "clear"><a href = 'EXEC: interaction_city = 2241 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<br><div id="under">Six lolitas<br><div id = "clear"><a href = 'EXEC: interaction_city = 2242 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<br><div id="under">Seven girls<br><div id = "clear"><a href = 'EXEC: interaction_city = 2243 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<br><div id="under">Double exotic<br><div id = "clear"><a href = 'EXEC: interaction_city = 2244 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
-$text_display += {<br><div id="under">Exotic twins<br><div id = "clear"><a href = 'EXEC: interaction_city = 2245 & gt "interaction_city"'><img src = "content\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Mother and daughter<br><div id = "clear"><a href = 'EXEC: interaction_city = 2241 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Six lolitas<br><div id = "clear"><a href = 'EXEC: interaction_city = 2242 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Seven girls<br><div id = "clear"><a href = 'EXEC: interaction_city = 2243 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Double exotic<br><div id = "clear"><a href = 'EXEC: interaction_city = 2244 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Exotic twins<br><div id = "clear"><a href = 'EXEC: interaction_city = 2245 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
 $text_display += {<br><div id="under">Change selection<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
 }
 
@@ -1290,7 +1290,7 @@ END
 $text_display += {<br><div id="under">End conversation<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
 }
 
-!Тату-студия дядюшки Бо
+!tattoo salon
 $bo_options[1] = {
 $text_display = '<br>'
 IF slave_state = CONST_INT['slave_exist'] and slave["tatoo_timeup"] = 0:
@@ -1320,7 +1320,7 @@ END
 $text_display += {<br><div id="under">Leave the workshop<br><div id = "clear"><a href = 'EXEC: city_form = 4 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 }
 
-!rarity of mistra
+!rarity of mystra
 $mistra_options[1] = {
 $sp_text[1] = '   <<$mystra_spd[mystra_spd]>>'
 $text_display = '<br><br>'
@@ -1335,9 +1335,9 @@ IF sparks => 10:
  $text_display += {<div id="under_gray">Kamrian resin x5 (10 sparks)<br></div>} 
 END
 IF sparks => 10:
- $text_display += {<div id="under">Faeries'' pollen x5 (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 4313 & mystra_spd = 3 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+ $text_display += {<div id="under">Faeries` pollen x5 (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 4313 & mystra_spd = 3 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
  else
- $text_display += {<div id="under_gray">Faeries'' pollen x5 (10 sparks)<br></div>} 
+ $text_display += {<div id="under_gray">Faeries` pollen x5 (10 sparks)<br></div>} 
 END
 IF sparks => 10:
  $text_display += {<div id="under">Essence of oblivion x5 (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 4314 & mystra_spd = 4 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
@@ -1350,7 +1350,7 @@ $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a hre
 }
 
 $mistra_options[2] = {
-$sp_text[2] = '   Mistra knows a lot about alchemy and useful potions that can be done in the home laboratory, using ingredients purchased here. Asking her seems like a good idea.'
+$sp_text[2] = '   Mystra knows a lot about alchemy and useful potions that can be done in the home laboratory, using ingredients purchased here. Asking her seems like a good idea.'
 $text_display = '<br>'
 $text_display += {<br><div id="under">Tell me about elixirs<div id = "clear"><a href = 'EXEC: interaction_city = 4327 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
 $text_display += {<br><div id="under">Bacchic nectar<div id = "clear"><a href = 'EXEC: interaction_city = 4321 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 

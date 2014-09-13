@@ -142,12 +142,12 @@ $sex_options[2] = {
 $sex_options[9] = {
     $sex_menu = '<br><br>'
     IF $insertion = 'anal' or $insertion = 'vaginal':
-        $sex_menu += {<br><div id="under">Cum in pussy<br><div id = "clear"><a href = 'EXEC: sex_num = 0 & sex_interaction = 91 & gt "sex_interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+        $sex_menu += {<br><div id="under">Cum inside<br><div id = "clear"><a href = 'EXEC: sex_num = 0 & sex_interaction = 91 & gt "sex_interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
     END
     $sex_menu += {<br><div id="under">Cum in mouth<br><div id = "clear"><a href = 'EXEC: sex_num = 0 & sex_interaction = 92 & gt "sex_interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
     $sex_menu += {<br><div id="under">Bukkake<br><div id = "clear"><a href = 'EXEC: sex_num = 0 & sex_interaction = 93 & gt "sex_interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
     IF $insertion = 'anal':
-        $sex_menu += {<br><div id="under">Cum in ass<br><div id = "clear"><a href = 'EXEC: sex_num = 0 & sex_interaction = 94 & gt "sex_interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+        $sex_menu += {<br><div id="under">Cum on ass<br><div id = "clear"><a href = 'EXEC: sex_num = 0 & sex_interaction = 94 & gt "sex_interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
     else
         $sex_menu += {<br><div id="under">Cum on breasts<br><div id = "clear"><a href = 'EXEC: sex_num = 0 & sex_interaction = 94 & gt "sex_interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
     END

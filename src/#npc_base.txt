@@ -323,7 +323,7 @@ $npc_image['sir_shelly'] = 'sir_shelly'
 $npc_name['sir_shelly'] = 'Sir Shelly'
 $npc_status['sir_shelly'] = 'Club owner
 Taurus House'
-$npc_info['sir_shelly'] = 'This man was able to achieve an incredible influence with his gentleman''s club promotion. Visitors of Sir Shelly''s club include the most influential representatives of the Great Taurus House, and meeting them outside of the club will be quite difficult.'
+$npc_info['sir_shelly'] = 'This man was able to achieve an incredible influence with his gentleman''s club promotion. Visitors of Sir Shelly''s club include the most influential representatives of the Taurus Great House, and meeting them outside of the club will be quite difficult.'
 npc_attitude['sir_shelly'] = 11
 demand_rating['sir_shelly'] = 3
 $interesting_specialisation['sir_shelly'] = 'concubine'
@@ -1078,13 +1078,13 @@ $estelindel_pref[5] = '  [ESTELINDEL]
   - I also ask you to make sure that my future workers knows how to <font color="#4B0082"><b>massage</b></font>. Sometimes, relaxation requires a special approach, so teach them to work not only with hands, but also... you know.. <font color="#4B0082"><b> with their mouth</b></font>. This should suffice. These conversations embarrasses me every time.'
 
    
-!GREAT TAURUS HOUSE
+!TAURUS GREAT HOUSE
 $npc_image['taurus_king'] = 'taurus_king'
 $npc_name['taurus_king'] = 'Arboreus'
 $npc_status['taurus_king'] = 'The King
 Taurus House (Faithfuls)'
 $npc_alignment['taurus_king'] = 'taurus'
-$npc_info['taurus_king'] = 'Leader of the Great Taurus House. He is traditionally called "King", although this has nothing to do with him actually being a king. Arboreus - a strong leader, a warrior and politician. Many believe that his old age is already beginning to take his own.'
+$npc_info['taurus_king'] = 'Leader of the Taurus Great House. He is traditionally called "King", although this has nothing to do with him actually being a king. Arboreus - a strong leader, a warrior and politician. Many believe that his old age is already beginning to take his own.'
 demand_rating['taurus_king'] = 5
 $interesting_specialisation['taurus_king'] = 'concubine'
 $diary_mark['taurus_king'] = "   This is fit for a king, but only if I get an appointment."
@@ -1124,7 +1124,7 @@ $npc_name['general_barabas'] = 'General Barabas'
 $npc_status['general_barabas'] = 'C-in-C
 Taurus House (Faithfuls)'
 $npc_alignment['general_barabas'] = 'taurus'
-$npc_info['general_barabas'] = 'This massive and boisterous bearded man handles all the armed forces of the Great Taurus House. It''s better to not to quarrel with him, although many say that his menacing looks only hide his kind soul. It certainly does not seem like it.'
+$npc_info['general_barabas'] = 'This massive and boisterous bearded man handles all the armed forces of the Taurus Great House. It''s better to not to quarrel with him, although many say that his menacing looks only hide his kind soul. It certainly does not seem like it.'
 demand_rating['general_barabas'] = 4
 $interesting_specialisation['general_barabas'] = 'custom'
 $npc_preferences['general_barabas'] = {

@@ -26,7 +26,7 @@ def merge_file(dir, filename, mode):
     f = open(filename, 'wb')
     if mode == 'utf16':
         f.write('\xff\xfe')
-    for file in listdir(dir):
+    for file in listdir(unicode(dir, 'utf-8')):
         file_n = path.join(dir, file)
         ff = open(file_n, 'rb')
         data = ff.read()

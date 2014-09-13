@@ -154,7 +154,7 @@ IF city_form = 4:
  $place = 'kamira_district' 
  $text_display += {<br><div id="under">Residential area<br><div id = "clear"><a href = 'EXEC: city_form = 41 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">"Patterns of Uncle Bo" <br><div id = "clear"><a href = 'EXEC: interaction_city = 42 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">"The Rarity Of Mystras" <br><div id = "clear"><a href = 'EXEC: interaction_city = 43 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">"The Rarity Of Mystra" <br><div id = "clear"><a href = 'EXEC: interaction_city = 43 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Public animal farm <br><div id = "clear"><a href = 'EXEC: interaction_city = 44 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Tierra del Citadel <br><div id = "clear"><a href = 'EXEC: interaction_city = 45 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Leave the quarter<br><div id = "clear"><a href = 'EXEC: city_form = 0 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}

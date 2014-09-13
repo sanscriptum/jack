@@ -1024,7 +1024,7 @@ IF $stock_occupation = 'mech':
  if stock["temper"] < 5: stock["temper"] += 1    
  if stock["gladiatrix"] < 4: stock["gladiatrix"] += 2 
  if stock["service"] < 5: stock["service"] += 1 
- $stock_occupation_auk = 'pilot a giant humanoid battle robot'
+ $stock_occupation_auk = 'pilot of a giant humanoid battle robot'
 END
 IF $stock_occupation = 'contraband':
  if stock["expression"] < 4: stock["expression"] += 2

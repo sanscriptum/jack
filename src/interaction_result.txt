@@ -271,7 +271,7 @@ IF $interaction_type = 'self_sex_lesson':
    dynamic '<<$subskill_xp>> = 0'
    $text[3] = 'By the end of lesson you managed to make significant progress. Now you can move on to more complex techniques.'
    else
-   $text[3] = 'Slave was not able to fully implement what you were trying to teach her​​. It will be necessary to repeat this lesson again, but still you barely moved and the next time this should be easier.'   
+   $text[3] = 'Slave was not able to fully implement what you were trying to teach her. It will be necessary to repeat this lesson again, but still you barely moved and the next time this should be easier.'   
    dynamic '<<$subskill_xp>> += 1'
   END
   master_hygiene_rate += add_master_hygiene

@@ -10,7 +10,7 @@ $красота_справка = '<center>BEAUTY<br>
 '
 $красота_справка_2 = "  Natural beauty very strongly influences her market price. Your slave's rank will never rise higher than her beauty value. At auctions beautiful slaves are sold for higher prices."
 $красота_совет = '   [BEAUTY TIPS]
-<div style="font-size: 95%;">   All your efforts to improve appearance of the slave will influence style, not beauty. Stylishness is important too, but the value of natural beauty is huge. You can increase beauty only by plastic surgery in technosphere and only once. Try to buy beautiful slaves if you intend to train them to high ranks. Beauty will decrease, if a slave has scars or bruises.</div>'
+   All your efforts to improve appearance of the slave will influence style, not beauty. Stylishness is important too, but the value of natural beauty is huge. You can increase beauty only by plastic surgery in technosphere and only once. Try to buy beautiful slaves if you intend to train them to high ranks. Beauty will decrease, if a slave has scars or bruises.'
 
 $здоровье_справка = '<center>ENDURANCE<br>
 <font color="#cd0000">Dying</font>
@@ -21,7 +21,7 @@ $здоровье_справка = '<center>ENDURANCE<br>
 <font color="#008000">Enduring</font></center>'
 $здоровье_справка_2 = '  Hardy slave can work well and hard and is more attractive for clients. Critical decrease of endurance can kill your slave.'
 $здоровье_совет = "   [ENDURANCE TIPS]
-<div style='font-size: 88%;'>  Endurance always comes handy. If your slave has weak endurance you need to feed her well; it's desirable to prescribe vitamins and not let her become exhausted (receive red energy stars). Assistant with high nurse skill can help too. To increase endurance of healthy slave, make her do sports, race and martial arts. You also need to heal her injuries and sicknesses in time, don't let her starve or overwork.</div>"
+<div style='font-size: 88%;'>   Endurance always comes handy. If your slave has weak endurance you need to feed her well; it's desirable to prescribe vitamins and not let her become exhausted (receive red energy stars). Assistant with high nurse skill can help too. To increase endurance of healthy slave, make her do sports, race and martial arts. You also need to heal her injuries and sicknesses in time, don't let her starve or overwork.</div>"
 
 $экзотичность_справка = '<center>EXOTICISM<br>
 <font color="#cd0000">Ordinary</font>
@@ -54,7 +54,7 @@ $чувствительность_справка = '<center>EMPATHY<br>
 <font color="#008000">Nurturing</font></center>'
 $чувствительность_справка_2 = '  On one hand the gentle slave is easier affected by stress and stung by punishments. On the other hand she is turned on much faster and more lively, which makes her attractive for customers.'
 $чувствительность_совет = "   [EMPATHY TIPS]
-<div style='font-size: 95%;'>   Callousness develops quickly with mistreatment. Severe punishments are especially harmful. While a less sensitive slave is hardened against depression and endures suffering, she is also less valuable. There are no reliable ways to increase a slave's empathy, but refined petting and pleasures may help.</div>"
+   Callousness develops quickly with mistreatment. Severe punishments are especially harmful. While a less sensitive slave is hardened against depression and endures suffering, she is also less valuable. There are no reliable ways to increase a slave's empathy, but refined petting and pleasures may help."
 
 $стиль_справка = '<center>STYLE<br>
 <font color="#cd0000">Unfashionable</font>
@@ -76,7 +76,7 @@ $ум_справка = '<center>INTELLECT<br>
 <font color="#008000">Intelligent</font></center>'
 $ум_справка_2 = '  Smart slaves master skills faster and are able to cope with accounting better, they are more valuable on the market. But it is easier to dominate and manipulate stupid ones.'
 $ум_совет = '   [INTELLECT TIPS]
-<div style="font-size: 95%;">   Smarts are not always useful, as more intellectual slaves are harder to control and manipulate. On the other hand rational factors of submission and explanatory conversations will work even better. Smart slaves also are trained better, cope well with the work of secretary and generally are valued more on the market. Smarts can be slightly increased if you make your slave an accountant.</div>'
+<div style="font-size: 97%;">   Smarts are not always useful, as more intellectual slaves are harder to control and manipulate. On the other hand rational factors of submission and explanatory conversations will work even better. Smart slaves also are trained better, cope well with the work of secretary and generally are valued more on the market. Smarts can be slightly increased if you make your slave an accountant.</div>'
    
 $темперамент_справка = '<center>TEMPERAMENT<br>
 <font color="#cd0000">Apathetic</font>
@@ -96,9 +96,9 @@ $характер_справка = '<center>NATURE<br>
 <font color="#0000CD">Independent</font>
 <font color="#008080">Determined</font>
 <font color="#008000">Willful</font></center>'
-$характер_справка_2 = '  Strong character makes slave more interesting and independent but lowers her obedience. It is easier to control a weak-willed slaves but their value will be lower.'
+$характер_справка_2 = '  Strong character makes slave more interesting and independent but lowers her obedience. It is easier to control a weak-willed slaves but their value will be lower too.'
 $характер_совет = '   [NATURE TIPS]
-<div style="font-size: 90%;">   Nature is ambiguous feature. It is very hard to train willful slave but weak-willed will lose its value greatly. The more you make a slave do what she does not want to do, the more her nature will break. It is difficult to restore nature so do not overdo it. Victory in duels, assistance in training, martial arts and recreation in a golden cage can help in the formation of solid nature.</div>'
+<div style="font-size: 97%;">   Nature is ambiguous feature. It is very hard to train willful slave but weak-willed will lose its value greatly. The more you make a slave do what she does not want to do, the more her nature will break. It is difficult to restore nature so do not overdo it. Victory in duels, assistance in training, martial arts and recreation in a golden cage can help in the formation of solid nature.</div>'
 
 $гордыня_справка = '<center>PRIDE<br>
 <font color="#cd0000">Arrogant</font>
@@ -123,7 +123,7 @@ $слава_совет = '   [FAME TIPS]
    Fame is not the most important parameter for a slave. You can train wonderful product unconcerned about this. Fame will grow with victories in the arena coliseum.'
 
 $калории_совет = '   [WHAT CALORIES DOES?]
-<div style="font-size: 83%;">   Calories represent how your slave fed. If the number of calories less than zero - slave will starve and she will lose weight (f), but if slave is fat enough - she will begin to lose weight without starvation if her calories was equal to zero. Each active action consumes calories, the more calories left - the faster the slave will get fat and gain weight, and vice versa. The amount of calories also determine slave health, it is important not to give her to starve herself. If you change her physique, fat meter will reset.</div>'
+<div style="font-size: 83%;">   Calories represent how your slave fed. If the number of calories less than zero - slave will starve and she will lose weight (f), but if slave is fat enough - she will begin to lose weight without starvation if her calories was equal to zero. Each active action consumes calories, the more calories left - the faster slave will get fat and gain weight, and vice versa. The amount of calories also determine slave health, it is important not to give her to starve herself. If you change her physique, fat meter will reset.</div>'
 
 !ХАРАКТЕРИСТИКИ ТРЕНЕРА
 $сила_справка = '<center>STRENGTH<br>

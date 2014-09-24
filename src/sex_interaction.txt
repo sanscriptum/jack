@@ -1319,7 +1319,7 @@ IF sex_interaction = 21:
  
  sex["darkness_attitude_revealed"] = 1
 
- $text[1] = '  You tie a girl eyes with blindfold. This should help concentrate better on her own feelings and get away from external stimuli.' 
+ $text[1] = '  You tie her eyes with a blindfold. This should help to concentrate better on her own feelings and get away from external irritants.' 
  g = RAND(1,4)
  if g = 1: $special_bg = 'scene\blindfold' 
  if g = 2: $special_bg = 'scene\blindfold_2'    
@@ -1337,7 +1337,7 @@ IF sex_interaction = 211:
  sex['eyes_bound'] = 0 
  sex["girl_attention"] += 1
 
- $text[1] = '   You remove the blindfold from girl eyes so she could turn her attention to what is happening around her and show more initiative.'
+ $text[1] = '   You remove the blindfold from her eyes so she could turn her attention to what is happening around her and show more initiative.'
  $special_bg = 'scene\blindfold'  
  sex['pc_energy'] -= 1
  sex["pc_interest"] -= 1 
@@ -1405,7 +1405,7 @@ IF sex_interaction = 23:
  
  sex["masohism_revealed"] = 1
 
- $text[1] = '  You take the metal clamps connected by a chain and attach them to the girl''s nipples. Feeling will be quite painful, but at the right mood arousal will grow.' 
+ $text[1] = '  You take the metal clamps connected by a chain and attach them to her nipples. This will be quite painful, but with the right attitude arousal will grow.' 
  $special_bg = $pins[sex['girl_type']]   
  $play_sound[1] = '<<$clamps[1]>>'  
  sex['pc_energy'] -= 2
@@ -1419,7 +1419,7 @@ IF sex_interaction = 231:
 
  sex['clamps'] = 0 
 
- $text[1] = '    You remove metal clamps from the girls nipples. Sometimes removing the clamps painful than their attachment, but this brings a special painful relief.' 
+ $text[1] = '    You remove metal clamps from her nipples. Sometimes removing the clamps even painful than attachment, but this brings a special painful relief.' 
  $special_bg = $pins[sex['girl_type']]  
  $play_sound[1] = '<<$clamps[2]>>'   
  sex['pc_energy'] -= 1

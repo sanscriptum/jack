@@ -78,7 +78,7 @@ END
 <<$slave_pet[slave["pet"]]>>
 <<$slave_dressage[slave["dressage"]]>> 
 
-<u>SEX-TECHNIQUE</u>
+<u>SEX-TECHNIQUES</u>
 <<$slave_petting[slave["petting"]]>> 
 <<$slave_penetration[slave["penetration"]]>> 
 <<$slave_oral[slave["oral"]]>>

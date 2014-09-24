@@ -109,8 +109,8 @@ $партнер_открытость_справка = '  Partner''s openness aff
 $партнер_боль_справка = '  Pain affects the arousal, openness and attention. High is negative affect, low positive.'
 $партнер_оргазмометр_справка = '  Climax-count shows two values ​​- the first is the current value of partner''s orgasm, and the second - the threshold at which partner will cum.'
 
-$active_strip[0] = 'You have the impression that the <<$sex["girl_name"]>> undresses reluctantly, just to get you off from her. What she does, even with a large imagination can not be called a dance, rather a joke. This not fit as entertainment at all.'
-$active_strip[1] = '<<$sex["girl_name"]>> performs to you a short dance, quickly getting rid of all her clothes. In her motion does not feel emotions, and they are not brilliant. Nevertheless, it is at least some entertainment.'
+$active_strip[0] = 'You have the impression that the <<$sex["girl_name"]>> undresses reluctantly, just to get you leave her alone. What she does, even with a large imagination can not be called a dance, rather a joke. This does not look as entertainment at all.'
+$active_strip[1] = '<<$sex["girl_name"]>> performs to you a short dance, quickly getting rid of all her clothes. Her motion lacks the emotions, and they also not brilliant. Nevertheless, it is at least some kind of entertainment.'
 $active_strip[2] = '<<$sex["girl_name"]>> performs simple, but quite emotional dance, getting rid of one item of clothing after another. Spectacle turns interesting, although not sufficiently attractive to really inflame your passion.'
 $active_strip[3] = '<<$sex["girl_name"]>> performs a sensual teasing dance, from which your pants suddenly become cramped. Your slave manages to feel that line between frankness and vulgarity, which makes striptease so attractive.'
 $active_strip[4] = '<<$sex["girl_name"]>> dances great, but she is not limited to a beautiful undressing. She makes you a central figure in her presentation, circling around, touching you with the edges of clothing, fleetingly caressing with hands. She really makes you wish her!'
@@ -256,7 +256,7 @@ $sex_urination[5] = '    You ask her to work for you as urinal, and she readily 
 $sex_analfisting[0] = 'Girl''s ass so clamped that fisting is not even possible. However, you can stick your finger and move with it for a little, so that she began to get used to this sensation. She cries out in unusual sensations and asks to stop.'
 $sex_analfisting[1] = 'You stuck a couple of fingers in her ass, trying to develop the anus. She is clearly feels uncomfortable, she twitches and frowns.'
 $sex_analfisting[2] = 'You trying to shove your hand in her ass. Albeit with a fair difficulty, but still it is fits in the rectum.'
-$sex_analfisting[3] = 'Using a sufficient amount of lubricant, you can easily stick a fist into her anus. If <<$sex["girl_name"]>> be able to relax enough, she even can to enjoy it.'
+$sex_analfisting[3] = 'Using a sufficient amount of lubricant, you can easily stick a fist into her anus. If <<$sex["girl_name"]>> be able to relax enough, she even can enjoy it.'
 $sex_analfisting[4] = 'Girl''s ass developed perfectly. If do not be greedy with lubricant and push hard enough, you can stick your hand almost to the elbow. This show is worthy to be a circus act.'
 $sex_analfisting[5] = '<<$sex["girl_name"]>> so good in fisting as is it possible. You easily push the whole hand on the elbow in her ass.'
 

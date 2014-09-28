@@ -75,12 +75,12 @@ END
 final_payment = rental_cost + revised_payment + fine - discount
 
 $bill_message = '<center>BILLS TO PAY</center>
-Rental cost: <<rental_cost>> иск.
-Food bills: <<food_bill>> иск.
-Other expenses: <<other_bills>> иск.
-Discount: <<discount>> иск.
-Fines: <<fine>> иск. 
+Rental cost: <<rental_cost>> sparks
+Food bills: <<food_bill>> sparks
+Other expenses: <<other_bills>> sparks
+Discount: <<discount>> sparks
+Fines: <<fine>> sparks 
 --------------------------
-       Total: <<final_payment>> иск.'
+       Total: <<final_payment>> sparks'
 --- billing ---------------------------------
 

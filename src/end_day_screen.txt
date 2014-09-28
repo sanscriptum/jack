@@ -24,7 +24,7 @@ IF slave_auto_tentacle = 1:
  IF slave["sub_tentacles"] > tentacle_size: 
   $text = '  <<$slave_name>> takes a bucket-pot and goes to the pen with fiend in it. Thanks to previous experience, she manages not to lose control. While some insatiable slippery tentacles penetrate all her holes, she grabs the other feelers and milk them directly into the bucket.'   
   else
-  $text = '  <<$slave_name>> takes a bucket-pot and goes to the pen with fiend in it. Nevertheless, her efforts to milk the thing to nothing lead. Braided with powerful tentacles, your slave completely loses touch with reality and gets orgasm after orgasm until fiend pumps her holes with seed.'
+  $text = '  <<$slave_name>> takes a bucket-pot and goes to the pen with fiend in it. Nevertheless, her efforts to milk the thing leads to nothing. Braided with powerful tentacles, your slave completely loses touch with reality and gets orgasm after orgasm until fiend pumps her holes with seed.'
  END
  slave_auto_tentacle = 0
  jump 'loop'
@@ -53,7 +53,7 @@ IF assistant_auto_tentacle = 1:
  IF assistant["sub_tentacles"] > tentacle_size: 
   $text = '  <<$assistant_name>> takes a bucket-pot and goes to the pen with fiend in it. Thanks to previous experience, she manages not to lose control. While some insatiable slippery tentacles penetrate all her holes, she grabs the other feelers and milk them directly into the bucket.'  
   else
-  $text = '  <<$assistant_name>> takes a bucket-pot and goes to the pen with fiend in it. Nevertheless, her efforts to milk the thing to nothing lead. Braided with powerful tentacles, your assistant completely loses touch with reality and gets orgasm after orgasm until fiend pumps her holes with seed.'
+  $text = '  <<$assistant_name>> takes a bucket-pot and goes to the pen with fiend in it. Nevertheless, her efforts to milk the thing leads to nothing. Braided with powerful tentacles, your assistant completely loses touch with reality and gets orgasm after orgasm until fiend pumps her holes with seed.'
  END
  assistant_auto_tentacle = 0
  jump 'loop'
@@ -97,14 +97,14 @@ IF slave_will_masturbate = 1:
  $special_bg = $masturbation[slave_type]   
  if slave["sub_masturbation"] < 1: slave["sub_masturbation"] = 1 else slave["sub_masturbation_xp"] += 1
  IF orgasm_prohibited = 0:
-  $text = 'You caught your slave during masturbation, but she does not stop it. Looking into your eyes <<$slave_name>> fingering more fiercely, her movements are sharp and jittery, and then she throws back her head and writhing in the orgasmic throes, she produces moans of pleasure. ' 
+  $text = 'You caught your slave during masturbation, but she does not stop it. Looking into your eyes <<$slave_name>> fingering more fiercely, her movements are sharp and jittery, and then she throws her head back and writhes in the orgasmic throes, uttering moans of pleasure.' 
   slave_rate["mood"] += slave["arousal"]
   slave_rate["arousal"] -= slave["sub_masturbation"] * slave["arousal"]
   if slave["sub_masturbation"] = 0: slave_rate["arousal"] -= slave["arousal"]
   if slave['pos_orgasm'] < 1: slave['pos_orgasm'] = 1
   else
   IF rules_broken = 1 or slave["arousal"] > slave["obedience"]: 
-   $text = 'You caught your slave during masturbation, but she does not stop it. You let it continue, recalling however, that she cannot cum. Nevertheless, <<$slave_name>> can''t or do won''t to stop in time, and she can not hide moan of orgasm. Well, you have to punish her now...' 
+   $text = 'You caught your slave during masturbation, but she does not stop it. You let her continue, recalling however, that she cannot cum. Nevertheless, <<$slave_name>> can''t or don''t want to stop in time, and she can not hide moan of orgasm. Well, you have to punish her now...' 
    slave_rate["arousal"] -= slave["sub_masturbation"] * slave["arousal"]
    if slave["sub_masturbation"] = 0: slave_rate["arousal"] -= slave["arousal"]
    if slave['pos_orgasm'] < 1: slave['pos_orgasm'] = 1
@@ -114,7 +114,7 @@ IF slave_will_masturbate = 1:
     if sin_gained > slave["sin"]: slave["sin"] = sin_gained
    END
    else
-   $text = 'You caught your slave during masturbation, but she does not stop it. You let it continue, recalling however, that she cannot cum. Obeying your will <<$slave_name>> not brings herself to climax, pausing at the end. Poor thing will hassle herself...'
+   $text = 'You caught your slave during masturbation, but she does not stop it. You let her continue, recalling however, that she cannot cum. Obeying your will <<$slave_name>> does not bring herself to climax, pausing at the end. Poor thing will exhaust herself...'
    slave_rate["arousal"] += slave["sub_masturbation"] * slave["arousal"]
    if slave["sub_masturbation"] = 0: slave_rate["arousal"] += slave["arousal"]
    slave_cutom_rate += 1
@@ -150,7 +150,7 @@ IF tentacle_death_event = 1:
 END
 
 IF end_of_the_day = 1:
- $text = 'There is nothing more interesting today. Everyone goes to bed.'
+ $text = 'There is nothing more interesting today. Everyone goes to the bed.'
  $place = 'bedroom'
  ! вернул, битых иконок быть не должно
  $special_bg = ''   
@@ -227,9 +227,9 @@ END
 
 IF milking_time = 1:
  $text = ''
- if slave['milk_gain'] > 0: $text += '<<$slave_name>> gives a <<slave["milk_gain"]>>00 grams of milk and <<slave["cream_gain"]>>00 gram of cream. <br>'
- if assistant['milk_gain'] > 0: $text += '<<$assistant_name>> gives a <<assistant["milk_gain"]>>00 grams of milk and <<assistant["cream_gain"]>>00 gram of cream. <br>'
- if prisoner['milk_gain'] > 0: $text += '<<$prisoner_name>> gives a <<prisoner["milk_gain"]>>00 grams of milk and <<prisoner["cream_gain"]>>00 gram of cream. <br>' 
+ if slave['milk_gain'] > 0: $text += '<<$slave_name>> gives a <<slave["milk_gain"]>>00 grams of milk and <<slave["cream_gain"]>>00 grams of cream. <br>'
+ if assistant['milk_gain'] > 0: $text += '<<$assistant_name>> gives a <<assistant["milk_gain"]>>00 grams of milk and <<assistant["cream_gain"]>>00 grams of cream. <br>'
+ if prisoner['milk_gain'] > 0: $text += '<<$prisoner_name>> gives a <<prisoner["milk_gain"]>>00 grams of milk and <<prisoner["cream_gain"]>>00 grams of cream. <br>' 
  $text += '<br>The overall result of the morning milking: <<milk_bottle_plus>> btls. of milk and <<cream_bottle_plus>> btls. of cream.'
  $place = 'bedroom'
  if kitchen > 0: $place = 'kitchen'
@@ -270,14 +270,14 @@ IF rules_broken_message = 1:
 END
 
 IF starvation_varning = 1:
- $text = '    You notice signs of starvation on your slave. She obviously is not getting enough food that will be detrimental to her health. Necessary to increase her diet or reduce the load.'
+ $text = '    You notice signs of starvation on your slave. She obviously is not getting enough food that will be detrimental to her health. It is necessary to increase her diet or reduce the load.'
  starvation_varning = 0
  $special_bg = $fullimage[slave_type]     
  jump 'loop'  
 END
 
 IF slave_suicide = 1:
- $text = '   You find your slave lying on the floor in a pool of blood. Shes not breathing. It happens sometimes, but every time unpleasant - sparks into the air. Now I have to buy a new... '
+ $text = '   You find your slave lying on the floor in a pool of blood. She''s not breathing. It happens sometimes, but every time is unpleasant - waste of sparks. Now I have to buy a new one...'
  $place = 'study' 
  slave_suicide = 0
  !CHECK: replace to slave_dead?
@@ -287,7 +287,7 @@ IF slave_suicide = 1:
 END
 
 IF slave_died = 1:
- $text = '   Your slave did not wake up. Her deplorable state finally made ​​itself felt. Now I have to buy a new...'
+ $text = '   Your slave did not wake up. Her deplorable state finally made itself felt. Now I have to buy a new one...'
  slave_died = 0
  slave_state = CONST_INT['no_slave']
  master_mood['neg_slave_died'] = 1

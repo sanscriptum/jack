@@ -5,8 +5,8 @@
 
 '<div id = "title_scroll_text">Author of this mess: <a href="http://www.blogger.com/profile/07866533522635117580">Old Huntsman</a>
 Mail for contact: <a href="mailto:old_huntsman@yahoo.com">old_huntsman@yahoo.com</a>
-Game is built of platform <a href="http://qsp.su">AERO QSP</a> and designed for use with FastQSP player by Graylor (bundled with the game). Using another QSP players may lead to incorrect performance of the program.
-You can search <a href="http://oldhuntergames.blogspot.ru/">author"s blog</a> for other games (untranslated) from the author. 
+Game is built on <a href="http://qsp.su">AERO QSP</a> platform and designed for use with FastQSP player by Graylor (bundled with the game). Using another QSP players may lead to incorrect performance of the program.
+You can check <a href="http://oldhuntergames.blogspot.ru/">author''s blog</a> for other games (untranslated) from this author. 
 If you want to support author in creating new games or just thank for this one, don''t be shy to send your donations via Yandex-money or PayPal, 
 all necessary information is available for this in blog.
 

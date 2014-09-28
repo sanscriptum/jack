@@ -118,7 +118,7 @@ $slave_bad_mod[34] = 'neg_ugly'
 
 !master positive moodlets
 $mood_description['pos_housing'] = 'I must admit that I have a very decent housing.'
-$mood_description['pos_house_clean'] = 'The house is perfect cleanliness and order.'
+$mood_description['pos_house_clean'] = 'The house is in perfect cleanliness and order.'
 $mood_description['pos_statisfied'] = 'After such a fervent sex, brain inevitably switches to a positive wave!'
 $mood_description['pos_nice_slave'] = "Girl's education is progressing fine, I'm doing an excellent job."
 $mood_description['pos_new_slave'] = 'A new day - a new slave. Shopping is always uplifting.'
@@ -127,7 +127,7 @@ $mood_description['pos_date'] = 'I must say that the date went well.'
 $mood_description['pos_energy'] = 'I am fresh and full of energy. Gotta hangout somewhere.'
 $mood_description['pos_optimism'] = 'My slave is so cute that I want to communicate with her incessantly.'
 $mood_description['pos_massage'] = "Mmmm... what a bliss. It's nice to be taken care of by the beautiful and gentle woman..."
-$mood_description['pos_good_morning'] = 'Morning blowjob - the perfect start to the day.'
+$mood_description['pos_good_morning'] = 'Morning blowjob - the perfect start of the day.'
 $mood_description['pos_show'] = 'I had a good time. Just what you need to dispel the boredom!'
 $mood_description['pos_deal'] = 'Good deal. Now I have more sparks, which can be spent on something nice!'
 $mood_description['pos_self_food'] = 'I ate well. Simply a holiday flavor!'
@@ -135,7 +135,7 @@ $mood_description['pos_wealth'] = "It's great when you do not need to limit your
 $mood_description['pos_good_pet'] = "No wonder people get cats - they relieve stress excellently. Even if it's not quite the cat..."
 $mood_description['pos_toilet'] = 'My slave happened to be a great toilet. Much nicer than a conventional toilet.'
 $mood_description['pos_master_precious'] = 'This magic decoration is perfectly uplifting. When I touch it I immediately calm down and the world seems better. It is just so lovely!'
-$mood_description['pos_kannabis'] = 'Cough-cough... This weed is pretty decent I must to say... A sudden calmness and serenity, but to collect thoughts together now is difficult...'
+$mood_description['pos_kannabis'] = 'Cough-cough... This weed is pretty decent I must to say... A sudden calmness and serenity, but collecting thoughts together now is difficult...'
 $mood_description['pos_drunk'] = 'Now I''m drunk and I feel that this rotten world full of fucking cannibals and sadistic bastards not so bad! And I am also not such a bastard...' 
 $mood_description['pos_opium'] = 'Essence of oblivion gives peace and relief from all worries. I don''t worry about anything right now, except that it can not last forever.'
 $mood_description['pos_bahus'] = 'Why do I want to bite the shield? And why is it such a positive feeling? Nyaaaaarrrrgh!!!!'
@@ -152,7 +152,7 @@ $mood_description['neg_rebell'] = "Slave doesn't listen me at all. There's still
 $mood_description['neg_cook'] = 'To eat properly, I have to tinker in the kitchen with pans and dishes. What the hell?'
 $mood_description['neg_cleaning'] = "I hate messing around in the mud. I'm a fucking slave trainer. What, there's no one in this house to clean up?!"
 $mood_description['neg_dirty'] = 'Ugh, I stink. It is necessary to wash, I disgust myself.'
-$mood_description['neg_tired'] = "Uuuuuhhhh... I'm tired. It is necessary to have a good rest, otherwise it's not hard ot lose health."
+$mood_description['neg_tired'] = "Uuuuuhhhh... I'm tired. It is necessary to have a good rest, otherwise it's not hard to lose health."
 $mood_description['neg_alone'] = "I don't have a single slave at the moment. Somehow, it feels so lonely..."
 $mood_description['neg_grumpy'] = "Damn, what a dull person my slave is! I don't even want to work - boredom."
 $mood_description['neg_boring'] = "I'm booooooored... You can not always just work and fuck. It's necessary to have some fun!"
@@ -223,9 +223,9 @@ $mood_description['pos_slave_opium'] = '   [<<$slave_name>>]
 $mood_description['pos_slave_drunk'] = '   [<<$slave_name>>]
 - I... hic... soooooo drunk. Why did you get me drunk, eh? You want to take advantage of my... hic... helpless situation?'
 $mood_description['pos_slave_love'] = '   [<<$slave_name>>]
-- Some kind of irresistable force beckons me to you. I always think of you. I want to be beside you... forever.'
+- Some kind of irresistible force beckons me to you. I always think of you. I want to be beside you... forever.'
 $mood_description['pos_multiple_orgasm'] = '   [<<$slave_name>>]
-- Ohh, it was great sex! Such a heavenly pleasure... I would like to experience this once again.'
+- Ohh, it was a great sex! Such a heavenly pleasure... I would like to experience this once again.'
 $mood_description['pos_slave_winner'] = '   [<<$slave_name>>]
 - Hooray, we won! That was amazing. I feel much more confident.'
 $mood_description['pos_'] = '   [<<$slave_name>>]

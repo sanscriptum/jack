@@ -14,7 +14,7 @@ MAINDESC_H = 798
 <div id = "title_small">Version 1.2.1</div> <div id = "title_fix">(fix 25.07#1)</div>
 </div>'
 '<div id = "title_menu">
-<div id="under">{ Training mode }<br><div id = "clear"><a href = ''EXEC: gt "demo_intro"''><img src = "content\pic\clear.gif"></a></div></div>
+<div id="under">{ Tutorial }<br><div id = "clear"><a href = ''EXEC: gt "demo_intro"''><img src = "content\pic\clear.gif"></a></div></div>
 <div id="under">{ Story mode }<br><div id = "clear"><a href = ''EXEC: gt "hero_customization"''><img src = "content\pic\clear.gif"></a></div></div>
 <div id="under">{ Sandbox mode }<br><div id = "clear"><a href = ''EXEC: gt "hero_creation"''><img src = "content\pic\clear.gif"></a></div></div>
 <div id="under">{ Controls }<br><div id = "clear"><a href = ''EXEC: gt "controls"''><img src = "content\pic\clear.gif"></a></div></div>

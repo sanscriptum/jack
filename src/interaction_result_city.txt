@@ -14,7 +14,7 @@ IF $interaction_type = 'byer_invitation':
  dynamic '$text[1] = $<<$npc_id>>_pref[1]'
  IF npc_progress[$npc_id] = 2: 
   $text[1] = '   [<<$npc_name[$npc_id]>>]
-   - I still do not need new slaves. But I said a word to friends, I am sure that there will be buyers of such goods without difficulty.'
+   - I still do not need new slaves. But I said a word to friends, I am sure you will find buyers for such goods without difficulty.'
   else
   IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0:
    txt = 1
@@ -264,7 +264,7 @@ IF $interaction_type = 'moneylender':
  npc = 1
  txt_count = 1
  $text[1] = '  [MONEYLENDER]
-   - Here''s your sparks, slaver. If you bring back the debt on time, maybe I will increase the amount of your loan. Maybe. But if you can not manage this - I will shorten your life. And this will be exactly. I will waiting for you during <<debt_count>> days. Do not be late.'
+   - Here''s your sparks, slaver. If you bring back the debt on time, maybe I will increase the amount of your loan. Maybe. But if you can not manage this - I will shorten your life. And this will be for sure. I will waiting for you during <<debt_count>> days. Do not be late.'
  sparks += loan 
 END
 
@@ -339,7 +339,7 @@ IF $interaction_type = 'hit_on_patron':
   sparks -= 2
   else
   txt_count = 1
-  $text[1] = '   You are viewing the pub in search of other bored and lonely women, but no suitable candidate for courtship is not visible. Probably should try your luck tomorrow.'
+  $text[1] = '   You are viewing the pub in search of other bored and lonely women, but no suitable candidate for courtship is visible. Probably should try your luck tomorrow.'
  END  
 END
 

@@ -22,7 +22,7 @@ IF slave['age'] = CONST_INT['milf_age'] and txt = 0:
 END
 
 $text[txt] = '   [Doctor]
-   - Choose wisely. We can no longer change her appearance again - too likely irreversible damage.'
+   - Choose wisely. We can no longer change her appearance again - too likely to cause irreversible damage.'
 
 *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
 *p '<div id = "text"><<$text[txt]>></div>'

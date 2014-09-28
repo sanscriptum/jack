@@ -24,14 +24,14 @@ END
 IF auction_phase = 0:
 
  if stock_sold = 1: $text = '  [FARID]
-  -  Our first lot for today! <<$stock_name>> &#45; <<$stock_epithet>> <<$stock_occupation_auk>> from <<$stock_world_auk>>, <<$stock_family_auk>>. Starting price <<stock_base_price>> sparks. So, who is placing first bid?
+  -  Our first lot for today! <<$stock_name>> - <<$stock_epithet>> <<$stock_occupation_auk>> from <<$stock_world_auk>>, <<$stock_family_auk>>. Starting price <<stock_base_price>> sparks. So, who is placing first bid?
 '
 
  if stock_sold > 1: $text = '  [FARID]
-  -  Next lot! <<$stock_name>> &#45; <<$stock_epithet>> <<$stock_occupation_auk>> from <<$stock_world_auk>>, <<$stock_family_auk>>. Starting price <<stock_base_price>> sparks. So, who is placing first bid?
+  -  Next lot! <<$stock_name>> - <<$stock_epithet>> <<$stock_occupation_auk>> from <<$stock_world_auk>>, <<$stock_family_auk>>. Starting price <<stock_base_price>> sparks. So, who is placing first bid?
 '
  if stock_sold => stock_limit: $text = '  [FARID]
-  -  And last lot for today! <<$stock_name>> &#45; <<$stock_epithet>> <<$stock_occupation_auk>> from <<$stock_world_auk>>, <<$stock_family_auk>>. Starting price <<stock_base_price>> sparks. So, who is placing first bid?
+  -  And last lot for today! <<$stock_name>> - <<$stock_epithet>> <<$stock_occupation_auk>> from <<$stock_world_auk>>, <<$stock_family_auk>>. Starting price <<stock_base_price>> sparks. So, who is placing first bid?
 '
 END
 
@@ -55,11 +55,11 @@ END
 
 IF auction_phase = 5:
   $text = '  [FARID]
-  -  And that concludes our auction today! All lots are sold. Please come back tomorrow &#45; Fogs will give us many more wondrous beauties!'
+  -  And that concludes our auction today! All lots are sold. Please come back tomorrow - Fogs will give us many more wondrous beauties!'
 END
 
 IF auction_phase = 6:
-  $text = '  You take the newly acquired slave with yourself and leave the market.'
+  $text = '  You take the newly acquired slave with you and leave the market.'
 END
 
 IF auction_phase = 7:

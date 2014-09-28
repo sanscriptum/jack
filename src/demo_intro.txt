@@ -64,7 +64,7 @@ IF lecture = 1:
  $text[6] = 'Client is likely to refuse to buy an ugly slave, and will not take her back. It is necessary to take into account the vagaries of customers.'
  $text[7] = 'It should also be remembered that the above applies only to the general case. Each customer may have their own requirements, which strongly change the rating of our goods in his eyes.'
  $text[8] = 'If client acquires a gladiatrix from you, her strength and exoticness will be important, but her housekeeping and cooking skills won''t matter. In the future, you will have to select untrained slaves and train them based on a specific customer''s wishes.'
- $text[9] = 'Since the Slaver''s Guild is the customer for the examination, we will only take into account her overall rating. Her individual skills won''t matter as long as her overall rating is high enough.'
+ $text[9] = 'Since the Slavers Guild is the customer for the examination, we will only take into account her overall rating. Her individual skills won''t matter as long as her overall rating is high enough.'
 END
 
 IF lecture = 2:

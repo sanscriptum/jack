@@ -180,11 +180,11 @@ END
 IF trace_segment = 1:
  IF ui_style = 2:
   *p '<div id = "ride_subtions_ui2">
-<a href = "EXEC: gt ''ride_next'',1">Click whip</a>
+<a href = "EXEC: gt ''ride_next'',1">Crack the whip</a>
 </div>'
   else
   *p '<div id = "ride_subtions">
-<a href = "EXEC: gt ''ride_next'',1">Click whip</a>
+<a href = "EXEC: gt ''ride_next'',1">Crack the whip</a>
 </div>'
  END
  else

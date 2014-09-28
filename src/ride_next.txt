@@ -118,7 +118,7 @@ IF $trace[trace_segment] = 'bladestrings':
   $current_ride = $trace_pass_description['bladestrings'] 
   else
   IF slave['age'] = CONST_INT['loli_age']:
-   $current_ride = '   Due to the low growth of your girl yoked to the chariot, you can safely pass a string-blade at any speed: they are stretched at the neck of an adult woman and just whistling over your heads, without causing any harm. But for your opponents this section will not be easy to overcome!'
+   $current_ride = '   Due to the low growth of your girl harnessed to the chariot, you can safely pass a string-blade at any speed: they are stretched at the neck of an adult woman and just whistling over your heads, without causing any harm. But for your opponents this section will not be easy to overcome!'
    else
    $current_ride = $trace_fail_description['bladestrings']  
    dynamic $pony_death 

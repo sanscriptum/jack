@@ -26,15 +26,15 @@ $frame[1] = '<font color="#cd0000">Fragile Frame</font>'
 $frame[2] = '<font color="#0000CD">Fragile Frame</font>'
 $frame[2] = '<font color="#008000">Sturdy Frame</font>'
 
-$boards[1] = '<font color="#cd0000">Sides barely hold</font>'
-$boards[2] = '<font color="#0000CD">Strong sides</font>'
-$boards[2] = '<font color="#008000">Strong sides</font>'
+$boards[1] = '<font color="#cd0000">Sides Barely Hold</font>'
+$boards[2] = '<font color="#0000CD">Durable Sides</font>'
+$boards[2] = '<font color="#008000">Durable Sides</font>'
 
-$chasis[1] = '<font color="#cd0000">Suspension Bursting</font>'
-$chasis[2] = '<font color="#0000CD">Suspension Works</font>'
+$chasis[1] = '<font color="#cd0000">Bursting Suspension</font>'
+$chasis[2] = '<font color="#0000CD">Working Suspension</font>'
 $chasis[2] = '<font color="#008000">Reinforced Suspension</font>'
 
-$wheels[1] = '<font color="#cd0000">Wheels Quite Weak</font>'
+$wheels[1] = '<font color="#cd0000">Weak Wheels</font>'
 $wheels[2] = '<font color="#0000CD">Reinforced Wheels</font>'
 $wheels[2] = '<font color="#008000">Robust Wheels</font>'
 
@@ -73,7 +73,7 @@ $race_finishline['master'] = {}
 $rider_name['ride_angelika'] = 'Angelika'
 $rider_ava['ride_angelika'] = 'content/pic/mob/ride_angelika.jpg'
 rider_structure['ride_angelika'] = 4
-$rider_description['ride_angelika'] = 'Races for Angelika - it''s just an opportunity to train a slave. Racehorse perfectly schooled, but does not stand out physique. Chariot heavy and well protected.'
+$rider_description['ride_angelika'] = 'Races for Angelika - it''s just an opportunity to train a slave. Racehorse is perfectly schooled, but does not stand out physique. Chariot is heavy and well protected.'
 $race_startline['ride_angelika'] = {
 speed_points['ride_angelika'] += RAND(12,14)
 }
@@ -110,7 +110,7 @@ speed_points['ride_angelika'] += RAND(14,17)
 $rider_name['ride_avgia'] = 'Augeas'
 $rider_ava['ride_avgia'] = 'content/pic/mob/ride_avgia.jpg'
 rider_structure['ride_avgia'] = 2
-$rider_description['ride_avgia'] = 'Augeas - a very dangerous opponent. Her steed differs highest training and a great physique. Chariot light and maneuverable.'
+$rider_description['ride_avgia'] = 'Augeas - a very dangerous opponent. Her racehorse differs with highest training and a great physique. Chariot is light and maneuverable.'
 $race_startline['ride_angelika'] = {
 speed_points['ride_avgia'] += RAND(15,17)
 }
@@ -147,7 +147,7 @@ speed_points['ride_avgia'] += RAND(17,20)
 $rider_name['ride_geralt'] = 'Gerald'
 $rider_ava['ride_geralt'] = 'content/pic/mob/ride_geralt.jpg'
 rider_structure['ride_geralt'] = 5
-$rider_description['ride_geralt'] = 'Gerald more fighter than a racer. As steeds he uses an female orc, not too fast, but incredibly strong. Chariot extremely reserved and weighted.'
+$rider_description['ride_geralt'] = 'Gerald more fighter than a racer. As racehorse he uses an female orc, not too fast, but incredibly strong. Chariot is extremely reserved and weighted.'
 $race_startline['ride_geralt'] = {
 speed_points['ride_geralt'] += RAND(11,13)
 }
@@ -184,7 +184,7 @@ speed_points['ride_geralt'] += RAND(13,16)
 $rider_name['ride_ippolita'] = 'Hippolytus'
 $rider_ava['ride_ippolita'] = 'content/pic/mob/ride_ippolita.jpg'
 rider_structure['ride_ippolita'] = 3
-$rider_description['ride_ippolita'] = 'Hippolytus - a big enthusiast of pony girls. Her chariot is an average for the protection and weight, but has a great steed and be well prepared.'
+$rider_description['ride_ippolita'] = 'Hippolytus - a big enthusiast of pony girls. Her chariot is an average for the protection and weight, but her racehorse has a great build and well prepared.'
 $race_startline['ride_ippolita'] = {
 speed_points['ride_ippolita'] += RAND(14,16)
 }
@@ -221,7 +221,7 @@ speed_points['ride_ippolita'] += RAND(16,19)
 $rider_name['ride_jeevs'] = 'Jeeves'
 $rider_ava['ride_jeevs'] = 'content/pic/mob/ride_jeeves.jpg'
 rider_structure['ride_jeevs'] = 4
-$rider_description['ride_jeevs'] = 'Jeeves prefers around balanced, informed decisions. His slave is well-prepared, but not specialized in racing. Chariot is not too heavy, but it is protected.'
+$rider_description['ride_jeevs'] = 'Jeeves prefers around balanced, informed decisions. His slave is well-prepared, but is not specialized in racing. Chariot is not too heavy, but protected.'
 $race_startline['ride_jeevs'] = {
 speed_points['ride_jeevs'] += RAND(10,12)
 }
@@ -258,7 +258,7 @@ speed_points['ride_jeevs'] += RAND(12,15)
 $rider_name['ride_morrigan'] = 'Morrigan'
 $rider_ava['ride_morrigan'] = 'content/pic/mob/ride_morrigan.jpg'
 rider_structure['ride_morrigan'] = 1
-$rider_description['ride_morrigan'] = 'Morrigan likes insane speed and always risks beyond measure. She has an average steed, but the chariot is facilitated to the limit.'
+$rider_description['ride_morrigan'] = 'Morrigan likes insane speed and always risks beyond measure. She has an average racehorse, but the chariot is facilitated to the limit.'
 $race_startline['ride_morrigan'] = {
 speed_points['ride_morrigan'] += RAND(16,18)
 }

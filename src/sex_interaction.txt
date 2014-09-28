@@ -1365,7 +1365,7 @@ IF sex_interaction = 22:
  
  sex["deprivation_attitude_revealed"] = 1
 
- $text[1] = '  You firmly bind a girl, so that she felt helpless.' 
+ $text[1] = '  You firmly bind her, so that she felt helpless.' 
  $special_bg = $bondage[sex['girl_type']]   
  sex['pc_energy'] -= 10
  sex["pc_interest"] -= 1 
@@ -1378,7 +1378,7 @@ IF sex_interaction = 221:
 
  sex['bondage'] = 0 
 
- $text[1] = '    You release the girl from the ropes so that she could act independently.' 
+ $text[1] = '    You release her from the ropes so that she could act independently.' 
  $special_bg = $bondage[sex['girl_type']]   
  sex['pc_energy'] -= 1
  sex["pc_interest"] -= 1 

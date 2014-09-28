@@ -1199,7 +1199,7 @@ IF menu_form = 151:
   $text_display += {<br><div id="under_gray">Go to the theater (4 sparks) (=4)<br></div>} 
  end 
  IF sparks => 8 and already_done_today[1515] = 0: 
-  $text_display += {<br><div id="under">Go to a restaurant (sparks) (=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1515 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Go to a restaurant (8 sparks) (=5)<br><div id = "clear"><a href = 'EXEC: interaction = 1515 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Go to a restaurant (8 sparks) (=5)<br></div>} 
  end 

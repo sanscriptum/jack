@@ -6,8 +6,8 @@ $quest[2] = '<a href = "EXEC: quest_description_mode = 1 & choosen_quest = 2 & g
 $quest[3] = '<a href = "EXEC: quest_description_mode = 1 & choosen_quest = 3 & gt curloc">Very good idea to achieve the status of a patrician</a> <br>'
 $quest[4] = '<a href = "EXEC: quest_description_mode = 1 & choosen_quest = 4 & gt curloc">I am aiming at the position of slavemaster in the Guild, I think I deserve it</a> <br>'
 $quest[5] = '<a href = "EXEC: quest_description_mode = 1 & choosen_quest = 5 & gt curloc">I have a very important client with special requirements</a> <br>'
-$quest[6] = '<a href = "EXEC: quest_description_mode = 1 & choosen_quest = 6 & gt curloc">I need to get an arena champion for Sire Aramus</a> <br>'
-$quest[7] = '<a href = "EXEC: quest_description_mode = 1 & choosen_quest = 7 & gt curloc">Vudzhen needs a slave - winner of the races</a> <br>'
+$quest[6] = '<a href = "EXEC: quest_description_mode = 1 & choosen_quest = 6 & gt curloc">I need to get an arena champion for Sir Aramus</a> <br>'
+$quest[7] = '<a href = "EXEC: quest_description_mode = 1 & choosen_quest = 7 & gt curloc">Vujin needs a slave - winner of the races</a> <br>'
 $quest[8] = '<a href = "EXEC: quest_description_mode = 1 & choosen_quest = 8 & gt curloc">Garsid requests a perfect sex slave to be taught for him</a> <br>'
 $quest[9] = '<a href = "EXEC: quest_description_mode = 1 & choosen_quest = 9 & gt curloc">Master Valios promised reward for adult fiend of the Fogs</a> <br>'
 $quest[10] = '<a href = "EXEC: quest_description_mode = 1 & choosen_quest = 10 & gt curloc">I need to perform the guild contract</a> <br>'
@@ -16,7 +16,7 @@ $quest_description[0] = 'sample description
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>'
 
 $quest_description[2] = 'NB! First I need to make sure that she is branded. And do not forget about stylish appearance - fine dress helps to impress.
-   Selling options :
+   Selling options:
 I. The auction of brands in the Guild. The auction is held every decade, but the price there may be the most unexpected.
 II. To hand over to someone from regular customers. Easily and reliably, but not optimal.
 III. Find the end user and make a deal personally. Fixed price, plus the growing popularity of the brand, plus the reputation in one of the Great Houses. To find the optimal end buyers I need to collect information at the Central Forum. I am looking for those who fit her specialty and rank to maximize profits! I should remember that the customer information will be relevant to the current development of slave and gradually will lose relevance. I better start looking for buyers when she is ready for sale.
@@ -25,21 +25,21 @@ III. Find the end user and make a deal personally. Fixed price, plus the growing
 
 $quest_description[3] = 'In Rome, there are five persons who are able to give me the status of patrician and lead me to the category of honorary citizens:
    Pope Ioann can give me the status of patrician of White Town. To reach it, I must have a very famous brand and enlist the support of one of the Cardinals.
-   King of House of Taurus can initiate me into knighthood. I need to remember that the Bulls do not like beastmen. Close relationship with the House of Kamira shuts this way for me.
-   President of House of Serpis can make me an honorary citizen if I earn the trust of Serpents. The main thing is not to be too close to the undead of the House of Corvus.
-   If Mistress of Houses of Kamira accept me into pack of her "dragons" I will be a big shot among nonhumans. I just need to remember about their feud with the House of Taurus.
-   Finally, I can turn to the Prince of House of Corvus. A title of nobility from the undead is a very important acquisition, but then I should not get too close to the House of Serpis.
+   King of Taurus House can initiate me into knighthood. I need to remember that the Bulls do not like beastmen. Close relationship with the Camira House shuts this way for me.
+   President of Serpis House can make me an honorary citizen if I earn the trust of Serpents. The main thing is not to be too close to the undead of the Corvus House.
+   If Mistress of Camira House accept me into pack of her "dragons" I will be a big shot among nonhumans. I just need to remember about their feud with the Taurus House.
+   Finally, I can turn to the Prince of Corvus House. A title of nobility from the undead is a very important acquisition, but then I should not get too close to the Serpis House.
    
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>'
 
 
-$quest_description[6] = '  Sir Aramus, military quartermaster from the House of Bull, offers me a magic ring in exchange for a slave - champion of the arena. According to him this ring is able to double the endurance of a person in combat and gives the wearer an aura of strength and power.
+$quest_description[6] = '  Sir Aramus, military quartermaster from the Taurus House, offers me a magic ring in exchange for a slave - champion of the arena. According to him this ring is able to double the endurance of a person in combat and gives the wearer an aura of strength and power.
 If needed, I will be able to find Aramus at the Central forum.
 
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>'
 
-$quest_description[7] = '  Vujin, creator of artifacts from the House of Snakes offers a magical amulet in exchange for a slave, who won the races in the Colloseum. According to him this amulet is able to give the wearer an aura of confidence and personal strength, as well as doubles the ability to tolerate pain and fear, tempering spirit during the battle.
-Vudzhen likes to walk at the Central forum, I will find him there if necessary.
+$quest_description[7] = '  Vujin, creator of artifacts from the Serpis House offers a magical amulet in exchange for a slave, who won the races in the Colosseum. According to him this amulet is able to give the wearer an aura of confidence and personal strength, as well as doubles the ability to tolerate pain and fear, tempering spirit during the battle.
+Vujin likes to walk at the Central forum, I will find him there if necessary.
 
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>'
 
@@ -48,16 +48,16 @@ Probably worth trying. Raising such slave should not be too difficult. But this 
 
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>'
 
-$quest_description[9] = '  Master Valios, necromancer studying fiends of the Fogs, promised me a magical artifact in exchange for full-grown and living fiend. Growing such a creature is not easy, but when its life cycle is about to end it becomes useless anyway. And this "raven crown" thing is tempting. Necromancer says that it gives a permanent auspex and also creates an aura of power.
-When I have a living seasoned fiend, grown to the leviathan stage, it is necessary to look for him at the Central forum.
+$quest_description[9] = '  Master Valios, necromancer studying fiends of the Fogs, promised me a magical artifact in exchange for full-grown and living fiend. Growing such a creature is not easy, but when its life cycle is about to end it becomes useless anyway. And this «raven crown» thing is tempting. Necromancer says that it gives a permanent auspex and also creates an aura of power.
+When I have a living seasoned fiend, grown to the leviathan form, it is necessary to look for him at the Central forum.
 
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>'
 
-$quest_description[10] = '  I was given a contract in the guild for training a slave as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font>, she must have at least <<$rating[contract_level[brand_reputation]]>> <font color="#0000CD"> rank</font> or higher.
+$quest_description[10] = '  I received a contract in the guild for training a slave as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font>, she must have at least <<$rating[contract_level[brand_reputation]]>> <font color="#0000CD"> rank</font> or higher.
 
 <u>Reminder, not to forget!</u>
 
-To prepare a slave on a specific specialization, I need to train her profile skill to at least <font color="#0000CD">average</font> level. Concubines also requires the amount of sex techniques more than nine. If I have an assistant, she will tell when the slave will correspond to specialization.
+To prepare a slave on a specific specialization, I need to train her profile skill to at least <font color="#0000CD">average</font> level. Concubines also requires the sum of sex techniques more than nine. If I have an assistant, she will tell when the slave will correspond to specialization.
 
 Usual time limit on the contract:
 When ordering <<$rating[1]>>-rank: 25 days, 

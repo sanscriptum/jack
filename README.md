@@ -5,7 +5,14 @@
 ###'Jack-o-nine-tails', fix development
 
 
-You can download english version from here: WILL BE AVAILABLE SOON
+---
+You can download english version from here: https://dl.dropboxusercontent.com/u/67382680/jack_eng.rar 
+
+OR
+
+https://mega.co.nz/#!xxRC3AgJ!0iAqNcZHaA9tUTkiqY2RnEURTKCPae-iY3uGX6cNRXY
+
+---
 
 Changelog (untranslated): http://pastebin.com/HCiCKAxx
 

@@ -8,7 +8,7 @@ $text_display += {<br><div id="under">Leave<br><div id = "clear"><a href = 'EXEC
 }
 
 $computer_options[1] = {
-$sp_text[1] = '   Database access occurs at the verbal level request and also issued the requested information. Although data may be print if necessary.'
+$sp_text[1] = '   Database access occurs at the verbal level request and same the requested information. Although data may be print if necessary.'
 $text_display = '<br>'
 if nsfw = 1: not_safe = 1
 $text_display += {<br><div id="under">- Request. Aura. General information<div id = "clear"><a href = 'EXEC: interaction_city = 3331 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
@@ -89,7 +89,7 @@ $text_display += {<br><br><div id="under">Leave them alone<br><div id = "clear">
 
 !guild expert
 $expert_options[1] = {
-$sp_text[1] = '   You find one of the representatives of the experts department. These slavers specialize in the evaluation slaves and in finding exclusive options on the market.'
+$sp_text[1] = '   You find one of the representatives of the experts department. These slavers specialize in the slaves evaluation and in finding exclusive options on the market.'
 $text_display = '<br><br>'
 $text_display += {<br><div id="under">Ask about services<br><div id = "clear"><a href = 'EXEC: interaction_city = 951 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
 IF search['active'] = 0: $text_display += {<br><div id="under">Order slave selection<br><div id = "clear"><a href = 'EXEC: sp_txt = 11 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
@@ -143,7 +143,7 @@ $text_display += {<br><div id="under">Doesn`t matter<br><div id = "clear"><a hre
 
 $expert_options[5] = {
 $sp_text[5] = '      [MASTER SKUPS]
-   - I can pay a separate time before the auction to check in advance the total intelligence of the product. Do not expect much, but if you need a girl capable of put two and two, I''ll make it.'
+   - I can spend a separate time before the auction to check in advance the total intelligence of the product. Do not expect much, but if you need a girl capable of put two and two, I''ll make it.'
 $text_display = '<br><br>'
 $text_display += {<br><div id="under">Intelligent<br><div id = "clear"><a href = 'EXEC: search["intellect"] = 5 & search["cost"] += 4 & sp_txt = 6 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
 $text_display += {<br><div id="under">Clever<br><div id = "clear"><a href = 'EXEC: search["intellect"] = 4 & search["cost"] += 2 & sp_txt = 6 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
@@ -373,17 +373,17 @@ END
 IF iced_1_state = 0:
  $text_display += {<br><div id="under">Cell №1: rent (1/day)<br><div id = "clear"><a href = 'EXEC: interaction_city = 332012 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
  else
- $text_display += {<br><div id="under">Cell №1: извлечь рабыню<br><div id = "clear"><a href = 'EXEC: interaction_city = 332012 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cell №1: take out<br><div id = "clear"><a href = 'EXEC: interaction_city = 332012 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 IF iced_2_state = 0:
  $text_display += {<br><div id="under">Cell №2: rent (1/day)<br><div id = "clear"><a href = 'EXEC: interaction_city = 332013 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
  else
- $text_display += {<br><div id="under">Cell №2:  извлечь рабыню<br><div id = "clear"><a href = 'EXEC: interaction_city = 332013 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cell №2: take out<br><div id = "clear"><a href = 'EXEC: interaction_city = 332013 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 IF iced_3_state = 0:
  $text_display += {<br><div id="under">Cell №3: rent (1/day)<br><div id = "clear"><a href = 'EXEC: interaction_city = 332014 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
  else
- $text_display += {<br><div id="under">Cell №3:  извлечь рабыню<br><div id = "clear"><a href = 'EXEC: interaction_city = 332014 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Cell №3: take out<br><div id = "clear"><a href = 'EXEC: interaction_city = 332014 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 $text_display += {<br><div id="under">Leave depository<br><div id = "clear"><a href = 'EXEC: city_form = 33 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 }
@@ -600,7 +600,7 @@ $text_display += {<br><div id="under">Back<br><div id = "clear"><a href = 'EXEC:
 
 !Central forum
 $forum_options[1] = {
-$sp_text[1] = "   Central forum provides to a person of your profession huge opportunities. There you can advertise yourself a little and throw a monkey wrench in the wheels of rivals, or to collect information about the best potential buyers for your slave. And of course you can just communicate with the others." 
+$sp_text[1] = "   Central forum provides huge opportunities to a person of your profession. There you can advertise yourself a little and put sticks in the wheels of rivals, or to collect information about the best potential buyers for your slave. And of course you can just communicate with the others." 
 $text_display = '<br><br>'
 IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0:
  $text_display += {<br><div id="under">Find potential customers<br><div id = "clear"><a href = 'EXEC: interaction_city = 151 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
@@ -624,7 +624,7 @@ $text_display += {<br><div id="under">Look around<br><div id = "clear"><a href =
 
 !Animal farm
 $farm_options[1] = {
-$sp_text[1] = '   Very long barrack filled with cramped stalls where interspersed contains people and animals. The smell here is very nasty. But business is business.'
+$sp_text[1] = '   Very long barrack filled with cramped stalls where contains interspersed people and animals. The smell here is very nasty. But business is business.'
 $text_display = '<br><br>'
 IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
  $text_display += {<br><div id="under">Offer merchandise<br><div id = "clear"><a href = 'EXEC: interaction_city = 442 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
@@ -818,6 +818,7 @@ IF brand_reputation => 5:
  else
  $place = 'vatican_gate'
  $sp_text[1] = '   Vatican gates are guarded very vigilant. To go there I need a special invitation.'
+ $text_display += '<br><br><br><br>'
 END
 $text_display += {<br><div id="under">Leave<br><div id = "clear"><a href = 'EXEC: city_form = 1 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 }
@@ -919,8 +920,8 @@ $text_display += {<br><div id="under">Change selection<br><div id = "clear"><a h
 
 $brothel_options[5] = {
 $text_display = '<br>'
-!$text_display += {<br><div id="under">Урок для воспитуемой<br><div id = "clear"><a href = 'EXEC: interaction_city = 2251 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
-!$text_display += {<br><div id="under">Персональный урок<br><div id = "clear"><a href = 'EXEC: interaction_city = 2252 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+!$text_display += {<br><div id="under">Lesson for slave<br><div id = "clear"><a href = 'EXEC: interaction_city = 2251 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+!$text_display += {<br><div id="under">Personal lesson<br><div id = "clear"><a href = 'EXEC: interaction_city = 2252 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
 $text_display += {<br><div id="under_gray">Lesson for slave<br></div>}
 $text_display += {<br><div id="under_gray">Personal lesson<br></div>}
 $text_display += {<br><div id="under">Check preferences of the proprietress<div id = "clear"><a href = 'EXEC: interaction_city = 2253 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
@@ -1350,7 +1351,7 @@ $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a hre
 }
 
 $mistra_options[2] = {
-$sp_text[2] = '   Mystra knows a lot about alchemy and useful potions that can be done in the home laboratory, using ingredients purchased here. Asking her seems like a good idea.'
+$sp_text[2] = '   Mystra knows a lot about alchemy and useful potions that can be made in the home laboratory, using ingredients purchased here. Asking her seems like a good idea.'
 $text_display = '<br>'
 $text_display += {<br><div id="under">Tell me about elixirs<div id = "clear"><a href = 'EXEC: interaction_city = 4327 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
 $text_display += {<br><div id="under">Bacchic nectar<div id = "clear"><a href = 'EXEC: interaction_city = 4321 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
@@ -1481,7 +1482,7 @@ $text_display += {<br><div id="under">Cancel brewing<br><div id = "clear"><a hre
 }
 
 
-!Студия Стальная Роза
+!piercing shop
 $piercing_options[1] = {
 $text_display = '<br>'
 IF slave_state = CONST_INT['slave_exist']:
@@ -1577,7 +1578,7 @@ $text_display += {<br><div id="under">Other services<br><div id = "clear"><a hre
 !Coliseum
 !added $sp_text for the first and second options are so theres no sticky text about preparing for battle
 $colloseum_options[1] = { 
- $sp_text[1] = '   You enter the service premises under the amphitheater. The guards passed you without problems - Slaver''s Guild is always the case in the school of gladiators and the stables. You only have to find the right person.' 
+ $sp_text[1] = '   You enter the service premises under the amphitheater. The guards passed you without problems - Slavers Guild is always the case in the school of gladiators and the stables. You only have to find the right person.' 
  $text_display = '<br>'
  $text_display += {<br><div id="under">Lanista<br><div id = "clear"><a href = 'EXEC: sp_txt = 21 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Stableman<br><div id = "clear"><a href = 'EXEC: sp_txt = 22 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
@@ -1644,7 +1645,7 @@ $colloseum_options[22] = {
 
 
 $colloseum_options[23] = { 
- $sp_text[23] = '   While there is still time for race, you can order to a racecourse technicians a variety of chariot modification. The more heavy elements are used, the less will be the speed and agility of your chariot, but it will lower the risk of the fact that it may fall apart in the middle of the race. Ignoring your own defense, you''re playing with death.'
+ $sp_text[23] = '   While there is still time for race, you can order a variety of chariot modification. The more heavy elements are used, the less will be the speed and agility of your chariot, but it will lower the risk of the fact that it may fall apart in the middle of the race. Ignoring your own defense, you''re playing with death.'
  IF heavy_frame = 1:
   $text_display += {<br><br><div id="under">Pobedit frame<br><div id = "clear"><a href = 'EXEC: heavy_frame = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
   else

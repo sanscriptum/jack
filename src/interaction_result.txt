@@ -164,7 +164,7 @@ IF $interaction_type = 'assistant_teaches_slave':
  END 
  IF diligence < 0: 
   $text[2] = '[<<$assistant_name>>]
-   <font color="#8B0A50">- <<$slave_name>> refuses to work with me, my Lord. As much as I tried, she just does not listen. I let you down and I ready to suffer any punishment, but <<$slave_name>> should be punished too!</font>'
+   <font color="#8B0A50">- <<$slave_name>> refuses to work with me, my Master. As much as I tried, she just does not listen. I let you down and I ready to suffer any punishment, but <<$slave_name>> should be punished too!</font>'
   dynamic $sin_gained_now 
   else
   $text[2] = '  <<$assistant_lesson_diligence[diligence]>>'
@@ -271,7 +271,7 @@ IF $interaction_type = 'self_sex_lesson':
    dynamic '<<$subskill_xp>> = 0'
    $text[3] = 'By the end of lesson you managed to make significant progress. Now you can move on to more complex techniques.'
    else
-   $text[3] = 'Slave was not able to fully implement what you were trying to teach her. It will be necessary to repeat this lesson again, but still you barely moved and the next time this should be easier.'   
+   $text[3] = 'Slave was not able to fully fulfill what you were trying to teach her. It will be necessary to repeat this lesson again, but still you barely moved and the next time this should be easier.'   
    dynamic '<<$subskill_xp>> += 1'
   END
   master_hygiene_rate += add_master_hygiene
@@ -294,7 +294,7 @@ END
 !interaction type - studying complete
 IF $interaction_type = 'completed':
  $interaction_type = 'talk'
- $text[1] = 'Slave fully mastered this skill, and you''re unlikely to be able to teach her something new. Perhaps, you should pay attention to the less developed aspects or just use the her skills in practice.'
+ $text[1] = 'Slave fully mastered this skill, and you''re unlikely to be able to teach her something new. Perhaps, you should pay attention to the less developed aspects or just use her skills in practice.'
 END
 
 !interaction type - lesson in class
@@ -304,7 +304,7 @@ IF  $interaction_type = 'school_class':
  if diligence > 5: diligence = 5
  if diligence < 0: diligence = 0
  IF assistant_supervise_rule = 0:
-  $text[1] = '   You escorting your slave personally to the Academy of St. Peter and pay for the selected occupation. Good to employ someone else, and laze yourself a few hours.'
+  $text[1] = '   You escorting your slave personally to the Academy of St. Peter and pay for the selected lesson. Good to employ someone else, and laze yourself a few hours.'
   dynamic $master_energy_drop
   else
   $text[1] = '   Your assistant escorting slave to the Academy of St. Peter and watches there to ensure that she got on the necessary lessons and returned safely back.'  
@@ -503,12 +503,12 @@ IF $interaction_type = 'rest':
  END
  IF slave["passion_comfort"] = 1 and $slave_psy_status ! 'broken': 
   slave_rate["mood"] += prise_potence
-  $text[1] += 'Она искренне наслаждается этими моментами комфорта и спокойствия.'
+  $text[1] += 'She truly enjoys these moments of comfort and tranquility.'
   slave['pos_job'] = prise_potence
  END
  IF slave["passion_comfort"] = -1 and $slave_psy_status ! 'broken': 
   slave_rate["mood"] -= prise_potence/2
-  $text[1] += 'Она не слишком довольна отдыхом, так как не любит сидеть без дела.'
+  $text[1] += 'She was not too happy with this rest, because she do not like to sit idle.'
  END 
  if $special_text ! '': $text[2] = $special_text
  slave_rate["mood"] += free_time
@@ -634,7 +634,7 @@ IF $interaction_type = 'abuse':
  txt_count = 2
  IF futile_threat = 1: 
   txt_count = 3
-  $text[3] = 'You have already said it to the slave, but so far you not done what you promised. If you want your word meant something - you should reinforce them with deeds!'
+  $text[3] = 'You have already said it to the slave, but so far you not done what you promised. If you want so that your words meant something - you should reinforce them with deeds!'
   else
   fear_force = master_cha + master_domination + torture_intensity
   if slave["neg_abuse"] < torture_intensity: slave["neg_abuse"] = torture_intensity

@@ -96,7 +96,7 @@ IF $stock_world = 'barbarian':
 END
 IF $stock_world = 'sns': 
  $namebase = 'barbarian'  
- $stock_world_auk = 'the world of might & magic' 
+ $stock_world_auk = 'the world of might and magic' 
  if stock["stamina"] < 5: stock["stamina"] += 1 
  if stock["ego"] > 1: stock["ego"] -= 1
  if stock["intellect"] > 1: stock["intellect"] -= 1  
@@ -975,7 +975,7 @@ IF $stock_occupation = 'major':
  if stock["sub_bj"] < 5: stock["sub_bj"] += 1   
  if stock["sub_hug"] < 5: stock["sub_hug"] += 1 
  if stock["sub_kiss"] < 5: stock["sub_kiss"] += 1  
- $stock_occupation_auk = 'representative of the golden youth'
+ $stock_occupation_auk = 'representative of the jet set'
 END
 IF $stock_occupation = 'artist':
  if stock["stamina"] > 1: stock["stamina"] -= 1

@@ -479,7 +479,7 @@ IF interaction = 1125:
  $interaction_type = 'talk' 
  txt_count = 1
  $special_part = {
-  $given_name = input ("    Выберите новое имя для вашей воспитуемой. Постарайтесь избегать излишне длинных имен.")
+  $given_name = input ("Choose a new name for your slave. Try to avoid excessively long names.")
   IF $given_name ! '': 
    $slave_name = $given_name 
    gs '#txt'
@@ -532,7 +532,7 @@ IF interaction = 22:
   IF $potion_base = 'spirit' and slave['enchanter'] > 1: $get_pot = 'афродизиак'
   IF $potion_base = 'slime' and slave['enchanter'] > 2: $get_pot = 'мощный_афодизиак'  
  END  
- $text[1] = '   When all components are properly mixed, it''s time to most critical process. Need to overtake and distill mix with alchemical equipment, and then saturate the potion with the power of sparks, to make magic gain strength.' 
+ $text[1] = '   When all components are properly mixed, it''s time to most critical process. Need to refine and distill mix using alchemical equipment, and then saturate the potion with the power of sparks, so that magic gains strength.' 
  $text[2] = $get_pot_description[$get_pot]
  IF $get_pot = 'самогон':
   frige["alcohol"] += 1
@@ -565,7 +565,7 @@ IF interaction = 23:
   IF $potion_base = 'spirit' and assistant['enchanter'] > 1: $get_pot = 'афродизиак'
   IF $potion_base = 'slime' and assistant['enchanter'] > 2: $get_pot = 'мощный_афодизиак'  
  END  
- $text[1] = '   When all components are properly mixed, it''s time to most critical process. Need to overtake and distill mix with alchemical equipment, and then saturate the potion with the power of sparks, to make magic gain strength.' 
+ $text[1] = '   When all components are properly mixed, it''s time to most critical process. Need to refine and distill mix using alchemical equipment, and then saturate the potion with the power of sparks, so that magic gains strength.' 
  $text[2] = $get_pot_description[$get_pot]
  IF $get_pot = 'самогон':
   frige["alcohol"] += 1
@@ -5327,7 +5327,7 @@ IF interaction = 574:
   slave['energy'] = 5
   slave['on_meth'] = 1
   else
-  msg "You decide to give to slave another dose on the same day. Breathing the dust, your slave suddenly starts shaking in a fit and falls to the floor unconscious. It seems she is bleeding from the nose."
+  msg "You decide to give to slave another dose on the same day. Breathing the dust, your slave suddenly starts shaking in a fit and falls to the floor unconscious. It seems her nose is bleeding."
   slave_rate['stamina'] = 4
   slave['stamina'] = 0
  END 
@@ -5345,7 +5345,7 @@ IF interaction = 575:
   slave['pos_slave_opium'] = 1
   gs '$mod_slave_rise', 3
   else
-  msg "You decide to give to slave another dose on the same day. After applying, your slave rolled her eyes and goes on with a silly smile on her face for a while, ignoring your commands. Then she falls to the floor, at the mouth foam mixed with blood."
+  msg "You decide to give to slave another dose on the same day. After applying, your slave rolled her eyes and goes on with a silly smile on her face for a while, ignoring your commands. Then she falls to the floor, her mouth fills with foam mixed with blood."
   slave_rate['stamina'] = 4
   slave['stamina'] = 0
  END 
@@ -5549,7 +5549,7 @@ IF interaction = 4121:
   if hall = 1:  $place = 'hall'    
 END
 
-!Lesson on dancing (асситент)
+!Lesson on dancing (assistant)
 IF interaction = 4122:
  $interaction_type = 'assistant_teaches_slave'
  repulse = 1
@@ -5691,7 +5691,7 @@ IF interaction = 45:
  $interaction_type = 'make_assistant_do'
  $special_bg = $tentacles[assistant_type]  
  IF assistant["sub_tentacles"] < tentacle_size:
-  $done_txt = '  <<$assistant_name>> takes a bucket-pot and goes to the pen with fiend in it. Nevertheless, her efforts to milk the thing to nothing lead. Braided with powerful tentacles, your assistant completely loses touch with reality and gets orgasm after orgasm until fiend pumps her holes with seed.'
+  $done_txt = '  <<$assistant_name>> takes a bucket-pot and goes to the pen with fiend in it. Nevertheless, her efforts to milk the thing leads to nothing. Braided with powerful tentacles, your assistant completely loses touch with reality and gets orgasm after orgasm until fiend pumps her holes with seed.'
   else
   $done_txt = '  <<$assistant_name>> takes a bucket-pot and goes to the pen with fiend in it. Thanks to previous experience, she manages not to lose control. While some insatiable slippery tentacles penetrate all her holes, she grabs the other feelers and milk them directly into the bucket.'  
  END
@@ -5977,10 +5977,10 @@ IF interaction = 59:
  repulse = 6
  disgusting = 1 
  $special_bg = $tentacles[slave_type]  
- $refuse_txt = '  <<$slave_name>> refuses to even go into the pen to the fiend. The mere sight of this monster fills her with fear and loathing. But it does not mean that she can ignore the orders of her master...'
+ $refuse_txt = '  <<$slave_name>> refuses even to go into the pen to the fiend. The mere sight of this monster fills her with fear and loathing. But it does not mean that she can ignore the orders of her master...'
  slave_skill = slave["sub_tentacles"]
  IF slave["sub_tentacles"] < tentacle_size:
-  $done_txt = '  <<$slave_name>> takes a bucket-pot and goes to the pen with fiend in it. Nevertheless, her efforts to milk the thing to nothing lead. Braided with powerful tentacles, your slave completely loses touch with reality and gets orgasm after orgasm until fiend pumps her holes with seed.'
+  $done_txt = '  <<$slave_name>> takes a bucket-pot and goes to the pen with fiend in it. Nevertheless, her efforts to milk the thing leads to nothing. Braided with powerful tentacles, your slave completely loses touch with reality and gets orgasm after orgasm until fiend pumps her holes with seed.'
   else
   $done_txt = '  <<$slave_name>> takes a bucket-pot and goes to the pen with fiend in it. Thanks to previous experience, she manages not to lose control. While some insatiable slippery tentacles penetrate all her holes, she grabs the other feelers and milk them directly into the bucket.'  
  END

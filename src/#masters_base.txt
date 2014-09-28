@@ -6,7 +6,7 @@ $sepia_ava_path[1] = 'content\pic\master\master_noble_sepia.jpg'
 $clear_ava_path[1] = 'content\pic\master\master_noble.jpg'
 $master_base_name[1] = 'Milord'
 $hero_difficulty[1] = '<font color="#008080">simple difficulty</font>'
-$hero_description[1] = '   Aristocrat with a great education, with experience in court and military service. Having all the basic skills necessary to coach, he easily joined the ranks of the slavers and all agree that it is waiting in front of a wonderful career...
+$hero_description[1] = '   Aristocrat with a great education, with experience in court and military service. Having all the basic skills that is necessary to coach, he easily joined the ranks of the slavers and all agree that a wonderful career awaits him...
 
 Faction: Taurus Great House'
 $master_version_stats[1] = {
@@ -82,7 +82,7 @@ faction_fame['serpis'] = 0
 $sepia_ava_path[3] = 'content\pic\master\master_fighter_sepia.jpg'
 $clear_ava_path[3] = 'content\pic\master\master_fighter.jpg'
 $master_base_name[3] = 'Blade'
-$hero_description[3] = '   In a harsh world, where he was born - a congenital physical strength was appreciated very much. Blade was one of the best warriors and confidently walked to success, but was somehow got to the Fog. Although a good fighter will not get lost in the Eternal Rome, we all sometimes want to change your life and achieve something more than an ordinary service the powers that be.
+$hero_description[3] = '   In a harsh world, where he was born - a congenital physical strength was appreciated very much. Blade was one of the best warriors and confidently walked to success, but was somehow got to the Fog. Although a good fighter will not get lost in the Eternal Rome, we all sometimes want to change life and achieve something more than an ordinary service to the mighty of this world.
 
 Faction: Taurus Great House'
 $hero_difficulty[3] = '<font color="#0000CD">normal difficulty</font>'
@@ -120,7 +120,7 @@ faction_fame['serpis'] = 0
 $sepia_ava_path[4] = 'content\pic\master\master_pimp_sepia.jpg'
 $clear_ava_path[4] = 'content\pic\master\master_pimp.jpg'
 $master_base_name[4] = 'Silk Daddy'
-$hero_description[4] = '   Everyone has his own idea of ​​success. For the guys like Silk Daddy be held pimp - a dream. And a dream come true. Now he''s in a new world, but the work is somewhat similar. Black, white, yellow, or tailed eared - bitches will always be bitches. And they need a big black daddy. And Daddy needs a lot of money.
+$hero_description[4] = '   Everyone has his own idea of success. For the guys like Silk Daddy establishing himself as a pimp - is a dream. And a dream comes true. Now he''s in a new world, but the work is somewhat similar. Black, white, yellow, or tailed eared - bitches will always be bitches. And they need a big black daddy. And Daddy needs a lot of money.
 
 Faction: Serpis Great House'
 $hero_difficulty[4] = '<font color="#0000CD">normal difficulty</font>'
@@ -158,7 +158,7 @@ faction_fame['taurus'] = 0
 $sepia_ava_path[5] = 'content\pic\master\master_butler_sepia.jpg'
 $clear_ava_path[5] = 'content\pic\master\master_butler.jpg'
 $master_base_name[5] = 'Butler'
-$hero_description[5] = '   Once in the Eternal Rome, he found himself in a delicate situation. Of course, an experienced servant is useful everywhere, but he doesn''t feel like being as slave. Butler put a lot of effort to get the status of a slaver. After all, training maids - is a work which nobody better can handle than a butler.
+$hero_description[5] = '   Once in the Eternal Rome, he found himself in a delicate situation. Of course, an experienced servant is useful everywhere, but he doesn''t feel like being as slave. Butler put a lot of effort to get the status of a slaver. After all, training maids - is a work which nobody can handle better than a butler.
 
 Faction: Taurus Great House'
 $hero_difficulty[5] = '<font color="#4B0082">high difficulty</font>'
@@ -196,7 +196,7 @@ faction_fame['serpis'] = 0
 $sepia_ava_path[6] = 'content\pic\master\master_teacher_sepia.jpg'
 $clear_ava_path[6] = 'content\pic\master\master_teacher.jpg'
 $master_base_name[6] = 'Sensei'
-$hero_description[6] = '   He was a very ordinary school teacher, nothing special. Such a person is difficult to adapt in the Eternal Rome, but if you add a little bit of luck with the will - then you can get through anywhere. Education slaves is of great benefit when compared to training the girls - instead of "f-" careless student will wait exemplary spanking!
+$hero_description[6] = '   He was a very ordinary school teacher, nothing special. Such a person is difficult to adapt in the Eternal Rome, but if you add a little bit of luck with the will - then you can get through anywhere. Slaves education has a great benefit when compared to training the girls - instead of "f-" careless student will awaits exemplary spanking!
 
 Faction: Serpis Great House'
 $hero_difficulty[6] = '<font color="#4B0082">high difficulty</font>'
@@ -235,7 +235,7 @@ faction_fame['taurus'] = 0
 $sepia_ava_path[7] = 'content\pic\master\master_doctor_sepia.jpg'
 $clear_ava_path[7] = 'content\pic\master\master_doctor.jpg'
 $master_base_name[7] = 'Doc'
-$hero_description[7] = '   He was always a very good doctor, and career went uphill, but... Fogs confused cards to many of us. It turned out that for the Technosphere Medical center even Doc has insufficient knowledge, but it''s no reason to despair, right? He always wanted to try to educate nurses in a more unfettered manner. Maybe it''s calling?
+$hero_description[7] = '   He was always a very good doctor, and career went uphill, but... Fogs confused cards to many of us. It turned out that even Doc has insufficient knowledge for the Technosphere''s Medical Center, but it''s no reason to despair, right? He always wanted to try to educate nurses in a more unfettered manner. Maybe it''s calling?
 
 Faction: Serpis Great House'
 $hero_difficulty[7] = '<font color="#4B0082">high difficulty</font>'
@@ -273,7 +273,7 @@ faction_fame['taurus'] = 0
 $sepia_ava_path[8] = 'content\pic\master\master_impressario_sepia.jpg'
 $clear_ava_path[8] = 'content\pic\master\master_impressario.jpg'
 $master_base_name[8] = 'Mr. Jestiko'
-$hero_description[8] = '   If he was younger, he would have just brilliant prospects in Slaver''s Guild. In the end, find and unleash new talent for an experienced impresario - is the direct responsibility. And a slave is easier to work with than a spoiled starlet. Unfortunately, Mr. Jestiko too old, and learn new tricks will be hard. But he is determined!
+$hero_description[8] = '   If he was younger, he would have just brilliant prospects in Slavers Guild. In the end, find and unleash new talent for an experienced impresario - his direct responsibility. And it is easier to work with a slave than spoiled starlet. Unfortunately, Mr. Jestiko too old, and learning new tricks will be hard. But he is determined!
 
 Faction: Taurus Great House'
 $hero_difficulty[8] = '<font color="#4B0082">high difficulty</font>'
@@ -311,7 +311,7 @@ faction_fame['serpis'] = 0
 $sepia_ava_path[9] = 'content\pic\master\master_granpa_sepia.jpg'
 $clear_ava_path[9] = 'content\pic\master\master_granpa.jpg'
 $master_base_name[9] = 'Uncle Tom'
-$hero_description[9] = '   More than anybody, who do not want to get into the Fogs - was an ordinary retiree, worked all his life in the factory and looking to live a quiet life. But Eternal Rome chooses a guest itself. By an amazing coincidence, the only hope for a decent life for grandpa was the work of a Slaver''s Guild. It will not be easy, but he must try - in the Eternal Rome don''t exist such thing as a retirement!
+$hero_description[9] = '   More than anybody, who do not want to get into the Fogs - was an ordinary retiree, worked all his life in the factory and looking to live a quiet life. But Eternal Rome chooses a guest itself. By an amazing coincidence, the only hope for a decent life for grandpa was the work in a Slavers Guild. It will not be easy, but he must try - in the Eternal Rome don''t exist such thing as a retirement!
 
 Faction: Serpis Great House'
 $hero_difficulty[9] = '<font color="#C71585">very high difficulty</font>'
@@ -348,7 +348,7 @@ faction_fame['taurus'] = 0
 
 $sepia_ava_path[10] = 'content\pic\master\master_nerd_sepia.jpg'
 $clear_ava_path[10] = 'content\pic\master\master_nerd.jpg'
-$hero_description[10] = '   This pimply nerd and a sissy, how did he got into Guild anyway? It is said that Mistress Angelika took pity when he stood in the market square with a flag stuck in the ass with a mysterious inscription. But who will believe in the Angelica''s mercy? Either way, the opportunity to educate sex slaves for horny virgin schoolboy - it''s just a Klondike. From all the skills he has for this is only a bottomless pit of perverse fantasies fueled by hormones and hypersexuality.
+$hero_description[10] = '   This pimply nerd and a sissy, how did he got into Guild anyway? It is said that Mistress Angelika took pity when he stood in the market square with a flag stuck in the ass with a mysterious inscription. But who will believe in the Angelica''s mercy? Either way, the opportunity to educate sex slaves for horny virgin schoolboy - it''s just a Klondike. From all the skills he has for this only a bottomless pit of perverse fantasies fueled by hormones and hypersexuality.
 
 Faction: Serpis Great House'
 $hero_difficulty[10] = '<font color="#cd0000">maximal difficulty</font>'

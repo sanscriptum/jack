@@ -158,7 +158,7 @@ IF prisoner_state ! 0:
  END
  IF prisoner["stamina"] = 0 and prisoner_rate["stamina"] < 0 and prisoner['starvation'] > 50:
   prisoner_state = 0
-  msg 'Your prisoners died from starvation, forgotten in dungeon cage. You sold her body to the butcher for 5 sparks.'
+  msg 'Your prisoner died from starvation, forgotten in dungeon cage. You sold her body to the butcher for 5 sparks.'
   sparks += 5
  END
 END
@@ -166,7 +166,7 @@ END
 
 $master_pass_out = {
 IF master_str <= 0:
- dynamic $death, 'The work is so depleted your health that you become seriously ill and had to withdraw from your goal. You will never become a real slave master...'
+ dynamic $death, 'The work so depleted your health that you become seriously ill and had to withdraw from your goal. You will never become a real slave master...'
 END
 IF master_energy <= -5: gt 'next_day'
 }

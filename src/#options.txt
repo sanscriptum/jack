@@ -8,7 +8,7 @@ $text_display += {<br><div id="under">Выйти прочь<br><div id = "clear"
 }
 
 $computer_options[1] = {
-$sp_text[1] = '   Обращение к базе данных происходит на уровне устного запроса и также выдаётся запрошенная информация. Хотя при необходимости данные можно и распечатать.'
+$sp_text[1] = '   Обращение к базе данных происходит на уровне устного запроса и так же выдаётся запрошенная информация. Хотя при необходимости данные можно и распечатать.'
 $text_display = '<br>'
 if nsfw = 1: not_safe = 1
 $text_display += {<br><div id="under">- Запрос. Аура. Общая информация<div id = "clear"><a href = 'EXEC: interaction_city = 3331 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
@@ -701,7 +701,7 @@ IF faction_fame['taurus'] => 3:
  $sp_text[1] = '   У входа в Белый Дворец дежурит бдительная стража. Кого попало они сюда не пустят.'
 END
 IF faction_fame['taurus'] => 4:
- $sp_text[1] = '   Мне разрешили увидиться с Королем. Нужно быстрее встретиться с ним и постараться выполнить его поручение.'
+ $sp_text[1] = '   Мне разрешили увидеться с Королем. Нужно быстрее встретиться с ним и постараться выполнить его поручение.'
  if npc_progress['taurus_king'] < 2: $text_display += {<br><div id="under">Аудиенция с Королём<br><div id = "clear"><a href = 'EXEC: interaction_city = 244 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 IF npc_progress['taurus_king'] = 2 and faction_fame['taurus'] = 4:
@@ -729,7 +729,7 @@ IF faction_fame['serpis'] => 3:
  $sp_text[1] = '   У входа в Административные Шпили дежурит бдительная стража. Кого попало они сюда не пустят.'
 END
 IF faction_fame['serpis'] => 4:
- $sp_text[1] = '   Мне разрешили увидиться с Президентом. Нужно быстрее встретиться с ним и постараться выполнить его поручение.'
+ $sp_text[1] = '   Мне разрешили увидеться с Президентом. Нужно быстрее встретиться с ним и постараться выполнить его поручение.'
  if npc_progress['serpis_prince_first'] < 2: $text_display += {<br><div id="under">Аудиенция с Президентом<br><div id = "clear"><a href = 'EXEC: interaction_city = 344 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 IF npc_progress['serpis_prince_first'] = 2 and faction_fame['taurus'] = 4:
@@ -756,7 +756,7 @@ IF faction_fame['kamira'] => 3:
  $sp_text[1] = '   У входа в Огненную Цитадель дежурит бдительная стража. Кого попало сюда не пустят.'
 END
 IF faction_fame['kamira'] => 4:
- $sp_text[1] = '   Мне разрешили увидиться с Владычицей. Нужно быстрее встретиться с ней и постараться выполнить её поручение.'
+ $sp_text[1] = '   Мне разрешили увидеться с Владычицей. Нужно быстрее встретиться с ней и постараться выполнить её поручение.'
  if npc_progress['tiamath'] < 2: $text_display += {<br><div id="under">Аудиенция с Владычицей<br><div id = "clear"><a href = 'EXEC: interaction_city = 454 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 IF npc_progress['tiamath'] = 2 and faction_fame['kamira'] = 4:
@@ -817,7 +817,8 @@ IF brand_reputation => 5:
  END
  else
  $place = 'vatican_gate'
- $sp_text[1] = '   Врата ватикана охраняются очень бдительно. Чтобы пройти сюда нужно особое приглашение.'
+ $sp_text[1] = '   Врата Ватикана охраняются очень бдительно. Чтобы пройти сюда нужно особое приглашение.'
+ $text_display += '<br><br><br><br>'
 END
 $text_display += {<br><div id="under">Уйти прочь<br><div id = "clear"><a href = 'EXEC: city_form = 1 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 }
@@ -1599,7 +1600,7 @@ $colloseum_options[1] = {
    $text_display += {<br><div id="under">Смотреть схватки<div id = "clear"><a href = 'EXEC: interaction_city = 1252 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
   END  
  END
- $text_display += {<br><div id="under">Покинуть колизей<br><div id = "clear"><a href = 'EXEC: city_form = 1 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Покинуть Колизей<br><div id = "clear"><a href = 'EXEC: city_form = 1 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 }
 
 $colloseum_options[21] = { 

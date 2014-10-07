@@ -1406,7 +1406,7 @@ if assistant_inventory['crown_of_thorns'] > 0: $equip_choice += '<br><a href = "
 if assistant_inventory['plain_tiara'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''plain_tiara'' & dynamic $slot_45_change">Фигурная диадема</a>'
 if assistant_inventory['incrusted_tiara'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''incrusted_tiara'' & dynamic $slot_45_change">Драгоценная тиара</a>'
 if assistant_inventory['plain_headband'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''plain_headband'' & dynamic $slot_45_change">Ободок для волос</a>'
-if assistant_inventory['glasses'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''glasses'' & dynamic $slot_45_change">Изащные очки</a>'
+if assistant_inventory['glasses'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''glasses'' & dynamic $slot_45_change">Изящные очки</a>'
 if assistant_inventory['nekomimi'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''nekomimi'' & dynamic $slot_45_change">Кошачьи ушки</a>'
 if assistant_inventory['hairnet'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''hairnet'' & dynamic $slot_45_change">Сеточка для волос</a>'
 if assistant_inventory['exotic_wig'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''exotic_wig'' & dynamic $slot_45_change">Экзотический парик</a>'

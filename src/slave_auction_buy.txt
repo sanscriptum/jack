@@ -24,14 +24,14 @@ END
 IF auction_phase = 0:
 
  if stock_sold = 1: $text = '  [ФАРИД]
-  -  Наш первый лот на сегодня! <<$stock_name>> &#45; <<$stock_epithet>> <<$stock_occupation_auk>> из <<$stock_world_auk>>, <<$stock_family_auk>>. Стартовая цена <<stock_base_price>> искр. Итак, кто даст стартовую цену?
+  -  Наш первый лот на сегодня! <<$stock_name>> - <<$stock_epithet>> <<$stock_occupation_auk>> из <<$stock_world_auk>>, <<$stock_family_auk>>. Стартовая цена <<stock_base_price>> искр. Итак, кто даст стартовую цену?
 '
 
  if stock_sold > 1: $text = '  [ФАРИД]
-  -  Следующий лот! <<$stock_name>> &#45; <<$stock_epithet>> <<$stock_occupation_auk>> из <<$stock_world_auk>>, <<$stock_family_auk>>. Стартовая цена <<stock_base_price>> искр. Итак, кто даст стартовую цену?
+  -  Следующий лот! <<$stock_name>> - <<$stock_epithet>> <<$stock_occupation_auk>> из <<$stock_world_auk>>, <<$stock_family_auk>>. Стартовая цена <<stock_base_price>> искр. Итак, кто даст стартовую цену?
 '
  if stock_sold => stock_limit: $text = '  [ФАРИД]
-  -  И последний лот на сегодня! <<$stock_name>> &#45; <<$stock_epithet>> <<$stock_occupation_auk>> из <<$stock_world_auk>>, <<$stock_family_auk>>. Стартовая цена <<stock_base_price>> искр. Итак, кто даст стартовую цену?
+  -  И последний лот на сегодня! <<$stock_name>> - <<$stock_epithet>> <<$stock_occupation_auk>> из <<$stock_world_auk>>, <<$stock_family_auk>>. Стартовая цена <<stock_base_price>> искр. Итак, кто даст стартовую цену?
 '
 END
 
@@ -55,7 +55,7 @@ END
 
 IF auction_phase = 5:
   $text = '  [ФАРИД]
-  -  И на этом мы завершаем сегодняшний аукцион! Все лоты проданы. Пожалуйста приходите завтра &#45; Туманы подарят нам еще много дивных красавиц!'
+  -  И на этом мы завершаем сегодняшний аукцион! Все лоты проданы. Пожалуйста приходите завтра - Туманы подарят нам еще много дивных красавиц!'
 END
 
 IF auction_phase = 6:

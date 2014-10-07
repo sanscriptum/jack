@@ -299,7 +299,7 @@ END
 IF $stock_family = 'gypsy': 
  stock_rate["exotic"] += 10 
  if stock["temper"] < 5: stock["temper"] += 1  
- $stock_family_auk = 'воспитаная в цыганском таборе' 
+ $stock_family_auk = 'воспитанная в цыганском таборе' 
 END
 IF $stock_family = 'church': 
  if stock["temper"] > 1: stock["temper"] -= 1
@@ -497,7 +497,7 @@ IF $stock_family = 'astrofarm':
 END
 IF $stock_family = 'astrogator': 
  if stock["intellect"] < 5: stock["intellect"] += 1 
- $stock_family_auk = 'воспитаная на развитой планете' 
+ $stock_family_auk = 'воспитанная на развитой планете' 
 END
 IF $stock_family = 'admiral': 
  if stock["custom"] < 5: stock["custom"] += 1   
@@ -831,7 +831,7 @@ IF $stock_occupation = 'sufragist':
  if stock["intellect"] < 5: stock["intellect"] += 1    
  if stock["custom"] > 1: stock["custom"] -= 1 
  if stock["expression"] < 4: stock["expression"] += 2 
- $stock_occupation_auk = 'суражистка'
+ $stock_occupation_auk = 'суфражистка'
 END
 IF $stock_occupation = 'nurse':
  if stock["nurse"] < 3: stock["nurse"] += 3

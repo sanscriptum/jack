@@ -110,7 +110,7 @@ speed_points['ride_angelika'] += RAND(14,17)
 $rider_name['ride_avgia'] = 'Авгия'
 $rider_ava['ride_avgia'] = 'content/pic/mob/ride_avgia.jpg'
 rider_structure['ride_avgia'] = 2
-$rider_description['ride_avgia'] = 'Авгия — крайне опасный противник. Её скаунья отличается высочайшей подготовкой и отличным телосложением. Колесница лёгкая и манёвренная.'
+$rider_description['ride_avgia'] = 'Авгия — крайне опасный противник. Её скакунья отличается высочайшей подготовкой и отличным телосложением. Колесница лёгкая и манёвренная.'
 $race_startline['ride_angelika'] = {
 speed_points['ride_avgia'] += RAND(15,17)
 }

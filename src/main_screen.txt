@@ -65,13 +65,13 @@ END
 !настройки звука
 IF menu_form = 2000:
  IF exam_in_progress = 1:
-  *p '<div style="position:absolute;top:255px;left:619px;font-family:Victoriana;"><img src = "content/pic/sound_setting.png"></div>'
-  *p '<div style="position:absolute;top:234px;left:640px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">МУЗЫКА:</font></TD><TD><a href = 1><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 3><img src="content/pic/buttons/close_button.png"></a></TD></TR>
-<TR><TD style="width:130px"><font color="#FFD700" size="5">ЗВУК:</font></TD><TD><a href = 4><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 6><img src="content/pic/buttons/close_button.png"></a></TD></TR></table></div>'
+  *p '<div style="position:absolute;top:230px;left:612px;font-family:Victoriana;"><img src = "content/pic/sound_setting.png"></div>'
+  *p '<div style="position:absolute;top:209px;left:633px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">МУЗЫКА:</font></TD><TD><a href = 1><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 3 & music_off = 1><img src="content/pic/buttons/close_button.png"></a></TD></TR>
+<TR><TD style="width:130px"><font color="#FFD700" size="5">ЗВУК:</font></TD><TD><a href = 4><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 6 & sound_off = 1><img src="content/pic/buttons/close_button.png"></a></TD></TR></table></div>'
   else
-  *p '<div style="position:absolute;top:525px;left:619px;font-family:Victoriana;"><img src = "content/pic/sound_setting.png"></div>'
-  *p '<div style="position:absolute;top:504px;left:640px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">МУЗЫКА:</font></TD><TD><a href = 1><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 3><img src="content/pic/buttons/close_button.png"></a></TD></TR>
-<TR><TD style="width:130px"><font color="#FFD700" size="5">ЗВУК:</font></TD><TD><a href = 4><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 6><img src="content/pic/buttons/close_button.png"></a></TD></TR></table></div>'
+  *p '<div style="position:absolute;top:425px;left:612px;font-family:Victoriana;"><img src = "content/pic/sound_setting.png"></div>'
+  *p '<div style="position:absolute;top:404px;left:633px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">МУЗЫКА:</font></TD><TD><a href = 1><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 3 & music_off = 1><img src="content/pic/buttons/close_button.png"></a></TD></TR>
+<TR><TD style="width:130px"><font color="#FFD700" size="5">ЗВУК:</font></TD><TD><a href = 4><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 6 & sound_off = 1><img src="content/pic/buttons/close_button.png"></a></TD></TR></table></div>'
  END
 END
 
@@ -85,8 +85,15 @@ ACT '2':
  if music_volume > 100: music_volume = 100
  gt curloc
 END
-ACT '3':
- music_volume = 0
+ACT '3': 
+ if music_volume ! 0:
+  rem_music_volume = music_volume
+  music_off = 1
+  music_volume = 0
+ else
+  music_volume = rem_music_volume
+  music_off = 0
+ end
  gt curloc
 END
 
@@ -101,7 +108,14 @@ ACT '5':
  gt curloc
 END
 ACT '6':
- sound_volume = 0
+ if sound_volume ! 0:
+  rem_sound_volume =  sound_volume
+  sound_off = 1
+  sound_volume = 0
+ else
+  sound_volume = rem_sound_volume
+  sound_off = 0
+ end
  gt curloc
 END
 

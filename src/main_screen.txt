@@ -201,11 +201,13 @@ IF slave["hygiene"] > 1 and slave_state = CONST_INT['slave_exist'] and bath > 0:
 
 IF slave_state = CONST_INT['slave_exist']:
  IF exam_in_progress = 1:
-  if slave["sin"] => 0: *p {<div id="fast_redeem"><a href = "EXEC: menu_form = 14 & gt 'demo_menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>} 
+  if slave["sin"] > 0: *p {<div id="fast_redeem"><a href = "EXEC: menu_form = 14 & gt 'demo_menu_form'"><img src="content\pic\buttons\red_button.png"></a></div>} 
   if slave["virtue"] > 0: *p {<div id="fast_redeem"><a href = "EXEC: menu_form = 15 & gt 'demo_menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>} 
+  if slave["sin"] = 0 and slave["virtue"] = 0: *p {<div id="fast_redeem_1"><a href = "EXEC: menu_form = 14 & gt 'menu_form'"><img src="content\pic\buttons\red_button.png"></a></div>} & *p {<div id="fast_redeem_2"><a href = "EXEC: menu_form = 15 & gt 'menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>}
   else
-  if slave["sin"] => 0: *p {<div id="fast_redeem"><a href = "EXEC: menu_form = 14 & gt 'menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>} 
+  if slave["sin"] > 0: *p {<div id="fast_redeem"><a href = "EXEC: menu_form = 14 & gt 'menu_form'"><img src="content\pic\buttons\red_button.png"></a></div>} 
   if slave["virtue"] > 0: *p {<div id="fast_redeem"><a href = "EXEC: menu_form = 15 & gt 'menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>} 
+  if slave["sin"] = 0 and slave["virtue"] = 0: *p {<div id="fast_redeem_1"><a href = "EXEC: menu_form = 14 & gt 'menu_form'"><img src="content\pic\buttons\red_button.png"></a></div>} & *p {<div id="fast_redeem_2"><a href = "EXEC: menu_form = 15 & gt 'menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>}
  END
 END
 

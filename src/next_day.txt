@@ -55,7 +55,6 @@ IF auction_count > 0:
  gs '$guild_auction_auto'
 END 
 
-sententia_veritas = 0
 magna_magnifika = 0
 slave['domini_dictum'] = 0
 prisoner['domini_dictum'] = 0
@@ -743,6 +742,7 @@ IF rules_broken = 1:
  IF sin_gained => slave["virtue"]:
   slave["virtue"] = 0
   if sin_gained > slave["sin"]: slave["sin"] = sin_gained
+  if sententia_veritas = 1: slave["sin"] = 5
  END 
  
  IF silence_rule = 1:
@@ -910,6 +910,7 @@ IF slave_sleep_condition = -2:
  slave["deprivation_xp"] += 1 
  IF rules_broken = 1: 
   slave["sin"] = 1  
+  if sententia_veritas = 1: slave["sin"] = 5
   else
   slave["sin"] = 0 
  END
@@ -1466,6 +1467,8 @@ txt = 1
 menu_form = 0
 !debug
 !msg 'master_ill = <<master_ill>>'
+
+sententia_veritas = 0
 
 !условие проигрыша туториала если рабыня больна
 IF exam_in_progress = 1:

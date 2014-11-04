@@ -14,6 +14,7 @@ IF $interaction_type = 'talk':
   txt_count = 1
   $text[1] = '  <<$refuse_talk[$slave_psy_status]>>'
   if already_done_today[interaction] = 0 and slave["sin"] < 1: slave["sin"] = 1
+  if sententia_veritas = 1: slave["sin"] = 5
   else
   dynamic $special_part   
  END
@@ -25,6 +26,7 @@ IF $interaction_type = 'get_grug':
   txt_count = 1
   $text[1] = '  <<$slave_name>> отказывается принимать от вас подозрительные вещества. Похоже кому-то надо преподать урок послушания!'
   if already_done_today[interaction] = 0 and slave["sin"] < 1: slave["sin"] = 1
+  if sententia_veritas = 1: slave["sin"] = 5
   else
   if sound_on = 1: play 'content\snd\bulk.mp3', sound_volume
   dynamic $special_part   
@@ -127,6 +129,7 @@ IF $interaction_type = 'master_teaches_slave':
     IF slave["virtue"] < 2:
      slave["virtue"] = 0
      if slave["sin"] < 1: slave["sin"] = 1     
+     if sententia_veritas = 1: slave["sin"] = 5
     END
     else
     dynamic $virtue_gained_now
@@ -182,6 +185,7 @@ IF $interaction_type = 'assistant_teaches_slave':
    IF slave["virtue"] < 2:
     slave["virtue"] = 0 
     if slave["sin"] < 1: slave["sin"] = 1
+    if sententia_veritas = 1: slave["sin"] = 5
    END
    else
    dynamic $virtue_gained_now
@@ -230,6 +234,7 @@ IF  $interaction_type = 'couch_teaches_slave':
   IF slave["virtue"] < 2:
    slave["virtue"] = 0 
    if slave["sin"] < 1: slave["sin"] = 1
+   if sententia_veritas = 1: slave["sin"] = 5
   END
   else
   dynamic $virtue_gained_now
@@ -263,6 +268,7 @@ IF $interaction_type = 'self_sex_lesson':
    succes = 0
    sin_gained = 1
    if slave["sin"] < 1: slave["sin"] = 1
+   if sententia_veritas = 1: slave["sin"] = 5
    else
    dynamic $virtue_gained_eroles
   END
@@ -328,6 +334,7 @@ IF  $interaction_type = 'school_class':
   IF slave["virtue"] < 2:
    slave["virtue"] = 0 
    if slave["sin"] < 1: slave["sin"] = 1
+   if sententia_veritas = 1: slave["sin"] = 5
   END
   else
   dynamic $virtue_gained_now

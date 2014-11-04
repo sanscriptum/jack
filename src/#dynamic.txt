@@ -334,6 +334,7 @@ IF orgasm_prohibited = 0:
   IF sin_gained => slave["virtue"]:
    slave["virtue"] = 0
    if sin_gained > slave["sin"]: slave["sin"] = sin_gained
+   if sententia_veritas = 1: slave["sin"] = 5
   END  
   orgasm_description = 3    
  END
@@ -401,6 +402,7 @@ IF already_done_today[interaction] = 0:
   slave["sin"] = 0
   if virtue_gained > slave["virtue"]: slave["virtue"] = virtue_gained
   if virtue_gained > slave["virtue"]: master_mood_rate += virtue_gained  
+  if sententia_veritas = 1: slave["virtue"] = 5
  END
 END
 }

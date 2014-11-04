@@ -38,6 +38,8 @@ IF $sex_partner = '':
  slave['orgasm_type'] = sex['girl_orgasm_type_change']
  dynamic $slave_energy_drop
  slave["virtue"] = sex['base_boner'] - sex['pc_boner']
+ if slave["virtue"] > 5: slave["virtue"] = 5
+ if sententia_veritas = 1 and sex['base_boner'] > sex['pc_boner']: slave["virtue"] = 5
  slave['newness'] = sex['girl_newness']
  if sex['girl_get_pregnant'] = 1 and slave['pregnant'] < 1: slave['pregnant'] = 1
 END

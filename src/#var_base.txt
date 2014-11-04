@@ -271,9 +271,9 @@ $cry[0] = 'girl_angry01'
 $cry[1] = 'little_girl_cry'
 $cry[2] = 'woman_cry01'
 
-$fist_hit[0] = 'girl_punch'
-$fist_hit[1] = 'girl_punch'
-$fist_hit[2] = 'girl_punch'
+$fist_hit_sound[0] = 'girl_punch'
+$fist_hit_sound[1] = 'girl_punch'
+$fist_hit_sound[2] = 'girl_punch'
 
 $drowing[0] = 'drawning01'
 $drowing[1] = 'drawning01'

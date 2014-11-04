@@ -3631,7 +3631,7 @@ IF interaction = 1424:
  add_master_hygiene = 5  
  add_house_mess = 5
  $special_bg = $fist_hit[slave_type]
- $play_sound[1] = '<<$fist_hit[slave["age"]]>>' 
+ $play_sound[1] = '<<$fist_hit_sound[slave["age"]]>>' 
  if dungeon = 1: $place = 'dungeon'  
 END
 
@@ -3653,7 +3653,7 @@ IF interaction = 1425:
  add_master_hygiene = 10  
  add_house_mess = 15
  $special_bg = $fist_hit[slave_type]
- $play_sound[1] = '<<$fist_hit[slave["age"]]>>'  
+ $play_sound[1] = '<<$fist_hit_sound[slave["age"]]>>'  
  if dungeon = 1: $place = 'dungeon'  
 END
 

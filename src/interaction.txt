@@ -2696,7 +2696,7 @@ IF interaction = 1372:
  if slave["exhibitionism"] > 0: repulse = 0 & rise_modifer = -2      
  if slave["exhibitionism"] < 0: repulse += 1 & rise_modifer = 2      
  $text[1] = '  <<$masturbation_lesson_description[slave["sub_masturbation"]]>>'
- $play_sound[2] = '<<$masturbate_sound[slave["sub_masturbation"]]>>'
+ $play_sound[2] = '<<$masturbate_sound[slave["age"]]>>'
  $special_bg = $masturbation[slave_type]   
  couch_skill = master_artdirector
  add_master_hygiene = 0 

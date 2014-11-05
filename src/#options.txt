@@ -358,7 +358,9 @@ $text_display += {<br><div id="under">Другие услуги<br><div id = "cl
 
 !Криостатический банк
 $stasis_options[1] = {
-$text_display = '<br>'
+$text_display = '<br><br><br>'
+$place = 'stasis_bank'
+if nsfw = 1: not_safe = 1
 !дополнительная проверка чтобы выходил правильный пункт в меню
 IF sparks => 20:
  IF stasis_tank = 0:
@@ -370,6 +372,20 @@ IF sparks => 20:
  else
  $text_display += {<br><div id="under_gray">Арендовать домашнюю капсулу (20 искр)<br></div>} 
 END
+ $text_display += {<br><div id="under">Проверить ячейки<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Покинуть хранилище<br><div id = "clear"><a href = 'EXEC: city_form = 33 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$stasis_options[2] = {
+if cells_unlocked = 1: 
+ $text_display = ''
+ $sp_text[2] = "   В этом месте можно хранить рабынь в состоянии стазиса, в котором они будут находится до тех пор пока у меня есть деньги на поддержку аппарата." 
+ else
+ $text_display = '<br>'
+ $sp_text[2] = "   В этом месте можно хранить рабынь в состоянии стазиса, в котором они будут находится до тех пор пока у меня есть деньги на поддержку аппарата. За дополнительную плату можно получить доступ еще к трем ячейкам для хранения." 
+end
+$place = 'stasis_bank_2'
+if nsfw = 1: not_safe = 1
 IF iced_1_state = 0:
  $text_display += {<br><div id="under">Ячейка №1: арендовать (1/день)<br><div id = "clear"><a href = 'EXEC: interaction_city = 332012 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
  else
@@ -385,7 +401,29 @@ IF iced_3_state = 0:
  else
  $text_display += {<br><div id="under">Ячейка №3:  извлечь рабыню<br><div id = "clear"><a href = 'EXEC: interaction_city = 332014 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
-$text_display += {<br><div id="under">Покинуть хранилище<br><div id = "clear"><a href = 'EXEC: city_form = 33 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+IF sparks => 300 and cells_unlocked ! 1:
+ $text_display += {<br><div id="under">Разблокировать новые ячейки (300$)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33202 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ if sparks < 300 and cells_unlocked ! 1: $text_display += {<br><div id="under_gray">Разблокировать новые ячейки (300$)<br></div>}
+END
+IF cells_unlocked = 1:
+ IF iced_4_state = 0:
+  $text_display += {<br><div id="under">Ячейка №4: арендовать (1/день)<br><div id = "clear"><a href = 'EXEC: interaction_city = 332015 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<br><div id="under">Ячейка №4: извлечь рабыню<br><div id = "clear"><a href = 'EXEC: interaction_city = 332015 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF iced_5_state = 0:
+  $text_display += {<br><div id="under">Ячейка №5: арендовать (1/день)<br><div id = "clear"><a href = 'EXEC: interaction_city = 332016 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<br><div id="under">Ячейка №5:  извлечь рабыню<br><div id = "clear"><a href = 'EXEC: interaction_city = 332016 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF iced_6_state = 0:
+  $text_display += {<br><div id="under">Ячейка №6: арендовать (1/день)<br><div id = "clear"><a href = 'EXEC: interaction_city = 332017 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<br><div id="under">Ячейка №6:  извлечь рабыню<br><div id = "clear"><a href = 'EXEC: interaction_city = 332017 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+END
+$text_display += {<br><div id="under">Назад<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
 }
 
 !Риэлтор

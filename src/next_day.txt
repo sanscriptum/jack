@@ -63,6 +63,15 @@ slave['reabilitation'] -= 1
 assistant['reabilitation'] -= 1
 prisoner['reabilitation'] -= 1
 
+!ежедневные расходы
+if stasis_tank > 0: sparks -= 2
+if iced_1_state > 0: sparks -= 1
+if iced_2_state > 0: sparks -= 1
+if iced_3_state > 0: sparks -= 1
+if iced_4_state > 0: sparks -= 1
+if iced_5_state > 0: sparks -= 1
+if iced_6_state > 0: sparks -= 1
+
 !Состояние NPC
 gs 'npc_progress'
 farid_debt += farid_potential_debt 

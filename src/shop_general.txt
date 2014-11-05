@@ -65,6 +65,42 @@ if npc = 0:
 </div>'
 END
 
+!крио-центр
+IF $place = 'stasis_bank_2':
+ IF iced_1_state > 0:
+  *p '<div id = "cryo_ava_1"><a href = "EXEC: cryonum = 1 & gt ''stasis_cell_cryo''"><img src = "<<$iced_1[''ava_gray'']>>.jpg"></a><br><center>Ячейка №1</center></div>'
+  else
+  *p '<div id = "cryo_ava_1"><img src = "content/pic/blank_ava.jpg"><br><center>Ячейка №1</center></div>'
+ END
+ IF iced_2_state > 0:
+  *p '<div id = "cryo_ava_2"><a href = "EXEC: cryonum = 2 & gt ''stasis_cell_cryo''"><img src = "<<$iced_2[''ava_gray'']>>.jpg"></a><br><center>Ячейка №2</center></div>'
+  else
+  *p '<div id = "cryo_ava_2"><img src = "content/pic/blank_ava.jpg"><br><center>Ячейка №2</center></div>'
+ END
+ IF iced_3_state > 0:
+  *p '<div id = "cryo_ava_3"><a href = "EXEC: cryonum = 3 & gt ''stasis_cell_cryo''"><img src = "<<$iced_3[''ava_gray'']>>.jpg"></a><br><center>Ячейка №3</center></div>'
+  else
+  *p '<div id = "cryo_ava_3"><img src = "content/pic/blank_ava.jpg"><br><center>Ячейка №3</center></div>'
+ END
+ IF cells_unlocked = 1:
+ IF iced_4_state > 0:
+  *p '<div id = "cryo_ava_4"><a href = "EXEC: cryonum = 4 & gt ''stasis_cell_cryo''"><img src = "<<$iced_4[''ava_gray'']>>.jpg"></a><br><center>Ячейка №4</center></div>'
+  else
+  *p '<div id = "cryo_ava_4"><img src = "content/pic/blank_ava.jpg"><br><center>Ячейка №4</center></div>'
+ END
+ IF iced_5_state > 0:
+  *p '<div id = "cryo_ava_5"><a href = "EXEC: cryonum = 5 & gt ''stasis_cell_cryo''"><img src = "<<$iced_5[''ava_gray'']>>.jpg"></a><br><center>Ячейка №5</center></div>'
+  else
+  *p '<div id = "cryo_ava_5"><img src = "content/pic/blank_ava.jpg"><br><center>Ячейка №5</center></div>'
+ END
+ IF iced_6_state > 0:
+  *p '<div id = "cryo_ava_6"><a href = "EXEC: cryonum = 6 & gt ''stasis_cell_cryo''"><img src = "<<$iced_6[''ava_gray'']>>.jpg"></a><br><center>Ячейка №6</center></div>'
+  else
+  *p '<div id = "cryo_ava_6"><img src = "content/pic/blank_ava.jpg"><br><center>Ячейка №6</center></div>'
+ END
+ END
+END
+
 IF not_safe = 1:
  not_safe = 0
  *p '<div id = "bg"><img src="content\pic\bg\empty.jpg"></div>'

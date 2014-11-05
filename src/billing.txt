@@ -20,11 +20,6 @@ if master_wealth = 4: other_bills = RAND (200,300)
 if master_wealth = 5: other_bills = RAND (400,600)
 if master_wealth = 6: other_bills = RAND (800,1200)
 
-if stasis_tank > 0: other_bills += 20
-if iced_1_state > 0: other_bills += 10
-if iced_2_state > 0: other_bills += 10
-if iced_3_state > 0: other_bills += 10
-
 other_bills += autobuy_cost
 autobuy_cost = 0
 

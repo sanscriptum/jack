@@ -40,6 +40,13 @@ if get_initial_slave = 1:
  slave['secretary'] = 4
  slave['expression'] = 3
  slave['service'] = 3
+ 
+ !расчет подчиненности у стартовой ассистентки для корректного отображения
+ slave_obedience_bonus = 0 + slave["meekness"]
+ if slave["courage"] = 2: slave["fear"] = 0
+ if slave["courage"] = 0: slave_obedience_bonus += slave["fear"]
+ if slave["courage"] = -1: slave_obedience_bonus += slave["fear"]*2
+ slave["obedience"] = slave_obedience_bonus + slave["moral"] + slave["fear"] + slave["custom"] + slave["rational"] + slave["instinct"] + slave_mood_bonus - slave["spoil"] - rebell[$slave_psy_basic]
 
  slave["sub_vaginal"] = 3
  slave["brand"] = 1

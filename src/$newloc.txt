@@ -372,7 +372,7 @@ END
 if slave["sub_hj"] < slave["petting"]: slave["sub_hj"] = slave["petting"]
 slave["petting"] = (slave["sub_hj"] + slave["sub_fj"] + slave["sub_hug"] + slave["sub_pazuri"])/4
 
-if slave["sub_dt"] < slave["sub_bj"]: slave["sub_dt"] = slave["sub_bj"]
+if slave["sub_bj"] < slave["sub_dt"]: slave["sub_bj"] = slave["sub_dt"]
 if slave["sub_bj"] < slave["sub_bukake"]: 
  if slave["sub_bj"] < 3: slave["sub_bj"] = slave["sub_bukake"]
 END

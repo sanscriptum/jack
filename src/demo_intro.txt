@@ -6,7 +6,7 @@ npc_attitude = 11
 $place = 'guild_hall'
 if txt = 0: txt = 1
 
-$npc = 'госпожа_ангелика'
+$npc = 'mistress_angelika'
 
 *p '<div id = "bg"><img src="content\pic\bg\guild.jpg"></div>'
 

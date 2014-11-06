@@ -122,11 +122,17 @@ if количество_врагов > 1: *p '<div id = "prev_enemy"><a href="EX
 *p '<div id = "enemy_def"><<$защита_врага_описание[$защита[текущий]]>></div>'
 
 !исправлен код с отображением подсказки при нажатии на сердца
+*p '<div id = "ally_health"><img src = "content/pic/hart_red.png"></div>'
 *p '<div id = "ally_health"><a style = "color: black;" href="EXEC: msg $живучесть_справка"><<здоровье_игрока>></a></div>'
+*p '<div id = "ally_stamina"><img src = "content/pic/hart_green.png"></div>'
 *p '<div id = "ally_stamina"><a style = "color: black;" href="EXEC: msg $выносливость_справка"><<выносливость_игрока>></a></div>'
+*p '<div id = "ally_will"><img src = "content/pic/hart_purple.png"></div>'
 *p '<div id = "ally_will"><a style = "color: black;" href="EXEC: msg $боевой_дух_справка"><<дух_игрока>></a></div>'
+*p '<div id = "enemy_health"><img src = "content/pic/hart_red.png"></div>'
 *p '<div id = "enemy_health"><center><<здоровье_врага[текущий]>></center></div>'
+*p '<div id = "enemy_stamina"><img src = "content/pic/hart_green.png"></div>'
 *p '<div id = "enemy_stamina"><center><<выносливость_врага[текущий]>></center></div>'
+*p '<div id = "enemy_will"><img src = "content/pic/hart_purple.png"></div>'
 *p '<div id = "enemy_will"><center><<дух_врага[текущий]>></center></div>'
 
 

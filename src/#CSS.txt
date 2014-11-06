@@ -2164,7 +2164,6 @@ top:250px;
 width:40px;
 height:40px;
 text-align:center;
-background-image:url(content/pic/hart_red.png);
 }
 
 #ally_stamina {
@@ -2174,7 +2173,6 @@ top:250px;
 width:40px;
 height:40px;
 text-align:center;
-background-image:url(content/pic/hart_green.png);
 }
 
 #ally_will {
@@ -2184,37 +2182,33 @@ top:250px;
 width:40px;
 height:40px;
 text-align:center;
-background-image:url(content/pic/hart_purple.png);
 }
 
 #enemy_health {
 position:absolute;
 left:35px;
 top:250px;
-width:40px;
+width:50px;
 height:40px;
 text-align:center;
-background-image:url(content/pic/hart_red.png);
 }
 
 #enemy_stamina {
 position:absolute;
 left:95px;
 top:250px;
-width:40px;
+width:50px;
 height:40px;
 text-align:center;
-background-image:url(content/pic/hart_green.png);
 }
 
 #enemy_will {
 position:absolute;
 left:155px;
 top:250px;
-width:40px;
+width:50px;
 height:40px;
 text-align:center;
-background-image:url(content/pic/hart_purple.png);
 }
 
 #ally_conditions {

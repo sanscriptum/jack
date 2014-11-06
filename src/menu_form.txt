@@ -50,6 +50,13 @@ IF get_initial_slave = 1:
  gs 'stock_to_slave'
 END
 
+!проверка на выход из доступных локаций в режиме обучения
+IF exam_in_progress = 1:
+ IF $curloc = 'menu_form':
+  gt 'demo_menu_form'
+ END
+END
+
 !'
 IF slave_state = 2:
  IF slave["energy"] > -5: 

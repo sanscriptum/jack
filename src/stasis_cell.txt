@@ -41,6 +41,9 @@ IF iced_state > 0:
 <<$temper[iced["temper"]]>> 
 <<$ego[iced["ego"]]>> 
 <<$pride[iced["pride"]]>> 
+
+<u>ОСОБЕННОСТИ</u>
+<<$iced_features_list>>
 '
 
  else

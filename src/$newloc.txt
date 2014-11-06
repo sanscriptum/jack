@@ -1028,6 +1028,19 @@ if assistant["vermin_xp"] > 10 and assistant["vermin_attitude"] = 0: assistant["
 if assistant["deprivation_xp"] > 10 and assistant["deprivation_attitude"] = 0: assistant["deprivation_attitude"] = 1 
 
 !ОСОБЕННОСТИ ЗАМОРОЖЕННОЙ РАБЫНИ
+$iced_features_list = ''
+IF iced["brand"] = 0: $iced_features_list +='<a href = "EXEC: msg $Нет_клейма"><font color="#cd0000">Нет клейма</font></a><BR>'
+IF iced["wounds"] > 0: $iced_features_list += '<<$slave_wounds[iced["wounds"]]>><BR>'
+IF iced["scares"] > 0: $iced_features_list += '<<$slave_scares[iced["scares"]]>><BR>'
+IF iced["bruises"] > 0: $iced_features_list += '<<$slave_bruises[iced["bruises"]]>><BR>'
+IF iced['reabilitation'] > 0: $iced_features_list += 'После операции [<<iced["reabilitation"]>>]<BR>'
+IF iced_virginity < 2: $iced_features_list += 'Девственница<BR>' 
+if iced['fertility'] = -2: $iced_features_list += 'Незрелая<BR>' 
+IF iced["fertility"] = -1: $iced_features_list += 'Бесплодная<BR>' 
+IF iced["fertility"] = 1: $iced_features_list += 'Яйцекладущая<BR>' 
+IF iced["pregnant"] = 1 and iced['pregnant_revealed'] > 0: $iced_features_list += 'Беременная<BR>' 
+IF iced['arena_level'] > 4: $iced_features_list += 'Чемпионка арены<BR>'
+
 $iced_1_features_list = ''
 IF iced_1["brand"] = 0: $iced_1_features_list +='<a href = "EXEC: msg $Нет_клейма"><font color="#cd0000">Нет клейма</font></a><BR>'
 IF iced_1["wounds"] > 0: $iced_1_features_list += '<<$slave_wounds[iced_1["wounds"]]>><BR>'

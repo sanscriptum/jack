@@ -308,8 +308,10 @@ V-шарики
    *p '<div id="chekbox_13r"><a href = "EXEC: v_balls_rule = 1 & $info_text = $v_balls_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
   END
   else
-  *p '<div id="chekbox_13r"><a href = "EXEC: msg $no_vballs & gt curloc"><img src="content\pic\buttons\unactive_button.png"></a></div>' 
- END    
+  *p '<div id="chekbox_13r"><a href = "EXEC: msg $no_vballs & gt curloc"><img src="content\pic\buttons\unactive_button.png"></a></div>'
+  if virginity < 2 and inventory['vaginal_balls'] > 0: *p '<div id="chekbox_13r"><a href = "EXEC: msg $no_vballs_virgin & gt curloc"><img src="content\pic\buttons\unactive_button.png"></a></div>'
+  END
+ END 
  IF force_rules = 1:
   *p '<div id="chekbox_14r"><a href = "EXEC: force_rules = 0 & $info_text = $force_rules_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
   else

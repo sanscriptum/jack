@@ -268,5 +268,12 @@ if slave["fat"] = 4: relative_fat = 6
 if slave["fat"] = 5: relative_fat = 10
 charm = slave["style"]*3 + slave["exotic"] + slave["moral"] + brand_reputation + slave["fame"]*2 - relative_fat - slave["angst"] - slave["spoil"] - slave["scares"] - (slave["bruises"]+1)/2
 if charm < 0: charm = 0  
+
+if charm < 6: $charm_stat = $_font_col_rep[0] + 'Шарм' + $_font_closer
+if charm => 6: $charm_stat = $_font_col_rep[1] + 'Шарм' + $_font_closer
+if charm => 12: $charm_stat = $_font_col_rep[2] + 'Шарм' + $_font_closer
+if charm => 16: $charm_stat = $_font_col_rep[3] + 'Шарм' + $_font_closer
+if charm => 20: $charm_stat = $_font_col_rep[4] + 'Шарм' + $_font_closer
+if charm => 40: $charm_stat = $_font_col_rep[5] + 'Шарм' + $_font_closer
 --- $slave_price ---------------------------------
 

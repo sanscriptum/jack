@@ -2233,7 +2233,7 @@ text-align:center;
 #side_stats_up {
 position:absolute;
 left:1020px;
-top:70px;
+top:74px;
 width:250px;
 height:400px;
 font-size:30px;
@@ -2279,7 +2279,7 @@ font-family:Victoriana;
 #side_stats_master_var {
 position:absolute;
 left:1180px;
-top:72px;
+top:76px;
 font-size:30px;
 font-family:Victoriana;
 }

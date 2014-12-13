@@ -3215,7 +3215,7 @@ IF interaction_city = 191:
  copyarr '$text', '$brina_pref'
 END
 
-IF interaction_city = 192:
+!"IF interaction_city = 192:
  $interaction_type = 'sell_slave_simple'
  npc = 1
  $npc_id = 'brina' 
@@ -3223,11 +3223,23 @@ IF interaction_city = 192:
  $return_lock  = 'shop_general' 
  no_charm_check = 1
  fixed_brand_rise = 1
+END"
+
+IF interaction_city = 192:
+ npc = 1
+ $npc_id = 'brina' 
+ $place = 'colloseum'
+ $return_lock  = 'shop_general' 
+ IF no_slave_count['brina'] < 1:
+  gt "slave_sell"
+  else
+  interaction_city = 193  
+ END
 END
 
 IF interaction_city = 193:
  npc = 1
- $npc_id = 'брина_рыжая' 
+ $npc_id = 'brina' 
  $place = 'colloseum'
  $return_lock  = 'shop_general' 
  txt_count = 1
@@ -6464,44 +6476,76 @@ IF interaction_city = 900:
 END
 
 IF interaction_city = 911:
- $interaction_type = 'slave_sold'
+ if byer_from_house = 1:
+  $interaction_type = 'slave_sold_house'
+  byer_from_house = 0
+  else
+  $interaction_type = 'slave_sold'
+ end
  sell_price = common_price[demand_rating[$npc_id]]
- a = 2 + brand_reputation
+ a = 2 + brand_reputation + master_cha + master_style - demand_rating[$npc_id]
  b = RAND (0,a)
  c = RAND (10,20)
+ e = RAND (0,charm/2)
  brand_reputation_plus = brand_reputation + 1
- IF b = 0:
-  d = c*brand_reputation_plus*demand_rating[$npc_id]
+ IF b < 3:
+  d = (c*brand_reputation_plus*demand_rating[$npc_id])*2
   sell_price -= d
   $text[1] = "   К сожалению, торговля пошла из рук вон плохо, вы ляпнули пару глупостей и в итоге были вынуждены согласиться на цену даже ниже средней: <<sell_price>> искр. Ну, всё таки это прибыль..."
  END
- IF b = 1:
+ IF b => 3:
   $text[1] = "   Вы долго торговались, но безрезультатно. В итоге пришлось пойти на компромисс и согласиться честную среднюю цену: <<sell_price>> искр. Могло быть и хуже."
  END
- IF b = 2:
-  d = c*brand_reputation_plus*demand_rating[$npc_id]
-  sell_price += d
-  if sell_price > npc_money[$npc_id]: sell_price = npc_money[$npc_id]
-  $text[1] = "   Вам удалось убедить клиента, в том что ваш товар стоит небольшой переплаты. В итоге сумма сделки составила: <<sell_price>> искр. Неплохо!"
+ IF b => 6:
+  !d = c*brand_reputation_plus*demand_rating[$npc_id]
+  !if sell_price > npc_money[$npc_id]: sell_price = npc_money[$npc_id]
+  d = (c*(brand_reputation_plus+master_cha+master_style+rating)*demand_rating[$npc_id])/2
+  sell_price += d + virgin_price
+  $text[1] = "   Вам удалось убедить клиента в том что ваш товар стоит небольшой переплаты. В итоге сумма сделки составила: <<sell_price>> искр. Неплохо!"
  END  
- IF b > 2:
-  d = c*brand_reputation_plus*demand_rating[$npc_id]
-  sell_price += d*2
-  if sell_price > npc_money[$npc_id]: sell_price = npc_money[$npc_id]
-  $text[1] = "   Благодаря известности своего клейма, вам удалось изрядно набить цену и получить неплохую прибавку. В итоге сумма сделки составила: <<sell_price>> искр. Отлично!"
+ IF b > 10:
+  !d = c*brand_reputation_plus*demand_rating[$npc_id]
+  !if sell_price > npc_money[$npc_id]: sell_price = npc_money[$npc_id]
+  d = c*(brand_reputation_plus+master_cha+master_style+rating*2+charm/2)*demand_rating[$npc_id]
+  sell_price += d + virgin_price
+  $text[1] = "   Благодаря своим исключительным данным вам удалось изрядно набить цену и получить неплохую прибавку. В итоге сумма сделки составила: <<sell_price>> искр. Отлично!"
+ END  
+ IF e > b and b > 3:
+  !d = c*brand_reputation_plus*demand_rating[$npc_id]
+  !if sell_price > npc_money[$npc_id]: sell_price = npc_money[$npc_id]
+  d = c*(rating+charm/2)*demand_rating[$npc_id]
+  sell_price += d + virgin_price
+  $text[1] = "   Используя шарм вашей рабыни, вам удалось немного набить цену за свой товар и получить неплохую прибавку. В итоге сумма сделки составила: <<sell_price>> искр. Отлично!"
  END  
 END
 
 IF interaction_city = 912:
- $interaction_type = 'slave_sold'
- sell_price = common_price[demand_rating[$npc_id]]
+ if byer_from_house = 1:
+  $interaction_type = 'slave_sold_house'
+  byer_from_house = 0
+  else
+  $interaction_type = 'slave_sold'
+ end
+ sell_price = common_price[demand_rating[$npc_id]] + virgin_price
  $text[1] = "   Вы решили не опускаться до базарной торговли и сошлись на честной средней цене: <<sell_price>> искр."
 END
 
 IF interaction_city = 913:
- $interaction_type = 'slave_sold'
+ if byer_from_house = 1:
+  $interaction_type = 'slave_sold_house'
+  byer_from_house = 0
+  else
+  $interaction_type = 'slave_sold'
+ end
  sell_price = common_price[demand_rating[$npc_id]]
- sell_price -= 50*demand_rating[$npc_id]
+ !sell_price -= 50*demand_rating[$npc_id]
+ if demand_rating[$npc_id] = 1: sell_discount = 125
+ if demand_rating[$npc_id] = 2: sell_discount = 250
+ if demand_rating[$npc_id] = 3: sell_discount = 625
+ if demand_rating[$npc_id] = 4: sell_discount = 1250
+ if demand_rating[$npc_id] = 5: sell_discount = 2500
+ sell_price -= sell_discount
+ have_discounted = 1
  $text[1] = "   Чтобы заслужить расположение клиента, вы скинули цену до: <<sell_price>> искр. Не так выгодно как хотелось бы, но хорошие отношения с заказчиками важнее сиюминутной прибыли."
 END
 

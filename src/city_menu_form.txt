@@ -19,6 +19,7 @@ get_girl = 0
 spark_pay_master = 0
 spark_pay_slave = 0
 if city_random_event = 0: gs '$city_random_event'
+byer_from_house = 0
 
 !проверка на выход из доступных локаций в режиме обучения
 IF exam_in_progress = 1:

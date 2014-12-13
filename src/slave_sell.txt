@@ -2,8 +2,8 @@
 !ДИАЛОГ ПРОДАЖИ РАБЫНИ ЧАСТНОМУ ЛИЦУ
 GS '_layout'
 price_bonus = 0
-virgin_price = 0
-$virgin_price = ''
+!virgin_price = 0
+!$virgin_price = ''
 $text_display = ''
 sp_txt = 1
 txt = 1
@@ -43,6 +43,7 @@ END
 
 IF sl_txt = 11:
  interaction_city = 911
+ $city_form_transfer = city_form
  $return_lock_transfer = $return_lock 
  $place_transfer = $place
  gt 'interaction_city'
@@ -50,6 +51,7 @@ END
 
 IF sl_txt = 12:
  interaction_city = 912
+ $city_form_transfer = city_form
  $return_lock_transfer = $return_lock 
  $place_transfer = $place
  gt 'interaction_city'
@@ -57,6 +59,7 @@ END
 
 IF sl_txt = 13:
  interaction_city = 913
+ $city_form_transfer = city_form
  $return_lock_transfer = $return_lock 
  $place_transfer = $place  
  client_statisfaction += 1
@@ -91,14 +94,31 @@ END
 
 $info_bar = '' 
 *p '<div id = "bg"><img src="content\pic\characters\<<$npc_image[$npc_id]>>.gif"></div>'
-*p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$npc_name[$npc_id]>></div><<$npc_status[$npc_id]>>
+!*p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$npc_name[$npc_id]>></div><<$npc_status[$npc_id]>>
 
 Информация к размышлению:
 </center></div>'
-*p '<div id = "side_panel_text">  <<$npc_attitude[npc_attitude[$npc_id]]>>
+!*p '<div id = "side_panel_text">  <<$npc_attitude[npc_attitude[$npc_id]]>>
 
  <<$npc_info[$npc_id]>>
 </div>'
+if nsfw = 1: *p '<div id = "bg"><img src="content\pic\bg\empty.jpg"></div>' & not_safe = 1
+
+$master_stats = ''
+$master_stats += '<<$master_cha[master_cha]>><br>'
+$master_stats += '<<$master_style[master_style]>><br>'
+$master_stats += '<<$brand[brand_reputation]>><br>'
+
+$slave_stats = '<br>'
+$slave_stats += 'ОЦЕНКА:&nbsp;<<$rating[rating]>><br>'
+$slave_stats += '<<$charm_stat>><br>'
+
+*p '<div id = "side_ava_up"><img src = "<<$master_ava>>"></div>'
+*p '<div id = "side_ava_down"><img src = "<<$slave[''ava'']>>.jpg"></div>'
+*p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$master_name>></div></center></div>'
+*p '<div id = "side_panel_down"><center><div style="font-size: 50px;"><<$slave_name>></div></center></div>'
+*p '<div id = "side_stats_up"><<$master_stats>></div>'  
+*p '<div id = "side_stats_down"><<$slave_stats>></div>'  
 
 *p '<div id = "interaction_stat_bar"><<$info_bar>></div>'
 *p '<div id = "bg"><<$text_display>></div>'

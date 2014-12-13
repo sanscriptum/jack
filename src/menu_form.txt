@@ -14,6 +14,8 @@ dynamic $assistant_pass_out
 dynamic $master_pass_out
 !проверка на кнут и нагайку
 dynamic $toolsequipped
+!проверка рейтинга рабыни
+gs '$slave_price'
 
 teach_stat_screen = 0
 master_stat_screen = 0

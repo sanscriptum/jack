@@ -3989,6 +3989,12 @@ IF interaction_city = 3113:
  $npc_id = 'dofine_tutti'
 END
 
+IF interaction_city = 3114:
+ $interaction_type = 'byer_invitation'
+ city_form = 31
+ $npc_id = 'earl_gray'
+END
+
 !Бедро девственницы
 IF interaction_city = 32:
  $place = 'tabern'

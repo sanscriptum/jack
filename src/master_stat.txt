@@ -6,6 +6,8 @@ gs '$quest_list'
 if slot = 0: $equip_choice = ''
 slot = 0
 
+buyers_list = 0
+
 *p '<div id = "bookmark_one">Склад</div>'
 *p '<div id = "bookmark_two">Задачи</div>'
 *p '<div id = "bookmark_three">Снаряжение</div>'

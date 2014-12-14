@@ -2,22 +2,45 @@
 !Составляем список оптимальных покупателей для текущей рабыни
 gs '$slave_price'
 $appropriate_buyers_list = ''
+$appropriate_buyers_list_2 = ''
+$appropriate_buyers_list_3 = ''
 
 n = arrsize('$basic_buyer') - 1
 i = 0
+z = 0
 :loop
 i += 1
 
-IF rating = demand_rating[$basic_buyer[i]] and slave_specialisation[$interesting_specialisation[$basic_buyer[i]]] > 0 and npc_progress[$basic_buyer[i]] < 2:
- $appropriate_buyers_list += '<br>  <<$diary_mark[$basic_buyer[i]]>>'
+IF rating => demand_rating[$basic_buyer[i]] and slave_specialisation[$interesting_specialisation[$basic_buyer[i]]] > 0 and npc_progress[$basic_buyer[i]] < 2:
+ IF z < 15:
+	$appropriate_buyers_list += '<div align="left" style="font-size: 85%;"><<$diary_mark[$basic_buyer[i]]>><br></div>'
+	z += 1
+  elseif z < 34:
+	$appropriate_buyers_list_2 += '<div align="left" style="font-size: 85%;"><<$diary_mark[$basic_buyer[i]]>><br></div>'
+	z += 1
+  elseif z < 55:
+	$appropriate_buyers_list_3 += '<div align="left" style="font-size: 85%;"><<$diary_mark[$basic_buyer[i]]>><br></div>'
+	z += 1
+ END
 END
 
 if i < n: jump 'loop'
 
-if $appropriate_buyers_list = '': $appropriate_buyers_list = '<br>  Вряд ли я найду сейчас подходящего покупателя для моей воспитуемой. Ей ещё многому предстоит научиться.'
+if $appropriate_buyers_list = '' and $appropriate_buyers_list_2 = '' and $appropriate_buyers_list_3 = '': $appropriate_buyers_list = '<br>  Вряд ли я найду сейчас подходящего покупателя для моей воспитуемой. Ей ещё многому предстоит научиться.'
 
-$quest_description[2] = '<<$appropriate_buyers_list>>
-
+IF buyers_list = 0: 
+	$quest_description[2] = '<<$appropriate_buyers_list>>
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Назад</a>'
+	if z > 15:$quest_description[2] = '<<$appropriate_buyers_list>>
+<a href = "EXEC: quest_description_mode = 0 & gt curloc">Назад</a>&nbsp<a href = "EXEC: quest_description_mode = 1 & buyers_list = 1 & gs ''$appropriate_buyers_list'' & gt curloc">→</a> z = <<z>>'
+ elseif buyers_list = 1:
+	$quest_description[2] = '<<$appropriate_buyers_list_2>>
+<a href = "EXEC: quest_description_mode = 0 & gt curloc">Назад</a>&nbsp<a href = "EXEC: quest_description_mode = 1 & buyers_list = 0 & gs ''$appropriate_buyers_list'' & gt curloc">←</a>'
+	if z > 34:$quest_description[2] = '<<$appropriate_buyers_list_2>>
+<a href = "EXEC: quest_description_mode = 0 & gt curloc">Назад</a>&nbsp<a href = "EXEC: quest_description_mode = 1 & buyers_list = 0 & gs ''$appropriate_buyers_list'' & gt curloc">←</a>&nbsp<a href = "EXEC: quest_description_mode = 1 & buyers_list = 2 & gs ''$appropriate_buyers_list'' & gt curloc">→</a>'
+ elseif buyers_list = 2:
+	$quest_description[2] = '<<$appropriate_buyers_list_3>>
+<a href = "EXEC: quest_description_mode = 0 & gt curloc">Назад</a>&nbsp<a href = "EXEC: quest_description_mode = 1 & buyers_list = 1 & gs ''$appropriate_buyers_list'' & gt curloc">←</a>'
+END
 --- $appropriate_buyers_list ---------------------------------
 

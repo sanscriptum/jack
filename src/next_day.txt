@@ -347,8 +347,8 @@ slave_rate["rational"] += daily_bonus["rational"]
 slave_rate["custom"] += daily_bonus["custom"]
 
 !Повышаем интерес к рабыне
-if slave_state = CONST_INT['slave_exist']: slave['newness'] += 1
-if assistant_state > 0: assistant['newness'] += 1
+if slave_state = CONST_INT['slave_exist']: slave['newness'] += 1 + charm/6
+if assistant_state > 0: assistant['newness'] += 1 + assistant_charm/6
 
 !Лактация
 slave['milk_gain'] = 0

@@ -7,19 +7,19 @@ $text_display = ''
 if sp_txt = 0: sp_txt = 1
 
 IF sp_txt = 1:
- $text_display += {<br><br><div id="under">Оружие<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><div id="under">Оружие<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Доспехи<br><div id = "clear"><a href = 'EXEC: sp_txt = 3 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><br><div id="under">Узнать предпочтения<div id = "clear"><a href = 'EXEC: interaction_city = 1111 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
  IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
-  $text_display += {<br><div id="under">Предложить рабыню<br><div id = "clear"><a href = 'EXEC: interaction_city = 1112 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<div id="under">Предложить рабыню<br><div id = "clear"><a href = 'EXEC: interaction_city = 1112 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Предложить рабыню<br></div>}
+  $text_display += {<div id="under_gray">Предложить рабыню<br></div>}
  END 
  $text_display += {<br><div id="under">Покинуть магазин<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
 IF sp_txt = 2:
- $text_display += {<br><br><div id="under">Вторичное<br><div id = "clear"><a href = 'EXEC: sp_txt = 11 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><br><br><div id="under">Вторичное<br><div id = "clear"><a href = 'EXEC: sp_txt = 11 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Одноручное<br><div id = "clear"><a href = 'EXEC: sp_txt = 12 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Двуручное<br><div id = "clear"><a href = 'EXEC: sp_txt = 13 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Другие товары<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}

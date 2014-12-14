@@ -32,7 +32,7 @@ IF buyers_list = 0:
 	$quest_description[2] = '<<$appropriate_buyers_list>>
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Назад</a>'
 	if z > 15:$quest_description[2] = '<<$appropriate_buyers_list>>
-<a href = "EXEC: quest_description_mode = 0 & gt curloc">Назад</a>&nbsp<a href = "EXEC: quest_description_mode = 1 & buyers_list = 1 & gs ''$appropriate_buyers_list'' & gt curloc">→</a> z = <<z>>'
+<a href = "EXEC: quest_description_mode = 0 & gt curloc">Назад</a>&nbsp<a href = "EXEC: quest_description_mode = 1 & buyers_list = 1 & gs ''$appropriate_buyers_list'' & gt curloc">→</a>'
  elseif buyers_list = 1:
 	$quest_description[2] = '<<$appropriate_buyers_list_2>>
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Назад</a>&nbsp<a href = "EXEC: quest_description_mode = 1 & buyers_list = 0 & gs ''$appropriate_buyers_list'' & gt curloc">←</a>'

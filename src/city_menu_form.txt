@@ -109,12 +109,36 @@ END
 IF city_form = 21:
  $place = 'taurus_district' 
  if $estate = 'taurus_house': $text_display += {<br><div id="under">Ваши апартаменты<br><div id = "clear"><a href = 'EXEC: menu_form = 0 & city_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Жилище дона Кастиллио<br><div id = "clear"><a href = 'EXEC: interaction_city = 210 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Апартаменты дона Диего<br><div id = "clear"><a href = 'EXEC: interaction_city = 211 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Лаборатория Гильмерита<br><div id = "clear"><a href = 'EXEC: interaction_city = 212 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Манор Сира Тугбара<br><div id = "clear"><a href = 'EXEC: interaction_city = 213 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Особняк Леди Эдны<br><div id = "clear"><a href = 'EXEC: interaction_city = 214 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Резиденция Суинтон<br><div id = "clear"><a href = 'EXEC: interaction_city = 215 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ IF npc_progress['don_castilio'] ! 2:
+	$text_display += {<br><div id="under">Жилище дона Кастиллио<br><div id = "clear"><a href = 'EXEC: interaction_city = 210 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<br><div id="under_gray">Жилище дона Кастиллио<br><div id = "clear"><a href = 'EXEC: interaction_city = 210 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['don_diego'] ! 2:
+	$text_display += {<br><div id="under">Апартаменты дона Диего<br><div id = "clear"><a href = 'EXEC: interaction_city = 211 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<br><div id="under_gray">Апартаменты дона Диего<br><div id = "clear"><a href = 'EXEC: interaction_city = 211 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['magister_gilmeritus'] ! 2:
+	$text_display += {<br><div id="under">Лаборатория Гильмерита<br><div id = "clear"><a href = 'EXEC: interaction_city = 212 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<br><div id="under_gray">Лаборатория Гильмерита<br><div id = "clear"><a href = 'EXEC: interaction_city = 212 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['sir_toughbar'] ! 2:
+	$text_display += {<br><div id="under">Манор Сира Тугбара<br><div id = "clear"><a href = 'EXEC: interaction_city = 213 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<br><div id="under_gray">Манор Сира Тугбара<br><div id = "clear"><a href = 'EXEC: interaction_city = 213 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END	
+ IF npc_progress['lady_edna'] ! 2:
+	$text_display += {<br><div id="under">Особняк Леди Эдны<br><div id = "clear"><a href = 'EXEC: interaction_city = 214 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<br><div id="under_gray">Особняк Леди Эдны<br><div id = "clear"><a href = 'EXEC: interaction_city = 214 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END	
+ IF npc_progress['lady_suinton'] ! 2:
+	$text_display += {<br><div id="under">Резиденция Суинтон<br><div id = "clear"><a href = 'EXEC: interaction_city = 215 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<br><div id="under_gray">Резиденция Суинтон<br><div id = "clear"><a href = 'EXEC: interaction_city = 215 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END	
  $text_display += {<br><div id="under">На центральную улицу<br><div id = "clear"><a href = 'EXEC: city_form = 2 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
@@ -130,20 +154,76 @@ END
 IF city_form = 31:
  $place = 'serpis_district' 
  if $estate = 'serpis_house': $text_display += {<div id="under">Ваши апартаменты<br><div id = "clear"><a href = 'EXEC: menu_form = 0 & city_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Квартира Питера Виабу<br><div id = "clear"><a href = 'EXEC: interaction_city = 312 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Дом мастера Лао <br><div id = "clear"><a href = 'EXEC: interaction_city = 311 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Квартира Лардбага<br><div id = "clear"><a href = 'EXEC: interaction_city = 313 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Апартаменты Гриза<br><div id = "clear"><a href = 'EXEC: interaction_city = 314 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Казарма Крулла<br><div id = "clear"><a href = 'EXEC: interaction_city = 315 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Абсерватория Зефироса<br><div id = "clear"><a href = 'EXEC: interaction_city = 316 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Пентхаус Плезира<br><div id = "clear"><a href = 'EXEC: interaction_city = 317 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Логово Зеленой Мамбы<br><div id = "clear"><a href = 'EXEC: interaction_city = 318 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Манор Леонида<br><div id = "clear"><a href = 'EXEC: interaction_city = 319 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Апартаменты Люция<br><div id = "clear"><a href = 'EXEC: interaction_city = 3110 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Этаж Сингх-Хана<br><div id = "clear"><a href = 'EXEC: interaction_city = 3111 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Резиденция Фроглера<br><div id = "clear"><a href = 'EXEC: interaction_city = 3112 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Шпиль Наследника Тутти<br><div id = "clear"><a href = 'EXEC: interaction_city = 3113 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Башня Грея<br><div id = "clear"><a href = 'EXEC: interaction_city = 3114 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ IF npc_progress['lao_van'] ! 2:
+	$text_display += {<div id="under">Дом мастера Лао <br><div id = "clear"><a href = 'EXEC: interaction_city = 311 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Дом мастера Лао <br><div id = "clear"><a href = 'EXEC: interaction_city = 311 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['mister_grease'] ! 2:
+	$text_display += {<div id="under">Апартаменты Гриза<br><div id = "clear"><a href = 'EXEC: interaction_city = 314 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Апартаменты Гриза<br><div id = "clear"><a href = 'EXEC: interaction_city = 314 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['archmage_zephiros'] ! 2:
+	$text_display += {<div id="under">Обсерватория Зефироса<br><div id = "clear"><a href = 'EXEC: interaction_city = 316 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Обсерватория Зефироса<br><div id = "clear"><a href = 'EXEC: interaction_city = 316 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['piter_viabu'] ! 2:
+	$text_display += {<div id="under">Квартира Питера Виабу<br><div id = "clear"><a href = 'EXEC: interaction_city = 312 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Квартира Питера Виабу<br><div id = "clear"><a href = 'EXEC: interaction_city = 312 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['mister_lardbag'] ! 2:
+	$text_display += {<div id="under">Квартира Лардбага<br><div id = "clear"><a href = 'EXEC: interaction_city = 313 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Квартира Лардбага<br><div id = "clear"><a href = 'EXEC: interaction_city = 313 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['krull'] ! 2:
+	$text_display += {<div id="under">Казарма Крулла<br><div id = "clear"><a href = 'EXEC: interaction_city = 315 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Казарма Крулла<br><div id = "clear"><a href = 'EXEC: interaction_city = 315 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['avek_plesir'] ! 2:
+	$text_display += {<div id="under">Пентхаус Плезира<br><div id = "clear"><a href = 'EXEC: interaction_city = 317 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Пентхаус Плезира<br><div id = "clear"><a href = 'EXEC: interaction_city = 317 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['green_mamba'] ! 2:
+	$text_display += {<div id="under">Логово Зеленой Мамбы<br><div id = "clear"><a href = 'EXEC: interaction_city = 318 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Логово Зеленой Мамбы<br><div id = "clear"><a href = 'EXEC: interaction_city = 318 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['leonid_alexandriatos'] ! 2:
+	$text_display += {<div id="under">Манор Леонида<br><div id = "clear"><a href = 'EXEC: interaction_city = 319 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Манор Леонида<br><div id = "clear"><a href = 'EXEC: interaction_city = 319 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['lucius_patricius'] ! 2:
+	$text_display += {<div id="under">Апартаменты Люция<br><div id = "clear"><a href = 'EXEC: interaction_city = 3110 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Апартаменты Люция<br><div id = "clear"><a href = 'EXEC: interaction_city = 3110 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['singh_khan'] ! 2:
+	$text_display += {<div id="under">Этаж Сингх-Хана<br><div id = "clear"><a href = 'EXEC: interaction_city = 3111 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Этаж Сингх-Хана<br><div id = "clear"><a href = 'EXEC: interaction_city = 3111 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['frogger'] ! 2:
+	$text_display += {<div id="under">Резиденция Фроглера<br><div id = "clear"><a href = 'EXEC: interaction_city = 3112 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Резиденция Фроглера<br><div id = "clear"><a href = 'EXEC: interaction_city = 3112 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['dofine_tutti'] ! 2:
+	$text_display += {<div id="under">Шпиль Наследника Тутти<br><div id = "clear"><a href = 'EXEC: interaction_city = 3113 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Шпиль Наследника Тутти<br><div id = "clear"><a href = 'EXEC: interaction_city = 3113 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['earl_gray'] ! 2:
+	$text_display += {<div id="under">Башня Грея<br><div id = "clear"><a href = 'EXEC: interaction_city = 3114 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Башня Грея<br><div id = "clear"><a href = 'EXEC: interaction_city = 3114 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
  $text_display += {<br><div id="under">На центральную улицу<br><div id = "clear"><a href = 'EXEC: city_form = 3 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
@@ -172,18 +252,66 @@ END
 IF city_form = 41:
  $place = 'kamira_district' 
  if $estate = 'kamira_house': $text_display += {<br><div id="under">Ваши апартаменты<br><div id = "clear"><a href = 'EXEC: menu_form = 0 & city_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Святилище Магнаги<br><div id = "clear"><a href = 'EXEC: interaction_city = 411 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Стойло Кратоса<br><div id = "clear"><a href = 'EXEC: interaction_city = 412 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Сторожка Глота<br><div id = "clear"><a href = 'EXEC: interaction_city = 413 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Берлога Буллхорна<br><div id = "clear"><a href = 'EXEC: interaction_city = 414 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Резиденция Арбуэ<br><div id = "clear"><a href = 'EXEC: interaction_city = 415 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Дом Микки<br><div id = "clear"><a href = 'EXEC: interaction_city = 4112 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Библиотека Сфинги<br><div id = "clear"><a href = 'EXEC: interaction_city = 416 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Поместье Мордуллы<br><div id = "clear"><a href = 'EXEC: interaction_city = 417 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Дворец Курфилинна<br><div id = "clear"><a href = 'EXEC: interaction_city = 418 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Замок Чарминг<br><div id = "clear"><a href = 'EXEC: interaction_city = 419 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Алтарь Пиры<br><div id = "clear"><a href = 'EXEC: interaction_city = 4110 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Поместье Батори<br><div id = "clear"><a href = 'EXEC: interaction_city = 4111 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ IF npc_progress['gloth_prisonguard'] ! 2:
+	$text_display += {<div id="under">Сторожка Глота<br><div id = "clear"><a href = 'EXEC: interaction_city = 413 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Сторожка Глота<br><div id = "clear"><a href = 'EXEC: interaction_city = 413 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['bullhorn'] ! 2:
+	$text_display += {<div id="under">Берлога Буллхорна<br><div id = "clear"><a href = 'EXEC: interaction_city = 414 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Берлога Буллхорна<br><div id = "clear"><a href = 'EXEC: interaction_city = 414 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['arbue'] ! 2:
+	$text_display += {<div id="under">Резиденция Арбуэ<br><div id = "clear"><a href = 'EXEC: interaction_city = 415 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Резиденция Арбуэ<br><div id = "clear"><a href = 'EXEC: interaction_city = 415 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['magnaga'] ! 2:
+	$text_display += {<div id="under">Святилище Магнаги<br><div id = "clear"><a href = 'EXEC: interaction_city = 411 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Святилище Магнаги<br><div id = "clear"><a href = 'EXEC: interaction_city = 411 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['kratos'] ! 2:
+	$text_display += {<div id="under">Стойло Кратоса<br><div id = "clear"><a href = 'EXEC: interaction_city = 412 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Стойло Кратоса<br><div id = "clear"><a href = 'EXEC: interaction_city = 412 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['mikkey'] ! 2:
+	$text_display += {<div id="under">Дом Микки<br><div id = "clear"><a href = 'EXEC: interaction_city = 4112 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Дом Микки<br><div id = "clear"><a href = 'EXEC: interaction_city = 4112 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['sfinga'] ! 2:
+	$text_display += {<div id="under">Библиотека Сфинги<br><div id = "clear"><a href = 'EXEC: interaction_city = 416 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Библиотека Сфинги<br><div id = "clear"><a href = 'EXEC: interaction_city = 416 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['lady_mordhulla'] ! 2:
+	$text_display += {<div id="under">Поместье Мордуллы<br><div id = "clear"><a href = 'EXEC: interaction_city = 417 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Поместье Мордуллы<br><div id = "clear"><a href = 'EXEC: interaction_city = 417 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['kurfilinn'] ! 2:
+	$text_display += {<div id="under">Дворец Курфилинна<br><div id = "clear"><a href = 'EXEC: interaction_city = 418 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Дворец Курфилинна<br><div id = "clear"><a href = 'EXEC: interaction_city = 418 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['prince_charming'] ! 2:
+	$text_display += {<div id="under">Замок Чарминг<br><div id = "clear"><a href = 'EXEC: interaction_city = 419 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Замок Чарминг<br><div id = "clear"><a href = 'EXEC: interaction_city = 419 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['lord_pira'] ! 2:
+	$text_display += {<div id="under">Алтарь Пиры<br><div id = "clear"><a href = 'EXEC: interaction_city = 4110 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Алтарь Пиры<br><div id = "clear"><a href = 'EXEC: interaction_city = 4110 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['countess_bathory'] ! 2:
+	$text_display += {<div id="under">Поместье Батори<br><div id = "clear"><a href = 'EXEC: interaction_city = 4111 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Поместье Батори<br><div id = "clear"><a href = 'EXEC: interaction_city = 4111 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
  $text_display += {<br><div id="under">На центральную улицу<br><div id = "clear"><a href = 'EXEC: city_form = 4 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
@@ -199,17 +327,61 @@ END
 IF city_form = 51:
  $place = 'korvus_district' 
  if $estate = 'korvus_house': $text_display += {<br><div id="under">Ваши апартаменты<br><div id = "clear"><a href = 'EXEC: menu_form = 0 & city_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Курган Умертвий<br><div id = "clear"><a href = 'EXEC: interaction_city = 511 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Склеп Парал Ича<br><div id = "clear"><a href = 'EXEC: interaction_city = 512 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Особняк Лестора<br><div id = "clear"><a href = 'EXEC: interaction_city = 513 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Руины Драугра<br><div id = "clear"><a href = 'EXEC: interaction_city = 514 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Башня Скарлет<br><div id = "clear"><a href = 'EXEC: interaction_city = 515 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Особняк Безумца<br><div id = "clear"><a href = 'EXEC: interaction_city = 516 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Логово Безликой<br><div id = "clear"><a href = 'EXEC: interaction_city = 517 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Поместье Вентури<br><div id = "clear"><a href = 'EXEC: interaction_city = 518 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Особняк Леди Ясмании<br><div id = "clear"><a href = 'EXEC: interaction_city = 519 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Дворец Ягеллон<br><div id = "clear"><a href = 'EXEC: interaction_city = 5110 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Замок Имладиса<br><div id = "clear"><a href = 'EXEC: interaction_city = 5111 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ IF npc_progress['wight'] ! 2:
+	$text_display += {<div id="under">Курган Умертвий<br><div id = "clear"><a href = 'EXEC: interaction_city = 511 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Курган Умертвий<br><div id = "clear"><a href = 'EXEC: interaction_city = 511 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['lestor'] ! 2:
+	$text_display += {<div id="under">Особняк Лестора<br><div id = "clear"><a href = 'EXEC: interaction_city = 513 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Особняк Лестора<br><div id = "clear"><a href = 'EXEC: interaction_city = 513 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['paral_itch'] ! 2:
+	$text_display += {<div id="under">Склеп Парал Ича<br><div id = "clear"><a href = 'EXEC: interaction_city = 512 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Склеп Парал Ича<br><div id = "clear"><a href = 'EXEC: interaction_city = 512 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['draugr'] ! 2:
+	$text_display += {<div id="under">Руины Драугра<br><div id = "clear"><a href = 'EXEC: interaction_city = 514 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Руины Драугра<br><div id = "clear"><a href = 'EXEC: interaction_city = 514 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['scarlet'] ! 2:
+	$text_display += {<div id="under">Башня Скарлет<br><div id = "clear"><a href = 'EXEC: interaction_city = 515 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Башня Скарлет<br><div id = "clear"><a href = 'EXEC: interaction_city = 515 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['mad_baron'] ! 2:
+	$text_display += {<div id="under">Особняк Безумца<br><div id = "clear"><a href = 'EXEC: interaction_city = 516 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Особняк Безумца<br><div id = "clear"><a href = 'EXEC: interaction_city = 516 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['faceless'] ! 2:
+	$text_display += {<div id="under">Логово Безликой<br><div id = "clear"><a href = 'EXEC: interaction_city = 517 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Логово Безликой<br><div id = "clear"><a href = 'EXEC: interaction_city = 517 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['donna_venturi'] ! 2:
+	$text_display += {<div id="under">Поместье Вентури<br><div id = "clear"><a href = 'EXEC: interaction_city = 518 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Поместье Вентури<br><div id = "clear"><a href = 'EXEC: interaction_city = 518 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['lady_yasmenia'] ! 2:
+	$text_display += {<div id="under">Особняк Леди Ясмании<br><div id = "clear"><a href = 'EXEC: interaction_city = 519 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Особняк Леди Ясмании<br><div id = "clear"><a href = 'EXEC: interaction_city = 519 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['count_yagellon'] ! 2:
+	$text_display += {<div id="under">Дворец Ягеллон<br><div id = "clear"><a href = 'EXEC: interaction_city = 5110 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Дворец Ягеллон<br><div id = "clear"><a href = 'EXEC: interaction_city = 5110 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF npc_progress['baron_imladis'] ! 2:
+	$text_display += {<div id="under">Замок Имладиса<br><div id = "clear"><a href = 'EXEC: interaction_city = 5111 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+	$text_display += {<div id="under_gray">Замок Имладиса<br><div id = "clear"><a href = 'EXEC: interaction_city = 5111 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
  $text_display += {<br><div id="under">На центральную улицу<br><div id = "clear"><a href = 'EXEC: city_form = 5 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 

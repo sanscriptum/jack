@@ -2410,6 +2410,13 @@ text-align:center;
 background-color:#FFFF00;
 }
 
+#rank_help {
+position:absolute;
+left:135px;
+top:35px;
+font-family:"Segoe Print";
+}
+
 .inventory_item {
 text-align:left;
 margin:0;

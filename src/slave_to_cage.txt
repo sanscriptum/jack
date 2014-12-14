@@ -40,6 +40,13 @@ killvar 'already_done_curslave'
 copyarr 'already_done_curslave','temp'
 
 killvar 'temp'
+copyarr 'temp','already_gain_prisoner'
+killvar 'already_gain_prisoner'
+copyarr 'already_gain_prisoner','already_gain_virtue'
+killvar 'already_gain_virtue'
+copyarr 'already_gain_virtue','temp'
+
+killvar 'temp'
 copyarr 'temp','already_sex_prisoner'
 killvar 'already_sex_prisoner'
 copyarr 'already_sex_prisoner','already_sex_curslave'

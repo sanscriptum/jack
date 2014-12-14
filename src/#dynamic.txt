@@ -363,7 +363,7 @@ if sin_potential > 6: sin_potential = 6
 }
 
 $sin_gained_now = {
-    IF already_done_today[interaction] = 0:
+    IF already_gain_virtue[interaction] = 0:
         sin_gained = sin_potential + res
         if sin_gained <= 0: sin_gained = 1
         if sin_gained > 5: sin_gained = 5
@@ -384,7 +384,7 @@ $sin_gained_now = {
 }
 
 $virtue_gained_now = {
-	IF already_done_today[interaction] = 0:
+	IF already_gain_virtue[interaction] = 0:
 		virtue_gained = diligence
 		if slave_skill > 0: virtue_gained = min (diligence, slave_skill)
 		if virtue_gained <= 0: virtue_gained = 1
@@ -402,7 +402,7 @@ $virtue_gained_now = {
 }
 
 $virtue_gained_eroles = {
-IF already_done_today[interaction] = 0:
+IF already_gain_virtue[interaction] = 0:
  IF succes > 0: 
   virtue_gained = diligence + 1
   else

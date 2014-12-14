@@ -796,6 +796,7 @@ END
 !Метки исполнения
 already_done_today[interaction] += 1 
 already_done_curslave[interaction] += 1 
+already_gain_virtue[interaction] += 1
 
 txt = 1
 menu_form = 0

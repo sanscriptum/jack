@@ -12,6 +12,7 @@ killvar 'slave'
 killvar 'slave_rate' 
 killvar 'slave_inventory' 
 killvar 'already_done_curslave'
+killvar 'already_gain_virtue'
 copyarr 'slave','stock'
 copyarr '$slave','$stock'
 

@@ -817,7 +817,7 @@ position:absolute;
 left:270px;
 top:290px;
 width:350px;
-height:290px;
+height:200px;
 color:#0000CD;
 font-family:"Segoe Print";
 }

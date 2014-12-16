@@ -74,7 +74,7 @@ END
 <<$features_list>>
 </div>'
 
-if rank_help = 0: *p '<div id="rank_help"><a href = "EXEC: msg $rank_help & rank_help = 1 & gt curloc">[?]</a>
+if rank_help = 0: *p '<div id="rank_help"><a href = "EXEC: msg $rank_help & msg $rank_help_2 & rank_help = 1 & gt curloc">[?]</a>
 </div>'
 
 !Расчет стоимости содержания
@@ -380,7 +380,7 @@ If slave_stat_screen = 1:
  if nsfw = 0: *p '<div id="upper_image"><img width = "370px" src = "content\pic\girls\body\<<$slave["boobs_img"]>>.jpg"></div>'
  if nsfw = 0: *p '<div id="lower_image"><img width = "370px" src = "content\pic\girls\body\<<$slave["pussy_img"]>>.jpg"></div>' 
  *p '<div id = "stat_text"><center>
- <b><a href = "EXEC: msg $charm_help & gt curloc"><<$charm_stat>></a></b>
+ <b><a href = "EXEC: $info_text = $charm_help & gt curloc"><<$charm_stat>></a></b>
  <<$красота[slave["beauty"]]>> = <<$природная_красота[slave["base_beauty"]]>> + <<$пластика[slave["beauty_enchanced"]]>> - (<<$шрамы[slave["scares"]]>> + <<$синяки[slave["bruises"]]>>)
  <<$экзотика[slave["exotic"]]>> = <<$природная_экзотика[slave["base_exotic"]]>> + <<$slave_tatoo[slave["tatoo"]]>> + <<$пирсинг[slave["piercing_count"]]>> + <<$wear[slave["ex_count"]]>><div style="font-size: 95%;"><<$стиль[slave["style"]]>> = <<$wear[slave["st_count"]]>> + <<$slave_makeup[slave["makeup"]]>> + <<$hair_style[slave["hairstyle"]]>> + <<$мейкап[slave["makeup_count"]]>> + <<$гигиена[slave["hygiene"]]>> + <<$грация[slave["grace_count"]]>></div></center>
  </div>'

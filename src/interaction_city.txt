@@ -1221,6 +1221,8 @@ IF interaction_city = 1295:
   master_mood['pos_master_winner'] = 5
   slave['pos_slave_winner'] = slave['sensitivity'] + 1    
   else
+  txt_count = 2 
+  $text[2] = '   Вы торжественно даруете своей подопечной свободу. Теперь <<$slave_name>> свободна на все четыре стороны и вряд ли вы встретитесь вновь. Возможно если бы она была чуточку преданнее и не боялась вас, результат мог бы быть другим...'
   master_mood['pos_master_winner'] = 1
   slave_state = CONST_INT['no_slave']
  END

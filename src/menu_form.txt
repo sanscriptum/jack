@@ -108,7 +108,11 @@ IF menu_form = 0:
   IF slave_state = CONST_INT['slave_exist'] and slave["moral"] => 3:
    $text_display += {<br><div id="under">Назначить ассистентку <br><div id = "clear"><a href = 'EXEC: gt "slave_to_assistant"'><img src = "content\pic\clear.gif"></a></div></div>}
    else
-   $text_display += {<br><div id="under_gray">Назначить ассистентку<br></div>}
+   if slave_state = CONST_INT['slave_exist'] and slave["moral"] < 3: 
+    $text_display += {<br><div id="under_gray"><a style = "color: #C0C0C0;" href="EXEC: msg $assistant_help">Назначить ассистентку</a><br></div>}
+    else
+    $text_display += {<br><div id="under_gray">Назначить ассистентку<br></div>}
+   end
   END
  END
  IF slave_state = CONST_INT['slave_exist']:

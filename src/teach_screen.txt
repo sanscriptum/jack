@@ -64,7 +64,7 @@ END
 <<$features_list>>
 </div>'
 
-if rank_help = 0: *p '<div id="rank_help"><a href = "EXEC: msg $rank_help & rank_help = 1 & gt curloc">[?]</a>
+if rank_help = 0: *p '<div id="rank_help"><a href = "EXEC: msg $rank_help & msg $rank_help_2 & rank_help = 1 & gt curloc">[?]</a>
 </div>'
 
  *p '<div id="right_column">

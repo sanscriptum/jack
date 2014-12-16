@@ -549,7 +549,8 @@ if slave["fear"] > 0 and slave["courage_revealed"] = 0: slave["courage_revealed"
 !ОСОБЕННОСТИ
 $features_list = ''
 if slave["metabolism"] < 1: slave["metabolism"] = 1
-IF slave["brand"] = 0: $features_list +='<a href = "EXEC: msg $Нет_клейма"><font color="#cd0000">Нет клейма</font></a><BR>'
+IF slave["brand"] = 0: $features_list +='<a href = "EXEC: $info_text = $Нет_клейма & gt $curloc"><font color="#cd0000">Нет клейма</font></a><BR>'
+if sanity <= 5: $features_list +='<<$slave_sanity>><BR>'
 IF slave["wounds"] > 0: $features_list += '<<$slave_wounds[slave["wounds"]]>><BR>'
 IF slave["scares"] > 0: $features_list += '<<$slave_scares[slave["scares"]]>><BR>'
 IF slave["bruises"] > 0: $features_list += '<<$slave_bruises[slave["bruises"]]>><BR>'
@@ -870,7 +871,7 @@ IF master_medic => 4: if prisoner["starvation"] => 5: $prisoner_features_list +=
 !АССИСТЕНТКА
 !Особенности
 $assistant_features_list = ''
-IF assistant["brand"] = 0: $assistant_features_list +='<a href = "EXEC: msg $Нет_клейма"><font color="#cd0000">Нет клейма</font></a><BR>'
+IF assistant["brand"] = 0: $assistant_features_list +='<a href = "EXEC: $info_text = $Нет_клейма & gt $curloc"><font color="#cd0000">Нет клейма</font></a><BR>'
 IF assistant["wounds"] > 0: $assistant_features_list += '<<$slave_wounds[assistant["wounds"]]>><BR>'
 IF assistant["scares"] > 0: $assistant_features_list += '<<$slave_scares[assistant["scares"]]>><BR>'
 IF assistant["bruises"] > 0: $assistant_features_list += '<<$slave_bruises[assistant["bruises"]]>><BR>'

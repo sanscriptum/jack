@@ -239,7 +239,6 @@ END
 !убран хардкод состояния волос, волософикс
 !IF slave["hairstyle"] > 0: slave["hairstyle_demo"] = 1
 
-!slave["exotic"] = 0
 IF slave["echeck"] = 0:
  slave["echeck"] = 1
  if slave["exotic"] = 1: slave["base_exotic"] = 1
@@ -248,6 +247,12 @@ IF slave["echeck"] = 0:
  if slave["exotic"] = 4: slave["base_exotic"] = 4
  if slave["exotic"] = 5: slave["base_exotic"] = 5
 END
+
+if slave["base_exotic"] > 0: 
+  slave["exotic"] = slave["base_exotic"]
+  else
+  slave["exotic"] = 0
+end
 
 if slave_rate["exotic"] + slave_rate["exotic_bonus"] => 10: slave["exotic"] = 1
 if slave_rate["exotic"] + slave_rate["exotic_bonus"] => 20: slave["exotic"] = 2

@@ -12,6 +12,8 @@ dynamic $slave_pass_out
 dynamic $prisoner_pass_out
 dynamic $assistant_pass_out
 dynamic $master_pass_out
+!проверка рейтинга рабыни
+gs '$slave_price'
 
 teach_stat_screen = 0
 master_stat_screen = 0
@@ -187,7 +189,7 @@ IF menu_form = 6:
    else
    $text_display += {<br><div id="under_gray">Tremendio<br></div>}
   END
-  IF already_done_today[67] = 0: 
+  IF slave['domini_dictum'] = 0: 
    $text_display += {<br><div id="under">Domini Dictum (5 искр)<br><div id = "clear"><a href = 'EXEC: interaction = 67 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
    else
    $text_display += {<br><div id="under_gray">Domini Dictum<br></div>}

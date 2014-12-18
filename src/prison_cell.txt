@@ -34,9 +34,7 @@ IF prisoner_state > 0:
 <<$intellect[prisoner["intellect"]]>>
 <<$ego[prisoner["ego"]]>>
 <<$pride[prisoner["pride"]]>>
-<<$exotic[prisoner["exotic"]]>>
 <<$fat[prisoner["fat"]]>>
-<<$style[prisoner["style"]]>> 
 
 <u>ОСОБЕННОСТИ</u>
 <<$prisoner_features_list>>

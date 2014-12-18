@@ -1608,7 +1608,12 @@ slave_inventory[$slave["cloth"]] += 1
 slave_inventory[$new_item] -= 1
 $slave["cloth"] = $new_item
 $equip_choice = ''
-gt curloc
+if $curloc = "slave_stat":
+ gs '$newloc'
+ gt 'slave_stat'
+ else
+ gt curloc
+end
 }
 
 $slot_25_change = {
@@ -1616,7 +1621,12 @@ slave_inventory[$slave["headband"]] += 1
 slave_inventory[$new_item] -= 1
 $slave["headband"] = $new_item
 $equip_choice = ''
-gt curloc
+if $curloc = "slave_stat":
+ gs '$newloc'
+ gt 'slave_stat'
+ else
+ gt curloc
+end
 }
 
 $slot_26_change = {
@@ -1624,7 +1634,12 @@ slave_inventory[$slave["earrings"]] += 1
 slave_inventory[$new_item] -= 1
 $slave["earrings"] = $new_item
 $equip_choice = ''
-gt curloc
+if $curloc = "slave_stat":
+ gs '$newloc'
+ gt 'slave_stat'
+ else
+ gt curloc
+end
 }
 
 $slot_27_change = {
@@ -1632,7 +1647,12 @@ slave_inventory[$slave["collar"]] += 1
 slave_inventory[$new_item] -= 1
 $slave["collar"] = $new_item
 $equip_choice = ''
-gt curloc
+if $curloc = "slave_stat":
+ gs '$newloc'
+ gt 'slave_stat'
+ else
+ gt curloc
+end
 }
 
 $slot_28_change = {
@@ -1640,7 +1660,12 @@ slave_inventory[$slave["gloves"]] += 1
 slave_inventory[$new_item] -= 1
 $slave["gloves"] = $new_item
 $equip_choice = ''
-gt curloc
+if $curloc = "slave_stat":
+ gs '$newloc'
+ gt 'slave_stat'
+ else
+ gt curloc
+end
 }
 
 $slot_29_change = {
@@ -1648,7 +1673,12 @@ slave_inventory[$slave["nipplerings"]] += 1
 slave_inventory[$new_item] -= 1
 $slave["nipplerings"] = $new_item
 $equip_choice = ''
-gt curloc
+if $curloc = "slave_stat":
+ gs '$newloc'
+ gt 'slave_stat'
+ else
+ gt curloc
+end
 }
 
 $slot_30_change = {
@@ -1656,7 +1686,12 @@ slave_inventory[$slave["clitring"]] += 1
 slave_inventory[$new_item] -= 1
 $slave["clitring"] = $new_item
 $equip_choice = ''
-gt curloc
+if $curloc = "slave_stat":
+ gs '$newloc'
+ gt 'slave_stat'
+ else
+ gt curloc
+end
 }
 
 $slot_31_change = {
@@ -1664,7 +1699,12 @@ slave_inventory[$slave["boots"]] += 1
 slave_inventory[$new_item] -= 1
 $slave["boots"] = $new_item
 $equip_choice = ''
-gt curloc
+if $curloc = "slave_stat":
+ gs '$newloc'
+ gt 'slave_stat'
+ else
+ gt curloc
+end
 }
 
 $slot_32_change = {
@@ -1672,7 +1712,12 @@ slave_inventory[$slave["ring_left"]] += 1
 slave_inventory[$new_item] -= 1
 $slave["ring_left"] = $new_item
 $equip_choice = ''
-gt curloc
+if $curloc = "slave_stat":
+ gs '$newloc'
+ gt 'slave_stat'
+ else
+ gt curloc
+end
 }
 
 $slot_33_change = {
@@ -1680,7 +1725,12 @@ slave_inventory[$slave["ring_right"]] += 1
 slave_inventory[$new_item] -= 1
 $slave["ring_right"] = $new_item
 $equip_choice = ''
-gt curloc
+if $curloc = "slave_stat":
+ gs '$newloc'
+ gt 'slave_stat'
+ else
+ gt curloc
+end
 }
 
 $slot_40_change = {

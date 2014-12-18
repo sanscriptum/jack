@@ -63,16 +63,15 @@ gs 'stats_layout'
 
 *p '<div id="left_column">
 <u>РЕЗЮМЕ</u>
-<<$beauty[assistant["beauty"]]>> 
-<<$stamina[assistant["stamina"]]>> 
-<<$exotic[assistant["exotic"]]>> 
-<<$fat[assistant["fat"]]>> 
-<<$sensitivity[assistant["sensitivity"]]>> 
-<<$style[assistant["style"]]>>
-<<$intellect[assistant["intellect"]]>> 
-<<$temper[assistant["temper"]]>> 
-<<$ego[assistant["ego"]]>> 
-<<$pride[assistant["pride"]]>> 
+<a href="EXEC: $assistant_info_text = $красота_совет & gt $curloc"><<$beauty[assistant["beauty"]]>></a> 
+<a href="EXEC: $assistant_info_text = $здоровье_совет & gt $curloc"><<$stamina[assistant["stamina"]]>></a>  
+<a href="EXEC: $assistant_info_text = $чувствительность_совет & gt $curloc"><<$sensitivity[assistant["sensitivity"]]>></a> 
+<a href="EXEC: $assistant_info_text = $темперамент_совет & gt $curloc"><<$temper[assistant["temper"]]>></a> 
+<a href="EXEC: $assistant_info_text = $ум_совет & gt $curloc"><<$intellect[assistant["intellect"]]>></a> 
+<a href="EXEC: $assistant_info_text = $характер_совет & gt $curloc"><<$ego[assistant["ego"]]>></a>
+<a href="EXEC: $assistant_info_text = $гордыня_совет & gt $curloc"><<$pride[assistant["pride"]]>></a>
+<a href="EXEC: $assistant_info_text = $жыр_совет & gt $curloc"><<$fat[assistant["fat"]]>></a>
+<a href="EXEC: $assistant_info_text = $слава_совет & gt $curloc"><<$girl_fame[assistant["fame"]]>></a>
 
 <u>ОСОБЕННОСТИ</u>
 <<$assistant_features_list>>

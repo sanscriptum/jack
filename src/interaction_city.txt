@@ -849,6 +849,29 @@ IF interaction_city = 11614:
  }
 END
 
+IF interaction_city = 11615:
+ $place = 'beauty_shop'
+ $return_lock  = 'shop_general'
+ $interaction_type = 'service'
+ if slave["epilation"] > 12:
+  service_price = 6
+  else
+  service_price = 9
+ end
+ $service_picture = ''
+ copyarr '$text', '$beauty_full' 
+ $do_service = {
+  slave["hairstyle"] = 7
+  slave["epilation"] = 12
+  if slave["masohism"] < 2: slave_rate["mood"] -= 1
+  if slave["masohism"] < 1: slave_rate["mood"] -= 2
+  if slave["masohism"] < 0: slave_rate["mood"] -= 3
+  slave["manicure"] = 5
+  slave["parfume"] = 1
+  if slave["makeup"] < 3: slave["makeup"] = 1
+ }
+END
+
 IF interaction_city = 11621:
  $place = 'beauty_shop'
  $return_lock  = 'shop_general'
@@ -5780,6 +5803,33 @@ IF interaction_city = 5219:
   dynamic $slave_energy_drop 
   dynamic $slave_energy_drop   
   dynamic $slave_energy_drop   
+ }
+END
+
+IF interaction_city = 5220:
+ $place = 'piercing_shop'
+ $return_lock  = 'shop_general'
+ $interaction_type = 'service'
+ service_price = 35
+ $service_picture = ''
+ copyarr '$text', '$full_piercing' 
+ $do_service = {
+  slave["niple_piercing"] = 1
+  dynamic $pierse_breast
+  slave["clit_piercing"] = 1
+  dynamic $pierse_clitoris
+  slave["ear_piercing"] = 1
+  slave["thongue_piercing"] = 1
+  slave["belly_piercing"] = 1
+  slave["nosdril_piercing"] = 1
+  slave["nose_piercing"] = 1
+  slave["full_piercing"] = 1
+  slave_rate["mood"] -= 65
+  if slave["neg_pain"] < 7: slave["neg_pain"] = 7
+  if slave["neg_disgust"] < 1 and blood_attitude < 0: slave["neg_disgust"] = 1 & gs '$mod_slave_drop', 7
+  slave_rate["exotic"] += 25
+  slave_rate["hygiene"] += 35
+  slave["piercings"] += 7
  }
 END
 

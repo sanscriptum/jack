@@ -1178,11 +1178,19 @@ IF slave_state = CONST_INT['slave_exist']:
   else
   $text_display += {<div id="under_gray">Визаж и маникюр</div>} 
  END
+ IF slave["manicure"] < 5 and slave["epilation"] < 12 and slave["hairstyle"] ! 7:
+	$text_display += {<div id="under">Набор процедур красоты (9 искр) <div id = "clear"><a href = 'EXEC: interaction_city = 11615 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	elseif slave["manicure"] < 5 and slave["epilation"] > 12 and slave["hairstyle"] ! 7:
+		$text_display += {<div id="under">Набор процедур красоты (6 искр) <div id = "clear"><a href = 'EXEC: interaction_city = 11615 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+	else
+		$text_display += {<div id="under_gray">Набор процедур красоты</div>} 
+ END
  else
  $text_display += {<div id="under_gray">Спа и массаж</div>} 
  $text_display += {<div id="under_gray">Модная стрижка</div>} 
  $text_display += {<div id="under_gray">Восковая эпиляция</div>} 
  $text_display += {<div id="under_gray">Визаж и маникюр</div>}   
+ $text_display += {<div id="under_gray">Набор процедур красоты</div>}  
 END
 $text_display += {<br><div id="under">Узнать предпочтения хозяйки<div id = "clear"><a href = 'EXEC: interaction_city = 11631 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
 IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
@@ -1593,6 +1601,11 @@ $text_display += {<br><div id="under">Покинуть студию<br><div id =
 
 $piercing_options[2] = {
 $text_display = '<br>'
+if slave["full_piercing"] = 0:  
+ $text_display += {<div id="under">Массовый пирсинг (35 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5220 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Пирсинг выполнен<br></div>}
+end
 if slave["niple_piercing"] = 0: 
  $text_display += {<br><div id="under">Проколоть соски (5 искр)<div id = "clear"><a href = 'EXEC: interaction_city = 5211 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
  else

@@ -1245,5 +1245,10 @@ IF exam_in_progress = 1:
  END
 END
 
+!Смена флага полного пирсинга
+if slave["niple_piercing"] = 1 or slave["clit_piercing"] = 1 or slave["ear_piercing"] = 1 or slave["thongue_piercing"] = 1 or slave["belly_piercing"] = 1 or slave["nosdril_piercing"] = 1 or slave["nose_piercing"] = 1:
+ slave["full_piercing"] = 1
+end
+
 --- $newloc ---------------------------------
 

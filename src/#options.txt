@@ -361,6 +361,7 @@ $stasis_options[1] = {
 $text_display = '<br><br><br>'
 $place = 'stasis_bank'
 if nsfw = 1: not_safe = 1
+cryo_intro = 1
 !дополнительная проверка чтобы выходил правильный пункт в меню
 IF sparks => 20:
  IF stasis_tank = 0:

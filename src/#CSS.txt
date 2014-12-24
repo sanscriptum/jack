@@ -566,6 +566,14 @@ height:150px;
 text-align:center;
 }
 
+#cryo_button {
+position:absolute;
+left:1230px;
+top:40px;
+width:26px;
+height:30px;
+}
+
 #active_spell {
 position:absolute;
 left:1018px;

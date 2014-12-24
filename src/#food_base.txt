@@ -68,10 +68,9 @@ dynamic $fb_cycle, 'фаршированные_яйца', 'Яйца фаршир
 dynamic $fb_cycle, 'колбаски_с_пюре', 'Жаренные колбаски с картофельным пюре на молоке [<<$rating[3]>>]', 'vegetables', 'mince', 'milk', 'none'
 dynamic $fb_cycle, 'болоньезе', 'Спагетти с мясным соусом болоньезе [<<$rating[3]>>]', 'vegetables', 'flower', 'mince', 'none'
 dynamic $fb_cycle, 'пирог_с_мясом', 'Сдобный пирог с острой мясной начинкой [<<$rating[3]>>]', 'mince', 'flower', 'spice', 'none'
-!TODO: кривой порядок в следующей строчке и других
-dynamic $fb_cycle, 'острая_отбивная', 'Хорошо прожаренная отбивная под острым соусом [<<$rating[3]>>]', 'meat', 'none', 'spice', 'none'
+dynamic $fb_cycle, 'острая_отбивная', 'Хорошо прожаренная отбивная под острым соусом [<<$rating[3]>>]', 'meat', 'spice', 'none', 'none'
 dynamic $fb_cycle, 'тушеное_мясо', 'Мясо тушеное в горшочке с овощами [<<$rating[3]>>]', 'vegetables', 'meat', 'none', 'none'
-dynamic $fb_cycle, 'отбивная_с_рисом', 'Сочная отбивная с жареным рисом [<<$rating[3]>>]', 'meat', 'none', 'flower', 'none'
+dynamic $fb_cycle, 'отбивная_с_рисом', 'Сочная отбивная с жареным рисом [<<$rating[3]>>]', 'meat', 'flower', 'none', 'none'
 dynamic $fb_cycle, 'глазунья_с_ветчиной', 'Шкворчащая яичница-глазунья с ветчиной [<<$rating[3]>>]', 'meat', 'eggs', 'none', 'none'
 dynamic $fb_cycle, 'мясо_по_французски', 'Мясо по-французски [<<$rating[3]>>]', 'meat', 'cheese', 'none', 'none'
 dynamic $fb_cycle, 'пирог_с_грибами', 'Пирог с грибами и красным луком [<<$rating[3]>>]', 'vegetables', 'flower', 'spice', 'none'

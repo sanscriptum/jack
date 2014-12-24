@@ -1628,7 +1628,7 @@ height:21px;
 #fast_question {
 position:absolute;
 left:1020px;
-top:280px;
+top:300px;
 width:48px;
 height:48px;
 }
@@ -1636,7 +1636,7 @@ height:48px;
 #fast_influence {
 position:absolute;
 left:1020px;
-top:330px;
+top:360px;
 width:48px;
 height:48px;
 }

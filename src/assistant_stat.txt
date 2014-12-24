@@ -316,7 +316,11 @@ If assistant_stat_screen = 3:
 ! *p '<div id = "mark_two"><a href = "EXEC: slave_stat_screen = 1 & $info_text = ''&nbsp'' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
  *p '<div id = "mark_three"><a href = "EXEC: assistant_stat_screen = 2 & $assistant_info_text = ''&nbsp'' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
  *p '<div id = "mark_four"><img src = "content\pic\buttons\sel_button.png"></div>' 
- *p '<div id="center_image"><img src = "content\pic\page_aura.gif"></div>'
+ IF ui_style = 2:
+  *p '<div id="center_image"><img src = "content\pic\ui\grimdark\page_aura.gif"></div>'
+  else
+  *p '<div id="center_image"><img src = "content\pic\page_aura.gif"></div>'
+ END
  assistant_aura = 1
  gs 'auspex_list'
  *p '<div id = "center_text_compact_blue"><<$auspex_list>></div>'

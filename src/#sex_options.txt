@@ -176,14 +176,13 @@ $sex_options[100] = {
   END
  END
   
-  $sex_menu += {<br><div id="under_gray">{ { { NSFW } } }<br></div>}
   IF nsfw ! 1:
-   $sex_menu += {<div id="under">On<br><div id = "clear"><a href = 'EXEC: nsfw = 1 & gt curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+   $sex_menu += {<br><div id="under_gray">NSFW: OFF<br><div id = "clear"><a href = 'EXEC: nsfw = 1 & gt curloc'><img src = "content\pic\clear.gif"></a></div></div>}
    else
-   $sex_menu += {<div id="under">Off<br><div id = "clear"><a href = 'EXEC: nsfw = 0 & gt curloc'><img src = "content\pic\clear.gif"></a></div></div>} 
+   $sex_menu += {<br><div id="under">NSFW: ON<br><div id = "clear"><a href = 'EXEC: nsfw = 0 & gt curloc'><img src = "content\pic\clear.gif"></a></div></div>} 
   END
   
-  $sex_menu += {<br><br><br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: sex_num = 0 & gt curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+  $sex_menu += {<br><br><br><br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: sex_num = 0 & gt curloc'><img src = "content\pic\clear.gif"></a></div></div>}
 }
 --- #sex_options ---------------------------------
 

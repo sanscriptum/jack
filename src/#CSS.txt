@@ -1555,7 +1555,7 @@ height:25px;
 
 #fast_sex {
 position:absolute;
-left:1230px;
+left:1235px;
 top:228px;
 width:21px;
 height:21px;
@@ -1563,7 +1563,7 @@ height:21px;
 
 #fast_wash_master {
 position:absolute;
-left:1230px;
+left:1235px;
 top:252px;
 width:21px;
 height:21px;
@@ -1571,7 +1571,23 @@ height:21px;
 
 #fast_redeem {
 position:absolute;
-left:1230px;
+left:1235px;
+top:485px;
+width:21px;
+height:21px;
+}
+
+#fast_redeem_1 {
+position:absolute;
+left:1213px;
+top:485px;
+width:21px;
+height:21px;
+}
+
+#fast_redeem_2 {
+position:absolute;
+left:1235px;
 top:485px;
 width:21px;
 height:21px;
@@ -1579,7 +1595,7 @@ height:21px;
 
 #fast_wash_slave {
 position:absolute;
-left:1230px;
+left:1235px;
 top:508px;
 width:21px;
 height:21px;
@@ -1587,7 +1603,7 @@ height:21px;
 
 #fast_clean {
 position:absolute;
-left:1230px;
+left:1235px;
 top:689px;
 width:21px;
 height:21px;
@@ -1595,7 +1611,7 @@ height:21px;
 
 #fast_cook {
 position:absolute;
-left:1230px;
+left:1235px;
 top:712px;
 width:21px;
 height:21px;
@@ -1603,7 +1619,7 @@ height:21px;
 
 #fast_tentacle {
 position:absolute;
-left:1230px;
+left:1235px;
 top:758px;
 width:21px;
 height:21px;

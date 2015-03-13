@@ -1791,6 +1791,7 @@ $aura_assistant_moral[4] = '<font color="#00a86b">Emerald glow of devotion</font
 $aura_assistant_moral[5] = '<font color="#00a86b">Emerald glow of devotion</font> dominates the aura of an assistant, dotting it with <font color="#008000">myriads</font> of bright and clear stars.'
 
 !TRAITS
+$Нет_клейма = '  Your slave is not branded! You won''t be able to sell unbranded slaves to customers, in addition unbranded slave will not be able to get used with her new destiny. You should check the "Anatomy" tab to put the brand if you have a dungeon, or go to a tattoo shop in the quarter of Outcasts.'
 $Нимфоманка = "  You've noticed that your slave, to put it mildly, is partial to sex. Many sexual practices will be easier for her, but an insatiable desire will drive her crazy."
 $Фригидная = '  You understand that your slave is completely indifferent to sex. It is practically impossible to excite her and this will clearly complicate the development of many relevant practices and negate all erotic encouragement.'
 $Мазохистка = '  Pain does not scare your slave. On the contrary, she strives to be in pain and receives pleasure from it. Flogging a masochist is useless, but there are also other influences besides the pain...'

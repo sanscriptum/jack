@@ -110,6 +110,7 @@ death_treat_iced_3 = tmp
 gs '#txt'
 gs '#txt_2'
 gs '$newloc'
+sp_txt = 2
 GT 'shop_general'
 --- slave_to_iced_3 ---------------------------------
 

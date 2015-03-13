@@ -295,6 +295,8 @@ $no_tentacle = '  I don''t have a fiend that needs to be milked. First I need to
 
 $no_vballs = '  I don''t have the necessary item for this rule. Perhaps I need to buy these vibes from Poison near Necropolis first.'
 
+$no_vballs_virgin = '  Slave should be deflowered before using this item.'
+
 $no_services_exam = '  During tutorial, I can not use these features.'
 
 $no_assistant = '  I don''t have an assistant that can teach my slave at this moment.'

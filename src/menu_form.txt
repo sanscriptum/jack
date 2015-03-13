@@ -51,6 +51,13 @@ if $master_right_wpn = 'кнут': knoutequiped = 1
 if $master_arm_wpn = 'нагайка': whipequiped = 1
 if $master_leg_wpn = 'нагайка': whipequiped = 1
 
+!check if trying to exit from available locations in a tutorial mode
+IF exam_in_progress = 1:
+ IF $curloc = 'menu_form':
+  gt 'demo_menu_form'
+ END
+END
+
 !'
 IF slave_state = 2:
  IF slave["energy"] > -5: 

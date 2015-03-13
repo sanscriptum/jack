@@ -20,6 +20,13 @@ spark_pay_master = 0
 spark_pay_slave = 0
 if city_random_event = 0: gs '$city_random_event'
 
+!check if trying to exit from available locations in a tutorial mode
+IF exam_in_progress = 1:
+ IF $curloc = 'city_menu_form':
+  gt 'demo_menu_form'
+ END
+END
+
 !'Menu option - empty
  $text_display += {<br><div id="under_gray">Деалать <br></div>}
 

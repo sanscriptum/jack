@@ -1092,6 +1092,8 @@ if master_mood_plus < 0: master_mood_plus = 5 - master_mood
 master_excitement_plus = master_excitement
 if master_excitement_plus < 0: master_excitement_plus = 5 - master_excitement
 if master_excitement_plus > 10: master_excitement_plus = 10
+if master_excitement < -5: master_excitement = -5
+if master_excitement > 5: master_excitement = 5
 
 slave_energy_plus = slave["energy"]
 if slave_energy_plus < 0: slave_energy_plus = 5 - slave["energy"]

@@ -60,7 +60,7 @@ $race_drahonthees['crushed'] = {}
 $race_russian['crushed'] = {}
 $race_finishline['crushed'] = {}
 
-$rider_description['master'] = 'Your chariot has kept - it is necessary to continue the race.'
+$rider_description['master'] = 'Your chariot is still intact - it is necessary to continue the race.'
 $race_startline['master'] = {}
 $race_straight['master'] = {}
 $race_curve['master'] = {}

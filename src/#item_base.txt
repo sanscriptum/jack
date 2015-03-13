@@ -607,7 +607,7 @@ $item_property["leather_collar"] = {
 }
 
 !["steel_collar"]
-dynamic $ib_cycle, 'steel_collar', 'Steel collar', 10, '   Durable steel collar - heavy reminder of the fate of the slave from which it is impossible to get rid of. Wearing a steel collar is not a pleasent experience - it rubs the neck and grazes the skin. Not to mention the impact on the pride and conceit. It is engraved with your name and address to get her back in case of loss. (10 sparks)', 'scene\item\item_steel_collar'
+dynamic $ib_cycle, 'steel_collar', 'Steel collar', 10, '   Price: 10 sparks  <br>   Durable steel collar - heavy reminder of the fate of the slave from which it is impossible to get rid of. Wearing a steel collar is not a pleasent experience - it rubs the neck and grazes the skin. Not to mention the impact on the pride and conceit. It is engraved with your name and address to get her back in case of loss.', 'scene\item\item_steel_collar'
 
 $item_property["steel_collar"] = {
     daily_bonus["ego"] -= 1
@@ -666,7 +666,7 @@ $item_property["crown_of_thorns"] = {
 }
 
 !["anal_tail"]
-dynamic $ib_cycle, 'anal_tail', 'Anal tail', 10, '   This device consists of two parts - a large plastic phallus with an extension that provides a secure fit in the ass, and a set of removable tails. Well suited for petplay and increases the arousal of your slave. But it''s true that the tail prevents wearing ordinary clothes. (10 sparks)', 'scene\item\item_anal_tail'
+dynamic $ib_cycle, 'anal_tail', 'Anal tail', 10, '   Price: 10 sparks  <br>   This device consists of two parts - a large plastic phallus with an extension that provides a secure fit in the ass, and a set of removable tails. Well suited for petplay and increases the arousal of your slave. But it''s true that the tail prevents wearing ordinary clothes.', 'scene\item\item_anal_tail'
 
 $item_property["anal_tail"] = {
     daily_bonus["arousal"] += 2
@@ -679,7 +679,7 @@ $item_property["anal_tail"] = {
 }
 
 !["pony_plume"]
-dynamic $ib_cycle, 'pony_plume', 'Plumed bridle', 10, '   It''s just a necessary accessory for any ponygirl. The leather bridle is securely locked in the mouth gag and a bit and reins are already connected. Thick leather blinkers allow for the slave only to look straight ahead and a bright and high plume makes the whole construction look pleasing to the eye. (10 sparks)', 'scene\item\item_pony_plume'
+dynamic $ib_cycle, 'pony_plume', 'Plumed bridle', 10, '   Price: 10 sparks  <br>   It''s just a necessary accessory for any ponygirl. The leather bridle is securely locked in the mouth gag and a bit and reins are already connected. Thick leather blinkers allow for the slave only to look straight ahead and a bright and high plume makes the whole construction look pleasing to the eye.', 'scene\item\item_pony_plume'
 
 $item_property["pony_plume"] = {
     slave_rate["style"] += 1
@@ -714,42 +714,42 @@ learn_bonus["dressage"] += 1
 }
 
 !["petsuit"]
-dynamic $ib_cycle, 'petsuit', 'Petsuit', 25, '   This version of a deprivation suit is not impeding vision or hearing. It is made ​​so that the carrier acts like a cat or a dog. Allows you to move only on all fours, leaning on elbows and knees. (25 sparks)', 'scene\item\item_petsuit'
+dynamic $ib_cycle, 'petsuit', 'Petsuit', 25, '   Price: 25 sparks  <br>   This version of a deprivation suit is not impeding vision or hearing. It is made ​​so that the carrier acts like a cat or a dog. Allows you to move only on all fours, leaning on elbows and knees.', 'scene\item\item_petsuit'
 
 $item_property["petsuit"] = {
 }
 
 !["vaginal_balls"]
-dynamic $ib_cycle, 'vaginal_balls', 'Vaginal beads', 5, '   Price: 5 sparks<br>   A pair of beads on a string with a ring designed for extended wear in the vagina. They are excellent to help build arousal and develop muscles.<br>   ', 'scene\item\item_vaginal_balls'
+dynamic $ib_cycle, 'vaginal_balls', 'Vaginal beads', 5, '   Price: 5 sparks  <br>   A pair of beads on a string with a ring designed for extended wear in the vagina. They are excellent to help build arousal and develop muscles.', 'scene\item\item_vaginal_balls'
 
 $item_property["vaginal_balls"] = {
 }
 
 !["anal_plug"]
-dynamic $ib_cycle, 'anal_plug', 'Anal pear', 20, '   Price: 20 sparks<br>   Unlike the normal anal plug, this pear has a screw that allows you to extend it after inserting in the ass. The screw is fixed with a small padlock, so there is no way to remove the pear without the key.', 'scene\item\item_toys'
+dynamic $ib_cycle, 'anal_plug', 'Anal pear', 20, '   Price: 20 sparks  <br>   Unlike the normal anal plug, this pear has a screw that allows you to extend it after inserting in the ass. The screw is fixed with a small padlock, so there is no way to remove the pear without the key.', 'scene\item\item_toys'
 
 $item_property["anal_plug"] = {}
 
 !["secure_gag"]
-dynamic $ib_cycle, 'secure_gag', 'Reliable gag', 20, '   This impressive steel structure inherits the best traits of the horse bridle and dental reamer. You cannot remove it without the key and the mouth is fixed in the maximum open state. (20 sparks)', 'scene\item\item_secure_gag'
+dynamic $ib_cycle, 'secure_gag', 'Reliable gag', 20, '   Price: 20 sparks  <br>   This impressive steel structure inherits the best traits of the horse bridle and dental reamer. You cannot remove it without the key and the mouth is fixed in the maximum open state.', 'scene\item\item_secure_gag'
 
 $item_property["secure_gag"] = {
 }
 
 !["deprivation_suit"]
-dynamic $ib_cycle, 'deprivation_suit', 'Deprivational suit', 50, '   Although it is called a suit, it is not intended to be worn as such, it''s for radical bondage. Thick rubber shell and durable leather belts prevent any movement and apply a constant uniform pressure. The eyes, ears and mouth are tightly shut to completely cut off wearer from the outside world. (50 sparks)', 'scene\item\item_dsuit'
+dynamic $ib_cycle, 'deprivation_suit', 'Deprivational suit', 50, '   Price: 50 sparks  <br>   Although it is called a suit, it is not intended to be worn as such, it''s for radical bondage. Thick rubber shell and durable leather belts prevent any movement and apply a constant uniform pressure. The eyes, ears and mouth are tightly shut to completely cut off wearer from the outside world.', 'scene\item\item_dsuit'
 
 $item_property["deprivation_suit"] = {
 }
 
 !["pissuar_stable"]
-dynamic $ib_cycle, 'pissuar_stable', 'Urinal rack', 100, '   This piece of furniture does not take up too much space, as its main component is a slave. The rack is equipped with robust clamps for hands, feet and the head. It comes with a ring expander for the mouth as well as a nose clip. You can also set a transparent headband bowl of a «drink or choke» type. (100 sparks)', 'scene\item\item_pissuar'
+dynamic $ib_cycle, 'pissuar_stable', 'Urinal rack', 100, '   Price: 100 sparks  <br>   This piece of furniture does not take up too much space, as its main component is a slave. The rack is equipped with robust clamps for hands, feet and the head. It comes with a ring expander for the mouth as well as a nose clip. You can also set a transparent headband bowl of a «drink or choke» type.', 'scene\item\item_pissuar'
 
 $item_property["pissuar_stable"] = {
 }
 
 !["toilet_stable"]
-dynamic $ib_cycle, 'toilet_stable', 'Toilet seat', 250, '   A pretty massive piece of furniture, but it is well worth it. The construct completely immobilizes the slave and only her head sticks out. A special device makes sure that her mouth is open at all times so it can be used to take a dump. The massive construction prevents any attempts to escape. (250 sparks)', 'scene\item\item_toilet'
+dynamic $ib_cycle, 'toilet_stable', 'Toilet seat', 250, '   Price: 250 sparks  <br>   A pretty massive piece of furniture, but it is well worth it. The construct completely immobilizes the slave and only her head sticks out. A special device makes sure that her mouth is open at all times so it can be used to take a dump. The massive construction prevents any attempts to escape.', 'scene\item\item_toilet'
 
 $item_property["toilet_stable"] = {
 }
@@ -787,7 +787,7 @@ dynamic $ib_cycle, 'stuffed_toy', 'Plush toy', 15, '   A rather large and expens
 $item_property["stuffed_toy"] = {}
 
 !Мини-пони ["pony"]
-dynamic $ib_cycle, 'pony', 'Mini-pony', 50, '   These incredibly cute creatures the size of a cat are grown from eggs in the technosphere. Their life expectancy is not very long and they are inedible, but they are faithful and lovely. You will have to pay for food regularly. (1 spark/day)', 'scene\item\item_pony'
+dynamic $ib_cycle, 'pony', 'Mini-pony', 50, '   Price: 1 spark/day  <br>   These incredibly cute creatures the size of a cat are grown from eggs in the technosphere. Their life expectancy is not very long and they are inedible, but they are faithful and lovely. You will have to pay for food regularly.', 'scene\item\item_pony'
 
 $item_property["pony"] = {
 if slave['pos_pony'] < 1: slave['pos_pony'] = 1

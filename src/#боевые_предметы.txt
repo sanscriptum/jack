@@ -300,7 +300,7 @@ $атака_1_бонус['кнут'] = 'разгон'
 атака_1_длительность['кнут'] = 2+ловкость
 $атака_1_текст['кнут'] = "You deal <font color='green'>biting</font> impact with the tip of your whip."
 $атака_2_тип['кнут'] = 'сильная'
-$атака_2_название['кнут'] = "<a href = 'EXEC: dynamic $второе_действие'><font color='red'>Sweeping strike</font></a> (Stf/Pre)"
+$атака_2_название['кнут'] = "<a href = 'EXEC: dynamic $второе_действие'><font color='red'>Sweeping strike</font></a> (Stn/Adr)"
 $атака_2_штраф['кнут'] = 'ошеломление'
 $атака_2_бонус['кнут'] = 'адреналин'
 $атака_2_текст['кнут'] = "You deal a wide swing with whip to give maximum <font color='red'>strength</font> to your blow."
@@ -475,7 +475,7 @@ $атака_1_бонус['мачете'] = 'адреналин'
 атака_1_длительность['мачете'] = 2+сила
 $атака_1_текст['мачете'] = "With your machete you deal <font color='red'>powerful</font> blow, that would cut the thick branch or a human hand."
 $атака_2_тип['мачете'] = 'быстрая'
-$атака_2_название['мачете'] = "<a href = 'EXEC: dynamic $второе_действие'><font color='green'>Chop</font></a> (Unstd/Fur)"
+$атака_2_название['мачете'] = "<a href = 'EXEC: dynamic $второе_действие'><font color='green'>Chop</font></a> (Fur/Unstd)"
 $атака_2_штраф['мачете'] = 'бешенство'
 $атака_2_бонус['мачете'] = 'шаткость'
 $атака_2_текст['мачете'] = "You <font color='green'>wildly</font> chop with your machete from side to side."

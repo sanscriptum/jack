@@ -112,6 +112,7 @@ IF slave_will_masturbate = 1:
    if sin_gained < 1: sin_gained = 1
    IF slave["virtue"] <= sin_gained:
     if sin_gained > slave["sin"]: slave["sin"] = sin_gained
+	if sententia_veritas = 1: slave["sin"] = 5
    END
    else
    $text = 'You caught your slave during masturbation, but she does not stop it. You let her continue, recalling however, that she cannot cum. Obeying your will <<$slave_name>> does not bring herself to climax, pausing at the end. Poor thing will exhaust herself...'

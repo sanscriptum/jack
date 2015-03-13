@@ -47,17 +47,18 @@ IF exam_in_progress = 1:
 END
 
 *p '<div id="left_column">
-<u>SLAVE RANK:</u>&nbsp;<<$rating[rating]>>
-<<$beauty[slave["beauty"]]>>
-<<$stamina[slave["stamina"]]>>
-<<$sensitivity[slave["sensitivity"]]>>
-<<$temper[slave["temper"]]>>
-<<$intellect[slave["intellect"]]>>
-<<$ego[slave["ego"]]>>
-<<$pride[slave["pride"]]>>
-<<$exotic[slave["exotic"]]>>
-<<$fat[slave["fat"]]>>
-<<$style[slave["style"]]>>
+<u>SLAVE RANK:</u>&nbsp;<a href="EXEC: msg $rating_help"><<$rating[rating]>></a>
+<a href="EXEC: msg $красота_справка & msg $красота_справка_2 & $info_text = $красота_совет & gt $curloc"><<$beauty[slave["beauty"]]>></a>
+<a href="EXEC: msg $здоровье_справка & msg $здоровье_справка_2 & $info_text = $здоровье_совет & gt $curloc"><<$stamina[slave["stamina"]]>></a>
+<a href="EXEC: msg $чувствительность_справка & msg $чувствительность_справка_2 & $info_text = $чувствительность_совет & gt $curloc"><<$sensitivity[slave["sensitivity"]]>></a>
+<a href="EXEC: msg $темперамент_справка & msg $темперамент_справка_2 & $info_text = $темперамент_совет & gt $curloc"><<$temper[slave["temper"]]>></a>
+<a href="EXEC: msg $ум_справка & msg $ум_справка_2 & $info_text = $ум_совет & gt $curloc"><<$intellect[slave["intellect"]]>></a>
+<a href="EXEC: msg $характер_справка & msg $характер_справка_2 & $info_text = $характер_совет & gt $curloc"><<$ego[slave["ego"]]>></a>
+<a href="EXEC: msg $гордыня_справка & msg $гордыня_справка_2 & $info_text = $гордыня_совет & gt $curloc"><<$pride[slave["pride"]]>></a>
+<a href="EXEC: msg $экзотичность_справка & msg $экзотичность_справка_2 & $info_text = $экзотичность_совет & gt $curloc"><<$exotic[slave["exotic"]]>></a>
+<a href="EXEC: msg $жыр_справка & msg $жыр_справка_2 & $info_text = $жыр_совет & gt $curloc"><<$fat[slave["fat"]]>></a>
+<a href="EXEC: msg $стиль_справка & msg $стиль_справка_2 & $info_text = $стиль_совет & gt $curloc"><<$style[slave["style"]]>></a>
+<a href="EXEC: msg $слава_справка & msg $слава_справка_2 & $info_text = $слава_совет & gt $curloc"><<$girl_fame[slave["fame"]]>></a>
 
 <u>TRAITS</u>
 <<$features_list>>
@@ -112,35 +113,35 @@ IF teach_stat_screen = 0:
  IF house_mess > 0:
   $left_text_teach += "<a href = 'EXEC: interaction = 1211 & gt ""interaction""'><<$service_lesson[slave[""service""]]>><BR></a>"
   else
-  $left_text_teach += '<font color="#C0C0C0">Housekeeping lesson<BR></font>'
+  $left_text_teach += '<a href = "EXEC: msg $no_house_mess & gt curloc"><font color="#C0C0C0">Housekeeping lesson<BR></font></a>'
  END
  IF kitchen > 0:
   $left_text_teach += "<a href = 'EXEC: interaction = 1212 & gt ""interaction""'><<$cook_lesson[slave[""cook""]]>><BR></a>"
   else
-  $left_text_teach += '<font color="#C0C0C0">Cookery lesson<BR></font>'
+  $left_text_teach += '<a href = "EXEC: msg $no_kitchen & gt curloc"><font color="#C0C0C0">Cookery lesson<BR></font></a>'
  END 
  $left_text_teach += "<a href = 'EXEC: interaction = 1213 & gt ""interaction""'><<$nurse_lesson[slave[""nurse""]]>><BR></a>" 
  $left_text_teach += "<a href = 'EXEC: interaction = 1214 & gt ""interaction""'><<$secretary_lesson[slave[""secretary""]]>><BR></a>"   
  IF lab = 1: 
   $left_text_teach += "<a href = 'EXEC: interaction = 1243 & gt ""interaction""'><<$alchemy_lesson[slave[""enchanter""]]>><BR></a>"
   else
-  $left_text_teach += '<font color="#C0C0C0">Alchemy<BR></font>'   
+  $left_text_teach += '<a href = "EXEC: msg $no_lab & gt curloc"><font color="#C0C0C0">Alchemy<BR></font></a>'   
  END 
  $left_text_teach += "<a href = 'EXEC: interaction = 1231 & gt ""interaction""'><<$exprtession_lesson[slave[""expression""]]>><BR></a>"   
  IF slave["stamina"] > 1:
   $left_text_teach += "<a href = 'EXEC: interaction = 1223 & gt ""interaction""'><<$fight_lesson[slave[""gladiatrix""]]>><BR></a>"
   else
-  $left_text_teach += '<font color="#C0C0C0">Martial arts<BR></font>'
+  $left_text_teach += '<a href = "EXEC: msg $no_money_coach & gt curloc"><font color="#C0C0C0">Martial arts<BR></font></a>'
  END 
  IF slave["stamina"] > 1:
   $left_text_teach += "<a href = 'EXEC: interaction = 1221 & gt ""interaction""'><<$gym_lesson[slave[""stamina""]]>><BR></a>"
   else
-  $left_text_teach += '<font color="#C0C0C0">Fitness training<BR></font>'
+  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Fitness training<BR></font></a>'
  END 
  IF slave["stamina"] > 1: 
   $left_text_teach += "<a href = 'EXEC: interaction = 1222 & gt ""interaction""'><<$dance_lesson[slave[""callisthenics""]]>><BR></a>" 
   else
-  $left_text_teach += '<font color="#C0C0C0">Dance lesson<BR></font>'
+  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Dance lesson<BR></font></a>'
  END 
  $left_text_teach += "<a href = 'EXEC: interaction = 1234 & gt ""interaction""'><<$vocal_lesson[slave[""vocal""]]>><BR></a>"  
  $left_text_teach += "<a href = 'EXEC: menu_form = 1233 & gt ""menu_form""'><<$music_lesson[slave[""music""]]>><BR></a>" 
@@ -154,12 +155,12 @@ IF teach_stat_screen = 0:
  IF slave["stamina"] > 1: 
   $left_text_teach += "<a href = 'EXEC: interaction = 1224 & gt ""interaction""'><<$dressage_lesson[slave[""dressage""]]>><BR></a>"
   else
-  $left_text_teach += '<font color="#C0C0C0">Pony training<BR></font>'     
+  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Pony training<BR></font></a>'     
  END
  IF slave["stamina"] > 2: 
   $left_text_teach += "<a href = 'EXEC: interaction = 1225 & gt ""interaction""'><<$draft_lesson[slave[""dressage""]]>><BR></a>"
   else
-  $left_text_teach += '<font color="#C0C0C0">Harness training<BR></font>'     
+  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Harness training<BR></font></a>'     
  END
 !" IF master_tantra > 0:
   $left_text_list += "<a href = 'EXEC: interaction = 1226 & gt ""interaction""'><<$tantra_lesson[slave[""tantra""]]>><BR></a>"
@@ -183,16 +184,16 @@ IF teach_stat_screen = 0:
  $middle_text_3 += "<a href = 'EXEC: interaction = 1324 & gt ""interaction""'><<$slave_sub_dt[slave[""sub_dt""]]>><BR></a>"
  $middle_text_3 += "<a href = 'EXEC: interaction = 1325 & gt ""interaction""'><<$slave_sub_asslik[slave[""sub_asslik""]]>><BR></a>"
  IF exam_in_progress = 1:
-  $middle_text_4 += '<font color="#C0C0C0">Threesome<BR></font>' 
-  $middle_text_4 += '<font color="#C0C0C0">Double penetration<BR></font>' 
-  $middle_text_4 += '<font color="#C0C0C0">Triple penetration<BR></font>' 
-  $middle_text_4 += '<font color="#C0C0C0">Gangbang<BR></font>' 
-  $middle_text_4 += '<font color="#C0C0C0">Bukkake<BR></font>' 
+  $middle_text_4 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Threesome<BR></font></a>' 
+  $middle_text_4 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Double penetration<BR></font></a>' 
+  $middle_text_4 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Triple penetration<BR></font></a>' 
+  $middle_text_4 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Gangbang<BR></font></a>' 
+  $middle_text_4 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Bukkake<BR></font></a>' 
   else
   IF assistant_state = 1: 
    $middle_text_4 += "<a href = 'EXEC: interaction = 1341 & gt ""interaction""'><<$slave_sub_threesome[slave[""sub_threesome""]]>><BR></a>"   
    else
-   $middle_text_4 += '<font color="#C0C0C0">Threesome<BR></font>' 
+   $middle_text_4 += '<a href = "EXEC: msg $no_assistant & gt curloc"><font color="#C0C0C0">Threesome<BR></font></a>' 
   END
   $middle_text_4 += "<a href = 'EXEC: interaction = 1342 & gt ""interaction""'><<$slave_sub_dp[slave[""sub_dp""]]>><BR></a>"   
   $middle_text_4 += "<a href = 'EXEC: interaction = 1343 & gt ""interaction""'><<$slave_sub_tp[slave[""sub_tp""]]>><BR></a>"   
@@ -207,60 +208,68 @@ IF teach_stat_screen = 0:
  IF bath > 0:
   $middle_text_6 += "<a href = 'EXEC: interaction = 1365 & gt ""interaction""'><<$slave_sub_enema[slave[""sub_enema""]]>><BR></a>"
   else
-  $middle_text_6 += '<font color="#C0C0C0">Enema<BR></font>' 
+  $middle_text_6 += '<a href = "EXEC: msg $no_bath & gt curloc"><font color="#C0C0C0">Enema<BR></font></a>' 
  END
  $middle_text_6 += "<a href = 'EXEC: interaction = 1361 & gt ""interaction""'><<$slave_sub_mazo[slave[""sub_mazo""]]>><BR></a>"
  $middle_text_6 += "<a href = 'EXEC: interaction = 1362 & gt ""interaction""'><<$slave_sub_selfpain[slave[""sub_selfpain""]]>><BR></a>"
  IF bath > 0:
   $middle_text_6 += "<a href = 'EXEC: interaction = 1363 & gt ""interaction""'><<$slave_sub_piss[slave[""sub_piss""]]>><BR></a>"
   else
-  $middle_text_6 += '<font color="#C0C0C0">Golden shower<BR></font>' 
+  $middle_text_6 += '<a href = "EXEC: msg $no_bath & gt curloc"><font color="#C0C0C0">Golden shower<BR></font></a>' 
  END
  IF bath > 0:
   $middle_text_6 += "<a href = 'EXEC: interaction = 1364 & gt ""interaction""'><<$slave_sub_kopro[slave[""sub_kopro""]]>><BR><BR></a>"
   else
-  $middle_text_6 += '<font color="#C0C0C0">Scatology<BR></font>' 
+  $middle_text_6 += '<a href = "EXEC: msg $no_bath & gt curloc"><font color="#C0C0C0">Scatology<BR></font></a>' 
  END
  IF exam_in_progress = 1:
-  $middle_text_7 += '<font color="#C0C0C0">Dog mating<BR></font>' 
-  $middle_text_7 += '<font color="#C0C0C0">Pig mating<BR></font>' 
-  $middle_text_8 += '<font color="#C0C0C0">Horse mating<BR></font>' 
-  $middle_text_8 += '<font color="#C0C0C0">Fiend mating<BR></font>' 
+  $middle_text_7 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Dog mating<BR></font></a>' 
+  $middle_text_7 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Pig mating<BR></font></a>' 
+  $middle_text_8 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Horse mating<BR></font></a>' 
+  $middle_text_8 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Fiend mating<BR></font></a>' 
   else
   IF dog > 0:   
    $middle_text_7 += "<a href = 'EXEC: interaction = 1351 & gt ""interaction""'><<$slave_sub_zoosex[slave[""sub_zoosex""]]>><BR></a>"   
    else
-   $middle_text_7 += '<font color="#C0C0C0">Dog mating<BR></font>' 
+   $middle_text_7 += '<a href = "EXEC: msg $no_creature & gt curloc"><font color="#C0C0C0">Dog mating<BR></font></a>' 
   END
   IF svine > 0:   
    $middle_text_7 += "<a href = 'EXEC: interaction = 1352 & gt ""interaction""'><<$slave_svinesex[slave[""sub_bestiality""]]>><BR></a>"    
    else
-   $middle_text_7 += '<font color="#C0C0C0">Pig mating<BR></font>' 
+   $middle_text_7 += '<a href = "EXEC: msg $no_creature & gt curloc"><font color="#C0C0C0">Pig mating<BR></font></a>' 
   END
   IF horse > 0:  
    $middle_text_8 += "<a href = 'EXEC: interaction = 1353 & gt ""interaction""'><<$slave_horsesex[slave[""sub_horse""]]>><BR></a>"   
    else
-   $middle_text_8 += '<font color="#C0C0C0">Horse mating<BR></font>' 
+   $middle_text_8 += '<a href = "EXEC: msg $no_creature & gt curloc"><font color="#C0C0C0">Horse mating<BR></font></a>' 
   END
   IF pet_tentacle > 0:  
    $middle_text_8 += "<a href = 'EXEC: interaction = 1354 & gt ""interaction""'><<$slave_tentacle[slave[""sub_tentacles""]]>><BR></a>"   
    else
-   $middle_text_8 += '<font color="#C0C0C0">Fiend mating<BR></font>' 
+   $middle_text_8 += '<a href = "EXEC: msg $no_creature & gt curloc"><font color="#C0C0C0">Fiend mating<BR></font></a>' 
   END 
  END
  *p '<div id = "mark_one"><img src = "content\pic\buttons\sel_button.png"></div>'
  !добавлена проверка здесь и у ассистентки (teach_stat_screen = 3) на присутствие у мастера денег, иначе обучение невозможно
- IF sparks > 25: 
+ IF sparks => 25: 
   *p '<div id = "mark_two"><a href = "EXEC: teach_stat_screen = 1 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
   else 
-  *p '<div id = "mark_two"><a href = "EXEC: msg $no_money_coach & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
+  *p '<div id = "mark_two"><a href = "EXEC: msg $no_money_coach & gt curloc"><img src = "content\pic\buttons\unactive_button.png"></a></div>'
  END
- IF sparks > 16: 
-  if exam_in_progress ! 1: *p '<div id = "mark_three"><a href = "EXEC: teach_stat_screen = 2 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
+ IF exam_in_progress ! 1 and sparks => 16: 
+  *p '<div id = "mark_three"><a href = "EXEC: teach_stat_screen = 2 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
   else
-  if exam_in_progress ! 1: *p '<div id = "mark_three"><a href = "EXEC: msg $no_money_school & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
+  if exam_in_progress = 1: 
+   *p '<div id = "mark_three"><a href = "EXEC: msg $no_services_exam & gt curloc"><img src = "content\pic\buttons\unactive_button.png"></a></div>'
+   else
+   *p '<div id = "mark_three"><a href = "EXEC: msg $no_money_school & gt curloc"><img src = "content\pic\buttons\unactive_button.png"></a></div>'
+  end
  END
- if assistant_state = 1: *p '<div id = "mark_four"><a href = "EXEC: teach_stat_screen = 3 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>' 
+ IF assistant_state = 1: 
+  *p '<div id = "mark_four"><a href = "EXEC: teach_stat_screen = 3 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>' 
+  else
+  *p '<div id = "mark_four"><a href = "EXEC: msg $no_assistant & gt curloc"><img src = "content\pic\buttons\unactive_button.png"></a></div>' 
+ END
  IF ui_style = 2: 
   *p '<div id="center_image"><img src = "content\pic\ui\grimdark\bg\page_blank.gif"></div>'
   else
@@ -359,8 +368,20 @@ If teach_stat_screen = 1:
 
  *p '<div id = "mark_one"><a href = "EXEC: teach_stat_screen = 0 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
  *p '<div id = "mark_two"><img src = "content\pic\buttons\sel_button.png"></div>'
- if exam_in_progress ! 1: *p '<div id = "mark_three"><a href = "EXEC: teach_stat_screen = 2 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
- if assistant_state = 1: *p '<div id = "mark_four"><a href = "EXEC: teach_stat_screen = 3 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'  
+ IF exam_in_progress ! 1 and sparks => 16: 
+  *p '<div id = "mark_three"><a href = "EXEC: teach_stat_screen = 2 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
+  else
+  if exam_in_progress = 1: 
+   *p '<div id = "mark_three"><a href = "EXEC: msg $no_services_exam & gt curloc"><img src = "content\pic\buttons\unactive_button.png"></a></div>'
+   else
+   *p '<div id = "mark_three"><a href = "EXEC: msg $no_money_school & gt curloc"><img src = "content\pic\buttons\unactive_button.png"></a></div>'
+  end
+ END
+ IF assistant_state = 1: 
+  *p '<div id = "mark_four"><a href = "EXEC: teach_stat_screen = 3 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>' 
+  else
+  *p '<div id = "mark_four"><a href = "EXEC: msg $no_assistant & gt curloc"><img src = "content\pic\buttons\unactive_button.png"></a></div>' 
+ END 
  IF ui_style = 2: 
   *p '<div id="center_image"><img src = "content\pic\ui\grimdark\bg\page_blank.gif"></div>'
   else
@@ -413,9 +434,17 @@ If teach_stat_screen = 2:
  END
 
  *p '<div id = "mark_one"><a href = "EXEC: teach_stat_screen = 0 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
- *p '<div id = "mark_two"><a href = "EXEC: teach_stat_screen = 1 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
+ IF sparks => 25: 
+  *p '<div id = "mark_two"><a href = "EXEC: teach_stat_screen = 1 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
+  else
+  *p '<div id = "mark_two"><a href = "EXEC: msg $no_money_coach & gt curloc"><img src = "content\pic\buttons\unactive_button.png"></a></div>'
+ END
  *p '<div id = "mark_three"><img src = "content\pic\buttons\sel_button.png"></div>' 
- if assistant_state = 1: *p '<div id = "mark_four"><a href = "EXEC: teach_stat_screen = 3 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'  
+ IF assistant_state = 1: 
+  *p '<div id = "mark_four"><a href = "EXEC: teach_stat_screen = 3 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>' 
+  else
+  *p '<div id = "mark_four"><a href = "EXEC: msg $no_assistant & gt curloc"><img src = "content\pic\buttons\unactive_button.png"></a></div>' 
+ END  
  IF ui_style = 2: 
   *p '<div id="center_image"><img src = "content\pic\ui\grimdark\bg\page_blank.gif"></div>'
   else
@@ -499,15 +528,15 @@ If teach_stat_screen = 3:
  END
 
  *p '<div id = "mark_one"><a href = "EXEC: teach_stat_screen = 0 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
- IF sparks > 25: 
+ IF sparks => 25: 
   *p '<div id = "mark_two"><a href = "EXEC: teach_stat_screen = 1 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
   else 
-  *p '<div id = "mark_two"><a href = "EXEC: msg $no_money_coach & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
+  *p '<div id = "mark_two"><a href = "EXEC: msg $no_money_coach & gt curloc"><img src = "content\pic\buttons\unactive_button.png"></a></div>'
  END
- IF sparks > 16: 
+ IF sparks => 16: 
   *p '<div id = "mark_three"><a href = "EXEC: teach_stat_screen = 2 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
   else
-  *p '<div id = "mark_three"><a href = "EXEC: msg $no_money_school & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
+  *p '<div id = "mark_three"><a href = "EXEC: msg $no_money_school & gt curloc"><img src = "content\pic\buttons\unactive_button.png"></a></div>'
  END
  *p '<div id = "mark_four"><img src = "content\pic\buttons\sel_button.png"></div>' 
  IF ui_style = 2: 

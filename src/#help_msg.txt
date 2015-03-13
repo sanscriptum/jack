@@ -283,13 +283,35 @@ $бондаж_справка = '<center>BINDING<br>
 <font color="#008000">Master of rope</font></center>'
 $бондаж_совет = '  Binding allows you to leave a slave unattended to receive punishment from the rope. Proper painful or erotic bondage can be very effective as an educational or exciting action. Skill develops automatically when applied.'
 
-$атрибуты_справка = 'Basic attribute reflects the total of: Endurance, Empathy, Temperament, Intellect, Nature and Pride (lower pride is more desirable).'
+!OTHER TIPS
 
 $no_money_school = '  I do not have enough money to send my slave to school.'
 
 $no_money_coach= '  I do not have enough money to hire a tutor for my slave.'
 
-!Подсказки для экрана создания мастера
+$no_bouduar = '  I do not own a boudoir to put a slave there. It is necessary to rent it from a realtor in the White Town.'
+
+$no_tentacle = '  I don''t have a fiend that needs to be milked. First I need to get it.'
+
+$no_vballs = '  I don''t have the necessary item for this rule. Perhaps I need to buy these vibes from Poison near Necropolis first.'
+
+$no_services_exam = '  During tutorial, I can not use these features.'
+
+$no_assistant = '  I don''t have an assistant that can teach my slave at this moment.'
+
+$no_house_mess = '  The house is too clean right now. I need some mess to teach slave to clean the house.'
+
+$no_kitchen = '  The house has no kitchen. Maybe I should change the housing.'
+
+$no_lab = '  I don''t have an alchemy lab for this lesson. I should rent a laboratory from realtors in White Town first.'
+
+$no_slave_stamina = '  With such health slave should be lying in bed, not engaged in sports!'
+
+$no_bath = '  The house has no bathroom. Living in a house without a bath - is a bad idea.'
+
+$no_creature = '  I don''t have necessary creature for this lesson.'
+
+!Tips for master creating screen
 $сила_с_справка = '   Strength commands respect. It is very important for a trainer to be strong. Strength affects the force of your blows in combat, your endurance in daily tasks and the submissiveness of your slaves.'
 
 $харизма_с_справка = '   Charisma, determination and will play a crucial role for a trainer of slaves, as they make it much easier to control other people.'

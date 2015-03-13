@@ -1,0 +1,116 @@
+# slave_to_iced_6
+!move slave to a home cryo cell with replacement
+temp = slave_state
+slave_state = iced_6_state
+iced_6_state = temp
+
+temp = slave_type
+slave_type = iced_6_type
+iced_6_type = temp
+
+$temp = $slave_type
+$slave_type = $iced_6_type
+$iced_6_type = $temp
+
+$temp_name = $slave_name
+$slave_name = $iced_6_name
+$iced_6_name = $temp_name 
+v_balls_rule = 0
+rules_broken = 0
+
+killvar 'temp'
+killvar '$temp'
+copyarr 'temp','slave'
+copyarr '$temp','$slave'
+killvar 'slave' 
+killvar '$slave' 
+copyarr 'slave','iced_6'
+copyarr '$slave','$iced_6'
+
+killvar 'temp_rate'
+copyarr 'temp_rate','slave_rate'
+killvar 'slave_rate' 
+copyarr 'slave_rate','iced_6_rate'
+
+killvar 'iced_6'
+killvar '$iced_6'
+copyarr 'iced_6','temp'
+copyarr '$iced_6','$temp'
+killvar 'iced_6_rate'
+copyarr 'iced_6_rate','temp_rate'
+
+killvar 'temp'
+copyarr 'temp','already_done_iced_6'
+killvar 'already_done_iced_6'
+copyarr 'already_done_iced_6','already_done_curslave'
+killvar 'already_done_curslave'
+copyarr 'already_done_curslave','temp'
+
+killvar 'temp'
+copyarr 'temp','already_sex_iced_6'
+killvar 'already_sex_iced_6'
+copyarr 'already_sex_iced_6','already_sex_curslave'
+killvar 'already_sex_curslave'
+copyarr 'already_sex_curslave','temp'
+
+killvar 'temp'
+copyarr 'temp','slave_inventory'
+killvar 'slave_inventory' 
+copyarr 'slave_inventory','iced_6_inventory'
+copyarr 'iced_6_inventory','temp'
+
+$temp_psy_basic = $slave_psy_basic
+$temp_world_description = $slave_world_description
+$temp_family_description = $slave_family_description
+$temp_occupation_description = $slave_occupation_description
+$temp_psy_basic = $slave_psy_basic 
+temp_virginity = virginity
+
+$slave_psy_basic = $iced_6_psy_basic
+$slave_world_description = $iced_6_world_description
+$slave_family_description = $iced_6_family_description
+$slave_occupation_description = $iced_6_occupation_description
+$slave_psy_basic = $iced_6_psy_basic 
+virginity = iced_6_virginity
+
+$iced_6_psy_basic = $temp_psy_basic
+$iced_6_world_description = $temp_world_description
+$iced_6_family_description = $temp_family_description
+$iced_6_occupation_description = $temp_occupation_description
+$iced_6_psy_basic = $temp_psy_basic 
+iced_6_virginity = temp_virginity
+
+tempo["mood"] = slave_prev["mood"]
+tempo["arousal"] = slave_prev["mood"]
+slave["mood"] = iced_6_prev["mood"]
+slave["arousal"] = iced_6_prev["arousal"]
+iced_6["mood"] = tempo["mood"]
+iced_6["arousal"] = tempo["mood"]
+
+tmp = prise_promised
+prise_promised = prise_promised_iced_6
+prise_promised_iced_6 = tmp
+
+tmp = gift_promised
+gift_promised = gift_promised_iced_6
+gift_promised_iced_6 = tmp
+
+tmp = prise_promised
+prise_promised = prise_promised_iced_6
+prise_promised_iced_6 = tmp
+
+tmp = abandon_treat
+abandon_treat = abandon_treat_iced_6
+abandon_treat_iced_6 = tmp
+
+tmp = death_treat
+death_treat = death_treat_iced_6
+death_treat_iced_6 = tmp
+
+gs '#txt'
+gs '#txt_2'
+gs '$newloc'
+sp_txt = 2
+GT 'shop_general'
+--- slave_to_iced_6 ---------------------------------
+

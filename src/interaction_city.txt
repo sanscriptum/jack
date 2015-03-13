@@ -4731,6 +4731,44 @@ IF interaction_city = 332014:
  GT 'slave_to_iced_3'
 END
 
+IF interaction_city = 332015:
+ $place = 'stasis_bank'
+ if nsfw = 1: not_safe = 1
+ $return_lock  = 'shop_general' 
+ if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
+ copyarr '$display_options', '$stasis_options'   
+ GT 'slave_to_iced_4'
+END
+
+IF interaction_city = 332016:
+ $place = 'stasis_bank'
+ if nsfw = 1: not_safe = 1
+ $return_lock  = 'shop_general' 
+ if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
+ copyarr '$display_options', '$stasis_options'   
+ GT 'slave_to_iced_5'
+END
+
+IF interaction_city = 332017:
+ $place = 'stasis_bank'
+ if nsfw = 1: not_safe = 1
+ $return_lock  = 'shop_general' 
+ if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
+ copyarr '$display_options', '$stasis_options'   
+ GT 'slave_to_iced_6'
+END
+
+IF interaction_city = 33202:
+ $place = 'stasis_bank'
+ if nsfw = 1: not_safe = 1
+ sparks -= 300
+ $return_lock  = 'shop_general' 
+ if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
+ cells_unlocked = 1
+ sp_txt = 2
+ GT 'shop_general'
+END
+
 !soulnet terminal
 IF interaction_city = 333:
  $place = 'computer'

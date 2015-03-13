@@ -358,7 +358,9 @@ $text_display += {<br><div id="under">Other services<br><div id = "clear"><a hre
 
 !cryostatic bank
 $stasis_options[1] = {
-$text_display = '<br>'
+$text_display = '<br><br><br>'
+$place = 'stasis_bank'
+if nsfw = 1: not_safe = 1
 !дополнительная проверка чтобы выходил правильный пункт в меню
 IF sparks => 20:
  IF stasis_tank = 0:
@@ -370,6 +372,20 @@ IF sparks => 20:
  else
  $text_display += {<br><div id="under_gray">Rent home capsule (20 sparks)<br></div>} 
 END
+ $text_display += {<br><div id="under">Check cryocells<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Leave the store<br><div id = "clear"><a href = 'EXEC: city_form = 33 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$stasis_options[2] = {
+if cells_unlocked = 1: 
+ $text_display = ''
+ $sp_text[2] = "   In this place you can keep slaves in a stasis state in which they will remain as long as I have money to support the unit." 
+ else
+ $text_display = '<br>'
+ $sp_text[2] = "   In this place you can keep slaves in a stasis state in which they will remain as long as I have money to support the unit. For an extra fee you can get access to three more cells for storage." 
+end
+$place = 'stasis_bank_2'
+if nsfw = 1: not_safe = 1
 IF iced_1_state = 0:
  $text_display += {<br><div id="under">Cell №1: rent (1/day)<br><div id = "clear"><a href = 'EXEC: interaction_city = 332012 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
  else
@@ -385,7 +401,29 @@ IF iced_3_state = 0:
  else
  $text_display += {<br><div id="under">Cell №3: take out<br><div id = "clear"><a href = 'EXEC: interaction_city = 332014 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
-$text_display += {<br><div id="under">Leave depository<br><div id = "clear"><a href = 'EXEC: city_form = 33 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+IF sparks => 300 and cells_unlocked ! 1:
+ $text_display += {<br><div id="under">Unlock new cells (300$)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33202 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ if sparks < 300 and cells_unlocked ! 1: $text_display += {<br><div id="under_gray">Unlock new cells (300$)<br></div>}
+END
+IF cells_unlocked = 1:
+ IF iced_4_state = 0:
+  $text_display += {<br><div id="under">Cell №4: rent (1/day)<br><div id = "clear"><a href = 'EXEC: interaction_city = 332015 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<br><div id="under">Cell №4: take out<br><div id = "clear"><a href = 'EXEC: interaction_city = 332015 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF iced_5_state = 0:
+  $text_display += {<br><div id="under">Cell №5: rent (1/day)<br><div id = "clear"><a href = 'EXEC: interaction_city = 332016 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<br><div id="under">Cell №5:  take out<br><div id = "clear"><a href = 'EXEC: interaction_city = 332016 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF iced_6_state = 0:
+  $text_display += {<br><div id="under">Cell №6: rent (1/day)<br><div id = "clear"><a href = 'EXEC: interaction_city = 332017 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<br><div id="under">Cell №6:  take out<br><div id = "clear"><a href = 'EXEC: interaction_city = 332017 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+END
+$text_display += {<br><div id="under">Back<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
 }
 
 !Real estate manager

@@ -2340,6 +2340,72 @@ height:80px;
 font-family:"Segoe Print";
 }
 
+#cryo_ava_1 {
+position:absolute;
+left:850px;
+top:170px;
+width:150px;
+height:150px;
+font-size:30px;
+font-family:"Victoriana";
+color:#191970;
+}
+
+#cryo_ava_2 {
+position:absolute;
+left:850px;
+top:360px;
+width:150px;
+height:150px;
+font-size:30px;
+font-family:"Victoriana";
+color:#191970;
+}
+
+#cryo_ava_3 {
+position:absolute;
+left:850px;
+top:550px;
+width:150px;
+height:150px;
+font-size:30px;
+font-family:"Victoriana";
+color:#191970;
+}
+
+#cryo_ava_4 {
+position:absolute;
+left:1080px;
+top:170px;
+width:150px;
+height:150px;
+font-size:30px;
+font-family:"Victoriana";
+color:#191970;
+}
+
+#cryo_ava_5 {
+position:absolute;
+left:1080px;
+top:360px;
+width:150px;
+height:150px;
+font-size:30px;
+font-family:"Victoriana";
+color:#191970;
+}
+
+#cryo_ava_6 {
+position:absolute;
+left:1080px;
+top:550px;
+width:150px;
+height:150px;
+font-size:30px;
+font-family:"Victoriana";
+color:#191970;
+}
+
 #a {
 position:absolute;
 left:100px;

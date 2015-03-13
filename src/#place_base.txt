@@ -83,6 +83,7 @@ $bg['slums_street'] = 'slums_street'
 $bg['mist_edge'] = 'slums'
 $bg['technodrom'] = 'technodrom'
 $bg['stasis_bank'] = 'stasis_bank'
+$bg['stasis_bank_2'] = 'stasis_bank'
 
 !replace for places copypasta, by Lyazar
 $pb_cycle = {
@@ -125,7 +126,7 @@ dynamic $pb_cycle, 'witch_shop', 'The Rarity Of Mystra', 'Quarter of the Outcast
 dynamic $pb_cycle, 'stasis_cell', 'Cryostatic cell', 'Your Home', 'You rented this highly convenient unit in the technosphere. Unfortunately, its maintenance costs a lot of sparks.'
 dynamic $pb_cycle, 'stasis_bank', 'Cryostatic store', 'Technosphere', 'This place was originally created for the military of Serpis House, who did not want to spend money on food and housing for their soldiers until they are busy. In order to free cells did not stand idle, Serpis House rents them to private customers. Stasis chambers used throughout Rome for the storage of products, they based on the same principle, but the maintenance of working cryocapsules outside technosphere is not cheap.'
 dynamic $pb_cycle, 'hospital', 'Medical Center', 'Technosphere', 'In this high-tech medical center you can heal yourself or your slaves, and also this place offers a variety of bodily modifications, from the banal to the most exotic. In addition, the office staff acquires slaves for the position of nurses.'
-dynamic $pb_cycle, 'class_common', 'The Academy of St. Peter', 'Taurus Sector', ''
+dynamic $pb_cycle, 'stasis_bank_2', 'Cryostatic center', 'Technosphere', ''
 dynamic $pb_cycle, 'class_magic', 'The Academy of St. Peter', 'Taurus Sector', ''
 dynamic $pb_cycle, 'class_music', 'The Academy of St. Peter', 'Taurus Sector', ''
 dynamic $pb_cycle, 'class_sport', 'The Academy of St. Peter', 'Taurus Sector', ''

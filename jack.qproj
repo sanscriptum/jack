@@ -62,6 +62,9 @@
       <Location name="slave_to_iced_1"/>
       <Location name="slave_to_iced_2"/>
       <Location name="slave_to_iced_3"/>
+      <Location name="slave_to_iced_4"/>
+      <Location name="slave_to_iced_5"/>
+      <Location name="slave_to_iced_6"/>
       <Location name="slave_to_train_get"/>
       <Location name="slave_sell_done"/>
       <Location name="slave_free_time"/>
@@ -99,6 +102,7 @@
       <Location name="colloseum_fight"/>
       <Location name="prison_cell"/>
       <Location name="stasis_cell"/>
+      <Location name="stasis_cell_cryo"/>
       <Location name="slave_auction_buy"/>
       <Location name="slave_auction_sell"/>
       <Location name="slave_auction_sell_end"/>

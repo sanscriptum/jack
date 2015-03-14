@@ -6068,6 +6068,7 @@ END
 !BIRTH OF THE PARASITE
 !TODO: Parasite will not born from the assistant or prisoner if there is no slave
 IF interaction = 9921:
+ g = RAND(1,2)
  $interaction_type = 'chestbuster'
  $special_bg = '<<$slave["fullimage"]>>' 
  slave_state = CONST_INT['no_slave']
@@ -6079,6 +6080,7 @@ IF interaction = 9921:
 END
 
 IF interaction = 9922:
+ g = RAND(1,2)
  $interaction_type = 'chestbuster'
  $special_bg = '<<$assistant["fullimage"]>>' 
  assistant_state = 0
@@ -6090,6 +6092,7 @@ IF interaction = 9922:
 END
 
 IF interaction = 9923:
+ g = RAND(1,2)
  $interaction_type = 'chestbuster'
  $special_bg = '<<$prisoner["fullimage"]>>' 
  prisoner_state = 0

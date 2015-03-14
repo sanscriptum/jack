@@ -2876,6 +2876,7 @@ sparks += prepay[brand_reputation]
 contract['level'] = contract_level[brand_reputation]
 $contract['specialisation'] = $specialisation[specialisation]
 npc = 0
+gs 'generate_stock'
 gt 'guild'}
  $no = {contract['active'] = 2
 npc = 0

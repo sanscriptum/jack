@@ -484,16 +484,16 @@ $npc_name['госпожа_ангелика'] = 'Mistress Angelika'
 $npc_status['госпожа_ангелика'] = 'Slavers Guild Master 
 Neutrals'
 $npc_image['госпожа_ангелика'] = 'mistress_angelika'
-$npc_info['госпожа_ангелика'] = 'It seems from this lady depends on the final decision about my entry into the guild. Most likely, this is just a formality, but it is necessary to remain vigilant. She looks like a person who does not forgive weakness and enjoys suffering neighbors...
-   What the hell?! She looks like a complete bitch, though sexy.'
+$npc_info['госпожа_ангелика'] = '   Your old friend teacher. I think she bluff in communication, but on the other hand what else to expect from a professional dominant mistress... This work spoils character. She''s quite nice actually.'
 npc_attitude['госпожа_ангелика'] = 11
 
 $npc_image['mistress_angelika'] = 'mistress_angelika'
 $npc_name['mistress_angelika'] = 'Mistress Angelika'
-$npc_status['mistress_angelika'] = 'Guild Master 
-Slavers (Neutrals)'
+$npc_status['mistress_angelika'] = 'Slavers Guild Master 
+Neutrals'
 $npc_alignment['mistress_angelika'] = 'нейтралы'
-$npc_info['mistress_angelika'] = '   Your old friend teacher. I think she bluff in communication, but on the other hand what else to expect from a professional dominant mistress... This work spoils character. She''s quite nice actually.'
+$npc_info['mistress_angelika'] = '   It seems from this lady depends on the final decision about my entry into the guild. Most likely, this is just a formality, but it is necessary to remain vigilant. She looks like a person who does not forgive weakness and enjoys suffering neighbors...
+   What the hell?! She looks like a complete bitch, though sexy.'
 npc_attitude['mistress_angelika'] = 11
 npc_reveal['mistress_angelika'] = 0
 

@@ -13,6 +13,8 @@ dynamic $slave_pass_out
 dynamic $prisoner_pass_out
 dynamic $assistant_pass_out
 dynamic $master_pass_out
+!knout and whip check
+dynamic $toolsequipped
 
 teach_stat_screen = 0
 master_stat_screen = 0
@@ -33,23 +35,12 @@ sp_txt = 0
 gs '$moodlets_account'
 quest_description_mode = 0
 
-!Тестовые значения
+!Test values
 IF get_initial_slave = 1:
  $special_age = 'young'
  gs 'generate_stock'
  gs 'stock_to_slave'
 END
-
-!knout and whip check
-whipequiped = 0
-knoutequiped = 0
-if $master_back_wpn = 'кнут': knoutequiped = 1
-if $master_left_wpn = 'нагайка': whipequiped = 1
-if $master_left_wpn = 'кнут': knoutequiped = 1
-if $master_right_wpn = 'нагайка': whipequiped = 1
-if $master_right_wpn = 'кнут': knoutequiped = 1
-if $master_arm_wpn = 'нагайка': whipequiped = 1
-if $master_leg_wpn = 'нагайка': whipequiped = 1
 
 !check if trying to exit from available locations in a tutorial mode
 IF exam_in_progress = 1:

@@ -217,7 +217,7 @@ killvar 'нанесенный_вред'
 IF поверженные_враги = количество_врагов:
  $итог_боя = 'победа'
  !fixed, otherwise after a battle with one opponent the final spirit will always be equal to 5
- if количество_врагов > 2: дух_игрока = 5*количество_врагов
+ дух_игрока += 5*количество_врагов
  gt 'конец_боя'
 END
 IF здоровье_игрока <= 0:

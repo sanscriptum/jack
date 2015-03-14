@@ -1881,10 +1881,93 @@ $assistant_purge_rules = {
 	assistant_buy_meat = 0
 }
 
+!Presets
+$name_preset = {
+$a = input ('Write the name of the preset. Leave blank to leave the name unchanged.<br>Do not make it longer than fourteen characters if possible.')
+if $a !'': $preset_name[i] = $a
+}
+
+$save_preset = {
+$preset_silence_rule[i] = 0
+$preset_master_rule[i] = 0
+$preset_orgasm_prohibited[i] = 0
+$preset_shit_prohibited[i] = 0
+$preset_pet_rule[i] = 0
+$preset_blowjob_rule[i] = 0
+$preset_pissuar_rule[i] = 0
+$preset_toilet_rule[i] = 0
+
+$preset_slave_cleans_rule[i] = 0
+$preset_slave_cooks_rule[i] = 0
+$preset_slave_washes_rule[i] = 0
+$preset_slave_tentacle_rule[i] = 0
+
+$preset_v_balls_rule[i] = 0
+
+$preset_force_rules[i] = 0
+
+if silence_rule = 1: $preset_silence_rule[i] = 1
+if master_rule = 1: $preset_master_rule[i] = 1
+if orgasm_prohibited = 1: $preset_orgasm_prohibited[i] = 1
+if shit_prohibited = 1: $preset_shit_prohibited[i] = 1
+if pet_rule = 1: $preset_pet_rule[i] = 1
+if blowjob_rule = 1: $preset_blowjob_rule[i] = 1
+if pissuar_rule = 1: $preset_pissuar_rule[i] = 1
+if toilet_rule = 1: $preset_toilet_rule[i] = 1
+
+if slave_cleans_rule = 1: $preset_slave_cleans_rule[i] = 1
+if slave_cooks_rule = 1: $preset_slave_cooks_rule[i] = 1
+if slave_washes_rule = 1: $preset_slave_washes_rule[i] = 1
+if slave_tentacle_rule = 1: $preset_slave_tentacle_rule[i] = 1
+
+if v_balls_rule = 1: $preset_v_balls_rule[i] = 1
+
+if force_rules = 1: $preset_force_rules[i] = 1
+}
+
+$use_preset = {
+silence_rule = $preset_silence_rule[i]
+master_rule = $preset_master_rule[i]
+orgasm_prohibited = $preset_orgasm_prohibited[i]
+shit_prohibited = $preset_shit_prohibited[i]
+pet_rule = $preset_pet_rule[i]
+blowjob_rule = $preset_blowjob_rule[i]
+pissuar_rule = $preset_pissuar_rule[i]
+toilet_rule = $preset_toilet_rule[i]
+
+slave_cleans_rule = $preset_slave_cleans_rule[i]
+slave_cooks_rule = $preset_slave_cooks_rule[i]
+slave_washes_rule = $preset_slave_washes_rule[i]
+IF pet_tentacle > 0: slave_tentacle_rule = $preset_slave_tentacle_rule[i]
+
+IF inventory['vaginal_balls'] > 0 and virginity > 1: v_balls_rule = $preset_v_balls_rule[i]
+
+force_rules = $preset_force_rules[i]
+}
+
+$purge_preset = {
+silence_rule = 0
+master_rule = 0
+orgasm_prohibited = 0
+shit_prohibited = 0
+pet_rule = 0
+blowjob_rule = 0
+pissuar_rule = 0
+toilet_rule = 0
+
+slave_cleans_rule = 0
+slave_cooks_rule = 0
+slave_washes_rule = 0
+slave_tentacle_rule = 0
+
+v_balls_rule = 0
+
+force_rules = 0
+}
+
 !for master create screen
 !TODO: replace this whopper for something more compact
 !needs cycle or majjick
-
 $rise_str = {
 if master_str => 5: msg "This stat is now at the maximum level."
 IF master_str = 4:

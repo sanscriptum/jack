@@ -96,8 +96,9 @@ IF slave_stat_screen = 0:
   else
   *p '<div id="center_image"><img src = "content\pic\bg\<<$interior_study[$study]>>.jpg"></div>'
  END
- if nsfw = 0: *p '<div id="center_image"><img src="content\pic\<<$slave["fullimage"]>>.gif"></div>' 
- *p '<div id="left_padding">SLEEP: <BR><BR><BR><BR><BR><BR><BR>DIET:<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>CALORIE COUNTER:</div>'  
+ if nsfw = 0: *p '<div id="center_image"><img src="content\pic\<<$slave["fullimage"]>>.gif"></div>'  
+IF presets_list = 0: 
+ *p '<div id="left_padding">SLEEP: <BR><BR><BR><BR><BR><BR><BR>DIET:<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>CALORIE COUNTER:</div>' 
  IF master_medic => 2:
   *p '<div id="left_rules">
  - in the cells
@@ -139,6 +140,20 @@ IF slave_stat_screen = 0:
 <<slave["calories"]>> cal
 </div>'
  END
+ else
+*p '<div id="left_padding">PRESETS:</div>'
+*p '<div id="left_rules">
+<a style = "color: #FFD700;" href = "EXEC: i = 1 & dynamic $name_preset & gt curloc"><<$preset_name[1]>></a>&nbsp<a style = "color: #FFD700;" href = "EXEC: i = 1 & dynamic $save_preset & gt curloc">[C]</a>
+<a style = "color: #FFD700;" href = "EXEC: i = 2 & dynamic $name_preset & gt curloc"><<$preset_name[2]>></a>&nbsp<a style = "color: #FFD700;" href = "EXEC: i = 2 & dynamic $save_preset & gt curloc">[C]</a>
+<a style = "color: #FFD700;" href = "EXEC: i = 3 & dynamic $name_preset & gt curloc"><<$preset_name[3]>></a>&nbsp<a style = "color: #FFD700;" href = "EXEC: i = 3 & dynamic $save_preset & gt curloc">[C]</a>
+<a style = "color: #FFD700;" href = "EXEC: i = 4 & dynamic $name_preset & gt curloc"><<$preset_name[4]>></a>&nbsp<a style = "color: #FFD700;" href = "EXEC: i = 4 & dynamic $save_preset & gt curloc">[C]</a>
+<a style = "color: #FFD700;" href = "EXEC: i = 5 & dynamic $name_preset & gt curloc"><<$preset_name[5]>></a>&nbsp<a style = "color: #FFD700;" href = "EXEC: i = 5 & dynamic $save_preset & gt curloc">[C]</a>
+
+<a style = "color: #FFD700;" href = "EXEC: preset = 0 & dynamic $purge_preset & gt curloc"><u>RESET</u></a>&nbsp<a style = "color: #FFD700;" href = "EXEC: msg $presets_help & gt curloc">[?]</a>
+<a style = "color: #FFD700;" href = "EXEC: presets_list = 0 & gt curloc"><u>CLOSE</u></a>
+</div>'
+END
+ 
  *p '<div id="right_padding">RULES: <BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><<$rules_obedience[rules_broken]>></div>'  
  *p '<div id="right_rules">
 Force silence - 
@@ -157,7 +172,9 @@ Milkmaid -
 
 Vaginal vibe - 
 Force rules - 
-</div>'  
+<a style = "color: #FFD700;" href = "EXEC: presets_list = 1 & gt curloc"><u>PRESETS</u></a>
+</div>'
+IF presets_list = 0:  
  IF slave_sleep_condition = -2:
   *p '<div id="chekbox_1l"><img src="content\pic\buttons\sel_button.png"></div>'  
   else
@@ -231,7 +248,33 @@ Force rules -
   *p '<div id="chekbox_13l"><a href = "EXEC: vitamin = 1 & $info_text = $slave_vitamin & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
  END    
  *p '<div id="chekbox_133l"><a href="EXEC: $info_text = $калории_совет & gt $curloc"><img src="content\pic\kalkulyator.png"></a></div>'  
-
+ else
+ IF preset = 1:
+  *p '<div id="chekbox_1l"><a href = "EXEC: preset = 0 & dynamic $purge_preset & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  else
+  *p '<div id="chekbox_1l"><a href = "EXEC: preset = 1 & i = 1 & dynamic $use_preset & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END
+ IF preset = 2:
+  *p '<div id="chekbox_2l"><a href = "EXEC: preset = 0 & dynamic $purge_preset & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  else
+  *p '<div id="chekbox_2l"><a href = "EXEC: preset = 2 & i = 2 & dynamic $use_preset & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END
+ IF preset = 3:
+  *p '<div id="chekbox_3l"><a href = "EXEC: preset = 0 & dynamic $purge_preset & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  else
+  *p '<div id="chekbox_3l"><a href = "EXEC: preset = 3 & i = 3 & dynamic $use_preset & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END
+ IF preset = 4:
+  *p '<div id="chekbox_4l"><a href = "EXEC: preset = 0 & dynamic $purge_preset & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  else
+  *p '<div id="chekbox_4l"><a href = "EXEC: preset = 4 & i = 4 & dynamic $use_preset & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END
+ IF preset = 5:
+  *p '<div id="chekbox_5l"><a href = "EXEC: preset = 0 & dynamic $purge_preset & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  else
+  *p '<div id="chekbox_5l"><a href = "EXEC: preset = 5 & i = 5 & dynamic $use_preset & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END
+END
  IF silence_rule = 1:
   *p '<div id="chekbox_1r"><a href = "EXEC: silence_rule = 0 & $info_text = $silence_rule_abort  & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
   else

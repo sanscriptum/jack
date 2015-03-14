@@ -62,6 +62,8 @@ IF slave_state = CONST_INT['no_slave']:
  slave["pain_treat"] = 0
  abandon_treat = 0
  death_treat = 0
+ force_rules = 0
+ preset = 0
  slave['on_love_drug'] = 0
  killvar 'slave' 
  killvar 'slave_rate' 

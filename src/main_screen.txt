@@ -1,6 +1,7 @@
 # main_screen
 gs 'main_layout'
 homerun = 0
+presets_list = 0
 $info_text = ''
 $prisoner_info_text = ''
 

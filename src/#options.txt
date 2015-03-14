@@ -919,7 +919,7 @@ IF sparks => 15 and master_energy > 0:
 END
 $text_display += {<br><div id="under">Check preferences of the proprietress<div id = "clear"><a href = 'EXEC: interaction_city = 2251 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
 IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
- $text_display += {<div id="under">Offer a slave<br><div id = "clear"><a href = 'EXEC: interaction_city = 2252 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Offer a slave<br><div id = "clear"><a href = 'EXEC: interaction_city = 2254 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
  else
  $text_display += {<div id="under_gray">Offer a slave<br></div>}
 END
@@ -1294,19 +1294,15 @@ IF sparks => 1:
  else
  $text_display += {<br><div id="under_gray">Drink (1 sparks)<br></div>}
 END
-$text_display += {<br><div id="under">Check preferences<div id = "clear"><a href = 'EXEC: interaction_city = 32221 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
-IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
- $text_display += {<br><div id="under">Offer a slave<br><div id = "clear"><a href = 'EXEC: interaction_city = 32222 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- else
- $text_display += {<br><div id="under_gray">Offer a slave<br></div>}
-END
+ $text_display += {<br><div id="under">Talk with the bartender<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Talk with the chef<br><div id = "clear"><a href = 'EXEC: sp_txt = 3 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Leave the tavern<br><div id = "clear"><a href = 'EXEC: city_form = 3 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 }
 
 $tabern_options[2] = {
-$text_display = '<br>'
-$text_display += {<br><div id="under_gray">Check out the news (1 sparks)<br></div>}
-$text_display += {<br><div id="under">Check preferences<div id = "clear"><a href = 'EXEC: interaction_city = 3222 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display = '<br><br>'
+!$text_display += {<br><div id="under_gray">Check out the news (1 sparks)<br></div>}
+$text_display += {<br><div id="under">Check preferences<div id = "clear"><a href = 'EXEC: interaction_city = 32221 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
 IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
  $text_display += {<br><div id="under">Offer a slave<br><div id = "clear"><a href = 'EXEC: interaction_city = 3223 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
  else
@@ -1317,9 +1313,10 @@ $text_display += {<br><div id="under">End conversation<br><div id = "clear"><a h
 
 $tabern_options[3] = {
 $place = 'tabern_kitchen'
-$text_display = '<br>'
-$text_display += {<br><div id="under_gray">Personal lesson<br></div>}
-$text_display += {<br><div id="under_gray">Lesson for slave<br></div>}
+$text_display = '<br><br>'
+if nsfw = 1: not_safe = 1
+!$text_display += {<br><div id="under_gray">Personal lesson<br></div>}
+!$text_display += {<br><div id="under_gray">Lesson for slave<br></div>}
 $text_display += {<br><div id="under">Check preferences<div id = "clear"><a href = 'EXEC: interaction_city = 3233 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
 IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
  $text_display += {<br><div id="under">Offer a slave<br><div id = "clear"><a href = 'EXEC: interaction_city = 3234 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}

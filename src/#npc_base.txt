@@ -268,16 +268,29 @@ npc_attitude['madame_jofre'] = 31
 npc_reveal['madame_jofre'] = 1
 demand_rating['madame_jofre'] = 1
 
+$npc_preferences['madame_jofre'] = {
+stat_importance['temper'] = 3
+stat_importance['expression'] = 2
+stat_importance['service'] = 2
+stat_importance['cook'] = 2
+}
+
+count_size['madame_jofre'] = 1
+npc_attitude['madame_jofre'] = 31
+npc_reveal['madame_jofre'] = 1
+npc_bennies['madame_jofre'] = 100
+npc_contract_time['madame_jofre'] = 21
+
 $jofre_pref[1] = '  [MADAME JOFRE]
    - We know exactly where we want to use our girls so I can give you very detailed information on what we are looking for, mon cher ami. At first, every new girl will prepare the customers for the regular girls. To do that, she will need to know how to give blowjobs and have regular sex.'
 $jofre_pref[2] = '  [MADAME JOFRE]
    - Of course, giving handjobs and being able to service a man in a group is also helpful. Some customers love "special" treatment. However, all of that is not necessary - I can educate my workers myself.'
 $jofre_pref[3] = '  [MADAME JOFRE]
-   - Our customers expect to see pretty girls, so I will not take some scarecrow, even if she is a sex goddess. And of course, women should be temperamental. I do not own a sawmill, so I don''t need any logs. I hope your understand, mon cher.'
+   - Our customers expect to see <font color="#0000CD"><b>pretty</b></font> girls, so I will not take some scarecrow, even if she is a sex goddess. And of course, women should be <font color="#0000CD"><b>temperamental</b></font>. I do not own a sawmill, so I don''t need any logs. I hope your understand, mon cher.'
 $jofre_pref[4] = '  [MADAME JOFRE]
-   - Our girls clean rooms and work in the kitchen themselves, so at least some housekeeping skill is required. She needs to be able to talk to our customers in a empathetic way. I personally appreciate creative talent, although it is not necessary.'
+   - Our girls <font color="#4B0082"><b>clean rooms</b></font> and <font color="#4B0082"><b>work in the kitchen</b></font> themselves, so at least some housekeeping skill is required. She needs to be <font color="#4B0082"><b>able to talk</b></font> to our customers in a empathetic way. I personally appreciate creative talent, although it is not necessary.'
 $jofre_pref[5] = '  [MADAME JOFRE]
-   - If we sum up the requirements, I need women of <<$rating[1]>> rank or higher, trained as concubines. I am ready to pay 500 sparks per girl and buy as many as you want to sell.'
+   - Ah, yes... innocent lambs is in special demand here. So I am ready to add some sparks on top for her virginity. I think it will compensate for the complexity of training without the possibility of direct penetration. Perhaps that''s all. The requirements are quite simple, as you can see.'
 $buy_quote['madame_jofre'] = '   [MADAME JOFRE]
    - Ok, I''ll take her. There''s your sparks and thank you. I hope she will please me!'
 $refuse_skill_quote['madame_jofre'] = '   [MADAME JOFRE]
@@ -288,6 +301,9 @@ $refuse_charm_quote['madame_jofre'] = '   [MADAME JOFRE]
    - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
 $refuse_again_quote['madame_jofre'] = '   [MADAME JOFRE]
    - Why do you bring her to me again? She does not fit! Bring someone else.'     
+$buyer_demand['madame_jofre'] = {
+demand['min_beauty'] = 3
+}   
 
 
 $npc_image['brina'] = 'brina_the_red'
@@ -298,6 +314,20 @@ $npc_alignment['brina'] = 'нейтралы'
 $npc_info['brina'] = 'Once upon a time Bryn was a simple gladiatrix. However, her success in the arena were so impressive that she is not only admired by the plebs, but she was also rewarded with freedom. However, Bryn has not left the Coliseum - now she teaches young girls in the art of battle in the arena. This woman is stronger than most men.'
 demand_rating['brina'] = 1
 $interesting_specialisation['brina'] = 'gladiatrix'
+
+$npc_preferences['brina'] = {
+stat_importance['temper'] = 2
+stat_importance['callisthenics'] = 3
+stat_importance['penetration'] = 2
+}
+
+count_size['brina'] = 1
+npc_contract_time['brina'] = 21
+buying_temp['brina'] = 25
+npc_attitude['brina'] = 10
+npc_reveal['brina'] = 1
+npc_bennies['brina'] = 100
+
 $brina_pref[1] = '  [RED HAIR BRYN]
    - The requirement is simple - the girl must be suitable for the arena. What is there to explain? She must be <font color="#0000CD"><b>healthful</b></font>, right? She must be able to take a beating and survive. Then she must be brisk, <font color="#4B0082"><b>with a twinkle</b></font>. The audience loves them fierce and bold.'
 $brina_pref[2] = '  [RED HAIR BRYN]
@@ -318,7 +348,11 @@ $refuse_charm_quote['brina'] = '   [RED HAIR BRYN]
    - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
 $refuse_again_quote['brina'] = '   [RED HAIR BRYN]
    - I said that I would not take her! Are you deaf?'
-   
+$buyer_demand['brina'] = {
+demand['min_stamina'] = 3
+demand['min_exotic'] = 2
+}
+
 $npc_image['sir_shelly'] = 'sir_shelly'
 $npc_name['sir_shelly'] = 'Sir Shelly'
 $npc_status['sir_shelly'] = 'Club owner
@@ -826,7 +860,8 @@ demand_rating['moneylender'] = 2
 buying_temp['moneylender'] = 25
 count_size['moneylender'] = 20
 $buyer_demand['moneylender'] = {
-demand['virginity'] = 2
+demand['enchanter'] = 1
+demand['virginity'] = 1
 }
 
 $moneylender_pref[1] = '  [MONEYLENDER]
@@ -834,11 +869,11 @@ $moneylender_pref[1] = '  [MONEYLENDER]
 $moneylender_pref[2] = '  [MONEYLENDER]
    - I do not have special requirements. Any talent is useful, any quality has a price.'
 $moneylender_pref[3] = '  [MONEYLENDER]
-   - Only one condition - I do not like witches. I already have to be cautious not to get poisoned. I don''t want to fear my own slaves.'
+   - Only one condition - <font color="#cd0000"><b>I don''t like witches</b></font>. I already have to be cautious not to get poisoned. I don''t want to fear my own slaves.'
 $moneylender_pref[4] = '  [MONEYLENDER]
    - <font color="#008080"><b>She should be able to suck perfectly</b></font>! I love when bitches know their place and work as they should.'
 $moneylender_pref[5] = '  [MONEYLENDER]
-   - But most importantly: Don''t try to sell low-quality goods to me. I am willing to pay, but I''m not rich enough to buy overpriced bitches. I only want the finest girls to surround me.'
+   - But most importantly: Don''t try to sell low-quality goods to me. I mean her <font color="#4B0082"><b>rating</b></font> and <font color="#0000CD"><b>virginity</b></font>. I am willing to pay, but I''m not rich enough to buy overpriced bitches. I only want the finest girls to surround me.'
    
 
 $npc_image['kagami_san'] = 'kagami_san'
@@ -2001,13 +2036,13 @@ demand['min_stamina'] = 2
 demand['min_beauty'] = 2
 }
 $barman_pref[1] = '  [JOCK]
-   - Listen here, <<$master_name>>. I always need waitresses, but I will not pay more than 500 sparks. But we do not need shirkers who turn up their noses from all, faint, and fall. No uglies either.'
+   - Listen here, <<$master_name>>. First things first, the two main requirements: to work in the "Hip" girl should be <font color="#4B0082"><b>strong</b></font> and <font color="#4B0082"><b>cute</b></font>. But we do not need shirkers who turn up their noses from all, faint, and fall. No uglies either.'
 $barman_pref[2] = '  [JOCK]
-   - It is important that the customer be satisfied, so she should be able to communicate courteously and quickly carry, wash, and clean. This is important. But more important is for her to know how to read, we''re not doing charity work - sparks need to be accounted for.'
+   - It is important that the customer be satisfied, so she should be able <font color="#0000CD"><b>to communicate</b></font> courteously and <font color="#0000CD"><b>quickly carry, wash, and clean</b></font>. This is important. But more important is for her to know <font color="#4B0082"><b>how to read</b></font>, we''re not doing charity work - sparks need to be accounted for.'
 $barman_pref[3] = '  [JOCK]
    - If the waitress is not serving customers, she must not mess around but entertain guests instead. As a highlight of the program we have stripteases. But she can also sing a song there, or play the piano, you know. Oh, and she needs to understand the food so that she will not confuse meals.'
 $barman_pref[4] = '  [JOCK]
-   - We''ve certainly not got a brothel, but if the client pays an additional fee, then the waitress should be able to do blowjobs, right under the table. And rub with their tits when dancing - it''s called a lap dance.'
+   - We''ve certainly not got a brothel, but if the client pays an additional fee, then the waitress should be able <font color="#4B0082"><b>to do blowjobs</b></font>, right under the table. And rub with their tits when dancing - it''s called a lap dance.'
 $barman_pref[5] = '  [JOCK]
    - Important customers sometimes rent from us the whole hall for the events and so she will not pass by with just blowjobs then. When customers need to lose some pressure when drunk, then the waitress must take on this task. So she should be able to serve the crowd at once. Here''s the whole story, <<$master_name>>.'
 $buy_quote['barman'] = '   [JOCK]
@@ -2021,47 +2056,16 @@ $refuse_charm_quote['barman'] = '   [JOCK]
 $refuse_again_quote['barman'] = '   [JOCK]
    - No means no!'
 
-!not used
 $npc_image['chief'] = ''
-$npc_name['chief'] = 'Шеф'
-$npc_status['chief'] = 'Повар
+$npc_name['chief'] = 'Chef'
+$npc_status['chief'] = 'The Cook
 Serpis House (Renegades)'
 $npc_alignment['chief'] = 'serpis'
-$npc_info['chief'] = 'Кухня - это центр кабака, а шеф-повар на кухне - царь и бог. Хорошо бы поддерживать с ним добрые отношения сразу по двум причинам. Во-первых, шеф заведует покупкой мясных рабынь экстра-класса. Во-вторых, он может дать пару отличных уроков в области кулинарии, за отдельную плату, разумеется.'
+$npc_info['chief'] = 'Kitchen - is the center of the tavern, and the chef in the kitchen - the king and god. It would be good to maintain good relations with him for two reasons. Firstly, the chef in charge of buying meaty slaves of extra-class. Secondly, he can give a couple of excellent lessons in cooking, for a fee, of course.'
 $npc_preferences['chief'] = {
-stat_importance['stamina'] = 4
-stat_importance['sensitivity'] = 0
-stat_importance['temper'] = 0
-stat_importance['intellect'] = 0
-stat_importance['ego'] = 0
-stat_importance['exotic'] = 1
-stat_importance['fat'] = 0
-
-stat_importance['obedience'] = 2
-stat_importance['custom'] = 1
-stat_importance['pride'] = 0
-stat_importance['spoil'] = 0
-
-stat_importance['expression'] = 0
 stat_importance['pet'] = 3
-stat_importance['dressage'] = 0
-stat_importance['nurse'] = 0
-stat_importance['service'] = 0
 stat_importance['cook'] = 2
-stat_importance['roleplay'] = 0
-stat_importance['gladiatrix'] = 0
-stat_importance['enchanter'] = 0
-stat_importance['callisthenics'] = 0
-stat_importance['vocal'] = 0
-stat_importance['music'] = 0
-stat_importance['secretary'] = 0
-
-stat_importance['oral'] = 2
-stat_importance['penetration'] = 2
-stat_importance['petting'] = 1
 stat_importance['orgy'] = 2
-stat_importance['xenophily'] = 2
-stat_importance['fetishism'] = 0
 }
 npc_attitude['chief'] = 10
 npc_reveal['chief'] = 0
@@ -2073,19 +2077,18 @@ buying_temp['chief'] = 25
 $buyer_demand['chief'] = {
 demand['min_stamina'] = 4
 demand['min_fat'] = 2
-demand['virginity'] = 2
 }
 
-$chief_pref[1] = '  [ШЕФ]
-   - Сразу предупреждаю - если вы собрались сбрасывать мне несвежие трупы и последствия своих неудач, дальше можете даже не слушать. Мы предъявляем к нашим свинкам очень строгие критерии и им надо показать себя с лучшей стороны до того как они попадут на вертел!'
-$chief_pref[2] = '  [ШЕФ]
-   - Здоровье у свинки должно быть отменным - это наиважнейший момент. И разумеется она должна быть упитанной - сухое мясо я подавать не стану. Остальные качества не важны, хотя бойкий темперамент может понравиться некоторым клиентам.'
-$chief_pref[3] = '  [ШЕФ]
-   - Клиент имеет право сам выбрать себе подходящую свинку. Мясная рабыня должна уметь вести себя как животное и сохранять покорность перед смертью. Клиенты любят обсуждать со своим обедом способы приготовления, так что познания в кулинарии и вежливость весьма приветствуются.'
-$chief_pref[4] = '  [ШЕФ]
-   -  Также нужны обычные сексуальные навыки - клиент часто желает оприходовать свинку напоследок и не должен быть разочарован. А так как съесть целиком женщину одному человеку не под силу, свинку обычно заказывают на целую компанию. Удовлетворить надо всех.'
-$chief_pref[5] = '  [ШЕФ]
-   - Как можно понять из нашего названия, мы предпочитаем подавать девственное мясо, оно обладает особой нежностью и стоит дороже. За невинную свинку я дам вам премию. Но не надейтесь прославить своё клеймо - все восторги от вкусного мяса по праву достаются повару!'
+$chief_pref[1] = '  [CHEF]
+   - Just warning you - if you are going to dump me stale corpses and the consequences of your failures, then you can stop listening. We set very strict criteria for our pigs and they have to show their best before they get on a skewer!'
+$chief_pref[2] = '  [CHEF]
+   - Pig must be very <font color="#008080"><b>healthy</b></font> - this is the most important moment. And of course she should be <font color="#008080"><b>fat</b></font> - I will not serve dry meat. Other qualities are not important, though some customers might like lively temperament.'
+$chief_pref[3] = '  [CHEF]
+   - The client has the right to choose suitable pig for himself. Meaty slave must be able <font color="#0000CD"><b>to behave like an animal</b></font> and stay submissive before her death. Customers like to discuss with their dinner cooking techniques so that <font color="#4B0082"><b>knowledge of cooking</b></font> and courtesy are highly appreciated.'
+$chief_pref[4] = '  [CHEF]
+   -  We also need regular sexual skills - customer often wants to use pig before eating it and he should not be disappointed. Since it''s not really possible to eat woman entirely for one person, pig is usually bought for <font color="#4B0082"><b>whole company</b></font>. Necessary to satisfy everyone.'
+$chief_pref[5] = '  [CHEF]
+   - As you can see from our name, we prefer to serve virgin meat, it has a special tenderness and is more expensive. For the innocent pig I''ll give you an extra fee. But do not expect to glorify your brand - all delight from the delicious meat rightfully come to cook!'
 
 $npc_image['lao_van'] = 'lao_van'
 $npc_name['lao_van'] = 'Master Lao-Van'

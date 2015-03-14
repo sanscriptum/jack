@@ -15,6 +15,8 @@ dynamic $assistant_pass_out
 dynamic $master_pass_out
 !knout and whip check
 dynamic $toolsequipped
+!check slave rating
+gs '$slave_price'
 
 teach_stat_screen = 0
 master_stat_screen = 0

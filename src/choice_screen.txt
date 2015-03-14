@@ -34,7 +34,11 @@ if npc = 0:
 END
 IF npc ! 9999 and npc ! 0:
  $info_bar = '' 
- *p '<div id = "bg"><img src="content\pic\characters\<<$npc_image[$npc_id]>>.gif"></div>'
+ IF nsfw = 1:
+  *p '<div id = "bg"><img src="content\pic\bg\empty.jpg"></div>'
+  else
+  *p '<div id = "bg"><img src="content\pic\characters\<<$npc_image[$npc_id]>>.gif"></div>'
+ END
  *p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$npc_name[$npc_id]>></div><<$npc_status[$npc_id]>>
 
 Information for consideration:

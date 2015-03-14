@@ -32,14 +32,19 @@ if stat_importance['xenophily'] > slave['xenophily']: sl_txt = 102
 if stat_importance['fetishism'] > slave['fetishism']: sl_txt = 102
 
 if slave[$npc_id] < 1: slave[$npc_id] = 0
-charm_demand_max = 8 + demand_rating[$npc_id]*2
-charm_demand = RAND (0,charm_demand_max)
-if charm_demand > charm: slave[$npc_id] = 1
-if slave[$npc_id] = 1: sl_txt = 103
-if wizard_mode = 1: msg 'charm_demand_max = <<charm_demand_max>>
+if byer_from_house = 0:
+ charm_demand_max = 8 + demand_rating[$npc_id]*2
+ charm_demand = RAND (0,charm_demand_max)
+ if charm_demand > charm: slave[$npc_id] = 1
+ if slave[$npc_id] = 1: sl_txt = 103
+end
+
+if wizard_mode = 1: 
+msg 'charm_demand_max = <<charm_demand_max>>
 charm_demand = <<charm_demand>>
 charm = <<charm>>
 slave[$npc_id] = <<slave[$npc_id]>>'
+end
 
 killvar 'demand'
 demand['refuse_age'] = 99
@@ -56,18 +61,22 @@ if slave['beauty'] < demand['min_beauty']: sl_txt = 100
 if slave['fat'] < demand['min_fat']: sl_txt = 100
 if slave['fat'] > demand['max_fat']: sl_txt = 100
 
+IF demand['enchanter'] = 1:
+ IF slave['enchanter'] > 0: 
+  sl_txt = 100
+ END
+END
+
+killvar 'virgin_price'
 IF demand['virginity'] = 1:
  IF virginity > 1: 
   sl_txt = 100
-  else
-  virgin_price += 50*rating
  END
 END
-IF demand['virginity'] > 1:
- if virginity < 2: virgin_price += 50*rating
-END
 
-if virgin_price > 0: $virgin_price = ' плюс <<virgin_price>> за девственность'
+if virginity < 2: virgin_price += 50*rating
+
+if virgin_price > 0: $virgin_price = ' plus <<virgin_price>> for virginity'
 
 IF rating < demand_rating[$npc_id]: sl_txt = 101
 IF rating > demand_rating[$npc_id]: 

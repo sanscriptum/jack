@@ -318,6 +318,8 @@ $presets_help = ' Presets are store the current slave rules state. Click on the 
 $charm_help = ' Charm - is the sum of exponents which determines the overall attractiveness of a slave. The higher the charm, the higher the chance that the client will like a slave.
 High rates of style, exotic, fame, devotion and high brand status provide a high level of charm. Overweight or underweight, despair, spoil, bruises and scars adversely affect the charm, reducing it.'
 
+$rank_help = '   Click on a letter to the left to learn how to improve slave rank. Click on the stat to show hints. Click on the skill to make a quick training.'
+
 !Tips for master creating screen
 $сила_с_справка = '   Strength commands respect. It is very important for a trainer to be strong. Strength affects the force of your blows in combat, your endurance in daily tasks and the submissiveness of your slaves.'
 

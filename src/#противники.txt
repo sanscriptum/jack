@@ -2647,19 +2647,19 @@ $интеллект['champion_vatican'] = 'искусственный_идиот
 
 базовый_вред['champion_vatican'] = 8
 $атака_1_тип['champion_vatican'] = 'точная'
-$атака_1_тип_вреда['champion_vatican'] = 'огонь'
+$атака_1_тип_вреда['champion_vatican'] = 'колющий'
 $атака_1_штраф['champion_vatican'] = 'боль'
 $атака_1_бонус['champion_vatican'] = 'разгон'
 атака_1_длительность['champion_vatican'] = 9
 $атака_1_текст['champion_vatican'] = "Lady knight <font color='purple'>pierces</font> you with her flaming sword like a lance."
 $атака_2_тип['champion_vatican'] = 'быстрая'
-$атака_2_тип_вреда['champion_vatican'] = 'огонь'
+$атака_2_тип_вреда['champion_vatican'] = 'рубящий'
 $атака_2_штраф['champion_vatican'] = 'рассеянность'
 $атака_2_бонус['champion_vatican'] = 'меткость'
 атака_2_длительность['champion_vatican'] = 9
 $атака_2_текст['champion_vatican'] = "Champion's flaming sword <font color='green'>weaves</font> in the air a deadly and beautiful pattern."
 $атака_3_тип['champion_vatican'] = 'сильная'
-$атака_3_тип_вреда['champion_vatican'] = 'огонь'
+$атака_3_тип_вреда['champion_vatican'] = 'рубящий'
 $атака_3_штраф['champion_vatican'] = 'слабость'
 $атака_3_бонус['champion_vatican'] = 'адреналин'
 атака_3_длительность['champion_vatican'] = 9

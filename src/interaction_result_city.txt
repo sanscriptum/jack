@@ -20,7 +20,14 @@ IF $interaction_type = 'byer_invitation':
    txt = 1
    $yes = {$interaction_type = 'sell_slave_house'
    gt 'interaction_result_city'}
-   $no = {gt 'city_menu_form'}
+   $no = {
+    if from_club = 1:
+     from_club = 0
+     gt "<<$return_lock>>"
+     else
+	 gt 'city_menu_form'
+	end
+	}
    gt 'choice_screen'
   END
  END

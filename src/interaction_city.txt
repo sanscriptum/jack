@@ -3675,6 +3675,7 @@ IF interaction_city = 231:
 END
 
 IF interaction_city = 2311:
+ from_club = 1
  $interaction_type = 'byer_invitation'
  $place = 'club'
  $return_lock  = 'shop_general' 
@@ -3682,6 +3683,7 @@ IF interaction_city = 2311:
 END
 
 IF interaction_city = 2312:
+ from_club = 1
  $interaction_type = 'byer_invitation'
  $return_lock  = 'shop_general' 
  $place = 'club'
@@ -3689,6 +3691,7 @@ IF interaction_city = 2312:
 END
 
 IF interaction_city = 2313:
+ from_club = 1
  $interaction_type = 'byer_invitation'
  $place = 'club'
  $return_lock  = 'shop_general' 
@@ -3696,6 +3699,7 @@ IF interaction_city = 2313:
 END
 
 IF interaction_city = 2314:
+ from_club = 1
  $interaction_type = 'byer_invitation'
  $place = 'club'
  $return_lock  = 'shop_general' 
@@ -3703,6 +3707,7 @@ IF interaction_city = 2314:
 END
 
 IF interaction_city = 2315:
+ from_club = 1
  $interaction_type = 'byer_invitation'
  $place = 'club'
  $return_lock  = 'shop_general' 
@@ -3710,6 +3715,7 @@ IF interaction_city = 2315:
 END
 
 IF interaction_city = 2316:
+ from_club = 1
  $interaction_type = 'byer_invitation'
  $place = 'club'
  $return_lock  = 'shop_general' 
@@ -5037,6 +5043,7 @@ IF interaction_city = 4112:
 END
 
 IF interaction_city = 4113:
+ from_club = 1
  $interaction_type = 'byer_invitation'
  $place = 'witch_shop'
  city_form = 4

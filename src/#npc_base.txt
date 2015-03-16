@@ -37,7 +37,7 @@ $auction_buyer[16] = 'mikkey'
 $auction_buyer[17] = 'pretor_tifaret'
 $auction_buyer[18] = 'prince_charming'
 $auction_buyer[19] = 'sfinga'
-$auction_buyer[20] = 'poison'
+$auction_buyer[20] = 'shooliba'
 $auction_buyer[21] = 'baron_imladis'
 $auction_buyer[22] = 'bishop_nerilis'
 $auction_buyer[23] = 'blackwing'
@@ -94,59 +94,80 @@ $auction_buyer[73] = 'sir_toughbar'
 $auction_buyer[74] = 'ester'
 $auction_buyer[75] = 'doctor'
 $auction_buyer[76] = 'kerulis_veil'
-$auction_buyer[77] = 'брина_рыжая'
+$auction_buyer[77] = 'brina'
 $auction_buyer[78] = 'менхантер'
 $auction_buyer[79] = 'kagami_san'
 $auction_buyer[80] = 'azura'
 $auction_buyer[81] = 'servilia_quinta'
 $auction_buyer[82] = 'estelindel'
 $auction_buyer[83] = 'madame_jofre'
-$auction_buyer[84] = 'лао_ван'
+$auction_buyer[84] = 'lao_van'
+$auction_buyer[85] = 'poison'
 
 !general list for slave buyers
 $basic_buyer[0] = 'sample'
-$basic_buyer[1] = 'oberstleutenant_dorward'
-$basic_buyer[2] = 'arbue'
-$basic_buyer[3] = 'bullhorn'
-$basic_buyer[4] = 'countess_bathory'
-$basic_buyer[5] = 'gloth_prisonguard'
-$basic_buyer[6] = 'kratos'
-$basic_buyer[7] = 'kurfilinn'
-$basic_buyer[8] = 'lady_mordhulla'
-$basic_buyer[9] = 'lord_pira'
-$basic_buyer[10] = 'magnaga'
-$basic_buyer[11] = 'mikkey'
-$basic_buyer[12] = 'prince_charming'
-$basic_buyer[13] = 'sfinga'
-$basic_buyer[14] = 'baron_imladis'
-$basic_buyer[15] = 'donna_venturi'
-$basic_buyer[16] = 'faceless'
-$basic_buyer[17] = 'lady_yasmenia'
-$basic_buyer[18] = 'mad_baron'
-$basic_buyer[19] = 'paral_itch'
-$basic_buyer[20] = 'wight'
+
+$basic_buyer[1] = 'taurus_king'
+$basic_buyer[2] = 'pretor_siegfrid'
+$basic_buyer[3] = 'bishop_molaru'
+$basic_buyer[4] = 'don_karbolio'
+$basic_buyer[5] = 'don_sedos'
+$basic_buyer[6] = 'don_sorino'
+$basic_buyer[7] = 'don_sigismund'
+$basic_buyer[8] = 'don_bobrit'
+$basic_buyer[9] = 'don_mladio'
+$basic_buyer[10] = 'don_castilio'
+$basic_buyer[11] = 'don_diego'
+$basic_buyer[12] = 'magister_gilmeritus'
+$basic_buyer[13] = 'sir_toughbar'
+$basic_buyer[14] = 'lady_edna'
+$basic_buyer[15] = 'lady_suinton'
+
+$basic_buyer[16] = 'pretor_diabaz'
+$basic_buyer[17] = 'general_drago'
+$basic_buyer[18] = 'piter_viabu'
+$basic_buyer[19] = 'lao_van'
+$basic_buyer[20] = 'mister_grease'
 $basic_buyer[21] = 'archmage_zephiros'
-$basic_buyer[22] = 'avek_plesir'
-$basic_buyer[23] = 'dofine_tutti'
-$basic_buyer[24] = 'earl_gray'
-$basic_buyer[25] = 'frogger'
-$basic_buyer[26] = 'krull'
-$basic_buyer[27] = 'leonid_alexandriatos'
-$basic_buyer[28] = 'lucius_patricius'
-$basic_buyer[29] = 'mister_grease'
-$basic_buyer[30] = 'mister_lardbag'
-$basic_buyer[31] = 'piter_viabu'
-$basic_buyer[32] = 'singh_khan'
-$basic_buyer[33] = 'don_castilio'
-$basic_buyer[34] = 'don_diego'
-$basic_buyer[35] = 'lady_edna'
-$basic_buyer[36] = 'lady_suinton'
-$basic_buyer[37] = 'magister_gilmeritus'
-$basic_buyer[38] = 'sir_toughbar'
-$basic_buyer[39] = 'lao_van'
-$basic_buyer[40] = 'scarlet'
-$basic_buyer[41] = 'earl_gray'
-$basic_buyer[42] = 'green_mamba'
+$basic_buyer[22] = 'mister_lardbag'
+$basic_buyer[23] = 'krull'
+$basic_buyer[24] = 'avek_plesir'
+$basic_buyer[25] = 'green_mamba'
+$basic_buyer[26] = 'leonid_alexandriatos'
+$basic_buyer[27] = 'lucius_patricius'
+$basic_buyer[28] = 'singh_khan'
+$basic_buyer[29] = 'frogger'
+$basic_buyer[30] = 'dofine_tutti'
+$basic_buyer[31] = 'earl_gray'
+
+$basic_buyer[32] = 'pretor_tifaret'
+$basic_buyer[33] = 'bishop_shaitana'
+$basic_buyer[34] = 'mystra'
+$basic_buyer[35] = 'gloth_prisonguard'
+$basic_buyer[36] = 'bullhorn'
+$basic_buyer[37] = 'arbue'
+$basic_buyer[38] = 'magnaga'
+$basic_buyer[39] = 'kratos'
+$basic_buyer[40] = 'mikkey'
+$basic_buyer[41] = 'sfinga'
+$basic_buyer[42] = 'lady_mordhulla'
+$basic_buyer[43] = 'kurfilinn'
+$basic_buyer[44] = 'prince_charming'
+$basic_buyer[45] = 'lord_pira'
+$basic_buyer[46] = 'countess_bathory'
+
+$basic_buyer[47] = 'pretor_kamael'
+$basic_buyer[48] = 'wight'
+$basic_buyer[49] = 'lestor'
+$basic_buyer[50] = 'paral_itch'
+$basic_buyer[51] = 'draugr'
+$basic_buyer[52] = 'scarlet'
+$basic_buyer[53] = 'mad_baron'
+$basic_buyer[54] = 'faceless'
+$basic_buyer[55] = 'donna_venturi'
+$basic_buyer[56] = 'lady_yasmenia'
+$basic_buyer[57] = 'count_yagellon'
+$basic_buyer[58] = 'baron_imladis'
 
 
 !non-client NPC
@@ -156,18 +177,6 @@ $npc_status['ester'] = 'Official of congregation
 Vatican'
 $npc_info['ester'] = 'The right hand of Cardinal Skartsone, executive secretary of the "Congregation for the obstetrics and orphans charity". She looks very lively and is always smiling. For some reason though, when you look at her, shivers run down your spine.'
 npc_attitude['ester'] = 31
-npc_participation_chance['ester'] = 0
-demand_rating['ester'] = 3
-npc_money_cap['ester'] = 1000
-$interesting_specialisation['ester'] = 'refferent'
-npc_cap_rise['ester'] = 0
-
-$npc_name['oberstleutenant_dorward'] = 'Lieutenant Colonel Durward'
-npc_participation_chance['oberstleutenant_dorward'] = 0
-demand_rating['oberstleutenant_dorward'] = 3
-npc_money_cap['oberstleutenant_dorward'] = 1000
-$interesting_specialisation['oberstleutenant_dorward'] = 'concubine'
-npc_cap_rise['oberstleutenant_dorward'] = 0
 
 $npc_image['bararaika'] = 'bararaika'
 $npc_name['bararaika'] = 'Balalaika'
@@ -210,13 +219,6 @@ $npc_status['butcher'] = 'Slave from the grocery shop
 Neutrals'
 $npc_info['butcher'] = 'The only task of this big and dark servant - carve female carcasses at the chopping deck and sell the meat to customers.'
 npc_attitude['butcher'] = 10
-
-$npc_image['ester'] = 'ester'
-$npc_name['ester'] = 'Reverend Esther Blanchett'
-$npc_status['ester'] = 'Official of congregation
-Vatican'
-$npc_info['ester'] = 'The right hand of Cardinal Skartsone, executive secretary of the "Congregation for the obstetrics and orphans charity". She looks very lively and is always smiling. For some reason though, when you look at her, shivers run down your spine.'
-npc_attitude['ester'] = 31
 
 $npc_image['kerulis_veil'] = 'kerulis_veil'
 $npc_name['kerulis_veil'] = 'Kerulis Vale'
@@ -1122,7 +1124,7 @@ $npc_alignment['taurus_king'] = 'taurus'
 $npc_info['taurus_king'] = 'Leader of the Taurus Great House. He is traditionally called "King", although this has nothing to do with him actually being a king. Arboreus - a strong leader, a warrior and politician. Many believe that his old age is already beginning to take his own.'
 demand_rating['taurus_king'] = 5
 $interesting_specialisation['taurus_king'] = 'concubine'
-$diary_mark['taurus_king'] = "   This is fit for a king, but only if I get an appointment."
+$diary_mark['taurus_king'] = "   This is fit for a king in a White Palace, but only if I get an appointment."
 $npc_preferences['taurus_king'] = {
 stat_importance['intellect'] = 3
 stat_importance['ego'] = 3
@@ -1342,8 +1344,8 @@ $refuse_again_quote['don_diego'] = '   [Don Diego]
    - No means no!'
 
 $npc_image['don_karbolio'] = 'don_karbolio'
-$npc_name['don_karbolio'] = ''
-$npc_status['don_karbolio'] = 'Don Karbolio
+$npc_name['don_karbolio'] = 'Don Karbolio'
+$npc_status['don_karbolio'] = 'Aristocrat
 Taurus House (Faithfuls)'
 $npc_alignment['don_karbolio'] = 'taurus'
 $npc_info['don_karbolio'] = '   '
@@ -1752,7 +1754,7 @@ $npc_alignment['dofine_tutti'] = 'serpis'
 $npc_info['dofine_tutti'] = '   '
 demand_rating['dofine_tutti'] = 3
 $interesting_specialisation['dofine_tutti'] = 'nurse'
-$diary_mark['dofine_tutti'] = "   <<$npc_name['dofine_tutti']>>. His palace is next to an ant hill in a Serpentine quarter."
+$diary_mark['dofine_tutti'] = "   <<$npc_name['dofine_tutti']>>. His palace is next to an Anthill in a Serpentine quarter."
 $dofine_tutti_pref[1] = "  [TUTTI]
    - I need <<$slave_type_name[$interesting_specialisation['dofine_tutti']]>> of rank <<$rating[demand_rating['dofine_tutti']]>> or higher. I'll pay <<common_price[demand_rating['dofine_tutti']]>> sparks."
 $buy_quote['dofine_tutti'] = '   [TUTTI]
@@ -1774,8 +1776,8 @@ Serpis House (Renegades)'
 $npc_alignment['earl_gray'] = 'serpis'
 $npc_info['earl_gray'] = '   '
 demand_rating['earl_gray'] = 3
-$interesting_specialisation['earl_gray'] = 'none'
-$diary_mark['earl_gray'] = "   <<$npc_name['earl_gray']>>. Однако где его можно найти не вполне понятно..."
+$interesting_specialisation['earl_gray'] = 'refferent'
+$diary_mark['earl_gray'] = "   <<$npc_name['earl_gray']>>. He lives in his tower near an Anthill."
 $earl_gray_pref[1] = "  [Earl Grey]
    - I need <<$slave_type_name[$interesting_specialisation['earl_gray']]>> of rank <<$rating[demand_rating['earl_gray']]>> or higher. I'll pay <<common_price[demand_rating['earl_gray']]>> sparks."
 $buy_quote['earl_gray'] = '   [Earl Grey]

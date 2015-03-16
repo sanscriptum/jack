@@ -1792,6 +1792,8 @@ $aura_assistant_moral[5] = '<font color="#00a86b">Emerald glow of devotion</font
 
 !TRAITS
 $Нет_клейма = '  Your slave is not branded! You won''t be able to sell unbranded slaves to customers, in addition unbranded slave will not be able to get used with her new destiny. You should check the "Anatomy" tab to put the brand if you have a dungeon, or go to a tattoo shop in the quarter of Outcasts.'
+$sanity_broken = '  Slave spirit is broken. This means that slave has become a soulless doll - it will reduce her rating, slave will stop endeavor and she will also lose the will to live, but will fulfill all orders without questions. Check the condition of temperament and nature - their sum should be more than two for the normal state of mind. Also note the pride - the more slave is arrogant, the stronger will be her mind.'
+$sanity_low = '  Slave''s state of mind approaching dangerously low level! Be careful with the pride - the more pride is broken, the weaker will be the mind. Check the condition of temperament and nature - their sum should be more than two for normal state of mind.'
 $Нимфоманка = "  You've noticed that your slave, to put it mildly, is partial to sex. Many sexual practices will be easier for her, but an insatiable desire will drive her crazy."
 $Фригидная = '  You understand that your slave is completely indifferent to sex. It is practically impossible to excite her and this will clearly complicate the development of many relevant practices and negate all erotic encouragement.'
 $Мазохистка = '  Pain does not scare your slave. On the contrary, she strives to be in pain and receives pleasure from it. Flogging a masochist is useless, but there are also other influences besides the pain...'
@@ -2275,19 +2277,19 @@ $slave_chestbuster[1] = '   You are distracted from your daydreams by heartbreak
 $slave_chestbuster[2] = '   [<<$slave_name>>]
    - Ahhh!!!!!! Something is eating me up inside.. My God, it hurts.. Aaahhhh!!!! Master, please stop it... please... Aaahhh!!!'
 $slave_chestbuster[3] = '   Something big and lively moves inside the slave''s stomach. You see her skin bulge, taking outlines of an ugly, toothed mouth, finally bursting in a fountain of blood and viscera.'
-$slave_chestbuster[4] = '   This is the larva of a Fog fiend! All the while it fed and grew up in the body of your slave. She can not be rescued now. You just have to deal with the fiend.'
+$slave_chestbuster[4] = '   This is the larva of a Fog fiend! All the while it fed and grew up in the body of your slave. Probably should have check her in the medical center to get rid of the parasite, but now she can not be saved. You just have to deal with the fiend.'
 
 $assistant_chestbuster[1] = '   You are distracted from your daydreams by heartbreaking female screams. You rush to your assistant to find out what happened to her.'
 $assistant_chestbuster[2] = '   [<<$assistant_name>>]
    - Ahhh!!!!!! Something is eating me up inside.. My God, it hurts.. Aaahhhh!!!! Master, please stop it... please... Aaahhh!!!'
 $assistant_chestbuster[3] = '   Something big and lively moves inside the assistant''s stomach. You see her skin bulge, taking outlines of an ugly, toothed mouth, finally bursting in a fountain of blood and viscera.'
-$assistant_chestbuster[4] = '   This is the larva of a Fog fiend! All the while it fed and grew up in the body of your assistant. She can not be rescued now. You just have to deal with the fiend.'
+$assistant_chestbuster[4] = '   This is the larva of a Fog fiend! All the while it fed and grew up in the body of your assistant. Probably should have check her in the medical center to get rid of the parasite, but now she can not be saved. She can not be rescued now. You just have to deal with the fiend.'
 
 $prisoner_chestbuster[1] = '   You are distracted from your daydreams by heartbreaking female screams. You rush to your prisoner to find out what happened to her.'
 $prisoner_chestbuster[2] = '   [<<$prisoner_name>>]
    - Ahhh!!!!!! Something is eating me up inside.. My God, it hurts.. Aaahhhh!!!! Master, please stop it... please... Aaahhh!!!'
 $prisoner_chestbuster[3] = '   Something big and lively moves inside the prisoner''s stomach. You see her skin bulge, taking outlines of an ugly, toothed mouth, finally bursting in a fountain of blood and viscera.'
-$prisoner_chestbuster[4] = '   This is the larva of a Fog fiend! All the while it fed and grew up in the body of your slave. She can not be rescued now. You just have to deal with the fiend.'
+$prisoner_chestbuster[4] = '   This is the larva of a Fog fiend! All the while it fed and grew up in the body of your slave. Probably should have check her in the medical center to get rid of the parasite, but now she can not be saved. She can not be rescued now. You just have to deal with the fiend.'
 
 $chestbuster_flee = '   You try to crush the creature with your foot, but the larva is incredibly agile. Deftly dodging your attacks, the newborn fiend jumps out to the window and disappears from sight. Gross.'
 $chestbuster_catch = '   Fortunately, you envisaged this in advance and were ready to act. While the bloody larva rushes around the house in search of an exit, you grab the prepared net and catch it. You just have to carry it to the pen and then you will be the owner of a personal Fog fiend.'

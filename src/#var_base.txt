@@ -1197,6 +1197,10 @@ if prisoner["starvation"] => 25: $prisoner_starvation = $_font_col_rep[0] + 'Sev
 if prisoner["starvation"] => 35: $prisoner_starvation = $_font_col_rep[0] + 'Heavy starvation' + $_font_closer
 if prisoner["starvation"] => 50: $prisoner_starvation = $_font_col_rep[0] + 'Lethal starvation' + $_font_closer
 
+!sanity
+if sanity < 3: $slave_sanity = '<a style = "color: #cd0000;" href="EXEC: $info_text = $sanity_broken & gt $curloc">Sanity</a>'
+if sanity <= 5 and sanity > 2: $slave_sanity = '<a style = "color: #C71585;" href="EXEC: $info_text = $sanity_low & gt $curloc">Sanity</a>'
+
 $master_str[0] = dyneval($vb_cycle, 0, 'Helpless')
 $master_str[1] = dyneval($vb_cycle, 1, 'Weak')
 $master_str[2] = dyneval($vb_cycle, 2, 'Unfit')

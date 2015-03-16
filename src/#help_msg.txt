@@ -320,6 +320,26 @@ High rates of style, exotic, fame, devotion and high brand status provide a high
 
 $rank_help = '   Click on a letter to the left to learn how to improve slave rank. Click on the stat to show hints. Click on the skill to make a quick training.'
 
+$rank_help_2 = '<center><u>COLOR EXPLANATION:</u>
+(For stats)
+<font color="#556832">Dark Olive</font> = Higher than 5
+<font color="#008000">Green</font> = 5
+<font color="#008080">Light green</font> = 4
+<font color="#0000CD">Blue</font> = 3
+<font color="#4B0082">Purple</font> = 2
+<font color="#C71585">Pink</font> = 1
+<font color="#cd0000">Red</font> = 0</center>'
+
+$specialisation_help = '<div style="font-size: 90%;"><center>Assistant - clerical work or etiquette
+Maid - housekeeping or cooking
+Nurse - nurse training
+Gladiatrix - martial arts
+Enchantress - alchemy
+Artist - singing, music or dance
+Pet - domestication or pet training</center></div>'
+
+$assistant_help = '   Current slave doesn''t have enough devotion to become an assistant. Devotion grows with time if slave developed awareness, taming, habit and if go out on a date with her. Fear and despair negatively affect the growth of devotion.'
+
 !Tips for master creating screen
 $сила_с_справка = '   Strength commands respect. It is very important for a trainer to be strong. Strength affects the force of your blows in combat, your endurance in daily tasks and the submissiveness of your slaves.'
 

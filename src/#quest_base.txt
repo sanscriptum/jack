@@ -57,6 +57,8 @@ $quest_description[10] = '  I received a contract in the guild for training a sl
 
 <u>Reminder, not to forget!</u>
 
+<a href = "EXEC: msg $specialisation_help">Tip on specializations</a>
+
 To prepare a slave on a specific specialization, I need to train her profile skill to at least <font color="#0000CD">average</font> level. Concubines also requires the sum of sex techniques more than nine. If I have an assistant, she will tell when the slave will correspond to specialization.
 
 Usual time limit on the contract:

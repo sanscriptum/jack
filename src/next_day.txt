@@ -290,6 +290,9 @@ dynamic $get_frige_space
 
 !reseting and lowering vars
 killvar 'already_done_today'
+killvar 'already_gain_virtue'
+killvar 'already_gain_assistant'
+killvar 'already_gain_prisoner'
 auspex = 0
 slave["beaten"] = 0
 prisoner["beaten"] = 0

@@ -68,6 +68,7 @@ IF slave_state = CONST_INT['no_slave']:
  killvar 'slave' 
  killvar 'slave_rate' 
  killvar 'already_done_curslave'
+ killvar 'already_gain_virtue'
 END
 
 !"IF assistant_state = 0:

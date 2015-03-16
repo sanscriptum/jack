@@ -175,7 +175,7 @@ $богатство_справка = '<center>STANDARD OF LIVING<br>
 <font color="#008000">Luxurious</font>
 <font color="#008000">Extravagant</font></center>'
 $богатство_совет = "   [STANDARD OF LIVING TIPS]
-  All the wealth in the world will do nothing to improve your standing if you live like a beggar and never improve your lot in life. Set the standard of living in the menu under 'Domestic Issues'. A standard of living a little above your fame is optimal, but beware of the expense. Assigning a good accountant can optimize your costs."
+<div style='font-size: 90%;'>  All the wealth in the world will do nothing to improve your standing if you live like a beggar and never improve your lot in life. Set the standard of living in the menu under 'Domestic Issues', it will change at the end of the decade according to your settings. A standard of living a little above your fame is optimal, but beware of the expense. Assigning a good accountant can optimize your costs.</div>"
 
 $гигиена_справка = '<center>HYGIENE<br>
 <font color="#cd0000">Disgusting</font>

@@ -353,43 +353,22 @@ IF menu_form = 17:
 END
 
 IF menu_form = 31:
- IF master_wealth_target = 0:
-  $text_display += {<br><div id="under">+Standard of living: Poor<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 1 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- END   
- IF master_wealth_target = 1:
-  $text_display += {<br><div id="under">+Standard of living: Basic<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 2 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
-  $text_display += {<br><div id="under">-Standard of living: Impoverished<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 0 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- END   
- IF master_wealth_target = 2:
-  $text_display += {<br><div id="under">+Standard of living: Comfortable<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 3 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
-  $text_display += {<br><div id="under">-Standard of living: Poor<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 1 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- END   
- IF master_wealth_target = 3:
-  $text_display += {<br><div id="under">+Standard of living: Respectable<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 4 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
-  $text_display += {<br><div id="under">-Standard of living: Basic<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 2 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- END   
- IF master_wealth_target = 4:
-  $text_display += {<br><div id="under">+Standard of living: Luxurious<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 5 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
-  $text_display += {<br><div id="under">-Standard of living: Comfortable<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 3 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- END   
- IF master_wealth_target = 5:
-  $text_display += {<br><div id="under">+Standard of living: Extravagant<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 6 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
-  $text_display += {<br><div id="under">-Standard of living: Respectable<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 4 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- END   
- IF master_wealth_target = 6:
-  $text_display += {<br><div id="under">-Standard of living: Luxurious<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 5 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
- END   
  IF $bill_message ! '':
   $text_display += {<br><div id="under">Financial report<br><div id = "clear"><a href = 'EXEC: msg "<<$bill_message>>"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Financial report<br></div>}
  END 
- IF slave_state = CONST_INT['slave_exist'] and slave_account_rule = 1:
-  $text_display += {<br><div id="under">Do accounting personally<br><div id = "clear"><a href = 'EXEC: slave_account_rule = 0 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ IF slave_account_rule = 0 and assistant_account_rule = 0:
+  $text_display += {<br><br><div id="under">Do accounting personally<br></div>}
   else
-  if slave_state = CONST_INT['slave_exist']: $text_display += {<br><div id="under">Slave - accountant<br><div id = "clear"><a href = 'EXEC: slave_account_rule = 1 & assistant_account_rule = 0 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
-  if slave_state ! CONST_INT['slave_exist']: $text_display += {<br><div id="under_gray">Slave - accountant<br></div>}
- END 
+  $text_display += {<br><br><div id="under_gray">Do accounting personally<br><div id = "clear"><a href = 'EXEC: assistant_account_rule = 0 & slave_account_rule = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF slave_state = CONST_INT['slave_exist'] and slave_account_rule = 1:
+  $text_display += {<br><div id="under">Slave - accountant<br></div>}
+  elseif slave_state ! CONST_INT['slave_exist']: $text_display += {<br><div id="under_gray">Slave - accountant<br></div>}
+  else
+  $text_display += {<br><div id="under_gray">Slave - accountant<br><div id = "clear"><a href = 'EXEC: slave_account_rule = 1 & assistant_account_rule = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
  $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 3 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END

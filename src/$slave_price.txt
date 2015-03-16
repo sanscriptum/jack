@@ -275,5 +275,14 @@ if charm => 12: $charm_stat = $_font_col_rep[2] + 'Charm' + $_font_closer
 if charm => 16: $charm_stat = $_font_col_rep[3] + 'Charm' + $_font_closer
 if charm => 20: $charm_stat = $_font_col_rep[4] + 'Charm' + $_font_closer
 if charm => 40: $charm_stat = $_font_col_rep[5] + 'Charm' + $_font_closer
+
+if assistant["fat"] = 0: assistant_relative_fat = 1
+if assistant["fat"] = 1: assistant_relative_fat = -1
+if assistant["fat"] = 2: assistant_relative_fat = 1
+if assistant["fat"] = 3: assistant_relative_fat = 3
+if assistant["fat"] = 4: assistant_relative_fat = 6
+if assistant["fat"] = 5: assistant_relative_fat = 10
+assistant_charm = assistant["style"]*3 + assistant["exotic"] + assistant["moral"] + brand_reputation + assistant["fame"]*2 - assistant_relative_fat - assistant["angst"] - assistant["spoil"] - assistant["scares"] - (assistant["bruises"]+1)/2
+if assistant_charm < 0: assistant_charm = 0  
 --- $slave_price ---------------------------------
 

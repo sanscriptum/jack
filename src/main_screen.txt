@@ -225,6 +225,23 @@ END
 
 *p '<div id = "master_short_ava"><a href = "EXEC: gt ''master_stat''"><img src = "<<$master_ava>>"></a></div>'
 
+!кнопка перехода в крио
+IF cryo_intro = 1:
+ IF $estate = 'serpis_house':
+	if ui_style = 2:
+		*p '<div id = "cryo_button"><a href = "EXEC: interaction_city = 332 & gt ''interaction_city''"><img src="content\pic\ui\grimdark\buttons\cryobutton.png"></a></div>'
+		else
+		*p '<div id = "cryo_button"><a href = "EXEC: interaction_city = 332 & gt ''interaction_city''"><img src="content\pic\buttons\cryobutton.png"></a></div>'
+	end
+  ELSE
+	if ui_style = 2:
+		*p '<div id = "cryo_button"><a href = "EXEC: dynamic $master_energy_drop & homerun = 1 & interaction_city = 332 & gt ''interaction_city''"><img src="content\pic\ui\grimdark\buttons\cryobutton.png"></a></div>'
+		else
+		*p '<div id = "cryo_button"><a href = "EXEC: dynamic $master_energy_drop & homerun = 1 & interaction_city = 332 & gt ''interaction_city''"><img src="content\pic\buttons\cryobutton.png"></a></div>'
+	end
+ END
+END
+
 IF master_hygiene > 1 and slave_washes_rule = 1 and slave_state = CONST_INT['slave_exist'] and bath > 0: 
  *p {<div id="fast_wash_master"><a href = "EXEC: interaction = 5411 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}   
  else

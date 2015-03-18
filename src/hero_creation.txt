@@ -70,6 +70,14 @@ $master_ava_color = $clear_ava_path[hero_choice]
 
 *p '<div style="position:absolute;top:715px;left:580px;font-family:Victoriana;font-size:36px;"><a style = "color: black;" href = ''EXEC: gt "start_game"''>{ Start }</a></div>'
 
+*p '<div style="position:absolute;top:445px;left:755px;font-family:Segoe Print;"><a style = "color: black;" href = ''EXEC: msg $patrician_mode_help & gt $curloc''>Patrician</a></div>'
+
+IF get_initial_slave = 1:
+ *p '<div style="position:absolute;top:448px;left:870px;"><a href = "EXEC: get_initial_slave = 0 & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>' 
+ else
+ *p '<div style="position:absolute;top:451px;left:870px;"><a href = "EXEC: get_initial_slave = 1 & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+END
+
 *p {<div id = "close_scroll"><a href = 'EXEC: hero_points = 0 & gt "main_menu"'><img src = "content\pic\buttons\close_button.png"></a></div>}
 --- hero_creation ---------------------------------
 

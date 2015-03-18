@@ -369,6 +369,8 @@ $бондаж_с_справка = '<div style="font-size: 95%;">  Binding allows
 
 $секс_техники_с_справка = '  Different sex techniques will increase the effectiveness of training relevant skills and with due skill sexual partner will have more excitement.'
 
+$patrician_mode_help = '  In the Patrician mode player starts with increased amount of money, has home in White Town, assistant and top-end equipment, as well as the basic reputation in the Great Houses which allows to buy any house, and of course patrician status.'
+
 !"
 $ = '<center>КРАСОТА<br>
 <font color="#cd0000">Изуродована</font>

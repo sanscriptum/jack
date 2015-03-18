@@ -28,6 +28,9 @@ if get_initial_slave = 1:
  slave["bruises"] = 0
  slave_rate["scares"] = 0
  slave_rate["bruises"] = 0
+ slave["energy"] = 5
+ slave["hygiene"] = 0
+ slave_rate["hygiene"] = 0
  
  $master_armor = 'плейт'
  $master_cloth = 'fancy_suit'

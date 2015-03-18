@@ -1046,13 +1046,41 @@ $boutic_options[6] = {
 $text_display = '<br><br>'
 
 IF sparks => 10:
- $text_display += {<div id="under">Formal suit (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11351 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Medical gown (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11352 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Wizard robes (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11353 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Housecoat (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11354 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Fashionable attire (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11355 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Aketon (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11356 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Livery (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11357 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ if formal_suit < 1 and $master_cloth ! "formal_suit":
+  $text_display += {<div id="under">Formal suit (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11351 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Formal suit (10 sparks)<br></div>}
+ end
+ if medic_robes < 1 and $master_cloth ! "medic_robes":
+  $text_display += {<div id="under">Medical gown (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11352 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Medical gown (10 sparks)<br></div>} 
+ end
+ if wizard_robes < 1 and $master_cloth ! "wizard_robes":
+  $text_display += {<div id="under">Wizard robes (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11353 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Wizard robes (10 sparks)<br></div>}
+ end
+ if comfy_robes < 1 and $master_cloth ! "comfy_robes":
+  $text_display += {<div id="under">Housecoat (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11354 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Housecoat (10 sparks)<br></div>} 
+ end
+ if fancy_suit < 1 and $master_cloth ! "fancy_suit":
+  $text_display += {<div id="under">Fashionable attire (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11355 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Fashionable attire (10 sparks)<br></div>}  
+ end
+ if aketon < 1 and $master_cloth ! "aketon":
+  $text_display += {<div id="under">Aketon (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11356 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Aketon (10 sparks)<br></div>}
+ end
+ if livery < 1 and $master_cloth ! "livery":
+  $text_display += {<div id="under">Livery (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11357 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Livery (10 sparks)<br></div>}
+ end
  else
  $text_display += {<div id="under_gray">Formal suit (10 sparks)<br></div>}  
  $text_display += {<div id="under_gray">Medical gown (10 sparks)<br></div>}  
@@ -1063,9 +1091,13 @@ IF sparks => 10:
  $text_display += {<div id="under_gray">Livery (10 sparks)<br></div>}    
 END
 IF sparks => 20:
- $text_display += {<div id="under">Noble regalia (20 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11358 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ if regal_suit < 1 and $master_cloth ! "regal_suit":
+  $text_display += {<div id="under">Noble regalia (20 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11358 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Noble regalia (20 sparks)<br></div>} 
+ end
  else
- $text_display += {<br><div id="under_gray">Noble regalia (20 sparks)<br></div>}  
+ $text_display += {<div id="under_gray">Noble regalia (20 sparks)<br></div>}  
 END
 $text_display += {<br><div id="under">Other goods<div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
 }
@@ -1125,7 +1157,7 @@ $beauty_options[1] = {
 $text_display = '<br>'
 $text_display += {<br><div id="under">Services for men<div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
 IF slave_state = CONST_INT['slave_exist']:
- IF slave["massaged"] = 0: 
+ IF slave["hygiene"] ! 0 or slave["massaged"] = 0:
   $text_display += {<div id="under">Spa and massage (3 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11611 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
   else
   $text_display += {<div id="under_gray">Spa and massage</div>}

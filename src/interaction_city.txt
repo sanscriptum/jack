@@ -790,6 +790,8 @@ IF interaction_city = 11611:
  if g = 5: $service_picture = 'scene\service\service_massage_girl_5' 
  copyarr '$text', '$beauty_spa' 
  $do_service = {
+ slave_rate["hygiene"] = 0
+ slave["hygiene"] = 0
  IF slave["massaged"] = 0: 
   slave["massaged"] = 1
   slave_rate["mood"] += 5

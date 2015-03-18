@@ -2,10 +2,13 @@
 IF wizard_mode = 1: auspex = 1
 
 $auspex_list = ''
+$return_lock  = 'slave_stat'
 
 IF auspex = 0:
  $auspex_list = '' 
- $info_text = '   Without spells reinforcing auspex, aura of your slave is seen as pale and indistinct shadow. You can not determine the color, strength and direction of flow of her spiritual field.'
+ $info_text = '   Without spells reinforcing auspex, aura of your slave is seen as pale and indistinct shadow. You can not determine the color, strength and direction of flow of her spiritual field. 
+
+<a href = ''EXEC: interaction = 61 & gt "interaction"''>Use auspex (2$)</a>'
  else
  $auspex_list = '' 
  IF slave["obedience"] => 0:
@@ -48,9 +51,12 @@ END
 
 IF assistant_aura = 1:
  $auspex_list = ''
+ $return_lock  = 'assistant_stat'
  IF auspex = 0:
   $auspex_list = '' 
-  $assistant_info_text = '   Without spells reinforcing auspex, aura of your assistant is seen as pale and indistinct shadow. You can not determine the color, strength and direction of flow of her spiritual field.'
+  $assistant_info_text = '   Without spells reinforcing auspex, aura of your assistant is seen as pale and indistinct shadow. You can not determine the color, strength and direction of flow of her spiritual field.
+
+<a href = ''EXEC: interaction = 61 & gt "interaction"''>Use auspex (2$)</a>'
   else
   $auspex_list = '' 
   IF assistant["obedience"] => 0:

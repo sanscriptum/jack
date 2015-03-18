@@ -1106,6 +1106,7 @@ IF interaction = 5415:
  repulse = 4
  dynamic $sex_acceptance 
  res = slave["obedience"] - repulse + sex_acceptance
+ if slave['domini_dictum'] = 1: res = 0
  IF res < 0: 
   $refuse_txt = '<<$slave_name>> refuses to have sex with you. Well, if she prefers rape - it is easy to arrange...'
   dynamic $sin_gained_now 

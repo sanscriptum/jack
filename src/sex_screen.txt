@@ -56,13 +56,25 @@ $sex_slave_var += '<<sex["climax_buildup"]>> / <<sex["climax_treshold"]>><br>'
 *p '<div id = "intensity_knobs"><<$intensity_knobs>></div>'
 *p '<div id = "bg"><<$sex_menu>></div>'
 
-IF sound_on = 1:
- *p '<div id="side_sound_icon"><a href = "EXEC: sound_on = 0 & close all & gt curloc"><img src="content\pic\buttons\sound_on.png"></a></div>'  
- else
- *p '<div id="side_sound_icon"><a href = "EXEC: sound_on = 1 & gt curloc"><img src="content\pic\buttons\sound_off.png"></a></div>'  
+IF ui_style = 2:
+ IF sound_on = 1:
+  *p '<div id="side_sound_icon"><a href = "EXEC: sound_on = 0 & close all & gt curloc"><img src="content\pic\ui\grimdark\buttons\sound_on.png"></a></div>'  
+  else
+  *p '<div id="side_sound_icon"><a href = "EXEC: sound_on = 1 & gt curloc"><img src="content\pic\ui\grimdark\buttons\sound_off.png"></a></div>'  
+ END
+ ELSE
+ IF sound_on = 1:
+  *p '<div id="side_sound_icon"><a href = "EXEC: sound_on = 0 & close all & gt curloc"><img src="content\pic\buttons\sound_on.png"></a></div>'  
+  else
+  *p '<div id="side_sound_icon"><a href = "EXEC: sound_on = 1 & gt curloc"><img src="content\pic\buttons\sound_off.png"></a></div>'  
+ END
 END
 
-*p {<div id="side_options_icon"><a href = "EXEC: sex_num = 100 & gt curloc"><img src="content\pic\buttons\gear.png"></a></div>}
+IF ui_style = 2:
+ *p {<div id="side_options_icon"><a href = "EXEC: sex_num = 100 & gt curloc"><img src="content\pic\ui\grimdark\buttons\gear.png"></a></div>}
+ else
+ *p {<div id="side_options_icon"><a href = "EXEC: sex_num = 100 & gt curloc"><img src="content\pic\buttons\gear.png"></a></div>}
+END
 
 IF sex_num = 100:
  IF exam_in_progress = 1:

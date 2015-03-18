@@ -234,10 +234,18 @@ IF $music_now ! $music['ride']:
 END
 if sound_on = 1: play $music_now, music_volume
 
-IF sound_on = 1:
- *p '<div id="sound_icon"><a href = "EXEC: sound_on = 0 & close all & gt curloc"><img src="content\pic\buttons\sound_on.png"></a></div>'  
- else
- *p '<div id="sound_icon"><a href = "EXEC: sound_on = 1 & gt curloc"><img src="content\pic\buttons\sound_off.png"></a></div>'  
+IF ui_style = 2:
+ IF sound_on = 1:
+  *p '<div id="sound_icon"><a href = "EXEC: sound_on = 0 & close all & gt curloc"><img src="content\pic\ui\grimdark\buttons\sound_on.png"></a></div>'  
+  else
+  *p '<div id="sound_icon"><a href = "EXEC: sound_on = 1 & gt curloc"><img src="content\pic\ui\grimdark\buttons\sound_off.png"></a></div>'  
+ END
+ ELSE
+ IF sound_on = 1:
+  *p '<div id="sound_icon"><a href = "EXEC: sound_on = 0 & close all & gt curloc"><img src="content\pic\buttons\sound_on.png"></a></div>'  
+  else
+  *p '<div id="sound_icon"><a href = "EXEC: sound_on = 1 & gt curloc"><img src="content\pic\buttons\sound_off.png"></a></div>'  
+ END
 END
 --- ride_interface ---------------------------------
 

@@ -55,14 +55,26 @@ IF slave_state = CONST_INT['slave_faint']:
 </div>'
 END
 
-IF sound_on = 1:
- *p '<div id="sound_icon"><a href = "EXEC: sound_on = 0 & close all & gt curloc"><img src="content\pic\buttons\sound_on.png"></a></div>'  
- else
- *p '<div id="sound_icon"><a href = "EXEC: sound_on = 1 & gt curloc"><img src="content\pic\buttons\sound_off.png"></a></div>'  
+IF ui_style = 2:
+ IF sound_on = 1:
+  *p '<div id="sound_icon"><a href = "EXEC: sound_on = 0 & close all & gt curloc"><img src="content\pic\ui\grimdark\buttons\sound_on.png"></a></div>'  
+  else
+  *p '<div id="sound_icon"><a href = "EXEC: sound_on = 1 & gt curloc"><img src="content\pic\ui\grimdark\buttons\sound_off.png"></a></div>'  
+ END
+ ELSE
+ IF sound_on = 1:
+  *p '<div id="sound_icon"><a href = "EXEC: sound_on = 0 & close all & gt curloc"><img src="content\pic\buttons\sound_on.png"></a></div>'  
+  else
+  *p '<div id="sound_icon"><a href = "EXEC: sound_on = 1 & gt curloc"><img src="content\pic\buttons\sound_off.png"></a></div>'  
+ END
 END
 
 !options
-if city_form ! 1000:*p {<div id="options_icon"><a href = "EXEC: $prev_city_form = city_form & city_form = 1000 & gt 'city_menu_form'"><img src="content\pic\buttons\gear.png"></a></div>}
+IF ui_style = 2:
+ if city_form ! 1000:*p {<div id="options_icon"><a href = "EXEC: $prev_city_form = city_form & city_form = 1000 & gt 'city_menu_form'"><img src="content\pic\ui\grimdark\buttons\gear.png"></a></div>}
+ else
+ if city_form ! 1000:*p {<div id="options_icon"><a href = "EXEC: $prev_city_form = city_form & city_form = 1000 & gt 'city_menu_form'"><img src="content\pic\buttons\gear.png"></a></div>}
+END
 
 IF city_form = 1000:
  *p '<div style="position:absolute;top:425px;left:612px;font-family:Victoriana;"><img src = "content/pic/sound_setting.png"></div>'

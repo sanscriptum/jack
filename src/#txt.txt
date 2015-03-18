@@ -2495,6 +2495,9 @@ $beauty_depilation[2] = '   The salon worker takes away your slave and returns h
 $beauty_visage[1] = '   To achieve the greatest stylish appearance for your slave you tell her to go with the salon specialists for a full range of treatments.'
 $beauty_visage[2] = '   Several specialists work on your slave. They simultaneously apply make-up, manicure and pedicure her and spray her with on of the best perfumes. She is now even ready for a dancing-party!'
 
+$beauty_full[1] = ' You order a full beauty treatment for your slave to improve her appearance, consisting of a fashionable haircut, a manicure and pedicure, a full body wax, and the application of make-up and perfume.'
+$beauty_full[2] = ' The salon professionals spend a long time working on your slave, but it was worth it - your slave returns with a stunning hairstyle, smooth skin and gorgeous make-up.'
+
 $beauty_master_hairstyle[1] = '   You need to monitor your own appearance too so you order a haircut. A charming hairdresser helps you choose the appropriate option from the large color catalog.'
 $beauty_master_hairstyle[2] = '   The hairdresser is working quickly and professionally, ready to entertain you with light conversation or shut up if you are not in the mood for smalltalk. The whole procedure takes less than an hour and as a result, your hair looks fantastic.'
 
@@ -2559,6 +2562,9 @@ $scarification[2] = '   The mistress slowly takes her tools and with sadistic pl
 
 $thongue_split[1] = '   When you order Poison to split the tongue of your slave, she warns you that after this operation, all slave''s oral skills will be heavily damaged, and she will need relearn them again.'
 $thongue_split[2] = '   The mistress performs this bloody procedure with noticeable sadistic pleasure, but then quickly heals the slave''s tongue with some magical composition. Despite the fact that the wound immediately healed, with the now split tongue, your slave can not even speak clearly. She will get used to it eventually.'
+
+$full_piercing[1] = ' You order a full range of piercings for your slave to make her appear more exotic. The mistress gladly accepts the job.'
+$full_piercing[2] = ' Some time later, Poison returns your slave to you intact. Despite the fact that she has just received a lot of piercings, the slave looks quite healthy.'
 
 !PREGNANT SLAVE TAKEN
 $pregnant_slave_taken[1] = '   Barely having time to deal with the morning chores, you hear an insistent knocking at the door. In the doorway you see a priestess of the Vatican, accompanied by a platoon of the Swiss Guard.' 

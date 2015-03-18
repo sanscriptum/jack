@@ -68,10 +68,9 @@ dynamic $fb_cycle, 'фаршированные_яйца', 'Eggs stuffed with mea
 dynamic $fb_cycle, 'колбаски_с_пюре', 'Grilled sausages with milk mashed potatoes [<<$rating[3]>>]', 'vegetables', 'mince', 'milk', 'none'
 dynamic $fb_cycle, 'болоньезе', 'Spaghetti with bolognese meat sauce [<<$rating[3]>>]', 'vegetables', 'flower', 'mince', 'none'
 dynamic $fb_cycle, 'пирог_с_мясом', 'Rich pie with spicy meat filling [<<$rating[3]>>]', 'mince', 'flower', 'spice', 'none'
-!TODO: bad order in the next line, and other
-dynamic $fb_cycle, 'острая_отбивная', 'Well fried steak under the spicy sauce [<<$rating[3]>>]', 'meat', 'none', 'spice', 'none'
+dynamic $fb_cycle, 'острая_отбивная', 'Well fried steak under the spicy sauce [<<$rating[3]>>]', 'meat', 'spice', 'none', 'none'
 dynamic $fb_cycle, 'тушеное_мясо', 'Stew in a pot with vegetables [<<$rating[3]>>]', 'vegetables', 'meat', 'none', 'none'
-dynamic $fb_cycle, 'отбивная_с_рисом', 'Juicy steak with fried rice [<<$rating[3]>>]', 'meat', 'none', 'flower', 'none'
+dynamic $fb_cycle, 'отбивная_с_рисом', 'Juicy steak with fried rice [<<$rating[3]>>]', 'meat', 'flower', 'none', 'none'
 dynamic $fb_cycle, 'глазунья_с_ветчиной', 'Juicy scrambled eggs with ham [<<$rating[3]>>]', 'meat', 'eggs', 'none', 'none'
 dynamic $fb_cycle, 'мясо_по_французски', 'French meat [<<$rating[3]>>]', 'meat', 'cheese', 'none', 'none'
 dynamic $fb_cycle, 'пирог_с_грибами', 'Pie with mushrooms and red onion [<<$rating[3]>>]', 'vegetables', 'flower', 'spice', 'none'

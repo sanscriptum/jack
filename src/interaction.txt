@@ -91,7 +91,7 @@ IF interaction = 61:
  sparks -= 2
  auspex = 1
  npc = 0 
- if master_mage < 1 and already_done_today[interaction] = 0: master_mage_rate += 1
+ if already_done_today[interaction] = 0: master_mage_rate += 1
 END
 
 !Cruciato
@@ -109,6 +109,7 @@ IF interaction = 62:
   txt_count += 1
   $text[txt_count] = '<<$spell_fail>>'
   else
+  if already_done_today[interaction] = 0: master_mage_rate += 3 - master_mage
   slave["sin"] = 0
   fear_force += slave["sensitivity"] - 3
   if slave["masohism_revealed"] = 0: slave["masohism_revealed"] = 1
@@ -124,7 +125,6 @@ IF interaction = 62:
   $play_sound[1] = '<<$pain[slave["age"]]>>'
  END 
  }
- if master_mage < 3 and already_done_today[interaction] = 0: master_mage_rate += 3 - master_mage
  if phobia < 0: gs '$mod_slave_drop', torture_intensity
  if phobia = 0: gs '$mod_slave_drop', 1 
  slave['sin'] = 0
@@ -143,7 +143,7 @@ IF interaction = 63:
  slave["virtue"] = 0
  slave['sin'] = 0 
  if already_done_today[interaction] = 0: slave_rate["instinct"] += master_mage
- if master_mage < 3 and already_done_today[interaction] = 0: master_mage_rate += 3 - master_mage
+ if already_done_today[interaction] = 0: master_mage_rate += 3 - master_mage
 END
 
 !Sententia veritas
@@ -151,7 +151,6 @@ IF interaction = 64:
  $interaction_type = 'spell_cast' 
  sparks -= 5
  if already_done_today[interaction] = 0: slave_rate["instinct"] += master_mage
- if master_mage < 3 and already_done_today[interaction] = 0: master_mage_rate += 3 - master_mage
  $special_part = {
  IF spell_effectiveness < 1:
   if already_done_today[interaction] = 0: slave_rate['ego'] += master_mage
@@ -161,6 +160,7 @@ IF interaction = 64:
   txt_count += 1
   $text[txt_count] = '<<$spell_fail>>'
   else
+  if already_done_today[interaction] = 0: master_mage_rate += 3 - master_mage
   IF slave['neg_spellbound'] => 0:
    slave['neg_spellbound'] += 1
    else
@@ -178,7 +178,7 @@ IF interaction = 65:
  sparks -= 5
  magna_magnifika = master_mage * 2
  if master_mage = 6: magna_magnifika = 10
- if master_mage < 1 and already_done_today[interaction] = 0: master_mage_rate += 1
+ if already_done_today[interaction] = 0: master_mage_rate += 1
 END
 
 !Tremendio
@@ -195,6 +195,7 @@ IF interaction = 66:
   $text[txt_count] = '<<$spell_fail>>'
   else
   slave["fear"] = spell_effectiveness
+  if already_done_today[interaction] = 0: master_mage_rate += 1 + spell_effectiveness
   IF slave['neg_spellbound'] => 0:
    slave['neg_spellbound'] += 1
    else
@@ -203,7 +204,6 @@ IF interaction = 66:
   slave['pos_spellguarded'] = 0  
  END 
  }
- if already_done_today[interaction] = 0: master_mage_rate += 1
 END
 
 !Domini dictum
@@ -220,6 +220,7 @@ IF interaction = 67:
   $text[2] = '<<$spell_fail>>'
   else
   slave['domini_dictum'] = 1
+  if already_done_today[interaction] = 0: master_mage_rate += 1 + slave['ego']
   IF slave['neg_spellbound'] => 0:
    slave['neg_spellbound'] += 1
    else
@@ -228,7 +229,6 @@ IF interaction = 67:
   slave['pos_spellguarded'] = 0  
  END 
  }
- if already_done_today[interaction] = 0 and master_mage = slave['ego']: master_mage_rate += slave['ego']
 END
 
 !Adverto Servili
@@ -242,7 +242,7 @@ IF interaction = 68:
   slave['neg_spellbound'] = 1
  END
  slave['pos_spellguarded'] = 0     
- if master_mage < 5: master_mage_rate += brand_reputation
+ master_mage_rate += 1 + brand_reputation
 END
 
 !spellbook
